@@ -27,3 +27,10 @@ Usa la metodología de Spec Kit **solo si está instalada o el usuario autoriza 
 
 ## Resultado de cada tarea
 Informa: fase, objetivo, trabajo hecho, archivos cambiados, pruebas ejecutadas (y no ejecutadas), riesgos/bloqueos y siguiente paso que requiere aprobación.
+
+## Sincronización con GitHub — instrucción del usuario
+- Todos los cambios autorizados de inventarioTI2 deben quedar actualizados en `amsotov/inventarioTI2` en GitHub, incluida la documentación.
+- Al terminar cada tarea, revisa las diferencias, ejecuta las verificaciones pertinentes, crea el commit y sube los cambios a la rama correspondiente; comprueba el SHA remoto antes de confirmar la entrega. No dejes el resultado únicamente local.
+- Preserva trabajo de terceros e integra cambios remotos sin forzar el historial. Si la sincronización queda bloqueada, informa el motivo y conserva los cambios.
+- Respeta la privacidad del correo de autoría: si GitHub exige protección de correo, usa la dirección `noreply` verificada de la cuenta correspondiente; no desactives esa protección ni publiques el correo privado.
+- Esta autorización de sincronización no inicia nuevas fases ni autoriza despliegues, producción o publicación del sitio. Cada fase conserva su aprobación independiente.

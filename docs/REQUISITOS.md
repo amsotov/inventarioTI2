@@ -1,13 +1,13 @@
 # Requisitos y criterios de aceptación iniciales
 
 **Proyecto:** inventarioTI2
-**Fase:** 0 — EN_REVISION
+**Fase:** 0 — COMPLETADA; entrega aprobada por el usuario el 2026-10-30
 **Fecha:** 2026-10-30
 
 Este catálogo recoge los requisitos del usuario y criterios propuestos para validación posterior. No constituye análisis detallado de Fase 1 ni evidencia de funcionalidades implementadas.
 
 ## Requisitos funcionales y backlog inicial
-Todas las filas pertenecen al MVP. El orden es una prioridad técnica propuesta, pendiente de revisión; no cambia las puertas de aprobación por fase.
+Todas las filas pertenecen al MVP aprobado en Fase 0. El orden es la prioridad inicial aceptada para planificación, con refinamiento posterior; no cambia las puertas de aprobación por fase.
 
 | ID | Módulo / requisito | Criterio de aceptación propuesto |
 |---|---|---|
@@ -64,3 +64,44 @@ Entidades candidatas: `funcionarios`, `bienes`, `asignaciones`, `movimientos`, `
 
 ## Pendientes antes de detallar o implementar
 Consultar la matriz de decisiones en [DECISIONES.md](DECISIONES.md). No se han ejecutado pruebas de aplicación; este documento define comportamiento esperado.
+
+## Fuente y estado de los requisitos
+
+Se preservan RF-01 a RF-16, RNF-01 a RNF-07 y su numeración del commit actualizado por el usuario `ea60377feb246ede15fef00d386bd022a3deaa94`. La revisión de GitHub solicitada en esta sesión aporta el detalle empresarial que no estaba en la plantilla inicial. No se excluyen correos ni reportes del MVP.
+
+- **Alcance documentado por el usuario:** funcionarios y bienes; dos roles; unicidad y asignación vigente única; bajas lógicas; historial/auditoría; cuentas; correo configurable; Excel/PDF; orientación Supabase/RLS y portabilidad futura a SQL Server.
+- **Planificación aceptada:** alcance y orden inicial P-03, por aprobación de Fase 0. **Interpretaciones por ratificar:** P-01, P-02 y P-04. En particular, no convertir «lectura puede ver todo» en acceso definitivo a auditoría sin ratificar P-01.
+- **Detalles abiertos:** A-01 a A-11. No se han decidido formato obligatorio de identificadores, retroactividad, cortes históricos, eventos exactos de correo, retención, umbrales ni solución arquitectónica.
+- La lectura de la guía `supabase` se limita a revisar la orientación documentada. No se han creado proyectos, conexiones, tablas, funciones, políticas RLS ni migraciones; no se ha escogido frontend ni proveedor de correo.
+
+## Recorridos críticos para aceptación futura del MVP
+
+Son escenarios de verificación iniciales, no historias detalladas de Fase 1 ni pruebas ejecutadas. Se concretarán con los detalles abiertos y datos sintéticos.
+
+1. **Inventariar y asignar:** administrador registra un funcionario y dos bienes, asigna ambos al funcionario y comprueba sus fichas e historial. Serie/código duplicados y segunda asignación vigente del mismo bien se rechazan sin cambios parciales, incluidas solicitudes concurrentes (RF-01 a RF-03; A-01/A-02).
+2. **Mover y conservar historia:** trasladar un bien a otro funcionario, devolverlo y cambiar su condición; comprobar cronología y situación vigente en ambas fichas. La baja lógica conserva referencias; sus efectos sobre asignaciones y corrección de errores se prueban conforme A-03/A-04/A-05 (RF-04/RF-05).
+3. **Consultar y exportar:** buscar por las claves de bienes y funcionarios, combinar y limpiar filtros, abrir fichas y exportar resultados. Los cinco reportes en Excel/PDF conservan filtros, columnas autorizadas y criterios de fechas acordados; sus datos concuerdan con la fuente (RF-06/RF-07/RF-16; A-06/A-11).
+4. **Restringir y administrar:** lectura consulta y exporta lo autorizado, pero no escribe mediante interfaz ni acceso directo. Administrador gestiona cuentas sin cambiar su propio rol ni dejar el sistema sin administrador activo; probar concurrencia, desactivación y recuperación según A-08 (RF-08 a RF-11).
+5. **Auditar y avisar:** cada evento contemplado tiene autor, fecha, entidad y cambio pertinente sin secretos. Cambiar destinatario afecta avisos posteriores y queda auditado. Probar envío simulado, fallo, reintento y duplicado según A-07; el acceso a auditoría sigue la ratificación de P-01 (RF-12 a RF-15).
+
+## Plan de revisión de Fase 2 — no iniciada
+
+1. Exigir autorización expresa de Fase 2 y requisitos aceptados de Fase 1. Volver a comprobar disponibilidad de `visual-system-designer` y usarlo si está disponible. La ruta `.agents/skills/visual-system-designer/SKILL.md` no existe en el árbol inspeccionado ni se encontró en los catálogos disponibles; no se instaló en Fase 0.
+2. Construir un prototipo navegable con datos ficticios: listado y búsqueda global, fichas de bien/funcionario, formulario con errores y éxito, movimiento simulado, consulta de historial, cuentas y representación de auditoría/configuración/reportes. Las simulaciones deben ser identificables, sin backend ni datos reales por inferencia.
+3. Facilitar acceso local comprobado y registrar ruta/comando de ejecución, capturas y observaciones. Mantener la prohibición de publicación.
+4. Matriz de referencia propuesta: computador 1440×900, iPad 820×1180 e iPhone 390×844; revisar también orientaciones horizontales. Confirmar modelos/navegadores reales. La emulación no acredita pruebas en dispositivos reales ni compatibilidad completa con Safari.
+5. Con Playwright si está disponible, verificar búsqueda, navegación entre fichas, filtros, validación de formulario, movimiento simulado, navegación por teclado y usabilidad responsive. Registrar comandos, resultados y límites de cobertura. Si no está disponible, informar y documentar la revisión manual efectuada; no afirmar pruebas no ejecutadas.
+6. Registrar aceptación visual expresa en `docs/UX_UI.md`. **No iniciar Fase 3 sin otra aprobación expresa.** El prototipo no acredita persistencia, RLS, entrega de correos ni exportaciones funcionales salvo lo efectivamente simulado y verificado.
+
+## Criterios de aceptación de Fase 0
+
+| ID | Comprobación | Estado de entrega |
+|---|---|---|
+| CA0-01 | Leer instrucciones, inspeccionar Git y recuperar la actualización indicada por el usuario sin perder trabajo | Revisado; evidencia en `ESTADO_PROYECTO.md` |
+| CA0-02 | Documentar visión, problema, actores, MVP completo, prioridades y exclusiones según la fuente actualizada | CUMPLIDO; aceptado por el usuario el 2026-10-30 |
+| CA0-03 | Mantener RF-01 a RF-16 y RNF-01 a RNF-07, criterios iniciales y trazabilidad con módulos y decisiones | Documentado; no implica pruebas funcionales |
+| CA0-04 | Registrar decisiones, interpretaciones, pendientes, riesgos, dependencias y responsables de revisión | Documentado; detalles de Fase 1 sin resolver por inferencia |
+| CA0-05 | Preservar trabajo remoto y limitar cambios a documentación autorizada y regla permanente de GitHub en AGENTS.md; sin código, otra fase ni despliegue | CUMPLIDO; verificación documental registrada en `ESTADO_PROYECTO.md`; sincronización autorizada por el usuario |
+| CA0-06 | Usuario acepta la entrega, alcance, prioridades y registro explícito de interpretaciones pendientes | CUMPLIDO el 2026-10-30: «todos los cambios del este proyecto inventarioTI2 deben actualizarse en github y aprueba esta fase»; Fase 0 COMPLETADA |
+
+La aceptación del MVP o del prototipo y la autorización de una fase son decisiones distintas. Las futuras fases siguen pendientes en [../FASES.md](../FASES.md).

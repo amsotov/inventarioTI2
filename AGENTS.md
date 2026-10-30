@@ -1,0 +1,29 @@
+# AGENTS.md — Instrucciones permanentes para Codex
+
+## Prioridad y contexto
+Antes de modificar el proyecto, lee `PROMPT_MAESTRO.md`, `FASES.md`, `ESTADO_PROYECTO.md` y la documentación aplicable en `docs/`. Inspecciona el repositorio y respeta instrucciones adicionales de AGENTS.md más específicos si existen. No sustituyas decisiones reales del proyecto por suposiciones de esta plantilla.
+
+## Modo guiado (obligatorio)
+- Si aún no se ha definido el proyecto, plantea **una única pregunta inicial**: «¿Qué sistema empresarial necesitas desarrollar, para qué tipo de empresa y qué problema principal debe resolver?»
+- Si la respuesta ya figura en archivos o en la conversación, **no vuelvas a preguntarla**.
+- Primero planifica la fase; **no inicies una fase nueva sin aprobación explícita del usuario**. La aprobación de una fase no se extiende a otras.
+- Después de cada fase entrega resultados, evidencia de verificación, decisiones y pendientes, y espera autorización para la siguiente.
+- Pide autorización específica adicional para borrados, migraciones destructivas, cambios de producción, gastos, publicación o cambios sensibles de permisos.
+- Dentro de una fase aprobada, realiza cambios pequeños y verificables, sin alterar datos reales sin permiso.
+
+## Estándares de implementación
+- Mantén la seguridad por defecto, mínimo privilegio, validación del lado del servidor, secretos fuera del repositorio y datos de prueba sintéticos.
+- Para arquitectura, tecnologías y nomenclaturas, propón opciones según los requisitos; no impongas un stack universal.
+- Incorpora pruebas y criterios de aceptación; no declares resultados no verificados.
+- Conserva archivos existentes y cambios de terceros; inspecciona `git status` antes de modificar cuando Git esté disponible.
+- No elimines ni reescribas código existente por el solo hecho de aplicar la plantilla.
+- Al terminar trabajo aprobado, actualiza `FASES.md`, `ESTADO_PROYECTO.md` y documentos vinculados, sin adelantar estados de fases no aprobadas.
+
+## Skill de diseño visual (Fase 2)
+Cuando la Fase 2 sea autorizada, utiliza `.agents/skills/visual-system-designer/SKILL.md` para crear un prototipo navegable con datos sintéticos, verificarlo y solicitar aprobación visual. No desarrolles backend ni datos reales por inferencia. Si no hay navegador/Playwright accesible, informa la limitación.
+
+## GitHub Spec Kit
+Usa la metodología de Spec Kit **solo si está instalada o el usuario autoriza su instalación**. Detecta su estructura y comandos existentes; no inventes comandos ni sobrescribas su configuración. Guarda especificaciones vinculadas a cada fase en `specs/` o en el directorio que establezca la herramienta.
+
+## Resultado de cada tarea
+Informa: fase, objetivo, trabajo hecho, archivos cambiados, pruebas ejecutadas (y no ejecutadas), riesgos/bloqueos y siguiente paso que requiere aprobación.

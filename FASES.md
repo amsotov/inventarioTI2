@@ -1,14 +1,14 @@
 # FASES.md — Plan y control de avance
 
-**Proyecto:** POR DEFINIR  
-**Modo:** GUIADO (aprobación expresa antes de cada fase)  
-**Fase actual:** 0 — PENDIENTE DE DEFINICIÓN Y AUTORIZACIÓN
+**Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
+**Modo:** GUIADO (aprobación expresa antes de cada fase)
+**Fase actual:** 0 — EN_REVISION (ejecución autorizada; aceptación de entregables pendiente)
 
-> Este plan es una plantilla inicial, no evidencia de trabajo realizado. Adapta alcance y criterios al negocio después de la pregunta inicial. No pases una fase a `EN_PROGRESO` sin autorización expresa, ni a `COMPLETADA` sin verificación.
+> La Fase 0 está autorizada y sus documentos se entregan para revisión. El sistema aún no está implementado. Las fases siguientes conservan su estado pendiente y requieren autorización independiente.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
-| 0 | Diagnóstico y planificación | Visión, alcance, MVP y riesgos | PENDIENTE | NO OTORGADA |
+| 0 | Diagnóstico y planificación | Visión, requisitos iniciales, MVP, riesgos y decisiones | EN_REVISION | Ejecución autorizada; aceptación pendiente |
 | 1 | Análisis empresarial y requisitos | Actores, procesos, historias y criterios | PENDIENTE | NO OTORGADA |
 | 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | PENDIENTE | NO OTORGADA |
 | 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | PENDIENTE | NO OTORGADA |
@@ -29,7 +29,7 @@
 
 | Fecha | Fase | Alcance autorizado | Aprobó | Evidencia / enlace |
 |---|---|---|---|---|
-| — | — | Sin autorizaciones todavía | — | — |
+| 2026-10-30 | 0 | Diagnóstico y planificación; actualización documental en GitHub | Usuario | Chat: «Autorizo la fase 0 pero crealo en nuevo chat»; luego «actualiza en github». No se creó otro chat. |
 
 ## Criterios para cerrar cada fase
 - [ ] Alcance y entregables revisados.
@@ -40,3 +40,17 @@
 - [ ] Aprobación solicitada para la fase siguiente (no presumida).
 
 **Estados válidos:** PENDIENTE · EN_PROGRESO · BLOQUEADA · EN_REVISION · COMPLETADA.
+
+## Entrega de Fase 0
+- Objetivo: centralizar inventario y trazabilidad de asignaciones por fecha.
+- Responsable de preparación: Codex; revisión y aprobación: usuario.
+- Dependencias: requisitos suministrados por el usuario; sin servicios externos para esta entrega documental.
+- Entregables: docs/VISION.md, docs/REQUISITOS.md, docs/DECISIONES.md y ESTADO_PROYECTO.md.
+- Verificación: `git diff --check` y revisión de cobertura y consistencia documental registradas en ESTADO_PROYECTO.md.
+- Pendiente para cierre: aceptación del usuario sobre alcance, prioridades e interpretaciones; no marcar COMPLETADA antes de ello.
+
+## Puertas de aprobación siguientes
+- Fase 1: solo después de revisar Fase 0 y autorizar expresamente el análisis detallado.
+- Fase 2: solo con autorización expresa; usar visual-system-designer, prototipo navegable con datos ficticios y revisión en computador, iPad e iPhone; verificar con Playwright si está disponible e informar limitaciones. El skill no está incluido en el árbol inspeccionado.
+- Fase 3: requiere nueva aprobación expresa después de la revisión visual; no está autorizada.
+- La actualización en GitHub no autoriza publicar el entorno, desplegar ni realizar cambios productivos.

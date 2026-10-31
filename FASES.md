@@ -3,15 +3,16 @@
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
 **Fase actual:** 1 — COMPLETADA (análisis y resoluciones aceptados por el usuario el 2026-10-31).
-**Última fase completada:** 1. **Fases 2–15:** PENDIENTE / NO OTORGADA.
+**Última fase completada:** 1.
+**Próxima fase:** 2 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 3–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. Las fases 2–15 siguen pendientes y sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 queda autorizada posteriormente para un nuevo chat, con ejecución pendiente; fases 3–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
 | 0 | Diagnóstico y planificación | Visión, requisitos iniciales, MVP, riesgos y decisiones | COMPLETADA | Ejecución y entregables APROBADOS por el usuario el 2026-10-30 |
 | 1 | Análisis empresarial y requisitos | Actores, procesos, historias, criterios y trazabilidad | COMPLETADA | Entrega y resoluciones APROBADAS por usuario el 2026-10-31; UTC y respaldo semanal |
-| 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | PENDIENTE | NO OTORGADA |
+| 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | PENDIENTE | AUTORIZADA para iniciar en un nuevo chat; ejecución no iniciada |
 | 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | PENDIENTE | NO OTORGADA |
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | PENDIENTE | NO OTORGADA |
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | PENDIENTE | NO OTORGADA |
@@ -38,6 +39,7 @@
 | 2026-10-30 | 1 | Autorizar análisis empresarial y requisitos para iniciarse en un nuevo chat | Usuario | «En nuevo chat inicia fase 1 inventarioTI2»; autorización registrada, conversación nueva aún no abierta ni trabajo de Fase 1 ejecutado |
 | 2026-10-31 | 1 | Ejecutar únicamente análisis documental, conservar pendientes y sincronizar GitHub; sin código ni Fase 2 | Usuario | Solicitud de esta conversación; entrega EN_REVISION, aceptación y cierre aún no otorgados |
 | 2026-10-31 | 1 | Aceptar paquete de recomendaciones con UTC y respaldo una vez por semana; cerrar análisis | Usuario | «Apruebo las conversiones, respaldo 1 vez a  la semana, zona horaria UTC y respaldo 1 vez a la semana»; D-14; no autoriza Fase 2 ni configuración operativa |
+| 2026-10-31 | 2 | Iniciar UX/UI y prototipo con datos ficticios en un nuevo chat | Usuario | «En nuevo chat inicia fase 2 inventarioTI2»; ejecución pendiente para esa conversación, sin autorizar Fase 3 ni despliegue |
 
 ## Criterios para cerrar cada fase
 - [ ] Alcance y entregables revisados.
@@ -156,3 +158,17 @@ D-14 acepta el paquete documentado y sus alternativas seleccionadas, con UTC y u
 UTC se usa en consultas, fichas, movimientos, auditoría y exportaciones. Respaldo semanal implica RPO objetivo de 7 días (168 h), sustituyendo 24 h de la propuesta diaria anterior; RTO 8 h y copias durante 30 días. La validación legal del plazo de registros personales no se confunde con conservación de copias: F1-SEG-01 en Fase 6 antes de datos reales. Presupuesto en Fase 3; día/hora UTC, alertas y configuración/pruebas de copias en Fases 3/14. Ninguna de esas tareas se declara implementada.
 
 Fase 1 COMPLETADA. Siguiente fase propuesta: 2 — UX/UI, que requiere autorización independiente antes de iniciar. Fases 2–15 permanecen PENDIENTE / NO OTORGADA; sin código, prototipo, despliegue ni producción.
+
+## Continuidad autorizada para Fase 2 — nuevo chat
+
+El usuario indica «En nuevo chat inicia fase 2 inventarioTI2». Fase 2 AUTORIZADA; ejecución PENDIENTE hasta comenzar en esa conversación. Fase 1 sigue COMPLETADA; no se inicia diseño ni prototipo por registrar esta autorización. Este registro posterior actualiza las menciones históricas de Fase 2 sin autorización.
+
+Punto de inicio:
+
+1. Recuperar main de `amsotov/inventarioTI2`; leer AGENTS.md, PROMPT_MAESTRO.md, FASES.md, ESTADO_PROYECTO.md y los requisitos, análisis, historias, trazabilidad y CIERRE_FASE1 aceptados. No volver a pedir autorización para Fase 2.
+2. Presentar el plan de UX/UI y comprobar disponibilidad del skill `.agents/skills/visual-system-designer/SKILL.md`; usarlo según AGENTS. La ruta no existe en el árbol previamente inspeccionado: volver a buscar su disponibilidad e informar si falta, sin afirmar que se usó ni instalar/sustituir por inferencia.
+3. Diseñar navegación, formularios, búsqueda/filtros, fichas, movimientos e historia, cuentas, auditoría, configuración y cinco reportes; prototipo navegable solo con datos sintéticos y simulaciones identificadas. Conservar roles, UTC y reglas aprobadas; no implementar backend, datos reales, arquitectura definitiva ni respaldos por inferencia.
+4. Facilitar preview local comprobado; revisar computador/iPad/iPhone, teclado, estados de carga/vacío/error/éxito y responsive. Usar Playwright si está disponible, registrar evidencia y límites; no confundir emulación con hardware real ni afirmar pruebas no ejecutadas.
+5. Documentar resultado y aceptación visual en docs/UX_UI.md; mantener F1-SEG-01/02/03, revisar diferencias y sincronizar todos los cambios en GitHub. Fase 3 requiere autorización independiente después de la revisión visual. No publicar sitio ni desplegar.
+
+Esta conversación solo registra autorización y continuidad. No hay herramienta disponible para abrir automáticamente otro chat: el usuario debe abrirlo con el repositorio y la instrucción de inicio. No se crea prototipo ni se comprueba navegador en esta preparación documental.

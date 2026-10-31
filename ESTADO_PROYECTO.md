@@ -5,9 +5,9 @@
 **Fase:** 1 — COMPLETADA; análisis y resoluciones aceptados por el usuario.
 **Modo:** GUIADO
 **Última fase completada:** 1.
-**Última fase autorizada:** 1; ejecución documental realizada en esta nueva conversación. Fases 2–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 2, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 3–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 1 cerrada por D-14. UTC y respaldo semanal confirmados; RPO objetivo 7 días, RTO 8 h, conservación de copias 30 días. Siguiente fase propuesta: Fase 2, PENDIENTE / NO OTORGADA. No repetir autorización ni análisis de Fase 1. F1-SEG-01 conserva validación legal de retención antes de datos reales; F1-SEG-02/03 conservan presupuesto y operación de respaldo en sus fases. Los registros anteriores son antecedentes históricos; el cierre vigente se encuentra al final.
+**Punto vigente de continuidad:** Fase 1 cerrada por D-14. UTC y respaldo semanal confirmados; RPO objetivo 7 días, RTO 8 h, conservación de copias 30 días. Fase 2 AUTORIZADA posteriormente para iniciar en un nuevo chat, ejecución PENDIENTE; ver el registro de continuidad al final. No repetir autorización ni análisis de Fase 1. F1-SEG-01 conserva validación legal de retención antes de datos reales; F1-SEG-02/03 conservan presupuesto y operación de respaldo en sus fases. Los registros anteriores son antecedentes históricos; el cierre vigente se encuentra al final.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -161,3 +161,16 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: base `363cfa0236185a787d86f0ef1afbc5d198ab9ed2`, árbol inicial limpio y remoto integrado sin novedades. Commit y push normales a main; SHA final local/remoto comprobado antes de confirmar entrega. La sincronización no autoriza otra fase o despliegue.
 
 **Siguiente paso:** autorización independiente de Fase 2 antes de UX/UI o prototipo. No solicitar nuevamente decisiones ya aceptadas de Fase 1. Mantener F1-SEG-01/02/03 en el arranque de sus fases y no incorporar datos personales reales antes de validar conservación.
+
+## Continuidad vigente: Fase 2 autorizada para un nuevo chat
+
+- Solicitud del 2026-10-31: «En nuevo chat inicia fase 2 inventarioTI2». Autorización expresa para Fase 2; no necesita repetirse. Ejecución PENDIENTE hasta iniciar en el nuevo chat; Fase 1 permanece COMPLETADA. Este registro actualiza las menciones históricas de Fase 2 sin autorización, sin cambiar decisiones empresariales.
+- Trabajo de esta preparación: actualizar únicamente FASES.md y ESTADO_PROYECTO.md, comprobar diferencias/estados y sincronizar GitHub. Sin diseño, prototipo, backend, datos reales, configuración de respaldos ni otra fase iniciados.
+- Insumos: requisitos y cierre aceptados por D-14; Chile/250 funcionarios, bienes estimados 900–1.500/referencia 1.200, capacidad 3.000; UTC; respaldo semanal/RPO 7 días/RTO 8 h/copias 30 días. Mantener F1-SEG-01/02/03, sin inventar cumplimiento jurídico ni tareas operativas ejecutadas.
+- Inicio autorizado: recuperar main, leer las instrucciones y documentos vigentes, presentar plan de Fase 2 y comprobar disponibilidad de visual-system-designer. La ruta citada no figura en el árbol previamente inspeccionado; buscarla nuevamente en la conversación ejecutora y declarar su ausencia si persiste. No afirmar uso del skill o pruebas sin evidencia.
+- Alcance: UX/UI, navegación y prototipo navegable con datos ficticios; revisión en computador/iPad/iPhone, teclado y responsive; Playwright si disponible; registrar evidencia, límites y aceptación visual en docs/UX_UI.md. Seguir el punto de inicio detallado al final de FASES.md.
+- Limitación: no hay herramienta para abrir otro chat automáticamente. Usuario debe abrir un nuevo chat con inventarioTI2 y escribir: «Inicia únicamente la Fase 2 de inventarioTI2, ya autorizada en FASES.md y ESTADO_PROYECTO.md. Lee las instrucciones y el cierre de Fase 1. No inicies Fase 3 ni despliegues; conserva los seguimientos y actualiza todos los cambios en GitHub».
+- Verificaciones de preparación: git inicial limpio, fetch/avance directo sin novedades; revisión de los dos documentos, conservación de decisiones y filas de fases ajenas, `git diff --check` y comprobación de estados. Sin pruebas de aplicación/navegador, al ser preparación documental.
+- Entrega: commit/push normales a main con autoría noreply; comparar SHA local/remoto antes de confirmar sincronización. Esta autorización no extiende permisos a Fase 3, producción ni publicación del sitio.
+
+**Siguiente acción:** abrir el nuevo chat y ejecutar Fase 2 con la autorización ya registrada. Esperar revisión y aceptación visual; después solicitar autorización separada para Fase 3.

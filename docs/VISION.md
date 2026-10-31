@@ -2,7 +2,7 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-30
-**Estado:** FASE 0 COMPLETADA — visión y alcance inicial aprobados el 2026-10-30. Fase 1 autorizada y análisis EN_REVISION el 2026-10-31; no hay implementación.
+**Estado:** FASE 0 COMPLETADA — visión y alcance inicial aprobados el 2026-10-30. Fase 1 COMPLETADA y aceptada por D-14 el 2026-10-31; no hay implementación.
 
 La fuente histórica de Fase 0 se conserva debajo. Para estado vigente, consultar [FASES.md](../FASES.md); para actores/procesos desarrollados, [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPRESARIAL.md). Las menciones históricas a Fase 1 sin autorización quedan sustituidas por el registro posterior, sin alterar las reglas de negocio.
 
@@ -92,3 +92,7 @@ Todos los módulos siguientes pertenecen al MVP aceptado. La prioridad expresa e
 El usuario aprobó el alcance, el orden inicial del MVP y la entrega documental de Fase 0 el 2026-10-30. P-03 queda aceptada como planificación inicial. Las interpretaciones P-01, P-02 y P-04 y los detalles A-01 a A-11 se conservan para ratificación o desarrollo en sus fases; la aprobación de la planificación no inventa respuestas a esas preguntas.
 
 Los criterios CA0-01 a CA0-06 y el plan de revisión futura del prototipo están en [REQUISITOS.md](REQUISITOS.md). Las decisiones y riesgos están en [DECISIONES.md](DECISIONES.md), y la aceptación y autorización en [../FASES.md](../FASES.md). Fase 0 COMPLETADA; no iniciar otra fase sin autorización expresa independiente.
+
+## Cierre posterior de Fase 1
+
+Los pendientes descritos en los antecedentes de Fase 0 se resolvieron en [CIERRE_FASE1.md](CIERRE_FASE1.md), aprobado por D-14. Chile/250 funcionarios; referencia estimada 1.200 bienes (rango 900–1.500), capacidad objetivo 3.000. UTC es la zona elegida; una copia semanal, RPO objetivo 7 días, RTO 8 h y copias 30 días. Conservación legal de registros en seguimiento F1-SEG-01 antes de datos reales; arquitectura/presupuesto y operación de respaldos en fases futuras. Fase 2 sigue sin autorización; no hay implementación.

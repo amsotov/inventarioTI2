@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 1 — EN_REVISION; análisis documental entregado, cierre no aprobado.
+**Fase:** 1 — COMPLETADA; análisis y resoluciones aceptados por el usuario.
 **Modo:** GUIADO
-**Última fase completada:** 0.
+**Última fase completada:** 1.
 **Última fase autorizada:** 1; ejecución documental realizada en esta nueva conversación. Fases 2–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** revisar la entrega de Fase 1 y resolver sus pendientes; no volver a iniciar el análisis ni pedir la definición del sistema. Ver el registro de ejecución de Fase 1 al final. Los apartados anteriores de Fase 0 y preparación de nuevo chat se conservan como antecedentes históricos.
+**Punto vigente de continuidad:** Fase 1 cerrada por D-14. UTC y respaldo semanal confirmados; RPO objetivo 7 días, RTO 8 h, conservación de copias 30 días. Siguiente fase propuesta: Fase 2, PENDIENTE / NO OTORGADA. No repetir autorización ni análisis de Fase 1. F1-SEG-01 conserva validación legal de retención antes de datos reales; F1-SEG-02/03 conservan presupuesto y operación de respaldo en sus fases. Los registros anteriores son antecedentes históricos; el cierre vigente se encuentra al final.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -95,7 +95,7 @@ El permiso actual de actualizar todos los cambios en GitHub es explícito y se c
 
 Este registro posterior actualiza las menciones históricas de Fase 1 sin autorización en los documentos de Fase 0. No modifica las reglas de negocio ni declara resueltos sus pendientes.
 
-## Ejecución de Fase 1 — punto vigente del 2026-10-31
+## Ejecución inicial de Fase 1 — antecedente del 2026-10-31
 
 ### Autorización y plan ejecutado
 
@@ -133,7 +133,7 @@ Destino autorizado: `amsotov/inventarioTI2`, rama `main`, desde la rama local `w
 
 Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P-04. CA1-06 y cierre de Fase 1 pendientes; no volver a pedir autorización para el análisis ya ejecutado. Fase 2 continúa sin autorización y no se inicia. La aceptación de documentos, el cierre de fase y el permiso de empezar Fase 2 son decisiones distintas.
 
-## Revisión de pendientes de Fase 1 — continuidad más reciente
+## Revisión de pendientes de Fase 1 — antecedente previo al cierre
 
 **Solicitud:** «Revisa y termina los pendientes de la fase 1». **Estado:** EN_REVISION; preparación de resoluciones completada, ratificación pendiente. Este apartado actualiza el punto de continuidad anterior sin borrar antecedentes.
 
@@ -146,3 +146,18 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: mantener entrega en main, commit con noreply del historial; comparar SHA local/remoto después de push. No afirmar sincronización por la sola creación de un commit; SHA final se informa tras comprobarlo.
 
 **Acción necesaria para cerrar:** usuario revisa el paquete y acepta o corrige sus recomendaciones por ID; aporta localidad/zona y política de conservación (o confirma su inexistencia y acuerda explícitamente su validación antes de datos reales). Ratificar estimación/capacidad si la dotación por persona difiere. Hasta entonces CA1-06 no se marca cumplido. No se vuelve a solicitar la autorización de Fase 1 ya otorgada; se pide únicamente la decisión de negocio concreta que aún falta.
+
+## Cierre de Fase 1 — continuidad vigente del 2026-10-31
+
+**Evidencia literal:** «Apruebo las conversiones, respaldo 1 vez a  la semana, zona horaria UTC y respaldo 1 vez a la semana». Se interpreta en el contexto inmediato como aprobación del paquete de recomendaciones presentado, con dos modificaciones expresas: UTC y respaldo semanal. No es solicitud de convertir archivos ni permiso de ejecutar respaldos o código.
+
+- D-14 registra aceptación y cierre. A-01 a A-11 resueltos como requisitos de análisis y P-01/P-02/P-04 ratificados; CIERRE_FASE1 versión 2 es la base vigente. Fase 1 COMPLETADA; fases 2–15 sin autorización.
+- UTC para toda fecha de negocio mostrada/filtrada/exportada, sin conversión automática al dispositivo; no se necesita una localidad chilena para definir esa zona.
+- Respaldo una vez por semana con separación máxima de 7 días entre copias exitosas; RPO objetivo ≤ 7 días (168 h), derivado de la frecuencia elegida; RTO ≤ 8 h; conservación de copias 30 días. Se retira el objetivo de RPO 24 h asociado a la propuesta diaria. Posible pérdida de hasta una semana de cambios, sin garantía operativa todavía.
+- Chile/250 funcionarios, estimación aceptada de 900–1.500 bienes/referencia 1.200 y capacidad objetivo 3.000 se conservan; objetivos de rendimiento/acceso/reportes/correo aceptados, no medidos ni implementados.
+- Política legal de conservación no informada: F1-SEG-01, organización y privacidad en Fase 6, antes de datos reales. No se inventa inexistencia de política ni plazo indefinido. F1-SEG-02 presupuesto/costos en Fase 3; F1-SEG-03 día/hora UTC, alertas, ubicación, copias y restauración en Fases 3/14. Son seguimientos futuros, no preguntas de negocio omitidas ni controles completados.
+- Actualizados cierre, decisiones, requisitos, análisis, historias/CA1, trazabilidad, visión, pruebas, README, specs/README, FASES y este estado. Los IDs se conservan; criterios condicionados se concretan con resultados aprobados, sin perder historial Git. Instrucciones y documentos técnicos de fases futuras intactos.
+- Revisión documental: `python /tmp/verificar_cierre_fase1.py`, comparación de IDs/tablas/enlaces/estados/alcance y objetivos; `git diff --check`. Evidencia en docs/PRUEBAS.md. Pruebas funcionales, respaldo/restauración real, correo y navegador NO EJECUTADOS; no hay implementación.
+- GitHub: base `363cfa0236185a787d86f0ef1afbc5d198ab9ed2`, árbol inicial limpio y remoto integrado sin novedades. Commit y push normales a main; SHA final local/remoto comprobado antes de confirmar entrega. La sincronización no autoriza otra fase o despliegue.
+
+**Siguiente paso:** autorización independiente de Fase 2 antes de UX/UI o prototipo. No solicitar nuevamente decisiones ya aceptadas de Fase 1. Mantener F1-SEG-01/02/03 en el arranque de sus fases y no incorporar datos personales reales antes de validar conservación.

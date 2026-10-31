@@ -1,12 +1,12 @@
 # Plan y evidencia de verificación
 
-**Fecha:** 2026-10-31 · **Fase:** 1 — EN_REVISION.
+**Fecha:** 2026-10-31 · **Fase:** 1 — COMPLETADA (aceptación documental; sin pruebas funcionales).
 
 ## Alcance de esta revisión
 
 Verificación documental de análisis, historias, criterios y trazabilidad. No hay aplicación ni dependencias de aplicación. Los escenarios funcionales de [HISTORIAS_USUARIO.md](HISTORIAS_USUARIO.md) y los escenarios RNF de [TRAZABILIDAD.md](TRAZABILIDAD.md) están definidos para ejecución futura, no aprobados por ejecución.
 
-## Controles ejecutados
+## Controles ejecutados — entregas previas a la aprobación
 
 | Control / comando | Resultado observado | Límite |
 |---|---|---|
@@ -26,11 +26,11 @@ La comprobación puntual utiliza aserciones de cardinalidad, referencias, cobert
 - Envío/recepción/reintentos de correo y exportaciones Excel/PDF: **NO EJECUTADAS**; solo criterios, sin conectar servicios ni datos reales.
 - Navegador, Playwright, computador/iPad/iPhone, accesibilidad y renderizado del diagrama: **NO EJECUTADAS**; Fase 2 no iniciada.
 - Rendimiento, respaldo/restauración, migración SQL Server, despliegue y producción: **NO EJECUTADAS**, fuera de Fase 1.
-- Validación empresarial y aceptación de CA1-06: **PENDIENTES** del usuario; no se declara cumplimiento jurídico ni cierre de riesgos.
+- Validación empresarial y aceptación de CA1-06: **ACEPTADAS** por D-14. No se declara cumplimiento jurídico, pruebas funcionales ni cierre de riesgos de implementación.
 
 ## Continuación
 
-Validar las preguntas de A-01 a A-11 y ratificar P-01/P-02/P-04; actualizar los criterios condicionados y sus resultados esperados. Solo entonces evaluar cierre de Fase 1. Una eventual Fase 2 necesita autorización independiente. La comprobación de sincronización de GitHub se registra en [ESTADO_PROYECTO.md](../ESTADO_PROYECTO.md); el éxito remoto se informa únicamente tras comparar SHA local/remoto.
+D-14 resuelve el análisis A-01 a A-11 y ratifica P-01/P-02/P-04. Fase 1 cerrada documentalmente; mantener F1-SEG-01/02/03 y verificar funcionalidades en fases futuras. Una eventual Fase 2 necesita autorización independiente. La comprobación de sincronización de GitHub se registra en [ESTADO_PROYECTO.md](../ESTADO_PROYECTO.md); el éxito remoto se informa únicamente tras comparar SHA local/remoto.
 
 ## Revisión de pendientes — evidencia del 2026-10-31
 
@@ -43,3 +43,15 @@ Base de comparación: `ff64f62e8581016973a9c2cf9d984fffa26dfc42`. `git status` i
 - `git diff --check`, estructura de tablas y revisión de diferencias: APROBADOS. Se corrige además una frase histórica de DECISIONES que podía interpretarse como falta de autorización actual para Fase 1.
 
 Las comprobaciones validan cobertura, preservación y coherencia documental. CR-01 a CR-20 son resultados propuestos para futuras pruebas, no pruebas funcionales ejecutadas. No hay código ni prototipo; todas las pruebas funcionales/no documentales del apartado anterior continúan NO EJECUTADAS. Aprobación empresarial, zona horaria/localidad y política de conservación siguen pendientes; no se declara cerrada Fase 1.
+
+## Cierre aprobado — evidencia vigente del 2026-10-31
+
+Base: `363cfa0236185a787d86f0ef1afbc5d198ab9ed2`. Git inicial limpio; `git fetch origin`/`git merge --ff-only origin/main` sin novedades. D-14 conserva la respuesta literal del usuario y las modificaciones UTC/respaldo semanal; no configura servicios ni respaldo.
+
+- `python /tmp/verificar_cierre_fase1.py`: revisión de IDs únicos y definidos (5 actores, 7 procesos, 6 casos, 19 reglas, 16 historias, 47 criterios, 20 CR, 16 RF/7 RNF); IDs y alcance conservados frente a la base. Criterios antes condicionados concretados con la resolución aprobada.
+- Comprobación de enlaces locales y tablas; fases 2–15 PENDIENTE / NO OTORGADA e intactas respecto de la base; AGENTS, PROMPT_MAESTRO y documentos técnicos futuros intactos; diferencias solo Markdown.
+- Coherencia UTC en definición y CR-12; respaldo semanal/RPO ≤ 7 días (168 h), RTO ≤ 8 h, copias 30 días en cierre, requisitos, trazabilidad y continuidad. Se retira la meta RPO 24 h de la propuesta diaria, conservando su antecedente explicativo.
+- A-01 a A-11 resueltos en el alcance de análisis, P-01/P-02/P-04 ratificados y CA1-06 cumplido por D-14; F1-SEG-01/02/03 conservados explícitamente antes de datos reales y en sus fases respectivas. El silencio sobre retención legal no se convierte en inexistencia de política.
+- `git diff --check`, revisión de diferencias y comprobación de alcance: sin errores de formato ni archivos de implementación. El SHA local/remoto se compara tras push antes de confirmar la entrega.
+
+Resultado de los controles documentales de cierre: APROBADO. Pruebas funcionales y de respaldo/restauración, concurrencia, correo, Excel/PDF, seguridad, Playwright y dispositivos: NO EJECUTADAS por ausencia de implementación y fases futuras sin autorización. Fase 1 COMPLETADA no significa sistema implementado ni respaldo configurado.

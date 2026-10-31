@@ -1,8 +1,8 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 ejecutada documentalmente y EN_REVISION. Sin código ni Fase 2 iniciada. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Sin código ni Fase 2 iniciada. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
 
-La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene el paquete de decisiones listo para ratificar. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
+La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
 Las instrucciones de la plantilla original se conservan a continuación como referencia.
 

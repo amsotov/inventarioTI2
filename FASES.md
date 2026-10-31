@@ -2,15 +2,15 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 1 — EN_REVISION (análisis documental entregado el 2026-10-31; cierre no aprobado).
-**Última fase completada:** 0. **Fases 2–15:** PENDIENTE / NO OTORGADA.
+**Fase actual:** 1 — COMPLETADA (análisis y resoluciones aceptados por el usuario el 2026-10-31).
+**Última fase completada:** 1. **Fases 2–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está EN_REVISION con decisiones abiertas. Las fases 2–15 siguen pendientes y sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. Las fases 2–15 siguen pendientes y sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
 | 0 | Diagnóstico y planificación | Visión, requisitos iniciales, MVP, riesgos y decisiones | COMPLETADA | Ejecución y entregables APROBADOS por el usuario el 2026-10-30 |
-| 1 | Análisis empresarial y requisitos | Actores, procesos, historias, criterios y trazabilidad | EN_REVISION | Ejecución AUTORIZADA; aceptación de entrega y cierre PENDIENTES |
+| 1 | Análisis empresarial y requisitos | Actores, procesos, historias, criterios y trazabilidad | COMPLETADA | Entrega y resoluciones APROBADAS por usuario el 2026-10-31; UTC y respaldo semanal |
 | 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | PENDIENTE | NO OTORGADA |
 | 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | PENDIENTE | NO OTORGADA |
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | PENDIENTE | NO OTORGADA |
@@ -37,6 +37,7 @@
 | 2026-10-30 | 1–15 | Al cerrar Fase 0, antes de la instrucción posterior, ninguna ejecución estaba autorizada | NO OTORGADA en ese momento | Antecedente histórico; ver autorización posterior de Fase 1 |
 | 2026-10-30 | 1 | Autorizar análisis empresarial y requisitos para iniciarse en un nuevo chat | Usuario | «En nuevo chat inicia fase 1 inventarioTI2»; autorización registrada, conversación nueva aún no abierta ni trabajo de Fase 1 ejecutado |
 | 2026-10-31 | 1 | Ejecutar únicamente análisis documental, conservar pendientes y sincronizar GitHub; sin código ni Fase 2 | Usuario | Solicitud de esta conversación; entrega EN_REVISION, aceptación y cierre aún no otorgados |
+| 2026-10-31 | 1 | Aceptar paquete de recomendaciones con UTC y respaldo una vez por semana; cerrar análisis | Usuario | «Apruebo las conversiones, respaldo 1 vez a  la semana, zona horaria UTC y respaldo 1 vez a la semana»; D-14; no autoriza Fase 2 ni configuración operativa |
 
 ## Criterios para cerrar cada fase
 - [ ] Alcance y entregables revisados.
@@ -120,7 +121,7 @@ Punto de inicio para el nuevo chat:
 La preparación de continuidad no crea automáticamente un chat. Las herramientas de esta conversación no permiten abrir uno nuevo. Este registro posterior prevalece sobre las menciones históricas de Fase 1 sin autorización conservadas en los entregables de Fase 0.
 
 
-## Ejecución y entrega de Fase 1 — 2026-10-31
+## Ejecución y entrega inicial de Fase 1 — antecedente del 2026-10-31
 
 Autorización ratificada en esta nueva conversación: «Inicia únicamente la Fase 1, ya autorizada en FASES.md y ESTADO_PROYECTO.md». Se recuperaron por avance directo `c45e96e` y `fa323a7` antes de editar; este registro actualiza el antecedente de continuidad anterior.
 
@@ -133,10 +134,25 @@ Autorización ratificada en esta nueva conversación: «Inicia únicamente la Fa
 - Estado: EN_REVISION. CA1-06 pendiente de aceptación expresa y reglas necesarias. No marcar COMPLETADA por entregar documentos ni por subirlos a GitHub.
 - Siguiente paso: revisar el análisis y resolver/ratificar pendientes; autorización de Fase 2 NO OTORGADA. Sin código, prototipo, instalación, arquitectura ni despliegue.
 
-## Revisión de pendientes de Fase 1 — 2026-10-31
+## Revisión de pendientes de Fase 1 — antecedente previo a la aprobación
 
 Instrucción adicional: «Revisa y termina los pendientes de la fase 1». Se completa el trabajo preparatorio con [CIERRE_FASE1.md](docs/CIERRE_FASE1.md): alternativas, recomendaciones, contratos de reportes, parámetros de acceso/correo/servicio y 20 casos de aceptación complementarios. Los 14 pendientes A/P tienen una propuesta verificable; no se declaran aprobados por solicitar su desarrollo.
 
 El usuario confirma Chile y 250 funcionarios y solicita calcular bienes (D-13). Se documenta estimación de 900–1.500 bienes, referencia 1.200, con supuestos; capacidad objetivo propuesta 3.000. La localidad/zona y la política de conservación aún no se han proporcionado. La propuesta ofrece America/Santiago condicionada a la localidad, no la registra como confirmada.
 
 CA1-01 a CA1-05 cuentan con desarrollo y revisión documental; CA1-06 requiere ratificación de recomendaciones y resolución o aplazamiento explícito de los datos pendientes con sus límites. Estado de Fase 1: EN_REVISION, sin aprobación ficticia de cierre. No se inicia Fase 2 ni se modifica su estado. Responsable de ratificación: usuario; política de conservación: organización. La sincronización con GitHub continúa autorizada.
+
+## Cierre aprobado de Fase 1 — estado vigente
+
+D-14 acepta el paquete documentado y sus alternativas seleccionadas, con UTC y un respaldo semanal. [CIERRE_FASE1.md](docs/CIERRE_FASE1.md) versión 2 es la base vigente y actualiza el estado EN_REVISION de los antecedentes anteriores.
+
+- [x] CA1-01: actores y responsabilidades diferenciados y aceptados.
+- [x] CA1-02: siete módulos con valor, procesos, excepciones y reglas verificables.
+- [x] CA1-03: 16 RF/7 RNF, 16 historias/47 criterios y 20 casos complementarios; aceptación de especificación, sin pruebas funcionales.
+- [x] CA1-04: A-01 a A-11 resueltos para análisis, P-01/P-02/P-04 ratificados; F1-SEG-01/02/03 conservados como obligaciones futuras.
+- [x] CA1-05: revisión documental y continuidad actualizadas; sincronización con GitHub se confirma tras comparar SHA local/remoto al entregar.
+- [x] CA1-06: aceptación expresa del usuario registrada en D-14 el 2026-10-31.
+
+UTC se usa en consultas, fichas, movimientos, auditoría y exportaciones. Respaldo semanal implica RPO objetivo de 7 días (168 h), sustituyendo 24 h de la propuesta diaria anterior; RTO 8 h y copias durante 30 días. La validación legal del plazo de registros personales no se confunde con conservación de copias: F1-SEG-01 en Fase 6 antes de datos reales. Presupuesto en Fase 3; día/hora UTC, alertas y configuración/pruebas de copias en Fases 3/14. Ninguna de esas tareas se declara implementada.
+
+Fase 1 COMPLETADA. Siguiente fase propuesta: 2 — UX/UI, que requiere autorización independiente antes de iniciar. Fases 2–15 permanecen PENDIENTE / NO OTORGADA; sin código, prototipo, despliegue ni producción.

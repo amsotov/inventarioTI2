@@ -1,34 +1,32 @@
 # Requisitos y criterios de aceptación iniciales
 
 **Proyecto:** inventarioTI2
-**Fase:** 1 — EN_REVISION; base de Fase 0 conservada y análisis detallado vinculado.
+**Fase:** 1 — COMPLETADA; requisitos detallados aceptados por D-14.
 **Fecha:** 2026-10-31
 
-Este catálogo conserva los requisitos y criterios iniciales aceptados como alcance de Fase 0. El detalle de Fase 1 está en [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPRESARIAL.md), [HISTORIAS_USUARIO.md](HISTORIAS_USUARIO.md) y [TRAZABILIDAD.md](TRAZABILIDAD.md). No hay funcionalidades implementadas ni aceptación de cierre de Fase 1; los criterios condicionados requieren las decisiones citadas.
-
-La revisión de pendientes se consolida en [CIERRE_FASE1.md](CIERRE_FASE1.md): alternativas, parámetros y 20 casos concretos; Chile y 250 funcionarios confirmados, bienes estimados y decisiones restantes identificadas. Las filas originales se conservan, sin convertir recomendaciones en decisiones del usuario.
+El alcance de Fase 0 y sus IDs se conservan. [CIERRE_FASE1.md](CIERRE_FASE1.md) es la resolución aprobada de A-01 a A-11 y P-01/P-02/P-04; completa [análisis](ANALISIS_EMPRESARIAL.md), [historias](HISTORIAS_USUARIO.md) y [trazabilidad](TRAZABILIDAD.md). Usuario aprueba recomendaciones con **UTC** y **respaldo semanal**. No hay funcionalidades implementadas; aceptación de requisitos y pruebas ejecutadas son distintas. Jurisdicción Chile, 250 funcionarios; bienes estimados 900–1.500, referencia 1.200. Validación legal de conservación: F1-SEG-01 antes de datos reales.
 
 ## Requisitos funcionales y backlog inicial
 Todas las filas pertenecen al MVP aprobado en Fase 0. El orden es la prioridad inicial aceptada para planificación, con refinamiento posterior; no cambia las puertas de aprobación por fase.
 
-| ID | Módulo / requisito | Criterio de aceptación propuesto |
+| ID | Módulo / requisito | Criterio de aceptación vigente |
 |---|---|---|
-| RF-01 | Funcionarios: nombre, RUT/ID, cargo, unidad/departamento, correo y activo/inactivo; crear, editar, mover de unidad y dar de baja lógicamente. | El administrador gestiona los datos; la baja conserva referencias e historial. El tratamiento de bienes aún asignados se define antes de implementar. |
-| RF-02 | Bienes: tipo (notebook, PC, monitor, impresora, etc.), marca, modelo, serie, código de inventario, fecha de adquisición, condición y observaciones. | Serie y código son únicos; se rechaza un duplicado sin escritura parcial. Normalización, obligatoriedad y datos heredados quedan por precisar. |
+| RF-01 | Funcionarios: nombre, RUT/ID, cargo, unidad/departamento, correo y activo/inactivo; crear, editar, mover de unidad y dar de baja lógicamente. | Administrador gestiona identidad RUT/ID canónica y única; baja bloqueada mientras tenga bienes. Reactivar no restaura custodia; pertenencias históricas conservadas (A-01/A-03/A-05). |
+| RF-02 | Bienes: tipo (notebook, PC, monitor, impresora, etc.), marca, modelo, serie, código de inventario, fecha de adquisición, condición y observaciones. | Código obligatorio y único; serie opcional con motivo si falta y única cuando existe. Comparar sin espacios exteriores y sin diferencia de mayúsculas; no reutilizar tras baja. Duplicados concurrentes sin escritura parcial (A-02). |
 | RF-03 | Asignaciones: funcionario con varios bienes y bien con una sola asignación vigente; fecha de inicio y fin. | Asignar dos bienes al mismo funcionario es válido; dos asignaciones simultáneas del mismo bien se rechazan también bajo concurrencia. |
 | RF-04 | Movimientos: asignación, devolución, traslado a otro funcionario, cambio de condición y baja. | Se conserva bien, origen/destino cuando corresponda, fecha, motivo y administrador responsable; la situación actual coincide con el historial. |
-| RF-05 | Historial de movimientos inmutable. | No hay edición ni borrado por las cuentas de la aplicación. La forma de corregir un error sin perder evidencia queda pendiente. |
+| RF-05 | Historial de movimientos inmutable. | No editar/borrar movimientos por cuentas de aplicación. Corregir con anotación inmutable vinculada y movimientos compensatorios admisibles, sin reescribir historia (A-04). |
 | RF-06 | Buscador global con una sola barra para bienes y funcionarios. | Busca bienes por serie, código, marca, modelo, tipo y condición; funcionarios por nombre, RUT/ID, correo, cargo y unidad. La ficha del bien muestra asignación actual e historial; la del funcionario muestra bienes actuales y anteriores. |
-| RF-07 | Filtros combinables: condición, tipo de bien, unidad, asignado/sin asignar y fechas. | Los filtros se combinan y se conservan en las exportaciones; el significado del rango de fechas y de la unidad histórica queda por acordar. |
+| RF-07 | Filtros combinables: condición, tipo de bien, unidad, asignado/sin asignar y fechas. | Filtros combinados y exportación coherente. Días UTC con fin exclusivo del día siguiente; campo temporal y unidad actual/histórica definidos por consulta en A-05/A-06. |
 | RF-08 | Dos roles: administrador y lectura. | Lectura consulta inventario e historial y exporta reportes permitidos; sus intentos de escritura se deniegan en servidor/base de datos, aunque evite la interfaz. |
-| RF-09 | Gestión de cuentas solo por administrador: nombre, correo, rol, cambio de rol, desactivar/reactivar y forzar cambio de contraseña. | No existe autorregistro público; se conserva identidad histórica de cuentas desactivadas; se verifica revocación de acceso. |
-| RF-10 | Recuperar/restablecer contraseña mediante correo. | El proceso usa enlaces temporales y de uso limitado sin exponer contraseñas; caducidad y experiencia de invitación por definir. |
+| RF-09 | Gestión de cuentas solo por administrador: nombre, correo, rol, cambio de rol, desactivar/reactivar y forzar cambio de contraseña. | Sin autorregistro; invitación de un uso/24 h, MFA administrativo y revocación en siguiente operación protegida. Identidad de cuenta inactiva conservada (A-08). |
+| RF-10 | Recuperar/restablecer contraseña mediante correo. | Enlace de un uso/30 min; nuevo enlace invalida anteriores; no reactiva cuentas inactivas ni expone contraseñas (A-08). |
 | RF-11 | Proteger administradores y acciones críticas. | No es posible desactivar ni degradar al último administrador activo, tampoco concurrentemente; un administrador no cambia su propio rol y las acciones críticas requieren confirmación. |
 | RF-12 | Bitácora de auditoría de cambios: quién, cuándo, entidad, acción y valores anterior/nuevo. | Crear, editar, baja y movimientos de bienes/funcionarios, cambios de cuentas/roles/activación y configuración generan registro protegido contra actualización/borrado por cuentas de aplicación; no se registran contraseñas ni tokens. |
-| RF-13 | Consulta administrativa de auditoría con filtros por fecha, usuario, bien, funcionario y acción. | El administrador puede filtrar y consultar registros; lectura no obtiene auditoría según interpretación inicial de la matriz del usuario, pendiente de ratificación. |
+| RF-13 | Consulta administrativa de auditoría con filtros por fecha, usuario, bien, funcionario y acción. | Administrador filtra y consulta; lectura no accede a auditoría ni la exporta. P-01 ratificada por D-14; fechas de registro UTC. |
 | RF-14 | Destinatario de notificaciones configurable por administrador. | Un cambio autorizado del correo queda auditado y afecta notificaciones posteriores, sin modificar código; permisos de configuración se verifican fuera de la interfaz. |
-| RF-15 | Correo automático ante cambios: qué cambió, quién lo hizo y cuándo. | Se registra el resultado del envío y se comprueba el destinatario vigente. Alcance de eventos, reintentos, duplicados, fallos y cambio del destinatario se deciden antes de implementar. Los cambios de cuentas deben auditarse; su notificación se confirma expresamente. |
-| RF-16 | Reportes: inventario general, bienes por funcionario, movimientos por fechas, bienes por condición y auditoría. | Excel y PDF contienen los datos y filtros solicitados y respetan permisos; auditoría restringida según RF-13. También se exportan resultados del buscador. |
+| RF-15 | Correo automático ante cambios: qué cambió, quién lo hizo y cuándo. | Catálogo A-07 aprobado: cambios empresariales/cuentas/configuración según destinatarios y minimización. Registrar resultado; fallo no revierte operación. Tres reintentos transitorios a 1/5/15 min; resultado incierto requiere conciliación. No copiar recuperación al encargado. |
+| RF-16 | Reportes: inventario general, bienes por funcionario, movimientos por fechas, bienes por condición y auditoría. | Cinco reportes y buscador en Excel/PDF conforme A-11; mismos filtros/permisos, columnas/orden definidos. Límites 10.000 filas Excel/2.000 PDF, sin truncado; auditoría solo administrador; vacío válido. |
 
 ## Permisos iniciales
 | Acción | Administrador | Lectura |
@@ -38,7 +36,7 @@ Todas las filas pertenecen al MVP aprobado en Fase 0. El orden es la prioridad i
 | Crear/editar/mover/dar de baja bienes y funcionarios | Sí | No |
 | Asignar, devolver y trasladar bienes | Sí | No |
 | Gestionar cuentas y destinatario | Sí | No |
-| Consultar/exportar auditoría | Sí | No, interpretación pendiente de ratificación |
+| Consultar/exportar auditoría | Sí | No; P-01 ratificada por D-14 |
 | Editar/borrar historial o auditoría | No | No |
 
 ## Requisitos no funcionales
@@ -46,11 +44,11 @@ Todas las filas pertenecen al MVP aprobado en Fase 0. El orden es la prioridad i
 |---|---|---|
 | RNF-01 | Autorización efectiva en servidor y RLS en Supabase, validando rol real. | Pruebas negativas por rol y acceso directo; nunca confiar en controles visuales. |
 | RNF-02 | Integridad y concurrencia. | Operaciones relacionadas sin estados parciales; unicidad y última cuenta administrativa protegidas bajo concurrencia. |
-| RNF-03 | Trazabilidad temporal. | Diferenciar fecha efectiva del movimiento de fecha de registro; zona horaria de negocio y retroactividad por confirmar. |
-| RNF-04 | Privacidad y secretos. | RUT/ID, correos y auditoría solo accesibles por usuarios autorizados; secretos fuera del repositorio y reportes/correos sin credenciales. Retención y normativa por validar. |
+| RNF-03 | Trazabilidad temporal. | Fechas efectivas/registro diferenciadas; UTC por decisión del usuario. Movimientos al confirmar, sin retroactividad; intervalos inicio incluido/fin excluido (A-04/A-06). |
+| RNF-04 | Privacidad y secretos. | Campos personales solo por acceso autorizado; secretos fuera de Git/correos/auditoría. Exportaciones ordinarias sin RUT/ID ni correo personal. Validación legal y plazo de conservación en F1-SEG-01 antes de datos reales. |
 | RNF-05 | Responsive y accesibilidad. | Revisión de computador, iPad e iPhone en Fase 2; objetivo WCAG 2.2 AA, con evidencia de pruebas y límites explícitos. |
 | RNF-06 | Portabilidad futura a SQL Server. | Separar reglas de negocio de adaptadores específicos; justificar dependencias de Supabase en Fase 3 sin prometer migración sin cambios. |
-| RNF-07 | Operación y recuperación. | Definir volúmenes, disponibilidad, respaldos, restauración, retención, desempeño y tratamiento de fallos de correo antes de verificar umbrales. |
+| RNF-07 | Operación y recuperación. | Objetivos A-09 aprobados: capacidad 3.000 bienes; búsqueda p95 ≤ 2 s, escritura ≤ 3 s; copia semanal, RPO ≤ 7 días (168 h), RTO ≤ 8 h, copias 30 días. Verificación de respaldo/restauración pendiente en fases futuras. |
 
 ## Orden propuesto del backlog del MVP
 1. Consistencia de bienes, funcionarios, asignaciones y fechas (RF-01 a RF-05).
@@ -64,10 +62,12 @@ Este orden expresa dependencias; no autoriza implementar ni adelantar fases.
 ## Modelo conceptual sugerido por el usuario
 Entidades candidatas: `funcionarios`, `bienes`, `asignaciones`, `movimientos`, `auditoria`, `configuracion` y `usuarios` con rol. Las relaciones, tipos, tablas físicas, políticas RLS y migraciones corresponden a fases posteriores. Condición física y situación administrativa del bien deben representarse por separado. Funcionario y cuenta no son equivalentes.
 
-## Pendientes antes de detallar o implementar
+## Dependencias de implementación
 Consultar la matriz de decisiones en [DECISIONES.md](DECISIONES.md). No se han ejecutado pruebas de aplicación; este documento define comportamiento esperado.
 
-## Fuente y estado de los requisitos
+## Fuente de Fase 0 y evolución de los requisitos
+
+Los siguientes pendientes describen el estado heredado de Fase 0. D-14 y CIERRE_FASE1 los actualizan y resuelven para el análisis; los seguimientos futuros continúan explícitos.
 
 Se preservan RF-01 a RF-16, RNF-01 a RNF-07 y su numeración del commit actualizado por el usuario `ea60377feb246ede15fef00d386bd022a3deaa94`. La revisión de GitHub solicitada en esta sesión aporta el detalle empresarial que no estaba en la plantilla inicial. No se excluyen correos ni reportes del MVP.
 
@@ -78,7 +78,7 @@ Se preservan RF-01 a RF-16, RNF-01 a RNF-07 y su numeración del commit actualiz
 
 ## Recorridos críticos para aceptación futura del MVP
 
-Son los escenarios iniciales conservados de Fase 0, ahora desarrollados en HISTORIAS_USUARIO.md y TRAZABILIDAD.md. No son pruebas ejecutadas. Los detalles abiertos y la validación con datos sintéticos siguen pendientes.
+Son los escenarios iniciales conservados de Fase 0, ahora desarrollados en HISTORIAS_USUARIO.md y TRAZABILIDAD.md. No son pruebas ejecutadas. Los detalles empresariales están resueltos por D-14; ejecución con datos sintéticos y seguimientos futuros aún pendientes.
 
 1. **Inventariar y asignar:** administrador registra un funcionario y dos bienes, asigna ambos al funcionario y comprueba sus fichas e historial. Serie/código duplicados y segunda asignación vigente del mismo bien se rechazan sin cambios parciales, incluidas solicitudes concurrentes (RF-01 a RF-03; A-01/A-02).
 2. **Mover y conservar historia:** trasladar un bien a otro funcionario, devolverlo y cambiar su condición; comprobar cronología y situación vigente en ambas fichas. La baja lógica conserva referencias; sus efectos sobre asignaciones y corrección de errores se prueban conforme A-03/A-04/A-05 (RF-04/RF-05).

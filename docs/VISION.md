@@ -2,7 +2,9 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-30
-**Estado:** FASE 0 COMPLETADA — visión y alcance inicial aprobados por el usuario el 2026-10-30; no es una implementación.
+**Estado:** FASE 0 COMPLETADA — visión y alcance inicial aprobados el 2026-10-30. Fase 1 autorizada y análisis EN_REVISION el 2026-10-31; no hay implementación.
+
+La fuente histórica de Fase 0 se conserva debajo. Para estado vigente, consultar [FASES.md](../FASES.md); para actores/procesos desarrollados, [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPRESARIAL.md). Las menciones históricas a Fase 1 sin autorización quedan sustituidas por el registro posterior, sin alterar las reglas de negocio.
 
 ## Contexto y problema
 Organización con funcionarios y equipos computacionales distribuidos entre unidades o áreas. Hoy falta un control centralizado de quién tiene cada equipo, desde cuándo y qué movimientos ha tenido. Esto dificulta auditorías, devoluciones y respaldo ante cambios.

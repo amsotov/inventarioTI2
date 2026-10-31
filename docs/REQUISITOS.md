@@ -1,10 +1,10 @@
 # Requisitos y criterios de aceptación iniciales
 
 **Proyecto:** inventarioTI2
-**Fase:** 0 — COMPLETADA; entrega aprobada por el usuario el 2026-10-30
-**Fecha:** 2026-10-30
+**Fase:** 1 — EN_REVISION; base de Fase 0 conservada y análisis detallado vinculado.
+**Fecha:** 2026-10-31
 
-Este catálogo recoge los requisitos del usuario y criterios propuestos para validación posterior. No constituye análisis detallado de Fase 1 ni evidencia de funcionalidades implementadas.
+Este catálogo conserva los requisitos y criterios iniciales aceptados como alcance de Fase 0. El detalle de Fase 1 está en [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPRESARIAL.md), [HISTORIAS_USUARIO.md](HISTORIAS_USUARIO.md) y [TRAZABILIDAD.md](TRAZABILIDAD.md). No hay funcionalidades implementadas ni aceptación de cierre de Fase 1; los criterios condicionados requieren las decisiones citadas.
 
 ## Requisitos funcionales y backlog inicial
 Todas las filas pertenecen al MVP aprobado en Fase 0. El orden es la prioridad inicial aceptada para planificación, con refinamiento posterior; no cambia las puertas de aprobación por fase.
@@ -76,7 +76,7 @@ Se preservan RF-01 a RF-16, RNF-01 a RNF-07 y su numeración del commit actualiz
 
 ## Recorridos críticos para aceptación futura del MVP
 
-Son escenarios de verificación iniciales, no historias detalladas de Fase 1 ni pruebas ejecutadas. Se concretarán con los detalles abiertos y datos sintéticos.
+Son los escenarios iniciales conservados de Fase 0, ahora desarrollados en HISTORIAS_USUARIO.md y TRAZABILIDAD.md. No son pruebas ejecutadas. Los detalles abiertos y la validación con datos sintéticos siguen pendientes.
 
 1. **Inventariar y asignar:** administrador registra un funcionario y dos bienes, asigna ambos al funcionario y comprueba sus fichas e historial. Serie/código duplicados y segunda asignación vigente del mismo bien se rechazan sin cambios parciales, incluidas solicitudes concurrentes (RF-01 a RF-03; A-01/A-02).
 2. **Mover y conservar historia:** trasladar un bien a otro funcionario, devolverlo y cambiar su condición; comprobar cronología y situación vigente en ambas fichas. La baja lógica conserva referencias; sus efectos sobre asignaciones y corrección de errores se prueban conforme A-03/A-04/A-05 (RF-04/RF-05).

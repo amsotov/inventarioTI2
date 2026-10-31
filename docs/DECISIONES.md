@@ -1,7 +1,9 @@
 # Registro de decisiones y riesgos
 
-**Fecha:** 2026-10-30
-**Fase:** 0 — COMPLETADA; cierre aprobado por el usuario el 2026-10-30
+**Fecha:** 2026-10-31
+**Fase:** 1 — EN_REVISION; Fase 0 conserva su cierre aprobado.
+
+El registro de Fase 0 se conserva como antecedente. D-12 actualiza su autorización de Fase 1; fases 2–15 continúan sin autorización. A-01 a A-11 y P-01/P-02/P-04 no se han resuelto. Su desarrollo y efecto en la aceptación están en [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPRESARIAL.md).
 
 ## Decisiones confirmadas por el usuario
 | ID | Decisión / evidencia | Consecuencia |
@@ -17,6 +19,7 @@
 | D-09 | Tras autorización de Fase 2, usar visual-system-designer, datos ficticios, revisión en computador/iPad/iPhone y Playwright si está disponible. | Fase 2 pendiente; no avanzar a Fase 3 sin aprobación expresa. |
 | D-10 | En esta sesión: únicamente Fase 0, preservar trabajo existente, sin código ni publicación; después el usuario informa que actualizó GitHub y pide revisar nuevamente. | Recuperar y complementar los documentos actualizados localmente; no hacer push, PR, despliegue ni iniciar otra fase. La cita histórica de D-08 no amplía esta autorización. |
 | D-11 | Posteriormente el usuario indica: «todos los cambios del este proyecto inventarioTI2 deben actualizarse en github y aprueba esta fase». | Fase 0 COMPLETADA y aprobada; mantener todos los cambios autorizados del proyecto sincronizados en GitHub. Sustituye la restricción de entrega local de D-10, sin autorizar nuevas fases ni despliegues. Regla permanente registrada en AGENTS.md. |
+| D-12 | Autorización del 2026-10-30: «En nuevo chat inicia fase 1 inventarioTI2», registrada en `c45e96e`/`fa323a7`; el 2026-10-31 el usuario pide iniciar únicamente Fase 1, conservar pendientes y actualizar GitHub. | Ejecutar análisis documental de Fase 1 sin volver a pedir autorización; entrega EN_REVISION, sin aceptación de cierre, código, Fase 2 ni despliegue. |
 
 Fecha de registro/revisión: **2026-10-30**. D-01 a D-09 se conservan del commit del usuario `ea60377feb246ede15fef00d386bd022a3deaa94`; D-10 registra las instrucciones iniciales y D-11 la aprobación y autorización posterior del usuario. El cierre de Fase 0 proviene de D-11, sin iniciar ni autorizar Fase 1.
 

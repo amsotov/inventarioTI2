@@ -1,11 +1,13 @@
 # Estado del proyecto — Punto de continuidad
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
-**Fecha:** 2026-10-30
-**Fase:** 0 — COMPLETADA; aprobada por el usuario el 2026-10-30
+**Fecha:** 2026-10-31
+**Fase:** 1 — EN_REVISION; análisis documental entregado, cierre no aprobado.
 **Modo:** GUIADO
 **Última fase completada:** 0.
-**Última fase autorizada:** 1, para iniciarse en un nuevo chat; ejecución PENDIENTE. Fases 2–15 sin autorización.
+**Última fase autorizada:** 1; ejecución documental realizada en esta nueva conversación. Fases 2–15 PENDIENTE / NO OTORGADA.
+
+**Punto vigente de continuidad:** revisar la entrega de Fase 1 y resolver sus pendientes; no volver a iniciar el análisis ni pedir la definición del sistema. Ver el registro de ejecución de Fase 1 al final. Los apartados anteriores de Fase 0 y preparación de nuevo chat se conservan como antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -72,7 +74,7 @@ La revisión documental no acredita funcionalidades implementadas, conformidad d
 - El primer intento de push fue rechazado por la protección de correo privado de GitHub (GH007). Se conserva esa protección y se usa la dirección `noreply` verificada de la cuenta para el commit, sin modificar la configuración global ni el historial remoto.
 - Esta sincronización no equivale a publicación del sistema ni a autorización de otra fase.
 
-## Siguiente paso
+## Siguiente paso al cerrar Fase 0 — antecedente
 Fase 0 cerrada y aprobada. El usuario autorizó después Fase 1 — análisis empresarial y requisitos para iniciarse en un nuevo chat. Abrir esa conversación, recuperar `main` vigente y seguir el punto de inicio de `FASES.md`; no volver a pedir autorización para Fase 1. No iniciar Fase 2 ni Fase 3 por inferencia.
 
 Decisiones abiertas: A-01 a A-11; interpretaciones por ratificar o desarrollar: P-01, P-02 y P-04. P-03 queda aceptada como planificación inicial y CA0-06 cumplido por aprobación expresa. El cierre acepta la entrega con sus pendientes documentados, sin inventar reglas detalladas ni pedir nuevamente la definición del sistema.
@@ -81,7 +83,7 @@ Cuando se autorice Fase 2: obtener y leer visual-system-designer, construir prot
 
 El permiso actual de actualizar todos los cambios en GitHub es explícito y se conserva para futuras tareas. La prohibición de publicar el sitio o realizar despliegues sigue vigente, al igual que las aprobaciones independientes de las fases.
 
-## Continuidad para iniciar Fase 1 en un nuevo chat
+## Continuidad para iniciar Fase 1 en un nuevo chat — antecedente
 
 - Instrucción recibida: «En nuevo chat inicia fase 1 inventarioTI2».
 - Fecha de registro: 2026-10-30 (America/Santiago). La Fase 1 queda autorizada para la nueva conversación; su ejecución continúa PENDIENTE. Fase 0 sigue COMPLETADA y aprobada.
@@ -92,3 +94,41 @@ El permiso actual de actualizar todos los cambios en GitHub es explícito y se c
 - Las fases 2–15 y el despliegue del sitio siguen sin autorización. La sincronización de todos los cambios autorizados con GitHub permanece vigente.
 
 Este registro posterior actualiza las menciones históricas de Fase 1 sin autorización en los documentos de Fase 0. No modifica las reglas de negocio ni declara resueltos sus pendientes.
+
+## Ejecución de Fase 1 — punto vigente del 2026-10-31
+
+### Autorización y plan ejecutado
+
+El usuario solicita: «Inicia únicamente la Fase 1, ya autorizada en FASES.md y ESTADO_PROYECTO.md», con actores, procesos, reglas, historias, criterios y trazabilidad; conservar pendientes y actualizar GitHub, sin código ni Fase 2. La autorización anterior consta en `c45e96e`/`fa323a7`. Se recuperaron ambos commits por avance directo antes de editar, con árbol limpio y sin sobrescribir trabajo remoto. Base de esta entrega: `fa323a774bc763f816d78093370618ee8e867ad2`.
+
+Se presentó el plan y se ejecutó únicamente análisis documental. Responsable de redacción/verificación: Codex; decisiones de negocio y cierre: usuario. No se realizaron entrevistas, no se envió correo ni se consultaron servicios de negocio. No se instaló Spec Kit: no figura en el árbol ni está disponible `specify` en PATH.
+
+### Trabajo y archivos de esta entrega
+
+- Creados `docs/ANALISIS_EMPRESARIAL.md`, `docs/HISTORIAS_USUARIO.md` y `docs/TRAZABILIDAD.md`: 5 actores diferenciados, 7 procesos con alternativas/excepciones, 6 casos críticos de movimientos, 19 reglas (16 confirmadas y 3 interpretaciones), 16 historias con 47 criterios y 7 escenarios RNF.
+- Actualizados `docs/REQUISITOS.md`, `docs/DECISIONES.md` y `docs/VISION.md`: enlace al detalle vigente y D-12 para la autorización, preservando las filas de negocio originales. Los antecedentes de Fase 0 se conservan identificados como históricos.
+- Actualizados `FASES.md` y este documento: Fase 1 EN_REVISION; Fase 0 COMPLETADA; fases 2–15 PENDIENTE / NO OTORGADA. No se presupone aceptación del análisis.
+- Actualizados `docs/PRUEBAS.md`, `README.md` y `specs/README.md`: evidencia documental, navegación y límites reales del repositorio. Se corrige la afirmación heredada de que el skill visual está incluido; su ruta no existe en este árbol y se revisará en una Fase 2 autorizada.
+- Total: 11 archivos Markdown nuevos/modificados. AGENTS.md y PROMPT_MAESTRO.md intactos; arquitectura, datos, seguridad, UX/UI, despliegue y manuales intactos. Sin código, prototipo, esquema físico, políticas, herramientas instaladas ni despliegues.
+
+### Decisiones, riesgos y pendientes
+
+- A-01 a A-11 y P-01/P-02/P-04 continúan abiertos, con preguntas concretas y criterios afectados en ANALISIS_EMPRESARIAL. P-03 sigue aceptada como orden inicial del MVP; no se excluyen notificaciones ni reportes.
+- Fechas/retroactividad, normalización de identificadores, bajas/reactivaciones, unidad histórica, eventos y fallos del correo, acceso a auditoría, acceso inicial/sesiones, privacidad, columnas y metas operativas no se resuelven por inferencia.
+- Los escenarios condicionados no tienen aún resultado empresarial definitivo. La entrega documental no elimina R-01 a R-07 ni acredita funcionalidades o controles implementados.
+
+### Verificaciones ejecutadas
+
+- Lectura de AGENTS.md, PROMPT_MAESTRO.md, toda la documentación vigente, instrucciones de entorno y actualización remota.
+- `git fetch origin` con red habilitada y `git merge --ff-only origin/main`: correctos; primer intento sin acceso de red falló al conectar al proxy.
+- `python /tmp/verificar_fase1.py`: APROBADO; cardinalidades, unicidad de IDs, referencias, cobertura completa de 16 RF/7 RNF, enlaces locales, preservación literal de filas RF/RNF/D/P/A/R, instrucciones y documentos futuros intactos; cambios solo Markdown.
+- `git diff --check` y revisión documental de diferencias/archivos nuevos: APROBADOS. Detalle y límites en docs/PRUEBAS.md.
+- Pruebas funcionales, concurrencia real, seguridad/RLS, correo, Excel/PDF, navegador, Playwright, accesibilidad, rendimiento y restauración: NO EJECUTADAS; no hay implementación y Fase 2 no está autorizada.
+
+### Sincronización de esta entrega
+
+Destino autorizado: `amsotov/inventarioTI2`, rama `main`, desde la rama local `work` mediante avance normal y sin forzar historial. Usar autoría `noreply` de la cuenta ya verificada en el historial, sin modificar configuración global ni publicar correo privado. Antes del commit se revisan cambios y verificaciones; después del push se compara `git rev-parse HEAD` con `git ls-remote origin refs/heads/main`. La confirmación y SHA final se entregan al usuario tras esa comprobación, sin una modificación autorreferente del commit.
+
+### Siguiente acción
+
+Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P-04. CA1-06 y cierre de Fase 1 pendientes; no volver a pedir autorización para el análisis ya ejecutado. Fase 2 continúa sin autorización y no se inicia. La aceptación de documentos, el cierre de fase y el permiso de empezar Fase 2 son decisiones distintas.

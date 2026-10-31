@@ -12,4 +12,4 @@ Esta carpeta se reserva para especificaciones funcionales por módulo o historia
 - Casos de prueba.
 - Estado y aprobación.
 
-No se han creado especificaciones de negocio todavía.
+El análisis de Fase 1 se mantiene en la documentación existente: [análisis empresarial](../docs/ANALISIS_EMPRESARIAL.md), [historias](../docs/HISTORIAS_USUARIO.md) y [trazabilidad](../docs/TRAZABILIDAD.md). No se detectó Spec Kit en el árbol ni el comando `specify`; no se instaló ni se generó configuración. Esta carpeta se conserva sin duplicar especificaciones.

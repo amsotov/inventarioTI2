@@ -1,4 +1,8 @@
-# Plantilla universal de proyectos empresariales para Codex Cloud
+# inventarioTI2 — Inventario y control de bienes computacionales
+
+Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 ejecutada documentalmente y EN_REVISION. Sin código ni Fase 2 iniciada. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+
+Las instrucciones de la plantilla original se conservan a continuación como referencia.
 
 Conjunto reutilizable de instrucciones y documentos para iniciar **un repositorio de proyecto nuevo**, usando un **modo guiado**: cada fase necesita aprobación expresa antes de comenzar.
 
@@ -33,4 +37,4 @@ Conjunto reutilizable de instrucciones y documentos para iniciar **un repositori
 - Las carpetas `docs/` y `specs/` ya contienen plantillas para conservarse en Git.
 
 ## Visualización del sistema (Skill de Fase 2)
-Esta plantilla contiene `.agents/skills/visual-system-designer/SKILL.md`. Una vez aprobada la Fase 2, indica a Codex: `Usa el skill visual-system-designer para crear un prototipo navegable del sistema con datos ficticios, muéstrame el preview y valida escritorio, tablet y móvil. No avances a Fase 3 sin aprobación.` La posibilidad de preview/screenshot depende del entorno y herramientas instaladas.
+La plantilla cita `.agents/skills/visual-system-designer/SKILL.md`, pero esa ruta no está presente en el árbol inspeccionado. Su disponibilidad se revisará cuando se autorice Fase 2. Una vez aprobada la Fase 2, indica a Codex: `Usa el skill visual-system-designer para crear un prototipo navegable del sistema con datos ficticios, muéstrame el preview y valida escritorio, tablet y móvil. No avances a Fase 3 sin aprobación.` La posibilidad de preview/screenshot depende del entorno y herramientas instaladas.

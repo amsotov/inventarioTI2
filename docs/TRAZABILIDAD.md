@@ -74,3 +74,7 @@ La [resolución aprobada](CIERRE_FASE1.md) complementa el análisis con resultad
 D-13 confirma Chile y 250 funcionarios y autoriza el cálculo aproximado de bienes. Referencia: 4 × 250 + 20 % = 1.200; rango estimado 900–1.500; capacidad objetivo aprobada 3.000. UTC confirmada por D-14; retención legal en seguimiento F1-SEG-01 antes de datos reales. El volumen estimado no se confunde con datos medidos y no implica 250 cuentas de acceso.
 
 CA-N07 y CR-17 deben verificar una copia semanal, intervalo máximo de 7 días entre copias exitosas, conservación de copias 30 días, RPO ≤ 7 días (168 h) y RTO ≤ 8 h. Día/hora UTC, alertas y restauración en F1-SEG-03; no hay tareas programadas ni respaldos configurados en Fase 1.
+
+## Evidencia visual de Fase 2
+
+Mapa de pantallas y cobertura HU-01 a HU-16 en [UX_UI.md](UX_UI.md); recorridos y resultados ejecutados en [PRUEBAS.md](PRUEBAS.md). La evidencia amplía CA-N05 a nivel de prototipo. Los CR y CA de integridad, persistencia, concurrencia, permisos, correo y exportación reales siguen pendientes de sus fases; no se consideran satisfechos por simularlos en UI. Fase 2 EN_REVISION, sin aceptación visual.

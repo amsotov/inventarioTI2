@@ -79,3 +79,7 @@ La prioridad es una valoración inicial para revisar. La probabilidad de fallos 
 ## Evidencia de cierre y límites
 
 D-14 es evidencia de ratificación y cierre del paquete; su alcance vigente está en CIERRE_FASE1. Se mantiene la numeración original de RF/RNF/A/P/R y el historial de Git. La aceptación del análisis no acredita pruebas funcionales ni resuelve riesgos de implementación R-01 a R-07. La política de retención no se inventa: F1-SEG-01 permanece como condición antes de datos reales. Una futura modificación de reglas o de los objetivos aprobados requiere registrar nueva decisión y actualizar sus criterios, sin iniciar otra fase por inferencia.
+
+## Continuidad de diseño — Fase 2
+
+Autorización registrada en FASES y ratificada en esta conversación. El usuario incorporó visual-system-designer en [SKILL.md](../SKILL.md), integrado desde main y aplicado. Sistema visual propuesto y prototipo efímero documentados en [UX_UI.md](UX_UI.md), EN_REVISION. HTML/CSS/JS es soporte de demostración, sin elegir stack definitivo. D-14 y F1-SEG-01/02/03 intactos; ninguna decisión técnica de Fase 3 ni despliegue. Los antecedentes de fases no autorizadas se leen según su fecha y las autorizaciones posteriores.

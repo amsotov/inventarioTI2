@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 1 — COMPLETADA; análisis y resoluciones aceptados por el usuario.
+**Fase:** 2 — EN_REVISION; UX/UI y prototipo listos para revisión visual.
 **Modo:** GUIADO
 **Última fase completada:** 1.
-**Última fase autorizada:** 2, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 3–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 2; prototipo desarrollado, aceptación visual PENDIENTE. Fases 3–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 1 cerrada por D-14. UTC y respaldo semanal confirmados; RPO objetivo 7 días, RTO 8 h, conservación de copias 30 días. Fase 2 AUTORIZADA posteriormente para iniciar en un nuevo chat, ejecución PENDIENTE; ver el registro de continuidad al final. No repetir autorización ni análisis de Fase 1. F1-SEG-01 conserva validación legal de retención antes de datos reales; F1-SEG-02/03 conservan presupuesto y operación de respaldo en sus fases. Los registros anteriores son antecedentes históricos; el cierre vigente se encuentra al final.
+**Punto vigente de continuidad:** revisar visualmente la entrega de Fase 2 en prototipo/index.html y docs/UX_UI.md. No reiniciar análisis ni pedir autorización de Fase 2. Fase 1 permanece COMPLETADA. La Fase 3 no está autorizada y no hubo despliegue. Los apartados anteriores de preparación se conservan como antecedentes; ver entrega vigente al final.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -174,3 +174,19 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - Entrega: commit/push normales a main con autoría noreply; comparar SHA local/remoto antes de confirmar sincronización. Esta autorización no extiende permisos a Fase 3, producción ni publicación del sitio.
 
 **Siguiente acción:** abrir el nuevo chat y ejecutar Fase 2 con la autorización ya registrada. Esperar revisión y aceptación visual; después solicitar autorización separada para Fase 3.
+
+
+## Entrega vigente de Fase 2 — 2026-10-31
+
+- Objetivo y alcance: UX/UI y prototipo navegable con datos ficticios, autorizado en FASES y ratificado por la solicitud inicial. Plan presentado; sin iniciar otras fases.
+- Bases recuperadas: `fa844ec1ce49d2df22148a4894a5581796df3b8d` y actualización del usuario `d6a14c5` con SKILL.md. Git inicial limpio; integración por avance directo. Se conserva el skill del usuario en raíz y se corrige su referencia en AGENTS. Skill leído/aplicado; la ausencia inicial de la ruta antigua quedó superada.
+- Archivos: prototipo/index.html, styles.css y app.js; tests/prototipo.cjs; docs/UX_UI.md, docs/PRUEBAS.md, evidencias/fase2; README, CHANGELOG, FASES, ESTADO, AGENTS y enlaces de continuidad en requisitos/decisiones/trazabilidad.
+- Entrega: resumen con métricas de muestra, inventario con filtros combinados/fechas, búsqueda global, fichas bien/funcionario, alta/edición ilustrativas, movimientos con motivo/confirmación, anotación correctiva, cuentas, auditoría, destinatario/avisos y cinco reportes visuales. Selector de rol solo de diseño; no es seguridad real.
+- Preview: `python3 -m http.server 4174 --bind 127.0.0.1 --directory prototipo`; URL local `http://127.0.0.1:4174/` comprobada en el entorno. Sin URL pública ni acceso del dispositivo del usuario supuesto. Para revisar en otro equipo, descargar/clonar el repositorio y ejecutar el servidor local. file:// está bloqueado por política del navegador del entorno.
+- Verificaciones y capturas: resultados, comandos y limitaciones en docs/PRUEBAS.md. Pruebas de UI con Playwright y Chromium del entorno, sintaxis JS y diferencias. Emulación responsive y teclado no acreditan WCAG completa ni hardware/Safari.
+- Hallazgos corregidos durante verificación: rango inválido conserva «Limpiar filtros»; enlace de salto enfoca contenido sin convertirse en ruta del prototipo; referencia de funcionario separada del documento; formularios asociados a su resumen de error.
+- Riesgos/pendientes: aceptación de colores/marca, navegación, formularios, densidad/gráfico y móvil por el usuario. No hay backend, persistencia, APIs, identidad ni permisos efectivos, correo, Excel/PDF reales o pruebas de carga. No se selecciona arquitectura definitiva ni se configura respaldo.
+- Seguimientos preservados: F1-SEG-01 retención legal antes de datos reales; F1-SEG-02 presupuesto en Fase 3; F1-SEG-03 respaldo operativo en sus fases. Requisitos vigentes: UTC, respaldo semanal, RPO 7 días/RTO 8 h/copias 30 días.
+- GitHub: sincronización autorizada; revisar diferencias, crear commit y subir sin forzar historial; comparar SHA remoto antes de confirmar entrega. La subida de código no publica sitio ni despliega.
+
+**Siguiente acción:** revisión visual del usuario dentro de Fase 2. **Aprobación visual NO OTORGADA; Fase 3 PENDIENTE / NO OTORGADA.**

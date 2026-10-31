@@ -1,0 +1,22 @@
+OK 1: Resumen usa los 8 bienes ficticios
+OK 2: Filtros combinados y vacío
+OK 3: Rango UTC invertido y extremos inclusivos
+OK 4: Búsqueda global por persona e ID y navegación a ficha
+OK 5: Alta: obligatorios, duplicado en baja y ausencia de serie
+OK 6: Asignación simulada actualiza ficha e historial
+OK 7: Baja con custodia rechazada; cancelar preserva datos
+OK 8: Traslado a sí mismo rechazado; devolución conserva condición
+OK 9: Mal estado bloquea asignación; custodia existente se conserva
+OK 10: Baja de funcionario con custodia rechazada
+OK 11: Formulario funcionario: RUT inválido y alta institucional
+OK 12: Anotación mantiene el original y añade referencia
+OK 13: Cinco reportes representados, vista sin descarga
+OK 14: Configuración requiere motivo y audita cambio sin envío
+OK 15: Cuenta propia protegida e invitación pendiente
+OK 16: Lectura oculta escritura y deniega ruta administrativa visual
+OK 17: Carga, error y reintento demostrables
+OK 18: Recuperación responde sin revelar cuenta
+OK 19: Teclado: salto, diálogo, Escape y retorno de foco
+OK 20: Responsive: siete tamaños, todas las pantallas sin desborde de página
+OK 21: Sin errores JS ni llamadas API externas
+TOTAL: 21 verificaciones OK. Chromium 154.0.8037.57. Emulación, no dispositivos reales.

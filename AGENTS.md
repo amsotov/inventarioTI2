@@ -20,7 +20,7 @@ Antes de modificar el proyecto, lee `PROMPT_MAESTRO.md`, `FASES.md`, `ESTADO_PRO
 - Al terminar trabajo aprobado, actualiza `FASES.md`, `ESTADO_PROYECTO.md` y documentos vinculados, sin adelantar estados de fases no aprobadas.
 
 ## Skill de diseño visual (Fase 2)
-Cuando la Fase 2 sea autorizada, utiliza `.agents/skills/visual-system-designer/SKILL.md` para crear un prototipo navegable con datos sintéticos, verificarlo y solicitar aprobación visual. No desarrolles backend ni datos reales por inferencia. Si no hay navegador/Playwright accesible, informa la limitación.
+Cuando la Fase 2 sea autorizada, utiliza `SKILL.md` (visual-system-designer, incorporado en la raíz por el usuario; si cambia de ubicación, búscalo antes de continuar) para crear un prototipo navegable con datos sintéticos, verificarlo y solicitar aprobación visual. No desarrolles backend ni datos reales por inferencia. Si no hay navegador/Playwright accesible, informa la limitación.
 
 ## GitHub Spec Kit
 Usa la metodología de Spec Kit **solo si está instalada o el usuario autoriza su instalación**. Detecta su estructura y comandos existentes; no inventes comandos ni sobrescribas su configuración. Guarda especificaciones vinculadas a cada fase en `specs/` o en el directorio que establezca la herramienta.

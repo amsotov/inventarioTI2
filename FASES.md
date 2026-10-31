@@ -2,17 +2,17 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 1 — COMPLETADA (análisis y resoluciones aceptados por el usuario el 2026-10-31).
+**Fase actual:** 2 — EN_REVISION (UX/UI y prototipo entregados para revisión visual).
 **Última fase completada:** 1.
-**Próxima fase:** 2 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 3–15:** PENDIENTE / NO OTORGADA.
+**Fase 2:** ejecución AUTORIZADA y realizada; aceptación visual PENDIENTE. **Fases 3–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 queda autorizada posteriormente para un nuevo chat, con ejecución pendiente; fases 3–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 fue autorizada y se entrega en revisión visual; fases 3–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
 | 0 | Diagnóstico y planificación | Visión, requisitos iniciales, MVP, riesgos y decisiones | COMPLETADA | Ejecución y entregables APROBADOS por el usuario el 2026-10-30 |
 | 1 | Análisis empresarial y requisitos | Actores, procesos, historias, criterios y trazabilidad | COMPLETADA | Entrega y resoluciones APROBADAS por usuario el 2026-10-31; UTC y respaldo semanal |
-| 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | PENDIENTE | AUTORIZADA para iniciar en un nuevo chat; ejecución no iniciada |
+| 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | EN_REVISION | Ejecución AUTORIZADA; aceptación visual PENDIENTE |
 | 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | PENDIENTE | NO OTORGADA |
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | PENDIENTE | NO OTORGADA |
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | PENDIENTE | NO OTORGADA |
@@ -172,3 +172,21 @@ Punto de inicio:
 5. Documentar resultado y aceptación visual en docs/UX_UI.md; mantener F1-SEG-01/02/03, revisar diferencias y sincronizar todos los cambios en GitHub. Fase 3 requiere autorización independiente después de la revisión visual. No publicar sitio ni desplegar.
 
 Esta conversación solo registra autorización y continuidad. No hay herramienta disponible para abrir automáticamente otro chat: el usuario debe abrirlo con el repositorio y la instrucción de inicio. No se crea prototipo ni se comprueba navegador en esta preparación documental.
+
+
+## Entrega de Fase 2 — estado vigente del 2026-10-31
+
+Solicitud de esta conversación: «Inicia únicamente la Fase 2 de inventarioTI2, ya autorizada en FASES.md y ESTADO_PROYECTO.md». Se recuperaron `fa844ec` y posteriormente `d6a14c5` (skill agregado por el usuario), sin reescribir historial ni sobrescribir su trabajo. Los registros anteriores de ejecución pendiente son antecedentes.
+
+Plan presentado antes de implementar: mapa de pantallas por rol, sistema visual, prototipo de memoria, recorridos y verificación responsive/teclado; documentación y sincronización GitHub. Responsable de diseño/verificación: Codex; aceptación visual: usuario. Dependencia: Fase 1 completada con D-14. Skill leído y aplicado: [SKILL.md](SKILL.md), ubicación real en raíz, actualizada en AGENTS.
+
+| Criterio | Resultado |
+|---|---|
+| CA2-01 · Mapa de navegación, componentes, sistema visual y formularios | Entregados en docs/UX_UI.md y prototipo/ |
+| CA2-02 · Datos ficticios y acciones identificadas como simulación | Muestra efímera, dominio example.invalid; sin servicios externos |
+| CA2-03 · Consulta, filtros, fichas, movimientos, administración y reportes | Recorridos y excepciones representados; límites de vistas/exportación documentados |
+| CA2-04 · Responsive y teclado, estados vacío/carga/error/éxito/permiso | Evidencia y resultados reales en docs/PRUEBAS.md; emulación no equivale a dispositivos reales |
+| CA2-05 · Preview local, capturas y pasos reproducibles | prototipo/index.html, instrucciones en README y docs/UX_UI; capturas en docs/evidencias/fase2 |
+| CA2-06 · Usuario acepta visualmente | PENDIENTE; Fase 2 EN_REVISION |
+
+Se conservan F1-SEG-01/02/03. No se implementaron backend, persistencia, autenticación, APIs, correo, exportaciones reales ni respaldos. HTML/CSS/JS son soporte del prototipo, sin arquitectura definitiva. No hubo despliegue. Siguiente acción: revisar diseño, recoger cambios y registrar aceptación visual. Cualquier inicio de Fase 3 requiere autorización independiente.

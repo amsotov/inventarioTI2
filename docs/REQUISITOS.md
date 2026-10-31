@@ -86,7 +86,7 @@ Son los escenarios iniciales conservados de Fase 0, ahora desarrollados en HISTO
 4. **Restringir y administrar:** lectura consulta y exporta lo autorizado, pero no escribe mediante interfaz ni acceso directo. Administrador gestiona cuentas sin cambiar su propio rol ni dejar el sistema sin administrador activo; probar concurrencia, desactivación y recuperación según A-08 (RF-08 a RF-11).
 5. **Auditar y avisar:** cada evento contemplado tiene autor, fecha, entidad y cambio pertinente sin secretos. Cambiar destinatario afecta avisos posteriores y queda auditado. Probar envío simulado, fallo, reintento y duplicado según A-07; el acceso a auditoría sigue la ratificación de P-01 (RF-12 a RF-15).
 
-## Plan de revisión de Fase 2 — no iniciada
+## Plan de revisión de Fase 2 — referencia de planificación
 
 1. Exigir autorización expresa de Fase 2 y requisitos aceptados de Fase 1. Volver a comprobar disponibilidad de `visual-system-designer` y usarlo si está disponible. La ruta `.agents/skills/visual-system-designer/SKILL.md` no existe en el árbol inspeccionado ni se encontró en los catálogos disponibles; no se instaló en Fase 0.
 2. Construir un prototipo navegable con datos ficticios: listado y búsqueda global, fichas de bien/funcionario, formulario con errores y éxito, movimiento simulado, consulta de historial, cuentas y representación de auditoría/configuración/reportes. Las simulaciones deben ser identificables, sin backend ni datos reales por inferencia.
@@ -107,3 +107,7 @@ Son los escenarios iniciales conservados de Fase 0, ahora desarrollados en HISTO
 | CA0-06 | Usuario acepta la entrega, alcance, prioridades y registro explícito de interpretaciones pendientes | CUMPLIDO el 2026-10-30: «todos los cambios del este proyecto inventarioTI2 deben actualizarse en github y aprueba esta fase»; Fase 0 COMPLETADA |
 
 La aceptación del MVP o del prototipo y la autorización de una fase son decisiones distintas. Las futuras fases siguen pendientes en [../FASES.md](../FASES.md).
+
+## Continuidad UX/UI
+
+Fase 2 autorizada y entregada EN_REVISION: ver [UX_UI.md](UX_UI.md) y [PRUEBAS.md](PRUEBAS.md). El plan anterior se conserva como antecedente; skill disponible en [SKILL.md](../SKILL.md). Aceptación visual pendiente; Fase 3 no autorizada. Las pruebas del prototipo no acreditan los controles reales de estos requisitos.

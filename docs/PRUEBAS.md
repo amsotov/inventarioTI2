@@ -55,3 +55,55 @@ Base: `363cfa0236185a787d86f0ef1afbc5d198ab9ed2`. Git inicial limpio; `git fetch
 - `git diff --check`, revisión de diferencias y comprobación de alcance: sin errores de formato ni archivos de implementación. El SHA local/remoto se compara tras push antes de confirmar la entrega.
 
 Resultado de los controles documentales de cierre: APROBADO. Pruebas funcionales y de respaldo/restauración, concurrencia, correo, Excel/PDF, seguridad, Playwright y dispositivos: NO EJECUTADAS por ausencia de implementación y fases futuras sin autorización. Fase 1 COMPLETADA no significa sistema implementado ni respaldo configurado.
+
+## Fase 2 — evidencia de UI del 2026-10-31
+
+La autorización posterior está en FASES/ESTADO. Se construyó únicamente el prototipo UX/UI y se aplicó visual-system-designer de SKILL.md (agregado por el usuario en `d6a14c5`). Los apartados previos corresponden a las entregas documentales anteriores.
+
+Comandos ejecutados:
+
+```sh
+node --check prototipo/app.js
+node --check tests/prototipo.cjs
+python3 -m http.server 4174 --bind 127.0.0.1 --directory prototipo
+PROTOTYPE_URL=http://127.0.0.1:4174 PLAYWRIGHT_MODULE=/opt/codex/cua_node/lib/node_modules/playwright node tests/prototipo.cjs
+```
+
+Resultado: **21 verificaciones OK**, Chromium **154.0.8037.57**, Playwright del entorno. Salida completa reproducible: [resultados.txt](evidencias/fase2/resultados.txt). Servidor ligado exclusivamente a loopback, URL local comprobada por el navegador; no hay publicación ni acceso externo supuesto.
+
+| Área | Resultado observado |
+|---|---|
+| Resumen | Conteos calculados sobre los 8 bienes iniciales; no confundir con inventario real ni capacidad objetivo |
+| Bienes | Filtros combinados, vacío, limpieza y rangos UTC con extremos inclusivos e inversión rechazada |
+| Búsqueda global | Coincidencia por nombre y enlace a ficha con los dos bienes vigentes del custodio de muestra |
+| Alta | Rechazos de obligatorios, código existente incluso en baja y ausencia de serie sin motivo; alta sintética visible |
+| Movimientos | Asignación actualiza custodia/historia; baja con custodia y traslado al mismo destino rechazados; devolución conserva condición; mal estado bloquea nuevo traslado |
+| Funcionarios | Baja con bienes rechazada; RUT inválido rechazado; alta con ID institucional ilustrada |
+| Correcciones | Anotación referenciada añadida, movimiento original conservado |
+| Reportes | Cinco tarjetas administrador/cuatro lectura; vista simplificada Excel sin descarga ni correo personal |
+| Configuración | Motivo obligatorio, cambio de destinatario visible y evento local consultable en auditoría |
+| Cuentas | Cuenta propia identificada como protegida; invitación simulada pendiente sin acceso real |
+| Rol lectura | Escrituras ocultas; ruta administrativa directa muestra vista restringida; esto no prueba seguridad efectiva |
+| Estados | Vacío/error/éxito, carga→error→reintento y recuperación sin revelar existencia de cuenta |
+| Teclado | Salto al contenido, foco de diálogo, Escape y retorno al botón que lo abrió |
+| Responsive | 12 rutas × 7 tamaños = 84 comprobaciones de ancho sin desborde de documento; tablas con desplazamiento interno |
+| JavaScript / recursos | Cero errores pageerror en el recorrido; sin recursos externos en la muestra final |
+
+Tamaños CSS revisados: 1440×900, 900×1440, 768×1024 (tablet indicada por el skill), 820×1180 (referencia iPad), 1180×820, 390×844 (referencia iPhone) y 844×390. Son viewports de Chromium, no emulación completa de dispositivo, Safari, WebKit ni prueba sobre hardware real.
+
+Capturas generadas después de reiniciar la muestra y revisadas visualmente (escritorio y móvil):
+
+- [Resumen computador](evidencias/fase2/computador.png)
+- [Tablet 768 px](evidencias/fase2/tablet.png)
+- [iPad 820 px](evidencias/fase2/ipad.png)
+- [Resumen iPhone 390 px](evidencias/fase2/iphone.png)
+- [Bienes en móvil](evidencias/fase2/iphone-bienes.png)
+- [Formulario en móvil](evidencias/fase2/iphone-formulario.png)
+
+Hallazgos corregidos: «Limpiar filtros» permanece disponible con rango inválido; el enlace de salto no cambia la ruta de navegación; cuadrículas con mínimo cero evitan desborde a 768 px; navegación lateral desplazable en alturas reducidas; documento de funcionario separado de la referencia interna; errores asociados a campos; carga simulada no sobrescribe otro diálogo al cancelarse. La ejecución final pasó después de las correcciones y del formateo con Prettier 3.6.2 temporal, sin añadir dependencias al prototipo.
+
+Revisión básica de accesibilidad: etiquetas visibles, encabezados de tabla, anuncio de éxito, error enfocable, foco visible, diálogo nativo, texto además del color y regiones tabulares enfocables. Cálculo puntual de contraste sRGB: texto principal/blanco 13,27:1; secundario/blanco 5,56:1; acción/blanco 5,51:1; enlaces de navegación/fondo 9,79:1; etiquetas bueno 6,23:1, regular 5,90:1 y malo 5,56:1. Son ocho pares muestreados, no una auditoría de todos los estados, un test de lector de pantalla ni certificación WCAG 2.2 AA.
+
+No ejecutadas/no acreditadas: autenticación/MFA real, persistencia, validación de servidor, RLS, concurrencia/idempotencia persistente, generación Excel/PDF y sus límites de volumen, envío/reintento real de correo, rendimiento con 3.000 bienes, respaldo/restauración, revisión legal o seguridad de producción. Esas tareas pertenecen a fases futuras. F1-SEG-01/02/03 se conservan. Fase 2 EN_REVISION, pendiente de aceptación visual del usuario; Fase 3 no autorizada.
+
+Comprobaciones adicionales de cierre: consola de Chromium sin errores en 10 pantallas por HTTP local; enlaces Markdown locales válidos; filas de Fases 3–15 idénticas a la base `d6a14c5`; SKILL, PROMPT_MAESTRO, cierre de Fase 1 y documentos de arquitectura/datos/seguridad/despliegue intactos. `node --check` y `git diff --check` sin errores. La prueba de apertura `file://` fue bloqueada por política del navegador (`ERR_BLOCKED_BY_ADMINISTRATOR`); no se intentó eludirla. El acceso comprobado y recomendado es el servidor HTTP loopback, también para la revisión del usuario tras clonar el repositorio.

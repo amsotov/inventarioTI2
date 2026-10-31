@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc",
-    "test": "tsx --test tests/auth/*.test.ts tests/security/*.test.ts",
+    "test": "tsx --test tests/auth/*.test.ts tests/security/*.test.ts tests/api/*.test.ts",
     "start": "node dist/apps/server/main.js"
   },
   "repository": {

@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 6 — COMPLETADA; entrega y cierre aprobados por D-23.
+**Fase:** 7 — EN_REVISION; backend/API local entregado; aceptación pendiente.
 **Modo:** GUIADO
 **Última fase completada:** 6.
-**Última fase autorizada:** 7, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 8–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 7, ejecución D-23 ratificada y realizada en esta conversación. Fases 8–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 6 aceptada y cerrada por D-23. Iniciar únicamente Fase 7 en un nuevo chat bajo autorización ya otorgada y el plan al final de FASES.md. Aquí solo se registra continuidad, sin implementar Fase 7 ni desplegar. Los apartados anteriores a este cierre al final son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 7 entregada para revisión; ver docs/BACKEND_API.md y evidencia en docs/PRUEBAS.md. Última completada 6. Fases 8–15 sin autorización; sin despliegues. Los apartados anteriores a la entrega final son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -312,3 +312,14 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: commit/push normales a main con autoría noreply y comparación de SHA local/remoto; SHA final comunicado tras verificar. Sin despliegue.
 
 **Siguiente acción:** abrir un nuevo chat con inventarioTI2 e iniciar únicamente Fase 7 bajo D-23. Su entrega/cierre necesitará revisión propia; no iniciar Fase 8.
+
+
+## Entrega de Fase 7 — vigente 2026-10-31
+
+Solicitud: «Inicia únicamente la Fase 7 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 8 ni despliegues». D-24 ratifica ejecución D-23, sin aceptación anticipada. Base limpia recuperada por avance directo a `0fead7b`.
+
+Plan presentado y ejecutado: servicios/contrato OpenAPI, consultas autorizadas y proyección positiva, filtros/paginación/ETag, alta y edición de atributos de bienes, transacción estado/comando/auditoría/outbox, idempotencia/versiones, pruebas HTTP/SQL y documentación. Entregables, CA7-01 a CA7-06 y límites en [BACKEND_API](docs/BACKEND_API.md); evidencia en [PRUEBAS](docs/PRUEBAS.md). Codex implementa/verifica; usuario conserva aceptación. Fase 7 EN_REVISION, última completada 6; no declarar API global del MVP completa.
+
+Solo migración nueva aditiva y entorno sintético local. Runtime sin DML directo; función privada acotada con RLS, sesión vigente y pool separado. Funcionalidad futura de movimientos, panel, exportaciones y automatizaciones conserva sus puertas de aprobación. Prototipo y migraciones/evidencia aceptadas preservados; sin frontend funcional ni despliegue.
+
+F1-SEG-01/02/03 continúan abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Supabase gestionado, logins reales, correo externo y continuidad operativa no verificados en esta fase. Siguiente paso: revisión y aceptación propia de la Fase 7; Fases 8–15 PENDIENTE / NO OTORGADA.

@@ -26,3 +26,8 @@ Los campos text obligatorios de nombres, códigos, motivos y etiquetas no admite
 ## Continuidad de Fase 6 — 2026-10-31
 
 Fase 6: seguridad.eventos(id bigint identity, actor_id uuid FK cuentas, permiso text enumerado, permitido boolean, registrado_en timestamptz del servidor). Bitácora técnica append-only; sin payloads libres ni PII/secretos. Función privada seguridad.principal() devuelve solo actor_id/rol a runtime con sesión vigente. Más detalle en SEGURIDAD.
+
+
+## Entrega de Fase 7 — 2026-10-31
+
+Fase 7 no cambia columnas: usa comandos, auditoria y outbox aceptados para alta/edición de atributos de bienes. Nueva función y privilegios locales detallados en [BACKEND_API](BACKEND_API.md).

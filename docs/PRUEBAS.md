@@ -203,3 +203,15 @@ No ejecutadas: proyecto Supabase gestionado/advisors remotos, aprovisionamiento 
 Evidencia del usuario: «Aprobado fase 6. Inicia fase 7 en nuevo chat». CA6-06 cumplido y Fase 6 COMPLETADA. Se conserva la entrega `336232a9b1add5c6605f396a90795e419022756c` y las 34 pruebas locales con sus límites. Este cierre solo cambia documentación; no se repiten pruebas funcionales ni se modifican verificadores/resultados históricos.
 
 Revisión ejecutada: git inicial limpio, fetch/avance directo sin novedades; git diff --check; enlaces locales de documentos cambiados; coherencia de estados/CA6-06/D-23; filas de fases 8–15 y contenido de todos los archivos ajenos a los ocho documentos de cierre comparados contra `336232a9b1add5c6605f396a90795e419022756c`. Fase 7 autorizada pero no iniciada aquí; sin Fase 8 ni despliegue. Sincronización a main con comprobación de SHA remoto al finalizar.
+
+## Fase 7 — backend y API, 2026-10-31
+
+Base aceptada `0fead7b`; entorno local sintético, PostgreSQL 17 fijado por digest y roles operativos separados. `npm ci` y `npm run build`: correctos. `npm test`: **49 pruebas, 49 pasan, 0 fallos/omitidas**; incluye 14 casos nuevos de composición HTTP/Auth/Authorization/RLS/SQL más su contenedor, regresión de autenticación/seguridad y GoTrue local. La suite empresarial usa proveedor de identidad doble explícito; la prueba separada de GoTrue no acredita Supabase gestionado.
+
+Probado: denegaciones por sesión/rol/CSRF/Origin; JSON/campos/fechas inválidos; alta y edición con auditoría/outbox/comando; clave repetida y payload distinto; respuesta perdida simulada mediante replay tras commit; versión ausente/obsoleta; dos conexiones SQL reales compitiendo por la misma versión; rollback por configuración ausente y por fallo inyectado al insertar outbox, sin evidencia parcial, con reintento posterior válido; paginación y cursor ligado a filtros, UTC inclusivo, inyección literal, ETag/404, proyección positiva de funcionarios, DML directo denegado y revocación vigente.
+
+Evidencia: [resultados](evidencias/fase7/resultados.txt), [build](evidencias/fase7/build.txt), [audit](evidencias/fase7/audit.json), [regresión histórica de datos](evidencias/fase7/regresion-datos.txt), [revisión documental](evidencias/fase7/documentos.txt) y [fuentes](evidencias/fase7/fuentes.txt). `npm audit --omit=dev`: cero vulnerabilidades informadas en dependencias de producción; no equivale a una auditoría integral.
+
+No ejecutado: Supabase remoto, credenciales reales, correo externo, UI integrada, dispositivos, carga productiva, operación/respaldos reales ni despliegue. No se invocan advisors remotos: no hay proyecto gestionado conectado; se verifican grants/RLS/función privada mediante PostgreSQL local real. El CLI creó solamente el archivo de migración; sin enlazar ni modificar proyectos remotos. Los primeros ensayos detectaron ambigüedad SQL y un lock que exigía UPDATE; ambos corregidos antes de la corrida final conservada. El flujo SQL no abre DML directo al runtime.
+
+CA7-01 a CA7-05 verificados con el alcance limitado de [BACKEND_API](BACKEND_API.md). CA7-06 pendiente de aceptación expresa; Fase 7 EN_REVISION. Fase 8 no iniciada.

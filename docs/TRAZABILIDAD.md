@@ -114,3 +114,8 @@ RF-09/RF-10 y A-08/CR-15/CR-16 (solo identidad/sesiones/MFA): implementación y 
 ## Continuidad de Fase 6 — 2026-10-31
 
 Fase 6: RF-08/RNF-01 → policy.ts, Authorization y RLS; RF-09/11 → acceso de administración restringido, operaciones/panel pendientes; RF-12/13 → auditoría privada y eventos técnicos append-only (escrituras empresariales pendientes); RNF-04 → publicEmployee y bitácora sin secretos. Evidencia: tests/security y PRUEBAS. Detalle y límites en SEGURIDAD.
+
+
+## Entrega de Fase 7 — 2026-10-31
+
+Fase 7 implementa base RF-02/HU-02 (alta/edición de atributos), RF-06/07 consultas parciales y RF-12/15 evidencia/outbox sin envío. Flujos RF-03/04/05, UI, panel, reportes y worker siguen en sus fases. Ver [BACKEND_API](BACKEND_API.md).

@@ -39,3 +39,8 @@ Entrega de Fase 6 EN_REVISION bajo D-21: ver docs/SEGURIDAD.md (CA6-01 a CA6-06)
 
 
 Punto vigente — D-23: Fase 6 COMPLETADA, CA6-06 cumplido. Fase 7 autorizada para iniciar en un nuevo chat; ejecución PENDIENTE, sin backend empresarial desarrollado en este cierre. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md) y [SEGURIDAD](../docs/SEGURIDAD.md). Fases 8–15 sin autorización; sin despliegue ni instalación de Spec Kit. Los estados anteriores son antecedentes históricos.
+
+
+## Entrega de Fase 7 — 2026-10-31
+
+Fase 7: contrato ejecutable de validación en apps/server/inventory/routes.ts y [OpenAPI 3.1](../docs/openapi-fase7.json); servicios/pruebas reales en apps/server/inventory y tests/api. No se instala ni simula Spec Kit.

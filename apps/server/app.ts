@@ -1,8 +1,10 @@
 import Fastify from 'fastify';
+import { inventoryRoutes } from './inventory/routes.js';
+import type { Inventory } from './inventory/service.js';
 import { AuthError, AuthService } from './auth/service.js';
 const str = {type:'string',minLength:1,maxLength:320};
 const schema = (props: Record<string,unknown>) => ({body:{type:'object',additionalProperties:false,required:Object.keys(props),properties:props}});
-export function app(auth: AuthService, origin: string) {
+export function app(auth: AuthService, origin: string, inventory?: Inventory) {
   const server=Fastify({logger:false,bodyLimit:8192,trustProxy:false,ajv:{customOptions:{removeAdditional:false,coerceTypes:false}}});
   server.addHook('onRequest',async(req,res)=>{
     res.header('cache-control','no-store').header('referrer-policy','no-referrer').header('x-content-type-options','nosniff').header('x-frame-options','DENY').header('permissions-policy','camera=(), microphone=(), geolocation=()').header('strict-transport-security','max-age=31536000').header('content-security-policy',"default-src 'none'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'");
@@ -40,5 +42,9 @@ export function app(auth: AuthService, origin: string) {
   // Pantalla exclusiva de recepción: GET/escáneres no consumen enlaces; fragmento borrado antes de otra petición.
   server.get('/acceso',async(_req,res)=>res.type('text/html').header('content-security-policy',"default-src 'none'; script-src 'self'; connect-src 'self'; form-action 'none'; frame-ancestors 'none'").send(`<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Completar acceso</title><h1>Completar acceso</h1><form><label>Nueva contraseña (12–128 caracteres)<input type="password" minlength="12" maxlength="128" autocomplete="new-password" required></label><button>Confirmar nueva contraseña</button></form><p role="status"></p><script src="/acceso.js"></script></html>`));
   server.get('/acceso.js',async(_req,res)=>res.type('application/javascript').send(`const token=new URLSearchParams(location.hash.slice(1)).get('token');history.replaceState(null,'','/acceso');document.querySelector('form').addEventListener('submit',async e=>{e.preventDefault();const p=document.querySelector('p');try{const r=await fetch('/api/v1/acceso/completar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token,password:document.querySelector('input').value})});p.textContent=r.ok?'Contraseña actualizada. Inicia sesión de nuevo.':'No se pudo completar el acceso. Solicita un enlace nuevo o contacta al responsable.';}catch{p.textContent='Servicio no disponible.'}document.querySelector('input').value='';});`));
+  if(inventory) {
+    server.addHook('preValidation',async req=>{const q=req.query as Record<string,unknown>;if(q && typeof q.limit==='string' && /^[0-9]{1,3}$/.test(q.limit))q.limit=Number(q.limit);});
+    inventoryRoutes(server,inventory,sid,csrf);
+  }
   return server;
 }

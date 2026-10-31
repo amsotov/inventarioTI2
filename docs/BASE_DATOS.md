@@ -115,3 +115,8 @@ La migración inicial aceptada permanece intacta. La [migración aditiva de aute
 ## Continuidad de Fase 6 — 2026-10-31
 
 Fase 6 añade migración aditiva de roles SQL mínimos, políticas de lectura contextual y seguridad.eventos; no modifica migraciones aceptadas. No concede DML empresarial genérico. El lookup privado SECURITY DEFINER usa propietario sin BYPASSRLS/propiedad de tablas y grants selectivos. Ver SEGURIDAD para privilegios/límites y PRUEBAS para PostgreSQL real.
+
+
+## Entrega de Fase 7 — 2026-10-31
+
+Fase 7 incorpora únicamente migración aditiva 20261031202938_backend_api.sql: función acotada guardar_bien, rol de servicio y RLS/grants mínimos; conserva modelo y evidencia inmutables. Ver [BACKEND_API](BACKEND_API.md).

@@ -1,0 +1,10 @@
+Consulta 2026-10-31:
+https://supabase.com/changelog.md
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+https://supabase.com/changelog/cbc-tls-ciphers-deprecated
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes
+Revisión: cambios TLS/.NET/zonas locales no alteran esta implementación SQL local en UTC; no se cambian operadores/extensiones ni SDK Auth aceptado.
+Guías aplicadas: Supabase; Supabase Postgres Best Practices; Cloud Environment Runtime.
+RLS con USING/WITH CHECK, grants mínimos, función privada search_path fijo y propietario NOLOGIN sin BYPASSRLS. Sin proyecto gestionado ni advisors remotos invocados.
+Supabase CLI: --help; migration new --help; migration new backend_api. Solo archivo nuevo local.
+PostgreSQL 17 e imagen GoTrue: mismos digests fijados por las suites aceptadas; ninguna dependencia agregada ni lockfile alterado.

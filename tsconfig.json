@@ -12,6 +12,7 @@
   "include": [
     "apps/**/*.ts",
     "tests/auth/**/*.ts",
-    "tests/security/**/*.ts"
+    "tests/security/**/*.ts",
+    "tests/api/**/*.ts"
   ]
 }

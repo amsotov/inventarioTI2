@@ -94,3 +94,8 @@ Fuentes consultadas el 2026-10-31: [changelog Supabase](https://supabase.com/cha
 ## Aceptación de Fase 6 — D-23
 
 2026-10-31. «Aprobado fase 6. Inicia fase 7 en nuevo chat». Acepta `336232a9b1add5c6605f396a90795e419022756c` y cumple CA6-06. No se modifican controles, migraciones, pruebas ni evidencias; Fase 7 autorizada para un nuevo chat, ejecución pendiente. Conservados pendientes de logins SQL reales, proyecto gestionado, retención legal y operación. No despliegue ni autorización de fases 8–15.
+
+
+## Entrega de Fase 7 — 2026-10-31
+
+Fase 7 agrega pool empresarial separado y función privada guardar_bien, con rol NOLOGIN sin BYPASSRLS ni propiedad de tablas. Runtime conserva DML directo denegado; RLS administrativo en el servicio y actor derivado de principal. Sin permisos remotos ni logins reales. Ver [BACKEND_API](BACKEND_API.md).

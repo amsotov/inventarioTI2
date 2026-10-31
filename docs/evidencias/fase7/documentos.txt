@@ -1,0 +1,4 @@
+OK: Fase 7 EN_REVISION; filas 8–15 intactas/sin autorización.
+OK: código y evidencia aceptados, migraciones, prototipo y lockfile preservados.
+OK: enlaces, OpenAPI y criterios CA7/seguimientos documentados.
+OK: git diff --check.

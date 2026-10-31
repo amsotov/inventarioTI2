@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 6 — COMPLETADA; entrega y cierre aprobados por D-23.
+**Fase actual:** 7 — EN_REVISION; backend/API local implementado, aceptación pendiente.
 **Última fase completada:** 6.
-**Próxima fase:** 7 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 8–15:** PENDIENTE / NO OTORGADA.
+**Fase 7:** ejecución autorizada por D-23 y ratificada en esta conversación. **Fases 8–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 autorizada para un nuevo chat, ejecución pendiente; fases 8–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 ejecutada y EN_REVISION; fases 8–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -17,7 +17,7 @@
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-19 |
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-21 |
 | 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-23 |
-| 7 | Backend y API | Servicios, reglas empresariales y contratos | PENDIENTE | AUTORIZADA para un nuevo chat por D-23; ejecución no iniciada |
+| 7 | Backend y API | Servicios, reglas empresariales y contratos | EN_REVISION | Ejecución D-23 ratificada; aceptación de entrega PENDIENTE |
 | 8 | Frontend funcional | Pantallas e integración con API | PENDIENTE | NO OTORGADA |
 | 9 | Panel de administración | Usuarios, permisos, catálogos y parámetros | PENDIENTE | NO OTORGADA |
 | 10 | Procesos y módulos empresariales | Casos de uso, estados y movimientos | PENDIENTE | NO OTORGADA |
@@ -317,3 +317,14 @@ Punto de inicio para el nuevo chat:
 4. Toda escritura empresarial habilitada debe validar en servidor y coordinar estado/historia/auditoría/outbox/resultado idempotente en una transacción, con versión esperada y pruebas de rollback, concurrencia, replay y denegaciones. No declarar API completa por contar con contratos o puertos. Preservar migraciones/evidencias aceptadas; probar la composición real y documentar límites.
 5. No aprovisionar cuentas o permisos reales ni resolver retención legal por inferencia. F1-SEG-01/02/03 siguen abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin instalación de Spec Kit, gastos o despliegue sin autorización propia.
 6. Actualizar documentación, FASES/ESTADO y GitHub; verificar SHA remoto y entregar Fase 7 para revisión propia. La aprobación de Fase 6 no acepta por adelantado entregables de Fase 7 ni autoriza Fase 8.
+
+
+## Entrega de Fase 7 — vigente 2026-10-31
+
+Solicitud: «Inicia únicamente la Fase 7 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 8 ni despliegues». D-24 ratifica ejecución D-23, sin aceptación anticipada. Base limpia recuperada por avance directo a `0fead7b`.
+
+Plan presentado y ejecutado: servicios/contrato OpenAPI, consultas autorizadas y proyección positiva, filtros/paginación/ETag, alta y edición de atributos de bienes, transacción estado/comando/auditoría/outbox, idempotencia/versiones, pruebas HTTP/SQL y documentación. Entregables, CA7-01 a CA7-06 y límites en [BACKEND_API](docs/BACKEND_API.md); evidencia en [PRUEBAS](docs/PRUEBAS.md). Codex implementa/verifica; usuario conserva aceptación. Fase 7 EN_REVISION, última completada 6; no declarar API global del MVP completa.
+
+Solo migración nueva aditiva y entorno sintético local. Runtime sin DML directo; función privada acotada con RLS, sesión vigente y pool separado. Funcionalidad futura de movimientos, panel, exportaciones y automatizaciones conserva sus puertas de aprobación. Prototipo y migraciones/evidencia aceptadas preservados; sin frontend funcional ni despliegue.
+
+F1-SEG-01/02/03 continúan abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Supabase gestionado, logins reales, correo externo y continuidad operativa no verificados en esta fase. Siguiente paso: revisión y aceptación propia de la Fase 7; Fases 8–15 PENDIENTE / NO OTORGADA.

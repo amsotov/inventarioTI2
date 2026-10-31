@@ -107,3 +107,8 @@ Solo los endpoints de identidad están implementados en apps/server; se añade P
 ## Continuidad de Fase 6 — 2026-10-31
 
 Fase 6 no agrega endpoints empresariales. Los futuros servicios deben usar Authorization.run con permiso estático, pool inventario_runtime y CSRF para mutaciones; nunca el pool Auth. main exige inventario_auth. Respuestas 413/415 conservan estado y códigos genéricos, CSP/cabeceras globales reforzadas. Exportaciones ordinarias deberán aplicar proyección positiva sin documento personal/correo. Ver SEGURIDAD.
+
+
+## Entrega de Fase 7 — 2026-10-31
+
+La superficie empresarial realmente implementada de Fase 7 está en [BACKEND_API](BACKEND_API.md) y [OpenAPI](openapi-fase7.json). El catálogo precedente conserva el diseño global; no equivale a endpoints habilitados. Listas/fichas de cuatro recursos y alta/edición de atributos de bienes implementados; límites y semántica de PATCH documentados.

@@ -22,3 +22,6 @@ D-17 acepta/cierra Fase 3 y autoriza Fase 4 en un nuevo chat, ejecución pendien
 
 
 Fase 4 ejecutada, EN_REVISION: [modelo y CA4-01 a CA4-06](../docs/BASE_DATOS.md), [diccionario](../docs/DICCIONARIO_DATOS.md), migración y pruebas locales aisladas. Sin Spec Kit instalado ni especificaciones duplicadas. Fases 5–15 continúan sin autorización; aceptación de Fase 4 pendiente.
+
+
+D-19 acepta/cierra Fase 4 y autoriza únicamente Fase 5 para un nuevo chat, ejecución pendiente. CA4-06 cumplido. Los estados EN_REVISION anteriores son antecedentes de entrega. Fases 6–15 sin autorización, sin instalación de Spec Kit ni implementación de autenticación en este cierre.

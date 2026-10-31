@@ -149,3 +149,10 @@ Base `1fe5859`; [modelo/criterios CA4](BASE_DATOS.md), [diccionario](DICCIONARIO
 Incidencias de preparación corregidas: la primera espera detectó el PostgreSQL temporal de init y la conexión posterior falló; se cambió a readiness TCP local del servidor definitivo. La ruta antigua de custom-schemas devolvió 404 y se consultó la ruta actual `api/using-custom-schemas`. No se declaran esos intentos como verificaciones aprobadas.
 
 **NO EJECUTADAS:** Supabase remoto, advisors/CLI sobre proyecto local Supabase completo, Auth/sesiones/MFA, RLS con rol/cuenta reales, API/transacciones de aplicación, correo/worker/reintentos, Excel/PDF, rendimiento objetivo, UI nueva y continuidad productiva. UI no repetida porque prototipo/tests/capturas se conservan intactos. CA4-06 pendiente de aceptación; Fase 5 no iniciada y sin despliegue. F1-SEG-01/02/03 y objetivos semanales intactos.
+
+
+## Cierre aprobado de Fase 4 — 2026-10-31
+
+D-19 acepta entrega `65609df`, cumple CA4-06 y cierra Fase 4. Fase 5 autorizada para nuevo chat, sin ejecución aquí. Verificación puntual reproducida con Python: enlaces Markdown locales existentes, encabezados/filas de estado y CA4-06 consistentes; filas 6–15 idénticas y todos los archivos ajenos a los ocho documentos de cierre preservados byte a byte respecto de `65609df`. `git diff --check` aprobado. Revisión de diferencias para separar aceptación y continuidad de implementación u operación.
+
+No se repiten pruebas PostgreSQL/UI ni se implementan sesiones/Auth o nuevas migraciones por tratarse solo de documentación. Los verificadores/resultados originales de Fase 4 permanecen intactos y evalúan su entrega EN_REVISION; no se presentan como comprobación de este cierre posterior. Los 46 controles locales y límites de restauración se conservan. Sin proyecto remoto, correo real, producción, gastos o despliegues; F1-SEG-01/02/03 siguen abiertos. Commit/push y SHA remoto comprobados antes de confirmar entrega.

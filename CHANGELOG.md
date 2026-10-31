@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-31 — Cierre aprobado de Fase 4
+
+- D-19 acepta modelo/persistencia de `65609df`; CA4-06 cumplido, Fase 4 COMPLETADA.
+- Fase 5 autorizada para un nuevo chat, ejecución pendiente y arranque documentado.
+- Solo continuidad documental; SQL, tests y evidencias intactos, sin autenticación implementada ni despliegue.
+
 ## 2026-10-31 — Fase 4, entrega EN_REVISION
 
 - Modelo ER, diccionario, migración PostgreSQL transaccional y datos sintéticos.

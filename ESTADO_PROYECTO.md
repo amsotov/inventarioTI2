@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 4 — EN_REVISION; modelado y persistencia locales entregados.
+**Fase:** 4 — COMPLETADA; entrega y cierre aprobados por D-19.
 **Modo:** GUIADO
-**Última fase completada:** 3.
-**Última fase autorizada:** 4, ejecutada y entregada para revisión. Fases 5–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 4.
+**Última fase autorizada:** 5, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 6–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** revisar la entrega de Fase 4 y sus pruebas al final de este documento y en docs/BASE_DATOS.md. Aceptación/cierre pendientes. Fase 5 no autorizada; sin despliegue. Los registros anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 4 aceptada y cerrada por D-19. Iniciar únicamente Fase 5 en un nuevo chat con autorización ya otorgada y plan de arranque al final de FASES.md. Aquí no se implementa autenticación ni se despliega; los apartados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -248,3 +248,16 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: commit/push normales a main, sin forzar, con autor noreply ya verificado en historial. Comparar SHA local/remoto después de subir; comunicar SHA final al usuario tras verificar. La actualización no publica el sistema.
 
 **Siguiente acción:** revisión y aceptación expresa de Fase 4; cualquier inicio de Fase 5 requiere autorización separada. No volver a pedir autorización de la Fase 4 ya ejecutada.
+
+
+## Cierre vigente de Fase 4 y autorización de Fase 5 — 2026-10-31
+
+- Evidencia literal del usuario: «Apruebo fase 4 y inicia fase 5 inventarioTI2 en nuevo chat». D-19 acepta modelo, diccionario, migración y pruebas de `65609df`; CA4-06 cumplido y Fase 4 COMPLETADA. Los 46 controles locales y la revisión documental conservan sus límites; no se afirma integración Supabase productiva ni operación implantada.
+- Fase 5 AUTORIZADA para iniciar en un nuevo chat, ejecución PENDIENTE. No se abre automáticamente un chat ni se inicia autenticación aquí. Leer el plan de arranque vigente al final de FASES; no pedir otra vez la autorización ya otorgada. Fases 6–15 sin autorización.
+- Trabajo de cierre: actualizar FASES, este estado, aceptación en BASE_DATOS, D-19 en DECISIONES y continuidad en README/specs/README, PRUEBAS y CHANGELOG. Preservar migraciones, seed, consultas, prototipo, tests y evidencias originales byte a byte.
+- Verificaciones: árbol inicial limpio, fetch/avance directo sin novedades; enlaces locales, estados y CA4-06, filas 6–15 y archivos ajenos al alcance comparados contra `65609df`; `git diff --check`. Solo documentación; no repetir pruebas de PostgreSQL/UI ni modificar verificadores históricos para hacerlos pasar con estados posteriores.
+- Insumos de autenticación: arquitectura BFF/Supabase aceptada, sesión opaca/servidor, revocación estricta, 30 min/8 h, MFA administrativo, invitación 24 h/recuperación 30 min de un uso. Primera identidad real solo mediante puesta en marcha autorizada; sin credenciales predeterminadas. Entorno sintético aislado y migraciones nuevas para cambios necesarios de Fase 5; sin permisos/API empresariales de fases posteriores.
+- F1-SEG-01/02/03 conservados: retención legal antes de datos reales, presupuesto no aprobado y respaldo operativo no configurado. UTC, frecuencia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin gasto ni despliegue.
+- GitHub: commit/push normales a main y comprobación SHA local/remoto antes de confirmar la entrega; aprobación no autoriza producción. SHA final comunicado al usuario tras verificar.
+
+**Siguiente acción:** abrir un nuevo chat con inventarioTI2 e iniciar únicamente Fase 5 bajo D-19. Entrega y cierre de Fase 5 necesitarán revisión propia; no iniciar Fase 6.

@@ -1,6 +1,6 @@
 # Modelo y persistencia — Fase 4
 
-**Fecha:** 2026-10-31 · **Estado:** EN_REVISION. Implementación local con datos sintéticos; aceptación del usuario pendiente. Insumos: D-14, D-17, [arquitectura](ARQUITECTURA.md), [contratos](CONTRATOS_API.md) y [cierre empresarial](CIERRE_FASE1.md). No se inicia Fase 5 ni se despliega.
+**Fecha:** 2026-10-31 · **Estado:** COMPLETADA y aceptada por D-19. Implementación local con datos sintéticos; cierre aprobado el 2026-10-31. Insumos: D-14, D-17, [arquitectura](ARQUITECTURA.md), [contratos](CONTRATOS_API.md) y [cierre empresarial](CIERRE_FASE1.md). Fase 5 autorizada para un nuevo chat, ejecución pendiente; sin despliegue.
 
 ## Plan y alcance ejecutado
 
@@ -102,6 +102,6 @@ SQL Server exige adaptador nuevo: uuid→uniqueidentifier, timestamptz→datetim
 | CA4-03 | Migración generada con CLI, transacción/checksum/reaplicación y seed sintético probados |
 | CA4-04 | Doble asignación y baja/asignación concurrentes; intervalos, UTC y rollback comprobados |
 | CA4-05 | Consultas y restauración local comparadas; límites y seguimientos documentados |
-| CA4-06 | PENDIENTE: revisión y aceptación expresa del usuario; no iniciar Fase 5 |
+| CA4-06 | CUMPLIDO por D-19: aceptación expresa y cierre de Fase 4; Fase 5 autorizada para un nuevo chat |
 
 Resultados exactos y alcance de las pruebas en [PRUEBAS](PRUEBAS.md) y [salida versionada](evidencias/fase4/resultados.txt).

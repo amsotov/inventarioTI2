@@ -105,3 +105,8 @@ Decisión: aceptar revisión visual y cierre de Fase 2 (entrega `88d54f6`), sin 
 ## D-18 — Ejecución y entrega de persistencia de Fase 4
 
 2026-10-31. Solicitud actual ratifica D-17 e indica desarrollar únicamente modelado/persistencia y actualizar GitHub, sin Fase 5 ni despliegues. Implementación local EN_REVISION en [BASE_DATOS](BASE_DATOS.md): modelo normalizado, snapshots históricos deliberados, custodias por intervalos con cierre único, migración aditiva sin extensiones y acceso privado cerrado por defecto. No se crean políticas de autorización ni flujos Auth por dependencia. Cuenta es referencia de actor; comandos/outbox soportan atomicidad de futuros servicios, sin replay HTTP ni correo implementados. CA4-06 pendiente de aceptación expresa; F1-SEG-01/02/03 sin cerrar por inferencia. Este registro no altera la arquitectura ni autoriza fases 5–15.
+
+
+## D-19 — Aceptación de Fase 4 y continuidad de Fase 5
+
+2026-10-31. Evidencia literal: «Apruebo fase 4 y inicia fase 5 inventarioTI2 en nuevo chat». Acepta entrega `65609df9f7868555d985d381c4dcf24c97d06235`, cumple CA4-06 y cierra Fase 4 COMPLETADA. Autoriza únicamente Fase 5 — autenticación para iniciar en un nuevo chat, ejecución PENDIENTE. No implica implementación aquí, creación automática del chat ni aprobación de fases 6–15, permisos empresariales, producción, despliegue o gastos. F1-SEG-01/02/03 y límites de las pruebas permanecen vigentes. Este registro actualiza el antecedente EN_REVISION de D-18 sin reescribir evidencias.

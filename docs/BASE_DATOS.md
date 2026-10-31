@@ -110,3 +110,8 @@ Resultados exactos y alcance de las pruebas en [PRUEBAS](PRUEBAS.md) y [salida v
 ## Extensión de Fase 5
 
 La migración inicial aceptada permanece intacta. La [migración aditiva de autenticación](../supabase/migrations/20261031055416_autenticacion.sql) añade credencial_lista y esquema privado acceso; detalle de ciclo de vida, validación y privilegios pendientes en [AUTENTICACION](AUTENTICACION.md). No abre acceso empresarial.
+
+
+## Continuidad de Fase 6 — 2026-10-31
+
+Fase 6 añade migración aditiva de roles SQL mínimos, políticas de lectura contextual y seguridad.eventos; no modifica migraciones aceptadas. No concede DML empresarial genérico. El lookup privado SECURITY DEFINER usa propietario sin BYPASSRLS/propiedad de tablas y grants selectivos. Ver SEGURIDAD para privilegios/límites y PRUEBAS para PostgreSQL real.

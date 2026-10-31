@@ -31,3 +31,8 @@ Punto vigente posterior: Fase 5 ejecutada y EN_REVISION. [Autenticación](../doc
 
 
 Punto vigente posterior — D-21: Fase 5 COMPLETADA por aceptación expresa de la entrega `6ab7229`; Fase 6 autorizada para iniciar en un nuevo chat, ejecución PENDIENTE. Seguir [FASES](../FASES.md) y [ESTADO](../ESTADO_PROYECTO.md); no volver a pedir autorización. Fases 7–15 sin autorización; sin despliegue. Spec Kit no instalado ni utilizado. Los antecedentes EN_REVISION anteriores se conservan como históricos.
+
+
+## Continuidad de Fase 6 — 2026-10-31
+
+Entrega de Fase 6 EN_REVISION bajo D-21: ver docs/SEGURIDAD.md (CA6-01 a CA6-06), tests/security y evidencias/fase6. No se instala Spec Kit ni inicia Fase 7.

@@ -3,7 +3,7 @@ import type { Account, Database, Intent, Session, Store } from './ports.js';
 class PgStore implements Store {
   constructor(private c: PoolClient) {}
   async account(key: string): Promise<Account | undefined> {
-    return (await this.c.query('select * from inventario.cuentas where id::text=$1 or lower(correo)=lower($1) for update', [key])).rows[0];
+    return (await this.c.query('select * from inventario.cuentas where id::text=$1 or lower(correo)=lower($1) for no key update', [key])).rows[0];
   }
   async saveAccount(a: Account) {
     await this.c.query('update inventario.cuentas set proveedor_ref=$2, estado=$3, version_autorizacion=$4, credencial_lista=$5 where id=$1', [a.id,a.proveedor_ref,a.estado,a.version_autorizacion,a.credencial_lista]);

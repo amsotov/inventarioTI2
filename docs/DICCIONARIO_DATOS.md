@@ -21,3 +21,8 @@ Fuente física: [migración inicial](../supabase/migrations/20261031053433_model
 Los campos text obligatorios de nombres, códigos, motivos y etiquetas no admiten blanco. Correo debe tener forma sin espacios, con @ y dominio; no acredita existencia del buzón. No se imponen longitudes empresariales no acordadas; los futuros contratos de entrada limitarán cuerpo y campos. Texto se guarda como texto, sin tratarlo como HTML.
 
 `migraciones.versiones(nombre text PK, sha256 text)` existe exclusivamente en la suite local para verificar orden, checksum y reaplicación. No es una tabla de negocio ni suplanta el historial de Supabase CLI. No se versionan dumps ni secretos.
+
+
+## Continuidad de Fase 6 — 2026-10-31
+
+Fase 6: seguridad.eventos(id bigint identity, actor_id uuid FK cuentas, permiso text enumerado, permitido boolean, registrado_en timestamptz del servidor). Bitácora técnica append-only; sin payloads libres ni PII/secretos. Función privada seguridad.principal() devuelve solo actor_id/rol a runtime con sesión vigente. Más detalle en SEGURIDAD.

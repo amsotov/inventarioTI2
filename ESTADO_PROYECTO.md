@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 5 — COMPLETADA; entrega y cierre aprobados por D-21.
+**Fase:** 6 — EN_REVISION; entrega local de autorización, privacidad y seguridad, aceptación pendiente.
 **Modo:** GUIADO
 **Última fase completada:** 5.
-**Última fase autorizada:** 6, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 7–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 6, D-21 ratificada; entrega EN_REVISION. Fases 7–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 5 aceptada y cerrada por D-21. Iniciar únicamente Fase 6 en un nuevo chat con autorización ya otorgada; seguir el plan al final de FASES.md. Aquí solo se registra continuidad, sin implementar Fase 6 ni desplegar. Los apartados anteriores al cierre de Fase 5 al final son antecedentes históricos.
+**Punto vigente de continuidad:** revisar la entrega de Fase 6 en docs/SEGURIDAD.md y la sección final de este estado. Fase 5 COMPLETADA por D-21; Fase 7 no autorizada. Los apartados anteriores a esta entrega al final son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -286,3 +286,16 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: commit/push normales a main, autoría noreply y comparación de SHA local/remoto antes de confirmar entrega. SHA final se informa después de comprobarlo; sin despliegue.
 
 **Siguiente acción:** abrir un nuevo chat con inventarioTI2 e iniciar únicamente Fase 6 bajo D-21. Su entrega/cierre necesitará revisión propia; no iniciar Fase 7.
+
+
+## Ejecución y entrega de Fase 6 — vigente, 2026-10-31
+
+- Objetivo: autorización efectiva, privacidad y seguridad bajo D-21, ratificada en esta conversación. Base inicial limpia `6ab7229`, fetch/avance directo a `9845b10`, preservando cierre remoto de Fase 5. Instrucciones, plan vigente, requisitos/D-14, arquitectura/D-17, persistencia/D-19 y autenticación/D-21 inspeccionados. Guías cloud/Supabase/PostgreSQL leídas; documentación RLS/changelog actual consultada. Spec Kit no detectado ni instalado.
+- Plan presentado y ejecutado: matriz cerrada administrador/lectura sin ámbito por unidad; puerto servidor Authorization con validación viva y locks; roles SQL separados y privados sin propiedad/BYPASSRLS; contexto de sesión LOCAL y RLS; proyección positiva de datos para futuro exportador; bitácora técnica inmutable sin PII/secretos y endurecimiento HTTP. No endpoints de negocio nuevos ni DML genérico de negocio concedido.
+- Archivos: apps/server/security, cambios acotados a AuthService/Postgres, app/main; nueva migración `20261031182220_autorizacion_seguridad.sql`, tests/security, package/tsconfig/.env.example; SEGURIDAD, continuidad/trazabilidad/contratos/datos y evidencia fase6. Migraciones aceptadas, tests anteriores, prototipo y evidencia histórica preservados.
+- Corrección hallada durante pruebas: bloqueo propio entre cuenta FOR UPDATE y FK de bitácora desde otro pool; se sustituye por FOR NO KEY UPDATE, compatible con KEY SHARE y aún excluyente frente a revocación/cambio de cuenta. Prueba concurrente cubre operación en curso y denegación siguiente. Se añade credencial_lista a validación vigente; antes solo login la comprobaba.
+- Verificaciones: build, suite Auth/PostgreSQL y GoTrue local, pruebas negativas nuevas con roles SQL reales y proveedor doble, npm audit, revisión documental y git diff --check. Resultados exactos y límites en docs/PRUEBAS y evidencias/fase6. La primera ejecución bloqueada fue detenida sobre el contenedor sintético y corregida, no se presenta como éxito.
+- Riesgos/pendientes: logins SQL de operación no aprovisionados, Supabase gestionado/advisors remotos no verificados; DATABASE_URL privilegiado ahora rechazado deliberadamente. Las escrituras empresariales, sus eventos RF-12 y controles propio rol/último administrador se implementarán en sus fases; permanecen cerradas. Exportaciones/UI/archivos/carga/pentest completo no ejecutados porque aún no existen esas superficies. F1-SEG-01 legal antes de datos reales, F1-SEG-02 presupuesto y F1-SEG-03 operación de respaldo intactos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados.
+- GitHub: commit/push normales a main con autoría noreply del historial; comparar SHA remoto antes de comunicar entrega. Sin permisos remotos, cuentas reales, datos reales, gastos, despliegue o Fase 7.
+
+**Estado:** Fase 6 EN_REVISION, CA6-06 pendiente. **Siguiente acción:** revisión/aceptación expresa de esta entrega; no se presume cierre ni autorización para Fase 7.

@@ -5,13 +5,14 @@ const schema = (props: Record<string,unknown>) => ({body:{type:'object',addition
 export function app(auth: AuthService, origin: string) {
   const server=Fastify({logger:false,bodyLimit:8192,trustProxy:false,ajv:{customOptions:{removeAdditional:false,coerceTypes:false}}});
   server.addHook('onRequest',async(req,res)=>{
-    res.header('cache-control','no-store').header('referrer-policy','no-referrer').header('x-content-type-options','nosniff');
+    res.header('cache-control','no-store').header('referrer-policy','no-referrer').header('x-content-type-options','nosniff').header('x-frame-options','DENY').header('permissions-policy','camera=(), microphone=(), geolocation=()').header('strict-transport-security','max-age=31536000').header('content-security-policy',"default-src 'none'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'");
     if(req.method!=='GET' && req.headers.origin!==origin) throw new AuthError(403,'FORBIDDEN');
   });
   server.setErrorHandler((err,req,res)=>{
     const e=err as Error & {validation?:unknown};
-    const status=err instanceof AuthError?err.status:e.validation?400:503;
-    res.code(status).type('application/problem+json').send({type:'about:blank',title:'No se pudo completar la solicitud',status,code:err instanceof AuthError?err.code:e.validation?'INVALID_REQUEST':'DEPENDENCY_UNAVAILABLE',requestId:req.id});
+    const httpStatus=(err as {statusCode?:number}).statusCode;
+    const status=err instanceof AuthError?err.status:e.validation?400:httpStatus===413||httpStatus===415?httpStatus:503;
+    res.code(status).type('application/problem+json').send({type:'about:blank',title:'No se pudo completar la solicitud',status,code:err instanceof AuthError?err.code:e.validation?'INVALID_REQUEST':status===413?'PAYLOAD_TOO_LARGE':status===415?'UNSUPPORTED_MEDIA_TYPE':'DEPENDENCY_UNAVAILABLE',requestId:req.id});
   });
   const sid=(req:{headers:{cookie?:string}})=>req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>x.startsWith('__Host-inventario='))?.slice(18)??'';
   const csrf=(req:{headers:Record<string,unknown>})=>typeof req.headers['x-csrf-token']==='string'?req.headers['x-csrf-token']:'';

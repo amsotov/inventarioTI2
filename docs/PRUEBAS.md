@@ -178,3 +178,21 @@ La ejecución directa del verificador histórico con ambas migraciones falló po
 Usuario acepta entrega `6ab7229f2a89ca08fbd2f274377aa146386bc165` y autoriza Fase 6 únicamente en un nuevo chat. CA5-06 cumplido, Fase 5 COMPLETADA; Fase 6 ejecución PENDIENTE y fases 7–15 sin autorización. Este registro no amplía los resultados de 18 pruebas de autenticación/46 comprobaciones históricas ni acredita los pendientes operativos.
 
 Verificación: git inicialmente limpio; fetch y avance directo sin novedades; revisión de los ocho Markdown modificados, enlaces locales, estados/aceptación y preservación literal de filas 7–15 y todos los archivos restantes frente a la entrega aceptada; git diff --check. No pruebas funcionales/UI/PostgreSQL/GoTrue repetidas: solo cambia documentación. No alterar el verificador histórico de Fase 5 que espera su estado original. Sin implementación de Fase 6, cambios de permisos, servicios remotos, correos o despliegue. Commit/push normales y comprobación SHA local/remoto antes de confirmar.
+
+## Fase 6 — autorización, privacidad y seguridad (2026-10-31)
+
+Base `9845b10`, entorno sintético aislado. Entrega EN_REVISION bajo D-21; [SEGURIDAD](SEGURIDAD.md) recoge CA6-01 a CA6-06 y límites. No se reescribe evidencia histórica.
+
+| Verificación | Comando y resultado |
+|---|---|
+| Build | `npm run build`: correcto; evidencias/fase6/build.txt |
+| Auth + seguridad | `npm test`: **34 pruebas, 34 correctas, 0 fallidas**, incluyendo contenedores padre; evidencias/fase6/resultados.txt |
+| Dependencias | `npm audit --json`: 0 vulnerabilidades; evidencias/fase6/audit.json |
+| Documentación/alcance | `python3 docs/evidencias/fase6/verificar.py`: evidencias/fase6/documentos.txt; filas 7–15, archivos históricos y enlaces |
+| Diferencias | `git diff --check`: correcto |
+
+Las 15 pruebas nuevas de seguridad usan PostgreSQL 17 real fijado por digest, tres migraciones compuestas y conexiones diferenciadas como inventario_auth/inventario_runtime. Identidad del proveedor DOBLE en estas pruebas; la regresión del adaptador usa GoTrue real local por separado. Comprueban matriz, privilegios, contexto falso/ausente, inventario compartido, auditoría/admin denegadas al lector, MFA, CSRF obligatorio, inmutabilidad, escritura genérica cerrada, pool tras commit/rollback, versión/estado/credencial/revocación/expiración, revocación concurrente, errores de proveedor, anon/authenticated, proyección sin PII, CSP/XSS/Origin/inyección y cuerpo excesivo. Las 16 pruebas previas de Auth y el escenario GoTrue también pasaron; dos contenedores padre completan el total del runner.
+
+Incidencias de preparación resueltas: primera ejecución se bloqueó porque FOR UPDATE en cuenta era incompatible con KEY SHARE de su FK desde la bitácora en otro pool; se detuvo únicamente el contenedor sintético, se cambió a FOR NO KEY UPDATE y se añadió prueba concurrente y timeout en el nuevo harness. Segundo intento detectó un defecto del propio test anon/authenticated: `pool.query` descartaba la conexión tras un error y el siguiente intento volvía a postgres; ahora usa cliente fijado hasta RESET ROLE. Resultado final completo arriba; no se cuentan esos intentos como éxitos.
+
+No ejecutadas: proyecto Supabase gestionado/advisors remotos, aprovisionamiento SQL real, pruebas por ID de endpoints empresariales aún inexistentes, exportaciones reales, panel/último administrador, UI completa, hardware/navegadores, carga/pentest integral ni respaldo operativo. Regresión histórica de datos/UI no repetida al conservar migraciones y código originales; las tres migraciones sí se aplican juntas en las suites actuales. No se atribuyen datos/entrega externos ni cumplimiento legal; F1-SEG-01/02/03 siguen abiertos. No Fase 7 ni despliegue.

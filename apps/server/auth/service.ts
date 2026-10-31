@@ -1,5 +1,5 @@
 import { hash, token, Vault } from './crypto.js';
-import type { Database, Provider, Store, Session, Tokens } from './ports.js';
+import type { Account, Database, Provider, Store, Session, Tokens } from './ports.js';
 export class AuthError extends Error { constructor(readonly status: number, readonly code: string) { super(code); } }
 const reject = () => { throw new AuthError(401,'SESSION_REQUIRED'); };
 export class AuthService {
@@ -31,7 +31,7 @@ export class AuthService {
     if(!session || session.revoked || now-session.created>=8*3600000 || now-session.activity>=1800000) return reject();
     if(csrf!==undefined && csrf!==session.csrf) throw new AuthError(403,'FORBIDDEN');
     const a=await s.account(session.accountId);
-    if(!a || a.estado==='inactiva' || a.version_autorizacion!==session.version || (full && a.estado!=='activa')) return reject();
+    if(!a || !a.credencial_lista || a.estado==='inactiva' || a.version_autorizacion!==session.version || (full && a.estado!=='activa')) return reject();
     if(a.rol==='administrador' && !session.mfa && now-session.created>=600000) return reject();
     if(full && a.rol==='administrador' && !session.mfa) throw new AuthError(403,'MFA_REQUIRED');
     let identity;
@@ -40,6 +40,14 @@ export class AuthService {
     session.vault=this.vault.seal(identity);
     await s.saveSession(hash(sid),session);
     return {session,a};
+  }
+  // Mantiene locks de sesión/cuenta hasta terminar la operación protegida.
+  // Valida proveedor vigente, estado, versión, expiración y MFA en cada uso.
+  async withPrincipal<T>(sid: string, csrf: string | undefined, fn: (account: Account) => Promise<T>): Promise<T> {
+    return this.db.transaction(async s => {
+      const {a}=await this.current(s,sid,csrf);
+      return fn(a);
+    });
   }
   async status(sid: string) {
     return this.db.transaction(async s => {

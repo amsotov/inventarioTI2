@@ -1,4 +1,5 @@
 import { Pool } from 'pg';
+import { assertDatabaseRole } from './security/postgres.js';
 import { app } from './app.js';
 import { Postgres } from './auth/postgres.js';
 import { SupabaseProvider } from './auth/supabase.js';
@@ -8,6 +9,7 @@ function required(name: string) { const v=process.env[name];if(!v) throw new Err
 const origin=required('APP_ORIGIN');
 if(new URL(origin).origin!==origin || !origin.startsWith('https://')) throw new Error('APP_ORIGIN requires HTTPS origin');
 const pool=new Pool({connectionString:required('DATABASE_URL'),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
+await assertDatabaseRole(pool,'inventario_auth');
 const auth=new AuthService(new Postgres(pool),new SupabaseProvider(required('SUPABASE_URL'),required('SUPABASE_PUBLISHABLE_KEY'),required('SUPABASE_SECRET_KEY')),new Vault(required('AUTH_ENCRYPTION_KEY')),origin);
 const server=app(auth,origin);
 await server.listen({host:'127.0.0.1',port:Number(process.env.PORT??3000)});

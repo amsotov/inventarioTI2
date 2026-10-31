@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 5 — COMPLETADA; entrega y cierre aprobados por D-21.
+**Fase actual:** 6 — EN_REVISION; autorización, privacidad y seguridad implementadas localmente; aceptación pendiente.
 **Última fase completada:** 5.
-**Próxima fase:** 6 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 7–15:** PENDIENTE / NO OTORGADA.
+**Fase 6:** ejecución AUTORIZADA por D-21 y ratificada; entrega EN_REVISION. **Fases 7–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 autorizada para un nuevo chat, ejecución pendiente; fases 7–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 EN_REVISION; fases 7–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -16,7 +16,7 @@
 | 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-17 |
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-19 |
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-21 |
-| 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | PENDIENTE | AUTORIZADA para un nuevo chat por D-21; ejecución no iniciada |
+| 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | EN_REVISION | Ejecución AUTORIZADA por D-21 y ratificada; aceptación pendiente |
 | 7 | Backend y API | Servicios, reglas empresariales y contratos | PENDIENTE | NO OTORGADA |
 | 8 | Frontend funcional | Pantallas e integración con API | PENDIENTE | NO OTORGADA |
 | 9 | Panel de administración | Usuarios, permisos, catálogos y parámetros | PENDIENTE | NO OTORGADA |
@@ -290,3 +290,14 @@ Punto de inicio para el nuevo chat:
 4. Revisar los controles de autenticación existentes y sus pendientes sin atribuir integración operativa a las pruebas locales. Probar accesos entre roles, revocación, MFA, lectura/administración/auditoría, CSRF/Origin, inyección, XSS e IDOR/BOLA según superficie realmente existente. Añadir únicamente las interfaces necesarias de seguridad; no implementar por dependencia la API empresarial de Fase 7, frontend de Fase 8 o panel de Fase 9.
 5. Preservar migraciones aceptadas; cambios necesarios en migraciones nuevas aditivas y verificables. No modificar proyectos remotos, permisos reales, primer administrador, buzones, datos reales ni producción sin autorización específica. Sin gastos ni despliegue. F1-SEG-02 presupuesto y F1-SEG-03 operación de respaldo siguen abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
 6. Actualizar docs/SEGURIDAD.md y documentos vinculados, registrar pruebas ejecutadas/no ejecutadas y riesgos, sincronizar GitHub y comprobar SHA remoto. Entregar Fase 6 para revisión propia; no marcar cierre por solo implementar ni iniciar Fase 7 sin autorización independiente.
+
+
+## Ejecución y entrega de Fase 6 — vigente, 2026-10-31
+
+Solicitud: «Inicia únicamente la Fase 6, ya autorizada en FASES.md y ESTADO_PROYECTO.md. Desarrolla autorización, privacidad y seguridad, y actualiza GitHub. No inicies Fase 7 ni despliegues».
+
+Base limpia recuperada por avance directo a `9845b10`. Plan presentado antes de implementar: matriz de dos roles/inventario compartido, amenazas, privilegios SQL mínimos, contexto transaccional, RLS, privacidad/auditoría, endurecimiento HTTP y pruebas negativas aisladas. Codex implementa y verifica; usuario conserva aceptación.
+
+Entregables/criterios CA6-01 a CA6-06 en [SEGURIDAD](docs/SEGURIDAD.md); código apps/server/security, nueva migración aditiva, tests/security y evidencia en [PRUEBAS](docs/PRUEBAS.md). Fase 6 EN_REVISION; CA6-06 pendiente, última completada 5. Filas 7–15 permanecen PENDIENTE / NO OTORGADA. Ningún endpoint empresarial nuevo, cuenta real, permiso remoto, gasto o despliegue.
+
+La provisión de logins SQL reales y verificación de proyecto Supabase gestionado siguen pendientes operativos. Escritura empresarial genérica cerrada; su futura apertura exige los servicios atómicos y controles de sus fases autorizadas. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días preservados. Siguiente acción: revisión y aceptación expresa de Fase 6; no iniciar Fase 7.

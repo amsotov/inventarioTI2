@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-31 — Fase 6, entrega EN_REVISION
+
+- Matriz de permisos, puerto de autorización, contexto transaccional y RLS con roles SQL mínimos.
+- Privacidad por proyección positiva, bitácora técnica inmutable y cabeceras/límites HTTP.
+- Pruebas negativas locales y regresión; nueva migración aditiva y documentación de seguridad. Sin API empresarial nueva, permisos remotos, Fase 7 ni despliegue.
+
 ## 2026-10-31 — Cierre aprobado de Fase 5
 
 - D-21 acepta entrega de autenticación `6ab7229`; CA5-06 cumplido, Fase 5 COMPLETADA.

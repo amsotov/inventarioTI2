@@ -1,0 +1,4 @@
+OK: Fase 6 EN_REVISION; filas 7–15 intactas/sin autorización.
+OK: migraciones aceptadas, tests y evidencias anteriores, prototipo, datos y lockfile preservados.
+OK: enlaces locales modificados, criterios CA6 y seguimientos de legal/presupuesto/respaldo.
+OK: git diff --check.

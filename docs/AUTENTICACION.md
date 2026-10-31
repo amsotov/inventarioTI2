@@ -55,3 +55,8 @@ Para arrancar una instancia de prueba autorizada: aplicar ambas migraciones a un
 ## Aceptación y límites conservados — D-21
 
 El usuario indica «Apruebo fase 5 y en nuevo chat inicia fase 6», aceptando la entrega `6ab7229f2a89ca08fbd2f274377aa146386bc165`. Fase 5 COMPLETADA; la aceptación no acredita correo real, proyecto gestionado, UI completa ni privilegios operativos. Los pendientes anteriores siguen vigentes para su fase/puesta en marcha autorizada. No se rebajan contratos ni se repiten pruebas en este cierre documental. No se ejecuta Fase 6 aquí ni se despliega.
+
+
+## Continuidad de Fase 6 — 2026-10-31
+
+Integración de Fase 6: withPrincipal valida credencial disponible, cuenta/sesión/proveedor vigente y mantiene locks para autorización. El bloqueo de cuenta pasa a FOR NO KEY UPDATE para permitir FK de bitácora desde pool separado. main rechaza identidades SQL privilegiadas; DATABASE_URL exige inventario_auth. Ver SEGURIDAD. La aceptación D-21 y evidencias originales de Fase 5 conservan su alcance.

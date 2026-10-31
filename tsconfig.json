@@ -1,1 +1,17 @@
-{"compilerOptions":{"target":"ES2022","module":"NodeNext","moduleResolution":"NodeNext","strict":true,"esModuleInterop":true,"outDir":"dist","rootDir":".","skipLibCheck":true},"include":["apps/**/*.ts","tests/auth/**/*.ts"]}
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "skipLibCheck": true
+  },
+  "include": [
+    "apps/**/*.ts",
+    "tests/auth/**/*.ts",
+    "tests/security/**/*.ts"
+  ]
+}

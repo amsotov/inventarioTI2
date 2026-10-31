@@ -109,3 +109,8 @@ La tabla de módulos en [ARQUITECTURA](ARQUITECTURA.md) vincula RF-01 a RF-16/HU
 ## Evidencia incremental de Fase 5
 
 RF-09/RF-10 y A-08/CR-15/CR-16 (solo identidad/sesiones/MFA): implementación y pruebas en [AUTENTICACION](AUTENTICACION.md). RF-08/RF-11, propio rol/último administrador, permisos empresariales y panel no se declaran implementados. Fase 5 EN_REVISION; integración operativa pendiente.
+
+
+## Continuidad de Fase 6 — 2026-10-31
+
+Fase 6: RF-08/RNF-01 → policy.ts, Authorization y RLS; RF-09/11 → acceso de administración restringido, operaciones/panel pendientes; RF-12/13 → auditoría privada y eventos técnicos append-only (escrituras empresariales pendientes); RNF-04 → publicEmployee y bitácora sin secretos. Evidencia: tests/security y PRUEBAS. Detalle y límites en SEGURIDAD.

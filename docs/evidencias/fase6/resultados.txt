@@ -1,0 +1,48 @@
+
+> inventarioti2@1.0.0 test
+> tsx --test tests/auth/*.test.ts tests/security/*.test.ts
+
+▶ Fase 5: PostgreSQL real aislado, proveedor DOBLE (no Supabase real)
+  ✔ cookie segura, secreto fuera de respuesta, campos desconocidos y Origin (122.041072ms)
+  ✔ inactividad exacta 30 min; polling no renueva; actividad explícita sí (50.090904ms)
+  ✔ absoluto 8 h incluso con actividad (134.298285ms)
+  ✔ revocación por estado y versión vigente en siguiente petición (42.775325ms)
+  ✔ MFA obligatorio; error de código; rotación; parcial 10 min (60.362781ms)
+  ✔ logout local persiste aunque falle proveedor; conciliación durable (23.767575ms)
+  ✔ reenvío invalida enlace anterior y recuperación expira exactamente a 30 min (48.322412ms)
+  ✔ consumo concurrente único y revocación de sesiones previas (60.700574ms)
+  ✔ fallo externo deja uncertain sin reejecución y bloquea credencial previa (58.666406ms)
+  ✔ invitación pendiente, 24 h, activación lectura, cuenta desactivada no revive (140.702906ms)
+  ✔ recuperación pública genérica; rate limit durable entre instancias (80.040463ms)
+  ✔ cifrado autenticado y persistencia entre instancias; GET enlace no consume (42.336769ms)
+  ✔ invitación administrativa no activa hasta MFA verificado (108.996433ms)
+  ✔ generación externa fallida conserva intención incierta durable (21.195119ms)
+  ✔ entrega reclamada una vez y fallo de transporte incierto sin reenvío (31.861526ms)
+  ✔ tablas nuevas cerradas a PUBLIC y RLS activo (1.436233ms)
+✔ Fase 5: PostgreSQL real aislado, proveedor DOBLE (no Supabase real) (10372.521491ms)
+✔ adaptador real: GoTrue local, sin proyecto gestionado ni correo externo (11873.976755ms)
+▶ Fase 6: roles operativos reales, RLS y seguridad (identidad doble)
+  ✔ matriz cerrada, ambos roles y permisos desconocidos (0.813898ms)
+  ✔ identidades SQL mínimas y arranque rechaza propietario (27.527711ms)
+  ✔ sin contexto no hay filas; GUC de rol/actor falsificado no autoriza (14.876595ms)
+  ✔ lector consulta inventario compartido; cuentas/config/auditoría ocultas (41.978322ms)
+  ✔ lectura no administra ni exporta auditoría; denegación durable sin callback (65.996968ms)
+  ✔ administrador con MFA consulta cuentas; sesión parcial denegada (23.602277ms)
+  ✔ escritura genérica cerrada incluso administrador; bitácora inmutable (92.958368ms)
+  ✔ pool limpio tras rollback y contexto inyectado no es SQL (4.439235ms)
+  ✔ RLS rechaza huella revocada, expirada, versión/estado/credencial/MFA inválidos (69.416805ms)
+  ✔ operación en curso mantiene lock frente a revocación; siguiente petición denegada (89.728258ms)
+  ✔ mutación administrativa exige CSRF incluso si el llamador lo omite (11.574071ms)
+  ✔ fallo de proveedor cierra acceso; sin sesión ni SID falsificado (13.389965ms)
+  ✔ anon/authenticated sin acceso privado ni ejecución de lookup (8.769387ms)
+  ✔ privacidad por proyección positiva sin documento/correo/campos nuevos (0.435226ms)
+  ✔ cabeceras, XSS, CSRF/Origin, inyección, payload y errores sin secretos (296.588487ms)
+✔ Fase 6: roles operativos reales, RLS y seguridad (identidad doble) (9280.282343ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32669.006066

@@ -36,3 +36,6 @@ Punto vigente posterior — D-21: Fase 5 COMPLETADA por aceptación expresa de l
 ## Continuidad de Fase 6 — 2026-10-31
 
 Entrega de Fase 6 EN_REVISION bajo D-21: ver docs/SEGURIDAD.md (CA6-01 a CA6-06), tests/security y evidencias/fase6. No se instala Spec Kit ni inicia Fase 7.
+
+
+Punto vigente — D-23: Fase 6 COMPLETADA, CA6-06 cumplido. Fase 7 autorizada para iniciar en un nuevo chat; ejecución PENDIENTE, sin backend empresarial desarrollado en este cierre. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md) y [SEGURIDAD](../docs/SEGURIDAD.md). Fases 8–15 sin autorización; sin despliegue ni instalación de Spec Kit. Los estados anteriores son antecedentes históricos.

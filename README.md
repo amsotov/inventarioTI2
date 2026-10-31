@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 COMPLETADA y aceptada por D-21. Fase 6 EN_REVISION: autorización, RLS, privacidad y seguridad locales; fases 7–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 COMPLETADA y aceptada por D-21. Fase 6 COMPLETADA y aceptada por D-23. Fase 7 AUTORIZADA para un nuevo chat, ejecución pendiente; fases 8–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -99,3 +99,6 @@ Usuario acepta Fase 5 y autoriza iniciar únicamente Fase 6 en un nuevo chat (D-
 ## Entrega de Fase 6
 
 Ver [SEGURIDAD](docs/SEGURIDAD.md) y [PRUEBAS](docs/PRUEBAS.md). `npm ci`, `npm run build`, `npm test` (Docker local requerido, datos sintéticos). `DATABASE_URL` ahora exige identidad SQL `inventario_auth` sin membresías ni privilegios de propietario. No se aprovisionan logins reales. Puerto de negocio separado listo para integración futura; ninguna API empresarial nueva ni despliegue.
+
+
+Punto vigente — D-23: para continuar, abrir un nuevo chat e indicar «Inicia únicamente la Fase 7, ya autorizada en FASES.md y ESTADO_PROYECTO.md. Desarrolla Backend y API y actualiza GitHub. No inicies Fase 8 ni despliegues». El cierre actual solo registra continuidad; no inicia backend empresarial.

@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-31 — Cierre aprobado de Fase 6
+
+- D-23 acepta entrega `336232a`; CA6-06 cumplido y Fase 6 COMPLETADA.
+- Fase 7 autorizada para un nuevo chat; ejecución pendiente y plan de arranque registrado.
+- Solo documentación de cierre; código, migraciones, tests y evidencias preservados. Sin Fase 7 implementada ni despliegue.
+
 ## 2026-10-31 — Fase 6, entrega EN_REVISION
 
 - Matriz de permisos, puerto de autorización, contexto transaccional y RLS con roles SQL mínimos.

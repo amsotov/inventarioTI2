@@ -196,3 +196,10 @@ Las 15 pruebas nuevas de seguridad usan PostgreSQL 17 real fijado por digest, tr
 Incidencias de preparación resueltas: primera ejecución se bloqueó porque FOR UPDATE en cuenta era incompatible con KEY SHARE de su FK desde la bitácora en otro pool; se detuvo únicamente el contenedor sintético, se cambió a FOR NO KEY UPDATE y se añadió prueba concurrente y timeout en el nuevo harness. Segundo intento detectó un defecto del propio test anon/authenticated: `pool.query` descartaba la conexión tras un error y el siguiente intento volvía a postgres; ahora usa cliente fijado hasta RESET ROLE. Resultado final completo arriba; no se cuentan esos intentos como éxitos.
 
 No ejecutadas: proyecto Supabase gestionado/advisors remotos, aprovisionamiento SQL real, pruebas por ID de endpoints empresariales aún inexistentes, exportaciones reales, panel/último administrador, UI completa, hardware/navegadores, carga/pentest integral ni respaldo operativo. Regresión histórica de datos/UI no repetida al conservar migraciones y código originales; las tres migraciones sí se aplican juntas en las suites actuales. No se atribuyen datos/entrega externos ni cumplimiento legal; F1-SEG-01/02/03 siguen abiertos. No Fase 7 ni despliegue.
+
+
+## Cierre aprobado de Fase 6 — D-23, 2026-10-31
+
+Evidencia del usuario: «Aprobado fase 6. Inicia fase 7 en nuevo chat». CA6-06 cumplido y Fase 6 COMPLETADA. Se conserva la entrega `336232a9b1add5c6605f396a90795e419022756c` y las 34 pruebas locales con sus límites. Este cierre solo cambia documentación; no se repiten pruebas funcionales ni se modifican verificadores/resultados históricos.
+
+Revisión ejecutada: git inicial limpio, fetch/avance directo sin novedades; git diff --check; enlaces locales de documentos cambiados; coherencia de estados/CA6-06/D-23; filas de fases 8–15 y contenido de todos los archivos ajenos a los ocho documentos de cierre comparados contra `336232a9b1add5c6605f396a90795e419022756c`. Fase 7 autorizada pero no iniciada aquí; sin Fase 8 ni despliegue. Sincronización a main con comprobación de SHA remoto al finalizar.

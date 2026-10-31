@@ -125,3 +125,8 @@ Decisión: aceptar revisión visual y cierre de Fase 2 (entrega `88d54f6`), sin 
 ## Continuidad de Fase 6 — 2026-10-31
 
 D-22 — Implementación de Fase 6 bajo D-21: dos roles e inventario compartido; separar roles SQL Auth/runtime/contexto, usar huella de sesión validada y contexto LOCAL, sin DML empresarial genérico hasta sus casos de uso. Entrega EN_REVISION, aceptación pendiente; sin Fase 7 ni despliegue.
+
+
+## D-23 — Aceptación de Fase 6 y continuidad de Fase 7
+
+2026-10-31. Evidencia literal: «Aprobado fase 6. Inicia fase 7 en nuevo chat». Acepta entrega `336232a9b1add5c6605f396a90795e419022756c`, cumple CA6-06 y cierra Fase 6 COMPLETADA. Autoriza únicamente Fase 7 — Backend y API para iniciar en un nuevo chat, ejecución PENDIENTE. No implica ejecución aquí, creación automática de conversación ni aprobación de fases 8–15, despliegue, producción, datos reales, gastos o permisos reales. Conserva límites de las pruebas locales y F1-SEG-01/02/03. Actualiza el antecedente EN_REVISION de D-22 sin reescribir evidencia.

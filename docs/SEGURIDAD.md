@@ -1,6 +1,6 @@
 # Autorización, privacidad y seguridad — Fase 6
 
-**Estado: EN_REVISION** · 2026-10-31 · Autorización D-21 ratificada por la solicitud actual. Codex implementa/verifica; el usuario acepta el cierre. Base `9845b10`. Solo entorno sintético local, sin despliegue ni cambios remotos de permisos.
+**Estado: COMPLETADA — aceptada por D-23** · 2026-10-31 · Autorización D-21 ratificada por la solicitud actual. Entrega y cierre aceptados expresamente por el usuario; los límites operativos se conservan. Base `9845b10`. Solo entorno sintético local, sin despliegue ni cambios remotos de permisos.
 
 ## Alcance y aceptación
 
@@ -13,7 +13,7 @@ Dependencias: [requisitos](REQUISITOS.md), [cierre D-14](CIERRE_FASE1.md), [arqu
 | CA6-03 | Sesión/rol/estado/versión/credencial/MFA vigentes, contexto local, pool limpio y revocación |
 | CA6-04 | Privacidad, auditoría inmutable, controles HTTP y modelo de amenazas |
 | CA6-05 | Pruebas negativas reproducibles en PostgreSQL real; límites y evidencias en PRUEBAS |
-| CA6-06 | PENDIENTE: aceptación expresa de esta entrega por el usuario |
+| CA6-06 | CUMPLIDO por D-23: usuario acepta entrega y cierre de Fase 6; Fase 7 autorizada para un nuevo chat |
 
 ## Matriz y ámbito empresarial
 
@@ -89,3 +89,8 @@ F1-SEG-01 retención/jurisdicción, F1-SEG-02 presupuesto y F1-SEG-03 operador/u
 [PRUEBAS](PRUEBAS.md) y `docs/evidencias/fase6/` contienen ejecución y límites. PostgreSQL real aislado con identidades SQL distintas; proveedor doble para los controles nuevos, regresión GoTrue local separada. No se ejecutan pruebas contra datos reales ni proyecto gestionado, advisors remotos, frontend completo, exportaciones, cargas/archivos o producción.
 
 Fuentes consultadas el 2026-10-31: [changelog Supabase](https://supabase.com/changelog.md), [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [PostgreSQL roles](https://www.postgresql.org/docs/17/user-manag.html). El índice incluye cambios de PG 17.11 y exposición Data API; este cambio conserva esquemas privados y no habilita Data API. La compatibilidad comprobada es la del PostgreSQL 17 fijado por digest en los tests, no una actualización del proveedor.
+
+
+## Aceptación de Fase 6 — D-23
+
+2026-10-31. «Aprobado fase 6. Inicia fase 7 en nuevo chat». Acepta `336232a9b1add5c6605f396a90795e419022756c` y cumple CA6-06. No se modifican controles, migraciones, pruebas ni evidencias; Fase 7 autorizada para un nuevo chat, ejecución pendiente. Conservados pendientes de logins SQL reales, proyecto gestionado, retención legal y operación. No despliegue ni autorización de fases 8–15.

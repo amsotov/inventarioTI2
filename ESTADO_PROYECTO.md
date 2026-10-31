@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 6 — EN_REVISION; entrega local de autorización, privacidad y seguridad, aceptación pendiente.
+**Fase:** 6 — COMPLETADA; entrega y cierre aprobados por D-23.
 **Modo:** GUIADO
-**Última fase completada:** 5.
-**Última fase autorizada:** 6, D-21 ratificada; entrega EN_REVISION. Fases 7–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 6.
+**Última fase autorizada:** 7, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 8–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** revisar la entrega de Fase 6 en docs/SEGURIDAD.md y la sección final de este estado. Fase 5 COMPLETADA por D-21; Fase 7 no autorizada. Los apartados anteriores a esta entrega al final son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 6 aceptada y cerrada por D-23. Iniciar únicamente Fase 7 en un nuevo chat bajo autorización ya otorgada y el plan al final de FASES.md. Aquí solo se registra continuidad, sin implementar Fase 7 ni desplegar. Los apartados anteriores a este cierre al final son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -299,3 +299,16 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: commit/push normales a main con autoría noreply del historial; comparar SHA remoto antes de comunicar entrega. Sin permisos remotos, cuentas reales, datos reales, gastos, despliegue o Fase 7.
 
 **Estado:** Fase 6 EN_REVISION, CA6-06 pendiente. **Siguiente acción:** revisión/aceptación expresa de esta entrega; no se presume cierre ni autorización para Fase 7.
+
+
+## Cierre de Fase 6 y continuidad autorizada de Fase 7 — vigente
+
+- Usuario: «Aprobado fase 6. Inicia fase 7 en nuevo chat». D-23 acepta la entrega `336232a9b1add5c6605f396a90795e419022756c`, cumple CA6-06 y cierra Fase 6 COMPLETADA. La aceptación conserva los límites de las 34 pruebas locales y de las integraciones pendientes; no convierte logins SQL reales ni Supabase gestionado en operación verificada.
+- Fase 7 AUTORIZADA para iniciar en un nuevo chat, ejecución PENDIENTE. No se abre automáticamente una conversación ni se implementa backend/API empresarial en este cierre. Fases 8–15 sin autorización; sin despliegue, producción, gastos, datos reales o cambios remotos de permisos.
+- Trabajo: documentación de cierre en FASES/ESTADO, SEGURIDAD (CA6-06), D-23 en DECISIONES, continuidad en README/specs/README, PRUEBAS y CHANGELOG. Código, migraciones, tests y evidencias originales preservados literalmente.
+- Insumos/plan de Fase 7 al final de FASES: contratos/arquitectura aceptados, modelo y autenticación/seguridad; pool separado/contexto LOCAL, mínimo privilegio, reglas servidor, transacciones/evidencia/outbox/idempotencia, validación y pruebas negativas/concurrentes. No confundir servicios backend autorizados con iniciar frontend, panel u otros módulos futuros.
+- F1-SEG-01/02/03 permanecen abiertos: retención legal antes de datos reales, presupuesto y operación de respaldo pendientes. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+- Verificación: árbol limpio y remoto al día al comenzar; diferencias, enlaces locales, estados/CA6-06, filas 8–15 y preservación de todos los archivos ajenos a este cierre contra `336232a9b1add5c6605f396a90795e419022756c`; git diff --check. Pruebas funcionales no repetidas porque solo cambia documentación. No modificar verificadores históricos para hacerlos pasar con estados posteriores.
+- GitHub: commit/push normales a main con autoría noreply y comparación de SHA local/remoto; SHA final comunicado tras verificar. Sin despliegue.
+
+**Siguiente acción:** abrir un nuevo chat con inventarioTI2 e iniciar únicamente Fase 7 bajo D-23. Su entrega/cierre necesitará revisión propia; no iniciar Fase 8.

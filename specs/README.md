@@ -14,4 +14,6 @@ Esta carpeta se reserva para especificaciones funcionales por módulo o historia
 
 El análisis de Fase 1 se mantiene en la documentación existente: [análisis empresarial](../docs/ANALISIS_EMPRESARIAL.md), [historias](../docs/HISTORIAS_USUARIO.md) y [trazabilidad](../docs/TRAZABILIDAD.md). No se detectó Spec Kit en el árbol ni el comando `specify`; no se instaló ni se generó configuración. Esta carpeta se conserva sin duplicar especificaciones.
 
-Fase 1 COMPLETADA por D-14. [CIERRE_FASE1.md](../docs/CIERRE_FASE1.md) contiene requisitos aceptados, UTC y respaldo semanal, con seguimientos futuros explícitos. Fase 2 sin autorización.
+Fase 1 COMPLETADA por D-14. [CIERRE_FASE1.md](../docs/CIERRE_FASE1.md) contiene requisitos aceptados, UTC y respaldo semanal, con seguimientos futuros explícitos. Fase 2 posteriormente cerrada por D-15; Fase 3 entregada EN_REVISION, fases 4–15 sin autorización.
+
+Arquitectura de Fase 3 en [ARQUITECTURA](../docs/ARQUITECTURA.md), [contratos](../docs/CONTRATOS_API.md) y [ADR](../docs/adr/FASE3.md). Se conserva la metodología documental existente; Spec Kit no instalado.

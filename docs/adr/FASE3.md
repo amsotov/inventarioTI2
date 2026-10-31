@@ -1,0 +1,27 @@
+# Decisiones de arquitectura — Fase 3
+
+**Fecha:** 2026-10-31 · **Estado de todas las ADR:** PROPUESTA PARA REVISIÓN. La ejecución de Fase 3 está autorizada; no se atribuye aceptación de la solución al usuario. Detalle, diagrama, costos y riesgos en [ARQUITECTURA](../ARQUITECTURA.md); interfaces en [CONTRATOS_API](../CONTRATOS_API.md).
+
+## ADR-001 — Monolito modular TypeScript
+
+**Contexto:** 3.000 bienes, 10 concurrentes, UI privada responsive aprobada; no se conoce equipo con stack obligatorio. **Decisión propuesta:** React/Vite/TypeScript, API Node/Fastify y worker del mismo producto. Separar dominio, aplicación, contratos y adaptadores; servir UI/API bajo mismo origen. **Alternativas:** Next.js integrado, ASP.NET Core, navegador directo a Supabase; comparación en arquitectura. **Consecuencias:** despliegue simple y reglas reutilizables; mantener dos procesos y cadena de dependencias. SSR y microservicios sin beneficio probado para el alcance. **Verificación pendiente:** versiones soportadas, build, adaptación fiel del diseño, pruebas y rendimiento en Fases 7/8/13.
+
+## ADR-002 — PostgreSQL/Supabase y puertos sustituibles
+
+**Contexto:** D-07/RNF-01 piden RLS en Supabase, RNF-06 adaptación futura a SQL Server. **Decisión propuesta:** SQL por adaptador PostgreSQL, transacciones explícitas y RLS; ninguna llamada SQL/SDK en UI/dominio. **Alternativas:** SQL Server inicial (cambia orientación inicial), ORM como abstracción total (no elimina diferencias). **Consecuencias:** aprovechar integridad relacional sin prometer SQL portable; reimplementar SQL, RLS, bloqueo y recuperación al migrar. Auth se evalúa separadamente. **Verificación pendiente:** Fase 4 modelo/restricciones, Fase 6 RLS, Fase 7 contrato de adaptadores; no crear esquema o migración en Fase 3.
+
+## ADR-003 — BFF y sesión de aplicación con rol vigente
+
+**Contexto:** revocación en siguiente operación, 30 min de inactividad/8 h absoluto, MFA administrativo, enlaces 24 h/30 min; un JWT puede seguir vigente tras revocación externa. **Decisión propuesta:** Supabase Auth como identidad, sesión opaca del BFF con validación de estado/versión en cada petición y contexto RLS transaccional; SQL con rol dedicado sin bypass. Operaciones de identidad externas persistentes y conciliables. **Alternativas:** confiar solo en JWT/RLS por claims (no cumple frescura estricta), desarrollar identidad/contraseñas propia (mayor riesgo). **Consecuencias:** estado de sesión y puente de permisos deben diseñarse/probarse; no hay transacción distribuida Auth/DB. Enlaces versionados propios si capacidades nativas no alcanzan requisitos; MFA nunca se omite para operar. **Verificación pendiente:** prueba de integración de sesiones/enlaces/MFA en Fase 5, permisos negativos en Fase 6; bloquear aceptación si incumple D-14.
+
+## ADR-004 — Unidad de trabajo, idempotencia y outbox
+
+**Contexto:** un movimiento no puede dejar evidencia parcial, duplicarse al reintentar o revertirse por correo fallido. **Decisión propuesta:** estado/historia/auditoría/outbox/resultado idempotente en transacción local; worker y proveedor de correo fuera. **Alternativas:** envío síncrono (acopla disponibilidad), publicar evento sin outbox (riesgo de perderlo tras commit). **Consecuencias:** máquina de estados/arrendamientos, clasificación de errores y conciliación de inciertos; sin promesa de entrega exactamente una vez. Destinatario fijado al confirmar; 1/5/15 min de reintento según D-14. **Verificación pendiente:** concurrencia/rollback Fases 4/7/10 y fallos de worker/proveedor Fase 12. No DDL ni worker implementados aquí.
+
+## ADR-005 — Contrato de consulta compartido y exportación privada
+
+**Contexto:** cinco reportes y buscador con mismos filtros/permisos, columnas A-11 y límites de 10.000 XLSX/2.000 PDF; objetivo ≤ 60 s. **Decisión propuesta:** proyección autorizada compartida con consultas, instantánea de lectura consistente, generación en worker y descarga autenticada con rol vigente. **Alternativas:** exportar tabla visible del navegador (incompleto/inseguro), renderizar URL arbitraria para PDF (riesgo de contenido/acceso). **Consecuencias:** cola, estado y archivos privados temporales; tamaño del worker y biblioteca deben medirse. **Verificación pendiente:** Fase 11 límites/fórmulas/columnas, Fase 13 tiempos y carga; no biblioteca instalada.
+
+## ADR-006 — Hosting gestionado y respaldo externo semanal
+
+**Contexto:** presupuesto sin informar; RPO 168 h/RTO 8 h/30 días de copias, disponibilidad objetivo 99,5 %. **Decisión propuesta:** referencia Render web/worker + Supabase Pro, copias lógicas externas cifradas y entorno de prueba aislado. **Alternativas:** Free productivo (no justifica continuidad), VPS (más operación propia), copias gestionadas Pro solamente (7 días no cumple 30). **Consecuencias:** base orientativa 67–87 USD/mes y 42 adicionales para staging persistente según supuestos de arquitectura; sin impuestos, excedentes ni soporte. Domingo 02:00 UTC es propuesta operativa, no horario aprobado/configurado; alertas/recuperación y margen ante falla necesitan operador. **Verificación pendiente:** F1-SEG-02 tope/gasto, F1-SEG-01 tratamiento de datos y F1-SEG-03 ubicación/operador/cobertura/restauración en Fase 14 antes de producción. No contratar ni desplegar.

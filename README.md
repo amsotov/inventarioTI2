@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 AUTORIZADA para un nuevo chat, ejecución pendiente; sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 EN_REVISION: arquitectura documental entregada; fases 4–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -56,6 +56,8 @@ La demo usa datos sintéticos y cambios solo en memoria; recargar reinicia todo.
 
 Pruebas UI: `PLAYWRIGHT_MODULE=/ruta/a/playwright CHROMIUM_PATH=/ruta/a/chromium PROTOTYPE_URL=http://127.0.0.1:4174 node tests/prototipo.cjs`. Playwright/Chromium deben estar instalados; no son dependencias de ejecución del prototipo. Las rutas concretas usadas están en docs/PRUEBAS.md.
 
-## Siguiente conversación
+## Arquitectura y continuidad
 
-Fase 2 cerrada por aprobación visual expresa. Abre un nuevo chat con el repositorio e indica: «Inicia únicamente la Fase 3 de inventarioTI2, ya autorizada en FASES.md y ESTADO_PROYECTO.md. Lee AGENTS.md, PROMPT_MAESTRO.md, las decisiones y el cierre visual. Presenta el plan de arquitectura y ejecútalo; conserva los seguimientos y actualiza GitHub. No inicies Fase 4 ni despliegues». No se abrió automáticamente otro chat.
+Fase 3 ejecutada y entregada EN_REVISION: [arquitectura, costos y riesgos](docs/ARQUITECTURA.md), [contratos](docs/CONTRATOS_API.md), [ADR](docs/adr/FASE3.md). Selección técnica propuesta: React/TypeScript, API Node modular y PostgreSQL/Supabase; no hay implementación de servicios ni infraestructura contratada.
+
+Verificación documental reproducible: `python3 docs/evidencias/fase3/verificar.py`; resultados y límites en [PRUEBAS](docs/PRUEBAS.md). Prototipo y evidencia visual conservados. Siguiente acción: revisar/aceptar Fase 3. Fase 4 requiere autorización independiente; sin despliegue.

@@ -111,3 +111,17 @@ Comprobaciones adicionales de cierre: consola de Chromium sin errores en 10 pant
 ## Verificación del cierre visual — 2026-10-31
 
 D-15 registra aprobación expresa y CA2-06 cumplido; Fase 2 COMPLETADA. Fase 3 autorizada para nuevo chat, ejecución pendiente. Revisión documental: enlaces locales, diferencias y estados coherentes; código de prototipo, pruebas y capturas preservados, fases 4–15 intactas. `git diff --check` sin errores. No se repitieron las 21 pruebas UI porque no hubo cambios de código; sus resultados y límites se conservan. No se ejecutó arquitectura, despliegue ni producción. Sincronización confirmada solo tras comprobar SHA remoto al entregar.
+
+## Verificación de Fase 3 — arquitectura, 2026-10-31
+
+Base remota integrada por avance directo: `e7db2c6`. Fase 3 autorizada por D-15 y solicitud actual; entrega EN_REVISION. Se ejecutó revisión documental, sin crear servicios ni iniciar Fase 4.
+
+Comando reproducible desde la raíz: `python3 docs/evidencias/fase3/verificar.py`. [Verificador](evidencias/fase3/verificar.py) y [resultado](evidencias/fase3/resultados.txt) versionados. Comprueba preservación byte a byte de 25 archivos de la base ajenos al alcance (incluye prototipo, pruebas UI, capturas, skill, instrucciones y plantillas de datos/seguridad/despliegue), cambios solo documentales/verificador, filas de fases 4–15 intactas, Fase 3 EN_REVISION, enlaces Markdown locales, cobertura de 16 RF/7 RNF/seis CA3/seis ADR, ejemplos JSON válidos y aritmética de costos. No certifica semántica de todo el texto por encontrar identificadores; se complementó con lectura de diferencias y contratos.
+
+Resultados: controles documentales APROBADOS; `git diff --check` sin errores. CA3-01 a CA3-05 revisados a nivel documental, CA3-06 PENDIENTE de aceptación del usuario. Compatibilidad se ha evaluado como diseño, sin build ni prueba de SDKs. Fuentes públicas consultadas vía HTTPS, siete respuestas HTTP 200; URLs/huellas en [fuentes](evidencias/fase3/fuentes.txt). Se revisó changelog Supabase y aviso de actualización PostgreSQL, documentación de RLS/sesiones/backups y tarifas Supabase/Render. No se accedió a proyectos o datos del usuario ni se ejecutaron consultas SQL.
+
+Revisión de escenarios de diseño: doble asignación y último administrador requieren serialización/transacción; timeout tras commit se recupera con clave idempotente; rol revocado se comprueba antes de devolver resultados; cambios de identidad entre proveedores requieren estados/conciliación; aviso incierto no se reenvía automáticamente; límites de exportación se comprueban sobre la misma instantánea; copias Pro de 7 días necesitan complemento externo para 30 días. Son razonamientos sobre contratos, no pruebas de integración ejecutadas.
+
+No ejecutadas: pruebas UI/Playwright (código intacto, evidencia anterior conservada); instalación/build y compatibilidad de librerías (sin stack implementado); API, identidad/MFA, RLS, concurrencia, workers, Excel/PDF reales, correo, rendimiento, respaldo/restauración y revisión jurídica (fases futuras). No se afirma seguridad efectiva, SLA, cumplimiento de RPO/RTO ni compatibilidad SQL Server por escribir arquitectura. No se desplegó ni configuró CI/CD.
+
+GitHub: revisión de diferencias, commit y push normales a main; comprobación de igualdad de SHA local/remoto antes de confirmar entrega. El SHA final se comunica tras verificarlo, sin insertar una referencia circular en el commit.

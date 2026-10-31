@@ -1,0 +1,18 @@
+Consulta HTTPS efectuada el 2026-10-31: HTTP 200 para estas siete fuentes.
+Huellas de cuerpos recibidos (las copias temporales no forman parte de la entrega).
+Las fuentes pueden cambiar; las huellas identifican la consulta, no garantizan disponibilidad futura.
+
+https://supabase.com/changelog.md
+HTTP 200; SHA-256 e42d0a99566ae6cc8be923976da1548410d24a32a14c3f21d4e1819c405a721b
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes
+HTTP 200; SHA-256 4d2e5c5c3fd83764b469cf2deb80e30265634a546118689a0434ab1842cafb4f
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+HTTP 200; SHA-256 d05b9f5373c66fbd01f27b3fb5ce575d9dc6fb3f869d08ee8ed79d4b9b17d4e0
+https://supabase.com/docs/guides/platform/backups.md
+HTTP 200; SHA-256 a94bd7c7ec56abee7fc78709a754c6b1890d1e5ec26826b8dff90468780c8c12
+https://supabase.com/docs/guides/auth/sessions.md
+HTTP 200; SHA-256 2344e6f9924ba1286ef57a8cb7dceaf89e7cbfd2597b877c976a6851c3a429cc
+https://supabase.com/pricing
+HTTP 200; SHA-256 cfccbc4e21ab56094f85215ee04bb481d458c3798d6e524c5cfc29d5fae9fbd8
+https://render.com/pricing
+HTTP 200; SHA-256 1c2feb4371377ef7b3a178a75f1cbaff65de6d706a8fe4a50a4eee7d6f6b53ce

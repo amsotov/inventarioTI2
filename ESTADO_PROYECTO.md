@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 2 — COMPLETADA; revisión visual y cierre aprobados el 2026-10-31.
+**Fase:** 3 — EN_REVISION; arquitectura entregada, aceptación/cierre pendientes.
 **Modo:** GUIADO
 **Última fase completada:** 2.
-**Última fase autorizada:** 3, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 4–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 3, ejecución documental realizada. Fases 4–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 2 cerrada por D-15; iniciar únicamente Fase 3 en un nuevo chat con autorización ya otorgada. Leer el cierre y las instrucciones de continuidad al final de FASES. No repetir la revisión visual ni pedir otra autorización de Fase 3. Esta sesión no ejecuta arquitectura ni despliegue; los registros previos son antecedentes.
+**Punto vigente de continuidad:** revisar la entrega de arquitectura de Fase 3 al final de este documento y en docs/ARQUITECTURA.md. Fase 2 cerrada por D-15; Fase 3 ejecutada bajo autorización previa y solicitud actual. No repetir su inicio ni presumir aceptación. Sin Fase 4 ni despliegue. Los registros anteriores son antecedentes.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -203,3 +203,22 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - Sincronización GitHub autorizada: commit y push a main sin forzar; comparar SHA remoto antes de confirmar entrega. No se abrió otro chat automáticamente.
 
 **Siguiente acción:** abrir un nuevo chat e iniciar únicamente Fase 3 con la autorización registrada. No se requiere otra aprobación para ese inicio; su entrega necesitará revisión propia.
+
+
+## Entrega vigente de Fase 3 — 2026-10-31
+
+**Objetivo/alcance:** arquitectura tecnológica autorizada por D-15 y ratificada por la solicitud de esta conversación; no implementar ni iniciar Fase 4. Fase 3 EN_REVISION, CA3-06 pendiente. Última completada: 2.
+
+**Inspección/plan:** árbol inicial limpio en `363cfa0`; fetch y avance directo a `e7db2c6`, conservando trabajo remoto, cierre D-14/D-15, prototipo/skill/evidencia y reglas. Leídos AGENTS, PROMPT_MAESTRO, fases, estado, requisitos, cierre empresarial, trazabilidad, decisiones, UX_UI y evidencia aplicable. Plan presentado antes de redacción. Spec Kit no detectado (sin .specify ni specify en PATH); no instalado.
+
+**Trabajo/archivos:** docs/ARQUITECTURA.md reemplaza su plantilla con comparación, monolito modular React/TypeScript + API Node/Fastify + worker, PostgreSQL/Supabase/Auth vía adaptadores, diagrama, límites, seguridad de sesión/RLS, integridad, continuidad, costos y portabilidad SQL Server. Nuevos docs/CONTRATOS_API.md y docs/adr/FASE3.md: contratos de API/integración y seis decisiones propuestas. Nuevos verificador, fuentes y resultado documental en docs/evidencias/fase3. Actualizados FASES, este estado, README, CHANGELOG, DECISIONES, TRAZABILIDAD, PRUEBAS y specs/README para continuidad/enlaces.
+
+**Decisiones/riesgos:** selección técnica entregada para revisión, no aceptación implícita. Fuentes públicas actuales de Supabase/Render consultadas por HTTPS; backups Pro incluidos retienen 7 días, requieren complemento externo para 30. Sesiones/enlaces estrictos y cambios Auth/DB necesitan adaptador y conciliación, no basta JWT. No prometer SQL Server sin reimplementar adaptadores, políticas e identidad. F1-SEG-01 legal/retención sigue antes de datos reales; F1-SEG-02 sin presupuesto aprobado (escenario base 67–87 USD/mes, staging persistente +42 bajo supuestos); F1-SEG-03 con diseño pero sin horario/operador/ubicación definitivos ni respaldo configurado. UTC, frecuencia semanal, máximo 168 h entre éxitos, RTO 8 h y copias 30 días intactos.
+
+**Verificaciones:** `python3 docs/evidencias/fase3/verificar.py`, salida versionada en resultados.txt; enlaces locales, cobertura RF/RNF/CA3/ADR, JSON de ejemplos, alcance solo documental y preservación exacta de fases 4–15 y archivos ajenos al alcance respecto de `e7db2c6`. `git diff --check` y revisión de diferencias/nuevos documentos. Detalle en docs/PRUEBAS.md.
+
+**No ejecutadas:** UI/Playwright no repetidos al conservar código; build/compatibilidad de librerías, API/RLS/identidad reales, concurrencia, correo/exportaciones, rendimiento, backup/restauración no ejecutados por no existir implementación autorizada en esta fase. No ER, SQL, migraciones, dependencias, secretos, gasto, datos reales ni despliegues.
+
+**GitHub:** destino main de amsotov/inventarioTI2, commit/push normales con autor noreply del historial; verificar SHA local/remoto antes de confirmar entrega. El SHA final se comunica tras la comprobación, sin commit autorreferente. Si hay cambios remotos, integrarlos y volver a revisar antes de subir; nunca forzar.
+
+**Siguiente acción/aprobación:** revisión y aceptación de Fase 3. La Fase 4 continúa PENDIENTE / NO OTORGADA y requiere autorización expresa separada; no solicitar otra vez autorización para la arquitectura ya ejecutada.

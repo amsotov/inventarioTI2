@@ -2,18 +2,18 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 2 — COMPLETADA; revisión visual y cierre aprobados por el usuario el 2026-10-31.
+**Fase actual:** 3 — EN_REVISION; arquitectura documental entregada el 2026-10-31, aceptación pendiente.
 **Última fase completada:** 2.
-**Próxima fase:** 3 — AUTORIZADA para un nuevo chat; ejecución PENDIENTE. **Fases 4–15:** PENDIENTE / NO OTORGADA.
+**Próxima fase:** 4 — PENDIENTE / NO OTORGADA. **Fases 4–15:** sin iniciar ni autorizar.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 autorizada para un nuevo chat, sin ejecución aquí; fases 4–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 ejecutada únicamente como arquitectura y entregada EN_REVISION; fases 4–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
 | 0 | Diagnóstico y planificación | Visión, requisitos iniciales, MVP, riesgos y decisiones | COMPLETADA | Ejecución y entregables APROBADOS por el usuario el 2026-10-30 |
 | 1 | Análisis empresarial y requisitos | Actores, procesos, historias, criterios y trazabilidad | COMPLETADA | Entrega y resoluciones APROBADAS por usuario el 2026-10-31; UTC y respaldo semanal |
 | 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | COMPLETADA | Revisión visual y cierre APROBADOS el 2026-10-31; D-15 |
-| 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | PENDIENTE | AUTORIZADA para iniciar en un nuevo chat; ejecución no iniciada |
+| 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | EN_REVISION | Ejecución AUTORIZADA por D-15 y solicitud actual; aceptación/cierre PENDIENTES |
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | PENDIENTE | NO OTORGADA |
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | PENDIENTE | NO OTORGADA |
 | 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | PENDIENTE | NO OTORGADA |
@@ -41,6 +41,7 @@
 | 2026-10-31 | 1 | Aceptar paquete de recomendaciones con UTC y respaldo una vez por semana; cerrar análisis | Usuario | «Apruebo las conversiones, respaldo 1 vez a  la semana, zona horaria UTC y respaldo 1 vez a la semana»; D-14; no autoriza Fase 2 ni configuración operativa |
 | 2026-10-31 | 2 | Iniciar UX/UI y prototipo con datos ficticios en un nuevo chat | Usuario | «En nuevo chat inicia fase 2 inventarioTI2»; ejecución pendiente para esa conversación, sin autorizar Fase 3 ni despliegue |
 | 2026-10-31 | 2 | Aceptar revisión visual y cerrar Fase 2; autorizar Fase 3 para un nuevo chat | Usuario | D-15; aprobación expresa en esta conversación; arquitectura no iniciada |
+| 2026-10-31 | 3 | Ejecutar únicamente arquitectura, leer cierre visual y sincronizar GitHub; sin Fase 4 ni despliegue | Usuario | Solicitud de esta conversación y D-15; entrega EN_REVISION, D-16 |
 
 ## Criterios para cerrar cada fase
 - [ ] Alcance y entregables revisados.
@@ -207,3 +208,16 @@ Inicio en el nuevo chat:
 4. Documentar resultados y verificación, sincronizar GitHub y entregar Fase 3 para revisión. Fases 4–15 no autorizadas; sin despliegue ni producción.
 
 Esta sesión cierra y prepara continuidad; no inicia arquitectura ni abre automáticamente un chat nuevo.
+
+
+## Ejecución vigente de Fase 3 — 2026-10-31
+
+Solicitud: «Inicia únicamente la Fase 3, ya autorizada en FASES.md y ESTADO_PROYECTO.md. Lee las instrucciones y el cierre visual, desarrolla la arquitectura y actualiza GitHub. No inicies Fase 4 ni despliegues». D-16 registra ejecución, sin atribuir aprobación de la entrega.
+
+Plan presentado antes de redactar: alternativas/stack, módulos/diagrama, contratos/ADR, costos/entornos, integridad/RLS/SQL Server y continuidad; verificación y sincronización. Base `e7db2c6`, recuperada por avance directo, árbol inicial limpio. Responsable de preparación/verificación: Codex; aceptación y presupuesto: usuario. Dependencias: D-14, D-15, requisitos y prototipo aceptados.
+
+Entregables: [arquitectura](docs/ARQUITECTURA.md), [contratos](docs/CONTRATOS_API.md), [seis ADR](docs/adr/FASE3.md). CA3-01 a CA3-05 documentados/revisados; CA3-06 pendiente de aceptación expresa. Verificación y limitaciones en [pruebas](docs/PRUEBAS.md). Fase 3 EN_REVISION; última completada 2. La selección técnica está propuesta para revisión; no equivale a contratar ni a implementar.
+
+F1-SEG-01 sigue obligatorio antes de datos reales. F1-SEG-02 evaluado mediante escenario 67–87 USD/mes base, presupuesto no informado ni gasto aprobado. F1-SEG-03 desarrollado como propuesta semanal externa cifrada, horario domingo 02:00 UTC sujeto a aprobación operativa; mantiene RPO 7 días/RTO 8 h/copias 30 días. Ningún seguimiento se declara cerrado por documentarlo.
+
+Sin modelo ER, SQL, migraciones, implementación de identidad/RLS/backend, nuevas dependencias, cambios al prototipo o despliegues. Fases 4–15 PENDIENTE / NO OTORGADA, filas conservadas. Siguiente acción: revisar/aceptar Fase 3; Fase 4 requiere autorización independiente. No iniciar por dependencia técnica.

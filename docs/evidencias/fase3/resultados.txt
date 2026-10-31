@@ -1,0 +1,8 @@
+PASS: 25 archivos ajenos al alcance conservados byte a byte.
+PASS: cambios limitados a documentación y verificador documental.
+PASS: Fase 3 EN_REVISION, Fase 2 completada, filas 4–15 intactas.
+PASS: 111 enlaces Markdown locales resuelven a archivos existentes.
+PASS: cobertura 16 RF/7 RNF, seis CA3 y seis ADR, seguimientos y JSON de ejemplos.
+PASS: costos base 67–87 USD/mes y staging adicional 42 USD/mes coherentes.
+PASS: git diff --check.
+LIMITES: revisión documental; no prueba API, RLS, concurrencia, UI, rendimiento ni restauración.

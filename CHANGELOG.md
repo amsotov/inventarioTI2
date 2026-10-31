@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-10-31 — Fase 3, entrega EN_REVISION
+
+- Arquitectura modular, stack comparado, diagrama y límites de integración, RLS y portabilidad SQL Server.
+- Contratos de API, seis ADR, estimación de costos y propuesta de continuidad semanal con copias externas.
+- Verificación documental reproducible y actualización de continuidad; aceptación pendiente.
+- Prototipo/capturas y fases 4–15 preservados; sin implementación de persistencia ni despliegue.
+
 ## 2026-10-31 — Cierre aprobado de Fase 2
 
 - Aprobación visual expresa D-15; Fase 2 COMPLETADA.

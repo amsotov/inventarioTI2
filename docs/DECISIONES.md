@@ -90,3 +90,8 @@ Autorización registrada en FASES y ratificada en esta conversación. El usuario
 Fecha: 2026-10-31. Evidencia literal del usuario: «apruebo la revisión visual" para que cierre la fase y pase a la Fase 3 en nuevo chat».
 
 Decisión: aceptar revisión visual y cierre de Fase 2 (entrega `88d54f6`), sin cambios visuales adicionales solicitados. Fase 2 COMPLETADA; Fase 3 — arquitectura tecnológica AUTORIZADA para iniciar en un nuevo chat, ejecución PENDIENTE. Esta aprobación no acredita funcionalidades reales del mock ni autoriza fases 4–15, despliegue, gastos o producción. Se mantienen D-14 y F1-SEG-01/02/03. La continuidad EN_REVISION del apartado anterior corresponde a la entrega previa a esta aprobación.
+
+
+## D-16 — Ejecución y entrega de arquitectura de Fase 3
+
+2026-10-31: solicitud actual ratifica la autorización D-15, ordena desarrollar arquitectura y actualizar GitHub, sin Fase 4 ni despliegues. Se entrega Fase 3 EN_REVISION: [arquitectura](ARQUITECTURA.md), [contratos](CONTRATOS_API.md) y [ADR-001 a ADR-006](adr/FASE3.md). Las ADR son propuestas técnicas para revisión, no decisiones de compra aceptadas por el usuario. D-07/D-14/D-15 y RF/RNF se conservan. La evaluación de costos no cierra F1-SEG-02; propuesta de respaldo no cierra F1-SEG-03. F1-SEG-01 obligatorio antes de datos reales. Aceptación/cierre de Fase 3 pendientes y Fase 4 no autorizada.

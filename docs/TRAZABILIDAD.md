@@ -82,3 +82,8 @@ Mapa de pantallas y cobertura HU-01 a HU-16 en [UX_UI.md](UX_UI.md); recorridos 
 ### Cierre visual posterior
 
 D-15 acepta la revisión visual de la entrega; Fase 2 COMPLETADA. La evidencia anterior conserva sus límites. Fase 3 AUTORIZADA para iniciar en un nuevo chat, ejecución pendiente; fases 4–15 no autorizadas. Este registro prevalece sobre las menciones históricas de revisión pendiente.
+
+
+## Extensión arquitectónica — Fase 3 EN_REVISION
+
+La tabla de módulos en [ARQUITECTURA](ARQUITECTURA.md) vincula RF-01 a RF-16/HU-01 a HU-16 a componentes; [CONTRATOS_API](CONTRATOS_API.md) define consultas, comandos y escenarios futuros. RNF-01: ADR-003/RLS; RNF-02: ADR-004/unidad de trabajo; RNF-03: UTC y contratos de fechas; RNF-04: minimización, fronteras privadas y F1-SEG-01; RNF-05: preservar UX_UI aceptado y verificar frontend/hardware después; RNF-06: ADR-002/adaptación SQL Server; RNF-07: ADR-006/costos y continuidad. CA3-01 a CA3-05 revisados documentalmente, CA3-06 pendiente. Ningún enlace a arquitectura acredita implementación ni pruebas de esos requisitos.

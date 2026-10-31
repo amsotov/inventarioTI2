@@ -2,18 +2,18 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 2 — EN_REVISION (UX/UI y prototipo entregados para revisión visual).
-**Última fase completada:** 1.
-**Fase 2:** ejecución AUTORIZADA y realizada; aceptación visual PENDIENTE. **Fases 3–15:** PENDIENTE / NO OTORGADA.
+**Fase actual:** 2 — COMPLETADA; revisión visual y cierre aprobados por el usuario el 2026-10-31.
+**Última fase completada:** 2.
+**Próxima fase:** 3 — AUTORIZADA para un nuevo chat; ejecución PENDIENTE. **Fases 4–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 fue autorizada y se entrega en revisión visual; fases 3–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 autorizada para un nuevo chat, sin ejecución aquí; fases 4–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
 | 0 | Diagnóstico y planificación | Visión, requisitos iniciales, MVP, riesgos y decisiones | COMPLETADA | Ejecución y entregables APROBADOS por el usuario el 2026-10-30 |
 | 1 | Análisis empresarial y requisitos | Actores, procesos, historias, criterios y trazabilidad | COMPLETADA | Entrega y resoluciones APROBADAS por usuario el 2026-10-31; UTC y respaldo semanal |
-| 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | EN_REVISION | Ejecución AUTORIZADA; aceptación visual PENDIENTE |
-| 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | PENDIENTE | NO OTORGADA |
+| 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | COMPLETADA | Revisión visual y cierre APROBADOS el 2026-10-31; D-15 |
+| 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | PENDIENTE | AUTORIZADA para iniciar en un nuevo chat; ejecución no iniciada |
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | PENDIENTE | NO OTORGADA |
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | PENDIENTE | NO OTORGADA |
 | 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | PENDIENTE | NO OTORGADA |
@@ -40,6 +40,8 @@
 | 2026-10-31 | 1 | Ejecutar únicamente análisis documental, conservar pendientes y sincronizar GitHub; sin código ni Fase 2 | Usuario | Solicitud de esta conversación; entrega EN_REVISION, aceptación y cierre aún no otorgados |
 | 2026-10-31 | 1 | Aceptar paquete de recomendaciones con UTC y respaldo una vez por semana; cerrar análisis | Usuario | «Apruebo las conversiones, respaldo 1 vez a  la semana, zona horaria UTC y respaldo 1 vez a la semana»; D-14; no autoriza Fase 2 ni configuración operativa |
 | 2026-10-31 | 2 | Iniciar UX/UI y prototipo con datos ficticios en un nuevo chat | Usuario | «En nuevo chat inicia fase 2 inventarioTI2»; ejecución pendiente para esa conversación, sin autorizar Fase 3 ni despliegue |
+
+| 2026-10-31 | 2 | Aceptar revisión visual y cerrar Fase 2; autorizar Fase 3 para un nuevo chat | Usuario | D-15; aprobación expresa en esta conversación; arquitectura no iniciada |
 
 ## Criterios para cerrar cada fase
 - [ ] Alcance y entregables revisados.
@@ -174,7 +176,7 @@ Punto de inicio:
 Esta conversación solo registra autorización y continuidad. No hay herramienta disponible para abrir automáticamente otro chat: el usuario debe abrirlo con el repositorio y la instrucción de inicio. No se crea prototipo ni se comprueba navegador en esta preparación documental.
 
 
-## Entrega de Fase 2 — estado vigente del 2026-10-31
+## Entrega de Fase 2 — antecedente previo al cierre del 2026-10-31
 
 Solicitud de esta conversación: «Inicia únicamente la Fase 2 de inventarioTI2, ya autorizada en FASES.md y ESTADO_PROYECTO.md». Se recuperaron `fa844ec` y posteriormente `d6a14c5` (skill agregado por el usuario), sin reescribir historial ni sobrescribir su trabajo. Los registros anteriores de ejecución pendiente son antecedentes.
 
@@ -187,6 +189,22 @@ Plan presentado antes de implementar: mapa de pantallas por rol, sistema visual,
 | CA2-03 · Consulta, filtros, fichas, movimientos, administración y reportes | Recorridos y excepciones representados; límites de vistas/exportación documentados |
 | CA2-04 · Responsive y teclado, estados vacío/carga/error/éxito/permiso | Evidencia y resultados reales en docs/PRUEBAS.md; emulación no equivale a dispositivos reales |
 | CA2-05 · Preview local, capturas y pasos reproducibles | prototipo/index.html, instrucciones en README y docs/UX_UI; capturas en docs/evidencias/fase2 |
-| CA2-06 · Usuario acepta visualmente | PENDIENTE; Fase 2 EN_REVISION |
+| CA2-06 · Usuario acepta visualmente | CUMPLIDO el 2026-10-31 por D-15; Fase 2 COMPLETADA |
 
 Se conservan F1-SEG-01/02/03. No se implementaron backend, persistencia, autenticación, APIs, correo, exportaciones reales ni respaldos. HTML/CSS/JS son soporte del prototipo, sin arquitectura definitiva. No hubo despliegue. Siguiente acción: revisar diseño, recoger cambios y registrar aceptación visual. Cualquier inicio de Fase 3 requiere autorización independiente.
+
+
+## Cierre aprobado de Fase 2 y continuidad de Fase 3 — estado vigente
+
+Fecha: 2026-10-31. Evidencia del usuario: «apruebo la revisión visual" para que cierre la fase y pase a la Fase 3 en nuevo chat». D-15 acepta la revisión visual y el cierre de la entrega `88d54f6`; autoriza Fase 3 únicamente para iniciarla en un nuevo chat. Este registro actualiza las menciones históricas de aceptación pendiente y Fase 3 no autorizada.
+
+CA2-01 a CA2-05 conservan la evidencia de UX/UI y verificación de la entrega; CA2-06 queda satisfecho por aceptación expresa. Fase 2 COMPLETADA. Se conservan las 21 verificaciones UI, las capturas y sus límites: aprobación del prototipo, sin acreditar funcionalidades reales de fases futuras. No se modifica código ni se repiten pruebas de UI por este cierre documental.
+
+Inicio en el nuevo chat:
+
+1. Recuperar main de `amsotov/inventarioTI2`; leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, requisitos, D-14/D-15, CIERRE_FASE1, UX_UI y evidencia de pruebas. No volver a pedir la autorización de Fase 3 ya otorgada.
+2. Presentar y ejecutar únicamente el plan de Fase 3 — arquitectura tecnológica: alternativas y justificación del stack, componentes, contratos y ADR según requisitos y diseño aceptados. La preparación de este punto de continuidad no elige ni implementa esas decisiones.
+3. Conservar D-07 (orientación RLS/Supabase y futura adaptación a SQL Server), UTC y respaldo semanal/RPO 7 días/RTO 8 h/copias 30 días; mantener F1-SEG-01/02/03. Presupuesto y diseño operativo siguen pendientes de sus fases, sin gastos ni contrataciones autorizadas por este cierre.
+4. Documentar resultados y verificación, sincronizar GitHub y entregar Fase 3 para revisión. Fases 4–15 no autorizadas; sin despliegue ni producción.
+
+Esta sesión cierra y prepara continuidad; no inicia arquitectura ni abre automáticamente un chat nuevo.

@@ -1,7 +1,7 @@
 # UX/UI — Fase 2
 
-**Proyecto:** inventarioTI2 · **Fecha:** 2026-10-31 · **Estado:** EN_REVISION.
-**Aprobación visual:** NO OTORGADA. Fase 3 PENDIENTE / NO OTORGADA.
+**Proyecto:** inventarioTI2 · **Fecha:** 2026-10-31 · **Estado:** COMPLETADA.
+**Aprobación visual:** OTORGADA el 2026-10-31; D-15. Fase 3 AUTORIZADA para un nuevo chat, ejecución PENDIENTE.
 
 ## Alcance y fuentes
 
@@ -87,13 +87,13 @@ PLAYWRIGHT_MODULE=/ruta/a/playwright CHROMIUM_PATH=/ruta/a/chromium PROTOTYPE_UR
 
 Con Playwright resoluble por Node puede omitirse PLAYWRIGHT_MODULE. Las capturas se generan en `docs/evidencias/fase2/`. Comandos/resultados efectivos se registran en [PRUEBAS.md](PRUEBAS.md).
 
-## Limitaciones y revisión pendiente
+## Limitaciones del prototipo aceptado
 
 Prototipo de memoria con muestra pequeña, sin persistencia, API, backend, autenticación/MFA real, sesión, RLS, correos, Excel/PDF ni configuración de respaldo. Reportes son vistas simplificadas para revisar presentación; el contrato funcional completo A-11 sigue pendiente de implementación en Fase 11. No se prueban concurrencia, idempotencia persistente, rendimiento objetivo, carga, recuperación operativa ni seguridad efectiva por tener controles en JavaScript. No se declara conformidad WCAG 2.2 AA completa, compatibilidad Safari ni prueba en hardware iPad/iPhone.
 
 F1-SEG-01: validación legal/retención antes de datos reales; F1-SEG-02: presupuesto en Fase 3; F1-SEG-03: operación de respaldos en sus fases. Se mantienen UTC y respaldo semanal/RPO 7 días/RTO 8 h/copias 30 días como requisitos, sin configuración real.
 
-Pendiente de feedback del usuario: colores y marca, navegación por rol, densidad de tablas, formularios y confirmaciones, comprensión de condición/custodia/baja, gráfico y experiencia móvil. No hay aprobación visual por generar capturas o pasar pruebas. La Fase 2 permanece EN_REVISION; Fase 3 requiere autorización expresa separada y no se inicia.
+El usuario aprobó la revisión visual de la entrega sin solicitar cambios concretos. La aceptación incluye el diseño presentado, sin inventar preferencias de marca adicionales ni certificar accesibilidad/compatibilidad completa. La Fase 2 queda COMPLETADA; Fase 3 autorizada para un nuevo chat y no iniciada aquí.
 
 ## Evidencia de la entrega
 
@@ -106,4 +106,4 @@ Pendiente de feedback del usuario: colores y marca, navegación por rol, densida
 | iPad 820×1180 | [Resumen](evidencias/fase2/ipad.png) |
 | iPhone 390×844 | [Resumen](evidencias/fase2/iphone.png), [bienes](evidencias/fase2/iphone-bienes.png), [formulario](evidencias/fase2/iphone-formulario.png) |
 
-Aceptación visual: **PENDIENTE**. Feedback recibido en esta sesión: incorporación del skill por el usuario, integrada y aplicada; no se recibió todavía evaluación del diseño.
+Aceptación visual: **APROBADA** el 2026-10-31. Evidencia: «apruebo la revisión visual" para que cierre la fase y pase a la Fase 3 en nuevo chat». D-15 acepta la entrega visual y cierra Fase 2; autoriza Fase 3 para un nuevo chat. Se conservan capturas, resultados y limitaciones. No se solicitaron ajustes visuales específicos.

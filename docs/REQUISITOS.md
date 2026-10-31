@@ -111,3 +111,7 @@ La aceptación del MVP o del prototipo y la autorización de una fase son decisi
 ## Continuidad UX/UI
 
 Fase 2 autorizada y entregada EN_REVISION: ver [UX_UI.md](UX_UI.md) y [PRUEBAS.md](PRUEBAS.md). El plan anterior se conserva como antecedente; skill disponible en [SKILL.md](../SKILL.md). Aceptación visual pendiente; Fase 3 no autorizada. Las pruebas del prototipo no acreditan los controles reales de estos requisitos.
+
+### Cierre visual posterior
+
+D-15 acepta la revisión visual de la entrega; Fase 2 COMPLETADA. La evidencia anterior conserva sus límites. Fase 3 AUTORIZADA para iniciar en un nuevo chat, ejecución pendiente; fases 4–15 no autorizadas. Este registro prevalece sobre las menciones históricas de revisión pendiente.

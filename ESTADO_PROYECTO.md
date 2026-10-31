@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 2 — EN_REVISION; UX/UI y prototipo listos para revisión visual.
+**Fase:** 2 — COMPLETADA; revisión visual y cierre aprobados el 2026-10-31.
 **Modo:** GUIADO
-**Última fase completada:** 1.
-**Última fase autorizada:** 2; prototipo desarrollado, aceptación visual PENDIENTE. Fases 3–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 2.
+**Última fase autorizada:** 3, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 4–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** revisar visualmente la entrega de Fase 2 en prototipo/index.html y docs/UX_UI.md. No reiniciar análisis ni pedir autorización de Fase 2. Fase 1 permanece COMPLETADA. La Fase 3 no está autorizada y no hubo despliegue. Los apartados anteriores de preparación se conservan como antecedentes; ver entrega vigente al final.
+**Punto vigente de continuidad:** Fase 2 cerrada por D-15; iniciar únicamente Fase 3 en un nuevo chat con autorización ya otorgada. Leer el cierre y las instrucciones de continuidad al final de FASES. No repetir la revisión visual ni pedir otra autorización de Fase 3. Esta sesión no ejecuta arquitectura ni despliegue; los registros previos son antecedentes.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -176,7 +176,7 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 **Siguiente acción:** abrir el nuevo chat y ejecutar Fase 2 con la autorización ya registrada. Esperar revisión y aceptación visual; después solicitar autorización separada para Fase 3.
 
 
-## Entrega vigente de Fase 2 — 2026-10-31
+## Entrega de Fase 2 — antecedente previo al cierre, 2026-10-31
 
 - Objetivo y alcance: UX/UI y prototipo navegable con datos ficticios, autorizado en FASES y ratificado por la solicitud inicial. Plan presentado; sin iniciar otras fases.
 - Bases recuperadas: `fa844ec1ce49d2df22148a4894a5581796df3b8d` y actualización del usuario `d6a14c5` con SKILL.md. Git inicial limpio; integración por avance directo. Se conserva el skill del usuario en raíz y se corrige su referencia en AGENTS. Skill leído/aplicado; la ausencia inicial de la ruta antigua quedó superada.
@@ -190,3 +190,16 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: sincronización autorizada; revisar diferencias, crear commit y subir sin forzar historial; comparar SHA remoto antes de confirmar entrega. La subida de código no publica sitio ni despliega.
 
 **Siguiente acción:** revisión visual del usuario dentro de Fase 2. **Aprobación visual NO OTORGADA; Fase 3 PENDIENTE / NO OTORGADA.**
+
+
+## Cierre vigente de Fase 2 y autorización de Fase 3 — 2026-10-31
+
+- Evidencia del usuario: «apruebo la revisión visual" para que cierre la fase y pase a la Fase 3 en nuevo chat». D-15 registra aceptación visual/cierre y autorización para continuar con Fase 3 en un nuevo chat.
+- Fase 2 COMPLETADA; CA2-06 cumplido. Se aceptan los entregables visuales de `88d54f6`, conservando las 21 verificaciones UI y capturas de siete tamaños; sus límites no cambian. No se declara backend, seguridad, correo o persistencia reales.
+- Trabajo de este cierre: actualizar únicamente documentación de aprobación, estados y continuidad; preservar prototipo, pruebas, capturas, skill y documentos técnicos futuros. No se inicia Fase 3 por registrar su autorización.
+- Fase 3 PENDIENTE / AUTORIZADA para un nuevo chat. Arranque: recuperar main, leer instrucciones/requisitos/D-14/D-15/UX_UI y cierres; presentar plan de arquitectura y ejecutarlo dentro de ese alcance. Detalle en FASES. No pedir nuevamente autorización ya otorgada.
+- F1-SEG-01/02/03 y requisitos UTC/respaldo semanal/RPO 7 días/RTO 8 h/copias 30 días intactos. Fases 4–15 no autorizadas; sin publicación, producción ni gastos.
+- Verificación de este cierre: diferencias, enlaces locales, coherencia de estados y preservación de código/evidencia/fases 4–15; `git diff --check`. Pruebas UI no repetidas porque solo cambia documentación; se conserva la evidencia anterior.
+- Sincronización GitHub autorizada: commit y push a main sin forzar; comparar SHA remoto antes de confirmar entrega. No se abrió otro chat automáticamente.
+
+**Siguiente acción:** abrir un nuevo chat e iniciar únicamente Fase 3 con la autorización registrada. No se requiere otra aprobación para ese inicio; su entrega necesitará revisión propia.

@@ -1,11 +1,11 @@
 # Registro de decisiones y riesgos
 
 **Fecha:** 2026-10-31
-**Fase:** 1 — COMPLETADA; análisis y recomendaciones aprobados el 2026-10-31.
+**Fase:** 2 — COMPLETADA; revisión visual aprobada. Fase 3 autorizada para un nuevo chat.
 
 ## Estado vigente de decisiones
 
-D-14 ratifica el paquete de [CIERRE_FASE1.md](CIERRE_FASE1.md), con UTC y respaldo semanal. A-01 a A-11 resueltos en su alcance de análisis; P-01/P-02/P-04 ratificados. La política de conservación no fue informada: su validación y plazo quedan como seguimiento F1-SEG-01 antes de datos reales, sin declarar cumplimiento legal. F1-SEG-02/F1-SEG-03 mantienen presupuesto y operación en fases futuras. Los antecedentes D-01 a D-13 se conservan; fases 2–15 sin autorización.
+D-14 ratifica el paquete de [CIERRE_FASE1.md](CIERRE_FASE1.md), con UTC y respaldo semanal. A-01 a A-11 resueltos en su alcance de análisis; P-01/P-02/P-04 ratificados. La política de conservación no fue informada: su validación y plazo quedan como seguimiento F1-SEG-01 antes de datos reales, sin declarar cumplimiento legal. F1-SEG-02/F1-SEG-03 mantienen presupuesto y operación en fases futuras. Los antecedentes D-01 a D-14 se conservan. D-15 cierra Fase 2 y autoriza Fase 3 para un nuevo chat; ejecución pendiente, fases 4–15 sin autorización.
 
 ## Decisiones confirmadas por el usuario
 | ID | Decisión / evidencia | Consecuencia |
@@ -83,3 +83,10 @@ D-14 es evidencia de ratificación y cierre del paquete; su alcance vigente est�
 ## Continuidad de diseño — Fase 2
 
 Autorización registrada en FASES y ratificada en esta conversación. El usuario incorporó visual-system-designer en [SKILL.md](../SKILL.md), integrado desde main y aplicado. Sistema visual propuesto y prototipo efímero documentados en [UX_UI.md](UX_UI.md), EN_REVISION. HTML/CSS/JS es soporte de demostración, sin elegir stack definitivo. D-14 y F1-SEG-01/02/03 intactos; ninguna decisión técnica de Fase 3 ni despliegue. Los antecedentes de fases no autorizadas se leen según su fecha y las autorizaciones posteriores.
+
+
+## D-15 — Aprobación visual y continuidad autorizada
+
+Fecha: 2026-10-31. Evidencia literal del usuario: «apruebo la revisión visual" para que cierre la fase y pase a la Fase 3 en nuevo chat».
+
+Decisión: aceptar revisión visual y cierre de Fase 2 (entrega `88d54f6`), sin cambios visuales adicionales solicitados. Fase 2 COMPLETADA; Fase 3 — arquitectura tecnológica AUTORIZADA para iniciar en un nuevo chat, ejecución PENDIENTE. Esta aprobación no acredita funcionalidades reales del mock ni autoriza fases 4–15, despliegue, gastos o producción. Se mantienen D-14 y F1-SEG-01/02/03. La continuidad EN_REVISION del apartado anterior corresponde a la entrega previa a esta aprobación.

@@ -78,3 +78,7 @@ CA-N07 y CR-17 deben verificar una copia semanal, intervalo máximo de 7 días e
 ## Evidencia visual de Fase 2
 
 Mapa de pantallas y cobertura HU-01 a HU-16 en [UX_UI.md](UX_UI.md); recorridos y resultados ejecutados en [PRUEBAS.md](PRUEBAS.md). La evidencia amplía CA-N05 a nivel de prototipo. Los CR y CA de integridad, persistencia, concurrencia, permisos, correo y exportación reales siguen pendientes de sus fases; no se consideran satisfechos por simularlos en UI. Fase 2 EN_REVISION, sin aceptación visual.
+
+### Cierre visual posterior
+
+D-15 acepta la revisión visual de la entrega; Fase 2 COMPLETADA. La evidencia anterior conserva sus límites. Fase 3 AUTORIZADA para iniciar en un nuevo chat, ejecución pendiente; fases 4–15 no autorizadas. Este registro prevalece sobre las menciones históricas de revisión pendiente.

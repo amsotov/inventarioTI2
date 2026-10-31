@@ -108,6 +108,8 @@ En operaciones de escritura se exige administrador autorizado y se conserva acto
 | RN-18 | Separar condición física de asignación y baja administrativa | I · P-02 | Representación y transiciones a ratificar |
 | RN-19 | Conservar operación válida ante fallo de correo y permitir reintento controlado | I · P-04 | A-07 define comportamiento aceptado; sin garantía de entrega exactamente una vez |
 
+Revisión posterior: la [propuesta de resolución](CIERRE_FASE1.md) aporta alternativas, recomendaciones y resultados CR-01 a CR-20 para cada pendiente. Chile y 250 funcionarios están confirmados; las demás recomendaciones requieren ratificación. Las preguntas originales se conservan como antecedente, sin afirmar que siguen sin desarrollo documental.
+
 ## Pendientes explícitos y efectos en la aceptación
 
 Estas preguntas desarrollan el registro existente, sin cerrarlo. No bloquean la entrega documental; sí la aceptación definitiva de criterios afectados. Usuario/organización decide; Codex documenta. Diseño técnico, visual y pruebas se ejecutarán solo en sus fases autorizadas.

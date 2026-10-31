@@ -6,6 +6,8 @@
 
 Este catálogo conserva los requisitos y criterios iniciales aceptados como alcance de Fase 0. El detalle de Fase 1 está en [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPRESARIAL.md), [HISTORIAS_USUARIO.md](HISTORIAS_USUARIO.md) y [TRAZABILIDAD.md](TRAZABILIDAD.md). No hay funcionalidades implementadas ni aceptación de cierre de Fase 1; los criterios condicionados requieren las decisiones citadas.
 
+La revisión de pendientes se consolida en [CIERRE_FASE1.md](CIERRE_FASE1.md): alternativas, parámetros y 20 casos concretos; Chile y 250 funcionarios confirmados, bienes estimados y decisiones restantes identificadas. Las filas originales se conservan, sin convertir recomendaciones en decisiones del usuario.
+
 ## Requisitos funcionales y backlog inicial
 Todas las filas pertenecen al MVP aprobado en Fase 0. El orden es la prioridad inicial aceptada para planificación, con refinamiento posterior; no cambia las puertas de aprobación por fase.
 

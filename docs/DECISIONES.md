@@ -5,6 +5,10 @@
 
 El registro de Fase 0 se conserva como antecedente. D-12 actualiza su autorización de Fase 1; fases 2–15 continúan sin autorización. A-01 a A-11 y P-01/P-02/P-04 no se han resuelto. Su desarrollo y efecto en la aceptación están en [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPRESARIAL.md).
 
+## Actualización de revisión de pendientes — 2026-10-31
+
+La petición «Revisa y termina los pendientes de la fase 1» autoriza completar el análisis ya autorizado. La [propuesta concreta](CIERRE_FASE1.md) desarrolla todos los A/P con alternativas, recomendación y resultados verificables. A-01 a A-11 y P-01/P-02/P-04 conservan sus IDs y no se dan por ratificados. D-13 confirma únicamente los datos nuevos aportados; ninguna recomendación se registra como declaración del usuario.
+
 ## Decisiones confirmadas por el usuario
 | ID | Decisión / evidencia | Consecuencia |
 |---|---|---|
@@ -20,6 +24,7 @@ El registro de Fase 0 se conserva como antecedente. D-12 actualiza su autorizaci
 | D-10 | En esta sesión: únicamente Fase 0, preservar trabajo existente, sin código ni publicación; después el usuario informa que actualizó GitHub y pide revisar nuevamente. | Recuperar y complementar los documentos actualizados localmente; no hacer push, PR, despliegue ni iniciar otra fase. La cita histórica de D-08 no amplía esta autorización. |
 | D-11 | Posteriormente el usuario indica: «todos los cambios del este proyecto inventarioTI2 deben actualizarse en github y aprueba esta fase». | Fase 0 COMPLETADA y aprobada; mantener todos los cambios autorizados del proyecto sincronizados en GitHub. Sustituye la restricción de entrega local de D-10, sin autorizar nuevas fases ni despliegues. Regla permanente registrada en AGENTS.md. |
 | D-12 | Autorización del 2026-10-30: «En nuevo chat inicia fase 1 inventarioTI2», registrada en `c45e96e`/`fa323a7`; el 2026-10-31 el usuario pide iniciar únicamente Fase 1, conservar pendientes y actualizar GitHub. | Ejecutar análisis documental de Fase 1 sin volver a pedir autorización; entrega EN_REVISION, sin aceptación de cierre, código, Fase 2 ni despliegue. |
+| D-13 | El 2026-10-31 el usuario responde: «Chile somos 250 funcionarios calcula aprox cuántos bienes pueden ser por funcionarios». | Chile y 250 funcionarios confirmados; se autoriza estimar bienes. Estimación documentada: 900–1.500, referencia 1.200; no son existencias medidas ni aprobación de otros parámetros. |
 
 Fecha de registro/revisión: **2026-10-30**. D-01 a D-09 se conservan del commit del usuario `ea60377feb246ede15fef00d386bd022a3deaa94`; D-10 registra las instrucciones iniciales y D-11 la aprobación y autorización posterior del usuario. El cierre de Fase 0 proviene de D-11, sin iniciar ni autorizar Fase 1.
 
@@ -60,7 +65,7 @@ Las alternativas tecnológicas todavía no están elegidas: D-07 conserva la ori
 | R-07 | No hay aplicación ni dependencias; Spec Kit no está presente en el árbol inspeccionado. | No instalar por inferencia; metodología documental actual suficiente para Fase 0. |
 
 ## Fuente y aprobación
-Requisitos y autorizaciones conservados en los documentos del commit actualizado por el usuario `ea60377feb246ede15fef00d386bd022a3deaa94`, recibido tras su indicación de revisar GitHub nuevamente. El mensaje posterior de D-11, del 2026-10-30, aprueba los entregables y el cierre de Fase 0 y la sincronización con GitHub. P-03 queda aceptada como planificación inicial; P-01, P-02, P-04 y A-01 a A-11 continúan como asuntos de detalle sin resolución implícita. No hay autorización para Fases 1, 2 o 3.
+Requisitos y autorizaciones conservados en los documentos del commit actualizado por el usuario `ea60377feb246ede15fef00d386bd022a3deaa94`, recibido tras su indicación de revisar GitHub nuevamente. El mensaje posterior de D-11, del 2026-10-30, aprueba los entregables y el cierre de Fase 0 y la sincronización con GitHub. P-03 queda aceptada como planificación inicial; P-01, P-02, P-04 y A-01 a A-11 continúan como asuntos de detalle sin resolución implícita. Esa frase describía el cierre de Fase 0; D-12 autorizó después Fase 1. Fases 2 y 3 siguen sin autorización.
 
 ## Prioridad de riesgos, responsables y seguimiento
 

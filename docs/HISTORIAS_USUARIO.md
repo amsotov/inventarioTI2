@@ -6,6 +6,10 @@ Fuentes: [REQUISITOS.md](REQUISITOS.md), [ANALISIS_EMPRESARIAL.md](ANALISIS_EMPR
 
 Cada CA-Hxx-n tiene estructura dado/cuando/entonces. **Condicionado** significa que la prueba precisa la decisión citada antes de fijar su resultado; no se interpreta como requisito aprobado ni como criterio superado. Ninguna historia está aceptada o implementada por estar escrita.
 
+## Concreción de los criterios condicionados
+
+La [propuesta de resolución de pendientes](CIERRE_FASE1.md) completa resultados esperados y parámetros con CR-01 a CR-20. Sus decisiones están listas para ratificar, sin aceptación presumida. Se mantienen los 47 criterios y sus IDs; los CR complementan sus casos límite. Chile y 250 funcionarios son datos confirmados; el inventario estimado de 900–1.500 bienes no es una medición.
+
 ## HU-01 — Mantener funcionarios y unidades
 
 Como administrador quiero registrar y actualizar funcionarios y su unidad para identificar custodios sin perder su historia. M01 · PR-01 · RF-01 · RN-02/RN-07/RN-11. Pendientes: A-01/A-03/A-05.
@@ -140,6 +144,6 @@ Como administrador o lectura quiero reportes Excel/PDF para revisar y compartir 
 | CA1-01 | Actores, áreas funcionales y permisos diferenciados sin crear roles implícitos | Documentado; revisión de negocio pendiente |
 | CA1-02 | Siete módulos con valor, procesos normales, excepciones y reglas vinculadas | Documentado en análisis y trazabilidad |
 | CA1-03 | RF-01 a RF-16 y RNF-01 a RNF-07 cubiertos con criterios y escenarios de verificación | Documentado; ejecución funcional no realizada |
-| CA1-04 | A-01 a A-11 y P-01/P-02/P-04 explícitos, sin respuestas inferidas | Conservados; resolución pendiente del usuario |
+| CA1-04 | A-01 a A-11 y P-01/P-02/P-04 explícitos, sin respuestas inferidas | Conservados; propuestas completas en CIERRE_FASE1, ratificación pendiente |
 | CA1-05 | Diferencias, enlaces, IDs y cobertura revisados; cambios documentales en GitHub | Evidencia en PRUEBAS y ESTADO_PROYECTO; comprobar SHA remoto al entregar |
 | CA1-06 | Usuario valida análisis, decisiones necesarias y cierre de Fase 1 | PENDIENTE; EN_REVISION, sin aprobación de cierre ni de Fase 2 |

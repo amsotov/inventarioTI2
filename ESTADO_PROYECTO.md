@@ -132,3 +132,17 @@ Destino autorizado: `amsotov/inventarioTI2`, rama `main`, desde la rama local `w
 ### Siguiente acción
 
 Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P-04. CA1-06 y cierre de Fase 1 pendientes; no volver a pedir autorización para el análisis ya ejecutado. Fase 2 continúa sin autorización y no se inicia. La aceptación de documentos, el cierre de fase y el permiso de empezar Fase 2 son decisiones distintas.
+
+## Revisión de pendientes de Fase 1 — continuidad más reciente
+
+**Solicitud:** «Revisa y termina los pendientes de la fase 1». **Estado:** EN_REVISION; preparación de resoluciones completada, ratificación pendiente. Este apartado actualiza el punto de continuidad anterior sin borrar antecedentes.
+
+- Leídos nuevamente instrucciones, análisis, decisiones, requisitos, historias, trazabilidad y evidencias. Git inicialmente limpio; `git fetch origin` y `git merge --ff-only origin/main` confirman base `ff64f62e8581016973a9c2cf9d984fffa26dfc42` sin novedades remotas.
+- Hallazgo: faltaban resultados concretos para criterios condicionados. Se crea `docs/CIERRE_FASE1.md` con alternativas, recomendaciones, parámetros y CR-01 a CR-20, cubriendo A-01 a A-11 y P-01/P-02/P-04. Contratos de los cinco reportes y buscador, casos límite, correcciones sin edición histórica, eventos/reintentos, acceso inicial y criterios operativos quedan listos para revisión.
+- Dato recibido del usuario: «Chile somos 250 funcionarios calcula aprox cuántos bienes pueden ser por funcionarios». D-13 registra Chile y 250 funcionarios. Cálculo solicitado: 3–5 bienes/persona más 20 % de compartidos/reserva = 900–1.500; referencia 1.200. Capacidad objetivo propuesta: 3.000 bienes y 500 funcionarios conservando inactivos. No son existencias medidas ni equivalen a 250 cuentas.
+- País confirmado, pero localidad/zona y política obligatoria de conservación no indicadas; se propone America/Santiago según localidad. No se afirma legislación aplicable, plazos legales o cumplimiento verificados.
+- Archivos: nuevo CIERRE_FASE1; actualizados ANALISIS_EMPRESARIAL, HISTORIAS_USUARIO, REQUISITOS, TRAZABILIDAD, DECISIONES, PRUEBAS, FASES, README y este estado. Los RF/RNF y criterios originales se conservan; las recomendaciones no se convierten por inferencia en decisiones aprobadas.
+- Verificación documental: `python /tmp/verificar_revision_fase1.py`, revisión de tablas, enlaces, referencias, cobertura de 14 pendientes/20 casos, cálculos y preservación de documentos/fases no autorizados; `git diff --check`. Resultados en docs/PRUEBAS.md. Las pruebas funcionales siguen NO EJECUTADAS; no existe implementación ni se inicia Fase 2.
+- GitHub: mantener entrega en main, commit con noreply del historial; comparar SHA local/remoto después de push. No afirmar sincronización por la sola creación de un commit; SHA final se informa tras comprobarlo.
+
+**Acción necesaria para cerrar:** usuario revisa el paquete y acepta o corrige sus recomendaciones por ID; aporta localidad/zona y política de conservación (o confirma su inexistencia y acuerda explícitamente su validación antes de datos reales). Ratificar estimación/capacidad si la dotación por persona difiere. Hasta entonces CA1-06 no se marca cumplido. No se vuelve a solicitar la autorización de Fase 1 ya otorgada; se pide únicamente la decisión de negocio concreta que aún falta.

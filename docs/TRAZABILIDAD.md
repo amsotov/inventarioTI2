@@ -49,3 +49,26 @@ CA-Nxx son criterios documentales de comportamiento esperado. No fijan tecnolog�
 ## Estado de cobertura
 
 16/16 RF tienen historia y criterios; 7/7 RNF tienen escenarios transversales; 7/7 módulos conservan valor empresarial. Esta es cobertura documental, no cobertura de pruebas ejecutadas. CA1-01 a CA1-06 están en HISTORIAS_USUARIO; la revisión del usuario y las decisiones necesarias siguen pendientes. No se ha iniciado ninguna fase 2–15.
+
+## Desarrollo de pendientes — revisión posterior
+
+La [propuesta de resolución](CIERRE_FASE1.md) complementa el análisis con resultados concretos; los criterios anteriores conservan sus IDs y estado de aceptación. CR-01 a CR-20 son escenarios propuestos, no pruebas ejecutadas ni reglas ratificadas.
+
+| Pendiente | Casos concretos | Historias / calidad |
+|---|---|---|
+| A-01 | CR-01/CR-02 | HU-01; RNF-02/RNF-04 |
+| A-02 | CR-03 | HU-02; RNF-02 |
+| A-03 | CR-04/CR-05/CR-06 | HU-01/HU-03/HU-04; RNF-02 |
+| A-04 | CR-08/CR-09/CR-10 | HU-03/HU-04/HU-05; RNF-02/RNF-03 |
+| A-05 | CR-07/CR-11 | HU-01/HU-06/HU-07; RNF-03 |
+| A-06 | CR-12 | HU-07/HU-13/HU-16; RNF-03 |
+| A-07 | CR-13/CR-14 | HU-14/HU-15; RNF-04/RNF-07 |
+| A-08 | CR-15/CR-16 | HU-08/HU-09/HU-10/HU-11; RNF-01/RNF-02 |
+| A-09 | CR-17/CR-20 | HU-06/HU-15/HU-16; RNF-07 |
+| A-10 | CR-14/CR-18 | HU-08/HU-12/HU-13/HU-15/HU-16; RNF-04 |
+| A-11 | CR-19/CR-20 | HU-07/HU-16; RNF-04/RNF-07 |
+| P-01 | CR-18 | HU-08/HU-13/HU-16; RNF-01/RNF-04 |
+| P-02 | CR-05/CR-06 | HU-02/HU-04; RNF-02 |
+| P-04 | CR-13/CR-14 | HU-15; RNF-07 |
+
+D-13 confirma Chile y 250 funcionarios y autoriza el cálculo aproximado de bienes. Referencia: 4 × 250 + 20 % = 1.200; rango estimado 900–1.500; capacidad objetivo propuesta 3.000. Falta ratificar recomendaciones y completar localidad/zona y política de conservación. El volumen estimado no se confunde con datos medidos y no implica 250 cuentas de acceso.

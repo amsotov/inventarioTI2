@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-31 — Cierre aprobado de Fase 5
+
+- D-21 acepta entrega de autenticación `6ab7229`; CA5-06 cumplido, Fase 5 COMPLETADA.
+- Fase 6 autorizada para un nuevo chat, ejecución pendiente y arranque documentado.
+- Solo documentación de cierre; código, migraciones, pruebas y evidencias intactos. Pendientes operativos conservados; sin Fase 6 implementada ni despliegue.
+
 ## 2026-10-31 — Fase 5, entrega EN_REVISION
 
 - BFF de autenticación TypeScript/Fastify, Supabase Auth y PostgreSQL, sesiones opacas/MFA/intenciones de un uso y conciliación durable.

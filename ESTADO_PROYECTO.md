@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 5 — EN_REVISION; autenticación implementada localmente, cierre pendiente.
+**Fase:** 5 — COMPLETADA; entrega y cierre aprobados por D-21.
 **Modo:** GUIADO
-**Última fase completada:** 4.
-**Última fase autorizada:** 5, ejecución ratificada y entregada EN_REVISION. Fases 6–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 5.
+**Última fase autorizada:** 6, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 7–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** revisar la entrega de Fase 5 y sus pendientes en docs/AUTENTICACION.md. Fase 4 aceptada por D-19. No iniciar Fase 6 ni desplegar. Los apartados anteriores a la entrega de Fase 5 al final son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 5 aceptada y cerrada por D-21. Iniciar únicamente Fase 6 en un nuevo chat con autorización ya otorgada; seguir el plan al final de FASES.md. Aquí solo se registra continuidad, sin implementar Fase 6 ni desplegar. Los apartados anteriores al cierre de Fase 5 al final son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -274,3 +274,15 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: revisión de cambios, commit/push normales a main con autoría noreply histórica y comprobación de SHA local/remoto. SHA final se comunica tras verificar, sin commit autorreferente. No se cambia historial remoto.
 
 **Siguiente acción:** revisión de Fase 5 EN_REVISION y resolución de pendientes propios de integración antes de aceptar cierre. Fases 6–15 siguen PENDIENTE / NO OTORGADA. Esta entrega no solicita ni presume autorización de Fase 6.
+
+
+## Cierre de Fase 5 y continuidad autorizada de Fase 6 — vigente
+
+- Usuario: «Apruebo fase 5 y en nuevo chat inicia fase 6». D-21 acepta la entrega `6ab7229f2a89ca08fbd2f274377aa146386bc165`, cumple CA5-06 y cierra Fase 5 COMPLETADA. Se mantienen los límites: pruebas locales de PostgreSQL/doble y GoTrue, sin proyecto gestionado, transporte de correo real, privilegios SQL definitivos ni UI completa integrados.
+- Fase 6 AUTORIZADA para iniciar en un nuevo chat, ejecución PENDIENTE. Esta tarea no inicia permisos, políticas RLS, auditoría ni modelo de amenazas de Fase 6. No crea automáticamente un chat. Fases 7–15 sin autorización; despliegue/producción/gastos no autorizados.
+- Trabajo de cierre: actualizar fases, estado, aceptación en AUTENTICACION, D-21 en DECISIONES y continuidad en README/specs/README, PRUEBAS y CHANGELOG. Código, migraciones, tests y evidencias originales preservados literalmente.
+- Insumos para Fase 6: arquitectura BFF/sesión opaca con validación vigente, dos roles con inventario compartido y auditoría/administración restringidas, RLS privado cerrado, rol SQL operativo y contexto transaccional pendientes. Leer pendientes de AUTENTICACION; no usarlos para iniciar otras fases. Retención legal, presupuesto y operación de respaldo F1-SEG-01/02/03 siguen abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+- Verificación de cierre: árbol inicial limpio y main al día; revisión de diferencias, enlaces locales, estados/CA5-06, filas 7–15 y preservación de archivos contra la entrega aceptada; git diff --check. No repetir pruebas funcionales por cambios solo documentales ni modificar verificadores históricos para hacerlos pasar con estados posteriores.
+- GitHub: commit/push normales a main, autoría noreply y comparación de SHA local/remoto antes de confirmar entrega. SHA final se informa después de comprobarlo; sin despliegue.
+
+**Siguiente acción:** abrir un nuevo chat con inventarioTI2 e iniciar únicamente Fase 6 bajo D-21. Su entrega/cierre necesitará revisión propia; no iniciar Fase 7.

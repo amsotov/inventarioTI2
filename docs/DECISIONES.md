@@ -115,3 +115,8 @@ Decisión: aceptar revisión visual y cierre de Fase 2 (entrega `88d54f6`), sin 
 ## D-20 — Ejecución de autenticación, sin cierre presumido
 
 2026-10-31: el usuario ratifica iniciar únicamente Fase 5 bajo D-19 y actualizar GitHub, sin Fase 6 ni despliegue. Se implementa el diseño BFF/Supabase aceptado, con verificación local y pendientes explícitos en [AUTENTICACION](AUTENTICACION.md). No es aprobación del usuario a la entrega ni cambio de D-14/D-17/D-19; F1-SEG-01/02/03 intactos.
+
+
+## D-21 — Aceptación de Fase 5 y continuidad de Fase 6
+
+2026-10-31. Evidencia literal: «Apruebo fase 5 y en nuevo chat inicia fase 6». Acepta entrega `6ab7229f2a89ca08fbd2f274377aa146386bc165`, cumple CA5-06 y cierra Fase 5 COMPLETADA con pendientes operativos explícitos. Autoriza únicamente Fase 6 — autorización, privacidad y seguridad para iniciar en un nuevo chat, ejecución PENDIENTE. No implica ejecución aquí, creación automática de conversación, permisos remotos/productivos, datos reales, gastos, despliegue ni fases 7–15. Conserva F1-SEG-01/02/03 y límites de las pruebas. Este registro actualiza el antecedente EN_REVISION de D-20 sin reescribir evidencias.

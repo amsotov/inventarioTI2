@@ -28,3 +28,6 @@ D-19 acepta/cierra Fase 4 y autoriza únicamente Fase 5 para un nuevo chat, ejec
 
 
 Punto vigente posterior: Fase 5 ejecutada y EN_REVISION. [Autenticación](../docs/AUTENTICACION.md) contiene alcance, CA5, flujos, dependencias y pruebas. Fases 6–15 sin autorización. Spec Kit no instalado ni utilizado.
+
+
+Punto vigente posterior — D-21: Fase 5 COMPLETADA por aceptación expresa de la entrega `6ab7229`; Fase 6 autorizada para iniciar en un nuevo chat, ejecución PENDIENTE. Seguir [FASES](../FASES.md) y [ESTADO](../ESTADO_PROYECTO.md); no volver a pedir autorización. Fases 7–15 sin autorización; sin despliegue. Spec Kit no instalado ni utilizado. Los antecedentes EN_REVISION anteriores se conservan como históricos.

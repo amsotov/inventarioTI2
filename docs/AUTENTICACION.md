@@ -1,6 +1,6 @@
 # Autenticación — Fase 5
 
-2026-10-31. Entrega EN_REVISION bajo D-19 y la solicitud de iniciar únicamente Fase 5. No implica cierre ni autorización de Fase 6. Arquitectura y persistencia aceptadas en [ARQUITECTURA](ARQUITECTURA.md) y [BASE_DATOS](BASE_DATOS.md); reglas D-14/A-08 sin rebajas.
+2026-10-31. Fase 5 COMPLETADA: entrega y cierre aceptados por D-21. Fase 6 autorizada para un nuevo chat; ejecución pendiente. La implementación fue realizada bajo D-19 y la solicitud de iniciar únicamente Fase 5. Arquitectura y persistencia aceptadas en [ARQUITECTURA](ARQUITECTURA.md) y [BASE_DATOS](BASE_DATOS.md); reglas D-14/A-08 sin rebajas.
 
 ## Plan y resultado implementado
 
@@ -49,4 +49,9 @@ Para arrancar una instancia de prueba autorizada: aplicar ambas migraciones a un
 | CA5-03 | MFA administrativo, sesión parcial y rotación | Implementado; pruebas locales, ver PRUEBAS |
 | CA5-04 | Invitación/recuperación, consumo único, expiración/reenvío y fallos | Implementado; entrega de correo e integración gestionada pendientes |
 | CA5-05 | Build, pruebas, revisión de dependencias y documentación/GitHub | Evidencia en PRUEBAS y salida versionada |
-| CA5-06 | Aceptación expresa y cierre | PENDIENTE; no declarar COMPLETADA ni iniciar Fase 6 |
+| CA5-06 | Aceptación expresa y cierre | CUMPLIDO por D-21: usuario acepta la entrega y autoriza Fase 6 en un nuevo chat |
+
+
+## Aceptación y límites conservados — D-21
+
+El usuario indica «Apruebo fase 5 y en nuevo chat inicia fase 6», aceptando la entrega `6ab7229f2a89ca08fbd2f274377aa146386bc165`. Fase 5 COMPLETADA; la aceptación no acredita correo real, proyecto gestionado, UI completa ni privilegios operativos. Los pendientes anteriores siguen vigentes para su fase/puesta en marcha autorizada. No se rebajan contratos ni se repiten pruebas en este cierre documental. No se ejecuta Fase 6 aquí ni se despliega.

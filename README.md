@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 EN_REVISION: BFF de autenticación y pruebas locales; fases 6–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 COMPLETADA y aceptada por D-21. Fase 6 AUTORIZADA para un nuevo chat, ejecución pendiente; fases 7–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -89,3 +89,8 @@ No puedo abrir automáticamente otro chat. Abre uno con inventarioTI2 y escribe:
 ## Autenticación — entrega de Fase 5
 
 [Implementación, ejecución, criterios y pendientes](docs/AUTENTICACION.md). Node 24: `npm ci`, `npm run build`, `npm test` (requiere Docker e imágenes de prueba). Variables de servidor en [.env.example](.env.example), sin secretos ni cuentas de ejemplo utilizables. Sin despliegue ni autorización de Fase 6. El prototipo sigue siendo una referencia visual sintética, no una sesión real.
+
+
+## Continuidad aprobada — Fase 6 en nuevo chat
+
+Usuario acepta Fase 5 y autoriza iniciar únicamente Fase 6 en un nuevo chat (D-21). Recuperar main y seguir el punto de arranque al final de [FASES.md](FASES.md), sin volver a pedir esa autorización. Esta actualización solo registra el cierre; no inicia Fase 6 ni crea el chat. Los [pendientes operativos de autenticación](docs/AUTENTICACION.md) permanecen documentados; sin despliegue ni autorización de Fase 7.

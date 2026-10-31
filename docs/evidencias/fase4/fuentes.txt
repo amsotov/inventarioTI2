@@ -1,0 +1,14 @@
+Consulta HTTPS 2026-10-31; fuentes leídas, no prueba de configuración remota.
+https://supabase.com/changelog.md
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes.md
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+https://supabase.com/docs/guides/api/using-custom-schemas.md
+Supabase CLI: npx --yes supabase@2.122.0 --version
+Supabase CLI: npx --yes supabase@2.122.0 migration new --help
+Generación real: npx --yes supabase@2.122.0 migration new modelo_inicial
+Supabase CLI: npx --yes supabase@2.122.0 migration list --help (solo ayuda, no lista remota/local).
+Changelog relevante: no se usan ltree, pgcrypto, btree_gist ni operadores personalizados afectados.
+Imagen de pruebas PostgreSQL 17.11:
+postgres:17@sha256:31ba9c94a03ada9988f2bb493a22a75eef3a185884533e5cdbcd498ea835b08f
+Guías aplicadas: cloud-environment-runtime, Supabase y supabase-postgres-best-practices (FK indexadas).
+No se consultaron proyectos del usuario ni se configuró infraestructura.

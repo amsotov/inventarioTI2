@@ -1,0 +1,48 @@
+Motor: PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+PASS: migración versionada aplicada una vez
+PASS: RUT normalizado y módulo 11
+PASS: rechaza RUT inválido
+PASS: ID normalizado único
+PASS: identidad única incluso inactiva
+PASS: código único incluso en baja
+PASS: serie normalizada única
+PASS: ausencia de serie exige motivo
+PASS: baja impide asignación
+PASS: malo impide asignación
+PASS: funcionario inactivo impide asignación
+PASS: doble asignación concurrente, exactamente un commit
+PASS: una custodia vigente
+PASS: fecha efectiva del servidor, no retroactiva
+PASS: baja de bien asignado rechazada
+PASS: baja de custodio rechazada
+PASS: cambiar a malo conserva custodio
+PASS: historia no editable
+PASS: historia no borrable
+PASS: historia no truncable
+PASS: maestros exigen baja lógica
+PASS: devolución de bien malo permitida
+PASS: intervalo cerrado no reescribible
+PASS: renombrar unidad conserva instantánea histórica
+PASS: unidad inactiva rechaza nueva pertenencia
+PASS: traslado conserva intervalos contiguos
+PASS: cambio de unidad conserva custodia
+PASS: traslado conserva unidad histórica previa
+PASS: anotación correctiva inmutable
+PASS: baja y asignación concurrentes preservan invariancia
+PASS: ningún inactivo con custodia
+PASS: FK de actor rechaza referencia inexistente
+PASS: rollback conjunto sin evidencia ni outbox
+PASS: idempotencia persistente no duplica
+PASS: resultado idempotente inmutable
+PASS: auditoría inmutable
+PASS: destinatario fijado al confirmar
+PASS: aviso lógico único
+PASS: FK rechaza entidad inexistente
+PASS: 13 tablas con RLS sin políticas
+PASS: ninguna función SECURITY DEFINER
+PASS: acceso directo denegado por defecto
+PASS: consultas clave ejecutadas
+PASS: FK indexadas por primera columna
+PASS: rango UTC incluye inicio y excluye día posterior
+PASS: pg_dump/pg_restore, 14 tablas idénticas, secuencia y triggers restaurados
+RESULTADO: 46 comprobaciones aprobadas. Sin Auth, API, proveedor de correo ni despliegue.

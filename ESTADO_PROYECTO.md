@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 3 — COMPLETADA; arquitectura y cierre aprobados por D-17.
+**Fase:** 4 — EN_REVISION; modelado y persistencia locales entregados.
 **Modo:** GUIADO
 **Última fase completada:** 3.
-**Última fase autorizada:** 4, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 5–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 4, ejecutada y entregada para revisión. Fases 5–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 3 aceptada y cerrada por D-17. Iniciar únicamente Fase 4 en un nuevo chat con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. No volver a solicitar esa autorización. Esta sesión registra continuidad, sin ejecutar persistencia ni desplegar; los apartados previos son antecedentes.
+**Punto vigente de continuidad:** revisar la entrega de Fase 4 y sus pruebas al final de este documento y en docs/BASE_DATOS.md. Aceptación/cierre pendientes. Fase 5 no autorizada; sin despliegue. Los registros anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -234,3 +234,17 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: base limpia y remota al día; commit/push normales a main, sin forzar, con comprobación de SHA remoto antes de confirmar entrega. No modificar el verificador/resultados históricos de la entrega para simular una nueva ejecución: corresponden a su base y estado de revisión.
 
 **Siguiente acción:** abrir un chat nuevo con inventarioTI2 e iniciar únicamente Fase 4 usando la autorización registrada. La entrega de esa fase necesitará revisión propia; fases 5–15 siguen sin autorización.
+
+
+## Entrega vigente de Fase 4 — 2026-10-31
+
+- Objetivo/alcance: modelado conceptual/lógico/físico y persistencia bajo D-17, ratificados por la solicitud actual. Plan presentado antes de implementar; última completada 3; Fase 4 EN_REVISION, CA4-06 pendiente. Fases 5–15 no autorizadas.
+- Inspección: git inicial limpio; fetch y avance directo de `363cfa0` a `1fe5859`, preservando actualizaciones de terceros. Leídos AGENTS/PROMPT_MAESTRO, fases/estado, requisitos/cierre D-14, diseño aceptado D-15, arquitectura/contratos/ADR aceptados D-17. Spec Kit no disponible ni instalado. Guías cloud, Supabase y PostgreSQL aplicadas; changelog/documentación actual consultados.
+- Archivos: docs/BASE_DATOS.md con ER, reglas, índices, seguridad cerrada y límites; docs/DICCIONARIO_DATOS.md; migración supabase/migrations/20261031053433_modelo_inicial.sql, generada con CLI 2.122.0; db/seed_prueba.sql y consultas.sql; tests/datos/verificar.py; docs/evidencias/fase4; .gitignore para secretos/caché/dumps; continuidad, trazabilidad, decisiones, README, CHANGELOG y PRUEBAS actualizados. Sin cambios al prototipo ni evidencia anterior.
+- Resultado: 13 tablas de negocio privadas, cuenta separada de funcionario, canónicos/unicidad incluso inactivos, RUT válido, custodia vigente única/intervalos no solapados y cierre único, bajas controladas, instantáneas históricas y evidencia append-only, versiones, idempotencia persistente y outbox. Todo el acceso queda cerrado por defecto; no es autorización funcional. Sesiones/identidad, permisos, API, replay HTTP y coordinación obligatoria de cada caso de uso siguen en sus fases.
+- Pruebas: `python3 tests/datos/verificar.py` en PostgreSQL 17.11, imagen fijada por digest y contenedor sin red/puertos; resultados exactos versionados en docs/evidencias/fase4/resultados.txt. Migración/checksum/reaplicación, integridad, carreras, UTC, rollback/commit, idempotencia única, inmutabilidad, consultas, cierre de acceso y pg_dump/pg_restore con comparación de contenido y trigger restaurado. Revisión documental reproducible y `git diff --check` registrados en PRUEBAS. Durante preparación se corrigió la espera de PostgreSQL (distinguir servidor temporal de init y definitivo); no se oculta la ejecución inicial fallida.
+- Límites: no integración con Supabase gestionado/Auth, advisors remotos, permisos por sesión/rol, API, correo, exportaciones, carga objetivo ni recuperación productiva; no repetir UI al preservar su código. El ensayo restaura datos/esquema locales con propietario de prueba, no Auth/configuración/ACL de proveedor ni RPO/RTO operativo. Sin datos reales, cambios remotos DB, gastos, despliegue o Fase 5.
+- Riesgos/seguimientos: F1-SEG-01 conservación legal antes de datos reales; F1-SEG-02 presupuesto sin aprobar; F1-SEG-03 operador/ubicación/claves/alertas/horario sin configurar. UTC y copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Rol SQL definitivo y políticas requieren Fase 6; los servicios de Fases 7/10 deberán coordinar maestros/custodias/evidencia/outbox atómicamente, sin otorgar escritura directa genérica.
+- GitHub: commit/push normales a main, sin forzar, con autor noreply ya verificado en historial. Comparar SHA local/remoto después de subir; comunicar SHA final al usuario tras verificar. La actualización no publica el sistema.
+
+**Siguiente acción:** revisión y aceptación expresa de Fase 4; cualquier inicio de Fase 5 requiere autorización separada. No volver a pedir autorización de la Fase 4 ya ejecutada.

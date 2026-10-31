@@ -87,3 +87,20 @@ D-15 acepta la revisión visual de la entrega; Fase 2 COMPLETADA. La evidencia a
 ## Extensión arquitectónica — Fase 3 EN_REVISION
 
 La tabla de módulos en [ARQUITECTURA](ARQUITECTURA.md) vincula RF-01 a RF-16/HU-01 a HU-16 a componentes; [CONTRATOS_API](CONTRATOS_API.md) define consultas, comandos y escenarios futuros. RNF-01: ADR-003/RLS; RNF-02: ADR-004/unidad de trabajo; RNF-03: UTC y contratos de fechas; RNF-04: minimización, fronteras privadas y F1-SEG-01; RNF-05: preservar UX_UI aceptado y verificar frontend/hardware después; RNF-06: ADR-002/adaptación SQL Server; RNF-07: ADR-006/costos y continuidad. CA3-01 a CA3-05 revisados documentalmente, CA3-06 pendiente. Ningún enlace a arquitectura acredita implementación ni pruebas de esos requisitos.
+
+
+## Persistencia de Fase 4 — EN_REVISION
+
+| Requisito / contrato | Persistencia y prueba local | Límite de verificación |
+|---|---|---|
+| RF-01/RF-02, A-01/A-02 | Funcionarios/unidades/bienes, RUT/canónicos/unique/FK y bajas; pruebas negativas | Sin formularios ni API |
+| RF-03/RF-04/RF-05, CR-04 a CR-11 | Custodias/intervalos/movimientos/anotaciones, snapshots históricos, carreras y cierre único | Orquestación completa por caso de uso pendiente de Fases 7/10 |
+| RF-06/RF-07, A-06 | Índices/consultas de inventario/adquisición/movimientos, UTC y unidad actual | Sin búsqueda/API/reportes funcionales ni carga objetivo |
+| RF-08 a RF-11 | Cuenta separada de funcionario y referencia de actor, sin contraseñas | Autenticación/sesiones/MFA/último administrador no implementados; Fases 5/6/9 |
+| RF-12/RF-13, RNF-02/RNF-03 | Auditoría append-only, consultas por registro/entidad, rechazo de mutaciones | Proyecciones autorizadas y permisos por sesión pendientes |
+| RF-14/RF-15, ADR-004 | Outbox único por evento/destinatario/propósito, destinatario inmutable, intentos append-only | Sin worker, proveedor, reintentos o conciliación reales |
+| RF-16, ADR-005 | Modelo e índices compatibles con consultas de referencia A-11 | Exportaciones y cinco reportes funcionales pendientes de Fase 11 |
+| RNF-01/RNF-04 | Esquema privado, RLS cerrada sin políticas, rol sintético sin acceso | No acredita RBAC/RLS funcional, Supabase Auth ni privacidad legal |
+| RNF-05/RNF-06/RNF-07 | Prueba de restauración local, documentación SQL Server y estados de aviso | Sin operación productiva, adaptación SQL Server ni entrega de correo |
+
+[Modelo y CA4](BASE_DATOS.md), [diccionario](DICCIONARIO_DATOS.md), [resultados](evidencias/fase4/resultados.txt). No se cambia ningún criterio de aceptación empresarial para ajustarlo a estas pruebas parciales.

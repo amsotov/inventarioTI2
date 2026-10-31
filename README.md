@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 AUTORIZADA para un nuevo chat, ejecución pendiente; fases 5–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 EN_REVISION: modelo y persistencia locales implementados; fases 5–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -60,10 +60,18 @@ Pruebas UI: `PLAYWRIGHT_MODULE=/ruta/a/playwright CHROMIUM_PATH=/ruta/a/chromium
 
 Fase 3 completada y aceptada por D-17: [arquitectura, costos y riesgos](docs/ARQUITECTURA.md), [contratos](docs/CONTRATOS_API.md), [ADR](docs/adr/FASE3.md). Selección técnica aceptada como diseño: React/TypeScript, API Node modular y PostgreSQL/Supabase; no hay implementación de servicios ni infraestructura contratada.
 
-Verificación documental reproducible: `python3 docs/evidencias/fase3/verificar.py`; resultados y límites en [PRUEBAS](docs/PRUEBAS.md). Prototipo y evidencia visual conservados. El verificador conserva el estado de la entrega original; la revisión de este cierre está en PRUEBAS. Siguiente acción: iniciar Fase 4 en un nuevo chat con autorización ya otorgada; sin despliegue.
+Verificación documental reproducible: `python3 docs/evidencias/fase3/verificar.py`; resultados y límites en [PRUEBAS](docs/PRUEBAS.md). Prototipo y evidencia visual conservados. El verificador conserva el estado de la entrega original; la revisión de este cierre está en PRUEBAS. Fase 4 entregada para revisión; ver modelo y pruebas a continuación. Sin despliegue.
 
-## Inicio en un nuevo chat
+## Persistencia de Fase 4
 
-No se puede abrir automáticamente desde esta conversación. Abre un chat con el repositorio y escribe:
+[Modelo ER y reglas](docs/BASE_DATOS.md), [diccionario](docs/DICCIONARIO_DATOS.md), [migración](supabase/migrations/20261031053433_modelo_inicial.sql), [datos sintéticos](db/seed_prueba.sql) y [consultas](db/consultas.sql). Esquema privado con acceso cerrado; sin Auth, API ni worker funcional. El prototipo conserva sus datos efímeros y todavía no se conecta a esta persistencia.
 
-> Inicia únicamente la Fase 4 de inventarioTI2, ya autorizada en FASES.md y ESTADO_PROYECTO.md por D-17. Lee las instrucciones, el cierre de Fase 3, la arquitectura, los contratos y las ADR aceptadas. Presenta el plan y desarrolla el modelado y la persistencia con datos sintéticos en un entorno aislado; conserva los seguimientos y actualiza GitHub. No inicies Fase 5 ni despliegues.
+Requiere Python 3 y Docker para ejecutar la suite aislada:
+
+```sh
+docker pull postgres:17@sha256:31ba9c94a03ada9988f2bb493a22a75eef3a185884533e5cdbcd498ea835b08f
+python3 tests/datos/verificar.py
+python3 docs/evidencias/fase4/verificar_documentos.py
+```
+
+La suite crea y elimina exclusivamente sus recursos sintéticos, sin red ni puertos publicados. No acepta una base remota. Resultados y limitaciones en [PRUEBAS](docs/PRUEBAS.md). Fase 4 EN_REVISION, pendiente de aceptación. Fase 5 no autorizada; no iniciar autenticación ni desplegar.

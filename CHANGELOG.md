@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-10-31 — Fase 4, entrega EN_REVISION
+
+- Modelo ER, diccionario, migración PostgreSQL transaccional y datos sintéticos.
+- Restricciones/índices, custodia única, evidencia inmutable, idempotencia y outbox persistentes, acceso cerrado.
+- 46 comprobaciones reales locales, concurrencia y pg_dump/pg_restore; revisión documental reproducible.
+- Sin Auth, permisos funcionales, API, integración al prototipo ni despliegue; aceptación pendiente, Fase 5 no autorizada.
+
 ## 2026-10-31 — Cierre aprobado de Fase 3
 
 - D-17 acepta arquitectura, contratos y seis ADR; CA3-06 cumplido, Fase 3 COMPLETADA.

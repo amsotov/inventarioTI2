@@ -1,0 +1,9 @@
+# Secretos y artefactos locales (ninguna credencial predeterminada).
+.env
+.env.*
+!.env.example
+node_modules/
+supabase/.temp/
+__pycache__/
+*.pyc
+*.dump

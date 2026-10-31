@@ -19,3 +19,6 @@ Fase 1 COMPLETADA por D-14. [CIERRE_FASE1.md](../docs/CIERRE_FASE1.md) contiene 
 Arquitectura de Fase 3 en [ARQUITECTURA](../docs/ARQUITECTURA.md), [contratos](../docs/CONTRATOS_API.md) y [ADR](../docs/adr/FASE3.md). Se conserva la metodología documental existente; Spec Kit no instalado.
 
 D-17 acepta/cierra Fase 3 y autoriza Fase 4 en un nuevo chat, ejecución pendiente. Los estados EN_REVISION previos corresponden a la entrega original. Fases 5–15 sin autorización; no se instala Spec Kit por esta continuidad.
+
+
+Fase 4 ejecutada, EN_REVISION: [modelo y CA4-01 a CA4-06](../docs/BASE_DATOS.md), [diccionario](../docs/DICCIONARIO_DATOS.md), migración y pruebas locales aisladas. Sin Spec Kit instalado ni especificaciones duplicadas. Fases 5–15 continúan sin autorización; aceptación de Fase 4 pendiente.

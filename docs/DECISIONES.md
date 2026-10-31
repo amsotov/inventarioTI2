@@ -100,3 +100,8 @@ Decisión: aceptar revisión visual y cierre de Fase 2 (entrega `88d54f6`), sin 
 ## D-17 — Aceptación arquitectónica y continuidad de Fase 4
 
 2026-10-31. Evidencia literal: «Apruebo y inicia fase 4 en un chat nuevo». Acepta entrega `703002c` de arquitectura, contratos y ADR-001 a ADR-006, cumple CA3-06 y cierra Fase 3 COMPLETADA. Autoriza Fase 4 — modelado y persistencia únicamente en un nuevo chat; ejecución PENDIENTE hasta iniciarlo. No requiere reiterar autorización. No aprueba presupuesto, gasto, provisión remota, cambios productivos, despliegue ni fases 5–15. F1-SEG-01/02/03 conservan sus pendientes; aceptación de diseño no acredita controles implementados. Este registro prevalece sobre el estado histórico EN_REVISION de D-16.
+
+
+## D-18 — Ejecución y entrega de persistencia de Fase 4
+
+2026-10-31. Solicitud actual ratifica D-17 e indica desarrollar únicamente modelado/persistencia y actualizar GitHub, sin Fase 5 ni despliegues. Implementación local EN_REVISION en [BASE_DATOS](BASE_DATOS.md): modelo normalizado, snapshots históricos deliberados, custodias por intervalos con cierre único, migración aditiva sin extensiones y acceso privado cerrado por defecto. No se crean políticas de autorización ni flujos Auth por dependencia. Cuenta es referencia de actor; comandos/outbox soportan atomicidad de futuros servicios, sin replay HTTP ni correo implementados. CA4-06 pendiente de aceptación expresa; F1-SEG-01/02/03 sin cerrar por inferencia. Este registro no altera la arquitectura ni autoriza fases 5–15.

@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 3 — COMPLETADA; arquitectura aceptada y cierre aprobado el 2026-10-31.
+**Fase actual:** 4 — EN_REVISION; modelado y persistencia entregados el 2026-10-31.
 **Última fase completada:** 3.
-**Próxima fase:** 4 — AUTORIZADA para un nuevo chat; ejecución PENDIENTE. **Fases 5–15:** PENDIENTE / NO OTORGADA.
+**Próxima fase:** 5 — PENDIENTE / NO OTORGADA. **Fases 5–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 autorizada para un nuevo chat, sin ejecución aquí; fases 5–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 ejecutada y EN_REVISION (ver entrega vigente al final); fases 5–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -14,7 +14,7 @@
 | 1 | Análisis empresarial y requisitos | Actores, procesos, historias, criterios y trazabilidad | COMPLETADA | Entrega y resoluciones APROBADAS por usuario el 2026-10-31; UTC y respaldo semanal |
 | 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | COMPLETADA | Revisión visual y cierre APROBADOS el 2026-10-31; D-15 |
 | 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-17 |
-| 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | PENDIENTE | AUTORIZADA para iniciar en un nuevo chat; ejecución no iniciada |
+| 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | EN_REVISION | Ejecución AUTORIZADA por D-17; entrega y cierre pendientes de aceptación |
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | PENDIENTE | NO OTORGADA |
 | 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | PENDIENTE | NO OTORGADA |
 | 7 | Backend y API | Servicios, reglas empresariales y contratos | PENDIENTE | NO OTORGADA |
@@ -238,3 +238,14 @@ Punto de inicio de Fase 4:
 4. Preservar RLS/SQL Server como requisitos de diseño y límites de fase: implementar autenticación, autorización o backend funcional corresponde a fases 5/6/7 con autorización propia. No iniciarlas para completar una dependencia.
 5. Mantener F1-SEG-01 antes de datos reales; F1-SEG-02 presupuesto sin aprobar y F1-SEG-03 operación sin configurar. UTC, copia semanal/RPO 168 h/RTO 8 h/30 días intactos. Aprobación arquitectónica no contrata proveedores ni confirma horario/operador de respaldo.
 6. Registrar pruebas ejecutadas/no ejecutadas, riesgos y pendientes; actualizar documentación y GitHub, comprobar SHA remoto y entregar Fase 4 para revisión. Fases 5–15 sin autorización; sin despliegue.
+
+
+## Ejecución de Fase 4 — entrega vigente, 2026-10-31
+
+Usuario ratifica D-17: «Inicia únicamente la Fase 4, ya autorizada en FASES.md y ESTADO_PROYECTO.md. Lee las instrucciones y la arquitectura aceptada, desarrolla el modelado y la persistencia, y actualiza GitHub. No inicies Fase 5 ni despliegues».
+
+Plan presentado y ejecutado: ER/modelos/diccionario, esquema privado con restricciones/índices, migración versionada y seed sintético; pruebas reales locales de integridad, concurrencia, transacciones y restauración; revisión documental y sincronización. Base recuperada por avance directo: `1fe5859`, árbol inicial limpio. Codex prepara/verifica; usuario revisa/acepta. Dependencias D-14/D-17 y contratos respetados.
+
+Entregables y CA4-01 a CA4-06 en [BASE_DATOS](docs/BASE_DATOS.md), [diccionario](docs/DICCIONARIO_DATOS.md), supabase/migrations, db y tests/datos; evidencia en [PRUEBAS](docs/PRUEBAS.md). Fase 4 EN_REVISION, CA4-06 pendiente. Última completada 3; filas 5–15 sin cambios. No implementar Auth, permisos funcionales, API o worker para cerrar esta fase.
+
+F1-SEG-01/02/03 permanecen abiertos. UTC, copia semanal, máximo 168 h/RPO 168 h, RTO 8 h y copias 30 días conservados. Prueba de dump/restauración sintética no equivale a continuidad Supabase productiva. Siguiente paso: revisión y aceptación de esta entrega; Fase 5 requiere autorización independiente, no otorgada.

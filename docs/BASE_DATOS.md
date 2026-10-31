@@ -105,3 +105,8 @@ SQL Server exige adaptador nuevo: uuid→uniqueidentifier, timestamptz→datetim
 | CA4-06 | CUMPLIDO por D-19: aceptación expresa y cierre de Fase 4; Fase 5 autorizada para un nuevo chat |
 
 Resultados exactos y alcance de las pruebas en [PRUEBAS](PRUEBAS.md) y [salida versionada](evidencias/fase4/resultados.txt).
+
+
+## Extensión de Fase 5
+
+La migración inicial aceptada permanece intacta. La [migración aditiva de autenticación](../supabase/migrations/20261031055416_autenticacion.sql) añade credencial_lista y esquema privado acceso; detalle de ciclo de vida, validación y privilegios pendientes en [AUTENTICACION](AUTENTICACION.md). No abre acceso empresarial.

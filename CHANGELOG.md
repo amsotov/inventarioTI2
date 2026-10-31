@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-31 — Fase 5, entrega EN_REVISION
+
+- BFF de autenticación TypeScript/Fastify, Supabase Auth y PostgreSQL, sesiones opacas/MFA/intenciones de un uso y conciliación durable.
+- Migración aditiva sin alterar modelo aceptado, dependencias exactas/lockfile y pruebas sintéticas aisladas.
+- Pendientes operativos explícitos en AUTENTICACION; sin permisos empresariales, correo real, Fase 6 ni despliegue.
+
 ## 2026-10-31 — Cierre aprobado de Fase 4
 
 - D-19 acepta modelo/persistencia de `65609df`; CA4-06 cumplido, Fase 4 COMPLETADA.

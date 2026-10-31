@@ -25,3 +25,6 @@ Fase 4 ejecutada, EN_REVISION: [modelo y CA4-01 a CA4-06](../docs/BASE_DATOS.md)
 
 
 D-19 acepta/cierra Fase 4 y autoriza únicamente Fase 5 para un nuevo chat, ejecución pendiente. CA4-06 cumplido. Los estados EN_REVISION anteriores son antecedentes de entrega. Fases 6–15 sin autorización, sin instalación de Spec Kit ni implementación de autenticación en este cierre.
+
+
+Punto vigente posterior: Fase 5 ejecutada y EN_REVISION. [Autenticación](../docs/AUTENTICACION.md) contiene alcance, CA5, flujos, dependencias y pruebas. Fases 6–15 sin autorización. Spec Kit no instalado ni utilizado.

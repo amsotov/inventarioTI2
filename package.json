@@ -1,0 +1,33 @@
+{
+  "name": "inventarioti2",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx --test tests/auth/*.test.ts",
+    "start": "node dist/apps/server/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amsotov/inventarioTI2.git"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/amsotov/inventarioTI2/issues"
+  },
+  "homepage": "https://github.com/amsotov/inventarioTI2#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "2.118.0",
+    "fastify": "5.12.7",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

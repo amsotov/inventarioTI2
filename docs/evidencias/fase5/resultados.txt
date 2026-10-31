@@ -1,0 +1,31 @@
+
+> inventarioti2@1.0.0 test
+> tsx --test tests/auth/*.test.ts
+
+▶ Fase 5: PostgreSQL real aislado, proveedor DOBLE (no Supabase real)
+  ✔ cookie segura, secreto fuera de respuesta, campos desconocidos y Origin (124.209644ms)
+  ✔ inactividad exacta 30 min; polling no renueva; actividad explícita sí (37.613536ms)
+  ✔ absoluto 8 h incluso con actividad (154.249016ms)
+  ✔ revocación por estado y versión vigente en siguiente petición (43.861112ms)
+  ✔ MFA obligatorio; error de código; rotación; parcial 10 min (52.012498ms)
+  ✔ logout local persiste aunque falle proveedor; conciliación durable (27.926491ms)
+  ✔ reenvío invalida enlace anterior y recuperación expira exactamente a 30 min (38.301639ms)
+  ✔ consumo concurrente único y revocación de sesiones previas (44.055155ms)
+  ✔ fallo externo deja uncertain sin reejecución y bloquea credencial previa (40.001561ms)
+  ✔ invitación pendiente, 24 h, activación lectura, cuenta desactivada no revive (88.844016ms)
+  ✔ recuperación pública genérica; rate limit durable entre instancias (84.116193ms)
+  ✔ cifrado autenticado y persistencia entre instancias; GET enlace no consume (38.917241ms)
+  ✔ invitación administrativa no activa hasta MFA verificado (53.862334ms)
+  ✔ generación externa fallida conserva intención incierta durable (28.633337ms)
+  ✔ entrega reclamada una vez y fallo de transporte incierto sin reenvío (39.917144ms)
+  ✔ tablas nuevas cerradas a PUBLIC y RLS activo (5.503258ms)
+✔ Fase 5: PostgreSQL real aislado, proveedor DOBLE (no Supabase real) (12979.002026ms)
+✔ adaptador real: GoTrue local, sin proyecto gestionado ni correo externo (16984.857679ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 31064.111809

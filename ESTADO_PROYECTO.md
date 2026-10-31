@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 4 — COMPLETADA; entrega y cierre aprobados por D-19.
+**Fase:** 5 — EN_REVISION; autenticación implementada localmente, cierre pendiente.
 **Modo:** GUIADO
 **Última fase completada:** 4.
-**Última fase autorizada:** 5, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 6–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 5, ejecución ratificada y entregada EN_REVISION. Fases 6–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 4 aceptada y cerrada por D-19. Iniciar únicamente Fase 5 en un nuevo chat con autorización ya otorgada y plan de arranque al final de FASES.md. Aquí no se implementa autenticación ni se despliega; los apartados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** revisar la entrega de Fase 5 y sus pendientes en docs/AUTENTICACION.md. Fase 4 aceptada por D-19. No iniciar Fase 6 ni desplegar. Los apartados anteriores a la entrega de Fase 5 al final son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -261,3 +261,16 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 - GitHub: commit/push normales a main y comprobación SHA local/remoto antes de confirmar la entrega; aprobación no autoriza producción. SHA final comunicado al usuario tras verificar.
 
 **Siguiente acción:** abrir un nuevo chat con inventarioTI2 e iniciar únicamente Fase 5 bajo D-19. Entrega y cierre de Fase 5 necesitarán revisión propia; no iniciar Fase 6.
+
+
+## Ejecución y entrega de Fase 5 — vigente, 2026-10-31
+
+- Alcance autorizado: exclusivamente autenticación bajo D-19, ratificada por el usuario en esta conversación. Base recuperada: `3b7e43a`; árbol inicial limpio, avance directo sin sobrescrituras. Instrucciones, requisitos, cierre empresarial, arquitectura/ADR/contratos, persistencia/diccionario/migración y pruebas aceptadas leídos.
+- Plan presentado y ejecutado: BFF Fastify/TypeScript, puertos de identidad/persistencia, adaptadores Supabase/PostgreSQL, sesiones opacas cifradas, MFA administrativo, intenciones de acceso de un uso con 24 h/30 min, revocación 30 min/8 h, rate limiting, migración nueva y pruebas aisladas. Sin autorregistro ni primera cuenta real.
+- Archivos nuevos: apps/server (composición, HTTP y autenticación), package.json/lockfile/tsconfig/.env.example, supabase/migrations/20261031055416_autenticacion.sql, tests/auth, docs/AUTENTICACION.md y evidencias/fase5. Actualizados .gitignore y documentos de continuidad, contratos/datos/trazabilidad y pruebas. Migración Fase 4, prototipo, seed, consultas, tests/evidencias anteriores preservados.
+- Persistencia: cuentas y funcionarios separados; cuenta recibe flag de disponibilidad de credencial, sesiones/intenciones/entregas/límites privados con RLS cerrado. Operaciones externas de identidad dejan estado durable antes de ejecutarse; un resultado incierto bloquea reintento hasta conciliación. No se afirma atomicidad Auth/DB.
+- Verificaciones: build TypeScript, suite de autenticación con PostgreSQL real y pruebas de adaptador local GoTrue; resultados exactos/límites en docs/PRUEBAS y evidencias/fase5. npm audit y git diff --check. Pruebas iniciales de preparación y sus correcciones registradas; no atribuir a dobles verificación de capacidades del proveedor.
+- Pendientes de aceptación: configuración de proyecto gestionado separado, transporte/buzón de correo de prueba, privilegios SQL mínimos operativos en fase autorizada y conciliación operativa; UI completa de login/MFA no integrada. No datos reales, cambios DB remotos, envío externo, gastos ni despliegue. F1-SEG-01/02/03 intactos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados.
+- GitHub: revisión de cambios, commit/push normales a main con autoría noreply histórica y comprobación de SHA local/remoto. SHA final se comunica tras verificar, sin commit autorreferente. No se cambia historial remoto.
+
+**Siguiente acción:** revisión de Fase 5 EN_REVISION y resolución de pendientes propios de integración antes de aceptar cierre. Fases 6–15 siguen PENDIENTE / NO OTORGADA. Esta entrega no solicita ni presume autorización de Fase 6.

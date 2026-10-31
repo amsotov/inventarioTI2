@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 4 — COMPLETADA; entrega y cierre aprobados por D-19 el 2026-10-31.
+**Fase actual:** 5 — EN_REVISION; autenticación local implementada, aceptación operativa pendiente.
 **Última fase completada:** 4.
-**Próxima fase:** 5 — AUTORIZADA para un nuevo chat; ejecución PENDIENTE. **Fases 6–15:** PENDIENTE / NO OTORGADA.
+**Fase 5:** ejecución autorizada por D-19 y ratificada en esta conversación. **Fases 6–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 autorizada para un nuevo chat, ejecución pendiente; fases 6–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 ejecutada y EN_REVISION; fases 6–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@
 | 2 | UX/UI y diseño visual | Sistema visual, prototipo navegable y aprobación visual | COMPLETADA | Revisión visual y cierre APROBADOS el 2026-10-31; D-15 |
 | 3 | Arquitectura tecnológica | Stack y decisiones arquitectónicas | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-17 |
 | 4 | Modelado y persistencia de datos | Modelo ER, restricciones y migraciones | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-19 |
-| 5 | Autenticación | Inicio de sesión, recuperación y sesiones | PENDIENTE | AUTORIZADA para un nuevo chat por D-19; ejecución no iniciada |
+| 5 | Autenticación | Inicio de sesión, recuperación y sesiones | EN_REVISION | Ejecución AUTORIZADA por D-19; aceptación/cierre PENDIENTES |
 | 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | PENDIENTE | NO OTORGADA |
 | 7 | Backend y API | Servicios, reglas empresariales y contratos | PENDIENTE | NO OTORGADA |
 | 8 | Frontend funcional | Pantallas e integración con API | PENDIENTE | NO OTORGADA |
@@ -265,3 +265,12 @@ Punto de inicio para el nuevo chat:
 4. Conservar la migración aceptada: cualquier cambio de persistencia necesario para autenticación debe ser una migración nueva, aditiva y verificable. No abrir acceso empresarial genérico ni implementar las políticas completas de Fase 6, API empresarial de Fase 7 o panel de Fase 9 por dependencia. Probar los controles de autenticación que sí forman parte de Fase 5, secretos fuera de Git y respuestas sin filtración.
 5. Mantener F1-SEG-01 antes de datos reales; F1-SEG-02 presupuesto y F1-SEG-03 operación sin resolver. UTC, copia semanal/máximo 168 h/RPO 168 h, RTO 8 h y copias 30 días intactos. No configurar despliegues.
 6. Registrar pruebas ejecutadas/no ejecutadas de sesión, expiración, revocación, MFA y enlaces; actualizar fases/estado/documentación y GitHub, verificar SHA remoto y entregar para revisión. No marcar COMPLETADA por solo implementar ni iniciar Fase 6 sin autorización independiente.
+
+
+## Entrega de Fase 5 — punto vigente 2026-10-31
+
+Autorización ratificada: «Inicia únicamente la Fase 5, ya autorizada en FASES.md y ESTADO_PROYECTO.md. Lee las instrucciones, la arquitectura y la persistencia aceptadas, desarrolla autenticación y actualiza GitHub. No inicies Fase 6 ni despliegues».
+
+Base actualizada por avance directo a `3b7e43a`, sin cambios locales iniciales. Plan presentado: BFF de identidad, puertos/adaptadores, migración aditiva, pruebas sintéticas de sesiones/MFA/enlaces/fallos, documentación y sincronización GitHub. Codex prepara/verifica; usuario conserva aceptación. Entregables, CA5-01 a CA5-06 y bloqueos en [AUTENTICACION](docs/AUTENTICACION.md); evidencia en [PRUEBAS](docs/PRUEBAS.md).
+
+Fase 5 EN_REVISION, no COMPLETADA: la implementación local no acredita proyecto gestionado, envío real de correo ni privilegios operativos. No se implementaron permisos empresariales, backend de inventario, panel o despliegue. Fases 6–15 mantienen PENDIENTE / NO OTORGADA. Siguiente acción: revisar entrega y pendientes de integración de Fase 5; no autorizar ni iniciar Fase 6 por inferencia. F1-SEG-01/02/03 siguen abiertos; UTC y continuidad semanal/168 h/8 h/30 días intactos.

@@ -104,3 +104,8 @@ La tabla de módulos en [ARQUITECTURA](ARQUITECTURA.md) vincula RF-01 a RF-16/HU
 | RNF-05/RNF-06/RNF-07 | Prueba de restauración local, documentación SQL Server y estados de aviso | Sin operación productiva, adaptación SQL Server ni entrega de correo |
 
 [Modelo y CA4](BASE_DATOS.md), [diccionario](DICCIONARIO_DATOS.md), [resultados](evidencias/fase4/resultados.txt). No se cambia ningún criterio de aceptación empresarial para ajustarlo a estas pruebas parciales.
+
+
+## Evidencia incremental de Fase 5
+
+RF-09/RF-10 y A-08/CR-15/CR-16 (solo identidad/sesiones/MFA): implementación y pruebas en [AUTENTICACION](AUTENTICACION.md). RF-08/RF-11, propio rol/último administrador, permisos empresariales y panel no se declaran implementados. Fase 5 EN_REVISION; integración operativa pendiente.

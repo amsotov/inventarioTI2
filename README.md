@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 AUTORIZADA para un nuevo chat, ejecución pendiente; fases 6–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+Estado vigente (2026-10-31): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 EN_REVISION: BFF de autenticación y pruebas locales; fases 6–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -84,3 +84,8 @@ Los verificadores de Fase 3/4 conservan las condiciones de su entrega original; 
 No puedo abrir automáticamente otro chat. Abre uno con inventarioTI2 y escribe:
 
 > Inicia únicamente la Fase 5 de inventarioTI2, ya autorizada por D-19 en FASES.md y ESTADO_PROYECTO.md. Lee las instrucciones, la arquitectura y la persistencia aceptadas; presenta el plan y desarrolla autenticación con pruebas en un entorno aislado. Conserva los seguimientos y actualiza GitHub. No inicies Fase 6 ni despliegues.
+
+
+## Autenticación — entrega de Fase 5
+
+[Implementación, ejecución, criterios y pendientes](docs/AUTENTICACION.md). Node 24: `npm ci`, `npm run build`, `npm test` (requiere Docker e imágenes de prueba). Variables de servidor en [.env.example](.env.example), sin secretos ni cuentas de ejemplo utilizables. Sin despliegue ni autorización de Fase 6. El prototipo sigue siendo una referencia visual sintética, no una sesión real.

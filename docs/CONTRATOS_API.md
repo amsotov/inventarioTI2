@@ -97,3 +97,8 @@ Servidor comprueba versión, origen, condición, situación, destino activo/dife
 ## Verificación futura obligatoria
 
 Fases 4/7/10: doble asignación concurrente, identificador repetido incluso inactivo, origen/versiones desactualizadas, rollback sin auditoría parcial, timeout tras commit y repetición idéntica. Fases 5/6/9: JWT válido tras revocación, lectura directa a DB/API, fuga de contexto del pool, MFA, recuperación/reenlace y dos bajas de administradores. Fases 11/12: filtros idénticos, límites exactos/superados, fórmula en XLSX, permiso revocado antes de descargar, caída del worker tras enviar, incierto/conciliación y cambio de destinatario. Son contratos para pruebas futuras, no resultados ejecutados.
+
+
+## Implementación parcial de Fase 5
+
+Solo los endpoints de identidad están implementados en apps/server; se añade POST /sesion/actividad (cuerpo vacío, Origin y CSRF) para actividad explícita. GET /sesion no renueva actividad y devuelve rol/estado/MFA/plazos/CSRF, sin capacidades empresariales aún. No hay endpoint público de invitación ni contratos empresariales ejecutables. Detalle y pendientes en [AUTENTICACION](AUTENTICACION.md).

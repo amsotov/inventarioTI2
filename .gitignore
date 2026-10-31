@@ -7,3 +7,5 @@ supabase/.temp/
 __pycache__/
 *.pyc
 *.dump
+
+dist/

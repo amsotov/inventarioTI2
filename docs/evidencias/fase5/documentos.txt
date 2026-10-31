@@ -1,0 +1,5 @@
+PASS: instrucciones, prototipo, datos, seguridad/despliegue y evidencias previas preservados: 26
+PASS: Fase 5 EN_REVISION; última completada 4; filas 6–15 intactas
+PASS: dependencias exactas y lockfile coherentes
+PASS: enlaces locales válidos: 115
+PASS: git diff --check

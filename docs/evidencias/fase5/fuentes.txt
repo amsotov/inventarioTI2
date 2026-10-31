@@ -1,0 +1,7 @@
+Consulta 2026-10-31, sin proyectos remotos ni cuentas reales:
+- https://supabase.com/changelog.md devolvió 404; alternativa https://supabase.com/changelog consultada. Avisos PostgreSQL 15.19/17.11 y pg_graphql no introducen cambio al flujo Auth implementado; no usa GraphQL/extensiones nuevas.
+- https://supabase.com/docs/reference/javascript/auth-admin-generatelink (generateLink y hashed_token)
+- https://supabase.com/docs/reference/javascript/auth-verifyotp (verificación token_hash/type)
+- https://supabase.com/docs/reference/javascript/auth-mfa-challengeandverify (TOTP y tokens AAL2)
+- https://raw.githubusercontent.com/supabase/supabase/master/docker/docker-compose.yml (GoTrue v2.197.0 y variables; imagen fijada por digest en prueba)
+- Tipos instalados y build: @supabase/supabase-js 2.118.0. Capacidades contrastadas con GoTrue real local; no asumir equivalencia de configuración del proyecto gestionado.

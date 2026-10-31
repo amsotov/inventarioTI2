@@ -88,7 +88,7 @@ No puedo abrir automáticamente otro chat. Abre uno con inventarioTI2 y escribe:
 
 ## Autenticación — entrega de Fase 5
 
-[Implementación, ejecución, criterios y pendientes](docs/AUTENTICACION.md). Node 24: `npm ci`, `npm run build`, `npm test` (requiere Docker e imágenes de prueba). Variables de servidor en [.env.example](.env.example), sin secretos ni cuentas de ejemplo utilizables. Sin despliegue ni autorización de Fase 6. El prototipo sigue siendo una referencia visual sintética, no una sesión real.
+[Implementación, ejecución, criterios y pendientes](docs/AUTENTICACION.md). Node 24: `npm ci`, `npm run build`, `npm test` (requiere Docker e imágenes de prueba). Variables de servidor en [.env.example](.env.example), sin secretos ni cuentas de ejemplo utilizables. Sin despliegue; Fase 6 autorizada para un nuevo chat por D-21. El prototipo sigue siendo una referencia visual sintética, no una sesión real.
 
 
 ## Continuidad aprobada — Fase 6 en nuevo chat

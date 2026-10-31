@@ -1,6 +1,6 @@
 # Contratos de integración — Fase 3
 
-**Estado:** EN_REVISION · 2026-10-31. Diseño de interfaces para [arquitectura](ARQUITECTURA.md), sin endpoints implementados. Reglas de negocio normativas: [CIERRE_FASE1](CIERRE_FASE1.md); no se amplía su alcance. Especificación ejecutable/OpenAPI y validadores concretos corresponden a Fase 7.
+**Estado:** ACEPTADO como diseño por D-17 · 2026-10-31. Diseño de interfaces para [arquitectura](ARQUITECTURA.md), sin endpoints implementados. Reglas de negocio normativas: [CIERRE_FASE1](CIERRE_FASE1.md); no se amplía su alcance. Especificación ejecutable/OpenAPI y validadores concretos corresponden a Fase 7.
 
 ## Convenciones
 

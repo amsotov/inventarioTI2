@@ -125,3 +125,10 @@ Revisión de escenarios de diseño: doble asignación y último administrador re
 No ejecutadas: pruebas UI/Playwright (código intacto, evidencia anterior conservada); instalación/build y compatibilidad de librerías (sin stack implementado); API, identidad/MFA, RLS, concurrencia, workers, Excel/PDF reales, correo, rendimiento, respaldo/restauración y revisión jurídica (fases futuras). No se afirma seguridad efectiva, SLA, cumplimiento de RPO/RTO ni compatibilidad SQL Server por escribir arquitectura. No se desplegó ni configuró CI/CD.
 
 GitHub: revisión de diferencias, commit y push normales a main; comprobación de igualdad de SHA local/remoto antes de confirmar entrega. El SHA final se comunica tras verificarlo, sin insertar una referencia circular en el commit.
+
+
+## Verificación del cierre aprobado de Fase 3 — 2026-10-31
+
+D-17 acepta arquitectura/contratos/ADR de `703002c`, cumple CA3-06 y cierra Fase 3. Fase 4 autorizada para nuevo chat, no ejecutada aquí. Se comprobó por script Python puntual: enlaces Markdown locales existentes, estados vigentes y filas de fases 5–15 intactas respecto de `703002c`; archivos ajenos a los diez documentos de cierre preservados byte a byte. `git diff --check` sin errores. Revisión de diferencias para distinguir aceptación técnica de gasto u operación aprobados.
+
+No se repiten pruebas UI ni se ejecuta SQL/restauración/build: esta tarea solo registra aprobación y continuidad. El verificador y resultados de evidencias/fase3 quedan intactos como evidencia de la entrega original EN_REVISION; no son una comprobación del cierre D-17 ni están diseñados para su estado posterior. No se configura infraestructura ni se inicia Fase 4 por registrar su autorización. SHA local/remoto comparado tras push antes de confirmar entrega.

@@ -1,8 +1,8 @@
 # Arquitectura tecnológica — Fase 3
 
-**Fecha:** 2026-10-31 · **Estado:** EN_REVISION · **Responsable:** Codex; aceptación: usuario.
+**Fecha:** 2026-10-31 · **Estado:** COMPLETADA — aceptada por D-17 · **Responsable:** Codex; aceptación: usuario.
 
-Diseño técnico entregado bajo D-15 y la solicitud de esta conversación. No hay aplicación funcional, infraestructura contratada ni controles implantados. Base: [requisitos](REQUISITOS.md), [cierre empresarial D-14](CIERRE_FASE1.md) y [diseño visual aprobado](UX_UI.md). La ejecución de arquitectura está autorizada; su aceptación y el inicio de Fase 4 son decisiones independientes.
+Diseño técnico entregado bajo D-15 y la solicitud de esta conversación. No hay aplicación funcional, infraestructura contratada ni controles implantados. Base: [requisitos](REQUISITOS.md), [cierre empresarial D-14](CIERRE_FASE1.md) y [diseño visual aprobado](UX_UI.md). La arquitectura fue aceptada por D-17; Fase 4 autorizada para un nuevo chat, ejecución pendiente.
 
 ## Plan, alcance y criterios
 
@@ -15,11 +15,11 @@ Comparar alternativas; seleccionar stack y límites; definir componentes, contra
 | CA3-03 | Contratos de consulta/comando/error, transacciones e identidad definidos en CONTRATOS_API |
 | CA3-04 | Riesgos, costos, entornos, RLS, SQL Server y F1-SEG-01/02/03 tratados |
 | CA3-05 | Revisión documental reproducible y preservación de fases futuras en PRUEBAS y evidencias/fase3 |
-| CA3-06 | PENDIENTE: aceptación expresa del usuario; no cerrar por entregar ni subir documentos |
+| CA3-06 | CUMPLIDO por D-17: usuario acepta la entrega y autoriza Fase 4 en un nuevo chat |
 
 No corresponde a esta fase crear ER, diccionario, SQL, índices, políticas RLS, migraciones, dependencias, backend o configuración de hosting. Los documentos de datos/seguridad/despliegue siguen reservados a sus fases. Spec Kit no está instalado y no se instala.
 
-## Alternativas y selección para revisión
+## Alternativas y selección aceptada
 
 | Alternativa | Ventajas | Costos / límites | Resolución |
 |---|---|---|---|
@@ -146,4 +146,8 @@ Puertos de repositorio/unidad de trabajo/identidad/correo/archivo aíslan depend
 
 Leídas el 2026-10-31 por HTTPS (HTTP 200): [changelog](https://supabase.com/changelog.md), [cambio PostgreSQL de seguridad](https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes), [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security.md), [sesiones](https://supabase.com/docs/guides/auth/sessions.md), [backups](https://supabase.com/docs/guides/platform/backups.md), [precios Supabase](https://supabase.com/pricing), [precios Render](https://render.com/pricing). El aviso de actualización PostgreSQL/índices/cifrados debe revisarse al fijar motor; no hay base existente que actualizar en esta fase. Revalidar versiones, planes y precios antes de implementar/contratar. La documentación del proveedor no verifica una instalación real del proyecto.
 
-Entregables relacionados: [ADR](adr/FASE3.md), [contratos](CONTRATOS_API.md), [evidencia](PRUEBAS.md). Verificación documental no acredita seguridad, rendimiento, compatibilidad de librerías ni recuperación reales. CA3-06 pendiente. Siguiente acción: revisión/aceptación de Fase 3; Fase 4 necesita autorización expresa independiente.
+Entregables relacionados: [ADR](adr/FASE3.md), [contratos](CONTRATOS_API.md), [evidencia](PRUEBAS.md). Verificación documental no acredita seguridad, rendimiento, compatibilidad de librerías ni recuperación reales. CA3-06 cumplido por D-17. Siguiente acción: iniciar Fase 4 en un nuevo chat con autorización ya otorgada.
+
+## Aceptación posterior — D-17
+
+2026-10-31: «Apruebo y inicia fase 4 en un chat nuevo». Arquitectura, contratos y ADR aceptados como diseño; Fase 3 COMPLETADA. Las referencias a propuestas describen alternativas y detalles operativos sujetos a sus puertas: presupuesto no aprobado, horario/operador/ubicación no configurados y F1-SEG-01/02/03 abiertos. No se implementa ni contrata por esta aprobación. Fase 4 autorizada para un nuevo chat; fases 5–15 y despliegues sin autorización.

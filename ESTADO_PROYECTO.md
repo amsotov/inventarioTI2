@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-10-31
-**Fase:** 3 — EN_REVISION; arquitectura entregada, aceptación/cierre pendientes.
+**Fase:** 3 — COMPLETADA; arquitectura y cierre aprobados por D-17.
 **Modo:** GUIADO
-**Última fase completada:** 2.
-**Última fase autorizada:** 3, ejecución documental realizada. Fases 4–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 3.
+**Última fase autorizada:** 4, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 5–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** revisar la entrega de arquitectura de Fase 3 al final de este documento y en docs/ARQUITECTURA.md. Fase 2 cerrada por D-15; Fase 3 ejecutada bajo autorización previa y solicitud actual. No repetir su inicio ni presumir aceptación. Sin Fase 4 ni despliegue. Los registros anteriores son antecedentes.
+**Punto vigente de continuidad:** Fase 3 aceptada y cerrada por D-17. Iniciar únicamente Fase 4 en un nuevo chat con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. No volver a solicitar esa autorización. Esta sesión registra continuidad, sin ejecutar persistencia ni desplegar; los apartados previos son antecedentes.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -222,3 +222,15 @@ Revisión de esta entrega y respuestas/ratificación a A-01 a A-11 y P-01/P-02/P
 **GitHub:** destino main de amsotov/inventarioTI2, commit/push normales con autor noreply del historial; verificar SHA local/remoto antes de confirmar entrega. El SHA final se comunica tras la comprobación, sin commit autorreferente. Si hay cambios remotos, integrarlos y volver a revisar antes de subir; nunca forzar.
 
 **Siguiente acción/aprobación:** revisión y aceptación de Fase 3. La Fase 4 continúa PENDIENTE / NO OTORGADA y requiere autorización expresa separada; no solicitar otra vez autorización para la arquitectura ya ejecutada.
+
+
+## Cierre vigente de Fase 3 y autorización de Fase 4 — 2026-10-31
+
+- Evidencia literal: «Apruebo y inicia fase 4 en un chat nuevo». D-17 acepta arquitectura, contratos y ADR de `703002c35a4e58d32e8f003b618d38c4f684ac00`; CA3-06 cumplido y Fase 3 COMPLETADA. Se mantiene evidencia documental previa, sin afirmar implementación o pruebas funcionales.
+- Fase 4 AUTORIZADA para iniciar en un nuevo chat, ejecución PENDIENTE. No se ha abierto automáticamente otro chat ni se ha desarrollado modelo/SQL/migraciones en esta preparación. Fases 5–15 sin autorización; sin despliegue ni gastos.
+- Entregables de este cierre: FASES y este estado; aceptación en ARQUITECTURA, CONTRATOS_API y ADR; D-17 en DECISIONES; continuidad en README/specs/README y evidencia en PRUEBAS/CHANGELOG. Prototipo, tests, capturas, documentos de datos/seguridad/despliegue y evidencia original de Fase 3 intactos.
+- Insumos para Fase 4: cierre empresarial D-14, visual D-15, arquitectura aceptada D-17 y contratos; plan y límites al final de FASES. No repetir decisiones de negocio ni aprobación ya otorgadas. Mantener F1-SEG-01/02/03, UTC, frecuencia semanal/máximo 168 h entre copias, RTO 8 h y conservación de copias 30 días. Presupuesto, proveedores y operación no quedan contratados/aprobados por aceptar arquitectura.
+- Verificación de cierre: enlaces locales, coherencia de estados/CA3-06/ADR, comparación de archivos y filas de fases 5–15 contra `703002c`; `git diff --check`. Solo documentación, sin repetir pruebas UI o ejecutar pruebas de base de datos.
+- GitHub: base limpia y remota al día; commit/push normales a main, sin forzar, con comprobación de SHA remoto antes de confirmar entrega. No modificar el verificador/resultados históricos de la entrega para simular una nueva ejecución: corresponden a su base y estado de revisión.
+
+**Siguiente acción:** abrir un chat nuevo con inventarioTI2 e iniciar únicamente Fase 4 usando la autorización registrada. La entrega de esa fase necesitará revisión propia; fases 5–15 siguen sin autorización.

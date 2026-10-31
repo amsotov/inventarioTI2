@@ -1,6 +1,6 @@
 # Decisiones de arquitectura — Fase 3
 
-**Fecha:** 2026-10-31 · **Estado de todas las ADR:** PROPUESTA PARA REVISIÓN. La ejecución de Fase 3 está autorizada; no se atribuye aceptación de la solución al usuario. Detalle, diagrama, costos y riesgos en [ARQUITECTURA](../ARQUITECTURA.md); interfaces en [CONTRATOS_API](../CONTRATOS_API.md).
+**Fecha:** 2026-10-31 · **Estado de todas las ADR:** ACEPTADAS como diseño por D-17. Evidencia: «Apruebo y inicia fase 4 en un chat nuevo». Fase 3 COMPLETADA, Fase 4 autorizada para un nuevo chat; sin aprobación de gasto o despliegue. Las secciones «Decisión propuesta» conservan la formulación evaluada y ahora aceptada; verificaciones y detalles operativos permanecen pendientes de sus fases. Detalle, diagrama, costos y riesgos en [ARQUITECTURA](../ARQUITECTURA.md); interfaces en [CONTRATOS_API](../CONTRATOS_API.md).
 
 ## ADR-001 — Monolito modular TypeScript
 

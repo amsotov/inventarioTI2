@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-10-31 — Cierre aprobado de Fase 3
+
+- D-17 acepta arquitectura, contratos y seis ADR; CA3-06 cumplido, Fase 3 COMPLETADA.
+- Fase 4 autorizada para un nuevo chat, ejecución pendiente; continuidad documentada.
+- Solo documentación: sin SQL, migraciones, implementación, gastos ni despliegue; fases 5–15 sin autorización.
+
 ## 2026-10-31 — Fase 3, entrega EN_REVISION
 
 - Arquitectura modular, stack comparado, diagrama y límites de integración, RLS y portabilidad SQL Server.

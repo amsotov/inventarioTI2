@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 8 — EN_REVISION; frontend entregado para aceptación propia.
-**Última fase completada:** 7.
-**Próxima fase:** 9 — PENDIENTE / NO OTORGADA; no iniciar.
+**Fase actual:** 8 — COMPLETADA; entrega y cierre aprobados por D-27.
+**Última fase completada:** 8.
+**Próxima fase:** 9 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 10–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 ejecutada y EN_REVISION; fases 9–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 autorizada para un nuevo chat, ejecución pendiente; fases 10–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -18,8 +18,8 @@
 | 5 | Autenticación | Inicio de sesión, recuperación y sesiones | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-21 |
 | 6 | Autorización, privacidad y seguridad | RBAC/ABAC según caso, controles y auditoría | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-10-31; D-23 |
 | 7 | Backend y API | Servicios, reglas empresariales y contratos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-25 |
-| 8 | Frontend funcional | Pantallas e integración con API | EN_REVISION | Ejecución autorizada D-25; aceptación de entrega pendiente |
-| 9 | Panel de administración | Usuarios, permisos, catálogos y parámetros | PENDIENTE | NO OTORGADA |
+| 8 | Frontend funcional | Pantallas e integración con API | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-27 |
+| 9 | Panel de administración | Usuarios, permisos, catálogos y parámetros | PENDIENTE | AUTORIZADA para un nuevo chat por D-27; ejecución no iniciada |
 | 10 | Procesos y módulos empresariales | Casos de uso, estados y movimientos | PENDIENTE | NO OTORGADA |
 | 11 | Indicadores, reportes y exportación | Dashboards, filtros, Excel/PDF | PENDIENTE | NO OTORGADA |
 | 12 | Notificaciones y automatización | Eventos, alertas y tareas | PENDIENTE | NO OTORGADA |
@@ -353,3 +353,19 @@ Solicitud: «Inicia únicamente la Fase 8 de inventarioTI2, ya autorizada. Actua
 Plan presentado y ejecutado: React/Vite según diseño D-15, acceso/sesión/MFA, consultas/fichas/filtros/paginación, alta/edición de atributos sobre API real, seguridad y errores/versiones/idempotencia, pruebas locales sintéticas UI/BFF/PostgreSQL y documentación/GitHub. Codex prepara/verifica; usuario acepta. Alcance, CA8-01 a CA8-06 y límites en [FRONTEND](docs/FRONTEND.md); evidencia en [PRUEBAS](docs/PRUEBAS.md).
 
 Fase 8 EN_REVISION; CA8-06 pendiente, última completada 7. Fases 9–15 conservan PENDIENTE / NO OTORGADA. Sin panel administrativo, nuevos procesos empresariales, reportes, automatización, proyectos/datos reales, gastos o despliegue. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días preservados. Siguiente paso: revisar/aceptar Fase 8; Fase 9 requiere autorización independiente.
+
+
+## Cierre aprobado de Fase 8 y continuidad autorizada de Fase 9 — vigente
+
+2026-11-01. Evidencia literal: «Apruebo fase 8 y en un nuevo chat inicia fase 9». D-27 acepta la entrega `570e90d10819999e96e17a4f88dfd30c8e1f5224`, cumple CA8-06 y cierra Fase 8 COMPLETADA. Se conservan las 49 pruebas de regresión, las 9 pruebas UI, capturas y auditoría con sus límites: identidad externa doble, sin Supabase gestionado, correo externo, dispositivos físicos ni operación productiva acreditados.
+
+Fase 9 AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Esta sesión solo registra cierre y continuidad y sincroniza GitHub. No se abre automáticamente una conversación ni se implementa el panel aquí. Fases 10–15 PENDIENTE / NO OTORGADA; sin despliegue, producción, datos reales, gastos o cambios remotos de permisos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, requisitos/cierre D-14, diseño D-15, arquitectura/ADR D-17, persistencia D-19, autenticación D-21, seguridad D-23, BACKEND_API/OpenAPI D-25 y FRONTEND D-27, con código/pruebas y límites. No volver a pedir la autorización de Fase 9 ya otorgada.
+2. Presentar el plan limitado a panel de administración: cuentas/usuarios, roles/permisos, catálogos y parámetros según requisitos aceptados. Inspeccionar servicios disponibles; integrar las interfaces servidor y persistencia estrictamente necesarias dentro de esta fase, sin presentar simulaciones como funciones reales ni abrir otras fases por dependencia.
+3. Proteger cuenta propia y último administrador activo, también concurrentemente. Mantener separación cuenta/funcionario, dos roles e inventario compartido, MFA administrativo, sesión/rol/estado/versión vigentes, Origin/CSRF y revocación efectiva en siguiente petición. Validar permisos en servidor y SQL, sin confiar en controles de UI, claims antiguos ni metadatos editables por cliente.
+4. Conservar contexto SQL LOCAL y pools separados, privilegios mínimos/RLS, historia y auditoría inmutables. Cambios necesarios de persistencia mediante migraciones nuevas aditivas y verificables; probar permisos negativos, escalamiento, concurrencia, rollback y versiones/idempotencia cuando corresponda. Invitaciones solo con identidad y entrega dobles en entorno sintético; sin enviar mensajes reales ni aprovisionar cuentas/permisos remotos por inferencia.
+5. Mantener diseño aprobado y verificar formularios, carga/vacío/error/éxito/permiso, teclado y responsive computador/iPad/iPhone, más recorridos UI/API sintéticos. La administración de parámetros no autoriza procesar/enviar outbox, implementar nuevos movimientos de negocio, reportes/exportadores o automatizaciones de fases 10–12.
+6. Preservar F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Sin Spec Kit, gastos, datos reales, despliegues ni producción sin autorización propia. Registrar pruebas ejecutadas/no ejecutadas, riesgos y criterios; actualizar documentación y GitHub, comprobar SHA remoto y entregar Fase 9 para aceptación propia. No marcar COMPLETADA ni iniciar Fase 10 sin aprobación independiente.

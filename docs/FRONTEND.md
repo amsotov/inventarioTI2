@@ -1,6 +1,6 @@
 # Frontend funcional — Fase 8
 
-2026-11-01 · EN_REVISION · Base `1297549` (Fase 7 aceptada por D-25). Ejecución autorizada por D-25 y ratificada por la solicitud de este chat; no constituye aceptación de la entrega ni autorización de Fase 9.
+2026-11-01 · COMPLETADA por aceptación expresa D-27. Base de ejecución `1297549`; entrega aceptada `570e90d10819999e96e17a4f88dfd30c8e1f5224`. Fase 9 autorizada para un nuevo chat; ejecución pendiente.
 
 ## Plan y entrega
 
@@ -24,7 +24,7 @@ Código: `apps/web` (componentes, cliente HTTP y estilos); `apps/server/web.ts` 
 | CA8-03 | Consultas, fichas, filtros, vacío y paginación real contra PostgreSQL |
 | CA8-04 | Alta/edición persistidas, 412 concurrente, respuesta perdida/replay sin duplicar auditoría |
 | CA8-05 | Navegador Chromium, responsive y teclado; regresión y auditoría en PRUEBAS |
-| CA8-06 | PENDIENTE de revisión y aceptación expresa del usuario |
+| CA8-06 | CUMPLIDO por aceptación expresa D-27 el 2026-11-01 |
 
 Comandos reproducibles: `npm ci`, `npm run build`, `npm test`, `npm run test:ui`. UI requiere Docker local y Chromium (`CHROMIUM_PATH` opcional); prepara PostgreSQL efímero sintético, aplica migraciones existentes y lo retira al terminar. Usa loopback HTTP/localhost (excepción Secure de Chromium) y proveedor doble exclusivamente en el ensayo; no acredita TLS, TOTP externo, correo real ni Supabase gestionado. Las rutas y servicios empresariales son reales, no interceptados, salvo el ensayo explícito de error 503 y pérdida de respuesta.
 
@@ -32,4 +32,9 @@ Comandos reproducibles: `npm ci`, `npm run build`, `npm test`, `npm run test:ui`
 
 Capturas emuladas: [computador](evidencias/fase8/computador.png), [iPad](evidencias/fase8/ipad.png), [iPhone](evidencias/fase8/iphone.png). No equivalen a hardware real, Safari o conformidad WCAG 2.2 AA completa. Recuperación de correo gestionado y enlace real, carga objetivo, lector de pantalla, retención legal y continuidad operativa no verificados.
 
-Fuera de alcance: administración de cuentas/permisos/catálogos (9), comandos de custodia/transiciones (10), indicadores/buscador global/reportes/exportación (11), procesamiento/envío outbox (12). No se habilitan botones que simulen esos servicios. F1-SEG-01 (retención legal), F1-SEG-02 (presupuesto) y F1-SEG-03 (operación del respaldo) siguen abiertos; UTC, copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin cuentas/datos reales, permisos remotos, gastos o despliegues. Fase 9 PENDIENTE / NO OTORGADA.
+Fuera de alcance: administración de cuentas/permisos/catálogos (9), comandos de custodia/transiciones (10), indicadores/buscador global/reportes/exportación (11), procesamiento/envío outbox (12). No se habilitan botones que simulen esos servicios. F1-SEG-01 (retención legal), F1-SEG-02 (presupuesto) y F1-SEG-03 (operación del respaldo) siguen abiertos; UTC, copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin cuentas/datos reales, permisos remotos, gastos o despliegues. Fase 9 AUTORIZADA por D-27 para un nuevo chat, ejecución PENDIENTE.
+
+
+## Cierre aprobado — 2026-11-01
+
+D-27 acepta la entrega `570e90d10819999e96e17a4f88dfd30c8e1f5224` mediante «Apruebo fase 8 y en un nuevo chat inicia fase 9». Fase 8 COMPLETADA y CA8-06 CUMPLIDO. Los límites, seguimientos y evidencia local se conservan; no se implementa Fase 9 ni se despliega por este cierre.

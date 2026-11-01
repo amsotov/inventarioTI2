@@ -82,3 +82,8 @@ D-25 registra aceptación y cierre de Fase 7 y autorización de Fase 8 para un n
 - Alta/edición de atributos con CSRF, versión e idempotencia; replay explícito ante resultado incierto.
 - Assets compilados bajo BFF, pruebas UI/PostgreSQL y capturas responsive; documentación de límites.
 - Fase 8 EN_REVISION; Fase 9 no iniciada, sin despliegue.
+
+
+## 2026-11-01 — Cierre de Fase 8
+
+D-27 registra aceptación y cierre de Fase 8 y autorización de Fase 9 para un nuevo chat. Solo documentación; sin cambios de aplicación, migraciones, ejecución de Fase 9 ni despliegues.

@@ -234,3 +234,8 @@ Entrega EN_REVISION, base `1297549`. Evidencia nueva en `docs/evidencias/fase8/`
 Ensayo aislado con Docker/PostgreSQL 17, migraciones aceptadas, credenciales aleatorias temporales, roles SQL efectivos y Chromium. Auth externo es doble: no acredita Supabase gestionado, TOTP real, correo o enlaces enviados. Las llamadas de negocio recorren BFF/RLS/PostgreSQL reales; solo se interceptan la pérdida de respuesta después del commit y un fallo 503 declarado. Localhost HTTP en pruebas aprovecha la excepción Secure del navegador, sin modificar cookie ni rebajar la validación HTTPS de main. No es validación de TLS operativo.
 
 Revisión visual y comprobación de ancho a 1440×900, 820×1180 y 390×844; [computador](evidencias/fase8/computador.png), [iPad](evidencias/fase8/ipad.png), [iPhone](evidencias/fase8/iphone.png). Tabla con desplazamiento horizontal propio y foco visible. Emulación Chromium; no hardware iPad/iPhone, Safari, lector de pantalla ni certificación WCAG completa. No pruebas de carga, producción, correo externo, respaldo operativo ni nuevos módulos. F1-SEG-01/02/03 permanecen abiertos; sin Fase 9 ni despliegue.
+
+
+## Cierre documental de Fase 8 — 2026-11-01
+
+D-27 acepta `570e90d10819999e96e17a4f88dfd30c8e1f5224` y cumple CA8-06. Solo cambios documentales: comprobación de estados/criterios, enlaces, preservación de código/migraciones/evidencias y `git diff --check`. Las 49 pruebas de regresión y 9 de UI conservan su alcance histórico; no se repiten pruebas de aplicación por este cierre sin cambios de código. No acredita integración gestionada ni operación productiva. Fase 9 autorizada para otro chat, no ejecutada aquí.

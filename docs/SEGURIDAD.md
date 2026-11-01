@@ -99,3 +99,8 @@ Fuentes consultadas el 2026-10-31: [changelog Supabase](https://supabase.com/cha
 ## Entrega de Fase 7 — 2026-10-31
 
 Fase 7 agrega pool empresarial separado y función privada guardar_bien, con rol NOLOGIN sin BYPASSRLS ni propiedad de tablas. Runtime conserva DML directo denegado; RLS administrativo en el servicio y actor derivado de principal. Sin permisos remotos ni logins reales. Ver [BACKEND_API](BACKEND_API.md).
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Panel de Fase 9: rol SQL privado inventario_admin sin propiedad/BYPASSRLS, RLS, principal vigente, MFA, CSRF/Origin, propia cuenta protegida, serialización SQL y revocación por versión. No DML directo de runtime ni grants públicos/remotos. Pruebas nuevas y límites en [ADMINISTRACION](ADMINISTRACION.md) y PRUEBAS; evidencia histórica conservada.

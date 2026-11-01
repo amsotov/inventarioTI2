@@ -29,20 +29,32 @@ export async function api(
 export function message(e: unknown): string {
   if (!(e instanceof ApiError))
     return "Servicio no disponible. Comprueba la conexión y vuelve a consultar.";
+  const specific: Record<string, string> = {
+    SELF_PROTECTED:
+      "Tu propia cuenta está protegida. Solicita el cambio a otro administrador.",
+    LAST_ADMIN:
+      "Debe quedar al menos un administrador activo con acceso habilitado.",
+    CREDENTIAL_REQUIRED:
+      "La cuenta debe completar su credencial antes de activarse.",
+    NOTIFICATION_NOT_CONFIGURED:
+      "Configura primero el destinatario en Administración.",
+  };
   const messages: Record<number, string> = {
     400: "Revisa los campos y filtros.",
     401: "La sesión terminó. Inicia sesión nuevamente.",
     403: "No tienes permiso para esta operación.",
     404: "Registro no encontrado.",
     409: "Conflicto: el identificador o la clave de operación ya existe.",
-    412: "Otro usuario modificó este bien. Recarga la ficha y revisa los cambios antes de guardar.",
-    428: "Falta la versión del bien. Recarga la ficha.",
+    412: "Otro usuario modificó este registro. Recarga la ficha y revisa los cambios antes de guardar.",
+    428: "Falta la versión del registro. Recarga la ficha.",
     422: "Los datos incumplen una regla del inventario.",
     429: "Demasiados intentos. Espera antes de volver a intentar.",
     503: "Servicio no disponible. La operación puede requerir conciliación.",
   };
   return (
-    (messages[e.status] ?? "No se pudo completar la operación.") +
+    (specific[e.code] ??
+      messages[e.status] ??
+      "No se pudo completar la operación.") +
     (e.requestId ? " Referencia: " + e.requestId : "")
   );
 }

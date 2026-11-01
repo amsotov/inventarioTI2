@@ -1,0 +1,21 @@
+▶ Fase 9: administración HTTP/Auth/RLS/PostgreSQL (identidad doble)
+  ✔ lectura, ausencia de sesión/MFA, CSRF y Origin denegados (103.55292ms)
+  ✔ configuración inicial, evidencia y destinatario previo/nuevo (23.456471ms)
+  ✔ alta pendiente, replay y colisión canónica; no expone proveedor (36.241443ms)
+  ✔ confirmación, tipos, identidad y privilegios no aceptados (2.378236ms)
+  ✔ invitación 24 h y recuperación forzada 30 min sin correo real (39.655343ms)
+  ✔ propia cuenta protegida y versiones obligatorias (30.575193ms)
+  ✔ catálogo: alta, edición, baja lógica y unicidad (22.486033ms)
+  ✔ rol/estado invalidan sesión en la siguiente petición (12.208747ms)
+  ✔ rollback al fallar auditoría no deja cuenta/comando/aviso (13.055473ms)
+  ✔ sin DML genérico y función SQL deniega lectura/sin sesión (8.867435ms)
+  ✔ dos administradores concurrentes nunca eliminan el último; sesiones SQL reales (17.814227ms)
+✔ Fase 9: administración HTTP/Auth/RLS/PostgreSQL (identidad doble) (4486.822849ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4747.465255

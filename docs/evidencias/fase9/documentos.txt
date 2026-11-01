@@ -1,0 +1,3 @@
+OK: Fase 9 EN_REVISION, última completada 8; filas 10–15 intactas.
+OK: migraciones/prototipo/evidencias aceptadas preservadas literalmente.
+OK: enlaces locales de continuidad, CA9-06 pendiente y git diff --check.

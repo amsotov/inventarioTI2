@@ -239,3 +239,23 @@ Revisión visual y comprobación de ancho a 1440×900, 820×1180 y 390×844; [co
 ## Cierre documental de Fase 8 — 2026-11-01
 
 D-27 acepta `570e90d10819999e96e17a4f88dfd30c8e1f5224` y cumple CA8-06. Solo cambios documentales: comprobación de estados/criterios, enlaces, preservación de código/migraciones/evidencias y `git diff --check`. Las 49 pruebas de regresión y 9 de UI conservan su alcance histórico; no se repiten pruebas de aplicación por este cierre sin cambios de código. No acredita integración gestionada ni operación productiva. Fase 9 autorizada para otro chat, no ejecutada aquí.
+
+## Fase 9 — panel administrativo, 2026-11-01
+
+Entrega EN_REVISION, D-27/D-28; CA9-06 pendiente. Alcance/criterios en [ADMINISTRACION](ADMINISTRACION.md). Base `3dc4df2`, árbol inicialmente limpio, main recuperado por avance directo. Solo ensayos locales sintéticos; ninguna migración remota ni despliegue.
+
+| Verificación ejecutada | Resultado / evidencia |
+|---|---|
+| `npm ci` y `npm run build` | Instalación reproducible con lockfile existente y compilación TS/React/Vite correctas; [build](evidencias/fase9/build.txt). Aviso Vite de directorio de salida externo al root de apps/web, sin fallo de build. |
+| `npm test` | **61/61** (incluye regresión de 49 y 12 de administración contando el contenedor de pruebas); [regresión](evidencias/fase9/regresion.txt). PostgreSQL/roles/RLS reales y sintéticos; adaptador GoTrue local, sin servicio gestionado. |
+| `npx tsx --test tests/api/admin.test.ts` | **12/12**; [administración](evidencias/fase9/admin.txt). Permisos, MFA, CSRF/Origin, tipos/confirmación, configuración anterior/nueva, alta pendiente, replay/conflicto, unicidad, propia cuenta, versiones, credencial, invitación 24 h/recuperación administrativa 30 min, revocación, rollback ante fallo de auditoría, DML denegado y dos administradores SQL concurrentes. |
+| `npx tsx --test tests/ui/admin.test.ts` | **11/11**, contando contenedor; [navegador](evidencias/fase9/ui.txt). Regresión frontend y panel real navegador→HTTP→PostgreSQL, alta cuenta/unidad, cambio destinatario, respuesta perdida y reintento con misma clave sin duplicar auditoría, navegación bloqueada mientras incierto, responsive y teclado. |
+| `npm audit --json` | **0 vulnerabilidades**; [auditoría](evidencias/fase9/audit.json). |
+| `python docs/evidencias/fase9/verificar.py` y `git diff --check` | Estados, filas 10–15, preservación literal de migraciones/prototipo/evidencias aceptadas y enlaces; [documentos](evidencias/fase9/documentos.txt). |
+| CLI `supabase db advisors --local`, `migration list --local` | **NO VERIFICADO**: no existe stack Supabase en 127.0.0.1:54322; [advisors](evidencias/fase9/advisors.txt), [lista](evidencias/fase9/migraciones-local.txt). Los ensayos aplican todas las migraciones a PostgreSQL efímero en puerto aleatorio y sí verifican sus operaciones. No se inicia otro stack ni se confunde esto con verificación gestionada. |
+
+Capturas nuevas: [computador](evidencias/fase9/computador.png), [iPad](evidencias/fase9/ipad.png), [iPhone](evidencias/fase9/iphone.png); las capturas `regresion-*` pertenecen a la parte de inventario del mismo ensayo. Emulación Chromium, no hardware físico ni Safari; revisión visual de captura móvil realizada. Prototipo y evidencia histórica conservados.
+
+Durante preparación se corrigieron ambigüedad SQL de parámetro/columna, grant explícito de función canónica y desbordamiento del contenedor de tabla. Los primeros ensayos fallidos no se declaran éxitos. Se sincronizó el ensayo nuevo con el fin real de MFA y con carga de pestañas; la comprobación de ficha usa referencia explícita para no depender del orden aleatorio UUID de la primera página. El listener temporal de diagnóstico se retiró para evitar leer respuestas tras cerrar navegador. Las pruebas finales anteriores corresponden al código corregido; no se alteraron pruebas/evidencias históricas.
+
+No ejecutado/acreditado: Supabase gestionado/advisors remotos, identidad/correo externos, dispositivos físicos, lector de pantalla o WCAG completa, carga/pentest integral, restauración productiva o continuidad operativa. Las 46 comprobaciones históricas de datos no se repitieron en esta fase ni se atribuyen como nuevas. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Fase 10 no iniciada, sin envío del outbox ni despliegue.

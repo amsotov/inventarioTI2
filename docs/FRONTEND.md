@@ -38,3 +38,8 @@ Fuera de alcance: administración de cuentas/permisos/catálogos (9), comandos d
 ## Cierre aprobado — 2026-11-01
 
 D-27 acepta la entrega `570e90d10819999e96e17a4f88dfd30c8e1f5224` mediante «Apruebo fase 8 y en un nuevo chat inicia fase 9». Fase 8 COMPLETADA y CA8-06 CUMPLIDO. Los límites, seguimientos y evidencia local se conservan; no se implementa Fase 9 ni se despliega por este cierre.
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Incremento Fase 9: navegación Administración, componente separado de panel, cuentas/unidades/destinatario sobre API real, paginación, motivo/confirmación, errores y reintento idéntico. Alcance/evidencia vigente en [ADMINISTRACION](ADMINISTRACION.md). Fase 8 sigue aceptada; Fase 10 no iniciada.

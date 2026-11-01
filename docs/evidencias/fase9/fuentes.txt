@@ -1,0 +1,8 @@
+Consulta 2026-11-01:
+https://supabase.com/changelog.md
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+CLI temporal Supabase 2.122.0: --version; migration new panel_administracion; db advisors --help; db advisors --local; migration list --local.
+No proyecto gestionado ni permiso remoto modificado. Advisors/lista local sin stack disponible: errores conservados.
+PostgreSQL 17 fijado en ensayos: sha256:31ba9c94a03ada9988f2bb493a22a75eef3a185884533e5cdbcd498ea835b08f.
+Dependencias de aplicación sin cambios, versiones exactas/lockfile aceptados.

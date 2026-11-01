@@ -124,3 +124,8 @@ Fase 7 implementa base RF-02/HU-02 (alta/edición de atributos), RF-06/07 consul
 ## Incremento de Fase 8
 
 HU-02/06/07: consultas, fichas, filtros y atributos de bienes con API disponible; HU-10: acceso/MFA/sesión. CA8 y límites en [FRONTEND](FRONTEND.md). Administración (9), movimientos de escritura (10), reportes (11) y automatizaciones (12) no implementados por este incremento.
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Fase 9 EN_REVISION: RF-08/09/11 y HU-08/09/11 → cuentas, roles, propio registro/último administrador y revocación; RF-12/14 y HU-12/14 → auditoría atómica y destinatario/outbox pendiente; A-03/A-05 → catálogo de unidades. CR-15/16/18 con pruebas HTTP/SQL negativas/concurrentes; invitación/recuperación 24 h/30 min con identidad doble. RF-15 envío permanece Fase 12, no acreditado. Ver [ADMINISTRACION](ADMINISTRACION.md).

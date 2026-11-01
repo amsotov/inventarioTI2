@@ -1,3 +1,5 @@
+import { adminRoutes } from './admin/routes.js';
+import type { Authorization } from './security/postgres.js';
 import Fastify from 'fastify';
 import { webRoutes } from './web.js';
 import { inventoryRoutes } from './inventory/routes.js';
@@ -5,7 +7,7 @@ import type { Inventory } from './inventory/service.js';
 import { AuthError, AuthService } from './auth/service.js';
 const str = {type:'string',minLength:1,maxLength:320};
 const schema = (props: Record<string,unknown>) => ({body:{type:'object',additionalProperties:false,required:Object.keys(props),properties:props}});
-export function app(auth: AuthService, origin: string, inventory?: Inventory, webRoot?: string) {
+export function app(auth: AuthService, origin: string, inventory?: Inventory, webRoot?: string, security?: Authorization) {
   const server=Fastify({logger:false,bodyLimit:8192,trustProxy:false,ajv:{customOptions:{removeAdditional:false,coerceTypes:false}}});
   server.addHook('onRequest',async(req,res)=>{
     res.header('cache-control','no-store').header('referrer-policy','no-referrer').header('x-content-type-options','nosniff').header('x-frame-options','DENY').header('permissions-policy','camera=(), microphone=(), geolocation=()').header('strict-transport-security','max-age=31536000').header('content-security-policy',"default-src 'none'; script-src 'self'; connect-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'");
@@ -47,6 +49,7 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
     server.addHook('preValidation',async req=>{const q=req.query as Record<string,unknown>;if(q && typeof q.limit==='string' && /^[0-9]{1,3}$/.test(q.limit))q.limit=Number(q.limit);});
     inventoryRoutes(server,inventory,sid,csrf);
   }
+  if(security)adminRoutes(server,security,auth,sid,csrf);
   if(webRoot)webRoutes(server,webRoot);
   return server;
 }

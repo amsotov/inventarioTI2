@@ -44,3 +44,8 @@ Punto vigente — D-23: Fase 6 COMPLETADA, CA6-06 cumplido. Fase 7 autorizada pa
 ## Entrega de Fase 7 — 2026-10-31
 
 Fase 7: contrato ejecutable de validación en apps/server/inventory/routes.ts y [OpenAPI 3.1](../docs/openapi-fase7.json); servicios/pruebas reales en apps/server/inventory y tests/api. No se instala ni simula Spec Kit.
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Fase 9 EN_REVISION bajo D-27/D-28. Contrato ejecutable en apps/server/admin/routes.ts, criterios en [ADMINISTRACION](../docs/ADMINISTRACION.md). Spec Kit no instalado ni utilizado. Fase 10 no iniciada; sin despliegue.

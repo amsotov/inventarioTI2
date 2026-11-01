@@ -60,3 +60,8 @@ El usuario indica «Apruebo fase 5 y en nuevo chat inicia fase 6», aceptando la
 ## Continuidad de Fase 6 — 2026-10-31
 
 Integración de Fase 6: withPrincipal valida credencial disponible, cuenta/sesión/proveedor vigente y mantiene locks para autorización. El bloqueo de cuenta pasa a FOR NO KEY UPDATE para permitir FK de bitácora desde pool separado. main rechaza identidades SQL privilegiadas; DATABASE_URL exige inventario_auth. Ver SEGURIDAD. La aceptación D-21 y evidencias originales de Fase 5 conservan su alcance.
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Fase 9 habilita emisión administrativa de invitación/recuperación tras autorización y confirmación. El parámetro interno administrative permite recuperación de cuenta activa con credencial bloqueada por forzado; no cambia la restricción de la ruta pública. Alta pendiente y enlace externo son operaciones separadas; 202 no acredita envío. Integración gestionada continúa pendiente. Ver [ADMINISTRACION](ADMINISTRACION.md).

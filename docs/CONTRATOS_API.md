@@ -112,3 +112,8 @@ Fase 6 no agrega endpoints empresariales. Los futuros servicios deben usar Autho
 ## Entrega de Fase 7 — 2026-10-31
 
 La superficie empresarial realmente implementada de Fase 7 está en [BACKEND_API](BACKEND_API.md) y [OpenAPI](openapi-fase7.json). El catálogo precedente conserva el diseño global; no equivale a endpoints habilitados. Listas/fichas de cuatro recursos y alta/edición de atributos de bienes implementados; límites y semántica de PATCH documentados.
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Fase 9 añade exclusivamente `/api/v1/admin/cuentas`, `/unidades`, `/avisos` y emisión explícita de enlace. Contrato, cuerpos, versiones/idempotencia y límites en [ADMINISTRACION](ADMINISTRACION.md). OpenAPI de Fase 7 conserva su superficie histórica; no es inventario global de nuevas rutas.

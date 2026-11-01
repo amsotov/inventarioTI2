@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-01
-**Fase:** 8 — COMPLETADA; entrega y cierre aprobados por D-27.
+**Fase:** 9 — EN_REVISION; entrega bajo D-27/D-28, aceptación pendiente.
 **Modo:** GUIADO
 **Última fase completada:** 8.
-**Última fase autorizada:** 9, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 10–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 9, ejecutada y EN_REVISION. Fases 10–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 8 aceptada y cerrada por D-27. Iniciar únicamente Fase 9 en un nuevo chat con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta sesión solo registra cierre/continuidad, sin implementar Fase 9 ni desplegar. Apartados previos al cierre final son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 9 entregada para revisión; ver [ADMINISTRACION](docs/ADMINISTRACION.md). Última completada: 8. Fase 10 no autorizada ni iniciada; sin despliegue. Apartados anteriores a esta entrega son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -364,3 +364,14 @@ Punto de inicio para el nuevo chat:
 4. Conservar contexto SQL LOCAL y pools separados, privilegios mínimos/RLS, historia y auditoría inmutables. Cambios necesarios de persistencia mediante migraciones nuevas aditivas y verificables; probar permisos negativos, escalamiento, concurrencia, rollback y versiones/idempotencia cuando corresponda. Invitaciones solo con identidad y entrega dobles en entorno sintético; sin enviar mensajes reales ni aprovisionar cuentas/permisos remotos por inferencia.
 5. Mantener diseño aprobado y verificar formularios, carga/vacío/error/éxito/permiso, teclado y responsive computador/iPad/iPhone, más recorridos UI/API sintéticos. La administración de parámetros no autoriza procesar/enviar outbox, implementar nuevos movimientos de negocio, reportes/exportadores o automatizaciones de fases 10–12.
 6. Preservar F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Sin Spec Kit, gastos, datos reales, despliegues ni producción sin autorización propia. Registrar pruebas ejecutadas/no ejecutadas, riesgos y criterios; actualizar documentación y GitHub, comprobar SHA remoto y entregar Fase 9 para aceptación propia. No marcar COMPLETADA ni iniciar Fase 10 sin aprobación independiente.
+
+
+## Entrega de Fase 9 — vigente, 2026-11-01
+
+Solicitud: «Inicia únicamente la Fase 9 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 10 ni despliegues». D-28 ratifica D-27. Base inicial limpia actualizada por avance directo a `3dc4df2`. Plan presentado antes de implementar: cuentas/dos roles, catálogo unidades, destinatario, protección propia/último administrador, transacciones/versiones/idempotencia, integración UI y pruebas sintéticas SQL/HTTP/navegador; documentación y GitHub. Codex prepara/verifica; usuario revisa/acepta.
+
+Entregables, archivos, criterios CA9-01 a CA9-06 y riesgos en [ADMINISTRACION](docs/ADMINISTRACION.md); operación del panel en [MANUAL_ADMIN](docs/MANUAL_ADMIN.md), evidencia y límites en [PRUEBAS](docs/PRUEBAS.md). Migración nueva aditiva, sin modificar las aceptadas. Cuentas locales pendientes separadas de identidad externa; invitación/recuperación explícitas, sin envío real. Persistencia, roles mínimos/RLS, propias cuentas, revocación, concurrencia, replay y rollback verificados en entorno sintético.
+
+Fase 9 EN_REVISION; CA9-06 pendiente de aceptación propia. Última completada 8. Fases 10–15 conservan PENDIENTE / NO OTORGADA. No nuevos movimientos, reportes/exportadores, worker/envío outbox, permisos remotos, datos/cuentas reales, gastos o despliegues. Advisors local sin stack disponible; no se acredita Supabase gestionado ni operación productiva. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+GitHub: revisar diferencias, commit/push normales a main con autoría noreply y verificar SHA remoto antes de confirmar. Siguiente paso: revisión y aceptación de Fase 9; no iniciar Fase 10 por inferencia.

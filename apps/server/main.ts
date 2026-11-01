@@ -16,6 +16,7 @@ await assertDatabaseRole(pool,'inventario_auth');
 const auth=new AuthService(new Postgres(pool),new SupabaseProvider(required('SUPABASE_URL'),required('SUPABASE_PUBLISHABLE_KEY'),required('SUPABASE_SECRET_KEY')),new Vault(required('AUTH_ENCRYPTION_KEY')),origin);
 const business=new Pool({connectionString:required('BUSINESS_DATABASE_URL'),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
 await assertDatabaseRole(business,'inventario_runtime');
-const server=app(auth,origin,new Inventory(new Authorization(auth,business)),fileURLToPath(new URL('../../web/',import.meta.url)));
+const security=new Authorization(auth,business);
+const server=app(auth,origin,new Inventory(security),fileURLToPath(new URL('../../web/',import.meta.url)),security);
 await server.listen({host:'127.0.0.1',port:Number(process.env.PORT??3000)});
 for(const signal of ['SIGTERM','SIGINT']) process.once(signal,async()=>{await server.close();await pool.end();await business.end();});

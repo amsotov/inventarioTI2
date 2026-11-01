@@ -1,0 +1,20 @@
+▶ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (403.484443ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (553.012154ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (162.594041ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (240.691553ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (277.601507ms)
+  ✔ paginación real y reinicio de cursor al filtrar (218.382057ms)
+  ✔ responsive computador/iPad/iPhone y teclado (232.682371ms)
+  ✔ panel: cuenta, catálogo, parámetros y responsive real (851.097075ms)
+  ✔ panel: respuesta perdida y replay sin duplicar evidencia (404.974866ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (154.2917ms)
+✔ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (8516.591444ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9168.963416

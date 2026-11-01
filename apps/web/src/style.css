@@ -320,3 +320,9 @@ code {
     font-size: 20px;
   }
 }
+
+.admin-panel { min-width: 0; overflow-wrap: anywhere; }
+.admin-panel nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.admin-panel textarea { display: block; width: 100%; min-height: 90px; max-width: 100%; padding: 10px; font: inherit; }
+.admin-panel input[type="checkbox"] { width: auto; margin-right: 8px; }
+.admin-panel fieldset { display: grid; gap: 16px; margin: 16px 0; }

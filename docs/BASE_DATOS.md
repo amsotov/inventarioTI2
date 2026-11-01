@@ -120,3 +120,8 @@ Fase 6 añade migración aditiva de roles SQL mínimos, políticas de lectura co
 ## Entrega de Fase 7 — 2026-10-31
 
 Fase 7 incorpora únicamente migración aditiva 20261031202938_backend_api.sql: función acotada guardar_bien, rol de servicio y RLS/grants mínimos; conserva modelo y evidencia inmutables. Ver [BACKEND_API](BACKEND_API.md).
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Fase 9 añade migración aditiva `20261101020230_panel_administracion.sql`, generada por CLI: rol privado/función administrativa, grants mínimos y políticas RLS. Sin tablas nuevas ni modificación de migraciones aceptadas. Estado/auditoría/comando/outbox atómicos; sin ejecución remota. Ver [ADMINISTRACION](ADMINISTRACION.md).

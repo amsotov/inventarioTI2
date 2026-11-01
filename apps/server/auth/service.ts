@@ -83,12 +83,12 @@ export class AuthService {
     // Cierre local confirmado antes de la dependencia; conservar tarea de conciliación si falla.
     if(tokens) {try {await this.provider.logout(tokens.value);} catch {await this.db.transaction(s=>s.delivery(tokens.id,this.vault.seal({kind:'logout',tokens:tokens.value})));}}
   }
-  // Puerto interno para futura gestión de cuentas; sin endpoint público de invitaciones.
-  async issue(email: string, kind: 'invite' | 'recovery') {
+  // Puerto interno para cuentas: emisión administrativa protegida, sin autorregistro público.
+  async issue(email: string, kind: 'invite' | 'recovery', administrative = false) {
     const raw=token(), key=hash(raw);
     const job=await this.db.transaction(async s => {
       const a=await s.account(email);
-      if(!a || a.estado==='inactiva' || (kind==='invite' && a.estado!=='pendiente') || (kind==='recovery' && (a.estado!=='activa' || !a.credencial_lista)) || await s.busy(a.id)) return;
+      if(!a || a.estado==='inactiva' || (kind==='invite' && a.estado!=='pendiente') || (kind==='recovery' && (a.estado!=='activa' || (!a.credencial_lista && !administrative))) || await s.busy(a.id)) return;
       await s.supersede(a.id);
       const i={accountId:a.id,kind,expires:this.now()+(kind==='invite'?86400000:1800000),state:'processing' as const,vault:''};
       await s.saveIntent(key,i);

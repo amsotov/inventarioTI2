@@ -31,3 +31,8 @@ Fase 6: seguridad.eventos(id bigint identity, actor_id uuid FK cuentas, permiso 
 ## Entrega de Fase 7 — 2026-10-31
 
 Fase 7 no cambia columnas: usa comandos, auditoria y outbox aceptados para alta/edición de atributos de bienes. Nueva función y privilegios locales detallados en [BACKEND_API](BACKEND_API.md).
+
+
+## Incremento de Fase 9 — 2026-11-01
+
+Fase 9 utiliza cuentas/unidades/configuracion_avisos/comandos/auditoria/outbox existentes sin añadir campos. Cambio administrativo incrementa versión; cuenta también version_autorizacion. Forzar clave bloquea credencial_lista hasta recuperación administrativa. No expone proveedor_ref ni credencial_lista en proyección de API. Ver [ADMINISTRACION](ADMINISTRACION.md).

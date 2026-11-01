@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-01 — Fase 9 EN_REVISION
+
+- Panel real de cuentas/dos roles, unidades y destinatario; motivo/confirmación, versiones y replay.
+- Función SQL privada con RLS, propia cuenta/último administrador protegidos, revocación y auditoría/outbox atómicos.
+- Invitación/recuperación administrativa explícitas; pruebas sintéticas SQL/HTTP/navegador y manual del panel.
+- Sin Fase 10, permisos remotos, correo real ni despliegue.
+
 ## 2026-10-31 — Cierre aprobado de Fase 6
 
 - D-23 acepta entrega `336232a`; CA6-06 cumplido y Fase 6 COMPLETADA.

@@ -1,3 +1,4 @@
+import { Admin } from "./admin";
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { api, ApiError, message } from "./api";
@@ -308,12 +309,13 @@ function App() {
               {titles[r]}
             </a>
           ))}
+        {canWrite && <a href="#administracion" aria-current={view==="administracion"?"page":undefined}>Administración</a>}
         </nav>
         <small>Inventario compartido · UTC</small>
       </aside>
       <main id="contenido">
         <header>
-          <span>Inventario / {valid ? titles[resource] : "Acceso"}</span>
+          <span>Inventario / {view === "administracion" ? "Administración" : valid ? titles[resource] : "Acceso"}</span>
           {session && (
             <div>
               <span>
@@ -487,6 +489,8 @@ function App() {
               </button>
             </form>
           </section>
+        ) : view === "administracion" ? (
+          canWrite ? <Admin csrf={session.csrf} onExpired={()=>{setSession(null);}}/> : <section className="card"><h1>Acceso restringido</h1><p>No tienes permiso para administrar.</p></section>
         ) : !valid ? (
           <section className="card">
             <h1>Vista no disponible</h1>

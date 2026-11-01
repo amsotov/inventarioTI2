@@ -1,6 +1,6 @@
 # Panel de administración — Fase 9
 
-2026-11-01 · Entrega EN_REVISION bajo D-27/D-28, base limpia `3dc4df2`. Codex implementa/verifica; el usuario conserva la aceptación CA9-06. Última fase completada: 8. Fases 10–15 PENDIENTE / NO OTORGADA; sin despliegue.
+2026-11-01 · COMPLETADA por aceptación expresa D-29 de la entrega `fff63ac3f8afd6c471ef1649dd83ab5332d0f36c`. CA9-06 CUMPLIDO. Fase 10 autorizada para un nuevo chat, ejecución pendiente; fases 11–15 sin autorización. Plan y evidencia de la entrega original preservados.
 
 ## Plan, alcance y archivos
 
@@ -42,8 +42,13 @@ UI conserva comando/clave/versión en memoria ante 5xx o pérdida de respuesta y
 | CA9-03 | Versiones, replay, unicidad, auditoría/outbox atómicos y rollback ante fallo. |
 | CA9-04 | Invitación/forzado con expiraciones 24 h/30 min e identidad doble; sesiones revocadas en próxima petición. |
 | CA9-05 | Build, regresión, HTTP/PostgreSQL y navegador responsive/teclado; resultados y límites en PRUEBAS. |
-| CA9-06 | PENDIENTE de revisión y aceptación expresa del usuario. |
+| CA9-06 | CUMPLIDO por aceptación expresa D-29 el 2026-11-01. |
 
 No se acredita Supabase gestionado, advisors gestionados, correo externo, dispositivos físicos/Safari, conformidad WCAG completa, carga de producción ni continuidad operativa. El ensayo usa Docker/PostgreSQL real y roles mínimos con identidad doble; ningún dato/cuenta/permiso remoto real. La consulta de advisors local no encuentra stack Supabase en 54322: se conserva el error, sin declararla superada ni iniciar servicios ajenos al ensayo. Changelog/RLS vigentes consultados; no se usan Data API/JWT/metadatos editables para autorizar.
 
-F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto) y F1-SEG-03 (respaldo operativo) siguen abiertos. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Próximo paso: revisar esta entrega; Fase 10 requiere autorización independiente y no se inicia.
+F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto) y F1-SEG-03 (respaldo operativo) siguen abiertos. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Próximo paso: iniciar únicamente Fase 10 en un nuevo chat, ya autorizada por D-29; no se ejecuta en este cierre.
+
+
+## Cierre aprobado — 2026-11-01
+
+D-29 acepta la entrega `fff63ac3f8afd6c471ef1649dd83ab5332d0f36c` mediante «Apruebo fase 9 y en un nuevo chat inicia fase 10». Fase 9 COMPLETADA y CA9-06 CUMPLIDO. La aprobación conserva evidencia local y límites operativos; no acredita Supabase gestionado, advisors disponibles, correo externo o continuidad productiva. Esta tarea solo registra cierre/continuidad, sin implementar Fase 10 ni desplegar.

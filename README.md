@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-01): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 COMPLETADA y aceptada por D-21. Fase 6 COMPLETADA y aceptada por D-23. Fase 7 COMPLETADA y aceptada por D-25. Fase 8 COMPLETADA por D-27. Fase 9 EN_REVISION bajo D-27/D-28; fases 10–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
+Estado vigente (2026-11-01): Fase 0 aceptada; Fase 1 COMPLETADA y aceptada por D-14. Fase 2 COMPLETADA: revisión visual aprobada por D-15. Fase 3 COMPLETADA y aceptada por D-17. Fase 4 COMPLETADA y aceptada por D-19. Fase 5 COMPLETADA y aceptada por D-21. Fase 6 COMPLETADA y aceptada por D-23. Fase 7 COMPLETADA y aceptada por D-25. Fase 8 COMPLETADA por D-27. Fase 9 COMPLETADA por D-29. Fase 10 autorizada para un nuevo chat, ejecución pendiente; fases 11–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md), [análisis empresarial](docs/ANALISIS_EMPRESARIAL.md), [historias](docs/HISTORIAS_USUARIO.md) y [trazabilidad](docs/TRAZABILIDAD.md).
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -119,4 +119,9 @@ Entrega aceptada por D-25. Fase 8 autorizada para un nuevo chat; no iniciada en 
 React/Vite y BFF bajo el mismo origen: acceso/MFA, consultas/fichas/filtros/paginación y alta/edición de atributos de bienes. `npm run build` compila servidor y UI; `npm run test:ui` verifica navegador/BFF/PostgreSQL sintéticos (Docker y Chromium). Configuración, ejecución y límites en [FRONTEND](docs/FRONTEND.md). Fase 9 autorizada para un nuevo chat, ejecución pendiente; sin despliegue.
 
 
-Punto vigente — Fase 9 EN_REVISION: [panel administrativo](docs/ADMINISTRACION.md), [manual del panel](docs/MANUAL_ADMIN.md) y [pruebas](docs/PRUEBAS.md). Última completada 8; Fase 10 no iniciada ni autorizada. Sin despliegue.
+Punto vigente — Fase 9 COMPLETADA por D-29: [panel administrativo](docs/ADMINISTRACION.md), [manual del panel](docs/MANUAL_ADMIN.md) y [pruebas](docs/PRUEBAS.md). Última completada 9; Fase 10 autorizada para un nuevo chat, ejecución pendiente. Sin despliegue.
+
+
+## Cierre de Fase 9 — 2026-11-01
+
+Entrega aceptada por D-29. Fase 10 autorizada para un nuevo chat; seguir el plan de continuidad al final de [FASES](FASES.md). Esta tarea solo registra el cierre y no abre automáticamente otra conversación. Fases 11–15 sin autorización; sin despliegue. Los estados anteriores son antecedentes históricos.

@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-01 — Cierre aprobado de Fase 9
+
+- D-29 acepta entrega `fff63ac`; CA9-06 cumplido y Fase 9 COMPLETADA.
+- Fase 10 autorizada para un nuevo chat; ejecución pendiente y plan de arranque registrado.
+- Solo documentación de cierre; aplicación, migraciones, pruebas y evidencias preservadas. Sin implementación de Fase 10 ni despliegue.
+
 ## 2026-11-01 — Fase 9 EN_REVISION
 
 - Panel real de cuentas/dos roles, unidades y destinatario; motivo/confirmación, versiones y replay.

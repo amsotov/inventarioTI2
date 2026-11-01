@@ -155,3 +155,8 @@ El usuario ratifica D-25: «Inicia únicamente la Fase 8 de inventarioTI2, ya au
 ## D-28 — Ejecución de Fase 9 (2026-11-01)
 
 El usuario ratifica D-27: «Inicia únicamente la Fase 9 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 10 ni despliegues». Se ejecuta únicamente panel de administración y sus interfaces/persistencia necesarias. Entrega EN_REVISION en ADMINISTRACION.md; CA9-06 pendiente. No atribuye aceptación anticipada, permisos remotos, datos reales, gasto o despliegue. Restricción técnica: propio registro completo protegido para conservar separación de pools y locks, además de prohibir propio rol/autodesactivación. Catálogos/parámetros se limitan a unidades y destinatario acordados, sin inventar configuración empresarial.
+
+
+## D-29 — Aceptación de Fase 9 y continuidad de Fase 10
+
+2026-11-01. Evidencia literal: «Apruebo fase 9 y en un nuevo chat inicia fase 10». Acepta la entrega `fff63ac3f8afd6c471ef1649dd83ab5332d0f36c`, cumple CA9-06 y cierra Fase 9 COMPLETADA con sus límites explícitos. Autoriza únicamente Fase 10 — Procesos y módulos empresariales para iniciar en un nuevo chat, ejecución PENDIENTE. No implica implementación aquí, creación automática de conversación ni aprobación de fases 11–15, despliegue, producción, datos reales, gastos o permisos remotos. Conserva evidencia y F1-SEG-01/02/03. Los estados EN_REVISION de D-28 se mantienen como antecedentes de entrega.

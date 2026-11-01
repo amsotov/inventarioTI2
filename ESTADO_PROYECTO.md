@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-01
-**Fase:** 9 — EN_REVISION; entrega bajo D-27/D-28, aceptación pendiente.
+**Fase:** 9 — COMPLETADA; entrega y cierre aprobados por D-29.
 **Modo:** GUIADO
-**Última fase completada:** 8.
-**Última fase autorizada:** 9, ejecutada y EN_REVISION. Fases 10–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 9.
+**Última fase autorizada:** 10, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 11–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 9 entregada para revisión; ver [ADMINISTRACION](docs/ADMINISTRACION.md). Última completada: 8. Fase 10 no autorizada ni iniciada; sin despliegue. Apartados anteriores a esta entrega son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 9 aceptada y cerrada por D-29. Iniciar únicamente Fase 10 en un nuevo chat con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad, sin implementar Fase 10 ni desplegar. Los estados anteriores a este cierre son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -375,3 +375,16 @@ Entregables, archivos, criterios CA9-01 a CA9-06 y riesgos en [ADMINISTRACION](d
 Fase 9 EN_REVISION; CA9-06 pendiente de aceptación propia. Última completada 8. Fases 10–15 conservan PENDIENTE / NO OTORGADA. No nuevos movimientos, reportes/exportadores, worker/envío outbox, permisos remotos, datos/cuentas reales, gastos o despliegues. Advisors local sin stack disponible; no se acredita Supabase gestionado ni operación productiva. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
 
 GitHub: revisar diferencias, commit/push normales a main con autoría noreply y verificar SHA remoto antes de confirmar. Siguiente paso: revisión y aceptación de Fase 9; no iniciar Fase 10 por inferencia.
+
+
+## Cierre aprobado de Fase 9 y continuidad autorizada de Fase 10 — vigente
+
+2026-11-01. Evidencia literal: «Apruebo fase 9 y en un nuevo chat inicia fase 10». D-29 acepta la entrega `fff63ac3f8afd6c471ef1649dd83ab5332d0f36c`, cumple CA9-06 y cierra Fase 9 COMPLETADA. Se conservan las 61 pruebas de regresión, las 11 pruebas de navegador, capturas y auditoría con sus límites: ensayos sintéticos/identidad doble, sin Supabase gestionado/advisors locales operativos, correo externo, dispositivos físicos ni continuidad productiva acreditados.
+
+Fase 10 AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Esta tarea solo registra cierre y continuidad y sincroniza GitHub. No se abre automáticamente una conversación ni se implementan procesos empresariales aquí. Fases 11–15 PENDIENTE / NO OTORGADA; sin despliegue, producción, datos reales, gastos o cambios remotos de permisos.
+
+Trabajo de cierre: actualización documental de FASES/ESTADO, ADMINISTRACION (CA9-06), MANUAL_ADMIN, D-29 en DECISIONES, continuidad en README/specs/README, PRUEBAS y CHANGELOG. Código, migraciones, dependencias, pruebas, prototipo y evidencias originales preservados literalmente respecto a la entrega aceptada. No se modifican verificadores históricos para adaptarlos a estados posteriores.
+
+Verificación: árbol inicial limpio, main al día; revisión de diferencias, enlaces locales, estados/CA9-06, filas 11–15 y preservación de archivos ajenos al cierre. `git diff --check`. No se repiten pruebas funcionales porque solo cambia documentación. F1-SEG-01/02/03 permanecen abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+GitHub: commit/push normales a main, autoría noreply y comparación de SHA local/remoto antes de confirmar. Siguiente acción: abrir un nuevo chat e iniciar únicamente Fase 10 bajo D-29. Su entrega/cierre necesitará revisión propia; no iniciar Fase 11.

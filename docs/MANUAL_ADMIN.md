@@ -1,6 +1,6 @@
 # Manual del panel administrativo — incremento de Fase 9
 
-Entrega EN_REVISION; instrucciones operativas limitadas al panel implementado. No acredita puesta en marcha ni sustituye los pendientes de Fase 14/15. Detalle técnico, criterios y riesgos en [ADMINISTRACION](ADMINISTRACION.md).
+Entrega de Fase 9 aceptada por D-29; instrucciones operativas limitadas al panel implementado. No acredita puesta en marcha ni sustituye los pendientes de Fase 14/15. Detalle técnico, criterios y riesgos en [ADMINISTRACION](ADMINISTRACION.md).
 
 1. Inicia sesión como administrador y completa MFA. Abre **Administración**. Lectura no tiene acceso; el servidor también lo deniega.
 2. Si aún no hay encargado, abre **Parámetros de avisos**, completa destinatario/motivo y confirma. Si ya existe, selecciona **Editar** para cargar su versión. El cambio queda auditado y genera avisos pendientes al nuevo/anterior; no los envía.
@@ -10,4 +10,4 @@ Entrega EN_REVISION; instrucciones operativas limitadas al panel implementado. N
 6. En **Catálogo de unidades**, crea o edita nombre y estado. Desactivar conserva referencias; futuras pertenencias no admiten unidad inactiva. No se crean movimientos desde este panel.
 7. Para descartar el formulario, usa **Cancelar**. Ante 412, recarga la administración y revisa datos actuales. Ante resultado incierto, mantén la página y usa **Reintentar operación** con la clave original; antes de abandonar/cerrar sesión, concilia con el responsable. No repitas como un alta nueva.
 
-Las listas se paginan de 50 en 50. El panel no cambia correo de cuenta, permisos arbitrarios, UTC ni respaldo operativo, no crea el primer administrador y no procesa outbox. Los objetivos de respaldo semanal/RPO 168 h/RTO 8 h/copias 30 días aún requieren configuración y verificación operativa independiente. Fase 10 no iniciada; sin despliegue.
+Las listas se paginan de 50 en 50. El panel no cambia correo de cuenta, permisos arbitrarios, UTC ni respaldo operativo, no crea el primer administrador y no procesa outbox. Los objetivos de respaldo semanal/RPO 168 h/RTO 8 h/copias 30 días aún requieren configuración y verificación operativa independiente. Fase 10 autorizada para un nuevo chat, ejecución pendiente; sin despliegue.

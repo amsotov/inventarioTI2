@@ -49,3 +49,6 @@ Fase 7: contrato ejecutable de validación en apps/server/inventory/routes.ts y 
 ## Incremento de Fase 9 — 2026-11-01
 
 Fase 9 EN_REVISION bajo D-27/D-28. Contrato ejecutable en apps/server/admin/routes.ts, criterios en [ADMINISTRACION](../docs/ADMINISTRACION.md). Spec Kit no instalado ni utilizado. Fase 10 no iniciada; sin despliegue.
+
+
+Punto vigente — D-29: Fase 9 COMPLETADA, CA9-06 cumplido. Fase 10 autorizada para iniciar en un nuevo chat; ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md) y [ADMINISTRACION](../docs/ADMINISTRACION.md). Fases 11–15 sin autorización; sin implementación de Fase 10, despliegue ni instalación de Spec Kit en este cierre. Las menciones EN_REVISION anteriores son antecedentes.

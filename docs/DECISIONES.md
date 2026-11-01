@@ -135,3 +135,8 @@ D-22 — Implementación de Fase 6 bajo D-21: dos roles e inventario compartido;
 ## D-24 — Ejecución limitada de Fase 7
 
 2026-10-31. Usuario ratifica D-23: «Inicia únicamente la Fase 7 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 8 ni despliegues». Se ejecuta backend/API según [BACKEND_API](BACKEND_API.md), con verificación sintética y actualización GitHub. Entrega EN_REVISION, sin atribuir aceptación del usuario. Los contratos del MVP se habilitan por fases; movimientos/panel/reportes/automatizaciones continúan pendientes de sus autorizaciones. No cambia D-14, privacidad ni continuidad. Fases 8–15 no autorizadas.
+
+
+## D-25 — Aceptación de Fase 7 y continuidad de Fase 8
+
+2026-11-01. Evidencia literal: «Apruebo fase 7 y en un nuevo chat inicia fase 8». Acepta entrega `6035e125617a2c8d6e366df49940b8d720f8d535`, cumple CA7-06 y cierra Fase 7 COMPLETADA con sus límites explícitos. Autoriza únicamente Fase 8 — Frontend funcional para iniciar en un nuevo chat, ejecución PENDIENTE. No implica ejecución aquí, creación automática de conversación ni aprobación de fases 9–15, despliegue, producción, datos reales, gastos o permisos reales. Conserva evidencia local y F1-SEG-01/02/03. Actualiza el antecedente EN_REVISION de D-24 sin reescribir evidencias.

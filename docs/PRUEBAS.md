@@ -215,3 +215,8 @@ Evidencia: [resultados](evidencias/fase7/resultados.txt), [build](evidencias/fas
 No ejecutado: Supabase remoto, credenciales reales, correo externo, UI integrada, dispositivos, carga productiva, operación/respaldos reales ni despliegue. No se invocan advisors remotos: no hay proyecto gestionado conectado; se verifican grants/RLS/función privada mediante PostgreSQL local real. El CLI creó solamente el archivo de migración; sin enlazar ni modificar proyectos remotos. Los primeros ensayos detectaron ambigüedad SQL y un lock que exigía UPDATE; ambos corregidos antes de la corrida final conservada. El flujo SQL no abre DML directo al runtime.
 
 CA7-01 a CA7-05 verificados con el alcance limitado de [BACKEND_API](BACKEND_API.md). CA7-06 pendiente de aceptación expresa; Fase 7 EN_REVISION. Fase 8 no iniciada.
+
+
+## Cierre documental de Fase 7 — 2026-11-01
+
+D-25 cumple CA7-06 por aceptación expresa de la entrega `6035e125617a2c8d6e366df49940b8d720f8d535`. Se conserva evidencia de 49 pruebas de aplicación y 46 comprobaciones históricas; no se repiten tests de aplicación en este cierre sin cambios de código. Revisión de estados, enlaces locales, preservación de código/evidencia y filas 9–15; `git diff --check` y SHA remoto comprobados al sincronizar. No se implementa ni verifica Fase 8 aquí. Los estados anteriores EN_REVISION y Fase 8 no autorizada son antecedentes actualizados por D-25.

@@ -1,6 +1,6 @@
 # Backend y API — Fase 7
 
-2026-10-31 · Entrega EN_REVISION; ejecución autorizada por D-23 y ratificada en esta conversación. Base `0fead7b`. No implica aceptación de cierre ni autorización de Fase 8.
+Entrega 2026-10-31 · COMPLETADA por aceptación expresa D-25 el 2026-11-01; base de ejecución `0fead7b`. Fase 8 autorizada para un nuevo chat, ejecución pendiente.
 
 Plan previo: contratos y servicios por dominio, validación estricta, consultas/filtros/paginación/ETag, integración de autorización, escritura atómica de atributos de bienes, pruebas HTTP/SQL negativas y concurrentes, documentación y sincronización GitHub. Codex prepara/verifica; usuario acepta.
 
@@ -32,8 +32,13 @@ Una transacción conserva bien + comando inmutable + auditoría antes/nuevo + av
 | CA7-03 | Validación servidor, ETag/If-Match y errores consistentes |
 | CA7-04 | Alta/edición atómicas, idempotencia, unicidad, evidencia/outbox y rollback |
 | CA7-05 | Build, regresión Auth/seguridad y composición real HTTP/PostgreSQL con identidad doble; evidencia en PRUEBAS |
-| CA7-06 | Aceptación expresa del usuario PENDIENTE; Fase 7 EN_REVISION |
+| CA7-06 | CUMPLIDO por D-25 el 2026-11-01; Fase 7 COMPLETADA |
 
 No implementado: comandos de funcionarios/unidades, movimientos de custodia/transiciones/anotaciones (Fase 10); cuentas/panel/configuración administrativa (Fase 9); resumen/búsqueda combinada/reportes/exportaciones (Fase 11); procesamiento/envío del outbox (Fase 12); frontend funcional (Fase 8). No se presenta la API global del MVP como completa. Las fases 9–12 requerirán autorización independiente; este reparto respeta el punto de continuidad D-23.
 
 No probado aquí: Supabase gestionado, credenciales reales, dispositivos/UI integrada, correo externo, rendimiento de producción o continuidad operativa. F1-SEG-01 (conservación legal antes de datos reales), F1-SEG-02 (presupuesto) y F1-SEG-03 (operación del respaldo) siguen abiertos. UTC y copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin Spec Kit instalado, proyectos remotos, datos reales, gastos ni despliegue.
+
+
+## Cierre aprobado — 2026-11-01
+
+D-25 acepta la entrega `6035e125617a2c8d6e366df49940b8d720f8d535` con sus límites y pendientes intactos; no agrega funcionalidades ni nuevas verificaciones operativas. Fase 8 autorizada para un nuevo chat, sin ejecución aquí.

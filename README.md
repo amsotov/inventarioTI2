@@ -112,3 +112,8 @@ Fase 7 EN_REVISION: [backend/API](docs/BACKEND_API.md) y [OpenAPI](docs/openapi-
 ## Cierre de Fase 7 — 2026-11-01
 
 Entrega aceptada por D-25. Fase 8 autorizada para un nuevo chat; no iniciada en esta tarea. Consultar continuidad vigente en FASES y ESTADO; los estados EN_REVISION anteriores son antecedentes.
+
+
+## Frontend funcional — Fase 8 EN_REVISION
+
+React/Vite y BFF bajo el mismo origen: acceso/MFA, consultas/fichas/filtros/paginación y alta/edición de atributos de bienes. `npm run build` compila servidor y UI; `npm run test:ui` verifica navegador/BFF/PostgreSQL sintéticos (Docker y Chromium). Configuración, ejecución y límites en [FRONTEND](docs/FRONTEND.md). Fase 9 no autorizada; sin despliegue.

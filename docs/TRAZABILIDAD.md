@@ -119,3 +119,8 @@ Fase 6: RF-08/RNF-01 → policy.ts, Authorization y RLS; RF-09/11 → acceso de 
 ## Entrega de Fase 7 — 2026-10-31
 
 Fase 7 implementa base RF-02/HU-02 (alta/edición de atributos), RF-06/07 consultas parciales y RF-12/15 evidencia/outbox sin envío. Flujos RF-03/04/05, UI, panel, reportes y worker siguen en sus fases. Ver [BACKEND_API](BACKEND_API.md).
+
+
+## Incremento de Fase 8
+
+HU-02/06/07: consultas, fichas, filtros y atributos de bienes con API disponible; HU-10: acceso/MFA/sesión. CA8 y límites en [FRONTEND](FRONTEND.md). Administración (9), movimientos de escritura (10), reportes (11) y automatizaciones (12) no implementados por este incremento.

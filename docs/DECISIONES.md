@@ -140,3 +140,8 @@ D-22 — Implementación de Fase 6 bajo D-21: dos roles e inventario compartido;
 ## D-25 — Aceptación de Fase 7 y continuidad de Fase 8
 
 2026-11-01. Evidencia literal: «Apruebo fase 7 y en un nuevo chat inicia fase 8». Acepta entrega `6035e125617a2c8d6e366df49940b8d720f8d535`, cumple CA7-06 y cierra Fase 7 COMPLETADA con sus límites explícitos. Autoriza únicamente Fase 8 — Frontend funcional para iniciar en un nuevo chat, ejecución PENDIENTE. No implica ejecución aquí, creación automática de conversación ni aprobación de fases 9–15, despliegue, producción, datos reales, gastos o permisos reales. Conserva evidencia local y F1-SEG-01/02/03. Actualiza el antecedente EN_REVISION de D-24 sin reescribir evidencias.
+
+
+## D-26 — Ejecución de Fase 8 (2026-11-01)
+
+El usuario ratifica D-25: «Inicia únicamente la Fase 8 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 9 ni despliegues». Implementación y verificación limitadas a frontend sobre servicios disponibles, entrega EN_REVISION en FRONTEND.md. No acepta anticipadamente CA8-06 ni autoriza Fase 9, gasto o despliegue.

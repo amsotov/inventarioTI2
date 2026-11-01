@@ -10,9 +10,10 @@
     "skipLibCheck": true
   },
   "include": [
-    "apps/**/*.ts",
     "tests/auth/**/*.ts",
     "tests/security/**/*.ts",
-    "tests/api/**/*.ts"
+    "tests/api/**/*.ts",
+    "apps/server/**/*.ts",
+    "tests/ui/**/*.ts"
   ]
 }

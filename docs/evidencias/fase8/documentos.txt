@@ -1,0 +1,2 @@
+OK: Fase 8 EN_REVISION; filas 9–15, prototipo, migraciones y evidencia histórica preservados.
+OK: enlaces, criterios CA8, seguimientos y git diff --check.

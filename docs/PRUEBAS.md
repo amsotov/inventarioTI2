@@ -220,3 +220,17 @@ CA7-01 a CA7-05 verificados con el alcance limitado de [BACKEND_API](BACKEND_API
 ## Cierre documental de Fase 7 — 2026-11-01
 
 D-25 cumple CA7-06 por aceptación expresa de la entrega `6035e125617a2c8d6e366df49940b8d720f8d535`. Se conserva evidencia de 49 pruebas de aplicación y 46 comprobaciones históricas; no se repiten tests de aplicación en este cierre sin cambios de código. Revisión de estados, enlaces locales, preservación de código/evidencia y filas 9–15; `git diff --check` y SHA remoto comprobados al sincronizar. No se implementa ni verifica Fase 8 aquí. Los estados anteriores EN_REVISION y Fase 8 no autorizada son antecedentes actualizados por D-25.
+
+## Fase 8 — 2026-11-01
+
+Entrega EN_REVISION, base `1297549`. Evidencia nueva en `docs/evidencias/fase8/`; no se sobrescribe evidencia histórica.
+
+- `npm run build`: TypeScript servidor/UI/pruebas y build Vite aprobados ([salida](evidencias/fase8/build.txt)).
+- `npm test`: 49 pruebas aprobadas de Auth/proveedor/seguridad/API, sin fallos ([salida](evidencias/fase8/regresion.txt)).
+- `npm run test:ui`: 9 pruebas aprobadas, sin fallos ([salida](evidencias/fase8/ui.txt)): lector/sesión/privilegios, MFA/alta/edición persistidas, pérdida de respuesta y replay exacto sin auditoría duplicada, conflicto 412 concurrente, filtros/vacío/XSS, paginación real y reinicio de cursor, responsive/teclado y 503/401 por revocación. El conteo incluye el contenedor de ocho subpruebas.
+- `npm audit --json`: cero vulnerabilidades conocidas reportadas ([salida](evidencias/fase8/audit.json)). Se retiró la dependencia estática que incorporaba tres avisos moderados; se registran solo archivos públicos compilados explícitos.
+- `python3 docs/evidencias/fase8/verificar.py` y `git diff --check`: continuidad, enlaces y preservación ([salida](evidencias/fase8/documentos.txt)).
+
+Ensayo aislado con Docker/PostgreSQL 17, migraciones aceptadas, credenciales aleatorias temporales, roles SQL efectivos y Chromium. Auth externo es doble: no acredita Supabase gestionado, TOTP real, correo o enlaces enviados. Las llamadas de negocio recorren BFF/RLS/PostgreSQL reales; solo se interceptan la pérdida de respuesta después del commit y un fallo 503 declarado. Localhost HTTP en pruebas aprovecha la excepción Secure del navegador, sin modificar cookie ni rebajar la validación HTTPS de main. No es validación de TLS operativo.
+
+Revisión visual y comprobación de ancho a 1440×900, 820×1180 y 390×844; [computador](evidencias/fase8/computador.png), [iPad](evidencias/fase8/ipad.png), [iPhone](evidencias/fase8/iphone.png). Tabla con desplazamiento horizontal propio y foco visible. Emulación Chromium; no hardware iPad/iPhone, Safari, lector de pantalla ni certificación WCAG completa. No pruebas de carga, producción, correo externo, respaldo operativo ni nuevos módulos. F1-SEG-01/02/03 permanecen abiertos; sin Fase 9 ni despliegue.

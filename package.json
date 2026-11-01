@@ -2,9 +2,11 @@
   "name": "inventarioti2",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc -p apps/web/tsconfig.json && vite build apps/web --outDir ../../dist/web",
     "test": "tsx --test tests/auth/*.test.ts tests/security/*.test.ts tests/api/*.test.ts",
-    "start": "node dist/apps/server/main.js"
+    "start": "node dist/apps/server/main.js",
+    "dev:web": "vite apps/web --host 127.0.0.1",
+    "test:ui": "tsx --test tests/ui/*.test.ts"
   },
   "repository": {
     "type": "git",
@@ -18,13 +20,19 @@
   "dependencies": {
     "@supabase/supabase-js": "2.118.0",
     "fastify": "5.12.7",
-    "pg": "8.23.1"
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "@types/node": "24.19.2",
     "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "tsx": "4.23.15",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vite": "8.3.5"
   },
   "private": true,
   "engines": {

@@ -74,3 +74,11 @@ Fase 7 EN_REVISION: consultas HTTP autorizadas de bienes/funcionarios/unidades/m
 ## 2026-11-01 — Cierre de Fase 7
 
 D-25 registra aceptación y cierre de Fase 7 y autorización de Fase 8 para un nuevo chat. Solo documentación; sin cambios de aplicación, migraciones, Fase 8 ejecutada ni despliegues.
+
+
+## 2026-11-01 — Fase 8 para revisión
+
+- Frontend React/Vite con diseño aceptado, acceso/MFA/sesión y consultas/fichas/filtros/cursor.
+- Alta/edición de atributos con CSRF, versión e idempotencia; replay explícito ante resultado incierto.
+- Assets compilados bajo BFF, pruebas UI/PostgreSQL y capturas responsive; documentación de límites.
+- Fase 8 EN_REVISION; Fase 9 no iniciada, sin despliegue.

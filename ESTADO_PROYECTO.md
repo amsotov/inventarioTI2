@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-01
-**Fase:** 7 — COMPLETADA; entrega y cierre aprobados por D-25.
+**Fase:** 8 — EN_REVISION; frontend entregado para aceptación.
 **Modo:** GUIADO
 **Última fase completada:** 7.
-**Última fase autorizada:** 8, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 9–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 8, ejecutada y EN_REVISION. Fases 9–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 7 aceptada y cerrada por D-25. Iniciar únicamente Fase 8 en un nuevo chat con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre y continuidad, sin implementar Fase 8 ni desplegar. Los apartados anteriores al cierre final son antecedentes históricos.
+**Punto vigente de continuidad:** Revisar la entrega de Fase 8 en docs/FRONTEND.md. CA8-06 pendiente de aceptación propia. No iniciar Fase 9 ni desplegar; los apartados anteriores a la entrega final son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -339,3 +339,12 @@ Punto de inicio para el nuevo chat:
 4. Verificar fidelidad visual, responsive en computador/iPad/iPhone, teclado/accesibilidad y estados carga/vacío/error/éxito/permiso, más recorridos UI/API con datos sintéticos en entorno local aislado. Inspeccionar herramientas reales y registrar limitaciones; emulación no equivale a dispositivos reales. No modificar el prototipo/evidencia aceptados por inferencia.
 5. No implementar panel administrativo (9), nuevos procesos empresariales de movimientos (10), reportes/exportadores (11) o envío/automatización del outbox (12) por dependencia. Si falta backend necesario, documentar el bloqueo y avanzar lo independiente dentro de Fase 8, sin abrir otra fase ni proyectos remotos. Sin Spec Kit, gastos o despliegues sin autorización propia.
 6. Preservar F1-SEG-01/02/03, UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Registrar pruebas ejecutadas/no ejecutadas, pendientes y criterios; actualizar documentación y GitHub, verificar SHA remoto y entregar Fase 8 para su propia revisión. No marcar COMPLETADA ni iniciar Fase 9 sin aceptación/autorización independiente.
+
+
+## Entrega de Fase 8 — vigente 2026-11-01
+
+Ejecución autorizada D-25 y ratificada por solicitud actual, registrada D-26. Base limpia `1297549`, recuperada por avance directo. Se implementa únicamente frontend funcional con React/Vite, BFF mismo origen, acceso/MFA, listas/fichas/filtros/cursor y alta/edición de bienes. Sin nuevos contratos o migraciones empresariales; controles efectivos conservados en servidor. Plan y criterios/archivos/riesgos en [FRONTEND](docs/FRONTEND.md), verificaciones en [PRUEBAS](docs/PRUEBAS.md).
+
+Estado EN_REVISION, última completada 7; aceptación CA8-06 pendiente del usuario. No se presenta integración gestionada como probada: Auth es doble en pruebas; BFF/RLS/PostgreSQL reales y sintéticos. No correo externo, Safari/dispositivos reales, TLS productivo, carga ni continuidad operativa verificados. Prototipo/migraciones/evidencias históricas preservados. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+Siguiente acción: revisión y aceptación de Fase 8. Fase 9 requiere autorización independiente y permanece PENDIENTE / NO OTORGADA junto con 10–15. Sin despliegue, datos reales, cuentas reales, permisos remotos o gastos. Cambios se entregan mediante commit/push y verificación de SHA remoto, conforme AGENTS.

@@ -1,0 +1,22 @@
+
+> inventarioti2@1.0.0 test:ui
+> tsx --test tests/ui/*.test.ts
+
+▶ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (403.150617ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (597.4069ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (184.175816ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (205.892345ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (325.686369ms)
+  ✔ paginación real y reinicio de cursor al filtrar (274.386978ms)
+  ✔ responsive computador/iPad/iPhone y teclado (374.543019ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (147.607514ms)
+✔ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (7253.111835ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7914.5904

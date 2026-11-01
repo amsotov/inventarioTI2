@@ -1,0 +1,64 @@
+
+> inventarioti2@1.0.0 test
+> tsx --test tests/auth/*.test.ts tests/security/*.test.ts tests/api/*.test.ts
+
+▶ Fase 7: composición HTTP/Auth/RLS/PostgreSQL (identidad doble)
+  ✔ sin sesión, lectura, CSRF y Origin denegados (92.902297ms)
+  ✔ validación estricta y errores sin detalles SQL (10.631121ms)
+  ✔ fallo de configuración revierte bien/comando/auditoría/outbox (12.16481ms)
+  ✔ alta/replay tras respuesta perdida y conflicto de payload (24.721705ms)
+  ✔ unicidad canónica y falta de serie inválida (6.184806ms)
+  ✔ edición: versión requerida, obsoleta y replay antes de versión (30.944978ms)
+  ✔ dos actualizaciones concurrentes: una gana, otra 412 (25.460331ms)
+  ✔ repetición concurrente no duplica efectos (14.106929ms)
+  ✔ consultas, ETag, filtros UTC y cursor ligado a filtros (43.538337ms)
+  ✔ dos conexiones SQL reales compiten por versión sin locks de Auth (18.3592ms)
+  ✔ fallo final del outbox revierte toda la evidencia (21.232086ms)
+  ✔ proyección positiva de funcionarios (7.038536ms)
+  ✔ runtime no obtiene DML; función deniega sin sesión y para lectura (20.848996ms)
+  ✔ revocación vigente impide replay y lectura (3.926284ms)
+✔ Fase 7: composición HTTP/Auth/RLS/PostgreSQL (identidad doble) (4398.127824ms)
+▶ Fase 5: PostgreSQL real aislado, proveedor DOBLE (no Supabase real)
+  ✔ cookie segura, secreto fuera de respuesta, campos desconocidos y Origin (80.304669ms)
+  ✔ inactividad exacta 30 min; polling no renueva; actividad explícita sí (16.688014ms)
+  ✔ absoluto 8 h incluso con actividad (62.811813ms)
+  ✔ revocación por estado y versión vigente en siguiente petición (17.019462ms)
+  ✔ MFA obligatorio; error de código; rotación; parcial 10 min (21.165432ms)
+  ✔ logout local persiste aunque falle proveedor; conciliación durable (10.845577ms)
+  ✔ reenvío invalida enlace anterior y recuperación expira exactamente a 30 min (15.443457ms)
+  ✔ consumo concurrente único y revocación de sesiones previas (23.771996ms)
+  ✔ fallo externo deja uncertain sin reejecución y bloquea credencial previa (20.207407ms)
+  ✔ invitación pendiente, 24 h, activación lectura, cuenta desactivada no revive (38.256754ms)
+  ✔ recuperación pública genérica; rate limit durable entre instancias (27.228015ms)
+  ✔ cifrado autenticado y persistencia entre instancias; GET enlace no consume (13.672233ms)
+  ✔ invitación administrativa no activa hasta MFA verificado (24.04398ms)
+  ✔ generación externa fallida conserva intención incierta durable (8.085607ms)
+  ✔ entrega reclamada una vez y fallo de transporte incierto sin reenvío (11.534375ms)
+  ✔ tablas nuevas cerradas a PUBLIC y RLS activo (1.145196ms)
+✔ Fase 5: PostgreSQL real aislado, proveedor DOBLE (no Supabase real) (3654.474155ms)
+✔ adaptador real: GoTrue local, sin proyecto gestionado ni correo externo (6092.758191ms)
+▶ Fase 6: roles operativos reales, RLS y seguridad (identidad doble)
+  ✔ matriz cerrada, ambos roles y permisos desconocidos (0.712274ms)
+  ✔ identidades SQL mínimas y arranque rechaza propietario (16.236517ms)
+  ✔ sin contexto no hay filas; GUC de rol/actor falsificado no autoriza (7.717755ms)
+  ✔ lector consulta inventario compartido; cuentas/config/auditoría ocultas (15.822608ms)
+  ✔ lectura no administra ni exporta auditoría; denegación durable sin callback (22.994575ms)
+  ✔ administrador con MFA consulta cuentas; sesión parcial denegada (8.637331ms)
+  ✔ escritura genérica cerrada incluso administrador; bitácora inmutable (38.63209ms)
+  ✔ pool limpio tras rollback y contexto inyectado no es SQL (3.216238ms)
+  ✔ RLS rechaza huella revocada, expirada, versión/estado/credencial/MFA inválidos (31.353571ms)
+  ✔ operación en curso mantiene lock frente a revocación; siguiente petición denegada (81.226723ms)
+  ✔ mutación administrativa exige CSRF incluso si el llamador lo omite (6.595423ms)
+  ✔ fallo de proveedor cierra acceso; sin sesión ni SID falsificado (7.877065ms)
+  ✔ anon/authenticated sin acceso privado ni ejecución de lookup (3.079092ms)
+  ✔ privacidad por proyección positiva sin documento/correo/campos nuevos (0.194904ms)
+  ✔ cabeceras, XSS, CSRF/Origin, inyección, payload y errores sin secretos (124.324529ms)
+✔ Fase 6: roles operativos reales, RLS y seguridad (identidad doble) (2659.858325ms)
+ℹ tests 49
+ℹ suites 0
+ℹ pass 49
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17585.134303

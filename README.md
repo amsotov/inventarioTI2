@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): Fases 0–12 COMPLETADAS y aceptadas (última D-35). **Fase 13 EN_REVISION**: [plan de QA, rendimiento y seguridad](docs/QA_FASE13.md), [matriz](docs/MATRIZ_QA_FASE13.md), defectos corregidos y evidencias. Carga sintética completa: p95 146 ms en consultas y 142 ms en escrituras; XLSX/PDF límite en 3,23/4,06 s. Resultados locales y límites en [PRUEBAS](docs/PRUEBAS.md). Aceptación propia pendiente; Fases 14–15 sin autorización. Correo real deshabilitado y sin despliegue. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Los estados anteriores son antecedentes históricos.
+Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. Fase 13: [QA, rendimiento y seguridad](docs/QA_FASE13.md), [matriz](docs/MATRIZ_QA_FASE13.md), entrega aceptada `16f7bf0`, con 119 pruebas API/seguridad y 39 de navegador superadas. Mediciones y límites locales conservados en [PRUEBAS](docs/PRUEBAS.md). **Fase 14 autorizada para iniciar en un nuevo chat**, ejecución pendiente; Fase 15 sin autorización. Correo real deshabilitado y sin despliegue en este cierre; producción requiere autorización independiente. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Los estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -153,3 +153,12 @@ Entrega aceptada por D-35. Fase 13 autorizada para un nuevo chat; seguir el punt
 > Inicia únicamente la Fase 13 de inventarioTI2, ya autorizada por D-35 en FASES.md y ESTADO_PROYECTO.md. Presenta el plan de QA, rendimiento y seguridad, conserva los límites y actualiza GitHub. No inicies Fase 14 ni despliegues.
 
 Fases 14–15 sin autorización. Sin ejecución de Fase 13, activación/envíos reales ni despliegues en este cierre.
+
+
+## Cierre de Fase 13 — 2026-11-02
+
+Entrega aceptada por D-37. Fase 14 autorizada para iniciar en un nuevo chat; seguir el punto de continuidad al final de [FASES](FASES.md). Este cierre solo registra aceptación/continuidad y no crea automáticamente otra conversación. Abre un nuevo chat con inventarioTI2 e indica:
+
+> Inicia únicamente la Fase 14 de inventarioTI2, ya autorizada por D-37. Presenta el plan de despliegue, operación y continuidad, conserva los límites y actualiza GitHub. No inicies Fase 15 ni despliegues a producción.
+
+Fase 15 sin autorización. Sin implementación de Fase 14, activación/envíos reales ni despliegues en este cierre. Los límites de QA y F1-SEG-01/02/03 se conservan.

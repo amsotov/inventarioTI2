@@ -1,7 +1,7 @@
 # QA, rendimiento y seguridad — Fase 13
 
-2026-11-02 · EN_REVISION · D-35 y solicitud vigente D-36. Base `da1236e`.
-Responsable de ejecución: Codex; aceptación: usuario. Última fase completada: 12.
+2026-11-02 · COMPLETADA por aceptación expresa D-37. Base de ejecución `da1236e`; entrega aceptada `16f7bf0a4d7a088eae444488874daefc19c35630`.
+Responsable de ejecución: Codex; aceptación: usuario. Última fase completada: 13. Fase 14 autorizada para un nuevo chat, ejecución pendiente. Sin despliegue en este cierre.
 
 ## Plan presentado antes de ejecutar los cambios
 
@@ -23,7 +23,7 @@ Archivos previstos: suites `tests/qa/`, prueba trazable de buscador, correccione
 | CA13-03 | Carga A-09 completa, latencias/errores/integridad registradas y comparadas con umbrales |
 | CA13-04 | Límites de exportación y primer intento medidos; no se confunden aceptación del doble y entrega física |
 | CA13-05 | Accesibilidad automática y revisión de teclado/responsive con hallazgos y límites; evidencia reproducible y GitHub sincronizado |
-| CA13-06 | Aceptación expresa del usuario, PENDIENTE; no se marca COMPLETADA automáticamente |
+| CA13-06 | CUMPLIDO por aceptación expresa D-37 del usuario el 2026-11-02 |
 
 Una dependencia ausente bloquea solo su ensayo. No se convierte un criterio parcial en cumplimiento total. No se inicia Fase 14/15 ni se despliega. Correo real deshabilitado; sin Resend, datos/cuentas reales, cambios remotos de permisos, gastos ni infraestructura. F1-SEG-01/02/03 siguen abiertos. UTC, copia semanal, máximo 168 h entre éxitos, RPO 168 h, RTO 8 h y copias 30 días se preservan; disponibilidad, restauración y continuidad productiva quedan sin acreditar.
 
@@ -74,6 +74,11 @@ Sin defectos críticos/altos abiertos identificados en este alcance local; las d
 
 ## Estado de salida y pendientes
 
-CA13-01/02/03/04 verificados en el alcance local descrito; CA13-05 verificado parcialmente, con accesibilidad/hardware e integraciones excluidos explícitamente y sincronización GitHub comprobada al entregar. CA13-06 **PENDIENTE** de aceptación expresa. Fase 13 **EN_REVISION**, última completada 12. La revisión de producto y los límites operativos anteriores siguen vigentes.
+CA13-01/02/03/04 verificados en el alcance local descrito; CA13-05 conserva su alcance parcial, con accesibilidad/hardware e integraciones excluidos explícitamente y sincronización GitHub comprobada al entregar. CA13-06 **CUMPLIDO** por aceptación expresa D-37. Fase 13 **COMPLETADA**, última completada 13. La aceptación conserva los límites operativos y no convierte verificaciones parciales en cumplimiento integral.
 
-NO EJECUTADOS: Supabase/Auth/MFA gestionados y advisors sobre ese servicio, Resend/buzones/SPF/DKIM/DMARC/rebotes/entrega física, Safari/hardware/lector de pantalla y WCAG completa, apertura física Excel/Acrobat, pentest independiente, SQL Server, disponibilidad mensual y respaldo/restauración/rollback operativos. No se inicia infraestructura de Fase 14 para resolverlos. F1-SEG-01/02/03 permanecen abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Siguiente paso: revisión y aceptación propia de Fase 13; Fases 14–15 requieren autorización independiente y siguen sin iniciar.
+NO EJECUTADOS: Supabase/Auth/MFA gestionados y advisors sobre ese servicio, Resend/buzones/SPF/DKIM/DMARC/rebotes/entrega física, Safari/hardware/lector de pantalla y WCAG completa, apertura física Excel/Acrobat, pentest independiente, SQL Server, disponibilidad mensual y respaldo/restauración/rollback operativos. No se inicia infraestructura de Fase 14 para resolverlos. F1-SEG-01/02/03 permanecen abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Siguiente paso: Fase 14 autorizada por D-37 para iniciar en un nuevo chat, ejecución pendiente. Fase 15 sin autorización; producción requiere aprobación independiente. No se ejecuta Fase 14 ni se despliega en este cierre.
+
+
+## Cierre aprobado — 2026-11-02
+
+D-37 acepta la entrega `16f7bf0a4d7a088eae444488874daefc19c35630` mediante «apruebo fase 13 inicia en nuevo chat fase 14». Fase 13 COMPLETADA y CA13-06 CUMPLIDO. Se conservan resultados/evidencias, cinco defectos corregidos, alcance parcial CA13-05 y todos los pendientes gestionados/hardware/operativos. La aprobación no equivale a conformidad WCAG integral, entrega de correo real o continuidad productiva. Fase 14 autorizada para iniciar en un nuevo chat, sin ejecución en este cierre; continuidad en [FASES](../FASES.md) y [ESTADO](../ESTADO_PROYECTO.md).

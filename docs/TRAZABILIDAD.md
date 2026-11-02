@@ -144,3 +144,8 @@ Catálogo, minimización, destino fijado, proceso conservado, reintentos/agote/p
 ## Consolidación de QA — Fase 13 (D-35/D-36)
 
 La [matriz ejecutada RF-01–16/HU-01–16/CR-01–20/CA-N01–07](MATRIZ_QA_FASE13.md) vincula suites y límites; [QA_FASE13](QA_FASE13.md) establece CA13-01–06 y [PRUEBAS](PRUEBAS.md#fase-13--qa-rendimiento-y-seguridad) conserva resultados finales/fallos iniciales. RNF-04 legal, RNF-05 accesibilidad completa/hardware y RNF-07 disponibilidad/continuidad siguen parciales; no se infiere cumplimiento integral por pasar pruebas sintéticas. Fase 13 EN_REVISION, CA13-06 pendiente. Fases 14–15 sin autorización; sin despliegue.
+
+
+## Aceptación de QA y continuidad — D-37
+
+Fase 13 COMPLETADA por aceptación expresa el 2026-11-02 de `16f7bf0a4d7a088eae444488874daefc19c35630`; CA13-06 CUMPLIDO. [Matriz](MATRIZ_QA_FASE13.md), resultados y límites parciales conservados; RNF-04 legal, RNF-05 accesibilidad integral/hardware y RNF-07 disponibilidad/continuidad no se convierten en cumplimiento total por aceptación. Fase 14 autorizada únicamente para iniciar en un nuevo chat, ejecución pendiente; Fase 15 sin autorización, producción requiere aprobación independiente. Sin ejecución de Fase 14 ni despliegue en este cierre.

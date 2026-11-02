@@ -377,3 +377,12 @@ Accesibilidad: teclado/foco/error, salto conserva pantalla, tablas desplazables,
 El ensayo de carga utiliza cuota 2 CPU/8 GiB y tres conexiones por pool, HTTP/DB loopback sin TLS/WAN; identidad/correo dobles inmediatos. No extrapola p95 a servicios gestionados, capacidad contratada o disponibilidad mensual. La preparación usa SQL propietario solo en DB efímera propia; las 1.200 peticiones medidas conservan autorización/controles reales. Los [ensayos iniciales](evidencias/fase13/ensayos-iniciales.md) registran defectos reproducidos, timeout/configuración del runner y fallos de arranque simultáneo; no se sobrescriben como si nunca hubieran ocurrido.
 
 NO EJECUTADOS/acreditados: Supabase/Resend/Auth/MFA gestionados, advisors operativos, buzones/dominio/rebotes/entrega física, Safari/hardware/lector de pantalla/WCAG completa, Excel/Acrobat físicos, pentest externo, SQL Server, disponibilidad mensual ni respaldo/restauración/operación productivos. [Fuentes técnicas](evidencias/fase13/fuentes.txt). F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días preservados. Fases 14–15 sin autorización; sin despliegue.
+
+
+## Cierre aprobado de Fase 13 — 2026-11-02
+
+D-37: «apruebo fase 13 inicia en nuevo chat fase 14». Entrega aceptada `16f7bf0a4d7a088eae444488874daefc19c35630`; Fase 13 COMPLETADA y CA13-06 cumplido. Resultados originales 119/119 API/seguridad, 39/39 navegador, 35 análisis axe y 79 comprobaciones programáticas, métricas A-09, capturas y límites preservados literalmente. La aceptación no convierte ensayos locales en integración gestionada, conformidad WCAG completa ni continuidad operativa acreditadas.
+
+Este cierre modifica diez documentos de control/continuidad: revisión de estados/CA13-06/D-37, enlaces locales y `git diff --check`, con comprobación de que todo lo demás permanece idéntico a `16f7bf0`. No se repiten build ni pruebas funcionales al no cambiar aplicación, migraciones, dependencias, tests o evidencia. El verificador histórico de Fase 13 conserva su estado de entrega EN_REVISION; no se modifica ni se presenta como verificador del cierre. GitHub mediante commit/push normales, autoría noreply y comparación SHA remoto al entregar.
+
+Fase 14 autorizada para un nuevo chat, ejecución PENDIENTE; Fase 15 sin autorización. No se crea conversación automáticamente ni se ejecuta Fase 14, activa correo o despliega en este cierre. Producción requiere autorización independiente; F1-SEG-01/02/03 y objetivos de continuidad intactos. Los estados EN_REVISION anteriores son antecedentes históricos.

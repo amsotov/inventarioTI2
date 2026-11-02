@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-02 — Cierre aprobado de Fase 13
+
+- D-37 acepta entrega `16f7bf0`; CA13-06 cumplido y Fase 13 COMPLETADA con sus límites documentados.
+- Fase 14 autorizada para iniciar en un nuevo chat; ejecución pendiente y punto de continuidad registrado. Fase 15 sin autorización; producción requiere autorización independiente.
+- Solo documentación de cierre; aplicación, migraciones, dependencias, pruebas y evidencias aceptadas preservadas. Sin ejecución de Fase 14, correo real ni despliegue en este cierre.
+
 ## 2026-11-02 — Fase 13: QA, rendimiento y seguridad (EN_REVISION)
 
 - Matriz RF/HU/CR/CA, regresión consolidada, carga A-09 completa, accesibilidad y revisión de seguridad con evidencia reproducible.

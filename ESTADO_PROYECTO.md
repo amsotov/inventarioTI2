@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 13 — QA, rendimiento y seguridad; EN_REVISION (D-35/D-36).
+**Fase:** 13 — COMPLETADA; entrega y cierre aprobados por D-37.
 **Modo:** GUIADO
-**Última fase completada:** 12.
-**Última fase autorizada:** 13, ejecutada; aceptación CA13-06 PENDIENTE. Fases 14–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 13.
+**Última fase autorizada:** 14, para iniciar en un nuevo chat; ejecución PENDIENTE. Fase 15 PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
 
-**Punto vigente de continuidad:** Fase 13 entregada para revisión bajo D-35/D-36. Plan, criterios, defectos, mediciones y límites en [QA_FASE13](docs/QA_FASE13.md); matriz en [MATRIZ_QA_FASE13](docs/MATRIZ_QA_FASE13.md). Revisar/aceptar Fase 13; no iniciar Fase 14 ni desplegar. Correo real deshabilitado y seguimientos conservados. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 13 aceptada y cerrada por D-37. Iniciar únicamente Fase 14 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de [FASES](FASES.md). Este cierre solo registra aceptación/continuidad; no ejecuta Fase 14 ni despliega. Correo real deshabilitado, Fase 15 sin autorización y seguimientos conservados. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -502,3 +502,23 @@ Pruebas finales: build, 119/119 API/seguridad, 39/39 navegador, 35 análisis axe
 Riesgos: dobles de identidad/correo y loopback no acreditan Supabase/Resend gestionados, entrega física, infraestructura contratada, Safari/hardware/lector de pantalla/WCAG completa, pentest independiente, disponibilidad o continuidad productiva. Advisors sin stack/CLI operativo, no modificados proyectos remotos. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin Spec Kit, servicios/costos, datos reales, permisos remotos o despliegue.
 
 Archivos: selección/renderizador de reportes, main/avisos UI; helper/tests API/seguridad/QA, package/lock/tsconfig; QA/matriz/evidencias, PRUEBAS/TRAZABILIDAD/SEGURIDAD/REPORTES/manual y documentos de control. Siguiente acción: revisión/aceptación propia de Fase 13 (CA13-06 pendiente). No marcar COMPLETADA ni iniciar Fases 14–15. Sincronización normal a main, autoría noreply y comparación SHA remoto al entregar.
+
+
+## Cierre aprobado de Fase 13 y continuidad autorizada de Fase 14 — vigente
+
+2026-11-02. Evidencia literal: «apruebo fase 13 inicia en nuevo chat fase 14». D-37 acepta la entrega `16f7bf0a4d7a088eae444488874daefc19c35630`, cumple CA13-06 y cierra Fase 13 COMPLETADA. Conserva 119/119 pruebas API/seguridad, 39/39 de navegador, 35 análisis axe sin infracciones detectadas y 79 comprobaciones programáticas. Carga sintética A-09 y exportaciones/avisos con doble conservan sus resultados y límites; la aceptación no acredita Supabase/Resend gestionados, Safari/hardware/WCAG completa ni continuidad productiva.
+
+Fase 14 AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Este cierre solo registra aceptación y continuidad y sincroniza GitHub. No se crea automáticamente otra conversación ni se ejecuta Fase 14 aquí. Fase 15 PENDIENTE / NO OTORGADA; producción requiere autorización independiente. Sin despliegue, envíos reales, datos/cuentas reales, gastos ni cambios remotos de permisos en este cierre. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, requisitos/cierre D-14, arquitectura/ADR D-17, datos/acceso/seguridad y entregas aceptadas hasta D-37. Revisar `docs/DESPLIEGUE.md` (plantilla pendiente), `docs/QA_FASE13.md`, matriz/evidencias, código/migraciones/pruebas y límites reales. No volver a pedir autorización de Fase 14.
+2. Presentar el plan limitado a despliegue, operación y continuidad: aislamiento local/pruebas/producción, configuración/secretos, CI de verificación, control de promoción, migraciones, observabilidad, copias/restauración, rollback y respuesta a incidentes. Preparar runbook y checklist verificables. No iniciar Fase 15 por dependencia.
+3. Partir de la arquitectura aceptada como referencia, sin convertir estimaciones o alternativas en servicios contratados. Inspeccionar capacidades/configuración disponibles antes de preguntar. Si faltan dependencias externas, avanzar con documentación y ensayos locales aislados; registrar el bloqueo solo del ensayo afectado. Datos sintéticos y correo capturado/doble; no crear cuentas reales, contratar recursos, modificar permisos remotos ni activar envíos por inferencia.
+4. Preservar sesión/rol/MFA vigentes, Origin/CSRF, HTTPS de operación, pools SQL separados/contexto LOCAL, RLS/mínimo privilegio y configuración fuera de Git. Worker de avisos separado y deshabilitado por defecto; ninguna web ni pipeline debe despachar pendientes reales automáticamente. No convertir las pruebas con dobles en integración gestionada acreditada.
+5. Mantener UTC y requisitos de continuidad: copia semanal con máximo 168 h entre éxitos, conservación 30 días, RPO ≤168 h y RTO ≤8 h; restauración antes de producción y trimestral después. F1-SEG-03 debe concretar operador, ubicación, cifrado/custodia de claves, horario y alertas, todavía sin aprobar. No fijar domingo 02:00 UTC como decisión aceptada: es una propuesta histórica. Ensayar cobertura de datos/historia/auditoría/outbox, roles/privilegios, identidad/configuración y artefactos necesarios; no afirmar recuperación integral por un pg_dump aislado.
+6. Documentar fallos de copia, pérdida/recuperación de servicio, rollback y conciliación de efectos externos inciertos. Preservar evidencia e idempotencia; recuperación no debe restaurar sesiones activas ni reenviar avisos ambiguos. Probar procedimientos únicamente en recursos sintéticos propios, sin borrar ni alterar datos reales.
+7. Conservar F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto/costos pendientes), F1-SEG-03 y límites gestionados/hardware de QA. Disponibilidad mensual 99,5 % no queda acreditada por una sesión ni por scripts. Mantener CI de comprobación separado de despliegues automáticos por push; destinos y promociones deben ser explícitos. Producción requiere autorización expresa adicional; no se deduce del inicio de Fase 14.
+8. Registrar plan/criterios, pruebas ejecutadas/fallidas/no ejecutadas, evidencias y bloqueos; actualizar documentación/GitHub y comprobar SHA remoto. Entregar Fase 14 EN_REVISION para aceptación propia; no marcar COMPLETADA ni iniciar Fase 15 sin aprobación independiente.
+
+Verificación de este cierre: únicamente documentación; revisión de estados/CA13-06/D-37 y enlaces locales, `git diff --check` y preservación literal de aplicación, migraciones, dependencias, tests y todas las evidencias aceptadas frente a `16f7bf0`. No se repiten build/suites funcionales porque no cambia código. Los verificadores históricos, incluido `docs/evidencias/fase13/verificar.py`, conservan las condiciones EN_REVISION de su entrega original y no se reescriben para adaptarlos al cierre. Commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar.

@@ -1,0 +1,39 @@
+
+> inventarioti2@1.0.0 test:ui
+> tsx --test tests/ui/*.test.ts
+
+▶ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (481.478896ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (637.120012ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (186.231764ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (249.709219ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (276.204791ms)
+  ✔ paginación real y reinicio de cursor al filtrar (308.564633ms)
+  ✔ responsive computador/iPad/iPhone y teclado (307.301227ms)
+  ✔ panel: cuenta, catálogo, parámetros y responsive real (872.257789ms)
+  ✔ panel: respuesta perdida y replay sin duplicar evidencia (433.893304ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (139.085128ms)
+✔ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (10055.651993ms)
+▶ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (581.115049ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (724.858012ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (190.018927ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (223.342551ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (292.728247ms)
+  ✔ paginación real y reinicio de cursor al filtrar (240.546217ms)
+  ✔ responsive computador/iPad/iPhone y teclado (477.858735ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (138.618044ms)
+✔ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (10917.660187ms)
+▶ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ alta de funcionario y cancelación sin persistencia (404.740944ms)
+  ✔ asignación y respuesta perdida con replay exacto (464.317904ms)
+  ✔ historia, devolución, corrección, responsive y teclado (832.863231ms)
+✔ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (9100.273961ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32391.502988

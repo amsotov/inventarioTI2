@@ -1,0 +1,10 @@
+Enlaces locales revisados: 198; sin faltantes.
+Archivos aceptados preservados: prototipo/
+Archivos aceptados preservados: supabase/migrations/
+Archivos aceptados preservados: docs/evidencias/fase2/
+Archivos aceptados preservados: docs/evidencias/fase4/
+Archivos aceptados preservados: docs/evidencias/fase8/
+Archivos aceptados preservados: docs/evidencias/fase9/
+Fase 10 EN_REVISION; última completada 9; fases 11–15 PENDIENTE / NO OTORGADA.
+Sin instalación Spec Kit ni workflows de despliegue.
+git diff --cached --check: correcto.

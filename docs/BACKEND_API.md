@@ -42,3 +42,8 @@ No probado aquí: Supabase gestionado, credenciales reales, dispositivos/UI inte
 ## Cierre aprobado — 2026-11-01
 
 D-25 acepta la entrega `6035e125617a2c8d6e366df49940b8d720f8d535` con sus límites y pendientes intactos; no agrega funcionalidades ni nuevas verificaciones operativas. Fase 8 autorizada para un nuevo chat, sin ejecución aquí.
+
+
+## Incremento de Fase 10 — 2026-11-02
+
+Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.

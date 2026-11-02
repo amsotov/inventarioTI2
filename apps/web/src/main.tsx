@@ -1,3 +1,4 @@
+import { Processes, protectProcessNavigation } from "./processes";
 import { Admin } from "./admin";
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
@@ -78,6 +79,7 @@ function App() {
   const generation = useRef(0);
   useEffect(() => {
     const change = () => {
+      if (protectProcessNavigation()) return;
       generation.current++;
       setView(route());
       setError("");
@@ -727,6 +729,24 @@ function App() {
                   </>
                 )}
               </section>
+            )}
+            {!edit && !pending && (
+              (resource === "funcionarios" && !ref && canWrite) ||
+              (detail && ["bienes", "funcionarios"].includes(resource))
+            ) && (
+              <Processes
+                key={"processes:" + view}
+                resource={resource}
+                record={ref ? detail : null}
+                csrf={session.csrf}
+                canWrite={canWrite}
+                onExpired={() => setSession(null)}
+                onStart={() => setNotice("")}
+                onSaved={() => {
+                  setNotice("Proceso confirmado y auditado.");
+                  setRevision(x => x + 1);
+                }}
+              />
             )}
             {(newItem || edit) && canWrite && (
               <section className="card">

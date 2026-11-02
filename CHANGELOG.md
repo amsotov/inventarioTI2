@@ -100,3 +100,10 @@ D-25 registra aceptación y cierre de Fase 7 y autorización de Fase 8 para un n
 ## 2026-11-01 — Cierre de Fase 8
 
 D-27 registra aceptación y cierre de Fase 8 y autorización de Fase 9 para un nuevo chat. Solo documentación; sin cambios de aplicación, migraciones, ejecución de Fase 9 ni despliegues.
+
+
+## 2026-11-02 — Fase 10 EN_REVISION
+
+- Funcionarios RUT/ID, pertenencias, custodia, condición, bajas/reactivaciones y correcciones/historia paginada, con UI/API y migración aditiva.
+- Permisos/RLS, versiones, replay, transacciones y pruebas HTTP/SQL/navegador sintéticas; documentación en PROCESOS_EMPRESARIALES y PRUEBAS.
+- D-30 ratifica D-29; aceptación propia pendiente. Fase 11 no iniciada; sin despliegue.

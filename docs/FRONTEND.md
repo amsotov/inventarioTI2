@@ -43,3 +43,8 @@ D-27 acepta la entrega `570e90d10819999e96e17a4f88dfd30c8e1f5224` mediante «Apr
 ## Incremento de Fase 9 — 2026-11-01
 
 Incremento Fase 9: navegación Administración, componente separado de panel, cuentas/unidades/destinatario sobre API real, paginación, motivo/confirmación, errores y reintento idéntico. Alcance/evidencia vigente en [ADMINISTRACION](ADMINISTRACION.md). Fase 8 sigue aceptada; Fase 10 no iniciada.
+
+
+## Incremento de Fase 10 — 2026-11-02
+
+Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.

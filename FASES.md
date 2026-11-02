@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 9 — COMPLETADA; entrega y cierre aprobados por D-29.
+**Fase actual:** 10 — EN_REVISION; ejecución D-29/D-30, aceptación pendiente.
 **Última fase completada:** 9.
-**Próxima fase:** 10 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 11–15:** PENDIENTE / NO OTORGADA.
+**Próxima fase:** 11 — PENDIENTE / NO OTORGADA. **Fases 11–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 autorizada para un nuevo chat, ejecución pendiente; fases 11–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 ejecutada, EN_REVISION; fases 11–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -20,7 +20,7 @@
 | 7 | Backend y API | Servicios, reglas empresariales y contratos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-25 |
 | 8 | Frontend funcional | Pantallas e integración con API | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-27 |
 | 9 | Panel de administración | Usuarios, permisos, catálogos y parámetros | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-29 |
-| 10 | Procesos y módulos empresariales | Casos de uso, estados y movimientos | PENDIENTE | AUTORIZADA para un nuevo chat por D-29; ejecución no iniciada |
+| 10 | Procesos y módulos empresariales | Casos de uso, estados y movimientos | EN_REVISION | Ejecución D-29/D-30; aceptación CA10-06 pendiente |
 | 11 | Indicadores, reportes y exportación | Dashboards, filtros, Excel/PDF | PENDIENTE | NO OTORGADA |
 | 12 | Notificaciones y automatización | Eventos, alertas y tareas | PENDIENTE | NO OTORGADA |
 | 13 | QA, rendimiento y seguridad | Pruebas, regresión y accesibilidad | PENDIENTE | NO OTORGADA |
@@ -397,3 +397,14 @@ Punto de inicio para el nuevo chat:
 5. Coordinar estado/historia/auditoría/outbox/resultado idempotente en una transacción con versión esperada y locks ordenados conforme al diseño existente. Cambios de persistencia mediante migraciones nuevas aditivas, sin modificar las aceptadas ni abrir DML genérico. Probar integridad, concurrencia, rollback, replay y denegaciones con datos sintéticos, más recorridos UI/API, confirmación/motivo, cancelación y errores/responsive según el diseño aprobado.
 6. No implementar indicadores/reportes/exportadores (11), procesamiento/envío outbox o automatizaciones (12), ni otras fases por dependencia. Mantener los límites de identidad/correo gestionados y advisors pendientes; no crear cuentas reales, modificar permisos remotos, gastar, instalar Spec Kit ni desplegar por inferencia.
 7. Conservar F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Registrar verificaciones ejecutadas/no ejecutadas, criterios, riesgos y bloqueos; actualizar documentación y GitHub, verificar SHA remoto y entregar Fase 10 para aceptación propia. No marcar COMPLETADA ni iniciar Fase 11 sin autorización independiente.
+
+
+## Entrega de Fase 10 — vigente, 2026-11-02
+
+Solicitud: «Inicia únicamente la Fase 10 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 11 ni despliegues», continuada por «continua». D-30 ratifica D-29; base limpia actualizada por avance directo a `22d93c4`. Plan presentado antes de implementar: funcionarios RUT/ID, pertenencias, custodia/movimientos, condición/estados, historia y correcciones, controles transaccionales, UI, pruebas y documentación/GitHub.
+
+Entregables, archivos, criterios CA10-01 a CA10-06 y límites en [PROCESOS_EMPRESARIALES](docs/PROCESOS_EMPRESARIALES.md); evidencia en [PRUEBAS](docs/PRUEBAS.md). Migración aditiva, SQL privado con roles mínimos/RLS, versiones/idempotencia, historia/auditoría/outbox atómicos. Pruebas sintéticas con PostgreSQL real e identidad doble; no datos ni cuentas reales. Codex prepara/verifica; usuario conserva aceptación propia.
+
+Fase 10 EN_REVISION, CA10-06 pendiente; última completada 9. Fases 11–15 PENDIENTE / NO OTORGADA. Sin reportes/exportaciones, procesamiento/envío outbox, permisos remotos, gasto, producción o despliegue. Advisors local sin stack disponible; no acredita Supabase gestionado, correo externo, dispositivos físicos ni continuidad operativa. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+Siguiente paso: revisión y aceptación de Fase 10. No iniciar Fase 11 por inferencia. Sincronización mediante commit/push normales, autoría noreply y verificación de SHA remoto antes de entregar.

@@ -1,0 +1,14 @@
+Consulta 2026-11-02.
+https://supabase.com/changelog.md
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes
+Índice revisado: cambios de índices ltree/btree_gist y cifrado legacy pgcrypto no usados por este incremento; no se actualiza motor/proveedor. PostgreSQL efímero fijado por digest en los ensayos; operación gestionada y advisories del entorno futuro pendientes.
+RLS: esquemas privados, rol vigente, mínimo privilegio, propietario NOLOGIN/NOBYPASSRLS, search_path fijo y EXECUTE público revocado. Sin Data API directa ni JWT obsoletos/metadatos editables para autorizar.
+
+Migraciones aplicadas por cada fixture HTTP/UI, en orden, con PostgreSQL efímero:
+20261031053433_modelo_inicial.sql a90b69afe095d708ad4c4611f6ad7f9ec7f7e582f3218ecca369f6ec1247f66f
+20261031055416_autenticacion.sql 3b382642dbf2dd013df66853ddf483bf9302cbab4f69aac0f0f35bb8e806d36a
+20261031182220_autorizacion_seguridad.sql bb13986675bdc3534a31c334e7dc8164c6258440fa8b8c8ef887b222c5394f3e
+20261031202938_backend_api.sql 06540ab1d605d15a01d55944a310c9531967e538dacd17d239351d8ef0af82d6
+20261101020230_panel_administracion.sql 7e8a26262e067d1b3bf1a3f37dc745adcd651e17157b84f28a0c752c24a28063
+20261101152945_procesos_empresariales.sql d9d0ce7d56edd7f4a6c2cca65cf77b02a53ab3750ff3230b3ee3de2e580ae212

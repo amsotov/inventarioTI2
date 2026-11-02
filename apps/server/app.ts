@@ -1,3 +1,4 @@
+import { processRoutes } from './processes/routes.js';
 import { adminRoutes } from './admin/routes.js';
 import type { Authorization } from './security/postgres.js';
 import Fastify from 'fastify';
@@ -49,7 +50,10 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
     server.addHook('preValidation',async req=>{const q=req.query as Record<string,unknown>;if(q && typeof q.limit==='string' && /^[0-9]{1,3}$/.test(q.limit))q.limit=Number(q.limit);});
     inventoryRoutes(server,inventory,sid,csrf);
   }
-  if(security)adminRoutes(server,security,auth,sid,csrf);
+  if(security){
+    adminRoutes(server,security,auth,sid,csrf);
+    processRoutes(server,security,sid,csrf);
+  }
   if(webRoot)webRoutes(server,webRoot);
   return server;
 }

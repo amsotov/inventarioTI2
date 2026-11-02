@@ -1,13 +1,13 @@
 # Estado del proyecto — Punto de continuidad
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
-**Fecha:** 2026-11-01
-**Fase:** 9 — COMPLETADA; entrega y cierre aprobados por D-29.
+**Fecha:** 2026-11-02
+**Fase:** 10 — EN_REVISION; aceptación propia pendiente.
 **Modo:** GUIADO
 **Última fase completada:** 9.
-**Última fase autorizada:** 10, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 11–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 10, ejecutada bajo D-29/D-30. Fases 11–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 9 aceptada y cerrada por D-29. Iniciar únicamente Fase 10 en un nuevo chat con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad, sin implementar Fase 10 ni desplegar. Los estados anteriores a este cierre son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 10 implementada y entregada EN_REVISION; revisión/aceptación CA10-06 pendiente. Ver [PROCESOS_EMPRESARIALES](docs/PROCESOS_EMPRESARIALES.md). Fase 9 COMPLETADA por D-29. Fases 11–15 sin autorización; sin despliegue. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -388,3 +388,14 @@ Trabajo de cierre: actualización documental de FASES/ESTADO, ADMINISTRACION (CA
 Verificación: árbol inicial limpio, main al día; revisión de diferencias, enlaces locales, estados/CA9-06, filas 11–15 y preservación de archivos ajenos al cierre. `git diff --check`. No se repiten pruebas funcionales porque solo cambia documentación. F1-SEG-01/02/03 permanecen abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
 
 GitHub: commit/push normales a main, autoría noreply y comparación de SHA local/remoto antes de confirmar. Siguiente acción: abrir un nuevo chat e iniciar únicamente Fase 10 bajo D-29. Su entrega/cierre necesitará revisión propia; no iniciar Fase 11.
+
+
+## Entrega de Fase 10 — vigente, 2026-11-02
+
+Solicitud: «Inicia únicamente la Fase 10 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 11 ni despliegues», continuada por «continua». D-30 ratifica D-29; base limpia actualizada por avance directo a `22d93c4`. Plan presentado antes de implementar: funcionarios RUT/ID, pertenencias, custodia/movimientos, condición/estados, historia y correcciones, controles transaccionales, UI, pruebas y documentación/GitHub.
+
+Entregables, archivos, criterios CA10-01 a CA10-06 y límites en [PROCESOS_EMPRESARIALES](docs/PROCESOS_EMPRESARIALES.md); evidencia en [PRUEBAS](docs/PRUEBAS.md). Migración aditiva, SQL privado con roles mínimos/RLS, versiones/idempotencia, historia/auditoría/outbox atómicos. Pruebas sintéticas con PostgreSQL real e identidad doble; no datos ni cuentas reales. Codex prepara/verifica; usuario conserva aceptación propia.
+
+Fase 10 EN_REVISION, CA10-06 pendiente; última completada 9. Fases 11–15 PENDIENTE / NO OTORGADA. Sin reportes/exportaciones, procesamiento/envío outbox, permisos remotos, gasto, producción o despliegue. Advisors local sin stack disponible; no acredita Supabase gestionado, correo externo, dispositivos físicos ni continuidad operativa. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+Siguiente paso: revisión y aceptación de Fase 10. No iniciar Fase 11 por inferencia. Sincronización mediante commit/push normales, autoría noreply y verificación de SHA remoto antes de entregar.

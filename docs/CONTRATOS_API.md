@@ -117,3 +117,8 @@ La superficie empresarial realmente implementada de Fase 7 está en [BACKEND_API
 ## Incremento de Fase 9 — 2026-11-01
 
 Fase 9 añade exclusivamente `/api/v1/admin/cuentas`, `/unidades`, `/avisos` y emisión explícita de enlace. Contrato, cuerpos, versiones/idempotencia y límites en [ADMINISTRACION](ADMINISTRACION.md). OpenAPI de Fase 7 conserva su superficie histórica; no es inventario global de nuevas rutas.
+
+
+## Incremento de Fase 10 — 2026-11-02
+
+Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.

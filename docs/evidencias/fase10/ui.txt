@@ -1,0 +1,13 @@
+▶ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ alta de funcionario y cancelación sin persistencia (364.092355ms)
+  ✔ asignación y respuesta perdida con replay exacto (428.770974ms)
+  ✔ historia, devolución, corrección, responsive y teclado (780.239256ms)
+✔ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (8259.154097ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9062.738012

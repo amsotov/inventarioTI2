@@ -125,3 +125,8 @@ Fase 7 incorpora únicamente migración aditiva 20261031202938_backend_api.sql: 
 ## Incremento de Fase 9 — 2026-11-01
 
 Fase 9 añade migración aditiva `20261101020230_panel_administracion.sql`, generada por CLI: rol privado/función administrativa, grants mínimos y políticas RLS. Sin tablas nuevas ni modificación de migraciones aceptadas. Estado/auditoría/comando/outbox atómicos; sin ejecución remota. Ver [ADMINISTRACION](ADMINISTRACION.md).
+
+
+## Incremento de Fase 10 — 2026-11-02
+
+Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.

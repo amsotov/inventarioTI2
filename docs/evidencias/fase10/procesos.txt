@@ -1,0 +1,18 @@
+▶ Fase 10: procesos HTTP/Auth/RLS/PostgreSQL (identidad doble)
+  ✔ permisos, MFA, Origin, CSRF y rollback sin destinatario (184.714834ms)
+  ✔ RUT, identidad canónica, unicidad y separación de cuentas (78.405575ms)
+  ✔ asignación, replay, versiones y doble asignación concurrente (85.380468ms)
+  ✔ custodia, pertenencias, condición mala, traslado y bajas (139.550142ms)
+  ✔ anotación, compensación vinculada y evidencia inmutable (44.92833ms)
+  ✔ edición, reactivación, unidades inactivas, fechas rechazadas e historia paginada (86.416055ms)
+  ✔ dos conexiones SQL independientes: asignación contra baja de funcionario (31.441977ms)
+  ✔ fallo de outbox revierte estado, historia y comando (16.072679ms)
+✔ Fase 10: procesos HTTP/Auth/RLS/PostgreSQL (identidad doble) (5272.786507ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5581.160192

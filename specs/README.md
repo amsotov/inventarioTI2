@@ -52,3 +52,8 @@ Fase 9 EN_REVISION bajo D-27/D-28. Contrato ejecutable en apps/server/admin/rout
 
 
 Punto vigente — D-29: Fase 9 COMPLETADA, CA9-06 cumplido. Fase 10 autorizada para iniciar en un nuevo chat; ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md) y [ADMINISTRACION](../docs/ADMINISTRACION.md). Fases 11–15 sin autorización; sin implementación de Fase 10, despliegue ni instalación de Spec Kit en este cierre. Las menciones EN_REVISION anteriores son antecedentes.
+
+
+## Incremento de Fase 10 — 2026-11-02
+
+Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](../docs/PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.

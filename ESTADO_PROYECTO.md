@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 10 — EN_REVISION; aceptación propia pendiente.
+**Fase:** 10 — COMPLETADA; entrega y cierre aprobados por D-31.
 **Modo:** GUIADO
-**Última fase completada:** 9.
-**Última fase autorizada:** 10, ejecutada bajo D-29/D-30. Fases 11–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 10.
+**Última fase autorizada:** 11, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 12–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 10 implementada y entregada EN_REVISION; revisión/aceptación CA10-06 pendiente. Ver [PROCESOS_EMPRESARIALES](docs/PROCESOS_EMPRESARIALES.md). Fase 9 COMPLETADA por D-29. Fases 11–15 sin autorización; sin despliegue. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 10 aceptada y cerrada por D-31. Iniciar únicamente Fase 11 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad; no implementa Fase 11 ni despliega. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -399,3 +399,21 @@ Entregables, archivos, criterios CA10-01 a CA10-06 y límites en [PROCESOS_EMPRE
 Fase 10 EN_REVISION, CA10-06 pendiente; última completada 9. Fases 11–15 PENDIENTE / NO OTORGADA. Sin reportes/exportaciones, procesamiento/envío outbox, permisos remotos, gasto, producción o despliegue. Advisors local sin stack disponible; no acredita Supabase gestionado, correo externo, dispositivos físicos ni continuidad operativa. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
 
 Siguiente paso: revisión y aceptación de Fase 10. No iniciar Fase 11 por inferencia. Sincronización mediante commit/push normales, autoría noreply y verificación de SHA remoto antes de entregar.
+
+
+## Cierre aprobado de Fase 10 y continuidad autorizada de Fase 11 — vigente
+
+2026-11-02. Evidencia literal: «apruebo fase 10 y inicia en nuevo chat fase 11». D-31 acepta la entrega `888f8a2dda2a851db291209299c24eb7eb6be381`, cumple CA10-06 y cierra Fase 10 COMPLETADA. Se conservan las 70 pruebas de regresión, 24 de navegador y 4 revalidadas tras el ajuste final, con capturas y límites: PostgreSQL sintético e identidad doble; sin Supabase gestionado/advisors operativos, correo externo, dispositivos físicos, carga objetivo ni continuidad productiva acreditados.
+
+Fase 11 AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Esta tarea solo registra cierre y continuidad y sincroniza GitHub. No se abre automáticamente otra conversación ni se implementan indicadores, reportes o exportaciones aquí. Fases 12–15 PENDIENTE / NO OTORGADA; sin despliegue, producción, datos reales, gastos o cambios remotos de permisos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, requisitos/cierre D-14 (A-06/A-10/A-11 y CR-11/12/18/19/20), UX_UI D-15, arquitectura/ADR D-17, datos D-19, autenticación D-21, seguridad D-23, BACKEND_API/OpenAPI D-25, FRONTEND D-27, ADMINISTRACION D-29 y PROCESOS_EMPRESARIALES D-31, con código, migraciones, pruebas y límites. No volver a pedir autorización de Fase 11.
+2. Presentar plan limitado a indicadores, reportes y exportación: métricas actuales con definiciones verificables, filtros y buscador combinado, cinco reportes y resultados de búsqueda en Excel/PDF según A-11. Inspeccionar contratos realmente disponibles e integrar únicamente servicios/persistencia/UI necesarios para esta fase. No presentar contratos documentales ni mocks como implementación real.
+3. Conservar cuenta/sesión/rol/MFA vigentes, Origin/CSRF, pools separados/contexto SQL LOCAL y privilegios mínimos/RLS. Inventario e historia compartidos; auditoría y su exportación solo administrador. Proyecciones positivas sin RUT/ID ni correo personal en reportes ordinarios, sin observaciones libres de bienes por defecto ni secretos en auditoría. No permitir columnas arbitrarias ni usar JWT/metadatos obsoletos para autorizar.
+4. Aplicar UTC y campo temporal A-06, días inclusivos mediante intervalo hasta día posterior excluido; rechazar rangos invertidos. Unidad/custodio actuales en inventario, unidades históricas de origen/destino en movimientos. Inventario general y condición son fotografías actuales, no reconstrucción agregada a fecha pasada. No inventar métricas, totales ni datos para cubrir APIs ausentes.
+5. Mantener idéntica selección autorizada, filtros normalizados, columnas, orden estable, conteos y subtotales entre pantalla/Excel/PDF. Exportar todo el conjunto filtrado, nunca solo página visible. Límites 10.000 filas XLSX y 2.000 PDF; sumar conjuntos del buscador, permitir límite exacto y rechazar exceso sin truncar. Vacío válido con cabeceras/metadatos/total cero; fórmulas como texto en Excel, PDF sin ejecutar contenido ni cargar URLs arbitrarias.
+6. Aislar generación de archivos, conservar selección consistente entre conteo y contenido, y vincular trabajo/archivo privado al solicitante con validación de permiso vigente al generar/descargar. Manejar estados, errores, caducidad técnica y reintentos sin duplicar trabajos ni exponer enlaces públicos. Cualquier procesamiento de exportaciones pertenece solo a Fase 11; no implementar procesamiento/envío de outbox ni automatizaciones de Fase 12 por dependencia. Revisar versiones/licencias y fijar dependencias/lockfile antes de usar generadores.
+7. Verificar cifras con datos fuente sintéticos, filtros/fechas/unidades, permisos negativos y revocados, paginación frente a exportación completa, límites exactos/superados/vacíos, inyección de fórmulas, privacidad de archivos y concurrencia/cambios durante generación. Probar UI/API y responsive/teclado según diseño aceptado; documentar mediciones y límites sin acreditar rendimiento por inferencia.
+8. Preservar evidencia/migraciones aceptadas y F1-SEG-01/02/03; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Sin Spec Kit, cuentas/datos reales, permisos remotos, gastos, producción o despliegues por inferencia. Actualizar documentación y GitHub, verificar SHA remoto y entregar Fase 11 para aceptación propia. No marcar COMPLETADA ni iniciar Fase 12 sin autorización independiente.

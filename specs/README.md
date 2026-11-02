@@ -57,3 +57,6 @@ Punto vigente — D-29: Fase 9 COMPLETADA, CA9-06 cumplido. Fase 10 autorizada p
 ## Incremento de Fase 10 — 2026-11-02
 
 Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](../docs/PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.
+
+
+Punto vigente — D-31: Fase 10 COMPLETADA, CA10-06 cumplido. Fase 11 autorizada para iniciar en un nuevo chat; ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md), [PROCESOS_EMPRESARIALES](../docs/PROCESOS_EMPRESARIALES.md) y A-06/A-10/A-11 de [CIERRE_FASE1](../docs/CIERRE_FASE1.md). Fases 12–15 sin autorización; sin implementación de Fase 11, despliegue ni instalación de Spec Kit en este cierre. Las menciones EN_REVISION anteriores son antecedentes.

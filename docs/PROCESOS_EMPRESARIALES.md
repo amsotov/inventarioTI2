@@ -1,6 +1,6 @@
 # Procesos empresariales — Fase 10
 
-Entrega 2026-11-02 · EN_REVISION bajo D-29/D-30; aceptación propia CA10-06 pendiente. Base limpia recuperada por avance directo a `22d93c4`. Codex implementa y verifica; el usuario acepta. Fases 11–15 sin autorización; sin despliegue.
+Entrega 2026-11-02 · COMPLETADA por aceptación expresa D-31; CA10-06 CUMPLIDO. Base limpia recuperada por avance directo a `22d93c4`. Codex implementa y verifica; el usuario acepta. Fase 11 autorizada para un nuevo chat, ejecución pendiente; fases 12–15 sin autorización; sin despliegue.
 
 ## Plan y alcance ejecutado
 
@@ -52,8 +52,13 @@ Interfaz conserva diseño existente: formularios etiquetados, motivo/confirmaci�
 | CA10-03 | Historia paginada, instantáneas, intervalos y anotaciones/compensación sin reescribir original |
 | CA10-04 | Versiones, replay, denegaciones, carreras SQL independientes y rollback sin evidencia parcial |
 | CA10-05 | Build, regresión, navegador con datos sintéticos, responsive y teclado; PRUEBAS/evidencias/fase10 |
-| CA10-06 | PENDIENTE: aceptación expresa del usuario; fase EN_REVISION |
+| CA10-06 | CUMPLIDO por aceptación expresa D-31 el 2026-11-02 |
 
 No probado: Supabase gestionado, advisors operativos, identidad/MFA gestionados, correo externo, dispositivos físicos/Safari, conformidad WCAG completa, carga objetivo, continuidad/producción. Advisors local sin stack en 54322 conserva error; no se presenta como superado ni se inicia infraestructura adicional. Changelog y documentación RLS consultados. Ensayos con PostgreSQL real y proveedor de identidad doble.
 
-F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto), F1-SEG-03 (respaldo operativo) abiertos. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin reportes/exportaciones, worker/envío, otras fases, datos/cuentas reales, permisos remotos, gastos o despliegues. Siguiente paso: revisión y aceptación propia de Fase 10; Fase 11 no iniciada ni autorizada.
+F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto), F1-SEG-03 (respaldo operativo) abiertos. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin reportes/exportaciones, worker/envío, otras fases, datos/cuentas reales, permisos remotos, gastos o despliegues. Siguiente paso: iniciar únicamente Fase 11 en un nuevo chat, ya autorizada por D-31; no se ejecuta en este cierre.
+
+
+## Cierre aprobado — 2026-11-02
+
+D-31 acepta la entrega `888f8a2dda2a851db291209299c24eb7eb6be381` mediante «apruebo fase 10 y inicia en nuevo chat fase 11». Fase 10 COMPLETADA y CA10-06 CUMPLIDO. La aprobación conserva la evidencia y los límites operativos; no acredita Supabase gestionado, correo externo, carga objetivo ni continuidad productiva. Fase 11 autorizada para iniciar en un nuevo chat, sin implementación ni despliegue en este cierre.

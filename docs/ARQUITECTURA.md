@@ -156,3 +156,8 @@ Entregables relacionados: [ADR](adr/FASE3.md), [contratos](CONTRATOS_API.md), [e
 ## Concreción de ADR-005 — Fase 11
 
 Reportes/exportación implementados en [REPORTES](REPORTES.md): consulta/proyección positiva compartida, instantánea consistente persistida, cola privada por proceso con claim SQL/arrendamiento recuperable, render en hilo, archivos privados en PostgreSQL y descarga por BFF autenticado con permiso vigente. No se requiere servicio externo ni almacenamiento público. XLSX write-excel-file 4.1.1 y PDFKit 0.20.2, versiones/lockfile/licencias revisados; límites técnicos y de filas explícitos. Recuperación tras reinicio depende de consulta/replay del solicitante; no cron ni procesamiento de avisos. Rendimiento/infraestructura objetivo siguen sin acreditarse.
+
+
+## Incremento implementado de Fase 12 — D-34
+
+Se materializa el consumidor de outbox de ADR-004 como ejecutable independiente del mismo producto (`apps/server/notifications/main.ts`), sin activación desde web. Puerto MailPort y adaptador Resend preparado, reclamación/arrendamiento/token, estados/intentos/reintentos y seguimiento administrativo. No cambia la transacción empresarial ni mezcla identidad/exportaciones. Diseño técnico, límites de idempotencia, conciliación manual con evidencia y permisos en [NOTIFICACIONES](NOTIFICACIONES.md). Sin proveedor/dominio/costo/operación gestionados ni despliegue acreditados.

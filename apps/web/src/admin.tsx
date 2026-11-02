@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { api, message } from "./api";
+import { Notifications } from "./notifications";
 type Row = Record<string, any>;
 export function Admin({
   csrf,
@@ -32,6 +33,10 @@ export function Admin({
     setError("");
     setRows([]);
     setEditing(null);
+    if (tab === "entregas") {
+      setLoading(false);
+      return;
+    }
     api(
       "admin/" + tab + (cursor ? "?cursor=" + encodeURIComponent(cursor) : ""),
     )
@@ -129,12 +134,14 @@ export function Admin({
     };
     void send();
   }
+  if (tab === "entregas")
+    return <Notifications csrf={csrf} onExpired={onExpired} onBack={() => setTab("avisos")} />;
   return (
     <section className="card admin-panel">
       <h1>Administración</h1>
       <p>Cuentas separadas de funcionarios · dos roles · zona UTC</p>
       <nav aria-label="Administración">
-        {["cuentas", "unidades", "avisos"].map((t) => (
+        {["cuentas", "unidades", "avisos", "entregas"].map((t) => (
           <button
             key={t}
             disabled={busy || uncertain}
@@ -146,11 +153,13 @@ export function Admin({
               setNotice("");
             }}
           >
-            {t === "avisos"
-              ? "Parámetros de avisos"
-              : t === "cuentas"
-                ? "Cuentas"
-                : "Catálogo de unidades"}
+            {t === "entregas"
+              ? "Seguimiento de avisos"
+              : t === "avisos"
+                ? "Parámetros de avisos"
+                : t === "cuentas"
+                  ? "Cuentas"
+                  : "Catálogo de unidades"}
           </button>
         ))}
       </nav>

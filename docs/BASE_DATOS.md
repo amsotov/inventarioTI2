@@ -135,3 +135,8 @@ Funcionarios, pertenencias, custodia, estados e historia/correcciones implementa
 ## Persistencia de exportaciones — Fase 11
 
 Migración aditiva `20261102120248_indicadores_reportes_exportaciones.sql`: tabla privada `inventario.exportaciones`, solicitante+clave únicos, huella del tipo/formato/filtros normalizados, total, instantánea JSONB positiva, estado, intento/arrendamiento, archivo BYTEA privado y plazos. RLS forzada y sin grants a PUBLIC/anon/authenticated; solicitante vigente y rol administrativo si auditoría. Identidad/filtros/huella/conteo/plazos son inmutables; solo transiciones técnicas. No se alteran tablas ni historia aceptadas. Lectura para reportes REPEATABLE READ con contexto SQL LOCAL y UTC. Proyección interna `seguridad.nombre_actor` devuelve solo nombre autorizado del actor; no abre consulta de cuentas. Detalle/límites/limpieza diferida en [REPORTES](REPORTES.md). La cadena completa se prueba en PostgreSQL sintético, sin aplicar cambios remotos.
+
+
+## Incremento de Fase 12 — D-34
+
+Migración aditiva `20261102135006_notificaciones_automatizacion.sql`: outbox incorpora versión, intentos totales/del ciclo y token de reclamación; índice parcial para arrendamientos. Funciones privadas de proyección positiva, reclamar/finalizar y acciones administrativas; roles sin login `inventario_avisos`/`inventario_worker`, grants/RLS mínimos. Sin cambio de identidad/destinatario ni de migraciones aceptadas. Intentos/auditoría append-only. [NOTIFICACIONES](NOTIFICACIONES.md) detalla invariantes, transiciones y pruebas sintéticas. No aplicada remotamente.

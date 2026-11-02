@@ -127,3 +127,8 @@ Funcionarios, pertenencias, custodia, estados e historia/correcciones implementa
 ## Implementación de Fase 11 — 2026-11-02
 
 El contrato de reportes/exportación se concreta en [REPORTES](REPORTES.md#contrato-http-ejecutable) y `apps/server/reports/routes.ts`: tipos inventario/por-funcionario/movimientos/por-condicion/auditoria/busqueda; filtros por conjunto, paginación vinculada y metadatos UTC. `POST /exportaciones` exige Origin/CSRF/Idempotency-Key, devuelve 202 y persiste selección consistente; exceso 422 previo a crear. Estado/archivo solo solicitante autorizado, auditoría solo administrador, 404 entre cuentas, 409 no listo, 410 vencido. Arrendamiento recuperable por consulta propia, estados saneados, una hora de caducidad y ninguna URL pública. Las especificaciones previas de avisos no acreditan implementación de Fase 12.
+
+
+## Implementación de Fase 12 — D-34
+
+Rutas reales y esquemas en `apps/server/notifications/routes.ts`, contrato detallado en [NOTIFICACIONES](NOTIFICACIONES.md): GET `/avisos` con estado/cursor y máximo 50; GET `/avisos/{uuid}` con intentos; POST `/avisos/{uuid}/acciones` con motivo/confirmación/Idempotency-Key/If-Match. Solo administrador vigente con MFA; Origin/CSRF en mutaciones. Cancelar pendiente/fallido; reintentar fallido; conciliar incierto/aceptado con evidencia. No redirigir destinos ni repetir incierto sin resolver. Web y worker separados; sin envíos externos. Los contratos de entregas anteriores conservan sus límites históricos.

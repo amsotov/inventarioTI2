@@ -28,7 +28,7 @@ export class Authorization {
 }
 
 // Ejecutar al arrancar cada proceso. Rechaza propietario, superusuario y membresías amplias.
-export async function assertDatabaseRole(pool: Pool, expected: 'inventario_auth' | 'inventario_runtime') {
+export async function assertDatabaseRole(pool: Pool, expected: 'inventario_auth' | 'inventario_runtime' | 'inventario_worker') {
   const r=(await pool.query(`select current_user as name, r.rolsuper,r.rolbypassrls,r.rolcreaterole,r.rolcreatedb,
     exists(select 1 from pg_auth_members m where m.member=r.oid) as memberships,
     exists(select 1 from pg_class c join pg_namespace n on n.oid=c.relnamespace where c.relowner=r.oid and n.nspname in ('inventario','acceso','seguridad')) as owner

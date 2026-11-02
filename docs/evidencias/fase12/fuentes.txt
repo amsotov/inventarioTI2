@@ -1,0 +1,18 @@
+2026-11-02 — fuentes consultadas antes de implementación
+Base GitHub: c348e873231cc6aaccf33d8c39d61f60943359e6, confirmada con conector y fetch normal.
+AGENTS/PROMPT_MAESTRO/FASES/ESTADO; D-14 A-07/A-08/A-10/P-04/CR-13/14; UX D-15; arquitectura/ADR D-17; datos D-19; acceso D-21; seguridad D-23; API D-25; frontend D-27; administración D-29; procesos D-31; reportes/cierre D-33. No Spec Kit.
+
+Skills aplicados: entorno cloud y red/Docker; Supabase; buenas prácticas PostgreSQL (SKIP LOCKED); fiabilidad de correo.
+https://supabase.com/changelog.md
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+Changelog revisado: actualización PG17.11/extensiones no exige cambio en estas funciones SQL sin extensiones afectadas; no se actualiza ni modifica motor remoto. RLS también en esquemas privados; sin grants Data API. No user_metadata/JWT obsoleto para decidir permisos.
+Supabase CLI 2.122.0 migration new --help, migration list --help y db advisors --help. Migración generada por CLI; no se usa apply_migration remoto. Advisors/listado local no operativos, registrados por separado. SQL probado por cadena completa en bases efímeras.
+
+https://resend.com/docs/api-reference/emails/send-email
+https://resend.com/docs/dashboard/emails/idempotency-keys
+https://resend.com/docs/api-reference/emails/retrieve-email
+API send: POST /emails, texto plano, id de aceptación; Idempotency-Key por aviso. Ventana documentada 24 h. Conflictos/timeout/errores ambiguos se tratan conservadoramente como inciertos; nunca se infiere ausencia de envío. Consulta de estado/correlación es evidencia operativa a verificar antes de conciliar. No se llama a API Resend durante pruebas; fetch sustituido.
+No proveedor/dominio/remitente real contratado/configurado ni conexión de cuenta de correo. No dependencia/SDK nuevo. Adaptador HTTP preparado, activación separada y deshabilitada. No correo enviado a personas.
+
+Revisión de seguridad: principal actual y MFA/Origin/CSRF en acciones; RLS por rol sin vistas públicas; propietario técnico sin login/BYPASSRLS/propiedad de tablas; worker limitado a dos funciones; destinatario/identidad de evento inmutables; intentos/auditoría append-only; contenido positivo sin valores personales/texto libre; errores fijos; sin secretos en Git/UI/correo de avisos. No promesa de entrega exactamente una vez.

@@ -1,0 +1,3 @@
+OK: Fase 12 EN_REVISION, última completada 11; Fases 13–15 no autorizadas.
+OK: 212 enlaces locales; CA12-06 pendiente; correo real deshabilitado.
+OK: migraciones/evidencias aceptadas y lockfile conservados; Spec Kit ausente.

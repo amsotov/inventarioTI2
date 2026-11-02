@@ -1,0 +1,16 @@
+▶ Fase 12: navegador, avisos y acciones administrativas con proveedor doble
+  ✔ consulta real, confirmación, cancelación y auditoría (215.986914ms)
+  ✔ incierto requiere evidencia, conciliación y reintento separado (481.809912ms)
+  ✔ respuesta perdida conserva clave/versión/cuerpo y recupera sin duplicar auditoría (295.680331ms)
+  ✔ conflicto de versión conserva registro y explica recarga (287.711078ms)
+  ✔ teclado, carga/vacío/error y computador/iPad/iPhone emulados (525.928542ms)
+  ✔ lectura no accede a destinatarios ni acciones por navegación directa (156.456212ms)
+✔ Fase 12: navegador, avisos y acciones administrativas con proveedor doble (9785.027174ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10509.473864

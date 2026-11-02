@@ -5,6 +5,7 @@
     "build": "tsc && tsc -p apps/web/tsconfig.json && vite build apps/web --outDir ../../dist/web",
     "test": "tsx --test tests/auth/*.test.ts tests/security/*.test.ts tests/api/*.test.ts",
     "start": "node dist/apps/server/main.js",
+    "start:notifications": "node dist/apps/server/notifications/main.js",
     "dev:web": "vite apps/web --host 127.0.0.1",
     "test:ui": "tsx --test tests/ui/*.test.ts"
   },

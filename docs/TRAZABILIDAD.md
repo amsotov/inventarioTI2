@@ -134,3 +134,8 @@ Fase 9 EN_REVISION: RF-08/09/11 y HU-08/09/11 → cuentas, roles, propio registr
 ## Incremento de Fase 11 — RF-06/07/13/16, HU-06/07/13/16
 
 CA11-01 → métricas actuales reproducibles, RF-13/HU-13; CA11-02 → cinco reportes/buscador con filtros, columnas, orden, totales y subtotales A-11, RF-06/07/16 y HU-06/07/16. CA11-03 → Excel/PDF completo, vacío y límites CR-19/20; CA11-04 → permisos/privacidad CR-18 y fechas/unidades CR-11/12, instantánea/idempotencia/revocación. CA11-05 → API/SQL/navegador/build y evidencia; CA11-06 pendiente de aceptación propia. Implementación y resultados en [REPORTES](REPORTES.md) y [PRUEBAS](PRUEBAS.md). RF-15/envío empresarial permanece Fase 12, sin iniciar.
+
+
+## Fase 12 — RF-14/RF-15, HU-14/HU-15, CR-13/CR-14 y A-07/A-08/A-10
+
+Catálogo, minimización, destino fijado, proceso conservado, reintentos/agote/permanente/incierto y conciliación → `apps/server/notifications/*`, migración aditiva Fase 12, `tests/api/notifications.test.ts`. Seguimiento/acciones administrativas, filtros, replay y responsive/teclado → `apps/web/src/notifications.tsx`, `tests/ui/notifications.test.ts`. Permisos vigentes/SQL/Origin/CSRF/auditoría y rollback verificados con datos sintéticos; no entrega física ni integración gestionada inferidas. Criterios CA12-01 a CA12-06 y límites en [NOTIFICACIONES](NOTIFICACIONES.md); Fase 12 EN_REVISION y CA12-06 pendiente.

@@ -36,3 +36,8 @@ Fase 7 no cambia columnas: usa comandos, auditoria y outbox aceptados para alta/
 ## Incremento de Fase 9 — 2026-11-01
 
 Fase 9 utiliza cuentas/unidades/configuracion_avisos/comandos/auditoria/outbox existentes sin añadir campos. Cambio administrativo incrementa versión; cuenta también version_autorizacion. Forzar clave bloquea credencial_lista hasta recuperación administrativa. No expone proveedor_ref ni credencial_lista en proyección de API. Ver [ADMINISTRACION](ADMINISTRACION.md).
+
+
+## Fase 12 — ampliación del outbox
+
+`version`: bigint positivo, aumenta al reclamar/finalizar/expirar/actuar. `intentos`: entero total durable de reclamaciones. `ciclo_intentos`: 0–4, reiniciado solo por reintento administrativo. `reclamacion`: UUID opaco por arrendamiento, ausente de API/UI. `arrendamiento_hasta`: UTC, 60 s de exclusión; vencido pasa a incierto. Códigos técnicos fijos, sin cuerpos de proveedor. `intentos_aviso` conserva resultado/número/fecha append-only. Catálogo y acciones en [NOTIFICACIONES](NOTIFICACIONES.md).

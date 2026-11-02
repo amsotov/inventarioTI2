@@ -1,0 +1,17 @@
+NOTIFICATION_DELIVERY_ENABLED=false npm run start:notifications
+Código de salida: 1 (bloqueo esperado, antes de configurar DB/proveedor)
+
+> inventarioti2@1.0.0 start:notifications
+> node dist/apps/server/notifications/main.js
+
+file:///workspace/inventarioTI2/dist/apps/server/notifications/main.js:12
+    throw Error("Notification delivery disabled");
+          ^
+
+Error: Notification delivery disabled
+    at file:///workspace/inventarioTI2/dist/apps/server/notifications/main.js:12:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

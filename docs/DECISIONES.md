@@ -180,3 +180,8 @@ El usuario ratifica D-31: «Inicia únicamente la Fase 11 de inventarioTI2, ya a
 ## D-33 — Aceptación de Fase 11 y continuidad de Fase 12
 
 2026-11-02. Evidencia literal: «Apruebo fase 11, inicia en nuevo chat fase 12». Acepta la entrega `c94a366be22e6eae917711c52e695ea842c27187`, cumple CA11-06 y cierra Fase 11 COMPLETADA con sus límites explícitos. Autoriza únicamente Fase 12 — Notificaciones y automatización para iniciar en un nuevo chat, ejecución PENDIENTE. No implica implementación aquí, creación automática de conversación, envío real, ni aprobación de Fases 13–15, despliegue, producción, datos reales, gastos o permisos remotos. Conserva evidencia y F1-SEG-01/02/03. Los estados EN_REVISION de D-32 se mantienen como antecedentes de entrega.
+
+
+## D-34 — Ejecución de Fase 12 (2026-11-02)
+
+El usuario ratifica D-33: «Inicia únicamente la Fase 12 de inventarioTI2, ya autorizada por D-33. Actualiza GitHub. No inicies Fase 13 ni despliegues». Se ejecuta únicamente catálogo A-07, consumo de outbox, puerto/adaptador de correo y seguimiento/acciones administrativas. [NOTIFICACIONES](NOTIFICACIONES.md) documenta criterios y límites; CA12-06 queda pendiente. Worker independiente y deshabilitado por defecto; sin envío real. Clave de proveedor estable con ventana documentada 24 h; incertidumbre/caída exige conciliación con evidencia, sin repetición ciega. No autoriza integración externa real, cuentas/datos reales, permisos remotos, gastos, Fases 13–15 ni despliegue.

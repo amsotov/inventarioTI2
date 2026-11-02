@@ -53,3 +53,8 @@ Funcionarios, pertenencias, custodia, estados e historia/correcciones implementa
 ## Incremento de Fase 11 — 2026-11-02
 
 Navegación Resumen y Reportes/buscador, métricas reales, cinco informes/búsqueda combinada, filtros/días UTC, columnas/conteos/subtotales/paginación y exportación completa Excel/PDF. Trabajo privado consultable/recuperable por referencia; respuesta perdida conserva clave/payload y reintento exacto, sin localStorage. Estado/permisos y descarga se vuelven a validar en servidor. Auditoría solo se ofrece a administración. UI/teclado/capturas y limitaciones en [REPORTES](REPORTES.md). No se agregan alertas ficticias, procesamiento de outbox ni despliegue.
+
+
+## Incremento de Fase 12 — D-34
+
+Administración → Seguimiento de avisos integra lista/filtro/paginación y detalle/intentos/fechas UTC con la API real de avisos; acciones restringidas por estado con motivo, confirmación y evidencia de conciliación. Respuesta perdida conserva cuerpo/clave/versión para recuperar resultado; bloqueo temporal de navegación/otras acciones. Lectura recibe acceso restringido y no datos de destinatarios. [NOTIFICACIONES](NOTIFICACIONES.md) y [PRUEBAS](PRUEBAS.md) contienen recorridos y límites; capturas sintéticas de computador/iPad/iPhone emulados en evidencias/fase12. Sin envío real.

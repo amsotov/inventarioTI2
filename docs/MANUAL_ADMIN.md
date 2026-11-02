@@ -16,3 +16,10 @@ Las listas se paginan de 50 en 50. El panel no cambia correo de cuenta, permisos
 ## Reporte de auditoría y exportación privada — Fase 11
 
 Con sesión administrativa y MFA vigentes, abre Reportes → Auditoría. Filtra por fecha de registro UTC, actor, entidad/referencia/acción. Se muestran diferencias empresariales minimizadas; documento, correo, destinatario, proveedor y claves desconocidas no se copian. Excel/PDF conservan la selección completa, límites, orden y metadatos. El archivo es del solicitante, caduca una hora después de crear y vuelve a validar rol al descargar. Revocar el rol impide acceder a un archivo de auditoría ya generado. Los trabajos fallidos/caducados requieren una nueva solicitud explícita; una respuesta perdida se resuelve con la misma clave. No altera historia ni procesa avisos. Ver [REPORTES](REPORTES.md).
+
+
+## Seguimiento de avisos — Fase 12
+
+En Administración elige Seguimiento de avisos; filtra estado y abre Ver detalle para revisar destino original, UTC, intentos y resultado saneado. Aceptado no implica entregado. Cancela pendientes/fallidos con motivo; el destino no se modifica. Reintenta solo fallidos, conservando correlación. Ante incierto, verifica primero el resultado con el proveedor por canal autorizado y registra evidencia al conciliar: aceptado, entregado, fallo permanente o ausencia confirmada. Ausencia confirmada habilita un reintento separado. No se concilia ni cancela un envío en vuelo.
+
+Confirma cada acción tras revisar el aviso; una versión obsoleta exige recargar. Ante respuesta perdida usa Recuperar resultado de la acción y conserva esta página. No introduzcas secretos en motivo/evidencia. Volver a parámetros y cuentas permite cambiar el encargado de avisos futuros, sin redirigir anteriores. El worker está deshabilitado por defecto; su activación/servicio de correo reales necesitan autorización propia. Configuración y límites en [NOTIFICACIONES](NOTIFICACIONES.md).

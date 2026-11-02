@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): Fases 0–11 COMPLETADAS y aceptadas (última D-33). Fase 11: [indicadores, cinco reportes/buscador y exportaciones Excel/PDF privadas](docs/REPORTES.md), entrega aceptada `c94a366`, con 85 pruebas API/seguridad y 32 de navegador superadas. Fase 12 autorizada para iniciar en un nuevo chat, ejecución pendiente; Fases 13–15 sin autorización y sin despliegue. Consultar [FASES.md](FASES.md), [ESTADO_PROYECTO.md](ESTADO_PROYECTO.md) y [pruebas](docs/PRUEBAS.md). Los estados de entregas anteriores conservados abajo son antecedentes.
+Estado vigente (2026-11-02): Fases 0–11 COMPLETADAS y aceptadas (D-33). Fase 12: [notificaciones y automatización](docs/NOTIFICACIONES.md), implementada y EN_REVISION bajo D-33/D-34; aceptación propia pendiente. Worker/outbox, reintentos, conciliación y seguimiento administrativo probados con datos sintéticos. Correo real deshabilitado. Fases 13–15 sin autorización; sin despliegue. Consultar [FASES](FASES.md), [ESTADO](ESTADO_PROYECTO.md) y [PRUEBAS](docs/PRUEBAS.md). Los estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -139,3 +139,8 @@ Entrega aceptada por D-33. Fase 12 autorizada para un nuevo chat; seguir el plan
 > Inicia únicamente la Fase 12 de inventarioTI2, ya autorizada por D-33 en FASES.md y ESTADO_PROYECTO.md. Presenta el plan de notificaciones y automatización, conserva los límites y actualiza GitHub. No inicies Fase 13 ni despliegues.
 
 Fases 13–15 sin autorización. Sin implementación/envíos de Fase 12 ni despliegues en este cierre.
+
+
+## Entrega de Fase 12 — 2026-11-02
+
+[Catálogo, configuración, estados, API, verificación y pendientes](docs/NOTIFICACIONES.md). Administración → Seguimiento de avisos permite consultar intentos y registrar cancelación/reintento/conciliación con evidencia. `npm start` no envía avisos; el worker separado `npm run start:notifications` está deshabilitado por defecto y requiere configuración y autorización de envío propias. Ensayos sin llamadas a Resend ni mensajes reales. Fase 12 EN_REVISION; no iniciar Fase 13 ni desplegar.

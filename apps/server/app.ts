@@ -1,4 +1,5 @@
 import { processRoutes } from './processes/routes.js';
+import { notificationRoutes } from './notifications/routes.js';
 import { reportRoutes } from './reports/routes.js';
 import { Reports } from './reports/service.js';
 import { adminRoutes } from './admin/routes.js';
@@ -53,6 +54,7 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
     inventoryRoutes(server,inventory,sid,csrf);
   }
   if(security){
+    notificationRoutes(server,security,sid,csrf);
     adminRoutes(server,security,auth,sid,csrf);
     processRoutes(server,security,sid,csrf);
     reportRoutes(server,new Reports(security),sid,csrf);

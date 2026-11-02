@@ -35,3 +35,8 @@ Ante conflicto de versión, recarga y revisa antes de decidir de nuevo. Ante res
 5. Espera estado listo y **Descargar archivo privado**. Guarda la referencia para recuperarlo tras recargar; dura una hora y requiere tu cuenta/permisos vigentes. Otra cuenta no puede abrirlo. Si hay respuesta perdida, conserva la vista y usa **Reintentar misma solicitud**. Para fallo final o archivo caducado, solicita una exportación nueva. Los archivos incluyen instante UTC y filtros; nuevas consultas pueden reflejar cambios posteriores.
 
 No se genera un inventario reconstruido a una fecha pasada ni se envía correo por exportar. Alcance, privacidad y límites en [REPORTES](REPORTES.md).
+
+
+## Avisos de cambios — Fase 12
+
+Los cambios confirmados conservan su validez aunque falle el correo al encargado. El seguimiento y la recuperación son tareas de administración; un aviso aceptado por el proveedor no demuestra entrega ni lectura. Los avisos conservan destinatario original y mensajes minimizados con referencias; los detalles requieren acceso al sistema. Invitación/recuperación/MFA se dirigen solo al titular por el canal de acceso. Esta entrega se verifica con correo sintético; no hay envío real activo. Ver [NOTIFICACIONES](NOTIFICACIONES.md).

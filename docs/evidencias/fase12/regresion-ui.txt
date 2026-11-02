@@ -1,0 +1,56 @@
+
+> inventarioti2@1.0.0 test:ui
+> tsx --test tests/ui/*.test.ts
+
+▶ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (747.821754ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (709.731997ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (163.354455ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (282.875552ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (315.501155ms)
+  ✔ paginación real y reinicio de cursor al filtrar (231.724408ms)
+  ✔ responsive computador/iPad/iPhone y teclado (307.543399ms)
+  ✔ panel: cuenta, catálogo, parámetros y responsive real (875.107623ms)
+  ✔ panel: respuesta perdida y replay sin duplicar evidencia (433.826349ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (135.468655ms)
+✔ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (12036.267254ms)
+▶ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (463.133458ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (729.060199ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (169.503736ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (244.643212ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (294.259893ms)
+  ✔ paginación real y reinicio de cursor al filtrar (254.264245ms)
+  ✔ responsive computador/iPad/iPhone y teclado (375.458047ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (130.930801ms)
+✔ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (9523.635012ms)
+▶ Fase 12: navegador, avisos y acciones administrativas con proveedor doble
+  ✔ consulta real, confirmación, cancelación y auditoría (176.006539ms)
+  ✔ incierto requiere evidencia, conciliación y reintento separado (565.712229ms)
+  ✔ respuesta perdida conserva clave/versión/cuerpo y recupera sin duplicar auditoría (303.731252ms)
+  ✔ conflicto de versión conserva registro y explica recarga (265.303546ms)
+  ✔ teclado, carga/vacío/error y computador/iPad/iPhone emulados (526.716919ms)
+  ✔ lectura no accede a destinatarios ni acciones por navegación directa (185.467491ms)
+✔ Fase 12: navegador, avisos y acciones administrativas con proveedor doble (9335.193503ms)
+▶ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ alta de funcionario y cancelación sin persistencia (342.568892ms)
+  ✔ asignación y respuesta perdida con replay exacto (471.818528ms)
+  ✔ historia, devolución, corrección, responsive y teclado (750.174673ms)
+✔ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (9575.356593ms)
+▶ Fase 11: navegador → reportes → exportador privado con datos sintéticos
+  ✔ indicadores reales y zona UTC aunque el navegador use Santiago (191.313147ms)
+  ✔ paginación, filtros, vacío, error y buscador de dos conjuntos (602.172137ms)
+  ✔ respuesta perdida tras commit: conserva clave y reintenta sin duplicar (1584.584265ms)
+  ✔ recuperar por referencia tras recarga y descargar PDF (1609.189331ms)
+  ✔ computador, iPad e iPhone emulados: tablas, teclado y capturas (541.212898ms)
+  ✔ administrador con MFA puede consultar y exportar auditoría (2139.042464ms)
+  ✔ revocación en descarga termina sesión y oculta datos (82.765934ms)
+✔ Fase 11: navegador → reportes → exportador privado con datos sintéticos (14492.980852ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59016.428891

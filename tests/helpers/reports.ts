@@ -90,11 +90,12 @@ export async function fixture(
   };
   const root = new Pool({ ...cfg, user: "postgres" }),
     authPool = new Pool({ ...cfg, user: "inventario_auth" }),
-    business = new Pool({ ...cfg, user: "inventario_runtime" });
+    business = new Pool({ ...cfg, user: "inventario_runtime" }),
+    workerPool = new Pool({ ...cfg, user: "inventario_worker" });
   let server: ReturnType<typeof app> | undefined;
   const close = async () => {
     await server?.close();
-    await Promise.all([root.end(), authPool.end(), business.end()]);
+    await Promise.all([root.end(), authPool.end(), business.end(), workerPool.end()]);
     docker("rm", "-f", name);
   };
   try {
@@ -111,7 +112,7 @@ export async function fixture(
     for (const file of readdirSync("supabase/migrations").sort())
       await root.query(readFileSync("supabase/migrations/" + file, "utf8"));
     await root.query(
-      `alter role inventario_auth login password '${password}';alter role inventario_runtime login password '${password}'`,
+      `alter role inventario_auth login password '${password}';alter role inventario_runtime login password '${password}';alter role inventario_worker login password '${password}'`,
     );
     await root.query(
       `insert into inventario.cuentas(id,proveedor_ref,nombre,correo,rol,estado,credencial_lista) values($1,$1,'Lectura','reader@example.invalid','lectura','activa',true),($2,$2,'Admin sintético','admin@example.invalid','administrador','activa',true),($3,$3,'Otro lector','other@example.invalid','lectura','activa',true)`,
@@ -199,6 +200,7 @@ export async function fixture(
       root,
       authPool,
       business,
+      workerPool,
       auth,
       security,
       server,

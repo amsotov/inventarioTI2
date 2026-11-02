@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 11 — COMPLETADA; entrega y cierre aprobados por D-33.
+**Fase:** 12 — EN_REVISION; entrega implementada/verificada bajo D-33/D-34.
 **Modo:** GUIADO
 **Última fase completada:** 11.
-**Última fase autorizada:** 12, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 13–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 12, ejecutada en este chat. Aceptación propia pendiente. Fases 13–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 11 aceptada y cerrada por D-33. Iniciar únicamente Fase 12 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad; no implementa Fase 12 ni despliega. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 12 EN_REVISION: catálogo A-07, outbox/worker independiente y seguimiento administrativo implementados con pruebas sintéticas. Revisar [NOTIFICACIONES](docs/NOTIFICACIONES.md) y [PRUEBAS](docs/PRUEBAS.md). Última completada 11; Fase 13 no autorizada ni iniciada. Correo real deshabilitado; sin despliegue. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -454,3 +454,18 @@ Punto de inicio para el nuevo chat:
 8. Conservar F1-SEG-01/02/03, UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días, entregas y evidencias aceptadas. Documentar pruebas ejecutadas/no ejecutadas, riesgos y bloqueos; actualizar GitHub y verificar SHA remoto. Entregar Fase 12 para aceptación propia; no marcar COMPLETADA ni iniciar Fases 13–15 o desplegar sin autorización independiente.
 
 Verificación de este cierre: únicamente documentación; diff/revisión de estados, criterios, enlaces locales y preservación de aplicación/migraciones/tests/evidencias. No se reejecutan suites de aplicación porque no cambian código ni dependencias. Sincronización mediante commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar entrega.
+
+
+## Entrega de Fase 12 — vigente, 2026-11-02 (D-34)
+
+PROYECTO: inventarioTI2. FASE: 12 — Notificaciones y automatización. ESTADO: EN_REVISION. OBJETIVO/ALCANCE: ejecutar únicamente catálogo A-07, automatización del outbox y seguimiento administrativo; D-34 ratifica D-33 y exige GitHub, sin Fase 13 ni despliegue. No se repitió la autorización.
+
+Trabajo: base main `c348e873231cc6aaccf33d8c39d61f60943359e6` comprobada con GitHub y fetch normal, árbol inicial limpio. Plan presentado e implementado. Se conservan transacción/idempotencia empresarial, evento/destino inmutables y entregas previas. Reclamación SKIP LOCKED/token/arrendamiento; primer intento y tres reintentos 1/5/15 desde fallo anterior; permanente/agote detenidos, inciertos conciliables con evidencia sin reenvío automático. Contenido positivo, actor técnico, fechas UTC, sin valores personales/texto libre. Puerto MailPort y adaptador Resend preparados sin activar; API/UI de filtros, detalle/intentos y acciones con motivos/confirmación/versión/replay/auditoría. Privilegios mínimos y sesión/MFA/Origin/CSRF vigentes.
+
+Archivos: `apps/server/notifications/*`, app/security, `apps/web/src/notifications.tsx`, integración admin/estilos, `.env.example`, package script; migración `20261102135006_notificaciones_automatizacion.sql`; pruebas API/UI y fixture común, `docs/NOTIFICACIONES.md`, contratos/datos/seguridad/arquitectura/frontend/manuales/trazabilidad, fases/estado/decisiones/changelog/specs y `docs/evidencias/fase12`. Spec Kit no instalado ni simulado. Sin dependencias nuevas.
+
+Pruebas y recuentos finales en PRUEBAS/evidencias/fase12. PostgreSQL real efímero, identidad/correo dobles y HTTP sustituido; pruebas de catálogo, minimización, destino, exclusión, caída, retrasos, permanente/agote/incierto, rollback empresarial y de acción, replay, RLS/permisos/revocación y navegador. Evidencias históricas regeneradas por suites restauradas al contenido aceptado; no se alteran sus resultados. Advisors/listado local no operativos por ausencia de stack en 54322; la cadena de migraciones sí se aplica en bases sintéticas. No correo externo ni integración gestionada acreditados.
+
+Riesgos/decisiones: aceptación no equivale a entrega/lectura; idempotencia Resend documentada 24 h no sustituye conciliación durable. No webhook público/conciliación automática, solo registro administrativo respaldado por evidencia. Arrendamiento de 60 s y consulta cada segundo son parámetros técnicos locales, sin objetivo de capacidad acreditado. Integración real exige remitente/dominio/buzones autorizados, validación de privacidad/costo y credenciales fuera de Git; ejecución externa no autorizada por esta entrega. Pendientes gestionados, hardware/Safari/accesibilidad/carga/continuidad y F1-SEG-01/02/03 conservados. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+Siguiente acción: revisión/aceptación propia de Fase 12, CA12-06 pendiente. Última completada 11. Fases 13–15 PENDIENTE / NO OTORGADA; sin datos/cuentas reales, permisos remotos, gastos, producción ni despliegues. GitHub por commit/push normales a main, autoría noreply y comprobación de SHA remoto antes de confirmar.

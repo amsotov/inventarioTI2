@@ -534,3 +534,7 @@ Verificación de este cierre: únicamente documentación; revisión de estados/C
 CA14-01–05 conservan alcance local/parcial: sin staging/Auth gestionados, copia externa/retención operativa ni rollback de plataforma acreditados. CA14-06 PENDIENTE. Fase 14 EN_REVISION, última completada 13; no aceptar/cerrar por inferencia. F1-SEG-01/02/03 ABIERTOS; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Fase 15 PENDIENTE / NO OTORGADA. Sin producción, datos/cuentas reales, permisos remotos, gasto ni correo real.
 
 Siguiente paso: revisión de esta entrega y decisiones operativas pendientes; solo tras destino/recursos autorizados completar ensayos gestionados. Producción requiere permiso propio. Actualización GitHub por commit/push normal con autoría noreply y comprobación SHA remoto al entregar.
+
+## Incremento autorizado — Demo React / GitHub Pages (2026-11-02)
+
+Solicitud expresa del usuario: modo `VITE_DEMO_MODE=true`, datos efímeros, roles ficticios, correos simulados, exportaciones reales, base configurable, workflow Pages en push a main/manual y entrega por PR. Alcance adicional de Fase 14, sin cerrar CA14-06 ni iniciar Fase 15. Plan: adaptar el cliente de datos y descargas, conservar navegación hash y modo normal, preparar pipeline estático Node 20, probar navegador/build/regresión y documentar Pages. Destino público limitado a datos sintéticos; no se autoriza producción ni se modifican permisos/configuración remota de Pages. Estado: EN_REVISION; configuración de Pages e integración del PR pendientes del mantenedor.

@@ -167,3 +167,41 @@ Fase 15 sin autorización. Sin implementación de Fase 14, activación/envíos r
 ## Entrega de Fase 14 — EN_REVISION
 
 Plan, runbook y checklist enlazados al inicio. `npm run test:ops` reproduce el ensayo aislado de copia cifrada/restauración y las verificaciones de salud/logs/edad de copia; requiere Docker local, nunca DSN real. El workflow GitHub solo verifica. `npm start` conserva worker apagado y exige configuración externa; /health/live y /health/ready no sustituyen el smoke autenticado. Pendientes gestionados y aceptación CA14-06 explícitos. Producción no desplegada; Fase 15 sin iniciar.
+
+## Demo React y GitHub Pages
+
+Esta demo es la aplicación React actual (`apps/web`); el prototipo histórico de `prototipo/` se conserva como referencia. No requiere credenciales, servidor, Supabase ni servicios externos.
+
+```sh
+npm ci
+npm run demo
+# Abrir la URL que imprime Vite (normalmente http://127.0.0.1:5173/).
+```
+
+`npm run demo` activa `VITE_DEMO_MODE=true` de forma compatible con Windows, macOS y Linux. También puedes definir esa variable al compilar. Entra directamente como **Administrador demo**; el selector del banner **Modo demo** permite pasar a solo lectura. Altas, edición, eliminación, asignaciones, devoluciones, traslados, cambios de unidad e historial usan exclusivamente datos sintéticos en memoria. Recargar reinicia todos los cambios y el rol. Los correos generan un mensaje visible, nunca un envío real. Excel y PDF se generan y descargan localmente con los datos filtrados de la demo; no son archivos privados alojados en servidor.
+
+La navegación existente ya usa fragmentos (`#bienes`, `#funcionarios`, `#reportes`); no utiliza React Router y no necesita HashRouter. Recargar una ficha conserva la ruta, pero reinicia los datos: una referencia creada durante la sesión anterior deja de existir.
+
+Para compilar como Pages (variables de entorno; ejemplo de shell POSIX):
+
+```sh
+VITE_DEMO_MODE=true VITE_BASE_PATH=/inventarioTI2/ npm run build
+npx vite preview apps/web --config vite.config.js --outDir ../../dist/web --base /inventarioTI2/
+```
+
+Abre `http://localhost:4173/inventarioTI2/`. El resultado público es **`dist/web`**, no todo `dist` (que también contiene el servidor). `vite.config.js` lee `VITE_BASE_PATH`, con `/` por defecto; Vite ajusta los assets y los imports dinámicos a esa base. No hay imágenes, fuentes ni recursos remotos en la UI actual. Para futuros recursos de `public/`, utiliza `import.meta.env.BASE_URL`; para recursos de `src/`, utiliza imports de Vite.
+
+En GitHub: **Settings > Pages > Build and deployment > Source: GitHub Actions**. El workflow [deploy-demo.yml](.github/workflows/deploy-demo.yml) compila con Node 20 y publica solo `dist/web` al hacer push a `main` o al ejecutarlo manualmente desde Actions. La URL prevista es `https://amsotov.github.io/inventarioTI2/`. Revisa que el nombre del repositorio coincida con `VITE_BASE_PATH`. El entorno `github-pages` puede requerir aprobación según las reglas del repositorio. Crear el PR no activa Pages ni publica el sitio; después de integrarlo en `main`, el workflow hará la publicación si Pages está configurado.
+
+El servidor normal mantiene su requisito **Node 24**, autenticación y API; `npm run build` sin `VITE_DEMO_MODE=true` conserva ese modo. El build estático de Pages se ha comprobado con Node 20.20.2; `npm ci` en Node 20 emite avisos de engines del servidor y sus dependencias, que no se ejecutan en la demo. No uses Node 20 para operar el servidor normal. Las variables VITE son públicas y se fijan al compilar: nunca incluyas secretos ni uses una compilación demo para operar datos reales.
+
+Prueba de navegador de la demo, con `npm run demo` activo en otra terminal:
+
+```sh
+# Chromium instalado; ruta ajustable con CHROMIUM_PATH.
+npm run test:demo
+# Contra el build estático servido bajo la base:
+DEMO_URL=http://localhost:4173/inventarioTI2/ npm run test:demo
+```
+
+El ensayo comprueba CRUD de bienes/funcionarios, asignación/traslado/historia, roles, descargas XLSX/PDF con contenido y recarga por hash, y falla ante solicitudes a API/servicios externos. No requiere Docker. El modo normal conserva sus suites `npm test` y `npm run test:ui`, con PostgreSQL sintético/Docker.

@@ -4,6 +4,10 @@ Estado vigente (2026-11-02): **Fases 0–15 COMPLETADAS y aceptadas**, cierre D-
 
 Aplicación React/TypeScript con BFF Node, PostgreSQL y adaptador Supabase Auth; inventario compartido con dos roles, funcionarios/custodias/historia, administración, reportes/exportación privada y avisos. La implementación aceptada se ha verificado con entornos sintéticos locales; operación gestionada y producción siguen pendientes. **Correo real deshabilitado.** No hay cuenta por defecto ni URL productiva habilitada por esta entrega.
 
+## Continuar en un nuevo chat
+
+[Pendientes y vista previa — D-43](docs/CONTINUIDAD_PRUEBAS.md) reúne el estado aprobado, los pendientes, plan/criterios de acceso y texto listo para pegar. Primera prioridad: una vista funcional accesible desde Chrome Windows. VP-01 sigue PENDIENTE; localhost remoto y el ZIP entregado no acreditan que el usuario pueda entrar. No se ha creado otro chat ni habilitado una URL nueva en esta preparación.
+
 ## Documentación según tarea
 
 | Tarea | Entrada |

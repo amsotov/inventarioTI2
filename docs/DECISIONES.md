@@ -227,3 +227,9 @@ Instancia en loopback HTTPS, DB/Auth locales reales y datos/cuentas de prueba al
 2026-11-02. Usuario informa «no funcina vista previa» con ERR_CONNECTION_REFUSED. Se confirma salud 200 en el entorno, pero localhost del navegador del usuario es otro equipo y no existe ruta de reenvío disponible. El enlace anterior no daba acceso desde ese navegador; el acceso externo continúa BLOQUEADO. Paquete y launcher local preparados según [guía](ACCESO_VISTA_PREVIA.md), sin afirmar instalación en su computador. Usuario confirma Windows; requisitos de WSL2/Ubuntu pendientes de comprobar.
 
 No cambia aprobación de Fase 15/D-41, permisos empresariales, datos o evidencia aceptada. No autoriza publicar externamente ni abre main/Pages/producción. No se usa un resultado de navegador interno como acreditación de conectividad desde el usuario.
+
+## D-43 — Preparar nuevo chat sobre pendientes y vista previa
+
+2026-11-02. Usuario: «preparame en chat nuevo los pendientes del sistema inventarioTI2 y una vista previa para probar el sistema». Se prepara [continuidad](CONTINUIDAD_PRUEBAS.md) con pendientes priorizados, plan/criterios VP-01–05 y prompt de inicio. El objetivo del nuevo chat es una vista funcional accesible desde Chrome Windows; D-42 sigue abierto y no se confunde localhost del entorno con acceso del usuario.
+
+No se abre un chat ni se habilita una URL en esta preparación. Fases 0–15 siguen aprobadas; no volver a solicitar Fase 15 ni preguntar el sistema operativo. No autoriza ejecutar toda la deuda, crear Fase 16, publicar externamente, hacer merge/main/Pages, producción, gasto o correo real. Conservar F1-SEG-01/02/03, datos/cuentas/MFA/claves/volúmenes y evidencia; cambios exclusivamente documentales en rama del PR #1.

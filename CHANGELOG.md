@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-02 — Continuidad para nuevo chat (D-43)
+
+- Pendientes F1-SEG/EV15 priorizados, contexto de aprobaciones y plan de vista previa con criterios VP-01–05; prompt listo para pegar.
+- Acceso real desde Windows/Chrome como primera prioridad; VP-01 pendiente, sin repetir localhost remoto ni afirmar instalación/URL nueva.
+- Solo documentación, sin nueva fase, cambios funcionales, infraestructura, main/Pages/merge, producción ni correo real; evidencia aceptada preservada.
+
 ## 2026-11-02 — Diagnóstico de acceso a vista previa (D-42)
 
 - Se corrige el enlace de acceso: localhost del computador del usuario no alcanza el servidor del entorno; readiness interno 200 no prueba conectividad externa.

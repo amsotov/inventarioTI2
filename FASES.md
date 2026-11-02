@@ -4,7 +4,7 @@
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
 **Fase actual:** 15 — COMPLETADA por aceptación D-41 de la entrega `a9a0742`; CA15-06 CUMPLIDO. Sistema local de pruebas autorizado y preparado en este entorno; [acceso/pendientes](docs/PRUEBAS_LOCALES.md).
 **Última fase completada:** 15, por D-41; aceptación con límites y pendientes conservados.
-**Siguiente hito:** resolver acceso del navegador del usuario: servidor interno sano, pero localhost del computador personal no llega al entorno remoto. [Diagnóstico/paquete local](docs/ACCESO_VISTA_PREVIA.md); no existe Fase 16 autorizada. D-41 autoriza solo publicación local en este entorno, sin publicación externa/producción ni merge a main; bloqueo Pages conservado. [Cierre/criterios CA15](docs/FASE15.md).
+**Siguiente hito:** nuevo chat con [CONTINUIDAD_PRUEBAS](docs/CONTINUIDAD_PRUEBAS.md) (D-43): presentar pendientes y resolver primero una vista previa funcional accesible desde Windows/Chrome; VP-01 PENDIENTE. Fases 0–15 aceptadas, sin Fase 16 ni autorización general de toda la deuda. Restricciones de main/Pages/producción y publicación externa conservadas.
 
 **Entrega vigente:** Fase 15 aceptada (`a9a0742`) y sistema local D-41 en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; main `82d8ad6` solo en lectura. Automatismo heredado Pages main:/docs activo: no más pushes/merges a main bajo prohibición de publicación externa hasta resolverlo. [Instancia local y continuidad](docs/PRUEBAS_LOCALES.md).
 
@@ -589,3 +589,9 @@ La misma solicitud autoriza trabajo adicional específico: presentar pendientes 
 2026-11-02. Usuario: «no funcina vista previa», con Chrome ERR_CONNECTION_REFUSED. Servicio del entorno activo y readiness 200; el navegador consulta localhost de otro equipo. No existe reenvío de puertos ni URL remota habilitada con las herramientas disponibles. Se corrige la comunicación previa, sin presentar pruebas internas como acceso desde el computador personal.
 
 [ACCESO_VISTA_PREVIA](docs/ACCESO_VISTA_PREVIA.md) documenta causa, requisitos, paquete local y bloqueo vigente. Launcher Linux y ZIP sin estado/credenciales preparados; instalación en el equipo del usuario NO REALIZADA, usuario confirma Windows; requisitos/arranque en su computador sin comprobar. Fases 0–15 siguen COMPLETADAS por D-41; no hay nueva fase ni permiso de publicación externa/producción. Instancia y evidencia anteriores preservadas. GitHub en PR #1 sin merge/main/Pages.
+
+## Preparación de nuevo chat: pendientes y vista previa — D-43
+
+2026-11-02. Solicitud literal: «preparame en chat nuevo los pendientes del sistema inventarioTI2 y una vista previa para probar el sistema». Se prepara [CONTINUIDAD_PRUEBAS](docs/CONTINUIDAD_PRUEBAS.md): contexto/ramas/aprobaciones, pendientes priorizados, plan de acceso funcional y VP-01–05, pruebas sugeridas y prompt para pegar. No se crea otra conversación ni se habilita una URL desde esta tarea documental.
+
+Primera prioridad de la continuación: acceso comprobable desde Chrome Windows, evitando repetir localhost remoto. VP-01 PENDIENTE; las pruebas internas anteriores no acreditan ese acceso. Fases 0–15 COMPLETADAS por D-41; sin Fase 16, implementación global de deuda, main/Pages, publicación externa, producción, gastos o correo real por inferencia. Cambios solo de documentación; aplicación, controladores, migraciones, dependencias y evidencia aceptada intactos. Sincronizar en la rama del PR #1 y cotejar SHA remoto.

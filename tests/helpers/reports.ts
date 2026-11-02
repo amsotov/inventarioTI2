@@ -12,7 +12,7 @@ import type { Provider, Tokens } from "../../apps/server/auth/ports.js";
 export const reader = "10000000-0000-4000-8000-000000000001",
   admin = "10000000-0000-4000-8000-000000000002",
   other = "10000000-0000-4000-8000-000000000003";
-class IdentityDouble implements Provider {
+export class IdentityDouble implements Provider {
   async login(email: string) {
     const userId = email.startsWith("admin")
       ? admin
@@ -60,6 +60,7 @@ class IdentityDouble implements Provider {
 export async function fixture(
   origin = "https://inventario.test",
   webRoot?: string,
+  options: { provider?: Provider; poolMax?: number } = {},
 ) {
   const name = "inventario-reports-" + randomUUID(),
     password = randomBytes(24).toString("hex");
@@ -84,7 +85,7 @@ export async function fixture(
     port: Number(docker("port", name, "5432/tcp").split(":").at(-1)),
     password,
     database: "postgres",
-    max: 3,
+    max: options.poolMax ?? 3,
     connectionTimeoutMillis: 5000,
     statement_timeout: 15000,
   };
@@ -96,7 +97,7 @@ export async function fixture(
   const close = async () => {
     await server?.close();
     await Promise.all([root.end(), authPool.end(), business.end(), workerPool.end()]);
-    docker("rm", "-f", name);
+    docker("rm", "-f", "-v", name);
   };
   try {
     for (let i = 0; i < 100; i++) {
@@ -128,7 +129,7 @@ export async function fixture(
     ).rows;
     const auth = new AuthService(
         new Postgres(authPool),
-        new IdentityDouble(),
+        options.provider ?? new IdentityDouble(),
         new Vault(randomBytes(32).toString("base64")),
         origin,
       ),

@@ -40,3 +40,8 @@ No se genera un inventario reconstruido a una fecha pasada ni se envía correo p
 ## Avisos de cambios — Fase 12
 
 Los cambios confirmados conservan su validez aunque falle el correo al encargado. El seguimiento y la recuperación son tareas de administración; un aviso aceptado por el proveedor no demuestra entrega ni lectura. Los avisos conservan destinatario original y mensajes minimizados con referencias; los detalles requieren acceso al sistema. Invitación/recuperación/MFA se dirigen solo al titular por el canal de acceso. Esta entrega se verifica con correo sintético; no hay envío real activo. Ver [NOTIFICACIONES](NOTIFICACIONES.md).
+
+
+## Búsqueda y exportación — ajuste de QA Fase 13
+
+El buscador combinado permite texto por código, serie, tipo, marca, modelo o condición del bien, y por nombre, documento/RUT original o canónico, correo, cargo o unidad del funcionario. Las tablas y archivos ordinarios mantienen sus columnas autorizadas, sin añadir documento ni correo. En Excel/PDF, el texto de búsqueda aparece como `[consulta reservada]` para proteger consultas que contienen datos personales; el conjunto exportado sigue correspondiendo a los filtros aplicados. El enlace «Saltar al contenido» mueve el foco a la pantalla actual sin cambiar de vista. «Ver aviso» identifica el detalle del aviso para administradores.

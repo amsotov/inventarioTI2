@@ -16,6 +16,7 @@
     "tests/api/**/*.ts",
     "apps/server/**/*.ts",
     "apps/server/**/*.mjs",
-    "tests/ui/**/*.ts"
+    "tests/ui/**/*.ts",
+    "tests/qa/**/*.ts"
   ]
 }

@@ -264,7 +264,7 @@ export function Notifications({
                       onClick={() => void detail(r.id)}
                       aria-label={"Ver aviso " + r.id}
                     >
-                      Ver detalle
+                      Ver aviso
                     </button>
                   </td>
                 </tr>

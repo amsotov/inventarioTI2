@@ -350,3 +350,30 @@ D-35: «Apruebo fase 12 y inicia en nuevo chat fase 13». Entrega aceptada `377b
 Este cierre cambia solo documentación: revisión de estados, criterio CA12-06, D-35/continuidad, enlaces locales y `git diff --check`; comprobación de que no cambian código, migraciones, dependencias, tests ni evidencias aceptadas. No se repiten build ni suites de aplicación. Los verificadores históricos, incluido `evidencias/fase12/verificar.py`, evalúan las condiciones de entrega originales y no se reescriben para adaptarlos al cierre posterior. GitHub mediante commit/push normales con autoría noreply y comparación de SHA remoto antes de confirmar.
 
 Fase 13 autorizada para un nuevo chat, ejecución PENDIENTE. No se ejecuta QA nueva ni se crea otra conversación aquí; tampoco se activa correo real, inicia Fase 14 o despliega. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Los estados EN_REVISION anteriores son antecedentes históricos.
+
+
+## Fase 13 — QA, rendimiento y seguridad
+
+2026-11-02 · D-35/D-36 · EN_REVISION, aceptación CA13-06 pendiente. Plan/alcance/criterios/defectos: [QA_FASE13](QA_FASE13.md). Cobertura RF/HU/CR/CA y estados parciales: [MATRIZ_QA_FASE13](MATRIZ_QA_FASE13.md). Base `da1236e`; datos/cuentas sintéticos, PostgreSQL/GoTrue locales y dobles de identidad/correo. Ningún mensaje externo.
+
+| Comando / revisión | Resultado / evidencia |
+|---|---|
+| `npm ci`, `npm run build` | Instalación/build correctos; [instalación](evidencias/fase13/npm-ci.txt), [build](evidencias/fase13/build.txt) |
+| `npm test` | **119/119**, cero fallidas/canceladas/omitidas; incluye agrupaciones y subpruebas; [regresión API/seguridad](evidencias/fase13/regresion.txt) |
+| `npm run test:ui` | **39/39**, cero fallidas/canceladas/omitidas; [regresión navegador](evidencias/fase13/regresion-ui.txt) |
+| `npm run test:qa:a11y` | **35** análisis axe-core 4.14.0 sin infracciones detectadas, **79** comprobaciones programáticas aprobadas, sin errores JavaScript; [JSON con incomplete conservados](evidencias/fase13/accesibilidad.json) |
+| `npm run test:qa:performance` | Muestra A-09 completa, 1.000 consultas p95 **145,59 ms**, 200 escrituras p95 **142,17 ms**; ninguna respuesta fallida en carga admitida. +200 movimientos/auditorías/comandos/avisos; versión obsoleta 412 y lector escritor 403 fuera de percentiles; [todas las muestras/configuración](evidencias/fase13/rendimiento.json) |
+| Exportación privada límite | HTTP solicitud→estado→descarga: XLSX **10.000 filas / 3.232,51 ms**, PDF **2.000 / 4.056,60 ms**, ambos ≤60 s; JSON anterior |
+| Primer intento de aviso | Worker de polling 1 s, MailPort doble inmediato, 203/203 aceptados: p95 **916 ms**, máximo **21.840 ms** incluidos tres pendientes de preparación. ≤1 min; no es entrega física |
+| `npm audit --json` | **0 vulnerabilidades**, producción y desarrollo; [auditoría](evidencias/fase13/audit.json). Solo se añade axe-core dev, versión/licencia/lockfile revisados |
+| Catálogo SQL completo | 19 tablas privadas con RLS; anon/authenticated sin acceso; funciones DEFINER privadas/search_path fijo/dueños mínimos/sin EXECUTE público; roles de proceso sin propiedad/superusuario/BYPASSRLS/membresías. Incluido en `npm test` |
+| `python3 tests/qa/secrets.py` | Cero coincidencias en cinco familias de patrones; 35 commits/494 blobs alcanzables más árbol actual; [alcance](evidencias/fase13/secretos.json). Heurística sin análisis universal/entropía, no certificado de ausencia |
+| Documentación/históricos/Git | Enlaces, estados/criterios, `git diff --check`, migraciones previas y evidencia aceptada conservadas; [revisión](evidencias/fase13/documentos.txt). GitHub/SHA comprobados al entregar |
+
+Regresión consolida sesión/rol/cuenta/MFA vigentes, Origin/CSRF, IDOR/BOLA de archivos, inyección como texto, XSS/CSP, RLS/pools/LOCAL, revocación, privacidad de reportes/avisos, reintentos/incertidumbre, último administrador, concurrencia, versiones/idempotencia, atomicidad/rollback y evidencia inmutable. RF-06 añade prueba de todas sus claves; inspección de XML y texto PDF verifica que buscar por correo no amplía columnas ni lo copia a metadatos del archivo.
+
+Accesibilidad: teclado/foco/error, salto conserva pantalla, tablas desplazables, contraste y sin desborde de página para ambos roles. 1440×1000, 820×1180 y 390×844 en Chromium/Santiago. Capturas de reportes: [lectura computador](evidencias/fase13/lectura-computador.png), [iPad](evidencias/fase13/lectura-ipad.png), [iPhone](evidencias/fase13/lectura-iphone.png), [administrador computador](evidencias/fase13/administrador-computador.png), [iPad](evidencias/fase13/administrador-ipad.png), [iPhone](evidencias/fase13/administrador-iphone.png). axe conserva contraste incompleto de contenido recortado por scroll; revisión CSS suplementaria de pares opacos registrada en JSON. No acredita WCAG integral, Safari, dispositivos físicos ni lector de pantalla.
+
+El ensayo de carga utiliza cuota 2 CPU/8 GiB y tres conexiones por pool, HTTP/DB loopback sin TLS/WAN; identidad/correo dobles inmediatos. No extrapola p95 a servicios gestionados, capacidad contratada o disponibilidad mensual. La preparación usa SQL propietario solo en DB efímera propia; las 1.200 peticiones medidas conservan autorización/controles reales. Los [ensayos iniciales](evidencias/fase13/ensayos-iniciales.md) registran defectos reproducidos, timeout/configuración del runner y fallos de arranque simultáneo; no se sobrescriben como si nunca hubieran ocurrido.
+
+NO EJECUTADOS/acreditados: Supabase/Resend/Auth/MFA gestionados, advisors operativos, buzones/dominio/rebotes/entrega física, Safari/hardware/lector de pantalla/WCAG completa, Excel/Acrobat físicos, pentest externo, SQL Server, disponibilidad mensual ni respaldo/restauración/operación productivos. [Fuentes técnicas](evidencias/fase13/fuentes.txt). F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días preservados. Fases 14–15 sin autorización; sin despliegue.

@@ -14,6 +14,11 @@ const display = (value) =>
       : String(value);
 
 export async function render({ report, format }) {
+  // La consulta puede contener documento/correo; conservar selección, pero no
+  // copiar ese texto personal a los metadatos del archivo compartible.
+  const filters = report.type === "busqueda" && report.filters.q
+    ? { ...report.filters, q: "[consulta reservada]" }
+    : report.filters;
   if (format === "xlsx") {
     const cell = (value) => ({
       type: typeof value === "number" ? Number : String,
@@ -26,7 +31,7 @@ export async function render({ report, format }) {
       data: [
         [{ ...cell("Inventario TI · " + report.type), fontWeight: "bold" }],
         [cell("Generado UTC"), cell(report.generatedAt)],
-        [cell("Filtros normalizados"), cell(JSON.stringify(report.filters))],
+        [cell("Filtros normalizados"), cell(JSON.stringify(filters))],
         [cell("Campo temporal"), cell(section.dateField)],
         [
           cell("Total combinado"),
@@ -111,7 +116,7 @@ export async function render({ report, format }) {
       for (const text of [
         "Generado: " + report.generatedAt + " · UTC · Página " + page,
         "Total combinado: " + report.total,
-        "Filtros: " + JSON.stringify(report.filters),
+        "Filtros: " + JSON.stringify(filters),
         "Subtotales: " +
           (report.subtotals ? JSON.stringify(report.subtotals) : "No aplica"),
       ]) {

@@ -231,7 +231,7 @@ function plans(type: ReportType, f: Filters): Plan[] {
         type === "por-funcionario"
           ? "inicio de custodia vigente"
           : "adquisición";
-      text(["b.codigo", "b.serie", "b.tipo", "b.marca", "b.modelo"]);
+      text(["b.codigo", "b.serie", "b.tipo", "b.marca", "b.modelo", "b.condicion"]);
       eq("b.tipo", "tipo");
       eq("b.condicion", "condicion");
       eq("b.situacion", "situacion");
@@ -252,7 +252,8 @@ function plans(type: ReportType, f: Filters): Plan[] {
       order = 'f.nombre collate "C",f.id';
       date = "f.alta_en";
       dateField = "alta de funcionario";
-      text(["f.nombre", "f.cargo"]);
+      // Las claves de búsqueda aceptadas no amplían las columnas de salida.
+      text(["f.nombre", "f.documento", "f.documento_normalizado", "f.correo", "f.cargo", "u.nombre"]);
       eq("u.id", "unidad_id");
       eq("f.id", "funcionario_id");
       eq("f.activo", "activo");

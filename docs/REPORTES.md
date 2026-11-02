@@ -100,3 +100,10 @@ No acreditado: Supabase gestionado/identidad/MFA externos, advisors operativos s
 ## Cierre aprobado — 2026-11-02
 
 D-33 acepta la entrega `c94a366be22e6eae917711c52e695ea842c27187` mediante «Apruebo fase 11, inicia en nuevo chat fase 12». Fase 11 COMPLETADA y CA11-06 CUMPLIDO. La aceptación conserva evidencia, limitaciones y seguimientos; no acredita validación gestionada, correo externo, carga objetivo ni continuidad productiva. Fase 12 autorizada para iniciar en un nuevo chat; no se ejecuta en este cierre. Continuidad en [FASES](../FASES.md) y [ESTADO](../ESTADO_PROYECTO.md).
+
+
+## Correcciones verificadas en Fase 13
+
+D-35/D-36. RF-06: `q` incluye condición del bien y, en funcionarios del buscador combinado, documento original/canónico, correo y unidad además de nombre/cargo. Son claves de selección parametrizadas: las columnas autorizadas no se amplían. En XLSX/PDF del buscador, el metadato `q` se sustituye por `[consulta reservada]` para evitar copiar un documento/correo a un archivo compartible; selección/filas y restantes filtros permanecen coherentes. La pantalla autenticada conserva la consulta introducida y el trabajo privado conserva filtros reales para replay/selección.
+
+Límites A-11 revalidados; medición local con fuente de 100.000 auditorías: XLSX 10.000 filas en 3,23 s y PDF 2.000 en 4,06 s desde solicitud hasta descarga. Recursos/dobles/red y límites en [QA_FASE13](QA_FASE13.md). No equivale a SLA gestionado ni inicia Fase 14.

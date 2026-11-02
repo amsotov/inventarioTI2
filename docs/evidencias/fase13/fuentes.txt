@@ -1,0 +1,11 @@
+Consultado 2026-11-02, con TLS/proxy del entorno; sin credenciales en artefactos.
+https://supabase.com/changelog.md
+https://supabase.com/changelog/cbc-tls-ciphers-deprecated
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+https://supabase.com/docs/guides/security/product-security.md
+RLS: grants y políticas separados; user_metadata editable y JWT potencialmente obsoleto; vistas security_invoker; funciones privilegiadas privadas/search_path fijo/ACL. Se conserva validación viva del BFF y principal SQL, sin nuevas migraciones/grants ni conexión gestionada. Cambios de TLS/CBC/Postgres observados: no se actualiza infraestructura gestionada por esta revisión ni se afirma su compatibilidad probada.
+axe-core 4.14.0, MPL-2.0, dist.integrity sha512-9WTZxEjsZ7b13TH8JPmbV2z8CHbl80/2hm3XPEG4JgNdQLK81IBRXmSxHfMAOkSqQeRxT/0dwNDz2GOm3zzpcQ==
+Versión/licencia/integridad consultadas en npm; dependencia solo de desarrollo, exacta y lockfile versionado. Reglas WCAG 2 A/AA, 2.1 A/AA, 2.2 AA y best-practice disponibles en esa versión; análisis automático parcial, no certificación.
+PostgreSQL sintético: postgres:17@sha256:31ba9c94a03ada9988f2bb493a22a75eef3a185884533e5cdbcd498ea835b08f
+Datos de referencia y objetivos: CIERRE_FASE1 A-09/CR-17/CA-N07 y A-11; autorización D-35/D-36.

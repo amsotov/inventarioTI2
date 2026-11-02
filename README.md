@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): Fases 0–12 COMPLETADAS y aceptadas (última D-35). Fase 12: [notificaciones y automatización](docs/NOTIFICACIONES.md), entrega aceptada `377be1a`, con 100 pruebas API/seguridad y 39 de navegador superadas. Fase 13 autorizada para iniciar en un nuevo chat, ejecución pendiente; Fases 14–15 sin autorización. Correo real deshabilitado y sin despliegue. Consultar [FASES](FASES.md), [ESTADO](ESTADO_PROYECTO.md) y [PRUEBAS](docs/PRUEBAS.md). Los estados anteriores son antecedentes históricos.
+Estado vigente (2026-11-02): Fases 0–12 COMPLETADAS y aceptadas (última D-35). **Fase 13 EN_REVISION**: [plan de QA, rendimiento y seguridad](docs/QA_FASE13.md), [matriz](docs/MATRIZ_QA_FASE13.md), defectos corregidos y evidencias. Carga sintética completa: p95 146 ms en consultas y 142 ms en escrituras; XLSX/PDF límite en 3,23/4,06 s. Resultados locales y límites en [PRUEBAS](docs/PRUEBAS.md). Aceptación propia pendiente; Fases 14–15 sin autorización. Correo real deshabilitado y sin despliegue. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Los estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 

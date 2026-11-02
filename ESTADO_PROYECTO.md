@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 12 — COMPLETADA; entrega y cierre aprobados por D-35.
+**Fase:** 13 — QA, rendimiento y seguridad; EN_REVISION (D-35/D-36).
 **Modo:** GUIADO
 **Última fase completada:** 12.
-**Última fase autorizada:** 13, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 14–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 13, ejecutada; aceptación CA13-06 PENDIENTE. Fases 14–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 12 aceptada y cerrada por D-35. Iniciar únicamente Fase 13 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad; no ejecuta Fase 13 ni despliega. Correo real deshabilitado y seguimientos conservados. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 13 entregada para revisión bajo D-35/D-36. Plan, criterios, defectos, mediciones y límites en [QA_FASE13](docs/QA_FASE13.md); matriz en [MATRIZ_QA_FASE13](docs/MATRIZ_QA_FASE13.md). Revisar/aceptar Fase 13; no iniciar Fase 14 ni desplegar. Correo real deshabilitado y seguimientos conservados. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -489,3 +489,16 @@ Punto de inicio para el nuevo chat:
 8. Entregar matriz/evidencias, defectos/correcciones, pruebas ejecutadas/fallidas/no ejecutadas, riesgos y criterios pendientes. Actualizar documentación y GitHub, comprobar SHA remoto y dejar Fase 13 EN_REVISION para aceptación propia. No marcar COMPLETADA ni iniciar Fases 14–15 sin aprobación independiente.
 
 Verificación de este cierre: únicamente documentación; revisión de estados/CA12-06/D-35, enlaces locales y preservación de aplicación, migraciones, dependencias, tests y evidencias aceptadas. `git diff --check`. No se repiten build ni suites funcionales porque no cambia código. Los verificadores históricos conservan las condiciones de su entrega original; no se reescriben para adaptarlos al cierre. Commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar.
+
+
+## Entrega vigente de Fase 13 — 2026-11-02 (D-36)
+
+PROYECTO: inventarioTI2. FASE: 13 — QA, rendimiento y seguridad. ESTADO: EN_REVISION. OBJETIVO/ALCANCE: consolidar regresión, matriz trazable, carga A-09, accesibilidad, seguridad y correcciones; ratifica D-35 sin repetir autorización. Plan presentado antes de implementar. Base `da1236e`, trabajo inicial limpio, preservado avance remoto de Fase 12.
+
+Trabajo: [plan/criterios/defectos y límites](docs/QA_FASE13.md), [matriz](docs/MATRIZ_QA_FASE13.md) y evidencias nuevas. Correcciones: claves incompletas del buscador; metadatos XLSX/PDF con consulta reservada; etiqueta accesible de avisos; salto de teclado sin cambiar ruta; retiro de volúmenes propios y concurrencia acotada del runner. Se conservan permisos, lógica empresarial, controles de sesión/MFA/RLS, migraciones y evidencia aceptadas. Única dependencia nueva: axe-core 4.14.0 de desarrollo, MPL-2.0, fijada con lockfile.
+
+Pruebas finales: build, 119/119 API/seguridad, 39/39 navegador, 35 análisis axe sin infracciones detectadas y 79 comprobaciones programáticas; auditoría npm sin vulnerabilidades y búsqueda heurística sin coincidencias en alcance registrado. Carga con 3.000 bienes/500 funcionarios/25 cuentas/100.000 movimientos/100.000 auditorías, 10 usuarios, 100 consultas de calentamiento, 1.000 consultas y 200 escrituras medidas: p95 145,59/142,17 ms; +200 movimientos/auditorías/comandos/avisos. XLSX 10.000/PDF 2.000: 3,23/4,06 s; primer intento de 203 avisos con doble ≤21,84 s. Fallos iniciales/preparación y reproducción en PRUEBAS/evidencias/fase13; sin fallos ocultos en percentiles.
+
+Riesgos: dobles de identidad/correo y loopback no acreditan Supabase/Resend gestionados, entrega física, infraestructura contratada, Safari/hardware/lector de pantalla/WCAG completa, pentest independiente, disponibilidad o continuidad productiva. Advisors sin stack/CLI operativo, no modificados proyectos remotos. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin Spec Kit, servicios/costos, datos reales, permisos remotos o despliegue.
+
+Archivos: selección/renderizador de reportes, main/avisos UI; helper/tests API/seguridad/QA, package/lock/tsconfig; QA/matriz/evidencias, PRUEBAS/TRAZABILIDAD/SEGURIDAD/REPORTES/manual y documentos de control. Siguiente acción: revisión/aceptación propia de Fase 13 (CA13-06 pendiente). No marcar COMPLETADA ni iniciar Fases 14–15. Sincronización normal a main, autoría noreply y comparación SHA remoto al entregar.

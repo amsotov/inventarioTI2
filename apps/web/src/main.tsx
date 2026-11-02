@@ -294,7 +294,10 @@ function App() {
   const canWrite = session?.rol === "administrador" && !session.mfaRequired;
   return (
     <>
-      <a className="skip" href="#contenido">
+      <a className="skip" href="#contenido" onClick={(event) => {
+        event.preventDefault();
+        document.getElementById("contenido")?.focus();
+      }}>
         Saltar al contenido
       </a>
       <aside>
@@ -318,7 +321,7 @@ function App() {
         </nav>
         <small>Inventario compartido · UTC</small>
       </aside>
-      <main id="contenido">
+      <main id="contenido" tabIndex={-1}>
         <header>
           <span>Inventario / {view === 'resumen' ? 'Resumen' : view === 'reportes' ? 'Reportes' : view === "administracion" ? "Administración" : valid ? titles[resource] : "Acceso"}</span>
           {session && (

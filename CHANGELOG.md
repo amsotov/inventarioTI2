@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-02 — Fase 13: QA, rendimiento y seguridad (EN_REVISION)
+
+- Matriz RF/HU/CR/CA, regresión consolidada, carga A-09 completa, accesibilidad y revisión de seguridad con evidencia reproducible.
+- Corrige claves de búsqueda, privacidad de metadatos de exportación, etiqueta accesible de avisos y salto a contenido. Fixtures retiran volúmenes propios y runner acota concurrencia.
+- 119 pruebas API/seguridad, 39 navegador; p95 consultas/escrituras 146/142 ms; exportaciones límite 3,23/4,06 s; avisos con doble antes de 1 min. Límites gestionados/hardware/operativos conservados.
+- Aceptación propia pendiente; Fases 14–15 sin autorización, correo real deshabilitado y sin despliegue.
+
 ## 2026-11-02 — Cierre aprobado de Fase 11
 
 - D-33 acepta entrega `c94a366`; CA11-06 cumplido y Fase 11 COMPLETADA.

@@ -1,0 +1,13 @@
+▶ Fase 13: catálogo completo de RLS, funciones privilegiadas y roles
+  ✔ cada tabla privada tiene RLS; Data API carece de acceso (2.954089ms)
+  ✔ SECURITY DEFINER privado, search_path fijo, PUBLIC/Data API sin EXECUTE y dueño mínimo (4.091781ms)
+  ✔ Auth, negocio y worker no son propietarios ni miembros privilegiados (2.578542ms)
+✔ Fase 13: catálogo completo de RLS, funciones privilegiadas y roles (4915.119772ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5186.349406

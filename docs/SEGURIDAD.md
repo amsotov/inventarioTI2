@@ -114,3 +114,10 @@ Permisos existentes integrados: consulta compartida/historia, reportes.exportar 
 ## Incremento de Fase 12 — D-34
 
 [NOTIFICACIONES](NOTIFICACIONES.md): worker empresarial con identidad exacta `inventario_worker`, sin acceso SQL genérico a tablas ni identidad. Funciones privadas propiedad de rol técnico sin login/BYPASSRLS/propiedad de tablas, search_path fijo, grants/RLS específicos y sin EXECUTE público. API administrativa revalida cuenta/sesión/versión/MFA; GET administrativo, POST con Origin/CSRF/motivo/confirmación/versión/idempotencia. Destinatario inmutable, proyección positiva sin valores personales/texto libre/secretos y enlaces al origen autenticado. Errores saneados; incierto requiere evidencia antes de habilitar reintento. Credenciales/activación fuera de Git. Ensayos sintéticos, integración externa pendiente; F1-SEG-01/02/03 preservados.
+
+
+## Revisión de seguridad — Fase 13
+
+D-35/D-36. [Matriz](MATRIZ_QA_FASE13.md) y [PRUEBAS](PRUEBAS.md#fase-13--qa-rendimiento-y-seguridad): 119 pruebas API/seguridad y 39 de navegador, sesión/rol/MFA vigentes, CSRF/Origin, inyección/XSS, BOLA/IDOR, versiones/replay/rollback, último administrador y revocación. Catálogo completo comprueba 19 tablas privadas con RLS, Data API sin acceso, dueños/roles mínimos y funciones privilegiadas privadas con search_path fijo y EXECUTE público revocado. No cambia esquema ni grants.
+
+Buscador incluye documento/correo/unidad conforme RF-06 mediante predicados parametrizados, sin añadir esas columnas a proyecciones. XLSX/PDF de búsqueda combinada reservan el texto de `q`, que podría ser personal; selección y filtros efectivos se conservan en trabajo privado. Auditoría npm producción/desarrollo sin vulnerabilidades; búsqueda heurística de cinco familias de secretos sin coincidencias en alcance documentado, sin afirmar ausencia universal. Supabase/advisors/Resend gestionados, pentest independiente y cumplimiento legal siguen sin acreditarse. F1-SEG-01/02/03 y objetivos de continuidad intactos. Sin activación externa ni despliegue.

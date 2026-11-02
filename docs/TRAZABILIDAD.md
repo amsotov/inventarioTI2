@@ -139,3 +139,8 @@ CA11-01 → métricas actuales reproducibles, RF-13/HU-13; CA11-02 → cinco rep
 ## Fase 12 — RF-14/RF-15, HU-14/HU-15, CR-13/CR-14 y A-07/A-08/A-10
 
 Catálogo, minimización, destino fijado, proceso conservado, reintentos/agote/permanente/incierto y conciliación → `apps/server/notifications/*`, migración aditiva Fase 12, `tests/api/notifications.test.ts`. Seguimiento/acciones administrativas, filtros, replay y responsive/teclado → `apps/web/src/notifications.tsx`, `tests/ui/notifications.test.ts`. Permisos vigentes/SQL/Origin/CSRF/auditoría y rollback verificados con datos sintéticos; no entrega física ni integración gestionada inferidas. Criterios CA12-01 a CA12-06 y límites en [NOTIFICACIONES](NOTIFICACIONES.md); Fase 12 EN_REVISION y CA12-06 pendiente.
+
+
+## Consolidación de QA — Fase 13 (D-35/D-36)
+
+La [matriz ejecutada RF-01–16/HU-01–16/CR-01–20/CA-N01–07](MATRIZ_QA_FASE13.md) vincula suites y límites; [QA_FASE13](QA_FASE13.md) establece CA13-01–06 y [PRUEBAS](PRUEBAS.md#fase-13--qa-rendimiento-y-seguridad) conserva resultados finales/fallos iniciales. RNF-04 legal, RNF-05 accesibilidad completa/hardware y RNF-07 disponibilidad/continuidad siguen parciales; no se infiere cumplimiento integral por pasar pruebas sintéticas. Fase 13 EN_REVISION, CA13-06 pendiente. Fases 14–15 sin autorización; sin despliegue.

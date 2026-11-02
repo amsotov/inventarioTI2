@@ -1,0 +1,5009 @@
+{
+  "browser": "154.0.8037.57",
+  "engine": "Chromium; emulación de tamaños, sin Safari/hardware/lector de pantalla",
+  "target": "WCAG 2.2 AA, revisión parcial automática y teclado",
+  "results": [
+    {
+      "role": "lectura",
+      "screen": "acceso",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 32,
+      "supplementalContrast": []
+    },
+    {
+      "role": "lectura",
+      "screen": "resumen/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 35,
+      "supplementalContrast": []
+    },
+    {
+      "role": "lectura",
+      "screen": "bienes/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 41,
+      "supplementalContrast": []
+    },
+    {
+      "role": "lectura",
+      "screen": "funcionarios/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 40,
+      "supplementalContrast": []
+    },
+    {
+      "role": "lectura",
+      "screen": "reportes/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(9)"
+            ],
+            [
+              "th:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(9)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(10)"
+            ]
+          ]
+        }
+      ],
+      "passes": 43,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 26
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "administracion/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 28,
+      "supplementalContrast": []
+    },
+    {
+      "role": "lectura",
+      "screen": "resumen/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 35,
+      "supplementalContrast": []
+    },
+    {
+      "role": "lectura",
+      "screen": "bienes/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 42,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 25
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 25
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "funcionarios/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 41,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "reportes/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "th:nth-child(8)"
+            ],
+            [
+              "th:nth-child(9)"
+            ],
+            [
+              "th:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(9)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(10)"
+            ]
+          ]
+        }
+      ],
+      "passes": 43,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 6
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 125
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "administracion/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 28,
+      "supplementalContrast": []
+    },
+    {
+      "role": "lectura",
+      "screen": "resumen/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "nav > a[href$=\"#reportes\"]"
+            ]
+          ]
+        }
+      ],
+      "passes": 36,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "bienes/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#reportes\"]"
+            ],
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 42,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 4
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 75
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 25
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "funcionarios/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#reportes\"]"
+            ],
+            [
+              "th:nth-child(3)"
+            ],
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(3)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(3)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 41,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 3
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 4
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "reportes/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "th:nth-child(8)"
+            ],
+            [
+              "th:nth-child(9)"
+            ],
+            [
+              "th:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(9)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(10)"
+            ]
+          ]
+        }
+      ],
+      "passes": 43,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 1
+        },
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 7
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 150
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "administracion/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#reportes\"]"
+            ]
+          ]
+        }
+      ],
+      "passes": 29,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        }
+      ]
+    },
+    {
+      "role": "lectura",
+      "screen": "error de rango",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ]
+          ]
+        }
+      ],
+      "passes": 38,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "acceso",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 32,
+      "supplementalContrast": []
+    },
+    {
+      "role": "administrador",
+      "screen": "MFA parcial",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 33,
+      "supplementalContrast": []
+    },
+    {
+      "role": "administrador",
+      "screen": "resumen/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 35,
+      "supplementalContrast": []
+    },
+    {
+      "role": "administrador",
+      "screen": "bienes/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 41,
+      "supplementalContrast": []
+    },
+    {
+      "role": "administrador",
+      "screen": "funcionarios/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 40,
+      "supplementalContrast": []
+    },
+    {
+      "role": "administrador",
+      "screen": "reportes/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(9)"
+            ],
+            [
+              "th:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(9)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(10)"
+            ]
+          ]
+        }
+      ],
+      "passes": 43,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 26
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "administracion/computador",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 40,
+      "supplementalContrast": []
+    },
+    {
+      "role": "administrador",
+      "screen": "resumen/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 35,
+      "supplementalContrast": []
+    },
+    {
+      "role": "administrador",
+      "screen": "bienes/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 42,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 25
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 25
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "funcionarios/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 41,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "reportes/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "th:nth-child(8)"
+            ],
+            [
+              "th:nth-child(9)"
+            ],
+            [
+              "th:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(9)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(10)"
+            ]
+          ]
+        }
+      ],
+      "passes": 43,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 6
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 125
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "administracion/ipad",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(4)"
+            ]
+          ]
+        }
+      ],
+      "passes": 41,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 3
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "resumen/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#administracion\"]"
+            ],
+            [
+              "nav > a[href$=\"#reportes\"]"
+            ]
+          ]
+        }
+      ],
+      "passes": 36,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 3
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "bienes/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#administracion\"]"
+            ],
+            [
+              "a[href$=\"#reportes\"]"
+            ],
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7) > a"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 42,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 3
+        },
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 4
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 75
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 25
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "funcionarios/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#administracion\"]"
+            ],
+            [
+              "a[href$=\"#reportes\"]"
+            ],
+            [
+              "th:nth-child(3)"
+            ],
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(3)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5) > a"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(3)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5) > a"
+            ]
+          ]
+        }
+      ],
+      "passes": 41,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 3
+        },
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 3
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 4
+        },
+        {
+          "foreground": [
+            8,
+            118,
+            107
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.506022479405005,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "reportes/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#administracion\"]"
+            ],
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "th:nth-child(6)"
+            ],
+            [
+              "th:nth-child(7)"
+            ],
+            [
+              "th:nth-child(8)"
+            ],
+            [
+              "th:nth-child(9)"
+            ],
+            [
+              "th:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(9)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(4) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(5) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(6) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(7) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(8) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(9) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(10) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(11) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(12) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(13) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(14) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(15) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(16) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(17) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(18) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(19) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(20) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(21) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(22) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(23) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(24) > td:nth-child(10)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(6)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(7)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(8)"
+            ],
+            [
+              "tr:nth-child(25) > td:nth-child(10)"
+            ]
+          ]
+        }
+      ],
+      "passes": 43,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 7
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 150
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "administracion/iphone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#reportes\"]"
+            ],
+            [
+              "th:nth-child(2)"
+            ],
+            [
+              "th:nth-child(3)"
+            ],
+            [
+              "th:nth-child(4)"
+            ],
+            [
+              "th:nth-child(5)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(2)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(3)"
+            ],
+            [
+              "tr:nth-child(1) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(2)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(3)"
+            ],
+            [
+              "tr:nth-child(2) > td:nth-child(4)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(2)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(3)"
+            ],
+            [
+              "tr:nth-child(3) > td:nth-child(4)"
+            ]
+          ]
+        }
+      ],
+      "passes": 41,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        },
+        {
+          "foreground": [
+            88,
+            107,
+            117
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.563075578794835,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 4
+        },
+        {
+          "foreground": [
+            32,
+            50,
+            60
+          ],
+          "background": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 13.266747241022365,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 9
+        }
+      ]
+    },
+    {
+      "role": "administrador",
+      "screen": "error de rango",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "a[href$=\"#movimientos\"]"
+            ],
+            [
+              "a[href$=\"#administracion\"]"
+            ]
+          ]
+        }
+      ],
+      "passes": 38,
+      "supplementalContrast": [
+        {
+          "foreground": [
+            217,
+            231,
+            235
+          ],
+          "background": [
+            21,
+            44,
+            53
+          ],
+          "ratio": 11.485673841974458,
+          "minimum": 4.5,
+          "passed": true,
+          "nodes": 2
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "role": "lectura",
+      "screen": "acceso",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "resumen/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "resumen",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "bienes",
+      "viewport": "computador",
+      "check": "salto a contenido conserva ruta y mueve foco",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "bienes/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "bienes",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "funcionarios/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "funcionarios",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "reportes/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "reportes",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "reportes",
+      "viewport": "computador",
+      "check": "tabla recibe foco de teclado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "administracion/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "administracion",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "resumen/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "resumen",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "bienes",
+      "viewport": "ipad",
+      "check": "salto a contenido conserva ruta y mueve foco",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "bienes/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "bienes",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "funcionarios/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "funcionarios",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "reportes/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "reportes",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "reportes",
+      "viewport": "ipad",
+      "check": "tabla recibe foco de teclado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "administracion/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "administracion",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "resumen/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "resumen",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "bienes",
+      "viewport": "iphone",
+      "check": "salto a contenido conserva ruta y mueve foco",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "bienes/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "bienes",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "funcionarios/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "funcionarios",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "reportes/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "reportes",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "reportes",
+      "viewport": "iphone",
+      "check": "tabla recibe foco de teclado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "administracion/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "view": "administracion",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "check": "error recibe foco",
+      "passed": true
+    },
+    {
+      "role": "lectura",
+      "screen": "error de rango",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "acceso",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "MFA parcial",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "resumen/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "resumen",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "bienes",
+      "viewport": "computador",
+      "check": "salto a contenido conserva ruta y mueve foco",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "bienes/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "bienes",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "funcionarios/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "funcionarios",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "reportes/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "reportes",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "reportes",
+      "viewport": "computador",
+      "check": "tabla recibe foco de teclado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "administracion/computador",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "administracion",
+      "viewport": "computador",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "resumen/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "resumen",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "bienes",
+      "viewport": "ipad",
+      "check": "salto a contenido conserva ruta y mueve foco",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "bienes/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "bienes",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "funcionarios/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "funcionarios",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "reportes/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "reportes",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "reportes",
+      "viewport": "ipad",
+      "check": "tabla recibe foco de teclado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "administracion/ipad",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "administracion",
+      "viewport": "ipad",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "resumen/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "resumen",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "bienes",
+      "viewport": "iphone",
+      "check": "salto a contenido conserva ruta y mueve foco",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "bienes/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "bienes",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "funcionarios/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "funcionarios",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "reportes/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "reportes",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "reportes",
+      "viewport": "iphone",
+      "check": "tabla recibe foco de teclado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "administracion/iphone",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "view": "administracion",
+      "viewport": "iphone",
+      "check": "sin desborde de página",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "check": "error recibe foco",
+      "passed": true
+    },
+    {
+      "role": "administrador",
+      "screen": "error de rango",
+      "check": "contraste CSS suplementario en texto recortado",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -190,3 +190,8 @@ El usuario ratifica D-33: «Inicia únicamente la Fase 12 de inventarioTI2, ya a
 ## D-35 — Aceptación de Fase 12 y continuidad de Fase 13
 
 2026-11-02. Evidencia literal: «Apruebo fase 12 y inicia en nuevo chat fase 13». Acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`, cumple CA12-06 y cierra Fase 12 COMPLETADA con sus límites explícitos. Autoriza únicamente Fase 13 — QA, rendimiento y seguridad para iniciar en un nuevo chat, ejecución PENDIENTE. No implica ejecución aquí, creación automática de conversación, envío real ni aprobación de Fases 14–15, despliegue, producción, datos reales, gastos o permisos remotos. Conserva evidencia y F1-SEG-01/02/03. Los estados EN_REVISION de D-34 se mantienen como antecedentes de entrega.
+
+
+## D-36 — Ejecución de Fase 13 (2026-11-02)
+
+El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya autorizada por D-35. Presenta el plan de QA, rendimiento y seguridad y actualiza GitHub. No inicies Fase 14 ni despliegues». Autoriza plan/QA/carga/seguridad y correcciones de brechas aceptadas, con actualización GitHub. No se vuelve a pedir esa autorización. [QA_FASE13](QA_FASE13.md) registra criterios, evidencia, defectos y límites; entrega EN_REVISION, CA13-06 pendiente de aceptación propia. Fases 14–15 siguen sin autorización; correo real deshabilitado, sin datos reales, permisos remotos, gastos ni despliegues. F1-SEG-01/02/03 y objetivos de continuidad conservados.

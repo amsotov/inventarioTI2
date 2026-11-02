@@ -80,3 +80,8 @@ Especificación/criterios CA12-01 a CA12-06, catálogo A-07, estados/reintentos/
 ## Continuidad vigente — D-35
 
 Fase 12 COMPLETADA y CA12-06 cumplido. Fase 13 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md), [NOTIFICACIONES](../docs/NOTIFICACIONES.md), [PRUEBAS](../docs/PRUEBAS.md) y A-09/CR-17/CA-N07 de [CIERRE_FASE1](../docs/CIERRE_FASE1.md). Este cierre no ejecuta QA ni instala Spec Kit. Fases 14–15 sin autorización; correo real deshabilitado y sin despliegue. Los estados previos se conservan como antecedentes.
+
+
+## Consolidación de Fase 13 — D-35/D-36
+
+Plan/criterios/defectos en [QA_FASE13](../docs/QA_FASE13.md), cobertura en [MATRIZ_QA_FASE13](../docs/MATRIZ_QA_FASE13.md) y evidencia en [PRUEBAS](../docs/PRUEBAS.md#fase-13--qa-rendimiento-y-seguridad). Spec Kit no instalado ni simulado. Fase 13 EN_REVISION; última completada 12; aceptación CA13-06 pendiente. Fases 14–15 sin autorización. Sin correo real ni despliegue.

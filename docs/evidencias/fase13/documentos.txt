@@ -1,0 +1,1 @@
+PASS: fase/aceptación/límites; 11 directorios históricos y migraciones intactos; evidencia 119/39/35/79 consistente; 293 enlaces locales; diff limpio.

@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc && tsc -p apps/web/tsconfig.json && vite build apps/web --outDir ../../dist/web",
-    "test": "tsx --test tests/auth/*.test.ts tests/security/*.test.ts tests/api/*.test.ts",
+    "test": "tsx --test --test-concurrency=1 tests/auth/*.test.ts tests/security/*.test.ts tests/api/*.test.ts",
     "start": "node dist/apps/server/main.js",
     "start:notifications": "node dist/apps/server/notifications/main.js",
     "dev:web": "vite apps/web --host 127.0.0.1",
-    "test:ui": "tsx --test tests/ui/*.test.ts"
+    "test:ui": "tsx --test --test-concurrency=1 tests/ui/*.test.ts",
+    "test:qa:performance": "tsx tests/qa/performance.ts",
+    "test:qa:a11y": "tsx tests/qa/accessibility.ts"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "@types/pg": "8.23.1",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
+    "axe-core": "4.14.0",
     "tsx": "4.23.15",
     "typescript": "5.9.3",
     "vite": "8.3.5"

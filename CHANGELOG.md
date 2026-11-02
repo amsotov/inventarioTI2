@@ -1,5 +1,51 @@
 # Cambios
 
+## 2026-11-02 — Túnel temporal autorizado y navegación con latencia (D-45)
+
+- Ruta HTTPS temporal autorizada; primer hostname falló en Windows, nuevo hostname pendiente de confirmación del usuario.
+- Corregida carrera al pulsar la vista actual mientras carga; regresión FAIL antes/PASS después.
+- Build, tres tests dirigidos y smoke público de 12 grupos con DB/Auth reales y Chromium Linux PASS.
+- Credenciales solo en chat privado; datos/cuentas/MFA/evidencia preservados, sin correo real/main/Pages/producción.
+
+## 2026-11-02 — Preparación de vista previa remota (D-44)
+
+- Instancia sintética independiente en entorno nuevo; runtime D-41 no disponible.
+- Gateway loopback/origen exacto y cliente WebSocket opcionales, sin publicar.
+- Smoke 12 grupos, integración gateway 11 grupos, transporte y reinicio PASS.
+- VP-01 BLOQUEADO: permiso externo e integración pública/Chrome Windows pendientes; evidencia previa intacta, sin main/Pages/producción.
+
+## 2026-11-02 — Continuidad para nuevo chat (D-43)
+
+- Pendientes F1-SEG/EV15 priorizados, contexto de aprobaciones y plan de vista previa con criterios VP-01–05; prompt listo para pegar.
+- Acceso real desde Windows/Chrome como primera prioridad; VP-01 pendiente, sin repetir localhost remoto ni afirmar instalación/URL nueva.
+- Solo documentación, sin nueva fase, cambios funcionales, infraestructura, main/Pages/merge, producción ni correo real; evidencia aceptada preservada.
+
+## 2026-11-02 — Diagnóstico de acceso a vista previa (D-42)
+
+- Se corrige el enlace de acceso: localhost del computador del usuario no alcanza el servidor del entorno; readiness interno 200 no prueba conectividad externa.
+- Guía de diagnóstico y launcher para Linux/Docker Engine nativo; paquete fuente sin estado/credenciales para instalación local. Ejecución en equipo del usuario no realizada; acceso aún bloqueado.
+- Sin cambios de aplicación, permisos, BD/Auth o evidencia aceptada; instancia interna conservada y sin publicación externa/main/Pages/producción.
+
+## 2026-11-02 — Fase 15 aprobada y sistema local de pruebas (D-41)
+
+- Usuario acepta `a9a0742`; CA15-06 CUMPLIDO y Fases 0–15 COMPLETADAS con pendientes conservados.
+- Autoriza sistema local en este entorno: controlador/gateway TLS, PostgreSQL y Auth locales reales, bootstrap sintético con claves aleatorias fuera de Git y MFA administrativo, worker deshabilitado.
+- Inicio/detención con almacenamiento persistente; smoke de 12 grupos y reinicio verificados, fallos iniciales de red/espacio registrados. Guía de acceso, pendientes y continuidad para otro chat.
+- Aplicación/migraciones/dependencias/tests/evidencia aceptada intactos; sin merge/main/Pages, producción, correo real, gasto o permisos remotos. Capacitación/hardware/gestión real y F1-SEG-01/02/03 siguen pendientes.
+
+## 2026-11-02 — Fase 15: documentación, capacitación y evolución (EN_REVISION)
+
+- D-40 ratifica D-39; manuales de ambos roles completados y README como entrada vigente, conservando antecedentes.
+- Guía de instalación/onboarding, soporte/mantenimiento, capacitación propuesta con ejercicios/acta pendiente y roadmap/deuda con dependencias y autorizaciones futuras.
+- Reproducción en checkout limpio: npm ci/build PASS y 9/9 pruebas del recorrido frontend; validación documental y evidencia nueva exclusiva de Fase 15. Fuentes y evidencia aceptada intactas.
+- Capacitación real y onboarding por persona nueva no realizados; CA15-06 pendiente, última completada 14. PR #1 en borrador sin merge, Pages bloqueado, sin producción/correo real ni cierre de F1-SEG-01/02/03.
+
+## 2026-11-02 — Cierre aprobado de Fase 14
+
+- D-39 acepta entrega `da1ac91`, cumple CA14-06 y cierra Fase 14 COMPLETADA con sus límites; CI PASS del SHA aceptado y evidencia 119/39/4/19 conservados.
+- Fase 15 autorizada para iniciar en un nuevo chat; ejecución pendiente y punto de continuidad registrado en la rama del PR #1. No se abre otro chat automáticamente.
+- Solo documentación de cierre; código, ops, workflow, migraciones, dependencias, tests y evidencia intactos. PR sin merge por bloqueo Pages; sin producción/correo real ni resolución de F1-SEG-01/02/03.
+
 ## 2026-11-02 — Fase 14: operación y continuidad (EN_REVISION)
 
 - Plan de ambientes/configuración/CI/migraciones, runbook de incidentes/recuperación/rollback y checklist NO-GO productivo.
@@ -158,3 +204,9 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`; Fase 12 COMPLETADA y CA12-06 CUMPLIDO.
 - Fase 13 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Punto de inicio en FASES/ESTADO, sin ejecutar QA en este cierre.
 - Se preservan código, migraciones, dependencias, pruebas/evidencias y límites operativos; correo real deshabilitado, Fases 14–15 sin autorización, sin producción ni despliegue.
+
+
+## 2026-11-02 — Ajuste CI y bloqueo Pages heredado de Fase 14
+
+- Runner instala poppler-utils para las pruebas PDF existentes; primer CI remoto FAIL por prerrequisito ausente preservado.
+- Pages legacy main:/docs detectado y run cancelado antes del job deploy; siguientes cambios por rama/PR sin merge. Configuración y sitio previo intactos. Sin Fase 15 ni producción.

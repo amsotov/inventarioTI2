@@ -1,6 +1,6 @@
 # Runbook de operación y recuperación — Fase 14
 
-2026-11-02 · Propuesta para revisión D-38. Solo ensayos sintéticos ejecutados. [Plan y cobertura](DESPLIEGUE.md) · [Checklist](CHECKLIST_LIBERACION.md). Producción/correo real no autorizados; Fase 15 sin iniciar.
+2026-11-02 · Entrega de Fase 14 aceptada por D-39; parámetros/compromisos operativos propuestos siguen sin aprobar. Solo ensayos sintéticos ejecutados. [Plan y cobertura](DESPLIEGUE.md) · [Checklist](CHECKLIST_LIBERACION.md). Producción/correo real no autorizados. Fase 15 autorizada para nuevo chat, sin ejecución aquí.
 
 ## Responsables y registro
 
@@ -10,7 +10,7 @@ Propuesta de severidad: P1 indisponibilidad, sospecha de fuga/integridad o copia
 
 ## Liberación futura
 
-1. Completar checklist, identificar destino de pruebas y aprobación concreta; preservar estado actual y paquete anterior. Producción conserva autorización adicional.
+1. Completar checklist, identificar destino de pruebas y aprobación concreta; preservar estado actual y paquete anterior. Inspeccionar también automatismos fuera de archivos versionados: Pages legacy main:/docs está activo. Con prohibición de publicación, trabajar en rama/PR sin merge a main hasta resolver ese automatismo; no inferir seguridad por ausencia de workflow de deploy. Producción conserva autorización adicional.
 2. Construir desde árbol limpio Node 24/lockfile: `npm ci`, `npm run build`, `npm test`, `npm run test:ops`, `npm run test:ui`. Comprobar CI del SHA exacto. No worker/datos reales. `npm start` exige configuración externa y APP_ORIGIN HTTPS; no provee proxy TLS.
 3. Inventariar esquemas/roles/PG/extensiones y ledger/hash de migraciones del destino. Validar compatibilidad hacia atrás, espacio/locks/ventana y copia buena recuperable. No usar `db reset`, `--clean`, seeds ni preparación del fixture en servicio gestionado.
 4. Detener escrituras si no se demostró compatibilidad. Aplicar solo migraciones nuevas revisadas, en orden/transacción, con usuario de migración y errores fatales. Ante error: detener, rollback y no registrar versión aplicada; conservar evidencia. Nunca modificar migraciones aceptadas.

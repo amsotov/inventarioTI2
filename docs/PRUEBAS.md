@@ -1,6 +1,6 @@
 # Plan y evidencia de verificación
 
-**Fecha:** 2026-10-31 · **Fase:** 1 — COMPLETADA (aceptación documental; sin pruebas funcionales).
+**Estado vigente (2026-11-02):** Fase 15 COMPLETADA por D-41, CA15-06 CUMPLIDO; [verificación local adicional](#publicación-local-de-pruebas--d-41) y [entrega documental aceptada](#fase-15--documentación-capacitación-y-evolución). Las secciones anteriores conservan evidencia y límites de su entrega original; no describen por sí solas el estado actual.
 
 ## Alcance de esta revisión
 
@@ -390,7 +390,7 @@ Fase 14 autorizada para un nuevo chat, ejecución PENDIENTE; Fase 15 sin autoriz
 
 ## Fase 14 — operación y continuidad
 
-2026-11-02 · EN_REVISION bajo D-37/D-38, base `8d66e72`; CA14-06 PENDIENTE. Solo recursos sintéticos propios, Node 24.19.0/PostgreSQL 17 Docker y Chromium emulado. [Plan/criterios](DESPLIEGUE.md), [runbook](RUNBOOK_OPERACION.md) y [checklist](CHECKLIST_LIBERACION.md).
+2026-11-02 · COMPLETADA por aceptación D-39 de entrega `da1ac91`; CA14-06 CUMPLIDO. Ejecución bajo D-37/D-38, base `8d66e72`. Se conservan resultados/límites: recursos sintéticos propios, Node 24.19.0/PostgreSQL 17 Docker y Chromium emulado. [Plan/criterios](DESPLIEGUE.md), [runbook](RUNBOOK_OPERACION.md) y [checklist](CHECKLIST_LIBERACION.md).
 
 | Verificación | Resultado final | Evidencia |
 |---|---|---|
@@ -410,3 +410,86 @@ Duración del ensayo corregido: **9,125 s**, desde antes de crear fuente hasta s
 Intentos iniciales y correcciones en [ensayos iniciales](evidencias/fase14/ensayos-iniciales.md): filtro de hashes vacío corregido y exigencia de 19 tablas; solapamiento UI/restore agotó espacio, repetición secuencial final PASS. No ocultar esos resultados ni presentar el primer intento como integridad acreditada. Evidencia aceptada de fases 2–13 y migraciones originales preservadas literalmente; capturas/PDF/secretos regenerados durante suites se apartaron antes de restaurar originales.
 
 NO EJECUTADOS: staging/producción, Supabase/Auth/MFA/advisors gestionados, Resend/buzones/envío físico, TLS/DNS/proxy/canales de alerta reales, upload/lectura externa/KMS/custodia, conservación efectiva 30 días, restauración integral gestionada, rollback de artefacto en plataforma, disponibilidad mensual 99,5 %, hardware/Safari. Carga/a11y de Fase 13 no se repiten porque no cambia UI/negocio; mantienen sus límites/evidencia aceptada. F1-SEG-01/02/03 abiertos. Fase 15 sin iniciar, producción no autorizada. CI remoto solo PASS al observar run del SHA entregado; evidencia local y SHA sincronizado no lo sustituyen.
+
+
+### Sincronización y control de publicación — Fase 14
+
+Entrega inicial en main `82d8ad69cbbf24495b893cfd9fa6eeb9cee5e6cf`, SHA remoto comprobado. CI inicial [41473084240](https://github.com/amsotov/inventarioTI2/actions/runs/41473084240) FAIL por ausencia de pdftotext en runner; se prepara corrección de instalación de poppler-utils en rama phase14/ci-prerequisites-and-pages-guard y PR, sin modificar pruebas.
+
+Se detectó Pages legacy main:/docs activo fuera del árbol. Run [41473076891](https://github.com/amsotov/inventarioTI2/actions/runs/41473076891) cancelado por API, deploy CANCELLED sin ejecución; build sí terminó. No se eliminó/configuró el sitio previo. Con la prohibición de producción, no hacer nuevos pushes/merges a main hasta resolver expresamente el automatismo externo. Corrección y evidencia posterior se entregan en rama/PR sin merge. Estado vigente EN_REVISION; CA14-06 y F1-SEG-01/02/03 pendientes, Fase 15 sin autorización. CI corregido se declara PASS solo al observar su run del SHA correspondiente.
+
+
+## Cierre aceptado de Fase 14 — D-39
+
+2026-11-02. Entrega `da1ac91dd32278add2801ba41f9661c921560e60` aceptada por el usuario, CA14-06 CUMPLIDO y Fase 14 COMPLETADA. [CI 41473700624 PASS](https://github.com/amsotov/inventarioTI2/actions/runs/41473700624) del SHA aceptado; resultados 119/39/4 y restauración de 19 tablas intactos, con todos los límites gestionados/productivos. Las referencias EN_REVISION anteriores son antecedentes. Este cierre solo modifica documentación: validación de estados/enlaces/diff y preservación literal de aplicación/ops/workflow/migraciones/dependencias/tests/evidencia frente a ese SHA. Build/suites no repetidos; [skip ci] para commit documental, sin atribuir nuevos resultados funcionales. Fase 15 autorizada solo para nuevo chat, ejecución PENDIENTE; PR #1 sin merge, Pages bloqueado, sin producción/correo real ni resolución implícita de F1-SEG-01/02/03.
+
+## Fase 15 — Documentación, capacitación y evolución
+
+2026-11-02 · D-39/D-40 · Fase 15 EN_REVISION, CA15-06 PENDIENTE. Base de código `5632391e112079e92f40d913ff48dfd1c7f242b4` del PR #1; sin cambio de aplicación respecto de ella. [Plan y criterios](FASE15.md).
+
+Ensayo de onboarding en `work/fase15-onboarding`, worktree detached separado sin node_modules/dist iniciales; comandos desde su raíz. No se inicia `npm start`, no se suministran DSN/secretos del usuario ni se contacta proveedor de identidad/correo gestionado. Node v24.19.0, npm 11.9.0, Docker 28.4.0 y `/usr/bin/chromium`; daemon local comprobado. Registro/lockfile e imagen PostgreSQL por digest según fuentes; descargas no implican servicios contratados.
+
+| Verificación | Resultado observado | Evidencia / límite |
+|---|---|---|
+| `npm ci` | PASS, 124 paquetes instalados | [Instalación](evidencias/fase15/npm-ci.log); sin actualizar versiones/lockfile |
+| `npm run build` | PASS, servidor/UI compilados | [Build](evidencias/fase15/build.log); aviso outDir de Vite registrado, no fallo ni deploy |
+| `node --import tsx --test --test-concurrency=1 tests/ui/frontend.test.ts` | PASS, **9/9**, 0 fallos; 109.756 ms aproximados de duración total | [Salida](evidencias/fase15/frontend.log); PostgreSQL local real, identidad/MFA doble, Chromium emulado |
+| Revisión documental de enlaces, estados y alcance; `git diff --check` | Resultado consolidado en [validación](evidencias/fase15/validacion.json) | Incluye fuentes/migraciones/evidencia aceptada intactas; no certifica semántica de todos los enlaces externos |
+
+El primer intento del verificador documental detectó su propio archivo de resultado aún inexistente; se inicializó esa salida y se repitió la comprobación completa con PASS, sin modificar fuentes.
+
+El recorrido comprueba lector/vacío/assets, MFA doble/alta/edición, respuesta perdida/replay sin duplicar evidencia, 412, filtros/ficha/escape, paginación, teclado/responsive y 503/401 tras revocar. El test produce tres capturas Fase 8 modificadas **solo en checkout desechable**; no se copian sobre la evidencia aceptada. No se reescriben verificadores históricos de estados de fases.
+
+No ejecutados en Fase 15: suites completas npm test/test:ops/test:ui, carga, accesibilidad, nuevo CI funcional, instalación por una persona desarrolladora nueva, capacitación con participantes, arranque HTTPS/Auth gestionado, correo real y producción. No se repiten suites completas por cambios exclusivamente documentales; la reproducción elegida verifica los pasos de instalación nuevos. Los resultados históricos 119 API/seguridad, 39 navegador, 4 operación, 19 tablas restauradas y CI PASS 41473700624 permanecen asociados a `da1ac91`, sin asignarlos al nuevo SHA documental.
+
+F1-SEG-01/02/03 abiertos; entrenamiento/material no acredita operación. Commit documental con [skip ci] en rama del PR #1, que permanece en borrador/sin merge; SHA remoto comprobado al entregar. [Validación](evidencias/fase15/validacion.json) refiere a la base y al árbol preparado; el SHA de entrega se confirma en GitHub para evitar una autorreferencia de hash dentro del commit.
+
+## Publicación local de pruebas — D-41
+
+2026-11-02. Aprobación de Fase 15/documentación `a9a0742` y autorización local en este entorno. [Guía y pendientes](PRUEBAS_LOCALES.md). No cambia código de aplicación ni migraciones/dependencias/workflow/tests aceptados; añade únicamente controlador/gateway/verificador local, documentación y evidencia nueva. Versión de aplicación base `a9a0742`; los scripts locales nuevos se identifican por hash en la evidencia final. No confundir el SHA base con una certificación previa de esos scripts.
+
+Plan presentado antes de implementar; recursos propios etiquetados y datos sintéticos. Node 24.19.0, npm 11.9.0, Docker 28.4.0 vfs, OpenSSL local y Chromium; PostgreSQL 17 y GoTrue v2.197.0 por los digests fijados en las pruebas previas. TLS en loopback con CA de prueba, Node valida cadena y Chromium confía solo en el pin del certificado local. No TLS global desactivado ni cuenta/MFA simulados en esta verificación.
+
+| Comando / prueba | Resultado y alcance |
+|---|---|
+| npm ci / npm run build | PASS; BFF/UI compilados sin cambiar fuentes o lockfile. Aviso outDir de Vite esperado |
+| node --check de los tres scripts locales | PASS; revisión sintáctica |
+| node ops/local/control.mjs start | PASS final; main.ts sin cambios, 8 migraciones, bootstrap solo sintético, live/ready 200 |
+| NODE_EXTRA_CA_CERTS="$PWD/work/local-inventarioti2/ca.crt" node ops/local/verify.mjs | 12 grupos PASS: TLS/salud, sesión/Origin, lectura/admin, MFA TOTP real, CSRF, escritura/replay, XLSX privado, outbox sin envío, red interna, navegador y salida/revocación |
+| stop → start y comparación | PASS, 4 bienes/4 cuentas/1 aviso conservados entre ambas lecturas, mismas cuentas/clave/identificador de instancia; sin reset ni borrados |
+| Smoke posterior al reinicio | Resultado en [smoke final](evidencias/pruebas-locales/smoke.json); reutiliza el factor smoke verificado, sin tocar al administrador interactivo |
+| Diff/enlaces/estados/preservación | Resultado en [validación](evidencias/pruebas-locales/validacion.json), incluyendo evidencia histórica intacta y ausencia de credenciales en el cambio |
+
+[Reinicio](evidencias/pruebas-locales/reinicio.json) registra los conteos antes/después. El segundo smoke añade otro bien/aviso auditado de prueba; no invalida la igualdad observada en el corte de reinicio. Captura del navegador se conserva en work/ solo con datos sintéticos, sin copiar sobre artefactos aceptados. Los reportes nuevos contienen agregados, nunca claves/cookies/TOTP o credenciales.
+
+Fallos iniciales: publicación de puerto en red Docker internal no utilizable; se cambió a IP de puente privado sin publicar DB/Auth. Otro intento agotó disco durante initdb; se retiraron únicamente contenedores/volúmenes/redes etiquetados propios, no inicializados, conservando estado diagnóstico. No se usó prune ni se tocó trabajo preexistente. El intento posterior inició y pasó el smoke. Los primeros errores no son evidencia de éxito.
+
+No ejecutados: suites completas históricas API/UI/ops/carga/accesibilidad, Supabase/Resend gestionados, correo real, validación humana/capacitación, hardware/Safari, recuperación integral productiva y despliegue externo. La prueba pertinente de esta tarea verifica la nueva orquestación y el sistema real local; no se repite toda la regresión de aplicación porque las fuentes de negocio no cambian. Evidencia aceptada 119/39/4/19 y CI PASS anterior mantienen su asociación original. Sin nuevo CI funcional atribuido a este commit; sincronización con [skip ci] en rama del PR #1, SHA remoto comprobado al entregar.
+
+Fase 15 COMPLETADA por D-41 con sus límites; F1-SEG-01/02/03 abiertos. Instancia local activa solo en este entorno, correo real deshabilitado; PR #1 en borrador/sin merge, main sin cambios y sin producción.
+
+## Diagnóstico de acceso a vista previa — D-42
+
+2026-11-02. Captura del usuario con ERR_CONNECTION_REFUSED. `node ops/local/control.mjs status`: proceso activo; consulta HTTPS con CA local a /health/ready: **200**. El rechazo ocurre en localhost del computador personal, que no aloja la instancia del entorno remoto. No se ha comprobado conectividad desde ese computador ni existe herramienta de reenvío de puertos disponible.
+
+`bash -n ops/local/iniciar-pruebas.sh` y ejecución `--comprobar`: resultados en [validación](evidencias/acceso-preview/validacion.json). El launcher solo añade comprobación de prerrequisitos y secuencia de comandos existentes; no se repiten pruebas funcionales de aplicación ni se cambia servidor/BD/Auth. El ZIP se construye desde el código versionado, excluye work/ y todo estado/secretos/dependencias instaladas; inspección de rutas y comparación contra credenciales generadas sin divulgarlas.
+
+Linux nativo comprobado para la instancia actual; Windows/macOS/Docker Desktop, instalación por el usuario y acceso desde su Chrome **NO EJECUTADOS**. El ZIP preparado no acredita que se haya ejecutado en otro computador. Estado de acceso del usuario sigue BLOQUEADO; requisitos e instrucciones en [ACCESO_VISTA_PREVIA](ACCESO_VISTA_PREVIA.md). Evidencia aceptada y servidor D-41 intactos. Actualización en PR #1 con [skip ci], sin nuevo CI funcional ni merge/main/Pages/producción.
+
+## Preparación de nuevo chat — D-43
+
+2026-11-02. Solo Markdown: [CONTINUIDAD_PRUEBAS](CONTINUIDAD_PRUEBAS.md), índices/estado y decisiones. Revisión de enlaces locales, diff/estados, alcance y preservación de todos los archivos previos fuera de la lista documental autorizada, incluidos aplicación/controladores/migraciones/dependencias/tests/evidencia. Fases 0–15 COMPLETADAS, D-41/CA15-06 CUMPLIDO; D-42/VP-01 de acceso del usuario PENDIENTE.
+
+No ejecutados en esta tarea: build, suites API/UI/operación, instalación en Windows, nueva infraestructura o prueba del usuario. No cambia código y las evidencias anteriores se conservan literalmente. La preparación D-43 no crea un chat ni habilita nueva URL; los resultados 12 grupos/reinicio de D-41 conservan su alcance interno. Commit documental con [skip ci], sin atribuir nuevo CI; SHA remoto se coteja al entregar, PR #1 en borrador/sin merge y main sin cambios.
+
+## Preparación de vista previa remota — D-44
+
+Instancia nueva en entorno sin runtime D-41: npm ci/build PASS, smoke local existente 12 grupos PASS, gateway+BFF/DB/Auth reales 11 grupos PASS, test de transporte (Host/protocolo/Origin/cookies/CSRF/binarios/upstream caído) PASS, stop/start con conteos de datos e IDs/hashes de contraseña/factores MFA intactos. [Evidencia y límites](VISTA_PREVIA_REMOTA.md). TLS/WebSocket Tunnelmole por proxy PASS sin initialise/hostname; sintaxis y rechazo sin flag PASS.
+
+No publicados túneles ni probada ruta pública/Chrome Windows: VP-01 BLOQUEADO, permiso específico pendiente. No se repiten suites históricas que regeneran evidencia aceptada ni se atribuye nuevo CI sin observarlo. Evidencia anterior preservada; cero avisos aceptados/entregados y correo real apagado. Sin merge/main/Pages/producción.
+
+## Vista previa HTTPS autorizada y regresión de navegación — D-45
+
+[Detalle/evidencia](VISTA_PREVIA_ACTIVA.md). Primer hostname: API pública pasa, navegador falla por carrera de navegación; usuario Windows reporta ERR_INVALID_RESPONSE, causa no confirmada. Regresión aislada retiene respuesta, pulsa Bienes actual y reproduce FAIL antes de corregir. Tras cambio pequeño en main.tsx: build y tres tests dirigidos PASS. Se reinicia BFF por index.html cacheado mediante túnel nuevo, conservando DB/Auth/cuentas/MFA y deteniendo el anterior.
+
+Hostname nuevo: HTTPS/asset/salud 200, HTTP 400; smoke con DB/Auth reales y Chromium Linux por proxy 12 grupos PASS, sin ignorar TLS, con MFA reservado, permisos/CSRF/replay/exportación privada/logout/correo apagado. Chrome Windows del hostname nuevo NO OBSERVADO: VP-01 PENDIENTE, no declarar resuelto por estas pruebas. Consulta HTTP independiente falló también en su control y no aporta evidencia. Evidencia anterior intacta, sin repetir suites históricas ni atribuir CI c4dcb71 a cambios nuevos.

@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "date": "2026-11-02T17:44:08.705Z",
+  "countsBefore": {
+    "bienes": 4,
+    "cuentas": 4,
+    "avisos": 1
+  },
+  "countsAfter": {
+    "bienes": 4,
+    "cuentas": 4,
+    "avisos": 1
+  },
+  "persistedAccountsAndKeys": true,
+  "production": false,
+  "mailEnabled": false
+}

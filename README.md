@@ -1,8 +1,54 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
+Estado vigente (2026-11-02): **Fases 0–15 COMPLETADAS y aceptadas**, cierre D-41 de la entrega `a9a0742`; **CA15-06 CUMPLIDO** con límites conservados. D-41 autoriza instancia local sintética de pruebas en este entorno: [acceso, comandos y pendientes](docs/PRUEBAS_LOCALES.md). [Plan y criterios](docs/FASE15.md) · [FASES](FASES.md) · [ESTADO](ESTADO_PROYECTO.md) · [CHANGELOG](CHANGELOG.md).
 
-La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
+Aplicación React/TypeScript con BFF Node, PostgreSQL y adaptador Supabase Auth; inventario compartido con dos roles, funcionarios/custodias/historia, administración, reportes/exportación privada y avisos. La implementación aceptada se ha verificado con entornos sintéticos locales; operación gestionada y producción siguen pendientes. **Correo real deshabilitado.** No hay cuenta por defecto ni URL productiva habilitada por esta entrega.
+
+## Continuar en un nuevo chat
+
+[Pendientes y vista previa — D-43](docs/CONTINUIDAD_PRUEBAS.md) reúne el estado aprobado, los pendientes, plan/criterios de acceso y texto listo para pegar. Primera prioridad: una vista funcional accesible desde Chrome Windows. VP-01 sigue PENDIENTE; localhost remoto y el ZIP entregado no acreditan que el usuario pueda entrar. No se ha creado otro chat ni habilitado una URL nueva en esta preparación.
+
+## Documentación según tarea
+
+| Tarea | Entrada |
+|---|---|
+| Ingresar, consultar, registrar o exportar | [Manual de usuario](docs/MANUAL_USUARIO.md) |
+| Administrar cuentas/unidades, auditoría y avisos | [Manual administrativo](docs/MANUAL_ADMIN.md) |
+| Instalar y comprender el proyecto | [Instalación y onboarding](docs/INSTALACION_DESARROLLO.md) |
+| Preparar práctica y evaluación por rol | [Capacitación propuesta](docs/CAPACITACION.md); sesiones NO REALIZADAS |
+| Solicitar ayuda y mantener cambios | [Soporte y mantenimiento](docs/SOPORTE_MANTENIMIENTO.md) |
+| Priorizar pendientes y evolución | [Roadmap y deuda](docs/ROADMAP.md); propuestas SIN IMPLEMENTAR |
+| Revisar requisitos y diseño | [Cierre Fase 1](docs/CIERRE_FASE1.md), [trazabilidad](docs/TRAZABILIDAD.md), [arquitectura](docs/ARQUITECTURA.md), [seguridad](docs/SEGURIDAD.md) |
+| Examinar evidencia y operación | [Pruebas](docs/PRUEBAS.md), [plan operativo](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist NO-GO](docs/CHECKLIST_LIBERACION.md) |
+
+## Servidor local funcional — D-41
+
+**Acceso desde Chrome del usuario pendiente (D-42):** localhost del computador personal no se conecta a este entorno. [Diagnóstico y ejecución local](docs/ACCESO_VISTA_PREVIA.md); no hay herramienta de reenvío de puertos disponible ni URL remota habilitada. El servidor responde en `https://localhost:8443` **solo dentro de este entorno**: UI/BFF compilados, PostgreSQL y Auth locales reales, TLS, MFA y cuentas/datos sintéticos. No es una URL pública ni el localhost del equipo personal. [Guía de acceso/certificado/credenciales/inicio/detención](docs/PRUEBAS_LOCALES.md). Correo real deshabilitado; estado privado bajo work/, sin contraseñas en GitHub. Para retomar: `node ops/local/control.mjs status`; no borrar/reinicializar volúmenes.
+
+## Verificación local de entrada
+
+Recuperar la rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1). Leer AGENTS/PROMPT/FASES/ESTADO. Con Node 24, npm, Docker local y Chromium, desde raíz:
+
+```sh
+npm ci
+npm run build
+node --import tsx --test --test-concurrency=1 tests/ui/frontend.test.ts
+```
+
+La [guía](docs/INSTALACION_DESARROLLO.md) explica herramientas PDF, imágenes, puertos, ruta de Chromium y evidencia regenerada: usar checkout desechable. Este recorrido termina su servidor y usa identidad doble/DB sintética; no deja una instancia interactiva. `npm start` exige configuración externa, HTTPS y roles SQL separados; no carga `.env` por sí solo. `npm run dev:web` es Vite sin API/proxy. El prototipo en `prototipo/` es visual y efímero, con simulaciones; no introducir datos reales.
+
+## Límites y continuidad
+
+F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto/recursos) y F1-SEG-03 (operador/custodia/horario/alertas de respaldo) siguen abiertos. UTC, copia semanal/máximo 168 h/RPO ≤168 h/RTO ≤8 h/copias 30 días conservados. Integraciones gestionadas, continuidad integral, hardware/Safari, accesibilidad completa, capacitación y validación humana nueva conservan sus pendientes.
+
+**GitHub:** PR #1 en borrador y sin merge. Pages legacy `main:/docs` sigue activo fuera del árbol: no hacer push/merge a main bajo prohibición de publicación. Verify only no despliega. Esta entrega no cambia esa configuración ni autoriza publicación, producción, correo real, cuentas/datos reales, gastos o permisos remotos. La siguiente acción es probar la instancia local autorizada por D-41; el roadmap y la aceptación documental no autorizan evolución adicional ni operación productiva.
+
+## Antecedentes conservados
+
+El texto siguiente conserva la plantilla y entregas históricas. Sus estados, límites y órdenes de iniciar fases se refieren a sus fechas; prevalecen el estado vigente y los documentos enlazados arriba.
+
+<details>
+<summary>Plantilla original y registro histórico de Fases 2–14</summary>
 
 Las instrucciones de la plantilla original se conservan a continuación como referencia.
 
@@ -167,3 +213,14 @@ Fase 15 sin autorización. Sin implementación de Fase 14, activación/envíos r
 ## Entrega de Fase 14 — EN_REVISION
 
 Plan, runbook y checklist enlazados al inicio. `npm run test:ops` reproduce el ensayo aislado de copia cifrada/restauración y las verificaciones de salud/logs/edad de copia; requiere Docker local, nunca DSN real. El workflow GitHub solo verifica. `npm start` conserva worker apagado y exige configuración externa; /health/live y /health/ready no sustituyen el smoke autenticado. Pendientes gestionados y aceptación CA14-06 explícitos. Producción no desplegada; Fase 15 sin iniciar.
+
+
+## Cierre de Fase 14 — D-39
+
+Entrega `da1ac91` aprobada y Fase 14 COMPLETADA. Fase 15 autorizada para un nuevo chat, ejecución pendiente. No puedo abrir automáticamente esa conversación. Abre un nuevo chat con inventarioTI2 y la rama del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), e indica:
+
+> Inicia únicamente la Fase 15 de inventarioTI2, ya autorizada por D-39. Recupera la rama del PR #1 y lee FASES.md y ESTADO_PROYECTO.md. Presenta el plan de documentación, capacitación y evolución y actualiza GitHub en rama/PR, sin merge a main por el bloqueo de Pages. No publiques ni despliegues a producción.
+
+Este cierre no ejecuta Fase 15 ni elimina pendientes F1-SEG-01/02/03; no autoriza correo real, gastos, cuentas/datos reales, permisos remotos, merge o publicación.
+
+</details>

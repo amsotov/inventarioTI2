@@ -1,7 +1,6 @@
 # Registro de decisiones y riesgos
 
-**Fecha:** 2026-10-31
-**Fase:** 2 — COMPLETADA; revisión visual aprobada. Fase 3 autorizada para un nuevo chat.
+**Estado vigente (2026-11-02):** Fase 15 COMPLETADA por D-41; CA15-06 CUMPLIDO, última completada 15. Pruebas locales adicionales autorizadas solo en este entorno; producción/merge siguen bloqueados. [Entrega y criterios](FASE15.md). Las secciones y estados anteriores son antecedentes de su fecha; no autorizan acciones adicionales.
 
 ## Estado vigente de decisiones
 
@@ -205,3 +204,42 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## D-38 — Ejecución de Fase 14 sin producción
 
 2026-11-02. El usuario ratifica D-37: «Inicia únicamente la Fase 14, ya autorizada por D-37. Presenta el plan de despliegue, operación y continuidad y actualiza GitHub. No inicies Fase 15 ni despliegues a producción». Se ejecuta plan/CI de verificación, salud/logs y ensayos locales de copia/recuperación, con [DESPLIEGUE](DESPLIEGUE.md), [RUNBOOK](RUNBOOK_OPERACION.md) y [CHECKLIST](CHECKLIST_LIBERACION.md). Entrega EN_REVISION, CA14-06 PENDIENTE; no se atribuye aceptación del usuario. F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/30 días conservados. Recursos/destino gestionados, operador/custodia/horario/alertas aún sin aprobar; no se contratan/configuran por inferencia. Sin Fase 15, producción, correo real, datos/cuentas reales, gasto o permisos remotos.
+
+
+## D-39 — Aceptación de Fase 14 y continuidad de Fase 15
+
+2026-11-02. Evidencia literal: «apruebo fase 14 e incia en nuevo chat fase 15». Acepta la entrega `da1ac91dd32278add2801ba41f9661c921560e60`, cumple CA14-06 y cierra Fase 14 COMPLETADA con sus límites documentados y CI PASS 41473700624 del SHA aceptado. Autoriza únicamente Fase 15 — documentación, capacitación y evolución para iniciar en un nuevo chat; ejecución PENDIENTE. No ejecuta Fase 15 ni crea automáticamente otro chat. Conserva resultados locales/parciales, F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días; no acredita integraciones gestionadas ni operación productiva. No autoriza merge/publicación: PR #1 sin merge y bloqueo Pages main:/docs conservados. Sin correo real, datos/cuentas reales, gastos, cambios remotos de permisos ni producción. Prevalece sobre antecedentes EN_REVISION de D-38 sin reescribir evidencia.
+
+## D-40 — Ejecución de Fase 15, sin cierre presumido
+
+2026-11-02. El usuario ratifica D-39: «nicia únicamente la Fase 15 de inventarioTI2, ya autorizada por D-39. Recupera la rama del PR #1, lee FASES.md y ESTADO_PROYECTO.md y presenta el plan de documentación, capacitación y evolución. Actualiza GitHub sin merge a main ni despliegue a producción». Se recupera base `5632391` del PR y se ejecuta únicamente la entrega documental: manuales, instalación/onboarding, soporte/mantenimiento, capacitación propuesta, roadmap/deuda y estado. Plan/CA15 en [FASE15](FASE15.md); evidencia técnica en PRUEBAS.
+
+Fase 15 EN_REVISION, CA15-06 PENDIENTE; no atribuye aceptación ni cierre final del sistema. Capacitación y validación por nuevo desarrollador NO REALIZADAS; reproducción técnica local no las sustituye. No se inventan personas, fechas, presupuesto, políticas legales o servicios. Roadmap es propuesta, no autorización de implementación. F1-SEG-01/02/03 y objetivos de continuidad intactos. PR #1 en borrador, sin merge por Pages; sin envío real, cuentas/datos reales, gasto, permisos remotos, publicación ni producción. D-39 conserva el cierre aceptado de Fase 14 y su evidencia sin alteración.
+
+## D-41 — Aceptación de Fase 15 y publicación local para pruebas
+
+2026-11-02. Evidencia literal: «apruebo fase 15 en nuevo indicame los pendientes y publica el sistema inventarioTI2 en servidor local para pruebas». El usuario aclara destino: «En este entorno de trabajo». Acepta la entrega `a9a0742b0f70ff026d36588f96475cca59c4c3f7`; CA15-06 CUMPLIDO, Fase 15 COMPLETADA con límites documentados. Autoriza adicionalmente informar pendientes y poner en marcha el sistema local sintético, no una nueva fase genérica ni producción.
+
+Instancia en loopback HTTPS, DB/Auth locales reales y datos/cuentas de prueba aleatorios, con MFA y permisos vigentes; no se usan identidades/datos reales ni se activa correo. Guía/continuidad en [PRUEBAS_LOCALES](PRUEBAS_LOCALES.md). No se crea nuevo chat automáticamente. Se conservan F1-SEG-01/02/03, requisitos UTC/semanal/168 h/8 h/30 días y validaciones gestionadas/humanas pendientes. D-41 prevalece sobre estados EN_REVISION anteriores de D-40 sin reescribir evidencia. No autoriza merge a main/Pages, publicación externa, producción, gasto ni permisos remotos.
+
+## D-42 — Corrección del diagnóstico de acceso a vista previa
+
+2026-11-02. Usuario informa «no funcina vista previa» con ERR_CONNECTION_REFUSED. Se confirma salud 200 en el entorno, pero localhost del navegador del usuario es otro equipo y no existe ruta de reenvío disponible. El enlace anterior no daba acceso desde ese navegador; el acceso externo continúa BLOQUEADO. Paquete y launcher local preparados según [guía](ACCESO_VISTA_PREVIA.md), sin afirmar instalación en su computador. Usuario confirma Windows; requisitos de WSL2/Ubuntu pendientes de comprobar.
+
+No cambia aprobación de Fase 15/D-41, permisos empresariales, datos o evidencia aceptada. No autoriza publicar externamente ni abre main/Pages/producción. No se usa un resultado de navegador interno como acreditación de conectividad desde el usuario.
+
+## D-43 — Preparar nuevo chat sobre pendientes y vista previa
+
+2026-11-02. Usuario: «preparame en chat nuevo los pendientes del sistema inventarioTI2 y una vista previa para probar el sistema». Se prepara [continuidad](CONTINUIDAD_PRUEBAS.md) con pendientes priorizados, plan/criterios VP-01–05 y prompt de inicio. El objetivo del nuevo chat es una vista funcional accesible desde Chrome Windows; D-42 sigue abierto y no se confunde localhost del entorno con acceso del usuario.
+
+No se abre un chat ni se habilita una URL en esta preparación. Fases 0–15 siguen aprobadas; no volver a solicitar Fase 15 ni preguntar el sistema operativo. No autoriza ejecutar toda la deuda, crear Fase 16, publicar externamente, hacer merge/main/Pages, producción, gasto o correo real. Conservar F1-SEG-01/02/03, datos/cuentas/MFA/claves/volúmenes y evidencia; cambios exclusivamente documentales en rama del PR #1.
+
+## D-44 — Continuar pruebas y preparar acceso remoto concreto
+
+2026-11-02. Usuario pide continuar desde la rama del PR #1, fases 0–15 aprobadas, presentar pendientes y resolver primero vista funcional Chrome Windows, sin localhost remoto ni merge/producción, conservando datos/cuentas/MFA/evidencia y sin correo real. Se recupera HEAD 1c08afc. Entorno nuevo sin runtime D-41: instancia sintética independiente; 12 grupos locales, 11 de gateway y reinicio PASS. Evidencia previa intacta. [Ruta preparada y límites](VISTA_PREVIA_REMOTA.md).
+
+Sin reenvío privado nativo; Cloudflare descartado por requerir TCP 7844 no concedido. WebSocket TLS Tunnelmole por proxy PASS sin solicitar hostname. Gateway/cliente opcionales preparados, sin publicación. Consulta específica de permiso pendiente; silencio no es aprobación. VP-01 BLOQUEADO, integración pública/Windows no realizadas. No se reabre aprobación de fases ni se crea Fase 16. Main/Pages/producción intactos; deuda restante no ejecutada.
+
+## D-45 — Autorización de túnel temporal y continuidad de pruebas
+
+2026-11-02. Usuario: «autorizo», respondiendo a permiso específico de túnel HTTPS temporal Tunnelmole con login/MFA, sin gastos/main/producción; posteriormente «Retoma». Autoriza activarlo y verificarlo, sin repetir esa aprobación. Primer hostname responde al entorno, pero usuario reporta ERR_INVALID_RESPONSE desde Windows. Se conserva el fallo y no se acredita acceso del usuario. [Ruta nueva y verificación](VISTA_PREVIA_ACTIVA.md): corrección de carrera de navegación, hostname nuevo, 12 grupos públicos PASS desde proxy/Chromium Linux; observación Windows del hostname nuevo pendiente. Datos/cuentas/MFA/evidencia D-44 preservados; correo apagado, PR #1 sin merge/main/Pages/producción intactos. No nueva fase.

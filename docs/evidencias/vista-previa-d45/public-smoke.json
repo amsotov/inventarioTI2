@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-02T22:27:47.668Z",
+  "scope": "public HTTPS via managed proxy and Chromium Linux; user Windows observation is separate",
+  "origin": "https://8lyag2-ip-90-96-187-67.tunnelmole.net",
+  "repositoryHead": "c4dcb711e1f7763b2ab930a36d3f482d89694005",
+  "localScripts": {
+    "control.mjs": "ebefc4fcb60088e697618a820449940167642ae055550605ad46c19522a6760c",
+    "serve.mjs": "2bb204f8c3d8db9e1934c13b236418a3c0b721902d513ad58625e4cfdc877293",
+    "verify-preview.mjs": "162448921f8b18a6ada29ae578be97a720fe03bd15b68b76b6cc341e80f60948",
+    "preview-gateway.mjs": "82e9689a50f618cb80db5c1b0c4f07613cbeb51d44597e706319a2c6e537a4dd",
+    "preview-tunnel.mjs": "284ac8509595e0d158fc4a56afe334091cd11a476a604ecd3ac10d39e0ab77f0"
+  },
+  "checks": [
+    {
+      "name": "Public HTTPS via managed proxy; live and ready 200",
+      "result": "PASS"
+    },
+    {
+      "name": "Inventory without session denied",
+      "result": "PASS"
+    },
+    {
+      "name": "Mutation without approved Origin denied",
+      "result": "PASS"
+    },
+    {
+      "name": "Public reader login, inventory read and admin denial with real local identity",
+      "result": "PASS"
+    },
+    {
+      "name": "Administrator without MFA denied",
+      "result": "PASS"
+    },
+    {
+      "name": "Real GoTrue TOTP MFA, cookie rotation and admin access",
+      "result": "PASS"
+    },
+    {
+      "name": "Reader write and invalid CSRF denied; admin write and exact replay without duplication",
+      "result": "PASS"
+    },
+    {
+      "name": "Filtered private XLSX generated and downloaded; another account denied",
+      "result": "PASS"
+    },
+    {
+      "name": "SQL persistence and queued notifications; zero accepted/delivered notices",
+      "result": "PASS"
+    },
+    {
+      "name": "Containers in internal network with no published DB/Auth ports",
+      "result": "PASS"
+    },
+    {
+      "name": "Public Chromium via proxy, TLS verification enabled: real reader login, inventory and logout",
+      "result": "PASS"
+    },
+    {
+      "name": "Logout revokes local session",
+      "result": "PASS"
+    }
+  ],
+  "frontendSourceSha256": "f3a23f79d6846b7c7263d7ddf505dedf50b770bd70f85eda609a3709075c0b92",
+  "mailEnabled": false,
+  "managedIntegrations": false,
+  "production": false
+}

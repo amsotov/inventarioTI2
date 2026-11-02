@@ -80,14 +80,16 @@ function App() {
   const generation = useRef(0);
   useEffect(() => {
     const change = () => {
+      const nextView = route();
+      if (nextView === view) return;
       if (protectProcessNavigation() || protectReportNavigation()) return;
       generation.current++;
-      setView(route());
+      setView(nextView);
       setError("");
     };
     window.addEventListener("hashchange", change);
     return () => window.removeEventListener("hashchange", change);
-  }, []);
+  }, [view]);
   async function refresh() {
     const { body } = await api("sesion");
     setSession(body);

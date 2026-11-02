@@ -2,11 +2,13 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
-**Última fase completada:** 13.
-**Próxima acción:** revisión de Fase 14; CA14-06 PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
+**Fase actual:** 15 — COMPLETADA por aceptación D-41 de la entrega `a9a0742`; CA15-06 CUMPLIDO. Sistema local de pruebas autorizado y preparado en este entorno; [acceso/pendientes](docs/PRUEBAS_LOCALES.md).
+**Última fase completada:** 15, por D-41; aceptación con límites y pendientes conservados.
+**Siguiente hito:** [Vista previa temporal D-45](docs/VISTA_PREVIA_ACTIVA.md) autorizada y probada por URL pública desde el entorno; corrección de navegación lenta verificada. VP-01 PENDIENTE: primer hostname falló en Chrome Windows con ERR_INVALID_RESPONSE; falta confirmar el hostname nuevo. No declarar resuelto por pruebas del proxy. Fases 0–15 aceptadas; sin Fase 16, main/Pages/producción intactos.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 ejecutada localmente y EN_REVISION por D-38; CA14-06 PENDIENTE, última completada 13; Fase 15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+**Entrega vigente:** Fase 15 aceptada (`a9a0742`) y sistema local D-41 en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; main `82d8ad6` solo en lectura. Automatismo heredado Pages main:/docs activo: no más pushes/merges a main bajo prohibición de publicación externa hasta resolverlo. [Instancia local y continuidad](docs/PRUEBAS_LOCALES.md).
+
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 completada por D-39 con sus límites; CA14-06 CUMPLIDO; Fase 15 completada por D-41, CA15-06 CUMPLIDO; pruebas locales autorizadas con pendientes conservados. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -24,8 +26,8 @@
 | 11 | Indicadores, reportes y exportación | Dashboards, filtros, Excel/PDF | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-33 |
 | 12 | Notificaciones y automatización | Catálogo, outbox, reintentos y seguimiento | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-35 |
 | 13 | QA, rendimiento y seguridad | Matriz, regresión, carga, accesibilidad, seguridad y defectos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-37 |
-| 14 | Despliegue, operación y continuidad | CI, runbook, salud/logs, copia/restauración sintéticas | EN_REVISION | Ejecución D-37/D-38; CA14-06 PENDIENTE; operación gestionada pendiente |
-| 15 | Documentación, capacitación y evolución | Manuales, soporte y roadmap | PENDIENTE | NO OTORGADA |
+| 14 | Despliegue, operación y continuidad | CI, runbook, salud/logs, copia/restauración sintéticas | COMPLETADA | Entrega/cierre APROBADOS por usuario el 2026-11-02; D-39; límites gestionados conservados |
+| 15 | Documentación, capacitación y evolución | Manuales, onboarding, soporte, capacitación propuesta y roadmap | COMPLETADA | Entrega `a9a0742` aceptada por D-41; CA15-06 CUMPLIDO; sesiones reales/pendientes conservados |
 
 ## Registro de aprobación y ejecución
 
@@ -46,6 +48,7 @@
 | 2026-11-02 | 11 / 12 | Aceptar entrega/cierre de Fase 11; autorizar únicamente Fase 12 para un nuevo chat | Usuario | D-33: «Apruebo fase 11, inicia en nuevo chat fase 12»; no se ejecuta Fase 12 en este cierre |
 | 2026-11-02 | 12 | Ejecutar únicamente notificaciones/automatización y sincronizar GitHub; sin Fase 13 ni despliegue | Usuario | Solicitud vigente y D-34, ratifica D-33; entrega EN_REVISION |
 | 2026-11-02 | 12 / 13 | Aceptar entrega/cierre de Fase 12; autorizar únicamente Fase 13 para un nuevo chat | Usuario | D-35: «Apruebo fase 12 y inicia en nuevo chat fase 13»; no se ejecuta Fase 13 en este cierre |
+| 2026-11-02 | 14 / 15 | Aceptar entrega/cierre de Fase 14; autorizar únicamente Fase 15 para un nuevo chat | Usuario | D-39: «apruebo fase 14 e incia en nuevo chat fase 15»; no ejecuta Fase 15 ni autoriza merge/publicación/producción |
 
 ## Criterios para cerrar cada fase
 - [ ] Alcance y entregables revisados.
@@ -534,3 +537,61 @@ Verificación de este cierre: únicamente documentación; revisión de estados/C
 CA14-01–05 conservan alcance local/parcial: sin staging/Auth gestionados, copia externa/retención operativa ni rollback de plataforma acreditados. CA14-06 PENDIENTE. Fase 14 EN_REVISION, última completada 13; no aceptar/cerrar por inferencia. F1-SEG-01/02/03 ABIERTOS; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Fase 15 PENDIENTE / NO OTORGADA. Sin producción, datos/cuentas reales, permisos remotos, gasto ni correo real.
 
 Siguiente paso: revisión de esta entrega y decisiones operativas pendientes; solo tras destino/recursos autorizados completar ensayos gestionados. Producción requiere permiso propio. Actualización GitHub por commit/push normal con autoría noreply y comprobación SHA remoto al entregar.
+
+
+### Sincronización y control de publicación — Fase 14
+
+Entrega inicial en main `82d8ad69cbbf24495b893cfd9fa6eeb9cee5e6cf`, SHA remoto comprobado. CI inicial [41473084240](https://github.com/amsotov/inventarioTI2/actions/runs/41473084240) FAIL por ausencia de pdftotext en runner; se prepara corrección de instalación de poppler-utils en rama phase14/ci-prerequisites-and-pages-guard y PR, sin modificar pruebas.
+
+Se detectó Pages legacy main:/docs activo fuera del árbol. Run [41473076891](https://github.com/amsotov/inventarioTI2/actions/runs/41473076891) cancelado por API, deploy CANCELLED sin ejecución; build sí terminó. No se eliminó/configuró el sitio previo. Con la prohibición de producción, no hacer nuevos pushes/merges a main hasta resolver expresamente el automatismo externo. Corrección y evidencia posterior se entregan en rama/PR sin merge. Estado vigente EN_REVISION; CA14-06 y F1-SEG-01/02/03 pendientes, Fase 15 sin autorización.
+
+
+## Cierre aprobado de Fase 14 y continuidad de Fase 15 — D-39
+
+2026-11-02. Evidencia literal: «apruebo fase 14 e incia en nuevo chat fase 15». D-39 acepta la entrega `da1ac91dd32278add2801ba41f9661c921560e60`, cumple CA14-06 y cierra Fase 14 COMPLETADA con sus límites. Conserva 119/119 pruebas API/seguridad, 39/39 navegador y 4/4 operación, restauración local de 19 tablas y [CI PASS 41473700624](https://github.com/amsotov/inventarioTI2/actions/runs/41473700624) del SHA aceptado. No convierte el ensayo local ni la aceptación en continuidad productiva, recuperación Auth gestionada, copias externas/retención 30 días, SLA o rollback de plataforma acreditados.
+
+Fase 15 — documentación, capacitación y evolución AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Este cierre registra aceptación/continuidad y sincroniza GitHub, sin ejecutar Fase 15 ni crear automáticamente otra conversación. La autorización no necesita reiterarse. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin correo real, datos/cuentas reales, gastos, permisos remotos ni producción.
+
+La aprobación de fase no autoriza merge ni publicación: [PR #1](https://github.com/amsotov/inventarioTI2/pull/1) permanece sin merge y Pages legacy main:/docs sigue bloqueando nuevas escrituras en main. Recuperar la rama phase14/ci-prerequisites-and-pages-guard y el HEAD vigente de ese PR; no usar main como única fuente de continuidad. Los estados EN_REVISION anteriores son antecedentes históricos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main en lectura y la rama del PR #1, revisar SHA/CI/estado local y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, DECISIONES D-39, requisitos/cierre D-14 y entregas aceptadas hasta Fase 14. Preservar cambios de terceros. No hacer merge/push a main mientras el automatismo Pages no se resuelva con autorización específica.
+2. Presentar y ejecutar únicamente el plan de Fase 15: manuales de usuario/administración, instalación y onboarding de desarrollador, soporte, capacitación propuesta, mantenimiento, roadmap/deuda técnica y estado final. Contrastar con implementación real y pruebas disponibles; no presentar capacitación como realizada sin participantes/evidencia.
+3. Reutilizar manuales/README/CHANGELOG y runbook/checklist existentes; no inventar funcionalidades, responsables, plazos legales, presupuesto o servicios contratados. Spec Kit no instalado; no instalar por inferencia. Mantener permisos/sesión/MFA/CSRF/RLS y correo real deshabilitado.
+4. Distinguir instalación/ensayo local sintético de integración gestionada. Mantener F1-SEG-01/02/03, pendientes de hardware/identidad/proveedor y todos los objetivos de continuidad. Documentar pasos comprobados y no ejecutados. No contratar, crear cuentas/datos reales, cambiar permisos, publicar o desplegar por esta autorización.
+5. Registrar cambios, validaciones documentales y pruebas pertinentes según alcance; preservar literalmente evidencia aceptada y migraciones. Sincronizar en rama/PR seguro y comprobar SHA remoto. Entregar Fase 15 EN_REVISION para su aceptación propia; no presumir cierre final del sistema.
+
+Verificación de este cierre: solo documentación; estados/CA14-06/D-39 y enlaces locales, git diff --check y comparación con da1ac91dd32278add2801ba41f9661c921560e60 para confirmar aplicación, ops, workflow, migraciones, dependencias, tests y evidencias intactos. No se repiten build/suites: no cambia código. Verificadores históricos, incluido docs/evidencias/fase14/verificar.py, conservan su fotografía EN_REVISION original y no se reescriben para este cierre. Commit documental con [skip ci], sin nueva certificación funcional; CI PASS anterior permanece ligado al SHA aceptado. Commit/push normal en rama del PR #1, autoría noreply y comprobación SHA remoto antes de confirmar.
+
+## Ejecución vigente de Fase 15 — D-40
+
+2026-11-02. El usuario ratifica D-39 y pide iniciar únicamente Fase 15, recuperar PR #1, leer FASES/ESTADO, presentar plan de documentación/capacitación/evolución y actualizar GitHub, sin merge a main ni producción. Base `5632391e112079e92f40d913ff48dfd1c7f242b4`, rama `phase14/ci-prerequisites-and-pages-guard`, árbol inicial limpio; main `82d8ad6` solo en lectura. No se repite autorización.
+
+Plan presentado antes de editar: completar manuales contrastados con UI/servidor; instalación/onboarding con reproducción sintética desde checkout limpio; soporte/mantenimiento enlazados al runbook; capacitación por rol con ejercicios/evaluación y acta pendiente; roadmap/deuda, documentación de estado y sincronización en PR. Codex redacta/verifica; usuario revisa/acepta. Personas operativas/facilitador SIN DESIGNAR, sin fechas ni SLA aprobados.
+
+Entregables y CA15-01 a CA15-06 en [FASE15](docs/FASE15.md); comandos/resultados y límites en [PRUEBAS](docs/PRUEBAS.md#fase-15--documentación-capacitación-y-evolución). Instalación/build y 9/9 pruebas del recorrido frontend en worktree limpio de la base, con PostgreSQL/identidad doble y Chromium. Capacitación real, onboarding por nuevo desarrollador y arranque gestionado NO EJECUTADOS. Evidencia aceptada, código/ops/workflow/migraciones/dependencias/tests intactos.
+
+Fase 15 **EN_REVISION**, CA15-06 **PENDIENTE**, última completada 14; no declarar cierre final ni autorizar otra fase. F1-SEG-01/02/03 ABIERTOS; UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Sin correo real, datos/cuentas reales, gastos, permisos remotos ni producción. Actualización documental en rama del PR #1, en borrador y sin merge; bloqueo Pages main:/docs vigente. Commit con [skip ci] y SHA remoto cotejado al entregar; CI PASS anterior permanece ligado a `da1ac91`, no al commit documental.
+
+Siguiente paso: revisión propia del usuario de manuales, guía, soporte, capacitación propuesta y prioridades. CA15-06 requiere aceptación expresa; no confundirla con sesiones realizadas ni aptitud productiva. Cualquier evolución, modificación del automatismo Pages, merge o despliegue necesita alcance/permiso específico.
+
+## Cierre aprobado de Fase 15 y servidor local de pruebas — D-41
+
+2026-11-02. Evidencia literal: «apruebo fase 15 en nuevo indicame los pendientes y publica el sistema inventarioTI2 en servidor local para pruebas». Destino confirmado por respuesta: «En este entorno de trabajo». D-41 acepta `a9a0742b0f70ff026d36588f96475cca59c4c3f7`, cumple CA15-06 y cierra Fase 15 COMPLETADA con sus límites. Fases 0–15 aceptadas; no se transforma capacitación preparada en realizada ni se inventa validación humana nueva.
+
+La misma solicitud autoriza trabajo adicional específico: presentar pendientes y preparar/arrancar servidor local sintético. Plan presentado: PostgreSQL y GoTrue locales, HTTPS en loopback, bootstrap de cuentas aleatorias fuera de Git, MFA administrativo y controles originales, datos de prueba persistentes, sin worker/correo real; smoke y reinicio con conservación; documentación/continuidad y GitHub seguro. No se asigna Fase 16.
+
+[PRUEBAS_LOCALES](docs/PRUEBAS_LOCALES.md) reúne acceso/comandos, pendientes y prompt para otro chat. No se abre otro chat automáticamente. Estado/pruebas/evidencia de la instancia en [PRUEBAS](docs/PRUEBAS.md#publicación-local-de-pruebas--d-41). Esta publicación local no autoriza publicación externa, main/Pages ni producción; F1-SEG-01/02/03 ABIERTOS. UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Sin cuentas/datos reales, gastos o permisos remotos; PR #1 en borrador/sin merge.
+
+## Diagnóstico de acceso a vista previa — D-42
+
+2026-11-02. Usuario: «no funcina vista previa», con Chrome ERR_CONNECTION_REFUSED. Servicio del entorno activo y readiness 200; el navegador consulta localhost de otro equipo. No existe reenvío de puertos ni URL remota habilitada con las herramientas disponibles. Se corrige la comunicación previa, sin presentar pruebas internas como acceso desde el computador personal.
+
+[ACCESO_VISTA_PREVIA](docs/ACCESO_VISTA_PREVIA.md) documenta causa, requisitos, paquete local y bloqueo vigente. Launcher Linux y ZIP sin estado/credenciales preparados; instalación en el equipo del usuario NO REALIZADA, usuario confirma Windows; requisitos/arranque en su computador sin comprobar. Fases 0–15 siguen COMPLETADAS por D-41; no hay nueva fase ni permiso de publicación externa/producción. Instancia y evidencia anteriores preservadas. GitHub en PR #1 sin merge/main/Pages.
+
+## Preparación de nuevo chat: pendientes y vista previa — D-43
+
+2026-11-02. Solicitud literal: «preparame en chat nuevo los pendientes del sistema inventarioTI2 y una vista previa para probar el sistema». Se prepara [CONTINUIDAD_PRUEBAS](docs/CONTINUIDAD_PRUEBAS.md): contexto/ramas/aprobaciones, pendientes priorizados, plan de acceso funcional y VP-01–05, pruebas sugeridas y prompt para pegar. No se crea otra conversación ni se habilita una URL desde esta tarea documental.
+
+Primera prioridad de la continuación: acceso comprobable desde Chrome Windows, evitando repetir localhost remoto. VP-01 PENDIENTE; las pruebas internas anteriores no acreditan ese acceso. Fases 0–15 COMPLETADAS por D-41; sin Fase 16, implementación global de deuda, main/Pages, publicación externa, producción, gastos o correo real por inferencia. Cambios solo de documentación; aplicación, controladores, migraciones, dependencias y evidencia aceptada intactos. Sincronizar en la rama del PR #1 y cotejar SHA remoto.

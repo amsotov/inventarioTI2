@@ -1,0 +1,1 @@
+PASS: estado/alcance/aceptación, CI solo lectura sin deploy, evidencia 119/39/4 y restore 19 tablas; 12 directorios históricos/migraciones/lockfile intactos; 334 enlaces locales.

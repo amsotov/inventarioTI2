@@ -198,6 +198,7 @@ export async function fixture(
       [units[0].id],
     );
     return {
+      containerName: name,
       root,
       authPool,
       business,

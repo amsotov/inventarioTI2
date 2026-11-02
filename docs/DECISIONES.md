@@ -200,3 +200,8 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## D-37 — Aceptación de Fase 13 y continuidad de Fase 14
 
 2026-11-02. Evidencia literal: «apruebo fase 13 inicia en nuevo chat fase 14». Acepta la entrega `16f7bf0a4d7a088eae444488874daefc19c35630`, cumple CA13-06 y cierra Fase 13 COMPLETADA con los límites explícitos de QA. Autoriza únicamente Fase 14 — Despliegue, operación y continuidad para iniciar en un nuevo chat, ejecución PENDIENTE. No ejecuta la fase en este cierre ni crea una conversación automáticamente. Fase 15 sigue sin autorización; producción requiere autorización expresa adicional. Conserva evidencia, resultados parciales y F1-SEG-01/02/03; sin envío real, datos/cuentas reales, gastos, cambios remotos de permisos o despliegue en este cierre.
+
+
+## D-38 — Ejecución de Fase 14 sin producción
+
+2026-11-02. El usuario ratifica D-37: «Inicia únicamente la Fase 14, ya autorizada por D-37. Presenta el plan de despliegue, operación y continuidad y actualiza GitHub. No inicies Fase 15 ni despliegues a producción». Se ejecuta plan/CI de verificación, salud/logs y ensayos locales de copia/recuperación, con [DESPLIEGUE](DESPLIEGUE.md), [RUNBOOK](RUNBOOK_OPERACION.md) y [CHECKLIST](CHECKLIST_LIBERACION.md). Entrega EN_REVISION, CA14-06 PENDIENTE; no se atribuye aceptación del usuario. F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/30 días conservados. Recursos/destino gestionados, operador/custodia/horario/alertas aún sin aprobar; no se contratan/configuran por inferencia. Sin Fase 15, producción, correo real, datos/cuentas reales, gasto o permisos remotos.

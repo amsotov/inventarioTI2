@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-02 — Fase 14: operación y continuidad (EN_REVISION)
+
+- Plan de ambientes/configuración/CI/migraciones, runbook de incidentes/recuperación/rollback y checklist NO-GO productivo.
+- CI Verify only sin deploy; salud live/ready, logs mínimos sin PII y HOST explícito conservando loopback.
+- Ensayo sintético de copia cifrada/restauración, integridad/roles/RLS, revocación de sesión y cuarentena de efectos inciertos; pruebas/evidencia y límites.
+- CA14-06 pendiente; F1-SEG-01/02/03 abiertos. Sin Fase 15, producción, correo real ni provisión/gastos.
+
 ## 2026-11-02 — Cierre aprobado de Fase 13
 
 - D-37 acepta entrega `16f7bf0`; CA13-06 cumplido y Fase 13 COMPLETADA con sus límites documentados.

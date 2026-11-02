@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 13 — COMPLETADA; entrega y cierre aprobados por D-37.
+**Fase:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
 **Modo:** GUIADO
 **Última fase completada:** 13.
-**Última fase autorizada:** 14, para iniciar en un nuevo chat; ejecución PENDIENTE. Fase 15 PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
+**Última fase autorizada:** 14, ejecutada localmente bajo D-37/D-38; CA14-06 PENDIENTE. Fase 15 PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
 
-**Punto vigente de continuidad:** Fase 13 aceptada y cerrada por D-37. Iniciar únicamente Fase 14 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de [FASES](FASES.md). Este cierre solo registra aceptación/continuidad; no ejecuta Fase 14 ni despliega. Correo real deshabilitado, Fase 15 sin autorización y seguimientos conservados. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 14 entregada para revisión, sin aceptación presumida. [Plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md) y evidencia local. CI sin deploy, salud/logs saneados y copia/restauración sintéticas; operación gestionada pendiente de destino/recursos y F1-SEG-01/02/03. Correo real deshabilitado, sin producción ni Fase 15. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -522,3 +522,14 @@ Punto de inicio para el nuevo chat:
 8. Registrar plan/criterios, pruebas ejecutadas/fallidas/no ejecutadas, evidencias y bloqueos; actualizar documentación/GitHub y comprobar SHA remoto. Entregar Fase 14 EN_REVISION para aceptación propia; no marcar COMPLETADA ni iniciar Fase 15 sin aprobación independiente.
 
 Verificación de este cierre: únicamente documentación; revisión de estados/CA13-06/D-37 y enlaces locales, `git diff --check` y preservación literal de aplicación, migraciones, dependencias, tests y todas las evidencias aceptadas frente a `16f7bf0`. No se repiten build/suites funcionales porque no cambia código. Los verificadores históricos, incluido `docs/evidencias/fase13/verificar.py`, conservan las condiciones EN_REVISION de su entrega original y no se reescriben para adaptarlos al cierre. Commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar.
+
+
+## Ejecución vigente de Fase 14 — D-38
+
+2026-11-02. D-37 ratificada por solicitud de iniciar únicamente Fase 14, presentar plan y actualizar GitHub, sin Fase 15 ni producción. Base recuperada `8d66e72`, rama local work limpia; no se sobrescribe trabajo remoto.
+
+Entregables: [plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI Verify only sin deploy/secretos de proveedor, salud live/ready y logs por plantilla sin PII; HOST privado explícito con loopback por defecto. Ensayo `npm run test:ops` de cifrado/manifiesto/restore en contenedores propios, cotejo de datos/roles/RLS/ACL/políticas/secuencias/funciones, cuarentena de sesiones/enlaces/outbox, nueva autenticación y fallo DDL atómico. No se alteran migraciones ni evidencia aceptada.
+
+Comandos/resultados/límites en [PRUEBAS](docs/PRUEBAS.md#fase-14--operación-y-continuidad) y [evidencias](docs/evidencias/fase14/). Ensayos iniciales y correcciones se registran sin ocultar fallos. Sin backup gestionado/Auth/MFA real, almacén/retención externos, proxy/TLS ni rollback de artefacto en plataforma acreditados. F1-SEG-01/02/03 siguen abiertos. No hay operador/suplente, día/hora UTC, destino/custodia/canal aprobados ni presupuesto informado. No fijar domingo 02:00 UTC como aceptado.
+
+Fase 14 EN_REVISION, CA14-06 PENDIENTE; última completada 13. Producción no autorizada; Fase 15 sin iniciar. Siguiente acción: revisión/aceptación propia de entrega con límites y resolución de pendientes operativos. Ninguna autorización futura se presume. Todos los cambios se sincronizan en amsotov/inventarioTI2, main, con commit/push normal y SHA remoto comprobado.

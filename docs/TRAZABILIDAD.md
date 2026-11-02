@@ -149,3 +149,14 @@ La [matriz ejecutada RF-01–16/HU-01–16/CR-01–20/CA-N01–07](MATRIZ_QA_FAS
 ## Aceptación de QA y continuidad — D-37
 
 Fase 13 COMPLETADA por aceptación expresa el 2026-11-02 de `16f7bf0a4d7a088eae444488874daefc19c35630`; CA13-06 CUMPLIDO. [Matriz](MATRIZ_QA_FASE13.md), resultados y límites parciales conservados; RNF-04 legal, RNF-05 accesibilidad integral/hardware y RNF-07 disponibilidad/continuidad no se convierten en cumplimiento total por aceptación. Fase 14 autorizada únicamente para iniciar en un nuevo chat, ejecución pendiente; Fase 15 sin autorización, producción requiere aprobación independiente. Sin ejecución de Fase 14 ni despliegue en este cierre.
+
+
+## Fase 14 — operación/continuidad
+
+| Fuente | Entrega | Evidencia / límite |
+|---|---|---|
+| D-14/A-09/CR-17/RNF-07 y F1-SEG-03 | DESPLIEGUE/RUNBOOK: UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/30 días, copia/restauración | tests/ops; recuperacion.json de 19 tablas, umbrales/corrupción; producción/Auth/externo/30 días pendientes |
+| RNF-01/02/04, CR-14/16/18 | Roles/RLS/ACL y sesión/enlace inválidos tras restore, outbox incierta; logs sin PII | tests/ops y regresión API/seguridad/UI; F1-SEG-01 abierto |
+| D-17/D-37/D-38 y F1-SEG-02 | Ambientes/secretos, Verify only, promoción/migración/rollback controlados | Workflow sin deploy y checklist NO-GO; presupuesto/destino/permisos gestionados pendientes |
+
+[Plan y CA14-01–06](DESPLIEGUE.md), [pruebas](PRUEBAS.md#fase-14--operación-y-continuidad). Fase 14 EN_REVISION; CA14-06 PENDIENTE, Fase 15 sin autorización.

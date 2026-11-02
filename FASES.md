@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 13 — COMPLETADA; entrega y cierre aprobados por D-37.
+**Fase actual:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
 **Última fase completada:** 13.
-**Próxima fase:** 14 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Sin despliegue en este cierre; producción requiere autorización independiente.
+**Próxima acción:** revisión de Fase 14; CA14-06 PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 autorizada para un nuevo chat, ejecución pendiente; Fase 15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 ejecutada localmente y EN_REVISION por D-38; CA14-06 PENDIENTE, última completada 13; Fase 15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -24,7 +24,7 @@
 | 11 | Indicadores, reportes y exportación | Dashboards, filtros, Excel/PDF | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-33 |
 | 12 | Notificaciones y automatización | Catálogo, outbox, reintentos y seguimiento | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-35 |
 | 13 | QA, rendimiento y seguridad | Matriz, regresión, carga, accesibilidad, seguridad y defectos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-37 |
-| 14 | Despliegue, operación y continuidad | CI/CD, respaldo, restauración y monitoreo | PENDIENTE | AUTORIZADA para un nuevo chat por D-37; ejecución no iniciada |
+| 14 | Despliegue, operación y continuidad | CI, runbook, salud/logs, copia/restauración sintéticas | EN_REVISION | Ejecución D-37/D-38; CA14-06 PENDIENTE; operación gestionada pendiente |
 | 15 | Documentación, capacitación y evolución | Manuales, soporte y roadmap | PENDIENTE | NO OTORGADA |
 
 ## Registro de aprobación y ejecución
@@ -523,3 +523,14 @@ Punto de inicio para el nuevo chat:
 8. Registrar plan/criterios, pruebas ejecutadas/fallidas/no ejecutadas, evidencias y bloqueos; actualizar documentación/GitHub y comprobar SHA remoto. Entregar Fase 14 EN_REVISION para aceptación propia; no marcar COMPLETADA ni iniciar Fase 15 sin aprobación independiente.
 
 Verificación de este cierre: únicamente documentación; revisión de estados/CA13-06/D-37 y enlaces locales, `git diff --check` y preservación literal de aplicación, migraciones, dependencias, tests y todas las evidencias aceptadas frente a `16f7bf0`. No se repiten build/suites funcionales porque no cambia código. Los verificadores históricos, incluido `docs/evidencias/fase13/verificar.py`, conservan las condiciones EN_REVISION de su entrega original y no se reescriben para adaptarlos al cierre. Commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar.
+
+
+## Ejecución de Fase 14 — entrega para revisión (D-38)
+
+2026-11-02. Usuario: «Inicia únicamente la Fase 14, ya autorizada por D-37. Presenta el plan de despliegue, operación y continuidad y actualiza GitHub. No inicies Fase 15 ni despliegues a producción». Base main `8d66e72`, árbol limpio; avance directo sin perder trabajo. Plan presentado antes de implementar; no se repite autorización.
+
+[DESPLIEGUE](docs/DESPLIEGUE.md) define alcance/CA14-01–06, aislamiento/configuración, CI sin deploy, migraciones/promoción, observabilidad/copias y dependencias. [RUNBOOK](docs/RUNBOOK_OPERACION.md) y [CHECKLIST](docs/CHECKLIST_LIBERACION.md) cubren incidentes, liberación, restauración/cuarentena y rollback. Salud/logs mínimos y ensayo cifrado sintético verificables; resultados y límites en [PRUEBAS](docs/PRUEBAS.md#fase-14--operación-y-continuidad).
+
+CA14-01–05 conservan alcance local/parcial: sin staging/Auth gestionados, copia externa/retención operativa ni rollback de plataforma acreditados. CA14-06 PENDIENTE. Fase 14 EN_REVISION, última completada 13; no aceptar/cerrar por inferencia. F1-SEG-01/02/03 ABIERTOS; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Fase 15 PENDIENTE / NO OTORGADA. Sin producción, datos/cuentas reales, permisos remotos, gasto ni correo real.
+
+Siguiente paso: revisión de esta entrega y decisiones operativas pendientes; solo tras destino/recursos autorizados completar ensayos gestionados. Producción requiere permiso propio. Actualización GitHub por commit/push normal con autoría noreply y comprobación SHA remoto al entregar.

@@ -1,0 +1,16 @@
+
+> inventarioti2@1.0.0 test:ops
+> tsx --test --test-concurrency=1 tests/ops/*.test.ts
+
+✔ health and technical logs exclude private request and dependency data (88.332333ms)
+✔ encrypted rehearsal backup rejects tampering, truncation and wrong key (1.836207ms)
+✔ backup failure and clock errors cannot hide RPO ageing (0.289254ms)
+✔ isolated encrypted backup restores data, permissions and denial of old sessions without dispatch (9766.631975ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10316.940938

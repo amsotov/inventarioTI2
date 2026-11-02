@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. Fase 13: [QA, rendimiento y seguridad](docs/QA_FASE13.md), [matriz](docs/MATRIZ_QA_FASE13.md), entrega aceptada `16f7bf0`, con 119 pruebas API/seguridad y 39 de navegador superadas. Mediciones y límites locales conservados en [PRUEBAS](docs/PRUEBAS.md). **Fase 14 autorizada para iniciar en un nuevo chat**, ejecución pendiente; Fase 15 sin autorización. Correo real deshabilitado y sin despliegue en este cierre; producción requiere autorización independiente. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Los estados anteriores son antecedentes históricos.
+Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -162,3 +162,8 @@ Entrega aceptada por D-37. Fase 14 autorizada para iniciar en un nuevo chat; seg
 > Inicia únicamente la Fase 14 de inventarioTI2, ya autorizada por D-37. Presenta el plan de despliegue, operación y continuidad, conserva los límites y actualiza GitHub. No inicies Fase 15 ni despliegues a producción.
 
 Fase 15 sin autorización. Sin implementación de Fase 14, activación/envíos reales ni despliegues en este cierre. Los límites de QA y F1-SEG-01/02/03 se conservan.
+
+
+## Entrega de Fase 14 — EN_REVISION
+
+Plan, runbook y checklist enlazados al inicio. `npm run test:ops` reproduce el ensayo aislado de copia cifrada/restauración y las verificaciones de salud/logs/edad de copia; requiere Docker local, nunca DSN real. El workflow GitHub solo verifica. `npm start` conserva worker apagado y exige configuración externa; /health/live y /health/ready no sustituyen el smoke autenticado. Pendientes gestionados y aceptación CA14-06 explícitos. Producción no desplegada; Fase 15 sin iniciar.

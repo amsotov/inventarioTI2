@@ -386,3 +386,27 @@ D-37: «apruebo fase 13 inicia en nuevo chat fase 14». Entrega aceptada `16f7bf
 Este cierre modifica diez documentos de control/continuidad: revisión de estados/CA13-06/D-37, enlaces locales y `git diff --check`, con comprobación de que todo lo demás permanece idéntico a `16f7bf0`. No se repiten build ni pruebas funcionales al no cambiar aplicación, migraciones, dependencias, tests o evidencia. El verificador histórico de Fase 13 conserva su estado de entrega EN_REVISION; no se modifica ni se presenta como verificador del cierre. GitHub mediante commit/push normales, autoría noreply y comparación SHA remoto al entregar.
 
 Fase 14 autorizada para un nuevo chat, ejecución PENDIENTE; Fase 15 sin autorización. No se crea conversación automáticamente ni se ejecuta Fase 14, activa correo o despliega en este cierre. Producción requiere autorización independiente; F1-SEG-01/02/03 y objetivos de continuidad intactos. Los estados EN_REVISION anteriores son antecedentes históricos.
+
+
+## Fase 14 — operación y continuidad
+
+2026-11-02 · EN_REVISION bajo D-37/D-38, base `8d66e72`; CA14-06 PENDIENTE. Solo recursos sintéticos propios, Node 24.19.0/PostgreSQL 17 Docker y Chromium emulado. [Plan/criterios](DESPLIEGUE.md), [runbook](RUNBOOK_OPERACION.md) y [checklist](CHECKLIST_LIBERACION.md).
+
+| Verificación | Resultado final | Evidencia |
+|---|---|---|
+| npm ci / npm run build | PASS; lockfile intacto, compilación servidor/ops/UI y Vite | [build](evidencias/fase14/build.txt) |
+| npm test | 119/119 PASS, 0 fail/skipped/cancelled | [regresión](evidencias/fase14/regresion.txt) |
+| npm run test:ui | 39/39 PASS, 0 fail/skipped/cancelled | [navegador](evidencias/fase14/regresion-ui.txt) |
+| npm run test:ops | 4/4 PASS, 0 fail/skipped/cancelled | [operación](evidencias/fase14/operacion.txt) |
+| Restauración cifrada | 19 tablas con hash de filas coincidente, roles/membresías/políticas/ACL/RLS/FORCE/owners/funciones/secuencias cotejados; snapshot excluye escritura posterior | [recuperación](evidencias/fase14/recuperacion.json) |
+| Recuperación segura | Passwords SQL reemitidos; roles mínimos, worker no lee cuentas; sesión vieja 401, nuevo login lee y lectura no administra; pendientes/incertidumbre sin envío; fallo DDL revierte | Mismo ensayo y código tests/ops/recovery.test.ts |
+| Salud/logs | live/ready 200, ready 503 saneado ante dependencia caída; ruta plantilla/unmatched, sin URL/query/cookie/token/PII ni error de dependencia | tests/ops/operations.test.ts |
+| Integridad/edad de copia | Cifrado autenticado; rechazo de alteración/truncamiento/clave errónea; 144/160/168 h, fallo y reloj inválido sin ocultar incumplimiento | Misma suite de operación |
+| npm audit --json | 0 vulnerabilidades informadas | [audit](evidencias/fase14/audit.json) |
+| Heurística de secretos | Sin coincidencias de cinco familias; no detector universal | [secretos](evidencias/fase14/secretos.json) |
+
+Duración del ensayo corregido: **9,125 s**, desde antes de crear fuente hasta smoke posterior a restore, sin incluir limpieza final. Es una medición de fixture pequeño con identidad doble; no RTO/RPO productivos ni recuperación de infraestructura gestionada. JSON conserva timestamp de snapshot y exclusiones. Objetivos aceptados: UTC/semanal/máximo 168 h/RPO ≤168 h/RTO ≤8 h/copias 30 días; ninguno se cambia por este tiempo local.
+
+Intentos iniciales y correcciones en [ensayos iniciales](evidencias/fase14/ensayos-iniciales.md): filtro de hashes vacío corregido y exigencia de 19 tablas; solapamiento UI/restore agotó espacio, repetición secuencial final PASS. No ocultar esos resultados ni presentar el primer intento como integridad acreditada. Evidencia aceptada de fases 2–13 y migraciones originales preservadas literalmente; capturas/PDF/secretos regenerados durante suites se apartaron antes de restaurar originales.
+
+NO EJECUTADOS: staging/producción, Supabase/Auth/MFA/advisors gestionados, Resend/buzones/envío físico, TLS/DNS/proxy/canales de alerta reales, upload/lectura externa/KMS/custodia, conservación efectiva 30 días, restauración integral gestionada, rollback de artefacto en plataforma, disponibilidad mensual 99,5 %, hardware/Safari. Carga/a11y de Fase 13 no se repiten porque no cambia UI/negocio; mantienen sus límites/evidencia aceptada. F1-SEG-01/02/03 abiertos. Fase 15 sin iniciar, producción no autorizada. CI remoto solo PASS al observar run del SHA entregado; evidencia local y SHA sincronizado no lo sustituyen.

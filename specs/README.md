@@ -90,3 +90,8 @@ Plan/criterios/defectos en [QA_FASE13](../docs/QA_FASE13.md), cobertura en [MATR
 ## Continuidad vigente — D-37
 
 Fase 13 COMPLETADA y CA13-06 cumplido. Fase 14 autorizada únicamente para iniciar en un nuevo chat, ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md), [QA_FASE13](../docs/QA_FASE13.md), [ARQUITECTURA](../docs/ARQUITECTURA.md) y [DESPLIEGUE](../docs/DESPLIEGUE.md), que conserva su plantilla pendiente. Este cierre no implementa operación/despliegue ni instala Spec Kit. Fase 15 sin autorización, correo real deshabilitado y producción sujeta a autorización independiente. Los estados previos se conservan como antecedentes.
+
+
+## Entrega vigente de Fase 14 — D-37/D-38
+
+[Plan/criterios/cobertura](../docs/DESPLIEGUE.md), [runbook](../docs/RUNBOOK_OPERACION.md), [checklist](../docs/CHECKLIST_LIBERACION.md) y [pruebas](../docs/PRUEBAS.md#fase-14--operación-y-continuidad). Spec Kit no instalado ni simulado. CI sin deploy y ensayos sintéticos locales; operación/identidad/retención gestionadas pendientes. EN_REVISION, CA14-06 PENDIENTE; última completada 13. F1-SEG-01/02/03 abiertos, Fase 15 sin autorización y sin producción/correo real. Antecedentes anteriores conservados.

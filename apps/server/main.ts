@@ -8,6 +8,7 @@ import { Postgres } from './auth/postgres.js';
 import { SupabaseProvider } from './auth/supabase.js';
 import { Vault } from './auth/crypto.js';
 import { AuthService } from './auth/service.js';
+import { operations } from './operations.js';
 function required(name: string) { const v=process.env[name];if(!v) throw new Error('Missing '+name);return v; }
 const origin=required('APP_ORIGIN');
 if(new URL(origin).origin!==origin || !origin.startsWith('https://')) throw new Error('APP_ORIGIN requires HTTPS origin');
@@ -18,5 +19,11 @@ const business=new Pool({connectionString:required('BUSINESS_DATABASE_URL'),max:
 await assertDatabaseRole(business,'inventario_runtime');
 const security=new Authorization(auth,business);
 const server=app(auth,origin,new Inventory(security),fileURLToPath(new URL('../../web/',import.meta.url)),security);
-await server.listen({host:'127.0.0.1',port:Number(process.env.PORT??3000)});
+operations(server,async()=>{
+  await Promise.all([assertDatabaseRole(pool,'inventario_auth'),assertDatabaseRole(business,'inventario_runtime')]);
+},line=>process.stdout.write(line));
+// Loopback remains the default. A managed private ingress can explicitly bind all interfaces.
+const host=process.env.HOST??'127.0.0.1';
+if(!['127.0.0.1','0.0.0.0'].includes(host)) throw new Error('Invalid HOST');
+await server.listen({host,port:Number(process.env.PORT??3000)});
 for(const signal of ['SIGTERM','SIGINT']) process.once(signal,async()=>{await server.close();await pool.end();await business.end();});

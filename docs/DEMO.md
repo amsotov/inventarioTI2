@@ -25,4 +25,4 @@ No se repiten carga, axe ni continuidad/copia/restauración: no se modifican eso
 
 ## Límites de entrega
 
-No se ha integrado el PR, activado Pages, ejecutado Actions remoto ni comprobado una URL pública. El workflow se ejecutará tras push a main o lanzamiento manual y requiere Pages configurado. La entrega solo prepara ese proceso. Las pruebas locales no acreditan Supabase/Auth/correo gestionados, hardware/Safari ni continuidad productiva.
+La entrega original dejó el PR #2 preparado; posteriormente el usuario autorizó expresamente su integración y publicación. El primer CI remoto detectó `pdftotext` ausente (seis pruebas PDF fallidas); se incorpora `poppler-utils` a la preparación del runner y se repite CI antes de integrar. Publicación/validación pública en curso. Las pruebas locales no acreditan Supabase/Auth/correo gestionados, hardware/Safari ni continuidad productiva.

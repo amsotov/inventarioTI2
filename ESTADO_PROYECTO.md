@@ -541,3 +541,8 @@ El usuario autoriza explícitamente preparar la demo y su publicación estática
 Archivos: `apps/web/src/{api,main,reports,admin,style,demoData,demoMode,env.d}`, `vite.config.js`, `scripts/demo.mjs`, `package.json`/lock, `.github/workflows/deploy-demo.yml`, `tests/demo/browser.mjs`, README y registros de control. El pipeline sube únicamente `dist/web`. Node 24 continúa siendo el requisito del servidor; Node 20 se utiliza solo para compilar la demo. Nueva biblioteca de navegador jsPDF 4.2.1 fijada; write-excel-file ya existía. Sin almacenamiento local/persistente de demo, llamadas API o correo real. Verificación y resultados en `docs/DEMO.md`.
 
 Fase 14 continúa EN_REVISION con CA14-06 pendiente, última completada 13; Fase 15 sin iniciar. La demo no acredita continuidad productiva ni resuelve F1-SEG-01/02/03. Siguiente paso: revisar/integrar el PR y seleccionar GitHub Actions como fuente de Pages. No se activa Pages desde esta tarea ni se publica antes de integrar el PR.
+
+
+## Publicación demo autorizada — 2026-11-02
+
+El usuario autoriza expresamente integrar el PR #2, preparar y publicar la demo en GitHub Pages. Se corrige previamente CI: faltaba `pdftotext` en el runner, por lo que Verify instalará `poppler-utils` sin omitir pruebas. Se verificará CI, se integrará el PR y se cambiará Pages de la fuente legacy `/docs` a GitHub Actions, publicando solo datos sintéticos. Esta autorización no cierra CA14-06, no inicia Fase 15 ni autoriza el sistema productivo. Resultado final y enlaces en `docs/DEMO.md`.

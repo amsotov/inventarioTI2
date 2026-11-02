@@ -23,6 +23,10 @@ jobs:
         with:
           node-version: '24.19.0'
           cache: npm
+      - name: Install PDF verification tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes poppler-utils
       - run: npm ci
       - run: npm run build
       - run: npm test

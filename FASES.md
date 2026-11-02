@@ -538,3 +538,8 @@ Siguiente paso: revisión de esta entrega y decisiones operativas pendientes; so
 ## Incremento autorizado — Demo React / GitHub Pages (2026-11-02)
 
 Solicitud expresa del usuario: modo `VITE_DEMO_MODE=true`, datos efímeros, roles ficticios, correos simulados, exportaciones reales, base configurable, workflow Pages en push a main/manual y entrega por PR. Alcance adicional de Fase 14, sin cerrar CA14-06 ni iniciar Fase 15. Plan: adaptar el cliente de datos y descargas, conservar navegación hash y modo normal, preparar pipeline estático Node 20, probar navegador/build/regresión y documentar Pages. Destino público limitado a datos sintéticos; no se autoriza producción ni se modifican permisos/configuración remota de Pages. Estado: EN_REVISION; configuración de Pages e integración del PR pendientes del mantenedor.
+
+
+## Publicación demo autorizada — 2026-11-02
+
+El usuario autoriza expresamente integrar el PR #2, preparar y publicar la demo en GitHub Pages. Se corrige previamente CI: faltaba `pdftotext` en el runner, por lo que Verify instalará `poppler-utils` sin omitir pruebas. Se verificará CI, se integrará el PR y se cambiará Pages de la fuente legacy `/docs` a GitHub Actions, publicando solo datos sintéticos. Esta autorización no cierra CA14-06, no inicia Fase 15 ni autoriza el sistema productivo. Resultado final y enlaces en `docs/DEMO.md`.

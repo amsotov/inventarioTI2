@@ -1,6 +1,6 @@
 # Plan y evidencia de verificación
 
-**Fecha:** 2026-10-31 · **Fase:** 1 — COMPLETADA (aceptación documental; sin pruebas funcionales).
+**Estado vigente (2026-11-02):** Fase 15 EN_REVISION; ver [verificación documental y onboarding](#fase-15--documentación-capacitación-y-evolución). Las secciones anteriores conservan evidencia y límites de su entrega original; no describen por sí solas el estado actual.
 
 ## Alcance de esta revisión
 
@@ -422,3 +422,24 @@ Se detectó Pages legacy main:/docs activo fuera del árbol. Run [41473076891](h
 ## Cierre aceptado de Fase 14 — D-39
 
 2026-11-02. Entrega `da1ac91dd32278add2801ba41f9661c921560e60` aceptada por el usuario, CA14-06 CUMPLIDO y Fase 14 COMPLETADA. [CI 41473700624 PASS](https://github.com/amsotov/inventarioTI2/actions/runs/41473700624) del SHA aceptado; resultados 119/39/4 y restauración de 19 tablas intactos, con todos los límites gestionados/productivos. Las referencias EN_REVISION anteriores son antecedentes. Este cierre solo modifica documentación: validación de estados/enlaces/diff y preservación literal de aplicación/ops/workflow/migraciones/dependencias/tests/evidencia frente a ese SHA. Build/suites no repetidos; [skip ci] para commit documental, sin atribuir nuevos resultados funcionales. Fase 15 autorizada solo para nuevo chat, ejecución PENDIENTE; PR #1 sin merge, Pages bloqueado, sin producción/correo real ni resolución implícita de F1-SEG-01/02/03.
+
+## Fase 15 — Documentación, capacitación y evolución
+
+2026-11-02 · D-39/D-40 · Fase 15 EN_REVISION, CA15-06 PENDIENTE. Base de código `5632391e112079e92f40d913ff48dfd1c7f242b4` del PR #1; sin cambio de aplicación respecto de ella. [Plan y criterios](FASE15.md).
+
+Ensayo de onboarding en `work/fase15-onboarding`, worktree detached separado sin node_modules/dist iniciales; comandos desde su raíz. No se inicia `npm start`, no se suministran DSN/secretos del usuario ni se contacta proveedor de identidad/correo gestionado. Node v24.19.0, npm 11.9.0, Docker 28.4.0 y `/usr/bin/chromium`; daemon local comprobado. Registro/lockfile e imagen PostgreSQL por digest según fuentes; descargas no implican servicios contratados.
+
+| Verificación | Resultado observado | Evidencia / límite |
+|---|---|---|
+| `npm ci` | PASS, 124 paquetes instalados | [Instalación](evidencias/fase15/npm-ci.log); sin actualizar versiones/lockfile |
+| `npm run build` | PASS, servidor/UI compilados | [Build](evidencias/fase15/build.log); aviso outDir de Vite registrado, no fallo ni deploy |
+| `node --import tsx --test --test-concurrency=1 tests/ui/frontend.test.ts` | PASS, **9/9**, 0 fallos; 109.756 ms aproximados de duración total | [Salida](evidencias/fase15/frontend.log); PostgreSQL local real, identidad/MFA doble, Chromium emulado |
+| Revisión documental de enlaces, estados y alcance; `git diff --check` | Resultado consolidado en [validación](evidencias/fase15/validacion.json) | Incluye fuentes/migraciones/evidencia aceptada intactas; no certifica semántica de todos los enlaces externos |
+
+El primer intento del verificador documental detectó su propio archivo de resultado aún inexistente; se inicializó esa salida y se repitió la comprobación completa con PASS, sin modificar fuentes.
+
+El recorrido comprueba lector/vacío/assets, MFA doble/alta/edición, respuesta perdida/replay sin duplicar evidencia, 412, filtros/ficha/escape, paginación, teclado/responsive y 503/401 tras revocar. El test produce tres capturas Fase 8 modificadas **solo en checkout desechable**; no se copian sobre la evidencia aceptada. No se reescriben verificadores históricos de estados de fases.
+
+No ejecutados en Fase 15: suites completas npm test/test:ops/test:ui, carga, accesibilidad, nuevo CI funcional, instalación por una persona desarrolladora nueva, capacitación con participantes, arranque HTTPS/Auth gestionado, correo real y producción. No se repiten suites completas por cambios exclusivamente documentales; la reproducción elegida verifica los pasos de instalación nuevos. Los resultados históricos 119 API/seguridad, 39 navegador, 4 operación, 19 tablas restauradas y CI PASS 41473700624 permanecen asociados a `da1ac91`, sin asignarlos al nuevo SHA documental.
+
+F1-SEG-01/02/03 abiertos; entrenamiento/material no acredita operación. Commit documental con [skip ci] en rama del PR #1, que permanece en borrador/sin merge; SHA remoto comprobado al entregar. [Validación](evidencias/fase15/validacion.json) refiere a la base y al árbol preparado; el SHA de entrega se confirma en GitHub para evitar una autorreferencia de hash dentro del commit.

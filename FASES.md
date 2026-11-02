@@ -2,13 +2,13 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 14 — COMPLETADA; entrega y cierre aprobados por D-39.
+**Fase actual:** 15 — EN_REVISION; documentación, capacitación propuesta y evolución entregadas bajo D-39/D-40; CA15-06 PENDIENTE.
 **Última fase completada:** 14.
-**Próxima fase:** 15 — AUTORIZADA por D-39 para iniciar en un nuevo chat; ejecución PENDIENTE. Producción y publicación requieren autorización independiente; bloqueo Pages conservado.
+**Siguiente hito:** revisión/aceptación propia de Fase 15; no hay otra fase autorizada. Producción, publicación y merge requieren decisión independiente; bloqueo Pages conservado. [Plan/criterios CA15](docs/FASE15.md).
 
-**Entrega vigente:** main `82d8ad6` y [PR #1](https://github.com/amsotov/inventarioTI2/pull/1) con corrección CI/registro de Pages, sin merge. Automatismo heredado Pages main:/docs activo: run cancelado antes de deploy. No más pushes/merges a main bajo prohibición de publicación hasta resolverlo.
+**Entrega vigente:** [Fase 15](docs/FASE15.md) en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), en borrador/sin merge; base recuperada `5632391`, main `82d8ad6` solo en lectura. Automatismo heredado Pages main:/docs activo: run cancelado antes de deploy. No más pushes/merges a main bajo prohibición de publicación hasta resolverlo.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 completada por D-39 con sus límites; CA14-06 CUMPLIDO, última completada 14; Fase 15 autorizada para un nuevo chat, ejecución pendiente. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 completada por D-39 con sus límites; CA14-06 CUMPLIDO, última completada 14; Fase 15 ahora ejecutada EN_REVISION por D-40, CA15-06 PENDIENTE. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -27,7 +27,7 @@
 | 12 | Notificaciones y automatización | Catálogo, outbox, reintentos y seguimiento | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-35 |
 | 13 | QA, rendimiento y seguridad | Matriz, regresión, carga, accesibilidad, seguridad y defectos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-37 |
 | 14 | Despliegue, operación y continuidad | CI, runbook, salud/logs, copia/restauración sintéticas | COMPLETADA | Entrega/cierre APROBADOS por usuario el 2026-11-02; D-39; límites gestionados conservados |
-| 15 | Documentación, capacitación y evolución | Manuales, soporte y roadmap | PENDIENTE | AUTORIZADA para un nuevo chat por D-39; ejecución no iniciada |
+| 15 | Documentación, capacitación y evolución | Manuales, onboarding, soporte, capacitación propuesta y roadmap | EN_REVISION | Ejecución D-39/D-40; aceptación de entrega CA15-06 PENDIENTE |
 
 ## Registro de aprobación y ejecución
 
@@ -563,3 +563,15 @@ Punto de inicio para el nuevo chat:
 5. Registrar cambios, validaciones documentales y pruebas pertinentes según alcance; preservar literalmente evidencia aceptada y migraciones. Sincronizar en rama/PR seguro y comprobar SHA remoto. Entregar Fase 15 EN_REVISION para su aceptación propia; no presumir cierre final del sistema.
 
 Verificación de este cierre: solo documentación; estados/CA14-06/D-39 y enlaces locales, git diff --check y comparación con da1ac91dd32278add2801ba41f9661c921560e60 para confirmar aplicación, ops, workflow, migraciones, dependencias, tests y evidencias intactos. No se repiten build/suites: no cambia código. Verificadores históricos, incluido docs/evidencias/fase14/verificar.py, conservan su fotografía EN_REVISION original y no se reescriben para este cierre. Commit documental con [skip ci], sin nueva certificación funcional; CI PASS anterior permanece ligado al SHA aceptado. Commit/push normal en rama del PR #1, autoría noreply y comprobación SHA remoto antes de confirmar.
+
+## Ejecución vigente de Fase 15 — D-40
+
+2026-11-02. El usuario ratifica D-39 y pide iniciar únicamente Fase 15, recuperar PR #1, leer FASES/ESTADO, presentar plan de documentación/capacitación/evolución y actualizar GitHub, sin merge a main ni producción. Base `5632391e112079e92f40d913ff48dfd1c7f242b4`, rama `phase14/ci-prerequisites-and-pages-guard`, árbol inicial limpio; main `82d8ad6` solo en lectura. No se repite autorización.
+
+Plan presentado antes de editar: completar manuales contrastados con UI/servidor; instalación/onboarding con reproducción sintética desde checkout limpio; soporte/mantenimiento enlazados al runbook; capacitación por rol con ejercicios/evaluación y acta pendiente; roadmap/deuda, documentación de estado y sincronización en PR. Codex redacta/verifica; usuario revisa/acepta. Personas operativas/facilitador SIN DESIGNAR, sin fechas ni SLA aprobados.
+
+Entregables y CA15-01 a CA15-06 en [FASE15](docs/FASE15.md); comandos/resultados y límites en [PRUEBAS](docs/PRUEBAS.md#fase-15--documentación-capacitación-y-evolución). Instalación/build y 9/9 pruebas del recorrido frontend en worktree limpio de la base, con PostgreSQL/identidad doble y Chromium. Capacitación real, onboarding por nuevo desarrollador y arranque gestionado NO EJECUTADOS. Evidencia aceptada, código/ops/workflow/migraciones/dependencias/tests intactos.
+
+Fase 15 **EN_REVISION**, CA15-06 **PENDIENTE**, última completada 14; no declarar cierre final ni autorizar otra fase. F1-SEG-01/02/03 ABIERTOS; UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Sin correo real, datos/cuentas reales, gastos, permisos remotos ni producción. Actualización documental en rama del PR #1, en borrador y sin merge; bloqueo Pages main:/docs vigente. Commit con [skip ci] y SHA remoto cotejado al entregar; CI PASS anterior permanece ligado a `da1ac91`, no al commit documental.
+
+Siguiente paso: revisión propia del usuario de manuales, guía, soporte, capacitación propuesta y prioridades. CA15-06 requiere aceptación expresa; no confundirla con sesiones realizadas ni aptitud productiva. Cualquier evolución, modificación del automatismo Pages, merge o despliegue necesita alcance/permiso específico.

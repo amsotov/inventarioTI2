@@ -2,14 +2,14 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 14 — COMPLETADA; entrega y cierre aprobados por D-39.
+**Fase:** 15 — EN_REVISION; entrega documental bajo D-39/D-40; CA15-06 PENDIENTE.
 **Modo:** GUIADO
 **Última fase completada:** 14.
-**Última fase autorizada:** 15, por D-39 para iniciar en un nuevo chat; ejecución PENDIENTE. CA14-06 CUMPLIDO. Producción/publicación/merge a main siguen sin autorización; bloqueo Pages conservado.
+**Última fase autorizada:** 15, por D-39 y ratificación D-40; ejecutada y EN_REVISION, sin aceptación de cierre. CA14-06 CUMPLIDO. Producción/publicación/merge a main siguen sin autorización; bloqueo Pages conservado.
 
-**Punto vigente de continuidad:** Fase 14 aceptada y cerrada por D-39. Iniciar únicamente Fase 15 en un nuevo chat, ya autorizada; leer el punto de inicio al final de [FASES](FASES.md) y recuperar la rama del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), sin merge a main por Pages. Este cierre no ejecuta Fase 15 ni crea otra conversación. [Plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), evidencia y F1-SEG-01/02/03 conservados; correo real deshabilitado y sin producción. Estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** revisar la entrega de [Fase 15](docs/FASE15.md), manuales, [onboarding](docs/INSTALACION_DESARROLLO.md), [capacitación propuesta](docs/CAPACITACION.md), [soporte](docs/SOPORTE_MANTENIMIENTO.md) y [roadmap](docs/ROADMAP.md). CA15-06 PENDIENTE; última completada 14. La rama del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1) conserva la entrega sin merge a main por Pages. Capacitación real y validación por nuevo desarrollador NO EJECUTADAS; no presumir cierre del sistema. Runbook/checklist, evidencia y F1-SEG-01/02/03 conservados; correo real deshabilitado y sin producción. Estados anteriores son antecedentes históricos.
 
-**Entrega GitHub vigente:** base Fase 14 main `82d8ad6`; corrección CI/registro del automatismo Pages en rama phase14/ci-prerequisites-and-pages-guard y [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), sin merge. Pages legacy main:/docs activo: run cancelado antes de deploy. No más escritura en main bajo prohibición de publicación hasta resolver esa configuración. CI inicial FAIL por pdftotext ausente; corrección instala poppler-utils, estado comprobable en Actions del PR.
+**Entrega GitHub vigente:** Fase 15 documental en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; base `5632391`, main `82d8ad6` solo en lectura. Pages legacy main:/docs activo, no más escritura/merge a main bajo prohibición de publicación. Corrección de CI aceptada en Fase 14; CI PASS 41473700624 ligado a `da1ac91`, sin nueva certificación funcional para el commit documental. Ver entrega/validación de Fase 15 al final.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -561,3 +561,15 @@ Punto de inicio para el nuevo chat:
 5. Registrar cambios, validaciones documentales y pruebas pertinentes según alcance; preservar literalmente evidencia aceptada y migraciones. Sincronizar en rama/PR seguro y comprobar SHA remoto. Entregar Fase 15 EN_REVISION para su aceptación propia; no presumir cierre final del sistema.
 
 Verificación de este cierre: solo documentación; estados/CA14-06/D-39 y enlaces locales, git diff --check y comparación con da1ac91dd32278add2801ba41f9661c921560e60 para confirmar aplicación, ops, workflow, migraciones, dependencias, tests y evidencias intactos. No se repiten build/suites: no cambia código. Verificadores históricos, incluido docs/evidencias/fase14/verificar.py, conservan su fotografía EN_REVISION original y no se reescriben para este cierre. Commit documental con [skip ci], sin nueva certificación funcional; CI PASS anterior permanece ligado al SHA aceptado. Commit/push normal en rama del PR #1, autoría noreply y comprobación SHA remoto antes de confirmar.
+
+## Entrega vigente de Fase 15 — D-40
+
+2026-11-02. Recuperada rama `phase14/ci-prerequisites-and-pages-guard` del PR #1 en `5632391e112079e92f40d913ff48dfd1c7f242b4`; árbol inicial limpio, main `82d8ad6` solo en lectura. Leídos AGENTS/PROMPT/FASES/ESTADO/D-39 y documentación aplicable. El usuario ratifica ejecución limitada a documentación, capacitación y evolución, actualización GitHub sin merge/producción. Plan presentado y ejecutado; D-40 registra ejecución, no aceptación.
+
+Creados `docs/FASE15.md`, `docs/INSTALACION_DESARROLLO.md`, `docs/SOPORTE_MANTENIMIENTO.md`, `docs/CAPACITACION.md` y `docs/ROADMAP.md`. Completados ambos manuales con acceso/roles/tareas/errores y referencias a implementación. README sirve como entrada vigente y conserva el texto histórico plegado; CHANGELOG, DECISIONES, PRUEBAS, specs/README, FASES y ESTADO enlazan la entrega. Nueva evidencia exclusiva en `docs/evidencias/fase15/`.
+
+Verificación: worktree separado de la base, sin node_modules/dist iniciales; `npm ci` y `npm run build` PASS, `node --import tsx --test --test-concurrency=1 tests/ui/frontend.test.ts` 9/9 PASS. Versiones Node 24.19.0/npm 11.9.0/Docker 28.4.0; Chromium local. El test regenera tres capturas históricas solo en ese checkout de ensayo: no se incorporan. Evidencia y límites detallados en PRUEBAS; revisión documental de enlaces/estados/diff y preservación frente a la base. No se repiten todas las suites API/operación/carga/accesibilidad por un cambio documental; 119/39/4/19 y CI PASS 41473700624 siguen ligados a la entrega aceptada de Fase 14.
+
+Capacitación real, evaluación de participantes, onboarding por una persona nueva, arranque TLS/Auth gestionado, correo y recuperación integral NO EJECUTADOS. Soporte/facilitador/operador, fechas/canales/SLA y prioridades son propuestas o pendientes, no acuerdos inventados. Roadmap no implementado. F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+
+Estado: Fase 15 EN_REVISION; CA15-06 PENDIENTE; última completada 14. Cierre final del sistema NO APROBADO. Revisión/aceptación de esta entrega corresponde al usuario. Producción, datos/cuentas reales, envío real, gasto, permisos remotos, publicación y merge siguen sin autorizar. Sincronización documental con [skip ci] en rama del PR #1, borrador sin merge; verificar HEAD remoto antes de confirmar. No modificar Pages legacy main:/docs por inferencia.

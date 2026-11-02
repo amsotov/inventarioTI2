@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-02 — Fase 15: documentación, capacitación y evolución (EN_REVISION)
+
+- D-40 ratifica D-39; manuales de ambos roles completados y README como entrada vigente, conservando antecedentes.
+- Guía de instalación/onboarding, soporte/mantenimiento, capacitación propuesta con ejercicios/acta pendiente y roadmap/deuda con dependencias y autorizaciones futuras.
+- Reproducción en checkout limpio: npm ci/build PASS y 9/9 pruebas del recorrido frontend; validación documental y evidencia nueva exclusiva de Fase 15. Fuentes y evidencia aceptada intactas.
+- Capacitación real y onboarding por persona nueva no realizados; CA15-06 pendiente, última completada 14. PR #1 en borrador sin merge, Pages bloqueado, sin producción/correo real ni cierre de F1-SEG-01/02/03.
+
 ## 2026-11-02 — Cierre aprobado de Fase 14
 
 - D-39 acepta entrega `da1ac91`, cumple CA14-06 y cierra Fase 14 COMPLETADA con sus límites; CI PASS del SHA aceptado y evidencia 119/39/4/19 conservados.

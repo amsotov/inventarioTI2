@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-02",
+  "phase": 15,
+  "status": "EN_REVISION",
+  "acceptance": "CA15-06 PENDIENTE",
+  "source_base": "5632391e112079e92f40d913ff48dfd1c7f242b4",
+  "branch": "phase14/ci-prerequisites-and-pages-guard",
+  "checks": {
+    "local_markdown_links": 564,
+    "broken_local_links": [],
+    "diff_check": "PASS",
+    "current_phase_states": "PASS",
+    "scope": "documentation and new phase15 evidence only",
+    "unchanged_base_files": 236,
+    "new_credentials_heuristic": "no matches; limited patterns, not universal detection"
+  },
+  "onboarding": {
+    "fresh_worktree": true,
+    "initial_node_modules_and_dist": false,
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "docker": "28.4.0",
+    "commands": [
+      {
+        "command": "npm ci",
+        "result": "PASS",
+        "packages": 124
+      },
+      {
+        "command": "npm run build",
+        "result": "PASS",
+        "warning": "Vite outDir outside apps/web; expected layout"
+      },
+      {
+        "command": "node --import tsx --test --test-concurrency=1 tests/ui/frontend.test.ts",
+        "result": "PASS",
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "duration_ms": 109756.393511
+      }
+    ],
+    "managed_integrations": false,
+    "new_developer_human_validation": false,
+    "training_sessions_held": false
+  },
+  "preservation": "All base files outside the explicit documentation allowlist match their original Git blob, including apps, ops, workflow, migrations, dependencies, tests and all accepted evidence. Three phase8 screenshots regenerated only in disposable worktree; not copied.",
+  "delivery": "Remote branch SHA is verified separately after synchronization; no self-referential commit hash."
+}

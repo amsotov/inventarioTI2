@@ -1,7 +1,6 @@
 # Registro de decisiones y riesgos
 
-**Fecha:** 2026-10-31
-**Fase:** 2 — COMPLETADA; revisión visual aprobada. Fase 3 autorizada para un nuevo chat.
+**Estado vigente (2026-11-02):** Fase 15 EN_REVISION bajo D-39/D-40; CA15-06 PENDIENTE, última completada 14. [Entrega y criterios](FASE15.md). Las secciones y estados anteriores son antecedentes de su fecha; no autorizan acciones adicionales.
 
 ## Estado vigente de decisiones
 
@@ -210,3 +209,9 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## D-39 — Aceptación de Fase 14 y continuidad de Fase 15
 
 2026-11-02. Evidencia literal: «apruebo fase 14 e incia en nuevo chat fase 15». Acepta la entrega `da1ac91dd32278add2801ba41f9661c921560e60`, cumple CA14-06 y cierra Fase 14 COMPLETADA con sus límites documentados y CI PASS 41473700624 del SHA aceptado. Autoriza únicamente Fase 15 — documentación, capacitación y evolución para iniciar en un nuevo chat; ejecución PENDIENTE. No ejecuta Fase 15 ni crea automáticamente otro chat. Conserva resultados locales/parciales, F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días; no acredita integraciones gestionadas ni operación productiva. No autoriza merge/publicación: PR #1 sin merge y bloqueo Pages main:/docs conservados. Sin correo real, datos/cuentas reales, gastos, cambios remotos de permisos ni producción. Prevalece sobre antecedentes EN_REVISION de D-38 sin reescribir evidencia.
+
+## D-40 — Ejecución de Fase 15, sin cierre presumido
+
+2026-11-02. El usuario ratifica D-39: «nicia únicamente la Fase 15 de inventarioTI2, ya autorizada por D-39. Recupera la rama del PR #1, lee FASES.md y ESTADO_PROYECTO.md y presenta el plan de documentación, capacitación y evolución. Actualiza GitHub sin merge a main ni despliegue a producción». Se recupera base `5632391` del PR y se ejecuta únicamente la entrega documental: manuales, instalación/onboarding, soporte/mantenimiento, capacitación propuesta, roadmap/deuda y estado. Plan/CA15 en [FASE15](FASE15.md); evidencia técnica en PRUEBAS.
+
+Fase 15 EN_REVISION, CA15-06 PENDIENTE; no atribuye aceptación ni cierre final del sistema. Capacitación y validación por nuevo desarrollador NO REALIZADAS; reproducción técnica local no las sustituye. No se inventan personas, fechas, presupuesto, políticas legales o servicios. Roadmap es propuesta, no autorización de implementación. F1-SEG-01/02/03 y objetivos de continuidad intactos. PR #1 en borrador, sin merge por Pages; sin envío real, cuentas/datos reales, gasto, permisos remotos, publicación ni producción. D-39 conserva el cierre aceptado de Fase 14 y su evidencia sin alteración.

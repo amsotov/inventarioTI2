@@ -1,18 +1,55 @@
 # Manual de usuario
 
-**Estado:** PLANTILLA — contenido pendiente de definición y aprobación.
+2026-11-02 · Manual consolidado para Fase 15 **EN_REVISION**. Describe funcionalidades implementadas en las entregas aceptadas hasta Fase 14. No acredita puesta en producción ni capacitación realizada. [Capacitación propuesta](CAPACITACION.md) · [Soporte](SOPORTE_MANTENIMIENTO.md) · [Estado vigente](../ESTADO_PROYECTO.md).
 
-## Información a documentar
-Perfiles, ingreso, navegación, tareas frecuentes, errores conocidos, procedimientos y ayuda.
+## Perfiles y conceptos
 
-## Hallazgos confirmados
-- Pendiente.
+| Perfil / concepto | Alcance |
+|---|---|
+| Lectura | Consultar inventario compartido, funcionarios, unidades, movimientos/historia, resumen y reportes ordinarios; exportar sus propios archivos autorizados |
+| Administrador | Funciones de lectura, alta/edición/procesos y panel de cuentas/unidades/parámetros; auditoría y seguimiento de avisos. Requiere MFA vigente |
+| Funcionario / cuenta | Funcionario es quien tiene bienes; cuenta es quien accede. Registrar una persona no crea acceso |
+| Situación / condición / custodia | Activo o baja; bueno/regular/malo; responsable actual. Son conceptos independientes: malo no devuelve ni da de baja automáticamente |
 
-## Pendientes y decisiones abiertas
-- Pendiente.
+No hay autorregistro, cuenta por defecto ni credenciales demo para el sistema funcional. El prototipo visual separado usa simulaciones; no sirve para gestionar inventario real. Fechas e historia se muestran en **UTC**, aunque el equipo tenga otra zona horaria.
 
-## Evidencias y referencias
-- No hay evidencia todavía.
+## Ingreso, recuperación y salida
+
+1. Abrir la dirección HTTPS aprobada para el ambiente; no hay URL productiva habilitada en esta entrega. Introducir Correo y Contraseña de la cuenta habilitada y elegir **Iniciar sesión**.
+2. Administración debe completar **Verificación de administrador**. Si no tiene factor verificado, **Configurar autenticador**, guardar la clave solo en su autenticador y verificar el código de seis dígitos. Nunca compartir clave/código en capturas, correo o soporte. Si ya existe factor, seleccionarlo y verificar. Perder MFA requiere soporte con identidad verificada; no existe bypass ni recuperación autoservicio de factor verificado.
+3. Para recuperar acceso, completar Correo de recuperación → **Solicitar enlace**. La respuesta es genérica: no demuestra existencia de cuenta ni envío. Si se ha entregado un enlace válido por un canal autorizado, abrirlo y confirmar la nueva contraseña (12–128 caracteres); después iniciar sesión otra vez. Invitación vence a 24 h, recuperación a 30 min y un enlace nuevo invalida el previo. El correo real está deshabilitado/no acreditado en esta entrega; contactar al responsable designado si no llega, sin repetir solicitudes continuamente.
+4. La sesión vence a 30 min de inactividad o 8 h absolutas; una sesión administrativa parcial sin completar MFA vence a 10 min. **Continuar sesión** registra actividad explícita; consultas y polling no mantienen la sesión indefinidamente. Cuenta desactivada, permisos cambiados o revocación pueden terminar acceso antes.
+5. Elegir **Cerrar sesión** al terminar. Antes de salir con una escritura incierta, conservar referencias y conciliar su resultado; no crear otra solicitud por haber perdido la sesión.
+
+## Navegación, consultas y estados
+
+Usar Resumen, Bienes, Funcionarios, Unidades, Movimientos y Reportes y buscador; Administración aparece solo con permiso. En las listas, aplicar texto/filtros, abrir ficha y continuar con la paginación disponible. La consulta ordinaria no revela documento/correo de funcionarios; su edición está restringida al administrador. Movimientos puede filtrarse por referencia del bien. Las tablas se desplazan horizontalmente en pantallas pequeñas; usar Tab/Shift+Tab y **Saltar al contenido** para navegación de teclado.
+
+Esperar el estado de carga; vacío significa que no hay coincidencias, no que se hayan borrado datos. Ante error leer mensaje/Referencia y volver a consultar solo cuando sea seguro. La autorización se comprueba también en el servidor: cambiar URL no concede permisos.
+
+## Registrar o editar un bien — administración
+
+En Bienes elegir **Nuevo bien**. Completar Código, Tipo, Marca, Modelo, Serie o Motivo de ausencia de serie, adquisición si corresponde, condición inicial y observaciones; indicar Motivo del cambio y **Guardar bien**. Revisar datos y motivo antes de guardar: este formulario registra al enviarlo, sin un segundo diálogo de confirmación. Código/serie e identidad deben cumplir unicidad/reglas; no crear duplicados para sortear un rechazo.
+
+Desde la ficha, **Editar atributos** modifica los datos descriptivos con motivo y versión actual; no cambia condición, situación ni custodia. Esos cambios se hacen en Procesos e historia. Volver antes de guardar no registra una operación nueva; si hay resultado incierto, resolverlo antes de abandonar. El registro confirmado conserva auditoría y aviso pendiente en la misma transacción; no implica correo enviado.
+
+## Errores y resultados inciertos
+
+| Caso | Qué hacer |
+|---|---|
+| Datos inválidos / regla empresarial | Corregir campos y revisar situación/custodia; no inventar un movimiento para eludir el control |
+| Sin sesión / sin permiso | Autenticar o consultar al administrador; no compartir cuenta ni pedir que se desactiven controles |
+| Versión obsoleta (412/428) | Recargar ficha y revisar cambios antes de decidir; no sobreescribir automáticamente |
+| Conflicto (409) | Revisar duplicados y solicitud previa; no reutilizar la misma clave con otros datos |
+| Respuesta perdida / resultado incierto | Conservar la página; usar el reintento de la **misma** operación ofrecido por esa pantalla, con solicitud original. No crear otra alta o proceso |
+| Página/sesión abandonada durante incertidumbre | Pedir conciliación del resultado a responsable antes de registrar un comando nuevo |
+| Dependencia no disponible / demasiados intentos | Conservar referencia saneada; esperar/consultar soporte sin repetir escrituras ciegamente |
+
+Las solicitudes pendientes se conservan en memoria de la página, no en almacenamiento persistente del navegador. Adjuntar al soporte solo ambiente, instante UTC, pantalla, impacto y Referencia/requestId sin credenciales ni datos personales. Procedimiento completo en [SOPORTE](SOPORTE_MANTENIMIENTO.md).
+
+## Alcance y fuentes
+
+Recorridos contrastados con `apps/web/src/main.tsx`, `processes.tsx`, `reports.tsx`, políticas de servidor y pruebas UI existentes. Ver [FRONTEND](FRONTEND.md), [PROCESOS](PROCESOS_EMPRESARIALES.md), [REPORTES](REPORTES.md) y [PRUEBAS](PRUEBAS.md). Se conservan abajo los recorridos incorporados en Fases 10–13; sus nombres de fase identifican origen, no una restricción vigente. Datos/cuentas reales, correo real y producción no quedan habilitados por este manual; F1-SEG-01/02/03 abiertos.
 
 
 ## Procesos disponibles — Fase 10

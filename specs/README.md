@@ -100,3 +100,7 @@ Fase 13 COMPLETADA y CA13-06 cumplido. Fase 14 autorizada únicamente para inici
 ## Continuidad vigente — D-39
 
 Fase 14 COMPLETADA y CA14-06 CUMPLIDO; entrega aceptada `da1ac91`, con límites y evidencias conservados. Fase 15 AUTORIZADA para nuevo chat, ejecución PENDIENTE. Recuperar rama phase14/ci-prerequisites-and-pages-guard del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), no solo main. Seguir [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md), manuales existentes, [DESPLIEGUE](../docs/DESPLIEGUE.md), [RUNBOOK](../docs/RUNBOOK_OPERACION.md) y [CHECKLIST](../docs/CHECKLIST_LIBERACION.md). Spec Kit no instalado ni simulado. PR sin merge por Pages main:/docs; no ejecución de Fase 15 ni producción en este cierre. F1-SEG-01/02/03 y autorizaciones independientes intactos.
+
+## Entrega vigente — Fase 15 (D-40)
+
+Fase 15 EN_REVISION; CA15-06 PENDIENTE, última completada 14. [Plan/criterios](../docs/FASE15.md), manuales, [instalación/onboarding](../docs/INSTALACION_DESARROLLO.md), [capacitación propuesta](../docs/CAPACITACION.md), [soporte](../docs/SOPORTE_MANTENIMIENTO.md) y [roadmap/deuda](../docs/ROADMAP.md). Se reutiliza documentación existente sin duplicar especificaciones ni instalar Spec Kit. Reproducción técnica local no equivale a capacitación o evaluación humana realizadas. PR #1 en borrador, rama segura sin merge a main por Pages; producción y F1-SEG-01/02/03 siguen bloqueados. Los registros previos son antecedentes.

@@ -311,3 +311,12 @@ Fallos iniciales resueltos: migración no asumirá roles Data API en PostgreSQL 
 Medición local, muestra sintética simple: XLSX 10.000 filas 1.086 ms, PDF 2.000 filas 613 ms, desde solicitud a descarga/inspección en loopback. No acredita rendimiento bajo carga, red externa ni objetivo ≤60 s en infraestructura objetivo; sin muestra completa CA-N07. Changelog Supabase/documentación RLS y paquetes/licencias consultados: [fuentes](evidencias/fase11/fuentes.txt).
 
 No ejecutado/acreditado: Supabase gestionado/identidad/MFA externos, advisors operativos sin stack, hardware/Safari, lector de pantalla/conformidad WCAG completa, apertura física en Excel/Acrobat, carga/continuidad productiva. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Fase 11 EN_REVISION; CA11-06 pendiente de aceptación propia. Sin Fase 12 ni despliegue.
+
+
+## Cierre aprobado de Fase 11 — 2026-11-02
+
+D-33: «Apruebo fase 11, inicia en nuevo chat fase 12». Entrega aceptada `c94a366be22e6eae917711c52e695ea842c27187`; Fase 11 COMPLETADA y CA11-06 cumplido. Se conservan los resultados originales 85/85 API/seguridad, 32/32 navegador y 8/8 revalidadas; evidencias y límites gestionados/hardware/carga/operación sin cambios. La aprobación no convierte pruebas locales en integración productiva acreditada.
+
+Esta tarea modifica solo documentación: revisión de estados/criterio D-33/continuidad, enlaces locales y `git diff --check`, con comprobación de que no cambian código, migraciones, dependencias, tests ni evidencias aceptadas. No se reejecutan build ni suites de aplicación por este cierre documental. GitHub mediante commit/push normales y comparación de SHA remoto antes de confirmar.
+
+Fase 12 autorizada para un nuevo chat, ejecución PENDIENTE. No se crean workers/plantillas/envíos aquí, ni se inicia Fase 13 o despliega. Los estados EN_REVISION anteriores son antecedentes históricos.

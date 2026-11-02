@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-02 — Cierre aprobado de Fase 11
+
+- D-33 acepta entrega `c94a366`; CA11-06 cumplido y Fase 11 COMPLETADA.
+- Fase 12 autorizada para un nuevo chat; ejecución pendiente y punto de arranque registrado.
+- Solo documentación de cierre; código, migraciones, pruebas y evidencias preservados. Sin implementación/envíos de Fase 12 ni despliegues.
+
 ## 2026-11-02 — Fase 11: indicadores, reportes y exportación
 
 - Resumen desde datos fuente; cinco reportes y buscador combinado con filtros/días UTC, proyección positiva, columnas/orden y conteos/subtotales compartidos.

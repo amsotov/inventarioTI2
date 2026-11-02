@@ -65,3 +65,8 @@ Punto vigente — D-31: Fase 10 COMPLETADA, CA10-06 cumplido. Fase 11 autorizada
 ## Incremento de Fase 11 — 2026-11-02
 
 Especificación/contrato, métricas, columnas, filtros, estados, límites y CA11-01 a CA11-06 en [REPORTES](../docs/REPORTES.md); esquema ejecutable `apps/server/reports/routes.ts` y migración aditiva de exportaciones. Se conserva la metodología existente: Spec Kit no instalado ni simulado. Fases 12–15 sin autorización, sin despliegue.
+
+
+## Continuidad vigente — D-33
+
+Fase 11 COMPLETADA y CA11-06 cumplido. Fase 12 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md), [REPORTES](../docs/REPORTES.md) y A-07/A-08/A-10 de [CIERRE_FASE1](../docs/CIERRE_FASE1.md). Este cierre no implementa notificaciones ni instala Spec Kit. Fases 13–15 sin autorización; sin despliegue. Los estados previos se conservan como antecedentes.

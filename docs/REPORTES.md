@@ -1,6 +1,6 @@
 # Indicadores, reportes y exportación — Fase 11
 
-2026-11-02 · EN_REVISION bajo D-31/D-32. Base `92a6dec`. Codex implementa/verifica; el usuario acepta el cierre. Fases 12–15 sin autorización. Sin despliegue, datos reales ni operaciones remotas de infraestructura.
+2026-11-02 · COMPLETADA por aceptación expresa D-33. Base de ejecución `92a6dec`; entrega aceptada `c94a366be22e6eae917711c52e695ea842c27187`. Fase 12 autorizada para un nuevo chat; ejecución pendiente. Sin despliegue, datos reales ni operaciones remotas de infraestructura.
 
 ## Plan y alcance
 
@@ -92,6 +92,11 @@ Reproducir desde raíz, Node 24, Docker local y Chromium instalados: `npm ci`, `
 | CA11-03 | XLSX/PDF completos, vacío, fórmulas como texto, límites exactos/exceso y suma de conjuntos |
 | CA11-04 | Propietario/RLS/MFA/Origin/CSRF, permisos revocados, idempotencia, instantánea y recuperación |
 | CA11-05 | Build/regresión, UI/teclado/responsive, auditoría y documentación con resultados reales en PRUEBAS |
-| CA11-06 | PENDIENTE: revisión/aceptación expresa del usuario; no marcar COMPLETADA por ejecutar pruebas |
+| CA11-06 | CUMPLIDO por aceptación expresa D-33 del usuario el 2026-11-02 |
 
 No acreditado: Supabase gestionado/identidad/MFA externos, advisors operativos sin stack en 54322, hardware iPad/iPhone/Safari, lector de pantalla/conformidad WCAG completa, Excel/Acrobat físicos, carga concurrente ni objetivo de 60 s extremo a extremo en infraestructura objetivo. Las mediciones locales de límites no equivalen a CA-N07 global. F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto) y F1-SEG-03 (respaldo) siguen abiertos. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. No se envió correo, procesó outbox, contrató infraestructura ni desplegó.
+
+
+## Cierre aprobado — 2026-11-02
+
+D-33 acepta la entrega `c94a366be22e6eae917711c52e695ea842c27187` mediante «Apruebo fase 11, inicia en nuevo chat fase 12». Fase 11 COMPLETADA y CA11-06 CUMPLIDO. La aceptación conserva evidencia, limitaciones y seguimientos; no acredita validación gestionada, correo externo, carga objetivo ni continuidad productiva. Fase 12 autorizada para iniciar en un nuevo chat; no se ejecuta en este cierre. Continuidad en [FASES](../FASES.md) y [ESTADO](../ESTADO_PROYECTO.md).

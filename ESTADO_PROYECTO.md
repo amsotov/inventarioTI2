@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 11 — EN_REVISION; entrega bajo D-31/D-32, aceptación propia pendiente.
+**Fase:** 11 — COMPLETADA; entrega y cierre aprobados por D-33.
 **Modo:** GUIADO
-**Última fase completada:** 10.
-**Última fase autorizada:** 11, ejecutada y EN_REVISION. Fases 12–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 11.
+**Última fase autorizada:** 12, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 13–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 11 implementada/verificada sobre `92a6dec`, entregada EN_REVISION. Indicadores, cinco reportes/buscador y Excel/PDF privados; 85 pruebas de API/seguridad y 32 de navegador superadas. Ver REPORTES/PRUEBAS y entrega vigente al final. Pendiente aceptación propia de Fase 11; no iniciar Fase 12 ni desplegar. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 11 aceptada y cerrada por D-33. Iniciar únicamente Fase 12 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad; no implementa Fase 12 ni despliega. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -419,7 +419,7 @@ Punto de inicio para el nuevo chat:
 8. Preservar evidencia/migraciones aceptadas y F1-SEG-01/02/03; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Sin Spec Kit, cuentas/datos reales, permisos remotos, gastos, producción o despliegues por inferencia. Actualizar documentación y GitHub, verificar SHA remoto y entregar Fase 11 para aceptación propia. No marcar COMPLETADA ni iniciar Fase 12 sin autorización independiente.
 
 
-## Entrega vigente de Fase 11 — 2026-11-02 (D-32)
+## Entrega inicial de Fase 11 — 2026-11-02 (D-32)
 
 PROYECTO: inventarioTI2. FASE: 11 — Indicadores, reportes y exportación. ESTADO: EN_REVISION. OBJETIVO/ALCANCE: únicamente indicadores actuales verificables, cinco reportes y buscador combinado con filtros UTC y salidas Excel/PDF completas autorizadas. Usuario ratifica D-31 y exige GitHub; prohíbe Fase 12 y despliegue. No se repitió la solicitud de autorización.
 
@@ -434,3 +434,23 @@ Pruebas: `npm run build` correcto; `npm test` 85/85; `npm run test:ui` 32/32; 8/
 Riesgos/decisiones: limpieza física de archivos vencidos diferida a interacción autorizada; metadatos/idempotencia conservados. Pendientes Supabase/identidad/MFA gestionados, integración operativa/retención jurídica, hardware/Safari/accesibilidad completa, carga/infraestructura objetivo y continuidad productiva. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. No correo externo ni procesamiento de outbox, otras fases, datos reales, cambios remotos de permisos, gastos o despliegues.
 
 Siguiente acción: revisión y aceptación propia de Fase 11 (CA11-06 pendiente). Fases 12–15 PENDIENTE / NO OTORGADA. Sincronización mediante commit/push normales a main, autoría noreply y comprobación de SHA remoto antes de confirmar entrega.
+
+
+## Cierre aprobado de Fase 11 y continuidad autorizada de Fase 12 — vigente
+
+2026-11-02. Evidencia literal: «Apruebo fase 11, inicia en nuevo chat fase 12». D-33 acepta la entrega `c94a366be22e6eae917711c52e695ea842c27187`, cumple CA11-06 y cierra Fase 11 COMPLETADA. Se conservan 85 pruebas de API/seguridad, 32 de navegador y 8 revalidadas tras el ajuste final, con capturas y límites: PostgreSQL sintético e identidad doble; sin Supabase gestionado/advisors operativos, correo externo, hardware/Safari, carga objetivo ni continuidad productiva acreditados.
+
+Fase 12 AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Esta tarea solo registra cierre y continuidad y sincroniza GitHub. No se crea automáticamente una conversación ni se implementan/envían notificaciones aquí. Fases 13–15 PENDIENTE / NO OTORGADA; sin despliegue, producción, datos reales, gastos o cambios remotos de permisos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, requisitos/cierre D-14 (A-07/A-08/A-10, P-04, CR-13/14), UX_UI D-15, arquitectura/contratos/ADR D-17, datos D-19, acceso D-21, seguridad D-23, API D-25, frontend D-27, administración D-29, procesos D-31 y reportes D-33. Inspeccionar código/migraciones/pruebas y limitaciones reales. No volver a pedir autorización de Fase 12.
+2. Presentar un plan limitado a notificaciones/automatización empresarial aprobadas: catálogo A-07, plantillas minimizadas, puerto/adaptador de correo, consumo de outbox, estados/intentos/conciliación y operaciones administrativas necesarias. No inventar alertas de vencimientos, informes programados u otros eventos sin regla empresarial aceptada.
+3. Preservar transacción local de estado/historia/auditoría/outbox/idempotencia. Fallar el correo no revierte ni repite el proceso empresarial. No confundir outbox empresarial con entregas de identidad ni con trabajos de exportación Fase 11. El procesamiento externo queda fuera de la transacción empresarial.
+4. Mantener destinatario fijado al confirmar y unicidad de aviso lógico por evento/destinatario/propósito. Cambio de encargado no redirige pendientes ni reintentos. Confirmación mínima al nuevo; sustitución al anterior sin revelar nueva dirección. Invitación/recuperación/MFA solo al titular. Lectura/búsqueda/exportación/rechazos no generan avisos al encargado.
+5. Reclamar trabajos de forma exclusiva y recuperable; primer intento y tres reintentos transitorios a 1/5/15 min desde fallo anterior. Permanente: detener. Resultado incierto o caída después de posible envío: conciliar antes de repetir; no prometer entrega física exactamente una vez. Cancelación/reintento manual/conciliación solo administración vigente con motivo, confirmación, concurrencia, idempotencia y auditoría; errores saneados.
+6. Aplicar A-10: mensajes sin RUT/ID personal, correo personal, secretos/tokens ni texto libre de observaciones/motivos; enlaces solo a contenido autenticado. Mantener sesión/rol/MFA vigentes, Origin/CSRF, pools separados/contexto SQL LOCAL/RLS, mínimo privilegio y protección de cuenta propia/último administrador. No exponer destinatarios o errores de proveedor a lectura.
+7. Verificar con datos sintéticos/proveedor doble: catálogo/minimización, destino fijado, cambio de encargado, duplicados/replay, exclusión entre workers, caída/arrendamiento, retrasos/reintentos, permanente/agote/incierto, fallo de correo con proceso conservado y permisos revocados. Integrar UI/API de seguimiento sin presentar mocks como envío real. Contrastar capacidades/documentación del proveedor y mantener credenciales fuera del repositorio; envío real, destinatarios reales, dominio, costos y servicios externos requieren autorización concreta si no consta. No despachar pendientes reales por inferencia.
+8. Conservar F1-SEG-01/02/03, UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días, entregas y evidencias aceptadas. Documentar pruebas ejecutadas/no ejecutadas, riesgos y bloqueos; actualizar GitHub y verificar SHA remoto. Entregar Fase 12 para aceptación propia; no marcar COMPLETADA ni iniciar Fases 13–15 o desplegar sin autorización independiente.
+
+Verificación de este cierre: únicamente documentación; diff/revisión de estados, criterios, enlaces locales y preservación de aplicación/migraciones/tests/evidencias. No se reejecutan suites de aplicación porque no cambian código ni dependencias. Sincronización mediante commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar entrega.

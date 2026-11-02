@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-02 — Cierre aprobado de Fase 14
+
+- D-39 acepta entrega `da1ac91`, cumple CA14-06 y cierra Fase 14 COMPLETADA con sus límites; CI PASS del SHA aceptado y evidencia 119/39/4/19 conservados.
+- Fase 15 autorizada para iniciar en un nuevo chat; ejecución pendiente y punto de continuidad registrado en la rama del PR #1. No se abre otro chat automáticamente.
+- Solo documentación de cierre; código, ops, workflow, migraciones, dependencias, tests y evidencia intactos. PR sin merge por bloqueo Pages; sin producción/correo real ni resolución de F1-SEG-01/02/03.
+
 ## 2026-11-02 — Fase 14: operación y continuidad (EN_REVISION)
 
 - Plan de ambientes/configuración/CI/migraciones, runbook de incidentes/recuperación/rollback y checklist NO-GO productivo.

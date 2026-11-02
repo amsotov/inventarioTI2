@@ -1,6 +1,6 @@
 # Runbook de operación y recuperación — Fase 14
 
-2026-11-02 · Propuesta para revisión D-38. Solo ensayos sintéticos ejecutados. [Plan y cobertura](DESPLIEGUE.md) · [Checklist](CHECKLIST_LIBERACION.md). Producción/correo real no autorizados; Fase 15 sin iniciar.
+2026-11-02 · Entrega de Fase 14 aceptada por D-39; parámetros/compromisos operativos propuestos siguen sin aprobar. Solo ensayos sintéticos ejecutados. [Plan y cobertura](DESPLIEGUE.md) · [Checklist](CHECKLIST_LIBERACION.md). Producción/correo real no autorizados. Fase 15 autorizada para nuevo chat, sin ejecución aquí.
 
 ## Responsables y registro
 

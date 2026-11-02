@@ -390,7 +390,7 @@ Fase 14 autorizada para un nuevo chat, ejecución PENDIENTE; Fase 15 sin autoriz
 
 ## Fase 14 — operación y continuidad
 
-2026-11-02 · EN_REVISION bajo D-37/D-38, base `8d66e72`; CA14-06 PENDIENTE. Solo recursos sintéticos propios, Node 24.19.0/PostgreSQL 17 Docker y Chromium emulado. [Plan/criterios](DESPLIEGUE.md), [runbook](RUNBOOK_OPERACION.md) y [checklist](CHECKLIST_LIBERACION.md).
+2026-11-02 · COMPLETADA por aceptación D-39 de entrega `da1ac91`; CA14-06 CUMPLIDO. Ejecución bajo D-37/D-38, base `8d66e72`. Se conservan resultados/límites: recursos sintéticos propios, Node 24.19.0/PostgreSQL 17 Docker y Chromium emulado. [Plan/criterios](DESPLIEGUE.md), [runbook](RUNBOOK_OPERACION.md) y [checklist](CHECKLIST_LIBERACION.md).
 
 | Verificación | Resultado final | Evidencia |
 |---|---|---|
@@ -417,3 +417,8 @@ NO EJECUTADOS: staging/producción, Supabase/Auth/MFA/advisors gestionados, Rese
 Entrega inicial en main `82d8ad69cbbf24495b893cfd9fa6eeb9cee5e6cf`, SHA remoto comprobado. CI inicial [41473084240](https://github.com/amsotov/inventarioTI2/actions/runs/41473084240) FAIL por ausencia de pdftotext en runner; se prepara corrección de instalación de poppler-utils en rama phase14/ci-prerequisites-and-pages-guard y PR, sin modificar pruebas.
 
 Se detectó Pages legacy main:/docs activo fuera del árbol. Run [41473076891](https://github.com/amsotov/inventarioTI2/actions/runs/41473076891) cancelado por API, deploy CANCELLED sin ejecución; build sí terminó. No se eliminó/configuró el sitio previo. Con la prohibición de producción, no hacer nuevos pushes/merges a main hasta resolver expresamente el automatismo externo. Corrección y evidencia posterior se entregan en rama/PR sin merge. Estado vigente EN_REVISION; CA14-06 y F1-SEG-01/02/03 pendientes, Fase 15 sin autorización. CI corregido se declara PASS solo al observar su run del SHA correspondiente.
+
+
+## Cierre aceptado de Fase 14 — D-39
+
+2026-11-02. Entrega `da1ac91dd32278add2801ba41f9661c921560e60` aceptada por el usuario, CA14-06 CUMPLIDO y Fase 14 COMPLETADA. [CI 41473700624 PASS](https://github.com/amsotov/inventarioTI2/actions/runs/41473700624) del SHA aceptado; resultados 119/39/4 y restauración de 19 tablas intactos, con todos los límites gestionados/productivos. Las referencias EN_REVISION anteriores son antecedentes. Este cierre solo modifica documentación: validación de estados/enlaces/diff y preservación literal de aplicación/ops/workflow/migraciones/dependencias/tests/evidencia frente a ese SHA. Build/suites no repetidos; [skip ci] para commit documental, sin atribuir nuevos resultados funcionales. Fase 15 autorizada solo para nuevo chat, ejecución PENDIENTE; PR #1 sin merge, Pages bloqueado, sin producción/correo real ni resolución implícita de F1-SEG-01/02/03.

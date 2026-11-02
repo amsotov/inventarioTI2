@@ -1,6 +1,6 @@
 # Despliegue, operación y continuidad — Fase 14
 
-2026-11-02 · **EN_REVISION**, autorizada por D-37 y ratificada por la solicitud actual (D-38). Base `8d66e72`. Ejecución/verificación: Codex; aceptación: usuario. Última fase completada: 13. Fase 15 **PENDIENTE / NO OTORGADA**. **Ningún despliegue a producción realizado ni autorizado.**
+2026-11-02 · **COMPLETADA** por aceptación D-39 de la entrega `da1ac91`. Base de ejecución `8d66e72`, autorización D-37/D-38. CA14-06 CUMPLIDO; última completada 14. Fase 15 **AUTORIZADA para un nuevo chat; ejecución PENDIENTE**. Se conservan límites y bloqueos de operación gestionada. **Ningún despliegue a producción realizado ni autorizado.**
 
 ## Plan presentado y alcance
 
@@ -98,7 +98,7 @@ npm run test:ops crea contenedores propios, copia AES-256-GCM con IV aleatorio, 
 | CA14-03: copia/restauración de datos, historia/auditoría/outbox/permisos | PASS local en [recuperacion.json](evidencias/fase14/recuperacion.json); gestionado/externo pendiente |
 | CA14-04: efectos inciertos/sesiones, fallo de copia/migración y rollback | Cuarentena/reautenticación/fallo DDL verificados; rollback artefacto/plataforma solo procedimiento, NO EJECUTADO |
 | CA14-05: objetivos 168 h/8 h/30 días y seguimientos | Umbrales probados; F1-SEG-01/02/03 ABIERTOS; objetivos productivos/retención real NO ACREDITADOS |
-| CA14-06: aceptación expresa del usuario | **PENDIENTE**, no marcar COMPLETADA |
+| CA14-06: aceptación expresa del usuario | **CUMPLIDO** por D-39 el 2026-11-02; cierre aceptado con límites documentados |
 
 Reproducción desde raíz, suites secuenciales con Docker local: npm ci; npm run build; npm test; npm run test:ops; npm run test:ui; npm audit --json; python3 tests/qa/secrets.py. Guardar salida nueva en Fase 14 y preservar artefactos de fases aceptadas que regeneran las suites. [Evidencia](evidencias/fase14/) y resultados consolidados en [PRUEBAS](PRUEBAS.md#fase-14--operación-y-continuidad).
 
@@ -106,8 +106,13 @@ Reproducción desde raíz, suites secuenciales con Docker local: npm ci; npm run
 
 F1-SEG-01: responsable/política legal de datos personales y logs sin aprobar; **no datos reales**. F1-SEG-02: presupuesto/moneda/costos actuales/región/recursos sin aprobar; **no contratar/provisionar**. F1-SEG-03: operador/suplente, día/hora UTC, destino externo, claves, canal/cobertura de alertas sin designar/aprobar; **no continuidad operativa acreditada**. Esta propuesta no los cierra.
 
-Para completar el carril gestionado, elegir/autorizar recursos/destino de pruebas y responsables; resolver seguimientos, ensayar Auth/DB/TLS/artefactos/copias externas/rollback y adjuntar evidencia real. Correo real tiene autorización independiente. Ninguna dependencia inicia Fase 15. Entrega **EN_REVISION**, CA14-06 pendiente y producción bloqueada.
+Para completar el carril gestionado, elegir/autorizar recursos/destino de pruebas y responsables; resolver seguimientos, ensayar Auth/DB/TLS/artefactos/copias externas/rollback y adjuntar evidencia real. Correo real tiene autorización independiente. Entrega **COMPLETADA** por D-39, CA14-06 CUMPLIDO; producción bloqueada. Fase 15 autorizada solo para el nuevo chat, sin ejecución en este cierre ni eliminación de pendientes gestionados.
 
 ## Fuentes consultadas
 
 2026-11-02: [changelog Supabase](https://supabase.com/changelog), [backup/restore CLI](https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore), [restauración desde plataforma](https://supabase.com/docs/guides/self-hosting/restore-from-platform), [TLS APIs](https://supabase.com/changelog/cbc-tls-ciphers-deprecated), [PG 15.19/17.11](https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes). Roles no incluyen passwords; identidad/settings/objetos requieren cobertura propia. pg_dump genérico puede incluir internos incompatibles con Supabase: no usar el fixture sobre servicio gestionado. CLI no instalada/ejecutada. Cambio TLS previsto 2026-11-10 y actualización PG/extensiones deben contrastarse con destino real; no se presupone versión gestionada ni cambia imagen aceptada de prueba. Sin consulta/modificación de proyectos remotos.
+
+
+## Cierre aceptado — D-39
+
+El usuario acepta la entrega `da1ac91` el 2026-11-02; Fase 14 COMPLETADA y CA14-06 CUMPLIDO. CI PASS 41473700624 y resultados 119/39/4/19 conservados con sus límites. El cierre no acredita ni habilita puertas productivas del checklist, no resuelve F1-SEG-01/02/03 ni autoriza merge a main por Pages. Fase 15 autorizada solo para un nuevo chat, ejecución pendiente; punto de inicio en [FASES](../FASES.md) y [ESTADO](../ESTADO_PROYECTO.md). No se ejecuta Fase 15 ni se despliega en este cierre.

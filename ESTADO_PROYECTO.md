@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
+**Fase:** 14 — COMPLETADA; entrega y cierre aprobados por D-39.
 **Modo:** GUIADO
-**Última fase completada:** 13.
-**Última fase autorizada:** 14, ejecutada localmente bajo D-37/D-38; CA14-06 PENDIENTE. Fase 15 PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
+**Última fase completada:** 14.
+**Última fase autorizada:** 15, por D-39 para iniciar en un nuevo chat; ejecución PENDIENTE. CA14-06 CUMPLIDO. Producción/publicación/merge a main siguen sin autorización; bloqueo Pages conservado.
 
-**Punto vigente de continuidad:** Fase 14 entregada para revisión, sin aceptación presumida. [Plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md) y evidencia local. CI sin deploy, salud/logs saneados y copia/restauración sintéticas; operación gestionada pendiente de destino/recursos y F1-SEG-01/02/03. Correo real deshabilitado, sin producción ni Fase 15. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 14 aceptada y cerrada por D-39. Iniciar únicamente Fase 15 en un nuevo chat, ya autorizada; leer el punto de inicio al final de [FASES](FASES.md) y recuperar la rama del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), sin merge a main por Pages. Este cierre no ejecuta Fase 15 ni crea otra conversación. [Plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), evidencia y F1-SEG-01/02/03 conservados; correo real deshabilitado y sin producción. Estados anteriores son antecedentes históricos.
 
 **Entrega GitHub vigente:** base Fase 14 main `82d8ad6`; corrección CI/registro del automatismo Pages en rama phase14/ci-prerequisites-and-pages-guard y [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), sin merge. Pages legacy main:/docs activo: run cancelado antes de deploy. No más escritura en main bajo prohibición de publicación hasta resolver esa configuración. CI inicial FAIL por pdftotext ausente; corrección instala poppler-utils, estado comprobable en Actions del PR.
 
@@ -542,3 +542,22 @@ Fase 14 EN_REVISION, CA14-06 PENDIENTE; última completada 13. Producción no au
 Entrega inicial en main `82d8ad69cbbf24495b893cfd9fa6eeb9cee5e6cf`, SHA remoto comprobado. CI inicial [41473084240](https://github.com/amsotov/inventarioTI2/actions/runs/41473084240) FAIL por ausencia de pdftotext en runner; se prepara corrección de instalación de poppler-utils en rama phase14/ci-prerequisites-and-pages-guard y PR, sin modificar pruebas.
 
 Se detectó Pages legacy main:/docs activo fuera del árbol. Run [41473076891](https://github.com/amsotov/inventarioTI2/actions/runs/41473076891) cancelado por API, deploy CANCELLED sin ejecución; build sí terminó. No se eliminó/configuró el sitio previo. Con la prohibición de producción, no hacer nuevos pushes/merges a main hasta resolver expresamente el automatismo externo. Corrección y evidencia posterior se entregan en rama/PR sin merge. Estado vigente EN_REVISION; CA14-06 y F1-SEG-01/02/03 pendientes, Fase 15 sin autorización.
+
+
+## Cierre aprobado de Fase 14 y continuidad de Fase 15 — D-39
+
+2026-11-02. Evidencia literal: «apruebo fase 14 e incia en nuevo chat fase 15». D-39 acepta la entrega `da1ac91dd32278add2801ba41f9661c921560e60`, cumple CA14-06 y cierra Fase 14 COMPLETADA con sus límites. Conserva 119/119 pruebas API/seguridad, 39/39 navegador y 4/4 operación, restauración local de 19 tablas y [CI PASS 41473700624](https://github.com/amsotov/inventarioTI2/actions/runs/41473700624) del SHA aceptado. No convierte el ensayo local ni la aceptación en continuidad productiva, recuperación Auth gestionada, copias externas/retención 30 días, SLA o rollback de plataforma acreditados.
+
+Fase 15 — documentación, capacitación y evolución AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Este cierre registra aceptación/continuidad y sincroniza GitHub, sin ejecutar Fase 15 ni crear automáticamente otra conversación. La autorización no necesita reiterarse. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Sin correo real, datos/cuentas reales, gastos, permisos remotos ni producción.
+
+La aprobación de fase no autoriza merge ni publicación: [PR #1](https://github.com/amsotov/inventarioTI2/pull/1) permanece sin merge y Pages legacy main:/docs sigue bloqueando nuevas escrituras en main. Recuperar la rama phase14/ci-prerequisites-and-pages-guard y el HEAD vigente de ese PR; no usar main como única fuente de continuidad. Los estados EN_REVISION anteriores son antecedentes históricos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main en lectura y la rama del PR #1, revisar SHA/CI/estado local y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, DECISIONES D-39, requisitos/cierre D-14 y entregas aceptadas hasta Fase 14. Preservar cambios de terceros. No hacer merge/push a main mientras el automatismo Pages no se resuelva con autorización específica.
+2. Presentar y ejecutar únicamente el plan de Fase 15: manuales de usuario/administración, instalación y onboarding de desarrollador, soporte, capacitación propuesta, mantenimiento, roadmap/deuda técnica y estado final. Contrastar con implementación real y pruebas disponibles; no presentar capacitación como realizada sin participantes/evidencia.
+3. Reutilizar manuales/README/CHANGELOG y runbook/checklist existentes; no inventar funcionalidades, responsables, plazos legales, presupuesto o servicios contratados. Spec Kit no instalado; no instalar por inferencia. Mantener permisos/sesión/MFA/CSRF/RLS y correo real deshabilitado.
+4. Distinguir instalación/ensayo local sintético de integración gestionada. Mantener F1-SEG-01/02/03, pendientes de hardware/identidad/proveedor y todos los objetivos de continuidad. Documentar pasos comprobados y no ejecutados. No contratar, crear cuentas/datos reales, cambiar permisos, publicar o desplegar por esta autorización.
+5. Registrar cambios, validaciones documentales y pruebas pertinentes según alcance; preservar literalmente evidencia aceptada y migraciones. Sincronizar en rama/PR seguro y comprobar SHA remoto. Entregar Fase 15 EN_REVISION para su aceptación propia; no presumir cierre final del sistema.
+
+Verificación de este cierre: solo documentación; estados/CA14-06/D-39 y enlaces locales, git diff --check y comparación con da1ac91dd32278add2801ba41f9661c921560e60 para confirmar aplicación, ops, workflow, migraciones, dependencias, tests y evidencias intactos. No se repiten build/suites: no cambia código. Verificadores históricos, incluido docs/evidencias/fase14/verificar.py, conservan su fotografía EN_REVISION original y no se reescriben para este cierre. Commit documental con [skip ci], sin nueva certificación funcional; CI PASS anterior permanece ligado al SHA aceptado. Commit/push normal en rama del PR #1, autoría noreply y comprobación SHA remoto antes de confirmar.

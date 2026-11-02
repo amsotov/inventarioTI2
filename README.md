@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
+Estado vigente (2026-11-02): **Fases 0–14 COMPLETADAS y aceptadas**, última D-39. Fase 14: [plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), entrega aceptada `da1ac91` y CA14-06 CUMPLIDO; evidencia y límites en [PRUEBAS](docs/PRUEBAS.md). **Fase 15 AUTORIZADA para iniciar en un nuevo chat**, ejecución PENDIENTE. F1-SEG-01/02/03 y bloqueo Pages conservados; correo real deshabilitado y sin producción. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -169,3 +169,12 @@ Fase 15 sin autorización. Sin implementación de Fase 14, activación/envíos r
 ## Entrega de Fase 14 — EN_REVISION
 
 Plan, runbook y checklist enlazados al inicio. `npm run test:ops` reproduce el ensayo aislado de copia cifrada/restauración y las verificaciones de salud/logs/edad de copia; requiere Docker local, nunca DSN real. El workflow GitHub solo verifica. `npm start` conserva worker apagado y exige configuración externa; /health/live y /health/ready no sustituyen el smoke autenticado. Pendientes gestionados y aceptación CA14-06 explícitos. Producción no desplegada; Fase 15 sin iniciar.
+
+
+## Cierre de Fase 14 — D-39
+
+Entrega `da1ac91` aprobada y Fase 14 COMPLETADA. Fase 15 autorizada para un nuevo chat, ejecución pendiente. No puedo abrir automáticamente esa conversación. Abre un nuevo chat con inventarioTI2 y la rama del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), e indica:
+
+> Inicia únicamente la Fase 15 de inventarioTI2, ya autorizada por D-39. Recupera la rama del PR #1 y lee FASES.md y ESTADO_PROYECTO.md. Presenta el plan de documentación, capacitación y evolución y actualiza GitHub en rama/PR, sin merge a main por el bloqueo de Pages. No publiques ni despliegues a producción.
+
+Este cierre no ejecuta Fase 15 ni elimina pendientes F1-SEG-01/02/03; no autoriza correo real, gastos, cuentas/datos reales, permisos remotos, merge o publicación.

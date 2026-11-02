@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-02 — Preparación de vista previa remota (D-44)
+
+- Instancia sintética independiente en entorno nuevo; runtime D-41 no disponible.
+- Gateway loopback/origen exacto y cliente WebSocket opcionales, sin publicar.
+- Smoke 12 grupos, integración gateway 11 grupos, transporte y reinicio PASS.
+- VP-01 BLOQUEADO: permiso externo e integración pública/Chrome Windows pendientes; evidencia previa intacta, sin main/Pages/producción.
+
 ## 2026-11-02 — Continuidad para nuevo chat (D-43)
 
 - Pendientes F1-SEG/EV15 priorizados, contexto de aprobaciones y plan de vista previa con criterios VP-01–05; prompt listo para pegar.

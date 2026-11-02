@@ -1,5 +1,10 @@
 # Continuidad para nuevo chat: pendientes y vista previa — D-43
 
+**Actualización D-44:** [instancia sintética nueva, gateway y permiso pendiente](VISTA_PREVIA_REMOTA.md).
+Runtime D-41 ausente en este entorno; no se presume recuperación de sus cuentas/MFA.
+VP-01 BLOQUEADO, sin publicación externa ni prueba Chrome Windows. Antecedentes
+D-43 conservados como registro histórico.
+
 2026-11-02. Solicitud: «preparame en chat nuevo los pendientes del sistema inventarioTI2 y una vista previa para probar el sistema». Se prepara este punto de arranque y se sincroniza GitHub. No se crea automáticamente otra conversación ni se afirma haber habilitado una URL nueva.
 
 ## Estado que debe recuperar el nuevo chat

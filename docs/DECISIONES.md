@@ -233,3 +233,9 @@ No cambia aprobación de Fase 15/D-41, permisos empresariales, datos o evidencia
 2026-11-02. Usuario: «preparame en chat nuevo los pendientes del sistema inventarioTI2 y una vista previa para probar el sistema». Se prepara [continuidad](CONTINUIDAD_PRUEBAS.md) con pendientes priorizados, plan/criterios VP-01–05 y prompt de inicio. El objetivo del nuevo chat es una vista funcional accesible desde Chrome Windows; D-42 sigue abierto y no se confunde localhost del entorno con acceso del usuario.
 
 No se abre un chat ni se habilita una URL en esta preparación. Fases 0–15 siguen aprobadas; no volver a solicitar Fase 15 ni preguntar el sistema operativo. No autoriza ejecutar toda la deuda, crear Fase 16, publicar externamente, hacer merge/main/Pages, producción, gasto o correo real. Conservar F1-SEG-01/02/03, datos/cuentas/MFA/claves/volúmenes y evidencia; cambios exclusivamente documentales en rama del PR #1.
+
+## D-44 — Continuar pruebas y preparar acceso remoto concreto
+
+2026-11-02. Usuario pide continuar desde la rama del PR #1, fases 0–15 aprobadas, presentar pendientes y resolver primero vista funcional Chrome Windows, sin localhost remoto ni merge/producción, conservando datos/cuentas/MFA/evidencia y sin correo real. Se recupera HEAD 1c08afc. Entorno nuevo sin runtime D-41: instancia sintética independiente; 12 grupos locales, 11 de gateway y reinicio PASS. Evidencia previa intacta. [Ruta preparada y límites](VISTA_PREVIA_REMOTA.md).
+
+Sin reenvío privado nativo; Cloudflare descartado por requerir TCP 7844 no concedido. WebSocket TLS Tunnelmole por proxy PASS sin solicitar hostname. Gateway/cliente opcionales preparados, sin publicación. Consulta específica de permiso pendiente; silencio no es aprobación. VP-01 BLOQUEADO, integración pública/Windows no realizadas. No se reabre aprobación de fases ni se crea Fase 16. Main/Pages/producción intactos; deuda restante no ejecutada.

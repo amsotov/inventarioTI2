@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-02T18:51:23.823Z",
+  "scope": "local synthetic system only",
+  "repositoryHead": "1c08afc24791456fb1c12c378e723612f2a94d8d",
+  "localScripts": {
+    "control.mjs": "ebefc4fcb60088e697618a820449940167642ae055550605ad46c19522a6760c",
+    "serve.mjs": "2bb204f8c3d8db9e1934c13b236418a3c0b721902d513ad58625e4cfdc877293",
+    "verify.mjs": "68395f0f25d75032f284b16d06fd469bf8ed89221e677e20fc6b4d344da68666"
+  },
+  "checks": [
+    {
+      "name": "TLS trusted via generated local CA; live and ready 200",
+      "result": "PASS"
+    },
+    {
+      "name": "Inventory without session denied",
+      "result": "PASS"
+    },
+    {
+      "name": "Mutation without approved Origin denied",
+      "result": "PASS"
+    },
+    {
+      "name": "Real local reader login, inventory read and admin denial",
+      "result": "PASS"
+    },
+    {
+      "name": "Administrator without MFA denied",
+      "result": "PASS"
+    },
+    {
+      "name": "Real GoTrue TOTP MFA, cookie rotation and admin access",
+      "result": "PASS"
+    },
+    {
+      "name": "Reader write and invalid CSRF denied; admin write and exact replay without duplication",
+      "result": "PASS"
+    },
+    {
+      "name": "Filtered private XLSX generated and downloaded; another account denied",
+      "result": "PASS"
+    },
+    {
+      "name": "SQL persistence and queued notifications; zero accepted/delivered notices",
+      "result": "PASS"
+    },
+    {
+      "name": "Containers in internal network with no published DB/Auth ports",
+      "result": "PASS"
+    },
+    {
+      "name": "Chromium browser: TLS certificate pinned, real reader login, synthetic inventory and logout",
+      "result": "PASS"
+    },
+    {
+      "name": "Logout revokes local session",
+      "result": "PASS"
+    }
+  ],
+  "mailEnabled": false,
+  "managedIntegrations": false,
+  "production": false
+}

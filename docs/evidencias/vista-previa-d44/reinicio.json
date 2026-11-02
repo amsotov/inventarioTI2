@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-02T18:54:37.002Z",
+  "scope": "new synthetic instance only",
+  "restart": "PASS",
+  "dataCountsUnchanged": true,
+  "identityIdsPasswordHashesAndMfaUnchanged": true,
+  "priorRuntimeAvailable": false,
+  "windowsAccessVerified": false,
+  "mailEnabled": false
+}

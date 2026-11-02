@@ -4,7 +4,7 @@
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
 **Fase actual:** 15 — COMPLETADA por aceptación D-41 de la entrega `a9a0742`; CA15-06 CUMPLIDO. Sistema local de pruebas autorizado y preparado en este entorno; [acceso/pendientes](docs/PRUEBAS_LOCALES.md).
 **Última fase completada:** 15, por D-41; aceptación con límites y pendientes conservados.
-**Siguiente hito:** nuevo chat con [CONTINUIDAD_PRUEBAS](docs/CONTINUIDAD_PRUEBAS.md) (D-43): presentar pendientes y resolver primero una vista previa funcional accesible desde Windows/Chrome; VP-01 PENDIENTE. Fases 0–15 aceptadas, sin Fase 16 ni autorización general de toda la deuda. Restricciones de main/Pages/producción y publicación externa conservadas.
+**Siguiente hito:** [Vista previa remota D-44](docs/VISTA_PREVIA_REMOTA.md): instancia sintética y gateway preparados/verificados localmente; falta permiso específico del túnel y verificación pública/Chrome Windows. VP-01 BLOQUEADO, sin URL pública lista. Fases 0–15 aceptadas; sin Fase 16. Main/Pages/producción intactos.
 
 **Entrega vigente:** Fase 15 aceptada (`a9a0742`) y sistema local D-41 en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; main `82d8ad6` solo en lectura. Automatismo heredado Pages main:/docs activo: no más pushes/merges a main bajo prohibición de publicación externa hasta resolverlo. [Instancia local y continuidad](docs/PRUEBAS_LOCALES.md).
 

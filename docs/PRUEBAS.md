@@ -481,3 +481,9 @@ Linux nativo comprobado para la instancia actual; Windows/macOS/Docker Desktop, 
 2026-11-02. Solo Markdown: [CONTINUIDAD_PRUEBAS](CONTINUIDAD_PRUEBAS.md), índices/estado y decisiones. Revisión de enlaces locales, diff/estados, alcance y preservación de todos los archivos previos fuera de la lista documental autorizada, incluidos aplicación/controladores/migraciones/dependencias/tests/evidencia. Fases 0–15 COMPLETADAS, D-41/CA15-06 CUMPLIDO; D-42/VP-01 de acceso del usuario PENDIENTE.
 
 No ejecutados en esta tarea: build, suites API/UI/operación, instalación en Windows, nueva infraestructura o prueba del usuario. No cambia código y las evidencias anteriores se conservan literalmente. La preparación D-43 no crea un chat ni habilita nueva URL; los resultados 12 grupos/reinicio de D-41 conservan su alcance interno. Commit documental con [skip ci], sin atribuir nuevo CI; SHA remoto se coteja al entregar, PR #1 en borrador/sin merge y main sin cambios.
+
+## Preparación de vista previa remota — D-44
+
+Instancia nueva en entorno sin runtime D-41: npm ci/build PASS, smoke local existente 12 grupos PASS, gateway+BFF/DB/Auth reales 11 grupos PASS, test de transporte (Host/protocolo/Origin/cookies/CSRF/binarios/upstream caído) PASS, stop/start con conteos de datos e IDs/hashes de contraseña/factores MFA intactos. [Evidencia y límites](VISTA_PREVIA_REMOTA.md). TLS/WebSocket Tunnelmole por proxy PASS sin initialise/hostname; sintaxis y rechazo sin flag PASS.
+
+No publicados túneles ni probada ruta pública/Chrome Windows: VP-01 BLOQUEADO, permiso específico pendiente. No se repiten suites históricas que regeneran evidencia aceptada ni se atribuye nuevo CI sin observarlo. Evidencia anterior preservada; cero avisos aceptados/entregados y correo real apagado. Sin merge/main/Pages/producción.

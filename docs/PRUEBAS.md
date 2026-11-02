@@ -467,3 +467,11 @@ Fallos iniciales: publicación de puerto en red Docker internal no utilizable; s
 No ejecutados: suites completas históricas API/UI/ops/carga/accesibilidad, Supabase/Resend gestionados, correo real, validación humana/capacitación, hardware/Safari, recuperación integral productiva y despliegue externo. La prueba pertinente de esta tarea verifica la nueva orquestación y el sistema real local; no se repite toda la regresión de aplicación porque las fuentes de negocio no cambian. Evidencia aceptada 119/39/4/19 y CI PASS anterior mantienen su asociación original. Sin nuevo CI funcional atribuido a este commit; sincronización con [skip ci] en rama del PR #1, SHA remoto comprobado al entregar.
 
 Fase 15 COMPLETADA por D-41 con sus límites; F1-SEG-01/02/03 abiertos. Instancia local activa solo en este entorno, correo real deshabilitado; PR #1 en borrador/sin merge, main sin cambios y sin producción.
+
+## Diagnóstico de acceso a vista previa — D-42
+
+2026-11-02. Captura del usuario con ERR_CONNECTION_REFUSED. `node ops/local/control.mjs status`: proceso activo; consulta HTTPS con CA local a /health/ready: **200**. El rechazo ocurre en localhost del computador personal, que no aloja la instancia del entorno remoto. No se ha comprobado conectividad desde ese computador ni existe herramienta de reenvío de puertos disponible.
+
+`bash -n ops/local/iniciar-pruebas.sh` y ejecución `--comprobar`: resultados en [validación](evidencias/acceso-preview/validacion.json). El launcher solo añade comprobación de prerrequisitos y secuencia de comandos existentes; no se repiten pruebas funcionales de aplicación ni se cambia servidor/BD/Auth. El ZIP se construye desde el código versionado, excluye work/ y todo estado/secretos/dependencias instaladas; inspección de rutas y comparación contra credenciales generadas sin divulgarlas.
+
+Linux nativo comprobado para la instancia actual; Windows/macOS/Docker Desktop, instalación por el usuario y acceso desde su Chrome **NO EJECUTADOS**. El ZIP preparado no acredita que se haya ejecutado en otro computador. Estado de acceso del usuario sigue BLOQUEADO; requisitos e instrucciones en [ACCESO_VISTA_PREVIA](ACCESO_VISTA_PREVIA.md). Evidencia aceptada y servidor D-41 intactos. Actualización en PR #1 con [skip ci], sin nuevo CI funcional ni merge/main/Pages/producción.

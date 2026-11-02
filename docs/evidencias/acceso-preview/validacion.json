@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-02",
+  "base": "d375b6b01233fac3d778d9c7297548c1a3191706",
+  "decision": "D-42",
+  "user_os": "Windows",
+  "internal_service": {
+    "process_running": true,
+    "https_readiness": 200
+  },
+  "user_browser": {
+    "observed_error": "ERR_CONNECTION_REFUSED",
+    "cause": "localhost of personal computer is not localhost of work environment; no forwarding route",
+    "access_status": "BLOCKED",
+    "successful_access_from_user_computer": false
+  },
+  "native_port_forwarding_tool_available": false,
+  "launcher": {
+    "bash_syntax": "PASS",
+    "linux_prerequisites_in_work_environment": "PASS",
+    "windows_cmd_execution": "NOT_EXECUTED",
+    "user_machine_installation": "NOT_EXECUTED",
+    "requirements": "Ubuntu in WSL2 with native Docker Engine in same distribution, Node 24, npm, OpenSSL; Docker Desktop unverified"
+  },
+  "local_links": 590,
+  "broken_links": [],
+  "preserved_base_files": 254,
+  "preserved_accepted_evidence_files": 135,
+  "generated_credentials_in_changed_files": false,
+  "diff_and_scope": "PASS",
+  "new_remote_deployment": false,
+  "main_or_pages_modified": false,
+  "package": "Built from synchronized versioned source after commit; runtime state and generated credentials excluded and scanned before delivery."
+}

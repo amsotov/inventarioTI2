@@ -4,7 +4,7 @@
 
 ## Acceder al sistema
 
-**URL:** `https://localhost:8443/`, en el entorno de trabajo donde se ejecutó esta tarea. Es una instancia funcional de UI/BFF con PostgreSQL y GoTrue locales reales; no es el prototipo ni una identidad doble. Escucha solo en `127.0.0.1`. No hay túnel público, DNS ni servidor instalado en el computador personal del usuario. Si el cliente de trabajo permite abrir puertos locales, usar esa capacidad sin cambiar origen/HTTPS; de lo contrario se necesita acceso al navegador/terminal de este entorno. No se afirma conectividad desde otro equipo.
+**URL:** `https://localhost:8443/`, en el entorno de trabajo donde se ejecutó esta tarea. Es una instancia funcional de UI/BFF con PostgreSQL y GoTrue locales reales; no es el prototipo ni una identidad doble. Escucha solo en `127.0.0.1`. No hay túnel público, DNS ni servidor instalado en el computador personal del usuario. D-42 confirma fallo de acceso desde Chrome del computador personal y ausencia de una herramienta de reenvío de puertos en este entorno. Por tanto esta URL no da acceso desde ese equipo: ver [diagnóstico y paquete de instalación local](ACCESO_VISTA_PREVIA.md). Servicio interno sano no equivale a vista previa accesible al usuario.
 
 Las credenciales de prueba se generan aleatoriamente y se conservan solo en `work/local-inventarioti2/`, con directorio 0700 y archivos privados 0600. No están en GitHub. Para ver las dos cuentas interactivas, desde la raíz:
 

@@ -221,3 +221,9 @@ Fase 15 EN_REVISION, CA15-06 PENDIENTE; no atribuye aceptación ni cierre final 
 2026-11-02. Evidencia literal: «apruebo fase 15 en nuevo indicame los pendientes y publica el sistema inventarioTI2 en servidor local para pruebas». El usuario aclara destino: «En este entorno de trabajo». Acepta la entrega `a9a0742b0f70ff026d36588f96475cca59c4c3f7`; CA15-06 CUMPLIDO, Fase 15 COMPLETADA con límites documentados. Autoriza adicionalmente informar pendientes y poner en marcha el sistema local sintético, no una nueva fase genérica ni producción.
 
 Instancia en loopback HTTPS, DB/Auth locales reales y datos/cuentas de prueba aleatorios, con MFA y permisos vigentes; no se usan identidades/datos reales ni se activa correo. Guía/continuidad en [PRUEBAS_LOCALES](PRUEBAS_LOCALES.md). No se crea nuevo chat automáticamente. Se conservan F1-SEG-01/02/03, requisitos UTC/semanal/168 h/8 h/30 días y validaciones gestionadas/humanas pendientes. D-41 prevalece sobre estados EN_REVISION anteriores de D-40 sin reescribir evidencia. No autoriza merge a main/Pages, publicación externa, producción, gasto ni permisos remotos.
+
+## D-42 — Corrección del diagnóstico de acceso a vista previa
+
+2026-11-02. Usuario informa «no funcina vista previa» con ERR_CONNECTION_REFUSED. Se confirma salud 200 en el entorno, pero localhost del navegador del usuario es otro equipo y no existe ruta de reenvío disponible. El enlace anterior no daba acceso desde ese navegador; el acceso externo continúa BLOQUEADO. Paquete y launcher local preparados según [guía](ACCESO_VISTA_PREVIA.md), sin afirmar instalación en su computador. Usuario confirma Windows; requisitos de WSL2/Ubuntu pendientes de comprobar.
+
+No cambia aprobación de Fase 15/D-41, permisos empresariales, datos o evidencia aceptada. No autoriza publicar externamente ni abre main/Pages/producción. No se usa un resultado de navegador interno como acreditación de conectividad desde el usuario.

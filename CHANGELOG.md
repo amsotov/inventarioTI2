@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-02 — Diagnóstico de acceso a vista previa (D-42)
+
+- Se corrige el enlace de acceso: localhost del computador del usuario no alcanza el servidor del entorno; readiness interno 200 no prueba conectividad externa.
+- Guía de diagnóstico y launcher para Linux/Docker Engine nativo; paquete fuente sin estado/credenciales para instalación local. Ejecución en equipo del usuario no realizada; acceso aún bloqueado.
+- Sin cambios de aplicación, permisos, BD/Auth o evidencia aceptada; instancia interna conservada y sin publicación externa/main/Pages/producción.
+
 ## 2026-11-02 — Fase 15 aprobada y sistema local de pruebas (D-41)
 
 - Usuario acepta `a9a0742`; CA15-06 CUMPLIDO y Fases 0–15 COMPLETADAS con pendientes conservados.

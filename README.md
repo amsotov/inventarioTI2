@@ -19,7 +19,7 @@ Aplicación React/TypeScript con BFF Node, PostgreSQL y adaptador Supabase Auth;
 
 ## Servidor local funcional — D-41
 
-Instancia activa en `https://localhost:8443` **dentro de este entorno**: UI/BFF compilados, PostgreSQL y Auth locales reales, TLS, MFA y cuentas/datos sintéticos. No es una URL pública ni el localhost del equipo personal. [Guía de acceso/certificado/credenciales/inicio/detención](docs/PRUEBAS_LOCALES.md). Correo real deshabilitado; estado privado bajo work/, sin contraseñas en GitHub. Para retomar: `node ops/local/control.mjs status`; no borrar/reinicializar volúmenes.
+**Acceso desde Chrome del usuario pendiente (D-42):** localhost del computador personal no se conecta a este entorno. [Diagnóstico y ejecución local](docs/ACCESO_VISTA_PREVIA.md); no hay herramienta de reenvío de puertos disponible ni URL remota habilitada. El servidor responde en `https://localhost:8443` **solo dentro de este entorno**: UI/BFF compilados, PostgreSQL y Auth locales reales, TLS, MFA y cuentas/datos sintéticos. No es una URL pública ni el localhost del equipo personal. [Guía de acceso/certificado/credenciales/inicio/detención](docs/PRUEBAS_LOCALES.md). Correo real deshabilitado; estado privado bajo work/, sin contraseñas en GitHub. Para retomar: `node ops/local/control.mjs status`; no borrar/reinicializar volúmenes.
 
 ## Verificación local de entrada
 

@@ -4,7 +4,7 @@
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
 **Fase actual:** 15 — COMPLETADA por aceptación D-41 de la entrega `a9a0742`; CA15-06 CUMPLIDO. Sistema local de pruebas autorizado y preparado en este entorno; [acceso/pendientes](docs/PRUEBAS_LOCALES.md).
 **Última fase completada:** 15, por D-41; aceptación con límites y pendientes conservados.
-**Siguiente hito:** [Vista previa remota D-44](docs/VISTA_PREVIA_REMOTA.md): instancia sintética y gateway preparados/verificados localmente; falta permiso específico del túnel y verificación pública/Chrome Windows. VP-01 BLOQUEADO, sin URL pública lista. Fases 0–15 aceptadas; sin Fase 16. Main/Pages/producción intactos.
+**Siguiente hito:** [Vista previa temporal D-45](docs/VISTA_PREVIA_ACTIVA.md) autorizada y probada por URL pública desde el entorno; corrección de navegación lenta verificada. VP-01 PENDIENTE: primer hostname falló en Chrome Windows con ERR_INVALID_RESPONSE; falta confirmar el hostname nuevo. No declarar resuelto por pruebas del proxy. Fases 0–15 aceptadas; sin Fase 16, main/Pages/producción intactos.
 
 **Entrega vigente:** Fase 15 aceptada (`a9a0742`) y sistema local D-41 en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; main `82d8ad6` solo en lectura. Automatismo heredado Pages main:/docs activo: no más pushes/merges a main bajo prohibición de publicación externa hasta resolverlo. [Instancia local y continuidad](docs/PRUEBAS_LOCALES.md).
 

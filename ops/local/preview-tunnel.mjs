@@ -14,7 +14,10 @@ if (process.env.NODE_USE_ENV_PROXY !== '1') {
   process.exit(1);
 }
 
-const port = 8750;
+const port = Number(process.env.PREVIEW_PORT ?? 8750);
+if (!Number.isInteger(port) || port < 1024 || port > 65535) {
+  console.error('Invalid preview loopback port; no tunnel created.'); process.exit(1);
+}
 const socket = new WebSocket('wss://service.tunnelmole.com:8083');
 let ingress, origin, stopping = false;
 const pending = new Set();

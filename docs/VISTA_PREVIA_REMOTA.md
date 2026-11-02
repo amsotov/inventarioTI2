@@ -1,5 +1,9 @@
 # Preparación de vista previa HTTPS temporal — D-44
 
+**Actualización D-45:** el usuario autorizó el túnel. [Estado activo y evidencia](VISTA_PREVIA_ACTIVA.md).
+Primer hostname falló en Windows; nuevo hostname público verificado desde el entorno,
+pendiente de confirmar allí. Las secciones D-44 siguientes son antecedentes históricos.
+
 2026-11-02. Continuación de pruebas desde `1c08afc` del PR #1, rama
 `phase14/ci-prerequisites-and-pages-guard`. Fases 0–15 aceptadas; no nueva fase.
 

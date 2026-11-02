@@ -1,5 +1,9 @@
 # Continuidad para nuevo chat: pendientes y vista previa — D-43
 
+**Vigente D-45:** [túnel autorizado y verificación pública](VISTA_PREVIA_ACTIVA.md).
+Primer hostname falló en Windows; nuevo hostname probado desde el proxy del entorno,
+pendiente de confirmación Chrome Windows. Datos/cuentas/MFA D-44 preservados.
+
 **Actualización D-44:** [instancia sintética nueva, gateway y permiso pendiente](VISTA_PREVIA_REMOTA.md).
 Runtime D-41 ausente en este entorno; no se presume recuperación de sus cuentas/MFA.
 VP-01 BLOQUEADO, sin publicación externa ni prueba Chrome Windows. Antecedentes

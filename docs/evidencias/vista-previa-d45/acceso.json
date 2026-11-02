@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-02T22:29:52.392Z",
+  "authorizedByUser": true,
+  "firstHostnameUserWindowsResult": "ERR_INVALID_RESPONSE",
+  "firstHostnameStopped": true,
+  "origin": "https://8lyag2-ip-90-96-187-67.tunnelmole.net",
+  "httpsThroughManagedProxy": 200,
+  "httpRejected": 400,
+  "userWindowsNewHostname": "confirmation pending",
+  "independentFetch": "failed also for control; no conclusion",
+  "publicChecks": 12,
+  "navigationRegressionBefore": "FAIL (expected reproduction)",
+  "navigationRegressionAfter": "PASS",
+  "targetedTestsPassed": 3,
+  "identityIdsPasswordsAndMfaUnchanged": true,
+  "mailEnabled": false,
+  "production": false
+}

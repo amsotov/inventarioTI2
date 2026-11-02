@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-02 — Túnel temporal autorizado y navegación con latencia (D-45)
+
+- Ruta HTTPS temporal autorizada; primer hostname falló en Windows, nuevo hostname pendiente de confirmación del usuario.
+- Corregida carrera al pulsar la vista actual mientras carga; regresión FAIL antes/PASS después.
+- Build, tres tests dirigidos y smoke público de 12 grupos con DB/Auth reales y Chromium Linux PASS.
+- Credenciales solo en chat privado; datos/cuentas/MFA/evidencia preservados, sin correo real/main/Pages/producción.
+
 ## 2026-11-02 — Preparación de vista previa remota (D-44)
 
 - Instancia sintética independiente en entorno nuevo; runtime D-41 no disponible.

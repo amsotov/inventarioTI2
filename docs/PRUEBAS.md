@@ -487,3 +487,9 @@ No ejecutados en esta tarea: build, suites API/UI/operación, instalación en Wi
 Instancia nueva en entorno sin runtime D-41: npm ci/build PASS, smoke local existente 12 grupos PASS, gateway+BFF/DB/Auth reales 11 grupos PASS, test de transporte (Host/protocolo/Origin/cookies/CSRF/binarios/upstream caído) PASS, stop/start con conteos de datos e IDs/hashes de contraseña/factores MFA intactos. [Evidencia y límites](VISTA_PREVIA_REMOTA.md). TLS/WebSocket Tunnelmole por proxy PASS sin initialise/hostname; sintaxis y rechazo sin flag PASS.
 
 No publicados túneles ni probada ruta pública/Chrome Windows: VP-01 BLOQUEADO, permiso específico pendiente. No se repiten suites históricas que regeneran evidencia aceptada ni se atribuye nuevo CI sin observarlo. Evidencia anterior preservada; cero avisos aceptados/entregados y correo real apagado. Sin merge/main/Pages/producción.
+
+## Vista previa HTTPS autorizada y regresión de navegación — D-45
+
+[Detalle/evidencia](VISTA_PREVIA_ACTIVA.md). Primer hostname: API pública pasa, navegador falla por carrera de navegación; usuario Windows reporta ERR_INVALID_RESPONSE, causa no confirmada. Regresión aislada retiene respuesta, pulsa Bienes actual y reproduce FAIL antes de corregir. Tras cambio pequeño en main.tsx: build y tres tests dirigidos PASS. Se reinicia BFF por index.html cacheado mediante túnel nuevo, conservando DB/Auth/cuentas/MFA y deteniendo el anterior.
+
+Hostname nuevo: HTTPS/asset/salud 200, HTTP 400; smoke con DB/Auth reales y Chromium Linux por proxy 12 grupos PASS, sin ignorar TLS, con MFA reservado, permisos/CSRF/replay/exportación privada/logout/correo apagado. Chrome Windows del hostname nuevo NO OBSERVADO: VP-01 PENDIENTE, no declarar resuelto por estas pruebas. Consulta HTTP independiente falló también en su control y no aporta evidencia. Evidencia anterior intacta, sin repetir suites históricas ni atribuir CI c4dcb71 a cambios nuevos.

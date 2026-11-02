@@ -11,3 +11,8 @@ Entrega de Fase 9 aceptada por D-29; instrucciones operativas limitadas al panel
 7. Para descartar el formulario, usa **Cancelar**. Ante 412, recarga la administración y revisa datos actuales. Ante resultado incierto, mantén la página y usa **Reintentar operación** con la clave original; antes de abandonar/cerrar sesión, concilia con el responsable. No repitas como un alta nueva.
 
 Las listas se paginan de 50 en 50. El panel no cambia correo de cuenta, permisos arbitrarios, UTC ni respaldo operativo, no crea el primer administrador y no procesa outbox. Los objetivos de respaldo semanal/RPO 168 h/RTO 8 h/copias 30 días aún requieren configuración y verificación operativa independiente. Fase 10 autorizada para un nuevo chat, ejecución pendiente; sin despliegue.
+
+
+## Reporte de auditoría y exportación privada — Fase 11
+
+Con sesión administrativa y MFA vigentes, abre Reportes → Auditoría. Filtra por fecha de registro UTC, actor, entidad/referencia/acción. Se muestran diferencias empresariales minimizadas; documento, correo, destinatario, proveedor y claves desconocidas no se copian. Excel/PDF conservan la selección completa, límites, orden y metadatos. El archivo es del solicitante, caduca una hora después de crear y vuelve a validar rol al descargar. Revocar el rol impide acceder a un archivo de auditoría ya generado. Los trabajos fallidos/caducados requieren una nueva solicitud explícita; una respuesta perdida se resuelve con la misma clave. No altera historia ni procesa avisos. Ver [REPORTES](REPORTES.md).

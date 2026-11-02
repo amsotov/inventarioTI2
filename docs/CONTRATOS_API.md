@@ -122,3 +122,8 @@ Fase 9 añade exclusivamente `/api/v1/admin/cuentas`, `/unidades`, `/avisos` y e
 ## Incremento de Fase 10 — 2026-11-02
 
 Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.
+
+
+## Implementación de Fase 11 — 2026-11-02
+
+El contrato de reportes/exportación se concreta en [REPORTES](REPORTES.md#contrato-http-ejecutable) y `apps/server/reports/routes.ts`: tipos inventario/por-funcionario/movimientos/por-condicion/auditoria/busqueda; filtros por conjunto, paginación vinculada y metadatos UTC. `POST /exportaciones` exige Origin/CSRF/Idempotency-Key, devuelve 202 y persiste selección consistente; exceso 422 previo a crear. Estado/archivo solo solicitante autorizado, auditoría solo administrador, 404 entre cuentas, 409 no listo, 410 vencido. Arrendamiento recuperable por consulta propia, estados saneados, una hora de caducidad y ninguna URL pública. Las especificaciones previas de avisos no acreditan implementación de Fase 12.

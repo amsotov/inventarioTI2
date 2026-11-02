@@ -6,6 +6,11 @@
   background: #f4f6f7;
   --teal: #08766b;
 }
+.report-metrics {display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;}
+.report-metrics strong {font-size:32px;color:var(--teal);}
+.table-wrap {overflow:auto;max-width:100%;min-width:0;}
+.table-wrap table {min-width:1500px;}
+.actions {display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0;}
 * {
   box-sizing: border-box;
 }

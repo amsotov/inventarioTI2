@@ -1,0 +1,18 @@
+
+> inventarioti2@1.0.0 build
+> tsc && tsc -p apps/web/tsconfig.json && vite build apps/web --outDir ../../dist/web
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 19 modules transformed.
+
+(!) outDir /workspace/inventarioTI2/dist/web is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+dist/web/index.html                   0.39 kB │ gzip:  0.26 kB
+dist/web/assets/index-B9_xvPO1.css    4.06 kB │ gzip:  1.44 kB
+dist/web/assets/index-Dv581vdv.js   262.60 kB │ gzip: 82.07 kB
+
+✓ built in 95ms

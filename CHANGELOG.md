@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-02 — Fase 11: indicadores, reportes y exportación
+
+- Resumen desde datos fuente; cinco reportes y buscador combinado con filtros/días UTC, proyección positiva, columnas/orden y conteos/subtotales compartidos.
+- Excel/PDF privados, conjunto completo, límites 10.000/2.000 sin truncar, instantánea persistida, trabajo idempotente/recuperable y permisos vigentes en descarga.
+- UI, pruebas HTTP/SQL/archivos/navegador y documentación. Entrega para aceptación propia; sin Fase 12 ni despliegue.
+
 ## 2026-11-01 — Cierre aprobado de Fase 9
 
 - D-29 acepta entrega `fff63ac`; CA9-06 cumplido y Fase 9 COMPLETADA.

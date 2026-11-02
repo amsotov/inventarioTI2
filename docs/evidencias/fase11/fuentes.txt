@@ -1,0 +1,17 @@
+2026-11-02 — fuentes consultadas antes de implementación (sin llamadas remotas de mutación)
+
+Repositorio: AGENTS/PROMPT_MAESTRO/FASES/ESTADO; D-14 A-06/A-10/A-11, CR-11/12/18/19/20; diseño D-15; arquitectura/ADR D-17; datos D-19; acceso D-21; seguridad D-23; API D-25; frontend D-27; administración D-29; procesos D-31. Base GitHub 92a6dec.
+https://supabase.com/changelog.md
+https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes
+https://supabase.com/changelog/cbc-tls-ciphers-deprecated
+https://supabase.com/docs/guides/database/postgres/row-level-security.md
+Supabase CLI 2.122.0 --help; migration --help/new --help; db advisors --help; migration list --help. Migración creada por CLI; SQL probado en PostgreSQL efímero. No se aplica a Supabase remoto.
+
+npm view write-excel-file version/license/dependencies/engines: 4.1.1, MIT, Node >=18, fflate. README instalado: https://www.npmjs.com/package/write-excel-file
+npm view pdfkit version/license/engines: 0.20.2, MIT. README/licencia instalada: https://www.npmjs.com/package/pdfkit
+npm view dejavu-fonts-ttf version/license: 2.37.3, Bitstream Vera/Arev; cambios DejaVu dominio público. LICENSE del paquete consultado: https://www.npmjs.com/package/dejavu-fonts-ttf
+Versiones fijadas y package-lock.json actualizado. No se introduce SDK de identidad en navegador ni proveedor de correo.
+
+Seguridad revisada: contexto de sesión BFF vigente, nunca user_metadata/JWT obsoleto; pools Auth/negocio separados; RLS forzada en trabajos, sin grants a Data API; función de nombres privada sin login/BYPASSRLS y con contexto validado; no vistas nuevas ni Storage público. Pruebas negativas y advisors no operativo documentados.
+
+Alternativa inicial ExcelJS descartada antes de la entrega al encontrar avisos de dependencias; no está en package.json/lockfile finales. npm audit final: cero vulnerabilidades.

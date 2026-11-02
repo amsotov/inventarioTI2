@@ -47,3 +47,8 @@ D-25 acepta la entrega `6035e125617a2c8d6e366df49940b8d720f8d535` con sus límit
 ## Incremento de Fase 10 — 2026-11-02
 
 Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.
+
+
+## Incremento de Fase 11 — 2026-11-02
+
+Indicadores, cinco reportes/buscador y exportaciones privadas implementados. Contrato ejecutable en `apps/server/reports/routes.ts`; filtros, selección, privacidad, estados/límites y criterios en [REPORTES](REPORTES.md). Se añaden `/resumen`, `/reportes/{tipo}`, `/buscar`, `/auditoria` y `/exportaciones` con estado/descarga. OpenAPI Fase 7 conserva su superficie histórica. Las exclusiones de reportes en entregas anteriores son antecedentes; procesamiento de outbox/notificaciones sigue sin implementar. Sin Fase 12 ni despliegue.

@@ -1,4 +1,5 @@
 import { Processes, protectProcessNavigation } from "./processes";
+import { Reports, protectReportNavigation } from "./reports";
 import { Admin } from "./admin";
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
@@ -79,7 +80,7 @@ function App() {
   const generation = useRef(0);
   useEffect(() => {
     const change = () => {
-      if (protectProcessNavigation()) return;
+      if (protectProcessNavigation() || protectReportNavigation()) return;
       generation.current++;
       setView(route());
       setError("");
@@ -302,6 +303,7 @@ function App() {
         </div>
         <p>Control de bienes computacionales</p>
         <nav aria-label="Principal">
+          <a href="#resumen" aria-current={view==='resumen'?'page':undefined}>Resumen</a>
           {resources.map((r) => (
             <a
               key={r}
@@ -312,12 +314,13 @@ function App() {
             </a>
           ))}
         {canWrite && <a href="#administracion" aria-current={view==="administracion"?"page":undefined}>Administración</a>}
+          <a href="#reportes" aria-current={view==='reportes'?'page':undefined}>Reportes y buscador</a>
         </nav>
         <small>Inventario compartido · UTC</small>
       </aside>
       <main id="contenido">
         <header>
-          <span>Inventario / {view === "administracion" ? "Administración" : valid ? titles[resource] : "Acceso"}</span>
+          <span>Inventario / {view === 'resumen' ? 'Resumen' : view === 'reportes' ? 'Reportes' : view === "administracion" ? "Administración" : valid ? titles[resource] : "Acceso"}</span>
           {session && (
             <div>
               <span>
@@ -491,6 +494,8 @@ function App() {
               </button>
             </form>
           </section>
+        ) : view === 'resumen' || view === 'reportes' ? (
+          <Reports summary={view==='resumen'} admin={canWrite} csrf={session.csrf} onExpired={()=>setSession(null)}/>
         ) : view === "administracion" ? (
           canWrite ? <Admin csrf={session.csrf} onExpired={()=>{setSession(null);}}/> : <section className="card"><h1>Acceso restringido</h1><p>No tienes permiso para administrar.</p></section>
         ) : !valid ? (

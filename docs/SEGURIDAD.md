@@ -104,3 +104,8 @@ Fase 7 agrega pool empresarial separado y función privada guardar_bien, con rol
 ## Incremento de Fase 9 — 2026-11-01
 
 Panel de Fase 9: rol SQL privado inventario_admin sin propiedad/BYPASSRLS, RLS, principal vigente, MFA, CSRF/Origin, propia cuenta protegida, serialización SQL y revocación por versión. No DML directo de runtime ni grants públicos/remotos. Pruebas nuevas y límites en [ADMINISTRACION](ADMINISTRACION.md) y PRUEBAS; evidencia histórica conservada.
+
+
+## Incremento de Fase 11 — reportes y archivos
+
+Permisos existentes integrados: consulta compartida/historia, reportes.exportar y auditoria.consultar/exportar exclusivos de administración. RLS de trabajos por solicitante/rol, validación de sesión/cuenta/MFA vigente antes de generar, publicar bytes y descargar; revocación durante render no guarda archivo. Tabla privada, sin acceso Data API, sin caché pública ni enlaces de descarga externos. Proyecciones positivas A-10, diferencias de auditoría por lista positiva; fórmula Excel como String, PDF tabular con fuente fija y texto sin HTML/URLs activas. Worker sin credenciales/SQL, con límites de filas/bytes/memoria/tiempo; errores saneados. Función de nombres en esquema privado, contexto validado, propietario sin login/BYPASSRLS y grants acotados. Pruebas negativas de origen/CSRF/MFA/RLS/propietario y permisos revocados en `tests/api/reports.test.ts`. Detalles y limitaciones en [REPORTES](REPORTES.md). No se envían avisos ni se resuelve F1-SEG-01 por inferencia.

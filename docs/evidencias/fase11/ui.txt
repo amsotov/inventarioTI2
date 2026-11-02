@@ -1,0 +1,17 @@
+▶ Fase 11: navegador → reportes → exportador privado con datos sintéticos
+  ✔ indicadores reales y zona UTC aunque el navegador use Santiago (107.312785ms)
+  ✔ paginación, filtros, vacío, error y buscador de dos conjuntos (504.31362ms)
+  ✔ respuesta perdida tras commit: conserva clave y reintenta sin duplicar (1490.548977ms)
+  ✔ recuperar por referencia tras recarga y descargar PDF (1565.413176ms)
+  ✔ computador, iPad e iPhone emulados: tablas, teclado y capturas (548.235039ms)
+  ✔ administrador con MFA puede consultar y exportar auditoría (1890.915364ms)
+  ✔ revocación en descarga termina sesión y oculta datos (71.631587ms)
+✔ Fase 11: navegador → reportes → exportador privado con datos sintéticos (10100.626956ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10579.222018

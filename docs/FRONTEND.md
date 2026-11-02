@@ -48,3 +48,8 @@ Incremento Fase 9: navegación Administración, componente separado de panel, cu
 ## Incremento de Fase 10 — 2026-11-02
 
 Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.
+
+
+## Incremento de Fase 11 — 2026-11-02
+
+Navegación Resumen y Reportes/buscador, métricas reales, cinco informes/búsqueda combinada, filtros/días UTC, columnas/conteos/subtotales/paginación y exportación completa Excel/PDF. Trabajo privado consultable/recuperable por referencia; respuesta perdida conserva clave/payload y reintento exacto, sin localStorage. Estado/permisos y descarga se vuelven a validar en servidor. Auditoría solo se ofrece a administración. UI/teclado/capturas y limitaciones en [REPORTES](REPORTES.md). No se agregan alertas ficticias, procesamiento de outbox ni despliegue.

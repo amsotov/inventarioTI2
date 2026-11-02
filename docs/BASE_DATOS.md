@@ -130,3 +130,8 @@ Fase 9 añade migración aditiva `20261101020230_panel_administracion.sql`, gene
 ## Incremento de Fase 10 — 2026-11-02
 
 Funcionarios, pertenencias, custodia, estados e historia/correcciones implementados con migración aditiva y UI/API. Contrato ejecutable, archivos, criterios y límites en [PROCESOS_EMPRESARIALES](PROCESOS_EMPRESARIALES.md). Los límites de entregas anteriores son antecedentes; OpenAPI Fase 7 conserva su superficie histórica. Fase 10 EN_REVISION; fases 11–15 sin autorización, sin despliegue.
+
+
+## Persistencia de exportaciones — Fase 11
+
+Migración aditiva `20261102120248_indicadores_reportes_exportaciones.sql`: tabla privada `inventario.exportaciones`, solicitante+clave únicos, huella del tipo/formato/filtros normalizados, total, instantánea JSONB positiva, estado, intento/arrendamiento, archivo BYTEA privado y plazos. RLS forzada y sin grants a PUBLIC/anon/authenticated; solicitante vigente y rol administrativo si auditoría. Identidad/filtros/huella/conteo/plazos son inmutables; solo transiciones técnicas. No se alteran tablas ni historia aceptadas. Lectura para reportes REPEATABLE READ con contexto SQL LOCAL y UTC. Proyección interna `seguridad.nombre_actor` devuelve solo nombre autorizado del actor; no abre consulta de cuentas. Detalle/límites/limpieza diferida en [REPORTES](REPORTES.md). La cadena completa se prueba en PostgreSQL sintético, sin aplicar cambios remotos.

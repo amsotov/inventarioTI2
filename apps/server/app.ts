@@ -1,4 +1,6 @@
 import { processRoutes } from './processes/routes.js';
+import { reportRoutes } from './reports/routes.js';
+import { Reports } from './reports/service.js';
 import { adminRoutes } from './admin/routes.js';
 import type { Authorization } from './security/postgres.js';
 import Fastify from 'fastify';
@@ -53,6 +55,7 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
   if(security){
     adminRoutes(server,security,auth,sid,csrf);
     processRoutes(server,security,sid,csrf);
+    reportRoutes(server,new Reports(security),sid,csrf);
   }
   if(webRoot)webRoutes(server,webRoot);
   return server;

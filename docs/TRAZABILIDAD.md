@@ -129,3 +129,8 @@ HU-02/06/07: consultas, fichas, filtros y atributos de bienes con API disponible
 ## Incremento de Fase 9 — 2026-11-01
 
 Fase 9 EN_REVISION: RF-08/09/11 y HU-08/09/11 → cuentas, roles, propio registro/último administrador y revocación; RF-12/14 y HU-12/14 → auditoría atómica y destinatario/outbox pendiente; A-03/A-05 → catálogo de unidades. CR-15/16/18 con pruebas HTTP/SQL negativas/concurrentes; invitación/recuperación 24 h/30 min con identidad doble. RF-15 envío permanece Fase 12, no acreditado. Ver [ADMINISTRACION](ADMINISTRACION.md).
+
+
+## Incremento de Fase 11 — RF-06/07/13/16, HU-06/07/13/16
+
+CA11-01 → métricas actuales reproducibles, RF-13/HU-13; CA11-02 → cinco reportes/buscador con filtros, columnas, orden, totales y subtotales A-11, RF-06/07/16 y HU-06/07/16. CA11-03 → Excel/PDF completo, vacío y límites CR-19/20; CA11-04 → permisos/privacidad CR-18 y fechas/unidades CR-11/12, instantánea/idempotencia/revocación. CA11-05 → API/SQL/navegador/build y evidencia; CA11-06 pendiente de aceptación propia. Implementación y resultados en [REPORTES](REPORTES.md) y [PRUEBAS](PRUEBAS.md). RF-15/envío empresarial permanece Fase 12, sin iniciar.

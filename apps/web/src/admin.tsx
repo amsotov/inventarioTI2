@@ -140,6 +140,7 @@ export function Admin({
             disabled={busy || uncertain}
             aria-pressed={tab === t}
             onClick={() => {
+              setLoading(true);
               setTab(t);
               setCursor(null);
               setNotice("");

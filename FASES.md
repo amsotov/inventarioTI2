@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 10 — COMPLETADA; entrega y cierre aprobados por D-31.
+**Fase actual:** 11 — EN_REVISION; entrega implementada/verificada bajo D-31/D-32, aceptación propia pendiente.
 **Última fase completada:** 10.
-**Próxima fase:** 11 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 12–15:** PENDIENTE / NO OTORGADA.
+**Próxima fase:** 12 — PENDIENTE / NO OTORGADA. **Fases 12–15:** sin autorización; sin despliegue.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 autorizada para un nuevo chat, ejecución pendiente; fases 12–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 ejecutada bajo D-32 y entregada EN_REVISION; fases 12–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -21,7 +21,7 @@
 | 8 | Frontend funcional | Pantallas e integración con API | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-27 |
 | 9 | Panel de administración | Usuarios, permisos, catálogos y parámetros | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-29 |
 | 10 | Procesos y módulos empresariales | Casos de uso, estados y movimientos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-31 |
-| 11 | Indicadores, reportes y exportación | Dashboards, filtros, Excel/PDF | PENDIENTE | AUTORIZADA para un nuevo chat por D-31; ejecución no iniciada |
+| 11 | Indicadores, reportes y exportación | Dashboards, filtros, Excel/PDF | EN_REVISION | D-31/D-32 ejecutada; CA11-06 pendiente de aceptación propia |
 | 12 | Notificaciones y automatización | Eventos, alertas y tareas | PENDIENTE | NO OTORGADA |
 | 13 | QA, rendimiento y seguridad | Pruebas, regresión y accesibilidad | PENDIENTE | NO OTORGADA |
 | 14 | Despliegue, operación y continuidad | CI/CD, respaldo, restauración y monitoreo | PENDIENTE | NO OTORGADA |
@@ -426,3 +426,16 @@ Punto de inicio para el nuevo chat:
 6. Aislar generación de archivos, conservar selección consistente entre conteo y contenido, y vincular trabajo/archivo privado al solicitante con validación de permiso vigente al generar/descargar. Manejar estados, errores, caducidad técnica y reintentos sin duplicar trabajos ni exponer enlaces públicos. Cualquier procesamiento de exportaciones pertenece solo a Fase 11; no implementar procesamiento/envío de outbox ni automatizaciones de Fase 12 por dependencia. Revisar versiones/licencias y fijar dependencias/lockfile antes de usar generadores.
 7. Verificar cifras con datos fuente sintéticos, filtros/fechas/unidades, permisos negativos y revocados, paginación frente a exportación completa, límites exactos/superados/vacíos, inyección de fórmulas, privacidad de archivos y concurrencia/cambios durante generación. Probar UI/API y responsive/teclado según diseño aceptado; documentar mediciones y límites sin acreditar rendimiento por inferencia.
 8. Preservar evidencia/migraciones aceptadas y F1-SEG-01/02/03; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Sin Spec Kit, cuentas/datos reales, permisos remotos, gastos, producción o despliegues por inferencia. Actualizar documentación y GitHub, verificar SHA remoto y entregar Fase 11 para aceptación propia. No marcar COMPLETADA ni iniciar Fase 12 sin autorización independiente.
+
+
+## Ejecución de Fase 11 — entrega vigente (D-32)
+
+2026-11-02. Solicitud ratificada: «Inicia únicamente la Fase 11 de inventarioTI2, ya autorizada. Actualiza GitHub. No inicies Fase 12 ni despliegues». Base remota recuperada por avance directo `92a6dec`; árbol inicialmente limpio. Responsable: Codex; revisión/cierre: usuario. Plan presentado y ejecutado dentro de indicadores, cinco reportes/buscador y exportación privada; documentación detallada en [REPORTES](docs/REPORTES.md).
+
+- CA11-01 a CA11-05 verificados en el alcance sintético: indicadores desde fuente; columnas/orden/conteos/subtotales/filtros compartidos; UTC/unidades históricas; proyección positiva; XLSX/PDF completos, vacíos, límites exactos y excesos; trabajo durable por solicitante, reintentos, instantánea y revocación.
+- Verificación: build correcto, 85/85 pruebas API/seguridad, 32/32 navegador; revalidación adicional de 8/8 de Fase 11 tras ajustar anchura de tablas/capturas. Auditoría npm: 0 vulnerabilidades. Evidencia y mediciones locales en PRUEBAS/evidencias/fase11.
+- Se corrigió una transición del panel para no presentar filas de la pestaña anterior mientras carga; pruebas históricas ajustadas para localizar el formulario nuevo y no asumir qué referencia cae en primera página. Evidencia aceptada de fases previas conservada.
+- Límites: PostgreSQL local y proveedor de identidad doble; no Supabase gestionado/advisors operativos (54322 sin stack), dispositivos físicos/Safari, carga objetivo, correo ni continuidad productiva acreditados. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
+- CA11-06 PENDIENTE de aceptación expresa. Fase 11 EN_REVISION, no COMPLETADA. No se solicita ni inicia Fase 12 por inferencia. Fases 12–15 PENDIENTE / NO OTORGADA; sin despliegue, producción, datos reales, gastos o permisos remotos.
+
+Sincronización de esta entrega mediante commit/push normales a main, autoría noreply y comparación del SHA remoto al entregar.

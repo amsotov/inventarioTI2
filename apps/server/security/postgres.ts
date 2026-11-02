@@ -5,13 +5,14 @@ import { allowed, type Permission } from './policy.js';
 // Puerto interno: ningún SQL, permiso, contexto o callback proviene del cliente HTTP.
 export class Authorization {
   constructor(private auth: AuthService, private pool: Pool) {}
-  async run<T>(sid: string, permission: Permission, fn: (db: PoolClient) => Promise<T>, csrf?: string): Promise<T> {
+  async run<T>(sid: string, permission: Permission, fn: (db: PoolClient) => Promise<T>, csrf?: string, snapshot = false): Promise<T> {
     await assertDatabaseRole(this.pool,'inventario_runtime');
     return this.auth.withPrincipal(sid,csrf,async account=>{
       const c=await this.pool.connect();
 
       try {
-        await c.query('begin');
+        await c.query(snapshot ? 'begin isolation level repeatable read' : 'begin');
+        await c.query("set local timezone = 'UTC'");
         await c.query("select set_config('inventario.sesion',$1,true)",[hash(sid)]);
         const current=(await c.query('select * from seguridad.principal()')).rows[0];
         if(!current || current.actor_id!==account.id || current.rol!==account.rol) throw new AuthError(401,'SESSION_REQUIRED');

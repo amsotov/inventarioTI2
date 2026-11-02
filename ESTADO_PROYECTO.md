@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 10 — COMPLETADA; entrega y cierre aprobados por D-31.
+**Fase:** 11 — EN_REVISION; entrega bajo D-31/D-32, aceptación propia pendiente.
 **Modo:** GUIADO
 **Última fase completada:** 10.
-**Última fase autorizada:** 11, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 12–15 PENDIENTE / NO OTORGADA.
+**Última fase autorizada:** 11, ejecutada y EN_REVISION. Fases 12–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 10 aceptada y cerrada por D-31. Iniciar únicamente Fase 11 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad; no implementa Fase 11 ni despliega. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 11 implementada/verificada sobre `92a6dec`, entregada EN_REVISION. Indicadores, cinco reportes/buscador y Excel/PDF privados; 85 pruebas de API/seguridad y 32 de navegador superadas. Ver REPORTES/PRUEBAS y entrega vigente al final. Pendiente aceptación propia de Fase 11; no iniciar Fase 12 ni desplegar. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -417,3 +417,20 @@ Punto de inicio para el nuevo chat:
 6. Aislar generación de archivos, conservar selección consistente entre conteo y contenido, y vincular trabajo/archivo privado al solicitante con validación de permiso vigente al generar/descargar. Manejar estados, errores, caducidad técnica y reintentos sin duplicar trabajos ni exponer enlaces públicos. Cualquier procesamiento de exportaciones pertenece solo a Fase 11; no implementar procesamiento/envío de outbox ni automatizaciones de Fase 12 por dependencia. Revisar versiones/licencias y fijar dependencias/lockfile antes de usar generadores.
 7. Verificar cifras con datos fuente sintéticos, filtros/fechas/unidades, permisos negativos y revocados, paginación frente a exportación completa, límites exactos/superados/vacíos, inyección de fórmulas, privacidad de archivos y concurrencia/cambios durante generación. Probar UI/API y responsive/teclado según diseño aceptado; documentar mediciones y límites sin acreditar rendimiento por inferencia.
 8. Preservar evidencia/migraciones aceptadas y F1-SEG-01/02/03; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Sin Spec Kit, cuentas/datos reales, permisos remotos, gastos, producción o despliegues por inferencia. Actualizar documentación y GitHub, verificar SHA remoto y entregar Fase 11 para aceptación propia. No marcar COMPLETADA ni iniciar Fase 12 sin autorización independiente.
+
+
+## Entrega vigente de Fase 11 — 2026-11-02 (D-32)
+
+PROYECTO: inventarioTI2. FASE: 11 — Indicadores, reportes y exportación. ESTADO: EN_REVISION. OBJETIVO/ALCANCE: únicamente indicadores actuales verificables, cinco reportes y buscador combinado con filtros UTC y salidas Excel/PDF completas autorizadas. Usuario ratifica D-31 y exige GitHub; prohíbe Fase 12 y despliegue. No se repitió la solicitud de autorización.
+
+Trabajo comprobado: se recuperaron `888f8a2`/`92a6dec` por fast-forward sin reescribir historia. Métricas desde fuente; selección positiva común para UI/archivos; cinco reportes y dos conjuntos de buscador, orden/conteos/subtotales, días UTC inclusivos y unidades históricas. Consulta/exportación en REPEATABLE READ. RLS por solicitante y auditoría administrativa; trabajo/instantánea/archivo privados, claves durables, claim con arrendamiento, recuperación por consulta, caducidad de una hora, límites 10.000 XLSX/2.000 PDF y bytes/tiempo/memoria. Hilo sin credenciales, fórmula Excel como texto, PDF sin ejecutar HTML/URLs. Revocación durante generación impide guardar archivo; descarga vuelve a verificar permisos.
+
+UI: Resumen y Reportes/buscador con carga/vacío/error, filtros, paginación, trabajo/descarga/recuperación propia, reintento exacto tras respuesta perdida, teclado y emulación 1440/768/390. Pequeña corrección del panel: ocultar contenido anterior al cambiar pestaña. Pruebas antiguas corregidas para esperar el campo del formulario nuevo y filtrar explícitamente la referencia en ensayo responsive; sin alterar evidencia aceptada.
+
+Archivos: `apps/server/reports/*`, integración app/security, migración `20261102120248_indicadores_reportes_exportaciones.sql`, `apps/web/src/reports.tsx` e integración/estilos/mensajes/panel, package/lock/tsconfig, tests/api/reports, tests/ui/reports y soporte tests/helpers; documentación REPORTES, API/contratos/datos/seguridad/arquitectura/frontend/trazabilidad/manuales/fases/estado/decisiones/changelog/specs y evidencias/fase11. Spec Kit no instalado ni usado.
+
+Pruebas: `npm run build` correcto; `npm test` 85/85; `npm run test:ui` 32/32; 8/8 revalidadas en Fase 11 tras ajuste final de tabla/capturas; `npm audit --json` 0 vulnerabilidades; `git diff --check` y revisión documental. XLSX inspeccionado independientemente con Python/ZIP/XML (sin nodos fórmula) y PDF con pdftotext; ambos formatos de las seis salidas, límites/vacíos/permisos y revocación. Ensayo de 10.000 filas Excel 1.086 ms y 2.000 PDF 613 ms en loopback sintético; no prueba de capacidad objetivo ni red externa. Changelog Supabase/RLS y versiones/licencias de generadores contrastados. CLI creó migración; advisors/listado local no operativos por ausencia de stack en 54322, no presentados como superados. Cadena SQL completa aplicada en bases efímeras con y sin roles Data API.
+
+Riesgos/decisiones: limpieza física de archivos vencidos diferida a interacción autorizada; metadatos/idempotencia conservados. Pendientes Supabase/identidad/MFA gestionados, integración operativa/retención jurídica, hardware/Safari/accesibilidad completa, carga/infraestructura objetivo y continuidad productiva. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. No correo externo ni procesamiento de outbox, otras fases, datos reales, cambios remotos de permisos, gastos o despliegues.
+
+Siguiente acción: revisión y aceptación propia de Fase 11 (CA11-06 pendiente). Fases 12–15 PENDIENTE / NO OTORGADA. Sincronización mediante commit/push normales a main, autoría noreply y comprobación de SHA remoto antes de confirmar entrega.

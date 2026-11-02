@@ -212,7 +212,7 @@ test("Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad dob
           .getByRole("link", { name: "Nuevo bien", exact: true })
           .click();
         for (const [label, value] of Object.entries({
-          Código: "UI-001",
+          "Código *": "UI-001",
           Tipo: "Notebook",
           Marca: "Marca sintética",
           Modelo: "Modelo",
@@ -374,6 +374,8 @@ test("Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad dob
         "update inventario.bienes set modelo='Modelo editado' where codigo='UI-001'",
       );
       await page.reload();
+      await page.getByLabel("Buscar por código").fill("UI-001");
+      await page.getByRole("button", { name: "Aplicar filtros", exact: true }).click();
       await page.getByText("Modelo editado", { exact: true }).waitFor();
       for (const [name, width, height] of [
         ["computador", 1440, 900],

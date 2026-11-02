@@ -216,7 +216,7 @@ test("Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad dob
           .getByRole("link", { name: "Nuevo bien", exact: true })
           .click();
         for (const [label, value] of Object.entries({
-          Código: "UI-001",
+          "Código *": "UI-001",
           Tipo: "Notebook",
           Marca: "Marca sintética",
           Modelo: "Modelo",
@@ -449,7 +449,7 @@ test("Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad dob
           .getByRole("button", { name: "Catálogo de unidades", exact: true })
           .click();
         await page
-          .getByRole("table", { name: "Unidades registradas" })
+          .getByRole("status").filter({hasText:"Sin registros administrativos"})
           .waitFor();
         await page
           .getByLabel("Nombre", { exact: true })

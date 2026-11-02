@@ -1,0 +1,48 @@
+
+> inventarioti2@1.0.0 test:ui
+> tsx --test tests/ui/*.test.ts
+
+▶ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (272.343594ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (586.099558ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (163.988138ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (212.928192ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (228.875068ms)
+  ✔ paginación real y reinicio de cursor al filtrar (213.801055ms)
+  ✔ responsive computador/iPad/iPhone y teclado (201.046177ms)
+  ✔ panel: cuenta, catálogo, parámetros y responsive real (702.86278ms)
+  ✔ panel: respuesta perdida y replay sin duplicar evidencia (365.713394ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (119.154742ms)
+✔ Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (6958.314024ms)
+▶ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ sesión, lector, vacío y seguridad de assets (364.449508ms)
+  ✔ acceso MFA, alta persistida y edición con representación completa (523.839685ms)
+  ✔ respuesta perdida: replay explícito conserva clave y no duplica evidencia (156.755112ms)
+  ✔ conflicto concurrente 412 conserva edición y obliga a recargar (214.372332ms)
+  ✔ filtros, vacío, ficha y escape de contenido sin ejecutar HTML (243.348875ms)
+  ✔ paginación real y reinicio de cursor al filtrar (205.791624ms)
+  ✔ responsive computador/iPad/iPhone y teclado (293.508704ms)
+  ✔ errores 503 y expiración 401 al revocar cuenta (128.663757ms)
+✔ Fase 8: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (4622.236188ms)
+▶ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble)
+  ✔ alta de funcionario y cancelación sin persistencia (312.433629ms)
+  ✔ asignación y respuesta perdida con replay exacto (287.873895ms)
+  ✔ historia, devolución, corrección, responsive y teclado (576.281462ms)
+✔ Fase 10: navegador → BFF → RLS → PostgreSQL sintético (identidad doble) (4208.632642ms)
+▶ Fase 11: navegador → reportes → exportador privado con datos sintéticos
+  ✔ indicadores reales y zona UTC aunque el navegador use Santiago (159.867431ms)
+  ✔ paginación, filtros, vacío, error y buscador de dos conjuntos (517.566481ms)
+  ✔ respuesta perdida tras commit: conserva clave y reintenta sin duplicar (1497.917485ms)
+  ✔ recuperar por referencia tras recarga y descargar PDF (1548.837727ms)
+  ✔ computador, iPad e iPhone emulados: tablas, teclado y capturas (634.18338ms)
+  ✔ administrador con MFA puede consultar y exportar auditoría (1988.098811ms)
+  ✔ revocación en descarga termina sesión y oculta datos (71.02313ms)
+✔ Fase 11: navegador → reportes → exportador privado con datos sintéticos (10315.350472ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27764.335106

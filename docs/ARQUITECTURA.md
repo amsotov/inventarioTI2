@@ -151,3 +151,8 @@ Entregables relacionados: [ADR](adr/FASE3.md), [contratos](CONTRATOS_API.md), [e
 ## Aceptación posterior — D-17
 
 2026-10-31: «Apruebo y inicia fase 4 en un chat nuevo». Arquitectura, contratos y ADR aceptados como diseño; Fase 3 COMPLETADA. Las referencias a propuestas describen alternativas y detalles operativos sujetos a sus puertas: presupuesto no aprobado, horario/operador/ubicación no configurados y F1-SEG-01/02/03 abiertos. No se implementa ni contrata por esta aprobación. Fase 4 autorizada para un nuevo chat; fases 5–15 y despliegues sin autorización.
+
+
+## Concreción de ADR-005 — Fase 11
+
+Reportes/exportación implementados en [REPORTES](REPORTES.md): consulta/proyección positiva compartida, instantánea consistente persistida, cola privada por proceso con claim SQL/arrendamiento recuperable, render en hilo, archivos privados en PostgreSQL y descarga por BFF autenticado con permiso vigente. No se requiere servicio externo ni almacenamiento público. XLSX write-excel-file 4.1.1 y PDFKit 0.20.2, versiones/lockfile/licencias revisados; límites técnicos y de filas explícitos. Recuperación tras reinicio depende de consulta/replay del solicitante; no cron ni procesamiento de avisos. Rendimiento/infraestructura objetivo siguen sin acreditarse.

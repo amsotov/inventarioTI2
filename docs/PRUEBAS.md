@@ -284,3 +284,30 @@ Los primeros ensayos identificaron fallos de implementación/preparación, desbo
 ## Cierre documental de Fase 10 — 2026-11-02
 
 D-31 acepta la entrega `888f8a2dda2a851db291209299c24eb7eb6be381` y cumple CA10-06. Se conservan literalmente código, migraciones, tests y evidencia funcional anterior. Verificaciones de este cierre: diferencias y enlaces locales de documentos cambiados, estados de Fase 10 COMPLETADA y Fase 11 PENDIENTE/autorizada para un nuevo chat, fases 12–15 sin autorización, preservación del resto del árbol y `git diff --check`. No se repiten pruebas funcionales porque solo cambia documentación. No se modifica evidencia histórica para adaptarla al nuevo estado ni se implementa Fase 11. F1-SEG-01/02/03 y límites operativos permanecen abiertos; sin despliegue.
+
+
+## Fase 11 — 2026-11-02 · entrega EN_REVISION
+
+Entorno: Node 24.19.0, Docker 28.4.0, PostgreSQL 17 fijado por digest existente, Chromium local; bases efímeras y proveedor de identidad doble. Solo datos sintéticos; loopback HTTP en navegador (excepción Secure de Chromium), no TLS/servicio externo real. Consola sin errores en recorridos de Fase 11. Alcance y CA11 en [REPORTES](REPORTES.md).
+
+| Verificación | Resultado / evidencia |
+|---|---|
+| `npm run build` | Correcto; TypeScript servidor/UI y Vite; [build](evidencias/fase11/build.txt) |
+| `npm test` | 85/85, cero omitidas/fallidas; [regresión API/seguridad](evidencias/fase11/regresion.txt) |
+| `npm run test:ui` | 32/32, cero omitidas/fallidas; [regresión navegador](evidencias/fase11/regresion-ui.txt) |
+| `npx tsx --test tests/ui/reports.test.ts` | Revalidación final 8/8 tras ancho de tabla/capturas; [UI](evidencias/fase11/ui.txt) |
+| `npm audit --json` | Cero vulnerabilidades; [audit](evidencias/fase11/audit.json) |
+| Migraciones | Cadena completa aplicada en cada PostgreSQL sintético, incluidas bases sin roles anon/authenticated. Archivo nuevo creado mediante CLI 2.122.0; advisors/listado local sin stack 54322, [diagnóstico](evidencias/fase11/advisors.txt), no verificación gestionada superada |
+| Revisión documental y diff | Estados vigentes, alcance, enlaces/archivos y ausencia de inicio de fases 12–15; [revisión](evidencias/fase11/documentos.txt) |
+
+Se verifican métricas frente a consultas de fuente; columnas/orden/conteos/subtotales de cinco reportes y buscador; unidad actual frente a unidades históricas renombradas; fechas UTC de comienzo/final/día siguiente, adquisición nula y rangos inválidos. XLSX completo contrastado celda a celda con pantalla/API por ZIP/XML/Python, sin nodos fórmula; PDF extraído con pdftotext, texto extenso continuado, URLs/HTML sin ejecución. Vacío con metadatos/cabeceras; 10.000 filas XLSX y 2.000 PDF admitidas y excesos/suma del buscador rechazados, sin truncamiento. Muestra PDF inspeccionada visualmente: [archivo sintético](evidencias/fase11/inventario-muestra.pdf).
+
+Permisos/seguridad: sesión/MFA/Origin/CSRF, auditoría administrativa, datos personales excluidos, propietario ajeno 404, RLS sin contexto, anon/authenticated sin permisos; replay concurrente durable/payload distinto, instantánea frente a cambios durante generación, fallo saneado/recuperación de arrendamiento, TTL y limpieza técnica, revocación durante render sin guardar archivo y revocación administrativa después de generar. Outbox continúa pendiente: ningún aviso enviado.
+
+UI real: resumen, filtros/búsqueda, paginación y exportación completa, estados vacío/error, respuesta perdida después de commit y reintento sin duplicación, recuperación propia tras recarga, ambos formatos, auditoría con MFA y expiración al revocar. Teclado en tablas desplazables y emulación [computador](evidencias/fase11/computador.png), [iPad](evidencias/fase11/ipad.png), [iPhone](evidencias/fase11/iphone.png). Se conservaron imágenes/evidencias históricas aceptadas de otras fases.
+
+Fallos iniciales resueltos: migración no asumirá roles Data API en PostgreSQL puro; etiqueta accesible del selector de reporte; expectativas correctas de sesión parcial rotada/cierre de acceso; selectores de regresión no confunden código del formulario con buscador y no presumen qué registro cae en página 1; al cambiar pestaña administrativa se ocultan filas anteriores mientras carga. Se ejecutó de nuevo la verificación afectada hasta pasar; los logs enlazados son del resultado final.
+
+Medición local, muestra sintética simple: XLSX 10.000 filas 1.086 ms, PDF 2.000 filas 613 ms, desde solicitud a descarga/inspección en loopback. No acredita rendimiento bajo carga, red externa ni objetivo ≤60 s en infraestructura objetivo; sin muestra completa CA-N07. Changelog Supabase/documentación RLS y paquetes/licencias consultados: [fuentes](evidencias/fase11/fuentes.txt).
+
+No ejecutado/acreditado: Supabase gestionado/identidad/MFA externos, advisors operativos sin stack, hardware/Safari, lector de pantalla/conformidad WCAG completa, apertura física en Excel/Acrobat, carga/continuidad productiva. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Fase 11 EN_REVISION; CA11-06 pendiente de aceptación propia. Sin Fase 12 ni despliegue.

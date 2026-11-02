@@ -30,6 +30,11 @@ export function message(e: unknown): string {
   if (!(e instanceof ApiError))
     return "Servicio no disponible. Comprueba la conexión y vuelve a consultar.";
   const specific: Record<string, string> = {
+    EXPORT_LIMIT: "El conjunto supera el límite del formato. Acota los filtros y solicita una nueva exportación.",
+    EXPORT_SIZE: "El contenido supera el tamaño de exportación. Acota los filtros.",
+    EXPORT_BUSY: "Hay demasiadas exportaciones recientes. Espera antes de volver a intentar.",
+    EXPORT_EXPIRED: "El archivo caducó. Solicita una nueva exportación.",
+    EXPORT_NOT_READY: "El archivo aún no está listo para descargar.",
     SELF_PROTECTED:
       "Tu propia cuenta está protegida. Solicita el cambio a otro administrador.",
     LAST_ADMIN:

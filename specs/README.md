@@ -60,3 +60,8 @@ Funcionarios, pertenencias, custodia, estados e historia/correcciones implementa
 
 
 Punto vigente — D-31: Fase 10 COMPLETADA, CA10-06 cumplido. Fase 11 autorizada para iniciar en un nuevo chat; ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md), [PROCESOS_EMPRESARIALES](../docs/PROCESOS_EMPRESARIALES.md) y A-06/A-10/A-11 de [CIERRE_FASE1](../docs/CIERRE_FASE1.md). Fases 12–15 sin autorización; sin implementación de Fase 11, despliegue ni instalación de Spec Kit en este cierre. Las menciones EN_REVISION anteriores son antecedentes.
+
+
+## Incremento de Fase 11 — 2026-11-02
+
+Especificación/contrato, métricas, columnas, filtros, estados, límites y CA11-01 a CA11-06 en [REPORTES](../docs/REPORTES.md); esquema ejecutable `apps/server/reports/routes.ts` y migración aditiva de exportaciones. Se conserva la metodología existente: Spec Kit no instalado ni simulado. Fases 12–15 sin autorización, sin despliegue.

@@ -158,3 +158,9 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`; Fase 12 COMPLETADA y CA12-06 CUMPLIDO.
 - Fase 13 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Punto de inicio en FASES/ESTADO, sin ejecutar QA en este cierre.
 - Se preservan código, migraciones, dependencias, pruebas/evidencias y límites operativos; correo real deshabilitado, Fases 14–15 sin autorización, sin producción ni despliegue.
+
+
+## 2026-11-02 — Ajuste CI y bloqueo Pages heredado de Fase 14
+
+- Runner instala poppler-utils para las pruebas PDF existentes; primer CI remoto FAIL por prerrequisito ausente preservado.
+- Pages legacy main:/docs detectado y run cancelado antes del job deploy; siguientes cambios por rama/PR sin merge. Configuración y sitio previo intactos. Sin Fase 15 ni producción.

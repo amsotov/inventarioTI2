@@ -533,3 +533,10 @@ Entregables: [plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [
 Comandos/resultados/límites en [PRUEBAS](docs/PRUEBAS.md#fase-14--operación-y-continuidad) y [evidencias](docs/evidencias/fase14/). Ensayos iniciales y correcciones se registran sin ocultar fallos. Sin backup gestionado/Auth/MFA real, almacén/retención externos, proxy/TLS ni rollback de artefacto en plataforma acreditados. F1-SEG-01/02/03 siguen abiertos. No hay operador/suplente, día/hora UTC, destino/custodia/canal aprobados ni presupuesto informado. No fijar domingo 02:00 UTC como aceptado.
 
 Fase 14 EN_REVISION, CA14-06 PENDIENTE; última completada 13. Producción no autorizada; Fase 15 sin iniciar. Siguiente acción: revisión/aceptación propia de entrega con límites y resolución de pendientes operativos. Ninguna autorización futura se presume. Todos los cambios se sincronizan en amsotov/inventarioTI2, main, con commit/push normal y SHA remoto comprobado.
+
+
+### Sincronización y control de publicación — Fase 14
+
+Entrega inicial en main `82d8ad69cbbf24495b893cfd9fa6eeb9cee5e6cf`, SHA remoto comprobado. CI inicial [41473084240](https://github.com/amsotov/inventarioTI2/actions/runs/41473084240) FAIL por ausencia de pdftotext en runner; se prepara corrección de instalación de poppler-utils en rama phase14/ci-prerequisites-and-pages-guard y PR, sin modificar pruebas.
+
+Se detectó Pages legacy main:/docs activo fuera del árbol. Run [41473076891](https://github.com/amsotov/inventarioTI2/actions/runs/41473076891) cancelado por API, deploy CANCELLED sin ejecución; build sí terminó. No se eliminó/configuró el sitio previo. Con la prohibición de producción, no hacer nuevos pushes/merges a main hasta resolver expresamente el automatismo externo. Corrección y evidencia posterior se entregan en rama/PR sin merge. Estado vigente EN_REVISION; CA14-06 y F1-SEG-01/02/03 pendientes, Fase 15 sin autorización.

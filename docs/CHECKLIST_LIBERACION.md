@@ -12,6 +12,7 @@ Cada fila exige estado PASS/FAIL/BLOCKED/NOT_EXECUTED, UTC, responsable y eviden
 | F1-SEG-03 | Operador/suplente, horario UTC, almacén externo, claves, alertas/canal/cobertura | BLOCKED |
 | Commit/paquete | SHA remoto, árbol limpio, artefactos actual/anterior y hashes/versiones/migraciones | Build local; SHA GitHub se verifica al entregar; release gestionado NOT_EXECUTED |
 | CI/seguridad | Run PASS del SHA exacto, dependencias/pruebas pertinentes, sin secretos | CI preparado sin deploy; resultado remoto solo al observarlo |
+| Automatismos externos al repo | Inspeccionar Pages/configuración del proveedor/runs/despliegues antes de push/merge | BLOCKED: Pages legacy main:/docs activo; run disparado cancelado, job deploy CANCELLED. Ajustes posteriores solo rama/PR sin merge |
 | Aislamiento | DB/Auth/origen/secretos separados, mínimo privilegio, worker off, TLS verificado | PASS fixture; gestionado NOT_EXECUTED |
 | Migración | Inventario/ledger/hash/copia previa, compatibilidad y errores fatales | PASS ensayo DDL atómico; gestionado NOT_EXECUTED |
 | Salud/monitoreo | Live/ready y smoke autenticado; proxy/CSRF/MFA/rate limit; alerta recibida | PASS sondas/logs locales; proxy/colector/alertas NOT_EXECUTED |

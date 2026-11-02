@@ -534,3 +534,10 @@ Verificación de este cierre: únicamente documentación; revisión de estados/C
 CA14-01–05 conservan alcance local/parcial: sin staging/Auth gestionados, copia externa/retención operativa ni rollback de plataforma acreditados. CA14-06 PENDIENTE. Fase 14 EN_REVISION, última completada 13; no aceptar/cerrar por inferencia. F1-SEG-01/02/03 ABIERTOS; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Fase 15 PENDIENTE / NO OTORGADA. Sin producción, datos/cuentas reales, permisos remotos, gasto ni correo real.
 
 Siguiente paso: revisión de esta entrega y decisiones operativas pendientes; solo tras destino/recursos autorizados completar ensayos gestionados. Producción requiere permiso propio. Actualización GitHub por commit/push normal con autoría noreply y comprobación SHA remoto al entregar.
+
+
+### Sincronización y control de publicación — Fase 14
+
+Entrega inicial en main `82d8ad69cbbf24495b893cfd9fa6eeb9cee5e6cf`, SHA remoto comprobado. CI inicial [41473084240](https://github.com/amsotov/inventarioTI2/actions/runs/41473084240) FAIL por ausencia de pdftotext en runner; se prepara corrección de instalación de poppler-utils en rama phase14/ci-prerequisites-and-pages-guard y PR, sin modificar pruebas.
+
+Se detectó Pages legacy main:/docs activo fuera del árbol. Run [41473076891](https://github.com/amsotov/inventarioTI2/actions/runs/41473076891) cancelado por API, deploy CANCELLED sin ejecución; build sí terminó. No se eliminó/configuró el sitio previo. Con la prohibición de producción, no hacer nuevos pushes/merges a main hasta resolver expresamente el automatismo externo. Corrección y evidencia posterior se entregan en rama/PR sin merge. Estado vigente EN_REVISION; CA14-06 y F1-SEG-01/02/03 pendientes, Fase 15 sin autorización.

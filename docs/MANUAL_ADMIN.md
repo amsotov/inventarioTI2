@@ -1,6 +1,6 @@
 # Manual de administración
 
-2026-11-02 · Consolidación de Fase 15 **EN_REVISION**. Solo para administrador con sesión/MFA vigentes. [Manual de usuario](MANUAL_USUARIO.md) cubre acceso, bienes, funcionarios y procesos; [SOPORTE](SOPORTE_MANTENIMIENTO.md), [CAPACITACION](CAPACITACION.md) y [ROADMAP](ROADMAP.md) completan la entrega. Este manual no concede permisos nuevos ni acredita operación gestionada.
+2026-11-02 · Consolidación de Fase 15 **COMPLETADA por D-41**. Solo para administrador con sesión/MFA vigentes. [Manual de usuario](MANUAL_USUARIO.md) cubre acceso, bienes, funcionarios y procesos; [SOPORTE](SOPORTE_MANTENIMIENTO.md), [CAPACITACION](CAPACITACION.md) y [ROADMAP](ROADMAP.md) completan la entrega. Este manual no concede permisos nuevos ni acredita operación gestionada.
 
 ## Preparación y límites de administración
 
@@ -22,7 +22,7 @@ Entrega de Fase 9 aceptada por D-29; instrucciones limitadas al panel implementa
 6. En **Catálogo de unidades**, crea o edita nombre y estado. Desactivar conserva referencias; futuras pertenencias no admiten unidad inactiva. No se crean movimientos desde este panel.
 7. Para descartar el formulario, usa **Cancelar**. Ante 412, recarga la administración y revisa datos actuales. Ante resultado incierto, mantén la página y usa **Reintentar operación** con la clave original; antes de abandonar/cerrar sesión, concilia con el responsable. No repitas como un alta nueva.
 
-Las listas se paginan de 50 en 50. El panel no cambia correo de cuenta, permisos arbitrarios, UTC ni respaldo operativo, no crea el primer administrador y no despacha outbox. Los objetivos de respaldo semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días aún requieren configuración y verificación operativa independiente. Las fases 0–14 están aceptadas; Fase 15 EN_REVISION, sin despliegue.
+Las listas se paginan de 50 en 50. El panel no cambia correo de cuenta, permisos arbitrarios, UTC ni respaldo operativo, no crea el primer administrador y no despacha outbox. Los objetivos de respaldo semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días aún requieren configuración y verificación operativa independiente. Las fases 0–14 están aceptadas; Fase 15 COMPLETADA por D-41, sin despliegue.
 
 
 ## Reporte de auditoría y exportación privada — Fase 11
@@ -47,3 +47,7 @@ MFA perdido, credencial bloqueada por operación incierta o problema del proveed
 Las revisiones diarias de salud, recursos, copias y colas, incidentes, recuperación y rollback se rigen por el [runbook](RUNBOOK_OPERACION.md) y [checklist](CHECKLIST_LIBERACION.md). Los responsables reales, canal y horario de respaldo siguen sin aprobar. F1-SEG-01/02/03 permanecen abiertos; no hay purga de historia/auditoría ni plazos legales inventados. Una restauración real no es una función del panel.
 
 No cambiar configuración Pages ni escribir/mergear main: Pages legacy main:/docs puede publicar. No activar worker ni enviar correo real por seguir este manual. Las comprobaciones locales, la aceptación de Fase 14 y esta entrega documental no acreditan operación productiva, integración gestionada, recuperación integral, retención externa o capacitación realizada. Consultar [Fase 15](FASE15.md) para criterios y pendientes de revisión.
+
+## Bootstrap y pruebas locales — D-41
+
+El controlador específico de [PRUEBAS_LOCALES](PRUEBAS_LOCALES.md) aprovisiona cuentas/identidad **solo sintéticas** en recursos propios del ensayo autorizado; no añade bootstrap público a la UI ni cambia main.ts. Credenciales aleatorias fuera de Git; administrador interactivo configura MFA y las cuentas smoke tienen identidad distinta. No usar este procedimiento en servicio gestionado/productivo ni borrar work/ o volúmenes para resolver un error.

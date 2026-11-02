@@ -1,6 +1,6 @@
 # Registro de decisiones y riesgos
 
-**Estado vigente (2026-11-02):** Fase 15 EN_REVISION bajo D-39/D-40; CA15-06 PENDIENTE, última completada 14. [Entrega y criterios](FASE15.md). Las secciones y estados anteriores son antecedentes de su fecha; no autorizan acciones adicionales.
+**Estado vigente (2026-11-02):** Fase 15 COMPLETADA por D-41; CA15-06 CUMPLIDO, última completada 15. Pruebas locales adicionales autorizadas solo en este entorno; producción/merge siguen bloqueados. [Entrega y criterios](FASE15.md). Las secciones y estados anteriores son antecedentes de su fecha; no autorizan acciones adicionales.
 
 ## Estado vigente de decisiones
 
@@ -215,3 +215,9 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 2026-11-02. El usuario ratifica D-39: «nicia únicamente la Fase 15 de inventarioTI2, ya autorizada por D-39. Recupera la rama del PR #1, lee FASES.md y ESTADO_PROYECTO.md y presenta el plan de documentación, capacitación y evolución. Actualiza GitHub sin merge a main ni despliegue a producción». Se recupera base `5632391` del PR y se ejecuta únicamente la entrega documental: manuales, instalación/onboarding, soporte/mantenimiento, capacitación propuesta, roadmap/deuda y estado. Plan/CA15 en [FASE15](FASE15.md); evidencia técnica en PRUEBAS.
 
 Fase 15 EN_REVISION, CA15-06 PENDIENTE; no atribuye aceptación ni cierre final del sistema. Capacitación y validación por nuevo desarrollador NO REALIZADAS; reproducción técnica local no las sustituye. No se inventan personas, fechas, presupuesto, políticas legales o servicios. Roadmap es propuesta, no autorización de implementación. F1-SEG-01/02/03 y objetivos de continuidad intactos. PR #1 en borrador, sin merge por Pages; sin envío real, cuentas/datos reales, gasto, permisos remotos, publicación ni producción. D-39 conserva el cierre aceptado de Fase 14 y su evidencia sin alteración.
+
+## D-41 — Aceptación de Fase 15 y publicación local para pruebas
+
+2026-11-02. Evidencia literal: «apruebo fase 15 en nuevo indicame los pendientes y publica el sistema inventarioTI2 en servidor local para pruebas». El usuario aclara destino: «En este entorno de trabajo». Acepta la entrega `a9a0742b0f70ff026d36588f96475cca59c4c3f7`; CA15-06 CUMPLIDO, Fase 15 COMPLETADA con límites documentados. Autoriza adicionalmente informar pendientes y poner en marcha el sistema local sintético, no una nueva fase genérica ni producción.
+
+Instancia en loopback HTTPS, DB/Auth locales reales y datos/cuentas de prueba aleatorios, con MFA y permisos vigentes; no se usan identidades/datos reales ni se activa correo. Guía/continuidad en [PRUEBAS_LOCALES](PRUEBAS_LOCALES.md). No se crea nuevo chat automáticamente. Se conservan F1-SEG-01/02/03, requisitos UTC/semanal/168 h/8 h/30 días y validaciones gestionadas/humanas pendientes. D-41 prevalece sobre estados EN_REVISION anteriores de D-40 sin reescribir evidencia. No autoriza merge a main/Pages, publicación externa, producción, gasto ni permisos remotos.

@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-02",
+  "acceptance": "D-41; Fase 15 COMPLETADA; CA15-06 CUMPLIDO",
+  "accepted_documentation_base": "a9a0742b0f70ff026d36588f96475cca59c4c3f7",
+  "local_url": "https://localhost:8443",
+  "local_only": true,
+  "production": false,
+  "real_email": false,
+  "local_smoke_groups_passed": 12,
+  "restart_preserves_data_accounts_keys": true,
+  "local_links": 580,
+  "broken_links": [],
+  "preserved_base_files": 240,
+  "preserved_accepted_evidence_files": 132,
+  "application_migrations_dependencies_workflow_tests": "unchanged Git blobs against accepted base",
+  "new_scripts": {
+    "control.mjs": "ebefc4fcb60088e697618a820449940167642ae055550605ad46c19522a6760c",
+    "serve.mjs": "2bb204f8c3d8db9e1934c13b236418a3c0b721902d513ad58625e4cfdc877293",
+    "verify.mjs": "68395f0f25d75032f284b16d06fd469bf8ed89221e677e20fc6b4d344da68666"
+  },
+  "syntax_diff_scope_states": "PASS",
+  "generated_credentials_in_delivery": "none; compared without disclosure",
+  "heuristic_secret_patterns": "no matches; limited detection",
+  "private_state_gitignored": true,
+  "historical_checks": "preserved, not rerun/relabelled",
+  "remote_delivery": "SHA verified separately after synchronization"
+}

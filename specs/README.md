@@ -104,3 +104,7 @@ Fase 14 COMPLETADA y CA14-06 CUMPLIDO; entrega aceptada `da1ac91`, con límites 
 ## Entrega vigente — Fase 15 (D-40)
 
 Fase 15 EN_REVISION; CA15-06 PENDIENTE, última completada 14. [Plan/criterios](../docs/FASE15.md), manuales, [instalación/onboarding](../docs/INSTALACION_DESARROLLO.md), [capacitación propuesta](../docs/CAPACITACION.md), [soporte](../docs/SOPORTE_MANTENIMIENTO.md) y [roadmap/deuda](../docs/ROADMAP.md). Se reutiliza documentación existente sin duplicar especificaciones ni instalar Spec Kit. Reproducción técnica local no equivale a capacitación o evaluación humana realizadas. PR #1 en borrador, rama segura sin merge a main por Pages; producción y F1-SEG-01/02/03 siguen bloqueados. Los registros previos son antecedentes.
+
+## Cierre de Fase 15 y pruebas locales — D-41
+
+Fase 15 COMPLETADA por aceptación de `a9a0742`, CA15-06 CUMPLIDO; Fases 0–15 aceptadas. [Sistema local, pendientes y continuidad](../docs/PRUEBAS_LOCALES.md): D-41 autoriza solo esta instancia sintética en el entorno de trabajo, con Auth local real/MFA y sin correo. No se instala Spec Kit ni se inicia Fase 16. PR #1 sigue en borrador/sin merge por Pages, sin producción ni cierre de F1-SEG-01/02/03. Evidencia previa se conserva como histórica.

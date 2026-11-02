@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-02 — Fase 15 aprobada y sistema local de pruebas (D-41)
+
+- Usuario acepta `a9a0742`; CA15-06 CUMPLIDO y Fases 0–15 COMPLETADAS con pendientes conservados.
+- Autoriza sistema local en este entorno: controlador/gateway TLS, PostgreSQL y Auth locales reales, bootstrap sintético con claves aleatorias fuera de Git y MFA administrativo, worker deshabilitado.
+- Inicio/detención con almacenamiento persistente; smoke de 12 grupos y reinicio verificados, fallos iniciales de red/espacio registrados. Guía de acceso, pendientes y continuidad para otro chat.
+- Aplicación/migraciones/dependencias/tests/evidencia aceptada intactos; sin merge/main/Pages, producción, correo real, gasto o permisos remotos. Capacitación/hardware/gestión real y F1-SEG-01/02/03 siguen pendientes.
+
 ## 2026-11-02 — Fase 15: documentación, capacitación y evolución (EN_REVISION)
 
 - D-40 ratifica D-39; manuales de ambos roles completados y README como entrada vigente, conservando antecedentes.

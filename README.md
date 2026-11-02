@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): **Fase 15 EN_REVISION**, documentación, capacitación propuesta y evolución bajo D-39/D-40. Fases 0–14 aceptadas; última completada 14. **CA15-06 PENDIENTE**: esta entrega no presume cierre final. [Plan y criterios](docs/FASE15.md) · [FASES](FASES.md) · [ESTADO](ESTADO_PROYECTO.md) · [CHANGELOG](CHANGELOG.md).
+Estado vigente (2026-11-02): **Fases 0–15 COMPLETADAS y aceptadas**, cierre D-41 de la entrega `a9a0742`; **CA15-06 CUMPLIDO** con límites conservados. D-41 autoriza instancia local sintética de pruebas en este entorno: [acceso, comandos y pendientes](docs/PRUEBAS_LOCALES.md). [Plan y criterios](docs/FASE15.md) · [FASES](FASES.md) · [ESTADO](ESTADO_PROYECTO.md) · [CHANGELOG](CHANGELOG.md).
 
 Aplicación React/TypeScript con BFF Node, PostgreSQL y adaptador Supabase Auth; inventario compartido con dos roles, funcionarios/custodias/historia, administración, reportes/exportación privada y avisos. La implementación aceptada se ha verificado con entornos sintéticos locales; operación gestionada y producción siguen pendientes. **Correo real deshabilitado.** No hay cuenta por defecto ni URL productiva habilitada por esta entrega.
 
@@ -16,6 +16,10 @@ Aplicación React/TypeScript con BFF Node, PostgreSQL y adaptador Supabase Auth;
 | Priorizar pendientes y evolución | [Roadmap y deuda](docs/ROADMAP.md); propuestas SIN IMPLEMENTAR |
 | Revisar requisitos y diseño | [Cierre Fase 1](docs/CIERRE_FASE1.md), [trazabilidad](docs/TRAZABILIDAD.md), [arquitectura](docs/ARQUITECTURA.md), [seguridad](docs/SEGURIDAD.md) |
 | Examinar evidencia y operación | [Pruebas](docs/PRUEBAS.md), [plan operativo](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist NO-GO](docs/CHECKLIST_LIBERACION.md) |
+
+## Servidor local funcional — D-41
+
+Instancia activa en `https://localhost:8443` **dentro de este entorno**: UI/BFF compilados, PostgreSQL y Auth locales reales, TLS, MFA y cuentas/datos sintéticos. No es una URL pública ni el localhost del equipo personal. [Guía de acceso/certificado/credenciales/inicio/detención](docs/PRUEBAS_LOCALES.md). Correo real deshabilitado; estado privado bajo work/, sin contraseñas en GitHub. Para retomar: `node ops/local/control.mjs status`; no borrar/reinicializar volúmenes.
 
 ## Verificación local de entrada
 
@@ -33,7 +37,7 @@ La [guía](docs/INSTALACION_DESARROLLO.md) explica herramientas PDF, imágenes, 
 
 F1-SEG-01 (retención legal antes de datos reales), F1-SEG-02 (presupuesto/recursos) y F1-SEG-03 (operador/custodia/horario/alertas de respaldo) siguen abiertos. UTC, copia semanal/máximo 168 h/RPO ≤168 h/RTO ≤8 h/copias 30 días conservados. Integraciones gestionadas, continuidad integral, hardware/Safari, accesibilidad completa, capacitación y validación humana nueva conservan sus pendientes.
 
-**GitHub:** PR #1 en borrador y sin merge. Pages legacy `main:/docs` sigue activo fuera del árbol: no hacer push/merge a main bajo prohibición de publicación. Verify only no despliega. Esta entrega no cambia esa configuración ni autoriza publicación, producción, correo real, cuentas/datos reales, gastos o permisos remotos. La siguiente acción es revisión propia de Fase 15; roadmap y aceptación documental no conceden permisos de operación.
+**GitHub:** PR #1 en borrador y sin merge. Pages legacy `main:/docs` sigue activo fuera del árbol: no hacer push/merge a main bajo prohibición de publicación. Verify only no despliega. Esta entrega no cambia esa configuración ni autoriza publicación, producción, correo real, cuentas/datos reales, gastos o permisos remotos. La siguiente acción es probar la instancia local autorizada por D-41; el roadmap y la aceptación documental no autorizan evolución adicional ni operación productiva.
 
 ## Antecedentes conservados
 

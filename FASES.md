@@ -2,13 +2,13 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 15 — EN_REVISION; documentación, capacitación propuesta y evolución entregadas bajo D-39/D-40; CA15-06 PENDIENTE.
-**Última fase completada:** 14.
-**Siguiente hito:** revisión/aceptación propia de Fase 15; no hay otra fase autorizada. Producción, publicación y merge requieren decisión independiente; bloqueo Pages conservado. [Plan/criterios CA15](docs/FASE15.md).
+**Fase actual:** 15 — COMPLETADA por aceptación D-41 de la entrega `a9a0742`; CA15-06 CUMPLIDO. Sistema local de pruebas autorizado y preparado en este entorno; [acceso/pendientes](docs/PRUEBAS_LOCALES.md).
+**Última fase completada:** 15, por D-41; aceptación con límites y pendientes conservados.
+**Siguiente hito:** pruebas del usuario en servidor local sintético; no existe Fase 16 autorizada. D-41 autoriza solo publicación local en este entorno, sin publicación externa/producción ni merge a main; bloqueo Pages conservado. [Cierre/criterios CA15](docs/FASE15.md).
 
-**Entrega vigente:** [Fase 15](docs/FASE15.md) en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), en borrador/sin merge; base recuperada `5632391`, main `82d8ad6` solo en lectura. Automatismo heredado Pages main:/docs activo: run cancelado antes de deploy. No más pushes/merges a main bajo prohibición de publicación hasta resolverlo.
+**Entrega vigente:** Fase 15 aceptada (`a9a0742`) y sistema local D-41 en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; main `82d8ad6` solo en lectura. Automatismo heredado Pages main:/docs activo: no más pushes/merges a main bajo prohibición de publicación externa hasta resolverlo. [Instancia local y continuidad](docs/PRUEBAS_LOCALES.md).
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 completada por D-39 con sus límites; CA14-06 CUMPLIDO, última completada 14; Fase 15 ahora ejecutada EN_REVISION por D-40, CA15-06 PENDIENTE. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 completada por D-39 con sus límites; CA14-06 CUMPLIDO; Fase 15 completada por D-41, CA15-06 CUMPLIDO; pruebas locales autorizadas con pendientes conservados. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -27,7 +27,7 @@
 | 12 | Notificaciones y automatización | Catálogo, outbox, reintentos y seguimiento | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-35 |
 | 13 | QA, rendimiento y seguridad | Matriz, regresión, carga, accesibilidad, seguridad y defectos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-37 |
 | 14 | Despliegue, operación y continuidad | CI, runbook, salud/logs, copia/restauración sintéticas | COMPLETADA | Entrega/cierre APROBADOS por usuario el 2026-11-02; D-39; límites gestionados conservados |
-| 15 | Documentación, capacitación y evolución | Manuales, onboarding, soporte, capacitación propuesta y roadmap | EN_REVISION | Ejecución D-39/D-40; aceptación de entrega CA15-06 PENDIENTE |
+| 15 | Documentación, capacitación y evolución | Manuales, onboarding, soporte, capacitación propuesta y roadmap | COMPLETADA | Entrega `a9a0742` aceptada por D-41; CA15-06 CUMPLIDO; sesiones reales/pendientes conservados |
 
 ## Registro de aprobación y ejecución
 
@@ -575,3 +575,11 @@ Entregables y CA15-01 a CA15-06 en [FASE15](docs/FASE15.md); comandos/resultados
 Fase 15 **EN_REVISION**, CA15-06 **PENDIENTE**, última completada 14; no declarar cierre final ni autorizar otra fase. F1-SEG-01/02/03 ABIERTOS; UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Sin correo real, datos/cuentas reales, gastos, permisos remotos ni producción. Actualización documental en rama del PR #1, en borrador y sin merge; bloqueo Pages main:/docs vigente. Commit con [skip ci] y SHA remoto cotejado al entregar; CI PASS anterior permanece ligado a `da1ac91`, no al commit documental.
 
 Siguiente paso: revisión propia del usuario de manuales, guía, soporte, capacitación propuesta y prioridades. CA15-06 requiere aceptación expresa; no confundirla con sesiones realizadas ni aptitud productiva. Cualquier evolución, modificación del automatismo Pages, merge o despliegue necesita alcance/permiso específico.
+
+## Cierre aprobado de Fase 15 y servidor local de pruebas — D-41
+
+2026-11-02. Evidencia literal: «apruebo fase 15 en nuevo indicame los pendientes y publica el sistema inventarioTI2 en servidor local para pruebas». Destino confirmado por respuesta: «En este entorno de trabajo». D-41 acepta `a9a0742b0f70ff026d36588f96475cca59c4c3f7`, cumple CA15-06 y cierra Fase 15 COMPLETADA con sus límites. Fases 0–15 aceptadas; no se transforma capacitación preparada en realizada ni se inventa validación humana nueva.
+
+La misma solicitud autoriza trabajo adicional específico: presentar pendientes y preparar/arrancar servidor local sintético. Plan presentado: PostgreSQL y GoTrue locales, HTTPS en loopback, bootstrap de cuentas aleatorias fuera de Git, MFA administrativo y controles originales, datos de prueba persistentes, sin worker/correo real; smoke y reinicio con conservación; documentación/continuidad y GitHub seguro. No se asigna Fase 16.
+
+[PRUEBAS_LOCALES](docs/PRUEBAS_LOCALES.md) reúne acceso/comandos, pendientes y prompt para otro chat. No se abre otro chat automáticamente. Estado/pruebas/evidencia de la instancia en [PRUEBAS](docs/PRUEBAS.md#publicación-local-de-pruebas--d-41). Esta publicación local no autoriza publicación externa, main/Pages ni producción; F1-SEG-01/02/03 ABIERTOS. UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Sin cuentas/datos reales, gastos o permisos remotos; PR #1 en borrador/sin merge.

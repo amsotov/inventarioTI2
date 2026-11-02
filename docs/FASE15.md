@@ -1,6 +1,6 @@
 # Fase 15 — Documentación, capacitación y evolución
 
-2026-11-02 · **EN_REVISION** · Ejecución autorizada por D-39 y ratificada por D-40. Última fase completada: 14. La revisión de esta entrega y el cierre final corresponden al usuario.
+2026-11-02 · **COMPLETADA por D-41**, aceptación de `a9a0742b0f70ff026d36588f96475cca59c4c3f7`; CA15-06 CUMPLIDO. Última fase completada: 15. Ejecución original D-39/D-40 y sus límites conservados. Pruebas locales adicionales autorizadas por D-41; producción no habilitada.
 
 ## Plan presentado y alcance
 
@@ -33,12 +33,12 @@ Codex redacta y verifica esta entrega. El usuario revisa/acepta; facilitador, so
 
 | ID | Criterio verificable | Resultado de esta entrega |
 |---|---|---|
-| CA15-01 | Manuales cubren ambos roles, acceso, tareas implementadas, errores e incertidumbre; referencias a implementación | Documentado y contrastado con fuentes; revisión humana pendiente |
+| CA15-01 | Manuales cubren ambos roles, acceso, tareas implementadas, errores e incertidumbre; referencias a implementación | Documentado y contrastado con fuentes; entrega aceptada por el usuario en D-41 |
 | CA15-02 | Guía de instalación distingue prueba sintética, prototipo y arranque configurado; explica variables y mínimo privilegio | Documentado; arranque con proveedor gestionado NO EJECUTADO |
 | CA15-03 | Un checkout limpio permite instalar, compilar y comprobar recorrido local con instrucciones reproducibles | Evidencia técnica en PRUEBAS; onboarding por una persona desarrolladora nueva NO EJECUTADO |
 | CA15-04 | Soporte/mantenimiento, capacitación por rol y roadmap tienen procedimientos, evaluación, dependencias y pendientes explícitos | Material entregado; capacitación y guardia operativas NO REALIZADAS |
 | CA15-05 | Enlaces/estados/diff revisados, fuentes y evidencia aceptadas preservadas; commit en rama del PR y SHA remoto cotejado al entregar | Verificación en PRUEBAS; sincronización se confirma contra HEAD remoto del PR |
-| CA15-06 | Aceptación expresa de esta entrega y decisión de cierre por el usuario | **PENDIENTE** |
+| CA15-06 | Aceptación expresa de esta entrega y decisión de cierre por el usuario | **CUMPLIDO por D-41** el 2026-11-02, con los pendientes documentados |
 
 ## Riesgos y límites conservados
 
@@ -46,8 +46,8 @@ F1-SEG-01: política/responsable legal de retención de datos/logs antes de dato
 
 UTC; copia semanal con máximo 168 h entre éxitos; RPO ≤168 h, RTO ≤8 h y copias 30 días permanecen como requisitos. Integraciones Supabase/Resend gestionadas, correo de identidad, recuperación integral, retención externa, SLA mensual, rollback de plataforma, Safari/hardware y accesibilidad completa conservan sus límites de QA/operación. Evidencia histórica 119/39/4/19 y CI PASS 41473700624 corresponden a la entrega aceptada `da1ac91`, sin trasladarlos al SHA documental nuevo.
 
-No se cambia aplicación, ops, workflow, migraciones, dependencias, pruebas ni evidencia aceptada. No hay cuentas/datos reales, gastos, permisos remotos, envío real ni despliegue. Pages legacy main:/docs impide push/merge a main bajo la prohibición de publicación. Esta entrega usa exclusivamente la rama del PR #1.
+La entrega documental original `a9a0742` no cambió aplicación, ops, workflow, migraciones, dependencias, pruebas ni evidencia aceptada. No hay cuentas/datos reales, gastos, permisos remotos, envío real ni despliegue. Pages legacy main:/docs impide push/merge a main bajo la prohibición de publicación. Esta entrega usa exclusivamente la rama del PR #1.
 
 ## Estado y siguiente acción
 
-Fase 15 EN_REVISION, CA15-06 PENDIENTE, última completada 14. Revisar manuales, guía, capacitación propuesta y prioridades; realizar validación por nuevo desarrollador y sesiones solo con ambiente/participantes acordados. Aceptar la documentación no acredita capacitación ni preparación productiva. El cierre del sistema, cualquier evolución posterior, merge, publicación y producción requieren su decisión propia; no existe una Fase 16 autorizada por inferencia.
+Fase 15 COMPLETADA por D-41, CA15-06 CUMPLIDO, última completada 15. La aprobación acepta la entrega documental con sus límites; capacitación real y validación por nuevo desarrollador siguen sin ejecutar. D-41 autoriza preparar y arrancar únicamente el [sistema local sintético](PRUEBAS_LOCALES.md) en este entorno, con MFA y correo real deshabilitado. Cualquier evolución adicional, merge a main, publicación externa y producción necesitan su alcance/permiso propio; no existe Fase 16 autorizada por inferencia.

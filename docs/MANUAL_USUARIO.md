@@ -1,6 +1,6 @@
 # Manual de usuario
 
-2026-11-02 · Manual consolidado para Fase 15 **EN_REVISION**. Describe funcionalidades implementadas en las entregas aceptadas hasta Fase 14. No acredita puesta en producción ni capacitación realizada. [Capacitación propuesta](CAPACITACION.md) · [Soporte](SOPORTE_MANTENIMIENTO.md) · [Estado vigente](../ESTADO_PROYECTO.md).
+2026-11-02 · Manual consolidado para Fase 15 **COMPLETADA por D-41**. Describe funcionalidades implementadas en las entregas aceptadas hasta Fase 14. No acredita puesta en producción ni capacitación realizada. [Capacitación propuesta](CAPACITACION.md) · [Soporte](SOPORTE_MANTENIMIENTO.md) · [Estado vigente](../ESTADO_PROYECTO.md).
 
 ## Perfiles y conceptos
 
@@ -82,3 +82,7 @@ Los cambios confirmados conservan su validez aunque falle el correo al encargado
 ## Búsqueda y exportación — ajuste de QA Fase 13
 
 El buscador combinado permite texto por código, serie, tipo, marca, modelo o condición del bien, y por nombre, documento/RUT original o canónico, correo, cargo o unidad del funcionario. Las tablas y archivos ordinarios mantienen sus columnas autorizadas, sin añadir documento ni correo. En Excel/PDF, el texto de búsqueda aparece como `[consulta reservada]` para proteger consultas que contienen datos personales; el conjunto exportado sigue correspondiendo a los filtros aplicados. El enlace «Saltar al contenido» mueve el foco a la pantalla actual sin cambiar de vista. «Ver aviso» identifica el detalle del aviso para administradores.
+
+## Instancia local autorizada — D-41
+
+Fase 15 aceptada. Acceso funcional sintético en `https://localhost:8443` de este entorno; credenciales aleatorias mediante el comando y confianza TLS explicados en [PRUEBAS_LOCALES](PRUEBAS_LOCALES.md). Administración conserva MFA real; el usuario configura su propio autenticador al ingresar. No se activa correo real, producción ni datos personales por esta prueba.

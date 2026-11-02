@@ -1,6 +1,6 @@
 # Plan y evidencia de verificación
 
-**Estado vigente (2026-11-02):** Fase 15 EN_REVISION; ver [verificación documental y onboarding](#fase-15--documentación-capacitación-y-evolución). Las secciones anteriores conservan evidencia y límites de su entrega original; no describen por sí solas el estado actual.
+**Estado vigente (2026-11-02):** Fase 15 COMPLETADA por D-41, CA15-06 CUMPLIDO; [verificación local adicional](#publicación-local-de-pruebas--d-41) y [entrega documental aceptada](#fase-15--documentación-capacitación-y-evolución). Las secciones anteriores conservan evidencia y límites de su entrega original; no describen por sí solas el estado actual.
 
 ## Alcance de esta revisión
 
@@ -443,3 +443,27 @@ El recorrido comprueba lector/vacío/assets, MFA doble/alta/edición, respuesta 
 No ejecutados en Fase 15: suites completas npm test/test:ops/test:ui, carga, accesibilidad, nuevo CI funcional, instalación por una persona desarrolladora nueva, capacitación con participantes, arranque HTTPS/Auth gestionado, correo real y producción. No se repiten suites completas por cambios exclusivamente documentales; la reproducción elegida verifica los pasos de instalación nuevos. Los resultados históricos 119 API/seguridad, 39 navegador, 4 operación, 19 tablas restauradas y CI PASS 41473700624 permanecen asociados a `da1ac91`, sin asignarlos al nuevo SHA documental.
 
 F1-SEG-01/02/03 abiertos; entrenamiento/material no acredita operación. Commit documental con [skip ci] en rama del PR #1, que permanece en borrador/sin merge; SHA remoto comprobado al entregar. [Validación](evidencias/fase15/validacion.json) refiere a la base y al árbol preparado; el SHA de entrega se confirma en GitHub para evitar una autorreferencia de hash dentro del commit.
+
+## Publicación local de pruebas — D-41
+
+2026-11-02. Aprobación de Fase 15/documentación `a9a0742` y autorización local en este entorno. [Guía y pendientes](PRUEBAS_LOCALES.md). No cambia código de aplicación ni migraciones/dependencias/workflow/tests aceptados; añade únicamente controlador/gateway/verificador local, documentación y evidencia nueva. Versión de aplicación base `a9a0742`; los scripts locales nuevos se identifican por hash en la evidencia final. No confundir el SHA base con una certificación previa de esos scripts.
+
+Plan presentado antes de implementar; recursos propios etiquetados y datos sintéticos. Node 24.19.0, npm 11.9.0, Docker 28.4.0 vfs, OpenSSL local y Chromium; PostgreSQL 17 y GoTrue v2.197.0 por los digests fijados en las pruebas previas. TLS en loopback con CA de prueba, Node valida cadena y Chromium confía solo en el pin del certificado local. No TLS global desactivado ni cuenta/MFA simulados en esta verificación.
+
+| Comando / prueba | Resultado y alcance |
+|---|---|
+| npm ci / npm run build | PASS; BFF/UI compilados sin cambiar fuentes o lockfile. Aviso outDir de Vite esperado |
+| node --check de los tres scripts locales | PASS; revisión sintáctica |
+| node ops/local/control.mjs start | PASS final; main.ts sin cambios, 8 migraciones, bootstrap solo sintético, live/ready 200 |
+| NODE_EXTRA_CA_CERTS="$PWD/work/local-inventarioti2/ca.crt" node ops/local/verify.mjs | 12 grupos PASS: TLS/salud, sesión/Origin, lectura/admin, MFA TOTP real, CSRF, escritura/replay, XLSX privado, outbox sin envío, red interna, navegador y salida/revocación |
+| stop → start y comparación | PASS, 4 bienes/4 cuentas/1 aviso conservados entre ambas lecturas, mismas cuentas/clave/identificador de instancia; sin reset ni borrados |
+| Smoke posterior al reinicio | Resultado en [smoke final](evidencias/pruebas-locales/smoke.json); reutiliza el factor smoke verificado, sin tocar al administrador interactivo |
+| Diff/enlaces/estados/preservación | Resultado en [validación](evidencias/pruebas-locales/validacion.json), incluyendo evidencia histórica intacta y ausencia de credenciales en el cambio |
+
+[Reinicio](evidencias/pruebas-locales/reinicio.json) registra los conteos antes/después. El segundo smoke añade otro bien/aviso auditado de prueba; no invalida la igualdad observada en el corte de reinicio. Captura del navegador se conserva en work/ solo con datos sintéticos, sin copiar sobre artefactos aceptados. Los reportes nuevos contienen agregados, nunca claves/cookies/TOTP o credenciales.
+
+Fallos iniciales: publicación de puerto en red Docker internal no utilizable; se cambió a IP de puente privado sin publicar DB/Auth. Otro intento agotó disco durante initdb; se retiraron únicamente contenedores/volúmenes/redes etiquetados propios, no inicializados, conservando estado diagnóstico. No se usó prune ni se tocó trabajo preexistente. El intento posterior inició y pasó el smoke. Los primeros errores no son evidencia de éxito.
+
+No ejecutados: suites completas históricas API/UI/ops/carga/accesibilidad, Supabase/Resend gestionados, correo real, validación humana/capacitación, hardware/Safari, recuperación integral productiva y despliegue externo. La prueba pertinente de esta tarea verifica la nueva orquestación y el sistema real local; no se repite toda la regresión de aplicación porque las fuentes de negocio no cambian. Evidencia aceptada 119/39/4/19 y CI PASS anterior mantienen su asociación original. Sin nuevo CI funcional atribuido a este commit; sincronización con [skip ci] en rama del PR #1, SHA remoto comprobado al entregar.
+
+Fase 15 COMPLETADA por D-41 con sus límites; F1-SEG-01/02/03 abiertos. Instancia local activa solo en este entorno, correo real deshabilitado; PR #1 en borrador/sin merge, main sin cambios y sin producción.

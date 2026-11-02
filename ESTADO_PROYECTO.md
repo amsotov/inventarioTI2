@@ -2,14 +2,14 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 15 — EN_REVISION; entrega documental bajo D-39/D-40; CA15-06 PENDIENTE.
+**Fase:** 15 — COMPLETADA por D-41; CA15-06 CUMPLIDO. Instancia local sintética autorizada para pruebas en este entorno.
 **Modo:** GUIADO
-**Última fase completada:** 14.
-**Última fase autorizada:** 15, por D-39 y ratificación D-40; ejecutada y EN_REVISION, sin aceptación de cierre. CA14-06 CUMPLIDO. Producción/publicación/merge a main siguen sin autorización; bloqueo Pages conservado.
+**Última fase completada:** 15, por D-41; aceptación con límites y pendientes conservados.
+**Última fase autorizada:** 15, ejecutada bajo D-39/D-40 y aceptada por D-41. D-41 autoriza adicionalmente servidor local sintético, destino confirmado «En este entorno de trabajo». Producción/publicación externa/merge a main siguen sin autorización; bloqueo Pages conservado.
 
-**Punto vigente de continuidad:** revisar la entrega de [Fase 15](docs/FASE15.md), manuales, [onboarding](docs/INSTALACION_DESARROLLO.md), [capacitación propuesta](docs/CAPACITACION.md), [soporte](docs/SOPORTE_MANTENIMIENTO.md) y [roadmap](docs/ROADMAP.md). CA15-06 PENDIENTE; última completada 14. La rama del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1) conserva la entrega sin merge a main por Pages. Capacitación real y validación por nuevo desarrollador NO EJECUTADAS; no presumir cierre del sistema. Runbook/checklist, evidencia y F1-SEG-01/02/03 conservados; correo real deshabilitado y sin producción. Estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fases 0–15 aceptadas; revisar [servidor local y pendientes](docs/PRUEBAS_LOCALES.md). Instancia funcional en `https://localhost:8443` de este entorno, con PostgreSQL/GoTrue reales locales, cuentas sintéticas, TLS y MFA; no corresponde al localhost del computador personal ni existe túnel público. Consultar estado con `node ops/local/control.mjs status`; credenciales generadas solo en work/ mediante el comando documentado, sin valores en GitHub. Conservar volúmenes/cuentas/claves/MFA; no reinicializar. Capacitación real, nuevo desarrollador y F1-SEG-01/02/03 siguen pendientes. No se crea automáticamente otro chat ni se habilita producción/correo real.
 
-**Entrega GitHub vigente:** Fase 15 documental en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; base `5632391`, main `82d8ad6` solo en lectura. Pages legacy main:/docs activo, no más escritura/merge a main bajo prohibición de publicación. Corrección de CI aceptada en Fase 14; CI PASS 41473700624 ligado a `da1ac91`, sin nueva certificación funcional para el commit documental. Ver entrega/validación de Fase 15 al final.
+**Entrega GitHub vigente:** cierre Fase 15 y sistema local D-41 en rama `phase14/ci-prerequisites-and-pages-guard` del [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), borrador/sin merge; base aceptada `a9a0742`, main `82d8ad6` solo en lectura. Pages legacy main:/docs activo, no más escritura/merge a main bajo prohibición de publicación externa. CI PASS 41473700624 sigue ligado a `da1ac91`; nueva orquestación local verificada por smoke/reinicio en esta entrega, sin atribuirle ese CI histórico. Ver [guía de pruebas locales](docs/PRUEBAS_LOCALES.md).
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -573,3 +573,13 @@ Verificación: worktree separado de la base, sin node_modules/dist iniciales; `n
 Capacitación real, evaluación de participantes, onboarding por una persona nueva, arranque TLS/Auth gestionado, correo y recuperación integral NO EJECUTADOS. Soporte/facilitador/operador, fechas/canales/SLA y prioridades son propuestas o pendientes, no acuerdos inventados. Roadmap no implementado. F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
 
 Estado: Fase 15 EN_REVISION; CA15-06 PENDIENTE; última completada 14. Cierre final del sistema NO APROBADO. Revisión/aceptación de esta entrega corresponde al usuario. Producción, datos/cuentas reales, envío real, gasto, permisos remotos, publicación y merge siguen sin autorizar. Sincronización documental con [skip ci] en rama del PR #1, borrador sin merge; verificar HEAD remoto antes de confirmar. No modificar Pages legacy main:/docs por inferencia.
+
+## Cierre Fase 15 y sistema local de pruebas — D-41
+
+2026-11-02. Usuario acepta Fase 15 y pide pendientes y publicación local; elige «En este entorno de trabajo». Se acepta la entrega documental `a9a0742`; CA15-06 CUMPLIDO, Fase 15 COMPLETADA, última completada 15. Capacitación con participantes y onboarding por desarrollador nuevo siguen NO EJECUTADOS. No hay Fase 16 ni producción por inferencia.
+
+Se añaden `ops/local/control.mjs`, `serve.mjs` y `verify.mjs`, con guía `docs/PRUEBAS_LOCALES.md`: instancia funcional sobre main.ts intacto, TLS loopback https://localhost:8443, DB empresarial y Auth en contenedores propios/red interna, migraciones aceptadas intactas, GoTrue local real, cuentas sintéticas/contraseñas aleatorias/clave de sobres fuera de Git. Roles SQL exactos/RLS/MFA/Origin/CSRF conservados. Sin worker/Resend/envío real. Datos/cuentas/MFA/claves se conservan al detener y retomar; no hay reset automático. El entorno es temporal: no se garantiza servicio tras reemplazarlo ni acceso desde el computador personal.
+
+Instalación/build PASS, smoke local real (12 grupos PASS) y reinicio con datos/cuentas/claves conservados; evidencia nueva en docs/evidencias/pruebas-locales, sin alterar evidencia aceptada. Fallos iniciales por red interna/puertos y falta de espacio registrados; se limpiaron solo recursos etiquetados no inicializados de esos intentos, sin prune ni recursos previos. Detalle y comandos en PRUEBAS; certificados/JWT locales de prueba con vigencia de 7 días, sin confianza global instalada.
+
+Siguiente paso: usuario prueba con las dos cuentas interactivas y su autenticador, informa hallazgos y decide pendientes concretos. F1-SEG-01/02/03, integración/continuidad gestionadas, correo real, accesibilidad/hardware y formación humana siguen abiertos. No reenviar avisos ni reinicializar volúmenes al cambiar de chat. Main `82d8ad6` permanece intacta; PR #1 en borrador/sin merge por Pages. Toda entrega autorizada se sincroniza en la rama del PR y se comprueba SHA remoto; no atribuir CI nuevo sin observarlo.

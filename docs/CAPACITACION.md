@@ -1,6 +1,6 @@
 # Capacitación propuesta y evaluación
 
-2026-11-02 · Fase 15 EN_REVISION · **MATERIAL PREPARADO; SESIONES NO REALIZADAS**. No hay participantes, facilitador, fechas ni ambiente de capacitación designados. Duraciones y umbrales siguientes son propuestas para revisión, sin convocatorias ni compromisos aprobados.
+2026-11-02 · Fase 15 COMPLETADA por D-41 · **MATERIAL PREPARADO; SESIONES NO REALIZADAS**. No hay participantes, facilitador, fechas ni ambiente de capacitación designados. Duraciones y umbrales siguientes son propuestas para revisión, sin convocatorias ni compromisos aprobados.
 
 ## Condiciones de preparación
 

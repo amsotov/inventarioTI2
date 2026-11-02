@@ -1,6 +1,6 @@
 # Instalación local y onboarding de desarrollo
 
-2026-11-02 · Fase 15 EN_REVISION. El objetivo es comprender el código y reproducir su verificación con datos sintéticos. No hay cuenta inicial, credenciales utilizables ni arranque operativo de un solo comando. [Estado vigente](../ESTADO_PROYECTO.md) · [Criterios CA15](FASE15.md).
+2026-11-02 · Fase 15 COMPLETADA por D-41. El objetivo es comprender el código y reproducir su verificación con datos sintéticos. La aplicación base no trae cuentas ni credenciales predeterminadas. El nuevo [procedimiento local autorizado](PRUEBAS_LOCALES.md) crea exclusivamente cuentas sintéticas con claves aleatorias en work/, mantiene MFA y permite iniciar/detener la instancia; no sustituye el arranque gestionado documentado aquí. [Estado vigente](../ESTADO_PROYECTO.md) · [Criterios CA15](FASE15.md).
 
 ## Preparar el checkout
 

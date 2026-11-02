@@ -1,6 +1,6 @@
 # Roadmap y deuda técnica propuestos
 
-2026-11-02 · Fase 15 EN_REVISION. Lista para priorizar con el usuario, **sin ejecución, responsables designados, fechas comprometidas ni gasto aprobado**. P0 bloquea operación/datos reales/promoción; P1 prepara validación; P2 es evolución opcional. No se inicia trabajo futuro por figurar aquí. [Estado/criterios de entrega](FASE15.md) · [Decisiones](DECISIONES.md) · [Checklist](CHECKLIST_LIBERACION.md).
+2026-11-02 · Fase 15 COMPLETADA por D-41. Lista para priorizar con el usuario, **sin ejecución, responsables designados, fechas comprometidas ni gasto aprobado**. P0 bloquea operación/datos reales/promoción; P1 prepara validación; P2 es evolución opcional. No se inicia trabajo futuro por figurar aquí. [Estado/criterios de entrega](FASE15.md) · [Decisiones](DECISIONES.md) · [Checklist](CHECKLIST_LIBERACION.md).
 
 ## Bloqueos y preparación de operación
 

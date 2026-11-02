@@ -6,6 +6,8 @@
 **Última fase completada:** 13.
 **Próxima acción:** revisión de Fase 14; CA14-06 PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
 
+**Entrega vigente:** main `82d8ad6` y [PR #1](https://github.com/amsotov/inventarioTI2/pull/1) con corrección CI/registro de Pages, sin merge. Automatismo heredado Pages main:/docs activo: run cancelado antes de deploy. No más pushes/merges a main bajo prohibición de publicación hasta resolverlo.
+
 > La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 ejecutada localmente y EN_REVISION por D-38; CA14-06 PENDIENTE, última completada 13; Fase 15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |

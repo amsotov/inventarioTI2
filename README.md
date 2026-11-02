@@ -4,6 +4,8 @@ Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
+**Entrega y bloqueo vigentes:** preparación Fase 14 sincronizada en main `82d8ad6`; ajustes de CI y registro de Pages en [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), sin merge. Pages legacy publica desde main:/docs; su run de esta entrega fue cancelado antes de ejecutar deploy. No hacer nuevos pushes/merges a main bajo prohibición de publicación hasta resolver ese automatismo. El workflow Verify only no despliega.
+
 Las instrucciones de la plantilla original se conservan a continuación como referencia.
 
 Conjunto reutilizable de instrucciones y documentos para iniciar **un repositorio de proyecto nuevo**, usando un **modo guiado**: cada fase necesita aprobación expresa antes de comenzar.

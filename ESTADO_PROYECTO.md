@@ -9,6 +9,8 @@
 
 **Punto vigente de continuidad:** Fase 14 entregada para revisión, sin aceptación presumida. [Plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md) y evidencia local. CI sin deploy, salud/logs saneados y copia/restauración sintéticas; operación gestionada pendiente de destino/recursos y F1-SEG-01/02/03. Correo real deshabilitado, sin producción ni Fase 15. Los estados anteriores son antecedentes históricos.
 
+**Entrega GitHub vigente:** base Fase 14 main `82d8ad6`; corrección CI/registro del automatismo Pages en rama phase14/ci-prerequisites-and-pages-guard y [PR #1](https://github.com/amsotov/inventarioTI2/pull/1), sin merge. Pages legacy main:/docs activo: run cancelado antes de deploy. No más escritura en main bajo prohibición de publicación hasta resolver esa configuración. CI inicial FAIL por pdftotext ausente; corrección instala poppler-utils, estado comprobable en Actions del PR.
+
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
 

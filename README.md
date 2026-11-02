@@ -1,6 +1,6 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): Fases 0–11 COMPLETADAS y aceptadas (D-33). Fase 12: [notificaciones y automatización](docs/NOTIFICACIONES.md), implementada y EN_REVISION bajo D-33/D-34; aceptación propia pendiente. Worker/outbox, reintentos, conciliación y seguimiento administrativo probados con datos sintéticos. Correo real deshabilitado. Fases 13–15 sin autorización; sin despliegue. Consultar [FASES](FASES.md), [ESTADO](ESTADO_PROYECTO.md) y [PRUEBAS](docs/PRUEBAS.md). Los estados anteriores son antecedentes históricos.
+Estado vigente (2026-11-02): Fases 0–12 COMPLETADAS y aceptadas (última D-35). Fase 12: [notificaciones y automatización](docs/NOTIFICACIONES.md), entrega aceptada `377be1a`, con 100 pruebas API/seguridad y 39 de navegador superadas. Fase 13 autorizada para iniciar en un nuevo chat, ejecución pendiente; Fases 14–15 sin autorización. Correo real deshabilitado y sin despliegue. Consultar [FASES](FASES.md), [ESTADO](ESTADO_PROYECTO.md) y [PRUEBAS](docs/PRUEBAS.md). Los estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -144,3 +144,12 @@ Fases 13–15 sin autorización. Sin implementación/envíos de Fase 12 ni despl
 ## Entrega de Fase 12 — 2026-11-02
 
 [Catálogo, configuración, estados, API, verificación y pendientes](docs/NOTIFICACIONES.md). Administración → Seguimiento de avisos permite consultar intentos y registrar cancelación/reintento/conciliación con evidencia. `npm start` no envía avisos; el worker separado `npm run start:notifications` está deshabilitado por defecto y requiere configuración y autorización de envío propias. Ensayos sin llamadas a Resend ni mensajes reales. Fase 12 EN_REVISION; no iniciar Fase 13 ni desplegar.
+
+
+## Cierre de Fase 12 — 2026-11-02
+
+Entrega aceptada por D-35. Fase 13 autorizada para un nuevo chat; seguir el punto de continuidad al final de [FASES](FASES.md). Esta tarea solo registra cierre/continuidad; no crea automáticamente otra conversación. En el nuevo chat indica:
+
+> Inicia únicamente la Fase 13 de inventarioTI2, ya autorizada por D-35 en FASES.md y ESTADO_PROYECTO.md. Presenta el plan de QA, rendimiento y seguridad, conserva los límites y actualiza GitHub. No inicies Fase 14 ni despliegues.
+
+Fases 14–15 sin autorización. Sin ejecución de Fase 13, activación/envíos reales ni despliegues en este cierre.

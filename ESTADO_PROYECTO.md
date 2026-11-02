@@ -2,12 +2,12 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha:** 2026-11-02
-**Fase:** 12 — EN_REVISION; entrega implementada/verificada bajo D-33/D-34.
+**Fase:** 12 — COMPLETADA; entrega y cierre aprobados por D-35.
 **Modo:** GUIADO
-**Última fase completada:** 11.
-**Última fase autorizada:** 12, ejecutada en este chat. Aceptación propia pendiente. Fases 13–15 PENDIENTE / NO OTORGADA.
+**Última fase completada:** 12.
+**Última fase autorizada:** 13, para iniciar en un nuevo chat; ejecución PENDIENTE. Fases 14–15 PENDIENTE / NO OTORGADA.
 
-**Punto vigente de continuidad:** Fase 12 EN_REVISION: catálogo A-07, outbox/worker independiente y seguimiento administrativo implementados con pruebas sintéticas. Revisar [NOTIFICACIONES](docs/NOTIFICACIONES.md) y [PRUEBAS](docs/PRUEBAS.md). Última completada 11; Fase 13 no autorizada ni iniciada. Correo real deshabilitado; sin despliegue. Los estados anteriores son antecedentes históricos.
+**Punto vigente de continuidad:** Fase 12 aceptada y cerrada por D-35. Iniciar únicamente Fase 13 en un nuevo chat, con autorización ya otorgada; seguir el punto de inicio al final de FASES.md. Esta tarea solo registra cierre/continuidad; no ejecuta Fase 13 ni despliega. Correo real deshabilitado y seguimientos conservados. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.
@@ -456,7 +456,7 @@ Punto de inicio para el nuevo chat:
 Verificación de este cierre: únicamente documentación; diff/revisión de estados, criterios, enlaces locales y preservación de aplicación/migraciones/tests/evidencias. No se reejecutan suites de aplicación porque no cambian código ni dependencias. Sincronización mediante commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar entrega.
 
 
-## Entrega de Fase 12 — vigente, 2026-11-02 (D-34)
+## Entrega inicial de Fase 12 — 2026-11-02 (D-34)
 
 PROYECTO: inventarioTI2. FASE: 12 — Notificaciones y automatización. ESTADO: EN_REVISION. OBJETIVO/ALCANCE: ejecutar únicamente catálogo A-07, automatización del outbox y seguimiento administrativo; D-34 ratifica D-33 y exige GitHub, sin Fase 13 ni despliegue. No se repitió la autorización.
 
@@ -469,3 +469,23 @@ Pruebas y recuentos finales en PRUEBAS/evidencias/fase12. PostgreSQL real efíme
 Riesgos/decisiones: aceptación no equivale a entrega/lectura; idempotencia Resend documentada 24 h no sustituye conciliación durable. No webhook público/conciliación automática, solo registro administrativo respaldado por evidencia. Arrendamiento de 60 s y consulta cada segundo son parámetros técnicos locales, sin objetivo de capacidad acreditado. Integración real exige remitente/dominio/buzones autorizados, validación de privacidad/costo y credenciales fuera de Git; ejecución externa no autorizada por esta entrega. Pendientes gestionados, hardware/Safari/accesibilidad/carga/continuidad y F1-SEG-01/02/03 conservados. UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos.
 
 Siguiente acción: revisión/aceptación propia de Fase 12, CA12-06 pendiente. Última completada 11. Fases 13–15 PENDIENTE / NO OTORGADA; sin datos/cuentas reales, permisos remotos, gastos, producción ni despliegues. GitHub por commit/push normales a main, autoría noreply y comprobación de SHA remoto antes de confirmar.
+
+
+## Cierre aprobado de Fase 12 y continuidad autorizada de Fase 13 — vigente
+
+2026-11-02. Evidencia literal: «Apruebo fase 12 y inicia en nuevo chat fase 13». D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`, cumple CA12-06 y cierra Fase 12 COMPLETADA. Se conservan 100 pruebas API/seguridad, 39 de navegador y 7 revalidadas tras el ajuste visual final, junto con sus evidencias y límites: PostgreSQL/GoTrue locales y dobles de identidad/correo; sin Resend/Supabase gestionados, advisors operativos, hardware/Safari, carga objetivo ni continuidad productiva acreditados. La aceptación no activa correo real ni elimina seguimientos.
+
+Fase 13 AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Esta tarea solo registra cierre y continuidad y sincroniza GitHub. No se crea automáticamente otra conversación ni se ejecuta QA de Fase 13 aquí. Fases 14–15 PENDIENTE / NO OTORGADA; sin despliegue, producción, datos reales, gastos o cambios remotos de permisos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, requisitos/cierre D-14, UX D-15, arquitectura D-17, datos D-19, acceso D-21, seguridad D-23, API D-25, frontend D-27, administración D-29, procesos D-31, reportes D-33 y notificaciones D-35; revisar código, migraciones, pruebas/evidencias y límites. No volver a pedir autorización de Fase 13.
+2. Presentar un plan limitado a QA, rendimiento y seguridad: matriz trazable RF/HU/CR/CA, criterios de salida medibles, regresión unitaria/integración/E2E, accesibilidad, dependencias y escenarios adversos. Registrar defectos por severidad y corregir únicamente los del alcance aprobado, preservando reglas de negocio, evidencia aceptada y cambios de terceros. No incorporar módulos nuevos ni iniciar Fase 14 por dependencia.
+3. Revalidar permisos/sesión/cuenta/MFA vigentes, Origin/CSRF, RLS/pools/contexto SQL LOCAL y mínimo privilegio. Probar IDOR/BOLA, inyección/XSS, secretos/PII, privacidad de exportaciones y avisos, versiones/idempotencia, rollback, concurrencia, último administrador y revocación. No rebajar controles ni usar claims obsoletos o metadatos del cliente para conseguir tiempos menores.
+4. Medir A-09/CR-17/CA-N07 con muestra sintética: 3.000 bienes, 500 funcionarios, 25 cuentas, 10 usuarios concurrentes y hasta 100.000 movimientos/auditorías por categoría. Tras calentamiento, 1.000 consultas mixtas y 200 escrituras válidas; p95 de listas/búsquedas de 50 filas ≤2 s y escrituras con auditoría, correo excluido, ≤3 s. Informar conflictos/rechazos/fallos aparte, sin descartarlos para aparentar cumplimiento; documentar recursos, red, configuración, distribución y límites del entorno.
+5. Verificar exportaciones A-11 (10.000 XLSX/2.000 PDF) extremo a extremo ≤60 s bajo condiciones registradas y primer intento de aviso ≤1 min en condiciones normales con proveedor doble, sin confundirlo con entrega. Preservar destinatario fijado, minimización, reintentos 1/5/15 y conciliación ante incertidumbre. No activar Resend/correo real, despachar pendientes reales ni dar por verificadas integraciones gestionadas por ensayos locales.
+6. Revisar WCAG 2.2 AA como objetivo: teclado/foco, nombres/etiquetas/errores, contraste, tablas y responsive; probar estados carga/vacío/error/permiso y recorridos de ambos roles en computador/iPad/iPhone emulados. Distinguir revisión automática/manual, navegadores/dispositivos disponibles y no ejecutados; no afirmar certificación o Safari/hardware/lector de pantalla sin evidencia.
+7. Conservar F1-SEG-01/02/03, UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Disponibilidad mensual, respaldo/restauración y operación productiva no se acreditan con una sesión de QA ni autorizan Fase 14. Sin Spec Kit, datos/cuentas reales, cambios remotos de permisos, servicios/costos, despliegues o producción por inferencia; detener solo el ensayo afectado si falta una dependencia y documentar el bloqueo.
+8. Entregar matriz/evidencias, defectos/correcciones, pruebas ejecutadas/fallidas/no ejecutadas, riesgos y criterios pendientes. Actualizar documentación y GitHub, comprobar SHA remoto y dejar Fase 13 EN_REVISION para aceptación propia. No marcar COMPLETADA ni iniciar Fases 14–15 sin aprobación independiente.
+
+Verificación de este cierre: únicamente documentación; revisión de estados/CA12-06/D-35, enlaces locales y preservación de aplicación, migraciones, dependencias, tests y evidencias aceptadas. `git diff --check`. No se repiten build ni suites funcionales porque no cambia código. Los verificadores históricos conservan las condiciones de su entrega original; no se reescriben para adaptarlos al cierre. Commit/push normales a main, autoría noreply y comparación de SHA remoto antes de confirmar.

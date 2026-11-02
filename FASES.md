@@ -2,11 +2,11 @@
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 12 — EN_REVISION; implementada/verificada bajo D-33/D-34, aceptación propia pendiente.
-**Última fase completada:** 11.
-**Próxima fase:** 13 — PENDIENTE / NO OTORGADA. **Fases 13–15:** sin autorización; sin despliegue.
+**Fase actual:** 12 — COMPLETADA; entrega y cierre aprobados por D-35.
+**Última fase completada:** 12.
+**Próxima fase:** 13 — AUTORIZADA para iniciar en un nuevo chat; ejecución PENDIENTE. **Fases 14–15:** PENDIENTE / NO OTORGADA.
 
-> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 ejecutada bajo D-34 y entregada EN_REVISION; fases 13–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
+> La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 autorizada para un nuevo chat, ejecución pendiente; fases 14–15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
 | Fase | Etapa | Entregable orientativo | Estado | Aprobación |
 |---|---|---|---|---|
@@ -22,8 +22,8 @@
 | 9 | Panel de administración | Usuarios, permisos, catálogos y parámetros | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-01; D-29 |
 | 10 | Procesos y módulos empresariales | Casos de uso, estados y movimientos | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-31 |
 | 11 | Indicadores, reportes y exportación | Dashboards, filtros, Excel/PDF | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-33 |
-| 12 | Notificaciones y automatización | Catálogo, outbox, reintentos y seguimiento | EN_REVISION | D-33/D-34 ejecutada; CA12-06 pendiente de aceptación propia |
-| 13 | QA, rendimiento y seguridad | Pruebas, regresión y accesibilidad | PENDIENTE | NO OTORGADA |
+| 12 | Notificaciones y automatización | Catálogo, outbox, reintentos y seguimiento | COMPLETADA | Entrega y cierre APROBADOS por usuario el 2026-11-02; D-35 |
+| 13 | QA, rendimiento y seguridad | Pruebas, regresión y accesibilidad | PENDIENTE | AUTORIZADA para un nuevo chat por D-35; ejecución no iniciada |
 | 14 | Despliegue, operación y continuidad | CI/CD, respaldo, restauración y monitoreo | PENDIENTE | NO OTORGADA |
 | 15 | Documentación, capacitación y evolución | Manuales, soporte y roadmap | PENDIENTE | NO OTORGADA |
 
@@ -45,6 +45,7 @@
 | 2026-10-31 | 3 / 4 | Aceptar arquitectura y cierre de Fase 3; autorizar Fase 4 en un chat nuevo | Usuario | «Apruebo y inicia fase 4 en un chat nuevo»; D-17. Sin gasto, despliegue ni fases 5–15 |
 | 2026-11-02 | 11 / 12 | Aceptar entrega/cierre de Fase 11; autorizar únicamente Fase 12 para un nuevo chat | Usuario | D-33: «Apruebo fase 11, inicia en nuevo chat fase 12»; no se ejecuta Fase 12 en este cierre |
 | 2026-11-02 | 12 | Ejecutar únicamente notificaciones/automatización y sincronizar GitHub; sin Fase 13 ni despliegue | Usuario | Solicitud vigente y D-34, ratifica D-33; entrega EN_REVISION |
+| 2026-11-02 | 12 / 13 | Aceptar entrega/cierre de Fase 12; autorizar únicamente Fase 13 para un nuevo chat | Usuario | D-35: «Apruebo fase 12 y inicia en nuevo chat fase 13»; no se ejecuta Fase 13 en este cierre |
 
 ## Criterios para cerrar cada fase
 - [ ] Alcance y entregables revisados.
@@ -461,7 +462,7 @@ Punto de inicio para el nuevo chat:
 8. Conservar F1-SEG-01/02/03, UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días, entregas y evidencias aceptadas. Documentar pruebas ejecutadas/no ejecutadas, riesgos y bloqueos; actualizar GitHub y verificar SHA remoto. Entregar Fase 12 para aceptación propia; no marcar COMPLETADA ni iniciar Fases 13–15 o desplegar sin autorización independiente.
 
 
-## Ejecución de Fase 12 — entrega vigente (D-34)
+## Ejecución de Fase 12 — entrega inicial (D-34)
 
 2026-11-02. Solicitud: «Inicia únicamente la Fase 12 de inventarioTI2, ya autorizada por D-33. Actualiza GitHub. No inicies Fase 13 ni despliegues». Base main `c348e873231cc6aaccf33d8c39d61f60943359e6`, árbol inicialmente limpio en rama de entorno work. Plan presentado antes de implementar. Codex ejecuta/verifica; usuario conserva revisión/aceptación propia.
 
@@ -470,3 +471,21 @@ Alcance, archivos, catálogo, máquina de estados, API/UI, puerto/adaptador Rese
 CA12-01 a CA12-05: evidencia y límites en [PRUEBAS](docs/PRUEBAS.md). Ensayos sintéticos de PostgreSQL real, identidad/correo dobles y HTTP sustituido; no envío ni proveedor gestionado acreditados. CA12-06 PENDIENTE. Fase 12 EN_REVISION; última completada 11. Fases 13–15 PENDIENTE / NO OTORGADA. No se inician por verificar esta fase. F1-SEG-01/02/03 y UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días conservados. Sin datos/cuentas reales, permisos remotos, gastos, producción ni despliegue.
 
 Sincronización mediante commit/push normales a main con autoría noreply y comparación de SHA remoto antes de entregar. Siguiente paso: revisión/aceptación de Fase 12; no autorización de Fase 13 inferida.
+
+
+## Cierre aprobado de Fase 12 y continuidad autorizada de Fase 13 — vigente
+
+2026-11-02. Evidencia literal: «Apruebo fase 12 y inicia en nuevo chat fase 13». D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`, cumple CA12-06 y cierra Fase 12 COMPLETADA. Se conservan 100 pruebas API/seguridad, 39 de navegador y 7 revalidadas tras el ajuste visual final, junto con sus evidencias y límites: PostgreSQL/GoTrue locales y dobles de identidad/correo; sin Resend/Supabase gestionados, advisors operativos, hardware/Safari, carga objetivo ni continuidad productiva acreditados. La aceptación no activa correo real ni elimina seguimientos.
+
+Fase 13 AUTORIZADA únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Esta tarea solo registra cierre y continuidad y sincroniza GitHub. No se crea automáticamente otra conversación ni se ejecuta QA de Fase 13 aquí. Fases 14–15 PENDIENTE / NO OTORGADA; sin despliegue, producción, datos reales, gastos o cambios remotos de permisos.
+
+Punto de inicio para el nuevo chat:
+
+1. Recuperar main y leer AGENTS, PROMPT_MAESTRO, FASES, ESTADO, requisitos/cierre D-14, UX D-15, arquitectura D-17, datos D-19, acceso D-21, seguridad D-23, API D-25, frontend D-27, administración D-29, procesos D-31, reportes D-33 y notificaciones D-35; revisar código, migraciones, pruebas/evidencias y límites. No volver a pedir autorización de Fase 13.
+2. Presentar un plan limitado a QA, rendimiento y seguridad: matriz trazable RF/HU/CR/CA, criterios de salida medibles, regresión unitaria/integración/E2E, accesibilidad, dependencias y escenarios adversos. Registrar defectos por severidad y corregir únicamente los del alcance aprobado, preservando reglas de negocio, evidencia aceptada y cambios de terceros. No incorporar módulos nuevos ni iniciar Fase 14 por dependencia.
+3. Revalidar permisos/sesión/cuenta/MFA vigentes, Origin/CSRF, RLS/pools/contexto SQL LOCAL y mínimo privilegio. Probar IDOR/BOLA, inyección/XSS, secretos/PII, privacidad de exportaciones y avisos, versiones/idempotencia, rollback, concurrencia, último administrador y revocación. No rebajar controles ni usar claims obsoletos o metadatos del cliente para conseguir tiempos menores.
+4. Medir A-09/CR-17/CA-N07 con muestra sintética: 3.000 bienes, 500 funcionarios, 25 cuentas, 10 usuarios concurrentes y hasta 100.000 movimientos/auditorías por categoría. Tras calentamiento, 1.000 consultas mixtas y 200 escrituras válidas; p95 de listas/búsquedas de 50 filas ≤2 s y escrituras con auditoría, correo excluido, ≤3 s. Informar conflictos/rechazos/fallos aparte, sin descartarlos para aparentar cumplimiento; documentar recursos, red, configuración, distribución y límites del entorno.
+5. Verificar exportaciones A-11 (10.000 XLSX/2.000 PDF) extremo a extremo ≤60 s bajo condiciones registradas y primer intento de aviso ≤1 min en condiciones normales con proveedor doble, sin confundirlo con entrega. Preservar destinatario fijado, minimización, reintentos 1/5/15 y conciliación ante incertidumbre. No activar Resend/correo real, despachar pendientes reales ni dar por verificadas integraciones gestionadas por ensayos locales.
+6. Revisar WCAG 2.2 AA como objetivo: teclado/foco, nombres/etiquetas/errores, contraste, tablas y responsive; probar estados carga/vacío/error/permiso y recorridos de ambos roles en computador/iPad/iPhone emulados. Distinguir revisión automática/manual, navegadores/dispositivos disponibles y no ejecutados; no afirmar certificación o Safari/hardware/lector de pantalla sin evidencia.
+7. Conservar F1-SEG-01/02/03, UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días. Disponibilidad mensual, respaldo/restauración y operación productiva no se acreditan con una sesión de QA ni autorizan Fase 14. Sin Spec Kit, datos/cuentas reales, cambios remotos de permisos, servicios/costos, despliegues o producción por inferencia; detener solo el ensayo afectado si falta una dependencia y documentar el bloqueo.
+8. Entregar matriz/evidencias, defectos/correcciones, pruebas ejecutadas/fallidas/no ejecutadas, riesgos y criterios pendientes. Actualizar documentación y GitHub, comprobar SHA remoto y dejar Fase 13 EN_REVISION para aceptación propia. No marcar COMPLETADA ni iniciar Fases 14–15 sin aprobación independiente.

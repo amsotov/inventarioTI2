@@ -75,3 +75,8 @@ Fase 11 COMPLETADA y CA11-06 cumplido. Fase 12 autorizada únicamente para inici
 ## Incremento vigente de Fase 12 — D-34
 
 Especificación/criterios CA12-01 a CA12-06, catálogo A-07, estados/reintentos/conciliación, permisos, API/UI, configuración y límites en [NOTIFICACIONES](../docs/NOTIFICACIONES.md). Esquema ejecutable `apps/server/notifications/routes.ts`, migración aditiva y pruebas API/UI. Spec Kit ausente; no se instala ni simula. Fase 12 EN_REVISION; última completada 11; Fases 13–15 sin autorización. Sin correo real ni despliegue.
+
+
+## Continuidad vigente — D-35
+
+Fase 12 COMPLETADA y CA12-06 cumplido. Fase 13 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Leer [FASES](../FASES.md), [ESTADO](../ESTADO_PROYECTO.md), [NOTIFICACIONES](../docs/NOTIFICACIONES.md), [PRUEBAS](../docs/PRUEBAS.md) y A-09/CR-17/CA-N07 de [CIERRE_FASE1](../docs/CIERRE_FASE1.md). Este cierre no ejecuta QA ni instala Spec Kit. Fases 14–15 sin autorización; correo real deshabilitado y sin despliegue. Los estados previos se conservan como antecedentes.

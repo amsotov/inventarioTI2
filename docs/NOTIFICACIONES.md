@@ -1,6 +1,6 @@
 # Notificaciones y automatización — Fase 12
 
-2026-11-02 · EN_REVISION bajo D-33/D-34. Base `c348e873231cc6aaccf33d8c39d61f60943359e6`. Codex prepara y verifica; el usuario conserva la aceptación propia. Fases 13–15 sin autorización. Sin despliegue ni envío real.
+2026-11-02 · COMPLETADA por aceptación expresa D-35. Base de ejecución `c348e873231cc6aaccf33d8c39d61f60943359e6`; entrega aceptada `377be1ac61a077606a4fa06b4986353c4a4fff0f`. Fase 13 autorizada para un nuevo chat, ejecución pendiente. Sin despliegue ni envío real.
 
 ## Plan y alcance ejecutado
 
@@ -84,6 +84,11 @@ Reproducir desde la raíz con Node 24, Docker local y Chromium: `npm ci`, `npm r
 | CA12-03 | Fallo externo conserva negocio; cancelación/reintento/conciliación con evidencia, versión, replay y auditoría atómicos |
 | CA12-04 | Roles SQL mínimos/RLS, principal/MFA vigentes, Origin/CSRF y denegaciones; UI sin destinatarios para lectura |
 | CA12-05 | Build/regresión y recorridos de navegador, teclado/responsive, dependencias/documentación/GitHub verificables en PRUEBAS |
-| CA12-06 | PENDIENTE: revisión y aceptación expresa del usuario; no marcar COMPLETADA por superar ensayos |
+| CA12-06 | CUMPLIDO por aceptación expresa D-35 del usuario el 2026-11-02 |
 
 Pendientes conservados: integración Resend real y buzones autorizados; identidad/Supabase gestionados, advisors sin stack local, autenticación de dominio/rebotes, hardware/Safari/accesibilidad completa, carga objetivo, operación/supervisión y continuidad productiva. No se presume residencia en Chile ni cumplimiento legal. F1-SEG-01/02/03 abiertos; UTC/copia semanal/máximo 168 h/RPO 168 h/RTO 8 h/copias 30 días intactos. Fase 13 no iniciada; sin despliegue.
+
+
+## Cierre aprobado — 2026-11-02
+
+D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f` mediante «Apruebo fase 12 y inicia en nuevo chat fase 13». Fase 12 COMPLETADA y CA12-06 CUMPLIDO. Se conservan resultados/evidencias, destinatario inmutable, minimización, reintentos/conciliación y todos los pendientes anteriores. No acredita envío real, integración gestionada, carga objetivo ni continuidad productiva. Fase 13 autorizada para iniciar en un nuevo chat; no se ejecuta en este cierre. Continuidad en [FASES](../FASES.md) y [ESTADO](../ESTADO_PROYECTO.md).

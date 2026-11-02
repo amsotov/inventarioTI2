@@ -131,3 +131,10 @@ D-27 registra aceptación y cierre de Fase 8 y autorización de Fase 9 para un n
 ## 2026-11-02 — Fase 12 EN_REVISION (D-34)
 
 Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limitado, outbox/token/arrendamiento, reintentos 1/5/15, incertidumbre conservadora y seguimiento de intentos. Puerto/adaptador Resend preparado y deshabilitado; sin envío externo. API/UI administrativa para filtros/detalle, cancelación, reintento y conciliación con evidencia, versión, idempotencia y auditoría. Migración nueva aditiva, pruebas sintéticas SQL/HTTP/navegador y documentación. Resultados en docs/PRUEBAS.md; aceptación propia pendiente. Fase 13 no iniciada, sin despliegue.
+
+
+## 2026-11-02 — Cierre aprobado de Fase 12 y continuidad de Fase 13
+
+- D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`; Fase 12 COMPLETADA y CA12-06 CUMPLIDO.
+- Fase 13 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Punto de inicio en FASES/ESTADO, sin ejecutar QA en este cierre.
+- Se preservan código, migraciones, dependencias, pruebas/evidencias y límites operativos; correo real deshabilitado, Fases 14–15 sin autorización, sin producción ni despliegue.

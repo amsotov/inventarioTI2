@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-03 — Modernización: diagnóstico aprobado y Fase 1 EN_REVISION
+
+- Registra aprobación de Fase 0 e incorpora su informe; autoriza únicamente validación documental y sincronización GitHub.
+- Concilia ER/DER/Excel con 117 campos y 30 relaciones; transcripciones independientes, verificador y evidencia documental.
+- Presenta 15 hallazgos y 16 decisiones pendientes; conserva modelo, aplicación, SQL, pruebas y evidencia histórica.
+- Añade guía INICIAR_EN_CODEX y separa fases de migración del desarrollo histórico. Fase 2 no autorizada; sin merge ni despliegue.
+
 ## 2026-11-02 — Fase 14: operación y continuidad (EN_REVISION)
 
 - Plan de ambientes/configuración/CI/migraciones, runbook de incidentes/recuperación/rollback y checklist NO-GO productivo.

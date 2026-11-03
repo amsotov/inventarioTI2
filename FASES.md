@@ -1,10 +1,19 @@
 # FASES.md — Plan y control de avance
 
+## Ciclo vigente de modernización — 2026-11-03
+
+**Migración FASE 0: COMPLETADA y aprobada por el usuario. Migración FASE 1: EN_REVISION. FASE 2: NO AUTORIZADA.**
+
+Autorización literal: «apruebo fase 0 y inicia fase 1 de aquí en adelante guarda todo github los cambios realizados». Entrega: [diagnóstico](docs/migracion/00_DIAGNOSTICO.md), [validación del modelo](docs/migracion/01_VALIDACION_MODELO.md), [decisiones pendientes](docs/migracion/01_DECISIONES_PENDIENTES.md) y [guía de continuidad](INICIAR_EN_CODEX.md). Solo documentación y verificación documental; sin cambios de esquema, SQL ejecutado, aplicación, datos ni despliegues. Las recomendaciones siguen pendientes de aprobación. Todos los cambios autorizados se guardan en GitHub en rama dedicada, sin merge automático.
+
+La numeración de migración 0–9 sigue el prompt de `prompts/`; la numeración de desarrollo 0–15 que aparece a continuación es histórica y se conserva. Su última fase completada es 13, la 14 sigue EN_REVISION y la 15 no está autorizada. F1-SEG-01/02/03 permanecen abiertos. La aprobación de migración Fase 1 no autoriza reanudar desarrollo ni nuevas fases.
+
+
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
+**Fase de desarrollo histórica:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
 **Última fase completada:** 13.
-**Próxima acción:** revisión de Fase 14; CA14-06 PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
+**Próxima acción del ciclo histórico (no iniciada aquí):** revisión de Fase 14; CA14-06 PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
 
 > La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 ejecutada localmente y EN_REVISION por D-38; CA14-06 PENDIENTE, última completada 13; Fase 15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 

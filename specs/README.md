@@ -95,3 +95,8 @@ Fase 13 COMPLETADA y CA13-06 cumplido. Fase 14 autorizada únicamente para inici
 ## Entrega vigente de Fase 14 — D-37/D-38
 
 [Plan/criterios/cobertura](../docs/DESPLIEGUE.md), [runbook](../docs/RUNBOOK_OPERACION.md), [checklist](../docs/CHECKLIST_LIBERACION.md) y [pruebas](../docs/PRUEBAS.md#fase-14--operación-y-continuidad). Spec Kit no instalado ni simulado. CI sin deploy y ensayos sintéticos locales; operación/identidad/retención gestionadas pendientes. EN_REVISION, CA14-06 PENDIENTE; última completada 13. F1-SEG-01/02/03 abiertos, Fase 15 sin autorización y sin producción/correo real. Antecedentes anteriores conservados.
+
+
+## Ciclo de migración — Fase 1, 2026-11-03
+
+Fase 0 aprobada; Fase 1 EN_REVISION. [Validación campo por campo](../docs/migracion/01_VALIDACION_MODELO.md) y [decisiones pendientes](../docs/migracion/01_DECISIONES_PENDIENTES.md). Fase 2 de migración (trazabilidad) NO AUTORIZADA; no corresponde al diseño visual de la Fase 2 histórica. Spec Kit no instalado ni simulado. Sin cambios de aplicación, datos o SQL.

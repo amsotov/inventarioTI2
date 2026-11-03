@@ -1,0 +1,73 @@
+{
+  "fase": "MIGRACION_1",
+  "estado_verificacion": "APROBADA_EN_ALCANCE_DOCUMENTAL",
+  "estado_fase": "EN_REVISION",
+  "base_git": "511b99d64c97ff1917f279e78490f377a3f5239a",
+  "fuentes": {
+    "02_ER_MODELO_ENTIDAD_RELACION.png": {
+      "git_blob": "74edf8e6e1f3463b648777aa6da1e5d25c3745ad",
+      "sha256": "fdc4ec0b2ff22c546543aab48935d09e8eb27c5ce93fad331bba24f3c738c246"
+    },
+    "03_DER_DIAGRAMA_ENTIDAD_RELACION.png": {
+      "git_blob": "b5e74bd53a4acca2ced7a1b0bf3aa594ef210708",
+      "sha256": "e98d07cf4999c0d6ecb31715b4d779b29698d3f8bfda1f3ebce7911fe5009cf4"
+    },
+    "04_DICCIONARIO_DATOS.xlsx": {
+      "git_blob": "8e5f1a74951deafaa1220b4694ba5689d868c8b6",
+      "sha256": "a07ec95b68c35eae358def30ae3723485c202b562d04db465b566801307cef5e"
+    }
+  },
+  "transcripciones_sha256": {
+    "der_transcrito.csv": "df111f1f396f52dcaba63cefb09708b6bb200407aae3fd8510eef866f3b73c28",
+    "er_claves_transcritas.json": "beb9f919c80241c422c07f08ee8f8a293095f15303e2979295834ac3fa3fd2ed",
+    "aristas_transcritas.json": "91d99683403227074b42e6332388d461ecef4f914c941f41fbb0a68ed156ef60"
+  },
+  "conteos": {
+    "tablas": 30,
+    "campos": 117,
+    "componentes_pk": 31,
+    "fk": 30,
+    "claves_er": 55,
+    "tipos_completos_coincidentes": 114,
+    "precisiones_datetime2_pendientes": 3,
+    "checks_sin_expresion_completa": 9,
+    "identity_declarados": 25,
+    "uq_explicitos": 18,
+    "reglas_mapeo_excel": 57,
+    "hallazgos_calidad_fuente": 13,
+    "hallazgos_fase1": 15,
+    "decisiones_propuestas_pendientes": 16
+  },
+  "precision_pendiente": [
+    "USUARIOS.USUA_FECHA_CREACION",
+    "AUTORIZACIONES.AUTO_FECHA_OTORGADO",
+    "AUDITORIA.AUDI_FECHA_HORA"
+  ],
+  "checks_pendientes": [
+    "FUNC_CORREO",
+    "PERF_NIVEL_ACCESO",
+    "AUDI_ACCION",
+    "COMP_DIRECCION_MAC",
+    "COMP_VELOCIDAD_GHZ",
+    "MONI_PULGADAS",
+    "IMPR_ANCHO_CARRO",
+    "SWIT_CANTIDAD_PUERTOS",
+    "PIEZ_CAPACIDAD_GB"
+  ],
+  "verificaciones": [
+    "Fuentes originales por hash Git y SHA-256",
+    "Conteos, prefijos y PK/FK candidatas",
+    "117 campos vs transcripción manual DER",
+    "55 claves y 30 aristas vs transcripción visual ER/DER",
+    "Integridad de matriz y relaciones",
+    "Cobertura de hallazgos y decisiones"
+  ],
+  "limites": [
+    "No interpreta imágenes automáticamente",
+    "No compara con base desplegada ni DDL destino",
+    "No perfila datos operacionales",
+    "No ejecuta SQL ni abre conexiones",
+    "No ejecuta pruebas de aplicación ni build",
+    "No aprueba decisiones ni habilita Fase 2"
+  ]
+}

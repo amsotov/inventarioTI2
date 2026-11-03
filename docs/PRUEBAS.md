@@ -410,3 +410,12 @@ Duración del ensayo corregido: **9,125 s**, desde antes de crear fuente hasta s
 Intentos iniciales y correcciones en [ensayos iniciales](evidencias/fase14/ensayos-iniciales.md): filtro de hashes vacío corregido y exigencia de 19 tablas; solapamiento UI/restore agotó espacio, repetición secuencial final PASS. No ocultar esos resultados ni presentar el primer intento como integridad acreditada. Evidencia aceptada de fases 2–13 y migraciones originales preservadas literalmente; capturas/PDF/secretos regenerados durante suites se apartaron antes de restaurar originales.
 
 NO EJECUTADOS: staging/producción, Supabase/Auth/MFA/advisors gestionados, Resend/buzones/envío físico, TLS/DNS/proxy/canales de alerta reales, upload/lectura externa/KMS/custodia, conservación efectiva 30 días, restauración integral gestionada, rollback de artefacto en plataforma, disponibilidad mensual 99,5 %, hardware/Safari. Carga/a11y de Fase 13 no se repiten porque no cambia UI/negocio; mantienen sus límites/evidencia aceptada. F1-SEG-01/02/03 abiertos. Fase 15 sin iniciar, producción no autorizada. CI remoto solo PASS al observar run del SHA entregado; evidencia local y SHA sincronizado no lo sustituyen.
+
+
+## Migración — Fase 1 documental, 2026-11-03
+
+Verificación reproducible: `python3 docs/migracion/verificar_fase1.py`; [evidencia](migracion/evidencias/fase1/verificacion.json). Compara Excel con transcripción manual independiente del DER, claves ER, 30 tablas/117 campos/30 FK, PK/UQ/null, 3 precisiones DATETIME2 pendientes, 9 CHECK incompletos, anexos y hashes de las tres fuentes. No interpreta automáticamente imágenes. Inspección visual de ER/DER y revisión de contradicciones con requisitos aprobados documentadas en [validación](migracion/01_VALIDACION_MODELO.md).
+
+Control de alcance: fuentes, apps/, supabase/, db/, ops/, prototipo/, tests/, dependencias, workflows y evidencia histórica sin cambios frente a 511b99d; solo documentación/anexos y su verificador. Revisión de espacios/diferencias y enlaces internos de archivos cambiados. Resultado final del control documentado en la entrega GitHub.
+
+NO EJECUTADAS: SQL, migraciones, build, suites funcionales/API/UI, carga, integraciones gestionadas y perfilado operacional. Fase 1 EN_REVISION; propuestas pendientes, no modelo implementable. Sin Fase 2 ni despliegue.

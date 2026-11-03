@@ -1,5 +1,14 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## Ciclo vigente de modernización — 2026-11-03
+
+**Migración FASE 0: COMPLETADA y aprobada por el usuario. Migración FASE 1: EN_REVISION. FASE 2: NO AUTORIZADA.**
+
+Autorización literal: «apruebo fase 0 y inicia fase 1 de aquí en adelante guarda todo github los cambios realizados». Entrega: [diagnóstico](docs/migracion/00_DIAGNOSTICO.md), [validación del modelo](docs/migracion/01_VALIDACION_MODELO.md), [decisiones pendientes](docs/migracion/01_DECISIONES_PENDIENTES.md) y [guía de continuidad](INICIAR_EN_CODEX.md). Solo documentación y verificación documental; sin cambios de esquema, SQL ejecutado, aplicación, datos ni despliegues. Las recomendaciones siguen pendientes de aprobación. Todos los cambios autorizados se guardan en GitHub en rama dedicada, sin merge automático.
+
+La numeración de migración 0–9 sigue el prompt de `prompts/`; la numeración de desarrollo 0–15 que aparece a continuación es histórica y se conserva. Su última fase completada es 13, la 14 sigue EN_REVISION y la 15 no está autorizada. F1-SEG-01/02/03 permanecen abiertos. La aprobación de migración Fase 1 no autoriza reanudar desarrollo ni nuevas fases.
+
+
 Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.

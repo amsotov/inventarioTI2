@@ -205,3 +205,8 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## D-38 — Ejecución de Fase 14 sin producción
 
 2026-11-02. El usuario ratifica D-37: «Inicia únicamente la Fase 14, ya autorizada por D-37. Presenta el plan de despliegue, operación y continuidad y actualiza GitHub. No inicies Fase 15 ni despliegues a producción». Se ejecuta plan/CI de verificación, salud/logs y ensayos locales de copia/recuperación, con [DESPLIEGUE](DESPLIEGUE.md), [RUNBOOK](RUNBOOK_OPERACION.md) y [CHECKLIST](CHECKLIST_LIBERACION.md). Entrega EN_REVISION, CA14-06 PENDIENTE; no se atribuye aceptación del usuario. F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/30 días conservados. Recursos/destino gestionados, operador/custodia/horario/alertas aún sin aprobar; no se contratan/configuran por inferencia. Sin Fase 15, producción, correo real, datos/cuentas reales, gasto o permisos remotos.
+
+
+## M1-A01 — Cierre de diagnóstico e inicio de validación de migración
+
+2026-11-03. Usuario: «apruebo fase 0 y inicia fase 1 de aquí en adelante guarda todo github los cambios realizados». Se cierra Fase 0 de migración y autoriza únicamente Fase 1 documental, con sincronización GitHub. No equivale a aprobar recomendaciones: [M1-D01–M1-D16](migracion/01_DECISIONES_PENDIENTES.md) siguen PENDIENTES. Fase 1 EN_REVISION y Fase 2 NO AUTORIZADA. Identificadores M1 separados de D-01–D-38 históricos. Sin SQL, esquema, aplicación, datos ni despliegue; fuentes originales conservadas.

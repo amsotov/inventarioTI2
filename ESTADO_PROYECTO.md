@@ -1,13 +1,22 @@
 # Estado del proyecto — Punto de continuidad
 
+## Ciclo vigente de modernización — 2026-11-03
+
+**Migración FASE 0: COMPLETADA y aprobada por el usuario. Migración FASE 1: EN_REVISION. FASE 2: NO AUTORIZADA.**
+
+Autorización literal: «apruebo fase 0 y inicia fase 1 de aquí en adelante guarda todo github los cambios realizados». Entrega: [diagnóstico](docs/migracion/00_DIAGNOSTICO.md), [validación del modelo](docs/migracion/01_VALIDACION_MODELO.md), [decisiones pendientes](docs/migracion/01_DECISIONES_PENDIENTES.md) y [guía de continuidad](INICIAR_EN_CODEX.md). Solo documentación y verificación documental; sin cambios de esquema, SQL ejecutado, aplicación, datos ni despliegues. Las recomendaciones siguen pendientes de aprobación. Todos los cambios autorizados se guardan en GitHub en rama dedicada, sin merge automático.
+
+La numeración de migración 0–9 sigue el prompt de `prompts/`; la numeración de desarrollo 0–15 que aparece a continuación es histórica y se conserva. Su última fase completada es 13, la 14 sigue EN_REVISION y la 15 no está autorizada. F1-SEG-01/02/03 permanecen abiertos. La aprobación de migración Fase 1 no autoriza reanudar desarrollo ni nuevas fases.
+
+
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
-**Fecha:** 2026-11-02
-**Fase:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
+**Fecha del resumen histórico:** 2026-11-02
+**Fase de desarrollo histórica:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
 **Modo:** GUIADO
 **Última fase completada:** 13.
 **Última fase autorizada:** 14, ejecutada localmente bajo D-37/D-38; CA14-06 PENDIENTE. Fase 15 PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
 
-**Punto vigente de continuidad:** Fase 14 entregada para revisión, sin aceptación presumida. [Plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md) y evidencia local. CI sin deploy, salud/logs saneados y copia/restauración sintéticas; operación gestionada pendiente de destino/recursos y F1-SEG-01/02/03. Correo real deshabilitado, sin producción ni Fase 15. Los estados anteriores son antecedentes históricos.
+**Punto de continuidad del ciclo histórico:** Fase 14 entregada para revisión, sin aceptación presumida. [Plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md) y evidencia local. CI sin deploy, salud/logs saneados y copia/restauración sintéticas; operación gestionada pendiente de destino/recursos y F1-SEG-01/02/03. Correo real deshabilitado, sin producción ni Fase 15. Los estados anteriores son antecedentes históricos.
 
 ## Objetivo
 Inventario centralizado de bienes computacionales por funcionario y unidad, asignación actual e historial fechado; cambios auditados, correos configurables y exportaciones Excel/PDF. La definición ya está documentada: no repetir la pregunta inicial.

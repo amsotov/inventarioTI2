@@ -2,15 +2,17 @@
   "name": "inventarioti2",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc && tsc -p apps/web/tsconfig.json && vite build apps/web --outDir ../../dist/web",
+    "build": "tsc && tsc -p apps/web/tsconfig.json && vite build apps/web --config vite.config.js --outDir ../../dist/web --emptyOutDir",
     "test": "tsx --test --test-concurrency=1 tests/auth/*.test.ts tests/security/*.test.ts tests/api/*.test.ts",
     "start": "node dist/apps/server/main.js",
     "start:notifications": "node dist/apps/server/notifications/main.js",
-    "dev:web": "vite apps/web --host 127.0.0.1",
+    "dev:web": "vite apps/web --config vite.config.js --host 127.0.0.1",
     "test:ui": "tsx --test --test-concurrency=1 tests/ui/*.test.ts",
     "test:qa:performance": "tsx tests/qa/performance.ts",
     "test:qa:a11y": "tsx tests/qa/accessibility.ts",
-    "test:ops": "tsx --test --test-concurrency=1 tests/ops/*.test.ts"
+    "test:ops": "tsx --test --test-concurrency=1 tests/ops/*.test.ts",
+    "demo": "node scripts/demo.mjs",
+    "test:demo": "node tests/demo/browser.mjs"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
     "@supabase/supabase-js": "2.118.0",
     "dejavu-fonts-ttf": "2.37.3",
     "fastify": "5.12.7",
+    "jspdf": "4.2.1",
     "pdfkit": "0.20.2",
     "pg": "8.23.1",
     "react": "19.3.1",

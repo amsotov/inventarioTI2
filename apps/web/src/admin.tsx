@@ -1,3 +1,4 @@
+import { DEMO_MODE } from "./demoMode";
 import React, { useEffect, useRef, useState } from "react";
 import { api, message } from "./api";
 import { Notifications } from "./notifications";
@@ -101,7 +102,7 @@ export function Admin({
       );
       pending.current = null;
       setUncertain(false);
-      setNotice("Cambio guardado y auditado.");
+      setNotice(DEMO_MODE ? "Cambio guardado en memoria. Correo simulado; no se envió ningún correo." : "Cambio guardado y auditado.");
       setRevision((x) => x + 1);
     } catch (e: any) {
       setError(message(e));

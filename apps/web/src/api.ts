@@ -12,6 +12,10 @@ export async function api(
   options: RequestInit = {},
   csrf?: string,
 ) {
+  if (import.meta.env.VITE_DEMO_MODE === "true") {
+    const { demoApi } = await import("./demoData");
+    return demoApi(path, options);
+  }
   const response = await fetch("/api/v1/" + path, {
     ...options,
     credentials: "same-origin",

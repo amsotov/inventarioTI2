@@ -184,6 +184,11 @@ export function Reports({
     setSending(true);
     setError("");
     try {
+      if (import.meta.env.VITE_DEMO_MODE === "true") {
+        const { downloadDemoExport } = await import("./demoData");
+        await downloadDemoExport(job.ref);
+        return;
+      }
       const response = await fetch(
         "/api/v1/exportaciones/" + job.ref + "/archivo",
         { credentials: "same-origin" },

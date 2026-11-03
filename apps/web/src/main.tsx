@@ -1,3 +1,4 @@
+import { DEMO_MODE } from "./demoMode";
 import { Processes, protectProcessNavigation } from "./processes";
 import { Reports, protectReportNavigation } from "./reports";
 import { Admin } from "./admin";
@@ -87,6 +88,12 @@ function App() {
     };
     window.addEventListener("hashchange", change);
     return () => window.removeEventListener("hashchange", change);
+  }, []);
+  useEffect(() => {
+    if (!DEMO_MODE) return;
+    const showMail = (event: Event) => setNotice((event as CustomEvent<string>).detail);
+    window.addEventListener("demo-mail", showMail);
+    return () => window.removeEventListener("demo-mail", showMail);
   }, []);
   async function refresh() {
     const { body } = await api("sesion");
@@ -249,7 +256,7 @@ function App() {
       );
       setPending(null);
       setEdit(false);
-      setNotice("Bien guardado. Aviso pendiente de procesamiento.");
+      setNotice(DEMO_MODE ? "Bien guardado en memoria. Correo simulado; no se envió ningún correo." : "Bien guardado. Aviso pendiente de procesamiento.");
       if (location.hash === "#bienes/" + body.ref) setRevision((x) => x + 1);
       else location.hash = "bienes/" + body.ref;
     } catch (e) {
@@ -294,6 +301,19 @@ function App() {
   const canWrite = session?.rol === "administrador" && !session.mfaRequired;
   return (
     <>
+      {DEMO_MODE && <div className="demo-banner" role="region" aria-label="Modo demo">
+        <strong>Modo demo</strong> · Datos ficticios en memoria. Recargar reinicia los cambios.
+        {session && <label>Rol demo <select aria-label="Rol demo" value={session.rol}
+          disabled={busy || !!pending}
+          onChange={(e) => void action(async () => {
+            await api("demo/rol", { method: "POST", body: JSON.stringify({ rol: e.target.value }) });
+            await refresh();
+            setView(route());
+          })}>
+          <option value="administrador">Administrador</option>
+          <option value="lectura">Solo lectura</option>
+        </select></label>}
+      </div>}
       <a className="skip" href="#contenido" onClick={(event) => {
         event.preventDefault();
         document.getElementById("contenido")?.focus();
@@ -329,7 +349,7 @@ function App() {
               <span>
                 {session.rol === "administrador" ? "Administrador" : "Lectura"}
               </span>
-              <button
+              {!DEMO_MODE && <button
                 disabled={busy}
                 onClick={() =>
                   void action(async () => {
@@ -347,7 +367,7 @@ function App() {
                 }
               >
                 Cerrar sesión
-              </button>
+              </button>}
             </div>
           )}
         </header>
@@ -498,7 +518,7 @@ function App() {
             </form>
           </section>
         ) : view === 'resumen' || view === 'reportes' ? (
-          <Reports summary={view==='resumen'} admin={canWrite} csrf={session.csrf} onExpired={()=>setSession(null)}/>
+          <Reports key={DEMO_MODE ? session.rol : undefined} summary={view==='resumen'} admin={canWrite} csrf={session.csrf} onExpired={()=>setSession(null)}/>
         ) : view === "administracion" ? (
           canWrite ? <Admin csrf={session.csrf} onExpired={()=>{setSession(null);}}/> : <section className="card"><h1>Acceso restringido</h1><p>No tienes permiso para administrar.</p></section>
         ) : !valid ? (
@@ -711,6 +731,12 @@ function App() {
                     </div>
                   ))}
                 </dl>
+                {DEMO_MODE && canWrite && ["bienes", "funcionarios"].includes(resource) && <button
+                  onClick={() => void action(async () => {
+                    if (!window.confirm("¿Eliminar este registro de la demo? Sus asignaciones se cerrarán.")) return;
+                    await api(resource + "/" + ref, { method: "DELETE" });
+                    location.hash = resource;
+                  })}>Eliminar de la demo</button>}
                 {resource === "bienes" && (
                   <>
                     <a
@@ -751,7 +777,7 @@ function App() {
                 onExpired={() => setSession(null)}
                 onStart={() => setNotice("")}
                 onSaved={() => {
-                  setNotice("Proceso confirmado y auditado.");
+                  setNotice(DEMO_MODE ? "Proceso confirmado en memoria. Correo simulado; no se envió ningún correo." : "Proceso confirmado y auditado.");
                   setRevision(x => x + 1);
                 }}
               />

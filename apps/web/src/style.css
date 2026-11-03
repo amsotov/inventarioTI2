@@ -335,3 +335,8 @@ code {
 .notifications-panel > button { margin-bottom: 12px; }
 .notifications-panel .confirmation { display: flex; flex-direction: row; align-items: flex-start; gap: 8px; }
 .notifications-panel .confirmation input { flex: 0 0 auto; margin-top: 3px; }
+
+.demo-banner { position: relative; z-index: 2; background: #fff0bb; color: #493800; padding: 12px 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.demo-banner label { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+body:has(.demo-banner) aside { top: 68px; }
+@media (max-width: 700px) { body:has(.demo-banner) aside { top: auto; } }

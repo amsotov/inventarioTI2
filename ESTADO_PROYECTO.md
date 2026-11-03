@@ -533,3 +533,16 @@ Entregables: [plan](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [
 Comandos/resultados/límites en [PRUEBAS](docs/PRUEBAS.md#fase-14--operación-y-continuidad) y [evidencias](docs/evidencias/fase14/). Ensayos iniciales y correcciones se registran sin ocultar fallos. Sin backup gestionado/Auth/MFA real, almacén/retención externos, proxy/TLS ni rollback de artefacto en plataforma acreditados. F1-SEG-01/02/03 siguen abiertos. No hay operador/suplente, día/hora UTC, destino/custodia/canal aprobados ni presupuesto informado. No fijar domingo 02:00 UTC como aceptado.
 
 Fase 14 EN_REVISION, CA14-06 PENDIENTE; última completada 13. Producción no autorizada; Fase 15 sin iniciar. Siguiente acción: revisión/aceptación propia de entrega con límites y resolución de pendientes operativos. Ninguna autorización futura se presume. Todos los cambios se sincronizan en amsotov/inventarioTI2, main, con commit/push normal y SHA remoto comprobado.
+
+## Incremento vigente — Demo React / Pages (2026-11-02)
+
+El usuario autoriza explícitamente preparar la demo y su publicación estática mediante workflow, entregada por pull request. Se implementa `demoData` en memoria, sesión/roles sintéticos, CRUD y movimientos, banner y correo simulado; Excel/PDF locales, configuración Vite/base y workflow Pages Node 20. Se preservan servidor, Supabase, migraciones, autenticación y flujos normales. React Router no está instalado: la navegación hash existente ya evita el 404 de recarga.
+
+Archivos: `apps/web/src/{api,main,reports,admin,style,demoData,demoMode,env.d}`, `vite.config.js`, `scripts/demo.mjs`, `package.json`/lock, `.github/workflows/deploy-demo.yml`, `tests/demo/browser.mjs`, README y registros de control. El pipeline sube únicamente `dist/web`. Node 24 continúa siendo el requisito del servidor; Node 20 se utiliza solo para compilar la demo. Nueva biblioteca de navegador jsPDF 4.2.1 fijada; write-excel-file ya existía. Sin almacenamiento local/persistente de demo, llamadas API o correo real. Verificación y resultados en `docs/DEMO.md`.
+
+Fase 14 continúa EN_REVISION con CA14-06 pendiente, última completada 13; Fase 15 sin iniciar. La demo no acredita continuidad productiva ni resuelve F1-SEG-01/02/03. Siguiente paso: revisar/integrar el PR y seleccionar GitHub Actions como fuente de Pages. No se activa Pages desde esta tarea ni se publica antes de integrar el PR.
+
+
+## Publicación demo autorizada — 2026-11-02
+
+El usuario autoriza expresamente integrar el PR #2, preparar y publicar la demo en GitHub Pages. Se corrige previamente CI: faltaba `pdftotext` en el runner, por lo que Verify instalará `poppler-utils` sin omitir pruebas. Se verificará CI, se integrará el PR y se cambiará Pages de la fuente legacy `/docs` a GitHub Actions, publicando solo datos sintéticos. Esta autorización no cierra CA14-06, no inicia Fase 15 ni autoriza el sistema productivo. Resultado final y enlaces en `docs/DEMO.md`.

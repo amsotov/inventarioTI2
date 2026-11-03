@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-03 — Migración Fase 2: trazabilidad y mapeo EN_REVISION
+
+- Registra aceptación documental de Fase 1 e inicio exclusivo de Fase 2 por M2-A01.
+- Documenta 16 RF/7 RNF, 19 reglas, 16 historias, 20 criterios; referencias API/UI/servicios/pruebas existentes.
+- Mapea 155 campos actuales y 117 destino sin eliminar capacidades ausentes del núcleo objetivo.
+- Verificación documental y manifiesto de fuentes; sin SQL, implementación, merge, despliegue ni Fase 3.
+
 ## 2026-11-03 — Modernización: diagnóstico aprobado y Fase 1 EN_REVISION
 
 - Registra aprobación de Fase 0 e incorpora su informe; autoriza únicamente validación documental y sincronización GitHub.

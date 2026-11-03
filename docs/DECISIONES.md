@@ -210,3 +210,8 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## M1-A01 — Cierre de diagnóstico e inicio de validación de migración
 
 2026-11-03. Usuario: «apruebo fase 0 y inicia fase 1 de aquí en adelante guarda todo github los cambios realizados». Se cierra Fase 0 de migración y autoriza únicamente Fase 1 documental, con sincronización GitHub. No equivale a aprobar recomendaciones: [M1-D01–M1-D16](migracion/01_DECISIONES_PENDIENTES.md) siguen PENDIENTES. Fase 1 EN_REVISION y Fase 2 NO AUTORIZADA. Identificadores M1 separados de D-01–D-38 históricos. Sin SQL, esquema, aplicación, datos ni despliegue; fuentes originales conservadas.
+
+
+## M2-A01 — Cierre documental de migración Fase 1 e inicio de Fase 2
+
+2026-11-03. Usuario: «apruebo y inicia fase 2». Aceptación de la entrega 9dbaa2f y autorización de línea base funcional/trazabilidad/mapeo. Se mantienen condiciones de datos y opciones excluyentes M1-D01–M1-D16; no se inventa aprobación de cambios físicos, asociaciones de identidades ni unicidad sin perfilado. Fase 2 EN_REVISION; Fase 3 NO AUTORIZADA. Sin SQL, implementación, merge ni despliegue.

@@ -419,3 +419,8 @@ Verificación reproducible: `python3 docs/migracion/verificar_fase1.py`; [eviden
 Control de alcance: fuentes, apps/, supabase/, db/, ops/, prototipo/, tests/, dependencias, workflows y evidencia histórica sin cambios frente a 511b99d; solo documentación/anexos y su verificador. Revisión de espacios/diferencias y enlaces internos de archivos cambiados. Resultado final del control documentado en la entrega GitHub.
 
 NO EJECUTADAS: SQL, migraciones, build, suites funcionales/API/UI, carga, integraciones gestionadas y perfilado operacional. Fase 1 EN_REVISION; propuestas pendientes, no modelo implementable. Sin Fase 2 ni despliegue.
+
+
+## Migración Fase 2 — verificación documental
+
+`python3 docs/migracion/verificar_fase2.py`: cobertura RF/RNF/RN/HU/CR, 19 tablas/155 campos actuales, 30 tablas/117 campos destino, referencias de API/UI/pruebas y hashes de fuentes. [Evidencia](migracion/evidencias/fase2/verificacion.json). Fuentes de modelo, aplicación, migraciones, tests y evidencias históricas preservadas. Revisión de enlaces y diff --check. Las pruebas existentes se referencian por archivo/título/línea; NO REEJECUTADAS. Sin SQL, build, pruebas funcionales, datos reales, despliegue ni integración gestionada. Fase 2 EN_REVISION, no Fase 3.

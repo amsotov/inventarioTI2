@@ -100,3 +100,8 @@ Fase 13 COMPLETADA y CA13-06 cumplido. Fase 14 autorizada únicamente para inici
 ## Ciclo de migración — Fase 1, 2026-11-03
 
 Fase 0 aprobada; Fase 1 EN_REVISION. [Validación campo por campo](../docs/migracion/01_VALIDACION_MODELO.md) y [decisiones pendientes](../docs/migracion/01_DECISIONES_PENDIENTES.md). Fase 2 de migración (trazabilidad) NO AUTORIZADA; no corresponde al diseño visual de la Fase 2 histórica. Spec Kit no instalado ni simulado. Sin cambios de aplicación, datos o SQL.
+
+
+## Migración Fase 2 — M2-A01
+
+Fase 1 aceptada por «apruebo y inicia fase 2». [Matriz](../docs/migracion/02_MATRIZ_TRAZABILIDAD.md) y [mapeo](../docs/migracion/02_MAPEO_ESQUEMAS.md) entregados EN_REVISION. Fase 3 no autorizada. La aprobación documental no ejecuta decisiones físicas ni resuelve datos condicionados. Spec Kit no instalado ni simulado; sin cambios de aplicación o SQL.

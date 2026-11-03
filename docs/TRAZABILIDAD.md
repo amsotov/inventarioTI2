@@ -160,3 +160,8 @@ Fase 13 COMPLETADA por aceptación expresa el 2026-11-02 de `16f7bf0a4d7a088eae4
 | D-17/D-37/D-38 y F1-SEG-02 | Ambientes/secretos, Verify only, promoción/migración/rollback controlados | Workflow sin deploy y checklist NO-GO; presupuesto/destino/permisos gestionados pendientes |
 
 [Plan y CA14-01–06](DESPLIEGUE.md), [pruebas](PRUEBAS.md#fase-14--operación-y-continuidad). Fase 14 EN_REVISION; CA14-06 PENDIENTE, Fase 15 sin autorización.
+
+
+## Migración Fase 2 — matriz vigente de impacto
+
+[02_MATRIZ_TRAZABILIDAD](migracion/02_MATRIZ_TRAZABILIDAD.md) relaciona los 16 RF y 7 RNF con RN/HU/CR, campos actuales/destino, API, servicios, pantallas y títulos de pruebas. [02_MAPEO_ESQUEMAS](migracion/02_MAPEO_ESQUEMAS.md) cubre 155 campos actuales y 117 objetivo. La cobertura es documental, sin pruebas funcionales reejecutadas ni SQL. Fase 1 aceptada por M2-A01, Fase 2 EN_REVISION y Fase 3 no autorizada. La trazabilidad histórica anterior se conserva.

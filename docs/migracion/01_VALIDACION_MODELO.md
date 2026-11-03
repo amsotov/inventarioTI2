@@ -1,5 +1,7 @@
 # FASE 1 — Validación documental del modelo objetivo
 
+> Actualización de continuidad: usuario acepta la entrega documental mediante «apruebo y inicia fase 2». Fase 1 COMPLETADA; las opciones/datos condicionados conservan sus pendientes. El texto y evidencia siguientes describen la entrega original EN_REVISION. Estado vigente en [FASES](../../FASES.md) y [Fase 2](02_MATRIZ_TRAZABILIDAD.md).
+
 Fecha: 2026-11-03. Estado: **EN_REVISION**. Responsable de preparación: Codex; aprobación: usuario.
 
 ## Alcance autorizado y fuentes

@@ -39,6 +39,6 @@ Informa: fase, objetivo, trabajo hecho, archivos cambiados, pruebas ejecutadas (
 ## Modernización — instrucción del usuario de 2026-11-03
 
 - Para el ciclo de migración leer `prompts/PROMPT_MAESTRO_MIGRACION_INVENTARIOTI_CODEX.md`, `docs/migracion/` e `INICIAR_EN_CODEX.md`. Mantener separado su control de fases del desarrollo histórico 0–15.
-- Fase 0 de migración aprobada; Fase 1 autorizada y entregada EN_REVISION. No iniciar Fase 2 ni implementar propuestas sin aprobación expresa aplicable.
+- Fases 0 y 1 de migración aprobadas; Fase 2 autorizada por «apruebo y inicia fase 2» y entregada EN_REVISION. No iniciar Fase 3 ni implementar propuestas sin aprobación expresa aplicable.
 - El usuario ratificó: «de aquí en adelante guarda todo github los cambios realizados». Sincronizar todos los cambios autorizados, incluida documentación, en rama dedicada y verificar SHA remoto. No implica merge, despliegue, envío real ni producción; main tiene despliegue automático de demo y no se actualiza por inferencia.
 - La Fase 2 de migración es trazabilidad, no UX/UI. Las instrucciones históricas de diseño visual se aplican a su fase de diseño correspondiente cuando esté autorizada.

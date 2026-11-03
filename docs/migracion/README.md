@@ -5,7 +5,7 @@ Esta carpeta recibirá los informes y matrices generados por Codex durante las f
 No se han ejecutado migraciones ni pruebas al preparar este kit. No escribir datos en producción sin autorización específica.
 
 
-## Entrega vigente — 2026-11-03
+## Entrega original de Fase 1 — 2026-11-03
 
 - [00_DIAGNOSTICO.md](00_DIAGNOSTICO.md): Fase 0 aprobada; informe incorporado ahora con autorización.
 - [01_VALIDACION_MODELO.md](01_VALIDACION_MODELO.md): Fase 1 EN_REVISION, hallazgos H01–H15.
@@ -15,3 +15,15 @@ No se han ejecutado migraciones ni pruebas al preparar este kit. No escribir dat
 - [Evidencia](evidencias/fase1/verificacion.json) y [verificador documental](verificar_fase1.py).
 
 El modelo no está habilitado para implementación. Fase 2 no autorizada. Esta numeración es independiente del desarrollo histórico. Ver [continuidad](../../INICIAR_EN_CODEX.md).
+
+
+## Continuidad vigente — Fase 2
+
+Usuario: «apruebo y inicia fase 2». Fase 1 aceptada; Fase 2 EN_REVISION; Fase 3 NO AUTORIZADA. El apartado anterior corresponde a la entrega original.
+
+- [02_MATRIZ_TRAZABILIDAD.md](02_MATRIZ_TRAZABILIDAD.md) y [anexo CSV](02_TRAZABILIDAD.csv).
+- [02_MAPEO_ESQUEMAS.md](02_MAPEO_ESQUEMAS.md), [campos actuales](02_MAPEO_ACTUAL.csv) y [destino](02_MAPEO_DESTINO.csv).
+- [Línea base](02_LINEA_BASE_FUNCIONAL.md), [API](02_INVENTARIO_API.csv), [UI](02_INVENTARIO_UI.csv) y [criterios](02_CRITERIOS_REGRESION.csv).
+- [Esquema actual declarado](02_ESQUEMA_ACTUAL.csv), [verificador](verificar_fase2.py) y [evidencia](evidencias/fase2/verificacion.json).
+
+Decisiones con alternativas/datos pendientes no se resuelven automáticamente por aceptar la fase. Sin implementación, SQL ni despliegues.

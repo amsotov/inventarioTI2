@@ -2,12 +2,13 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASE 0: COMPLETADA y aprobada por el usuario. Migración FASE 1: EN_REVISION. FASE 2: NO AUTORIZADA.**
+**Migración FASES 0 y 1: COMPLETADAS por aprobación del usuario. FASE 2: EN_REVISION. FASE 3: NO AUTORIZADA.**
 
-Autorización literal: «apruebo fase 0 y inicia fase 1 de aquí en adelante guarda todo github los cambios realizados». Entrega: [diagnóstico](docs/migracion/00_DIAGNOSTICO.md), [validación del modelo](docs/migracion/01_VALIDACION_MODELO.md), [decisiones pendientes](docs/migracion/01_DECISIONES_PENDIENTES.md) y [guía de continuidad](INICIAR_EN_CODEX.md). Solo documentación y verificación documental; sin cambios de esquema, SQL ejecutado, aplicación, datos ni despliegues. Las recomendaciones siguen pendientes de aprobación. Todos los cambios autorizados se guardan en GitHub en rama dedicada, sin merge automático.
+Autorización vigente: «apruebo y inicia fase 2», posterior a la entrega `9dbaa2f`. Se acepta la validación documental y se prepara únicamente línea base/trazabilidad/mapeo. Los diseños alternativos y decisiones condicionadas a datos de M1-D01–M1-D16 conservan sus condiciones; ninguna recomendación se ejecuta por inferencia.
 
-La numeración de migración 0–9 sigue el prompt de `prompts/`; la numeración de desarrollo 0–15 que aparece a continuación es histórica y se conserva. Su última fase completada es 13, la 14 sigue EN_REVISION y la 15 no está autorizada. F1-SEG-01/02/03 permanecen abiertos. La aprobación de migración Fase 1 no autoriza reanudar desarrollo ni nuevas fases.
+Entregables: [matriz de trazabilidad](docs/migracion/02_MATRIZ_TRAZABILIDAD.md), [mapeo de esquemas](docs/migracion/02_MAPEO_ESQUEMAS.md), [línea base](docs/migracion/02_LINEA_BASE_FUNCIONAL.md) y [continuidad](INICIAR_EN_CODEX.md). Sin SQL, cambios de datos/esquema/aplicación, merge ni despliegues. Todos los cambios autorizados se guardan en GitHub en rama dedicada.
 
+La numeración de migración 0–9 es independiente del desarrollo histórico 0–15. Su última fase completada es 13, Fase 14 sigue EN_REVISION y Fase 15 sin autorización; F1-SEG-01/02/03 permanecen. La Fase 2 de migración no es diseño visual.
 
 Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 

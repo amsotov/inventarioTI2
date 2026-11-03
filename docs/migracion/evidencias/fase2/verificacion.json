@@ -1,0 +1,42 @@
+{
+  "fase": "MIGRACION_2",
+  "estado_verificacion": "APROBADA_EN_ALCANCE_DOCUMENTAL",
+  "estado_fase": "EN_REVISION",
+  "base_git": "9dbaa2fe3955e75f237caf873ef2ca44346241c2",
+  "conteos": {
+    "requisitos_funcionales": 16,
+    "requisitos_no_funcionales": 7,
+    "historias": 16,
+    "reglas": 19,
+    "criterios_cr": 20,
+    "tablas_actuales": 19,
+    "campos_actuales": 155,
+    "tablas_destino": 30,
+    "campos_destino": 117,
+    "rutas_metodo_expandidas": 49,
+    "rutas_api_v1": 45,
+    "entradas_ui_incluye_historico_demo_y_futuro": 12,
+    "fuentes_preservadas": 91
+  },
+  "clasificacion_campos_destino": {
+    "NUEVO_NECESARIO": 55,
+    "PENDIENTE": 21,
+    "ADAPTAR": 41
+  },
+  "comprobaciones": [
+    "Cobertura RF/RNF/RN/HU/CR y fuente de cada requisito",
+    "155 columnas declaradas y ADD COLUMN leídos sin ejecución SQL",
+    "Mapeo bidireccional completo de campos y destinos válidos",
+    "Rutas/métodos/permisos/anclas y familias dinámicas",
+    "Pantallas, componentes y títulos/líneas de pruebas existentes",
+    "Hashes de fuentes y evidencia original de Fase 1 conservados"
+  ],
+  "limites": [
+    "Solo inspección estática y verificación documental",
+    "No acredita ejecución de código ni despliegue",
+    "Pruebas funcionales referenciadas, no reejecutadas",
+    "Sin SQL, ETL, datos reales, build, navegador o servicios externos",
+    "Mappings propuestos; no implementa decisiones de esquema",
+    "Fase 3 no autorizada"
+  ]
+}

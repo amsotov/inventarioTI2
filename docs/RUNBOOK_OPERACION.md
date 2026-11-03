@@ -60,3 +60,7 @@ Node 24 y Docker local, desde raíz: `npm ci`, `npm run build`, `npm run test:op
 ## Migración Fase 4 — planificación de corte y reversión
 
 [Plan ETL](migracion/04_PLAN_ETL.md) y [reconciliación/rollback](migracion/04_RECONCILIACION_ROLLBACK.md) proponen origen congelado, snapshot consistente, soporte de identidad/efectos, restauración aislada y retorno condicionado al punto de nuevas escrituras. Los procedimientos previos se conservan como referencia histórica; no se ejecutó operación ni se acredita recuperación SQL Server. Fuente real, operadores/entorno/seguridad y autorización concreta pendientes. Fase 4 EN_REVISION, sin Fase 5 ni producción.
+
+## Candidato SQL Server de modernización — Fase 5
+
+El [DDL candidato](../migrations/sqlserver/README.md) está bloqueado y no integrado al runner actual. No quitar THROW ni ejecutar sobre PostgreSQL/base existente. [Informe](migracion/05_ESQUEMA_SQLSERVER.md) detalla versión/edición/collation, soporte y decisiones pendientes. Sin ensayo de motor, restore o rollback; procedimientos de Fase 4 y runbook histórico conservan sus límites. Fase 6/producción sin autorización.

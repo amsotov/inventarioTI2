@@ -1,5 +1,7 @@
 # Entregables de la migración
 
+**Estado vigente:** Fases 0–4 aprobadas; [Fase 5](05_ESQUEMA_SQLSERVER.md) EN_REVISION, aplicación/ensayos de motor BLOQUEADOS; Fase 6 NO AUTORIZADA. Los estados de entregas anteriores se conservan como historia.
+
 Esta carpeta recibirá los informes y matrices generados por Codex durante las fases autorizadas del prompt en `../../prompts/PROMPT_MAESTRO_MIGRACION_INVENTARIOTI_CODEX.md`.
 
 No se han ejecutado migraciones ni pruebas al preparar este kit. No escribir datos en producción sin autorización específica.
@@ -37,3 +39,7 @@ Usuario acepta Fase 2 y autoriza diseño. [03_IMPACTO_FRONTEND_API.md](03_IMPACT
 ## Continuidad vigente — Fase 4
 
 Usuario aprueba Fase 3 e inicia Fase 4. [Plan](04_PLAN_ETL.md), [excepciones](04_EXCEPCIONES_DATOS.md), [reconciliación/rollback](04_RECONCILIACION_ROLLBACK.md), [57 reglas](04_REGLAS_TRANSFORMACION.csv), [catálogo de excepciones](04_CATALOGO_EXCEPCIONES.csv), [orden](04_ORDEN_CARGA.csv), [pruebas futuras](04_PRUEBAS_RECONCILIACION.csv) y [puertas](04_PUERTAS_CONTROL.csv). [Verificador](verificar_fase4.py) y [evidencia](evidencias/fase4/verificacion.json). Fase 4 EN_REVISION; Fase 5 NO AUTORIZADA. No SQL, ETL ejecutado ni datos reales perfilados. Apartados anteriores son entregas históricas.
+
+## Estado vigente — Fase 5
+
+M5-A01 «apruebo fase 4 inicia fase 5» acepta `9f84fcd`; Fases 0–4 COMPLETADAS. [Fase 5](05_ESQUEMA_SQLSERVER.md) EN_REVISION; aplicación/ensayos de motor BLOQUEADOS. [SQL candidato](../../migrations/sqlserver/README.md), [CHECK](05_CHECKS_PROPUESTOS.csv), [índices](05_INDICES_PROPUESTOS.csv), [soporte 19 tablas](05_SOPORTE_ACTUAL.csv), [155 campos](05_PRESERVACION_CAMPOS.csv), [30 casos futuros](05_CASOS_SQLSERVER.csv), [verificación](evidencias/fase5/verificacion.json). Fase 6 NO AUTORIZADA. Estados anteriores son antecedentes de sus entregas; no modifican el estado vigente.

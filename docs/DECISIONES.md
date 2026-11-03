@@ -225,3 +225,7 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## M4-A01 — Aceptación Fase 3 e inicio de planificación ETL
 
 2026-11-03. Usuario: «apruebo fase 3 inicia fase 4». Cierra diseño 59b58d9 y autoriza plan de staging/transformación/excepciones/reconciliación/rollback. [Plan](migracion/04_PLAN_ETL.md) EN_REVISION; no es ejecución. Las decisiones M1-D condicionadas a datos/opciones siguen sujetas a resolución; no permiso para extraer/cargar/rotar credenciales ni operar producción. Fase 5 no autorizada.
+
+## M5-A01 — aceptación documental Fase 4 y autorización Fase 5
+
+Usuario: «apruebo fase 4 inicia fase 5». Acepta `9f84fcd`; permite preparar y verificar candidato SQL Server, no resuelve opciones M1-D ni configura entorno. Núcleo fiel separado de propuestas; barreras de aplicación mientras diseño/entorno estén pendientes. Fase 5 EN_REVISION; Fase 6 NO AUTORIZADA. Recomendaciones y bloqueos en [informe](migracion/05_ESQUEMA_SQLSERVER.md). No se ejecutó SQL ni se sustituyó la aplicación.

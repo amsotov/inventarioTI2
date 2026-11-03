@@ -187,3 +187,9 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`; Fase 12 COMPLETADA y CA12-06 CUMPLIDO.
 - Fase 13 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Punto de inicio en FASES/ESTADO, sin ejecutar QA en este cierre.
 - Se preservan código, migraciones, dependencias, pruebas/evidencias y límites operativos; correo real deshabilitado, Fases 14–15 sin autorización, sin producción ni despliegue.
+
+## 2026-11-03 — Migración Fase 5, candidato SQL Server
+
+- Fase 4 aceptada por usuario; Fase 5 entregada EN_REVISION, aplicación BLOQUEADA.
+- DDL candidato 30 tablas/117 campos/PK/FK/UQ/IDENTITY/defaults; CHECK e índices propuestos separados, consulta de catálogo y manifiesto de revisión.
+- Soporte actual 19/155 trazado, controles estáticos/sintácticos y negativas; casos de motor no ejecutados. Sin cambios de aplicación/SQL previo, cargas, merge o despliegue.

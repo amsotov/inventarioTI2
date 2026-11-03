@@ -434,3 +434,9 @@ NO EJECUTADAS: SQL, migraciones, build, suites funcionales/API/UI, carga, integr
 ## Migración Fase 4 — verificación documental de plan
 
 `python3 docs/migracion/verificar_fase4.py`: cobertura de 57 mapeos/13 hallazgos, nombres destino exactos, 20 excepciones, 36 escenarios planificados y 12 puertas; DAG de 30 tablas, referencias e integridad de fuentes/entregas. [Evidencia](migracion/evidencias/fase4/verificacion.json). No ejecuta ETL, SQL, backup/restore, aplicación ni perfilado de datos reales. Los 36 casos siguen NO_EJECUTADA_PLANIFICADA. Enlaces y diff --check revisados; fuentes, app, SQL, tests y maquetas/capturas previas intactos. Fase 4 EN_REVISION; Fase 5 no autorizada.
+
+## Migración Fase 5 — controles estáticos y límites
+
+`python3 docs/migracion/verificar_fase5.py`: cobertura OOXML ↔ DDL/CSV/manifiesto, integridad de referencias, barreras y preservación. Con venv externo SQLFluff 3.5.0: `--analizar-sintaxis` analiza cuatro scripts en dialecto tsql; no compila ni ejecuta SQL Server. Trece negativas sobre copias detectan cambios de tipo, FK/clave/default, CHECK, índice, guardia y manifiesto. Evidencia en [fase5/verificacion.json](migracion/evidencias/fase5/verificacion.json).
+
+`--evaluar-aplicacion` termina 3 por diseño/entorno pendientes (bloqueo esperado, no error de conectividad). [30 casos](migracion/05_CASOS_SQLSERVER.csv) de motor, aplicación, reconciliación, replay, concurrencia y rollback/restore NO_EJECUTADOS. No se repiten suites PostgreSQL/UI sin cambios de aplicación. Fase 5 EN_REVISION, no COMPLETADA.

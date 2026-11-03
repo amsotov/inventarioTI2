@@ -2,11 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–3: COMPLETADAS por aprobación del usuario. FASE 4: EN_REVISION. FASE 5: NO AUTORIZADA.**
+**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos de motor BLOQUEADOS). FASE 6: NO AUTORIZADA.**
 
-Autorización: «apruebo fase 3 inicia fase 4», posterior a entrega `59b58d9`. Se prepara [plan ETL](docs/migracion/04_PLAN_ETL.md), [excepciones](docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](docs/migracion/04_RECONCILIACION_ROLLBACK.md). Solo planificación y verificación documental; no SQL, extracción/carga de datos reales, cambios de aplicación, merge ni despliegue.
+Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
 
-El Excel operacional no está disponible en el repositorio; los hallazgos del diccionario no son perfilado nuevo. Condiciones M1-D y F1-SEG-01/02/03 se conservan. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). Aceptar un plan no concede permiso de acceso/carga/productivo ni resuelve datos irreconstruibles.
+Pendientes: decisiones M1-D aplicables, versión/edición/collation/entorno autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
@@ -576,3 +576,7 @@ El usuario cambió la fuente Pages a GitHub Actions (`build_type=workflow` confi
 ## M4-A01 — Cierre de diseño e inicio exclusivo de plan ETL
 
 2026-11-03. Usuario: «apruebo fase 3 inicia fase 4». Acepta 59b58d9 y cierra Fase 3; autoriza solo planificación ETL/protección. Fase 4 EN_REVISION, CA-M4-01–05 documentales verificados; CA-M4-06 pendiente. Fase 5 no autorizada. Fuente operacional ausente; 57 reglas/13 hallazgos, 20 controles de excepción, 36 pruebas futuras y 12 puertas documentadas. Sin SQL, datos reales, aplicación, merge ni despliegue.
+
+## Migración M5-A01 — aprobación de Fase 4 y entrega Fase 5
+
+2026-11-03. Usuario: «apruebo fase 4 inicia fase 5». Acepta `9f84fcd` y cierra Fase 4 documental con límites; no aprueba alternativas de datos/entorno por inferencia. Fase 5 EN_REVISION: 30 tablas/117 campos en cuatro SQL candidatos bloqueados, nueve CHECK y 24 índices propuestos, mapa de soporte 19/155, verificación estática/parser/negativas. CA-M5-01 y preservación estática verificables; CA-M5-02/04/05/06 con pendientes según informe. Aplicación/ensayos de motor BLOQUEADOS por diseño y entorno no autorizado; sin SQL ejecutado ni funcionalidad migrada. Fase 6 NO AUTORIZADA; desarrollo histórico intacto.

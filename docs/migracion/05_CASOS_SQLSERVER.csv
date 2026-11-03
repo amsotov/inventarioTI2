@@ -1,0 +1,31 @@
+id,caso,resultado_requerido,decisiones,estado
+SQL5-01,Motor y collation,SQL Server/versión/edición/collation autorizadas; VARCHAR no pierde Unicode y UQ tiene comparación aprobada,M1-D01;M1-D15,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-02,Aplicación vacía,Crear solo en base candidata vacía autorizada; 30 tablas/117 campos y sin tocar PostgreSQL,M1-D01;M1-D09,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-03,Metadatos,"900 compara columnas/tipos/bytes/precisión/null/identity, PK/UQ/FK; no sustituye pruebas de negocio",M1-D14;M1-D15,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-04,IDENTITY,25 columnas con seed/increment 1; INT/BIGINT y cuatro PK/FK sin identity; reseed solo tras carga aprobada,M1-D09;M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-05,PK compuesta,AUTORIZACIONES acepta pares distintos y rechaza par repetido; no impone unicidad individual,M1-D11;M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-06,UQ existentes,18 UQ declaradas rechazan duplicados según collation; nombre de red obligatorio,M1-D06;M1-D11;M1-D15,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-07,FK,30 referencias rechazan huérfanos; opcionales aceptan NULL; NO ACTION impide borrado de padre referenciado,M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-08,CHECK correo,NULL válido; propuesta rechaza vacío/espacios/controles/formato mínimo; no acredita RFC ni unicidad,M1-D03;M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-09,CHECK niveles,Propuesta admite solo 1/2; rechaza 0/3; no concede permisos reales ni sustituye MFA,M1-D11;M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-10,CHECK auditoría,Propuesta rechaza vacío y tab/CR/LF; dominio de acciones pendiente; verificar proyección positiva,M1-D12;M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-11,CHECK MAC,NULL/12 hex/17 con separadores uniformes válidos; mezcla/nohex/espacios rechazados,M1-D14;M1-D16,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-12,CHECK GHz,"NULL y positivos dentro de DECIMAL(4,2); rechazar cero/negativos/overflow sin redondeo indebido",M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-13,CHECK pulgadas,NULL/positivo; rechazar cero/negativo/overflow; no limitar a catálogo imaginado,M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-14,CHECK ancho,NULL/positivo; rechazar cero/negativo/overflow; unidad ratificada antes de cargar,M1-D14;M1-D16,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-15,CHECK puertos,Positivo hasta límite físico SMALLINT; no imponer lista de tamaños,M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-16,CHECK capacidad,"GB positivos enteros; valores fraccionarios/ambigüedad a revisión, no truncar",M1-D14;M1-D16,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-17,Defaults UTC,Probar los cinco defaults y reloj; tres SYSDATETIME del baseline NO satisfacen garantía UTC actual,M1-D07,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-18,Temporal e historia,Preservar microsegundos/fechas históricas y efectiva/registro sin inventar horas; comparar origen,M1-D07;M1-D08,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-19,Subtipos,"Un subtipo aplicable, tipo/notebook coherentes y modelo/marca consistentes; faltan mecanismos aprobados",M1-D10,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-20,Asignaciones,"Vigente única, intervalos, mismo equipo, no ciclos/autoenlace/ramas, concurrencia de dos sesiones",M1-D05;M1-D07;M1-D08,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-21,Autenticación,"Proveedor/Store coherentes, cuentas mapeadas, MFA/revocación y estados; no fake hashes ni crear cuentas por persona",M1-D02;M1-D03;M1-D09;M1-D11,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-22,Atomicidad,Error en FK/CHECK deja cero DDL parcial en cada versión; permisos insuficientes devuelven error,M1-D08;M1-D09;M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-23,Reaplicación y drift,Versión/fingerprint conocidos no duplica objetos; colisión/drift aborta sin omitir diferencias; runner pendiente,M1-D09,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-24,Rollback,Antes de COMMIT rollback transaccional; después no hay down destructivo: restaurar candidato o preservar delta según plan,M1-D08;M1-D09,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-25,Mínimo privilegio,Separar migrador/runtime; runtime sin DDL/DML directo y funciones/roles sustituyen RLS de PostgreSQL con prueba negativa,M1-D02;M1-D09;M1-D11,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-26,Datos sensibles,PIN/secretos excluidos o cifrados con decisión; ningún secreto en auditoría/log/exportación,M1-D12,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-27,Rendimiento,24 índices propuestos no redundantes; planes/IO/latencia/bloqueos con carga representativa antes de justificar SLAs,M1-D14;M1-D15,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-28,Soporte completo,19 tablas/155 campos y garantías conservadas; trazabilidad de IDs estable; adaptadores y RLS no son portables automáticamente,M1-D08;M1-D09,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-29,Reconciliación ETL,"Aplicar REC-01–36 sobre fuente autorizada; cero excepciones críticas, sin deduplicar por nombre",M1-D16,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-30,Operación,"Restauración aislada comprobada, workers apagados, sesiones/enlaces invalidados, outbox no reactivado, export TTL/permiso",M1-D02;M1-D09;M1-D12,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO

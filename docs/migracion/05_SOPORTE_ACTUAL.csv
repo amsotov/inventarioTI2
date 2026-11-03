@@ -1,0 +1,20 @@
+tabla_actual,campos,destino_propuesto,garantias,decisiones,estado
+inventario.unidades,4,Catálogos de organización + soporte de unidad pública,"Preservar UUID, nombre y versiones; no deducir delegación/departamento/área por parecido.",M1-D04;M1-D09,DISENO_PENDIENTE_SIN_DDL
+inventario.cuentas,10,USUARIOS/AUTORIZACIONES + store de identidad por decidir,"Proveedor externo, estados, credencial_lista, revocación, versión de autorización y UUID público; HASH NOT NULL es incompatible.",M1-D02;M1-D03;M1-D09;M1-D11,DISENO_PENDIENTE_SIN_DDL
+inventario.funcionarios,11,FUNCIONARIOS + identidad y metadatos complementarios,Documento/cargo/alta/versiones y UUID no caben en núcleo; no perder ni fusionar identidades.,M1-D03;M1-D09;M1-D15,DISENO_PENDIENTE_SIN_DDL
+inventario.bienes,13,EQUIPOS/subtipos + metadatos operativos,"Código único, motivo sin serie, baja final, adquisición, UUID/versiones y textos completos no se eliminan.",M1-D06;M1-D09;M1-D13;M1-D15,DISENO_PENDIENTE_SIN_DDL
+inventario.comandos,8,Soporte de comandos idempotentes,"Unicidad por actor/operación/recurso/clave, huella y resultado durable; atómico con dominio/outbox/auditoría.",M1-D08;M1-D09,DISENO_PENDIENTE_SIN_DDL
+inventario.pertenencias,9,Historia complementaria de pertenencias,"Instantáneas de unidad, efectiva/registro UTC, actor/comando y motivo; no sustituir por FUNC_AREA_ID actual.",M1-D07;M1-D08;M1-D09,DISENO_PENDIENTE_SIN_DDL
+inventario.movimientos,17,Historia complementaria de movimientos,Preservar tipo/origen/destino/condición/corrección/motivo y dos tiempos; ASIGNACIONES no cubre esta historia.,M1-D07;M1-D08;M1-D09;M1-D13,DISENO_PENDIENTE_SIN_DDL
+inventario.custodias,7,ASIGNACIONES + intervalos precisos complementarios,"Conservar UUID, inicio/fin UTC, apertura/cierre; DATE pierde precisión; vigente única, concurrencia y cadenas pendientes.",M1-D05;M1-D07;M1-D08;M1-D09,DISENO_PENDIENTE_SIN_DDL
+inventario.anotaciones,7,Soporte de anotaciones inmutables,Movimiento/actor/comando/texto/motivo/registro; secretos excluidos; no sobrescribir movimiento.,M1-D08;M1-D09;M1-D12;M1-D15,DISENO_PENDIENTE_SIN_DDL
+inventario.auditoria,10,AUDITORIA + evidencia complementaria minimizada,"UUID, actor/comando/motivo/proyección positiva append-only y precisión; no copiar JSON completo a VARCHAR(MAX).",M1-D07;M1-D08;M1-D09;M1-D12,DISENO_PENDIENTE_SIN_DDL
+inventario.configuracion_avisos,3,Soporte de configuración de avisos,Versión y destinatario restringido; configuración se reconcilia con aprobación operacional.,M1-D09;M1-D12,DISENO_PENDIENTE_SIN_DDL
+inventario.outbox,14,Soporte transaccional de avisos,Atómico con cambio; estados/intentos/arrendamientos/reclamación; histórico no despachable y entregas inciertas a revisión.,M1-D08;M1-D09;M1-D12,DISENO_PENDIENTE_SIN_DDL
+inventario.intentos_aviso,6,Soporte append-only de intentos,Preservar correlación/número/resultado/código/UTC; sin reenvío por migrar.,M1-D07;M1-D09;M1-D12,DISENO_PENDIENTE_SIN_DDL
+acceso.sesiones,3,Store de acceso a decidir,Caducar sesiones en corte; proveedor/principal/store coherentes y probados. No reactivar huellas copiadas.,M1-D02;M1-D09;M1-D11,DISENO_PENDIENTE_SIN_DDL
+acceso.intenciones,3,Store de acceso a decidir,Invalidar recuperación/invitaciones pendientes; no migrar tokens operativos reutilizables.,M1-D02;M1-D09;M1-D12,DISENO_PENDIENTE_SIN_DDL
+acceso.entregas,5,Store de acceso a decidir,Sobres cifrados bajo claves externas; invalidar envíos pendientes/enlaces; no reenviar histórico.,M1-D02;M1-D09;M1-D12,DISENO_PENDIENTE_SIN_DDL
+acceso.limites,3,Store de control de abuso a decidir,Continuidad del rate limit con privacidad y TTL aprobados; no desactivar por cambiar motor.,M1-D02;M1-D09;M1-D12,DISENO_PENDIENTE_SIN_DDL
+seguridad.eventos,5,Soporte append-only de decisiones de acceso,Actor/permiso/resultado/UTC y retención; mínimo privilegio y pruebas de denegación.,M1-D07;M1-D09;M1-D11;M1-D12,DISENO_PENDIENTE_SIN_DDL
+inventario.exportaciones,17,Soporte privado de exportaciones,"Solicitante/filtros/snapshot/archivo/TTL/arrendamiento e idempotencia; renovar permisos, impedir exportación pública/replay.",M1-D07;M1-D09;M1-D11;M1-D12,DISENO_PENDIENTE_SIN_DDL

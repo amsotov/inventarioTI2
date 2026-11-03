@@ -2,11 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–3: COMPLETADAS por aprobación del usuario. FASE 4: EN_REVISION. FASE 5: NO AUTORIZADA.**
+**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos de motor BLOQUEADOS). FASE 6: NO AUTORIZADA.**
 
-Autorización: «apruebo fase 3 inicia fase 4», posterior a entrega `59b58d9`. Se prepara [plan ETL](docs/migracion/04_PLAN_ETL.md), [excepciones](docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](docs/migracion/04_RECONCILIACION_ROLLBACK.md). Solo planificación y verificación documental; no SQL, extracción/carga de datos reales, cambios de aplicación, merge ni despliegue.
+Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
 
-El Excel operacional no está disponible en el repositorio; los hallazgos del diccionario no son perfilado nuevo. Condiciones M1-D y F1-SEG-01/02/03 se conservan. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). Aceptar un plan no concede permiso de acceso/carga/productivo ni resuelve datos irreconstruibles.
+Pendientes: decisiones M1-D aplicables, versión/edición/collation/entorno autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha del resumen histórico:** 2026-11-02
@@ -579,3 +579,7 @@ Base b29d60c. Diseño de 11 vistas y contratos: conserva 49 pares método/ruta e
 ## Entrega vigente de migración Fase 4 — M4-A01
 
 Base 59b58d9. Plan de dos fuentes APP_POSTGRES/EXCEL_LEGADO, staging saneado/cuarentena, IDs/replay, DAG de 30 tablas, soporte de capacidades actuales, backup/restauración y retorno antes/después de nuevas escrituras. Reglas cubren 57 filas de MAPEO_EXCEL y 13 de CALIDAD_DATOS, sin copiar valores sensibles. 20 controles, 36 casos futuros y 12 puertas con estado explícito. No perfilado/carga real: falta Excel operacional y siguen decisiones/entorno/seguridad pendientes. Fase 4 EN_REVISION y Fase 5 no autorizada; sin SQL, aplicación o despliegue.
+
+## Continuidad M5-A01
+
+Fase 4 aceptada (`9f84fcd`); Fase 5 preparada para revisión. Leer docs/migracion/05_ESQUEMA_SQLSERVER.md y migrations/sqlserver/README.md. Siguiente acción: resolver decisiones/entorno y revisar candidato antes de aplicar. No hay conexión SQL Server ni ensayos de motor; scripts con barrera incondicional. No convertir datos reales ausentes o casos futuros en éxitos. Fase 6 sin autorización.

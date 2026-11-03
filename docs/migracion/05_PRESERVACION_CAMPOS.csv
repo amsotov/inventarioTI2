@@ -1,0 +1,156 @@
+tabla_actual,campo_actual,tipo_actual,destino_propuesto,decision,estado
+inventario.unidades,id,uuid,Catálogos de organización + soporte de unidad pública,M1-D04;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.unidades,nombre,text,Catálogos de organización + soporte de unidad pública,M1-D04;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.unidades,activa,boolean,Catálogos de organización + soporte de unidad pública,M1-D04;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.unidades,version,bigint,Catálogos de organización + soporte de unidad pública,M1-D04;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.cuentas,id,uuid,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,proveedor_ref,uuid,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,nombre,text,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,correo,text,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,rol,text,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,estado,text,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,version,bigint,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,version_autorizacion,bigint,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.cuentas,creado_en,timestamptz,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,id,uuid,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,documento_tipo,text,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,documento,text,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,documento_normalizado,text,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,nombre,text,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,cargo,text,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,correo,text,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,unidad_id,uuid,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,activo,boolean,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,version,bigint,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.funcionarios,alta_en,timestamptz,FUNCIONARIOS + identidad y metadatos complementarios,M1-D03;M1-D09;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,id,uuid,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,codigo,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,serie,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,motivo_sin_serie,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,tipo,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,marca,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,modelo,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,condicion,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,situacion,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,adquisicion,date,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,observaciones,text,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,version,bigint,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.bienes,alta_en,timestamptz,EQUIPOS/subtipos + metadatos operativos,M1-D06;M1-D09;M1-D13;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.comandos,id,uuid,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.comandos,actor_id,uuid,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.comandos,operacion,text,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.comandos,recurso,text,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.comandos,clave,uuid,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.comandos,huella,text,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.comandos,resultado,jsonb,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.comandos,registrado_en,timestamptz,Soporte de comandos idempotentes,M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,id,bigint,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,funcionario_id,uuid,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,unidad_id,uuid,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,unidad_nombre,text,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,actor_id,uuid,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,comando_id,uuid,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,motivo,text,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,efectiva_en,timestamptz,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.pertenencias,registrada_en,timestamptz,Historia complementaria de pertenencias,M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.movimientos,id,bigint,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,bien_id,uuid,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,tipo,text,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,origen_id,uuid,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,destino_id,uuid,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,unidad_origen_id,uuid,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,unidad_destino_id,uuid,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,unidad_origen_nombre,text,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,unidad_destino_nombre,text,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,condicion_anterior,text,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,condicion_nueva,text,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,actor_id,uuid,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,comando_id,uuid,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,motivo,text,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,corrige_id,bigint,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,efectiva_en,timestamptz,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.movimientos,registrada_en,timestamptz,Historia complementaria de movimientos,M1-D07;M1-D08;M1-D09;M1-D13,PRESERVAR_NO_MIGRADO
+inventario.custodias,id,uuid,ASIGNACIONES + intervalos precisos complementarios,M1-D05;M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.custodias,bien_id,uuid,ASIGNACIONES + intervalos precisos complementarios,M1-D05;M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.custodias,funcionario_id,uuid,ASIGNACIONES + intervalos precisos complementarios,M1-D05;M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.custodias,inicio_en,timestamptz,ASIGNACIONES + intervalos precisos complementarios,M1-D05;M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.custodias,fin_en,timestamptz,ASIGNACIONES + intervalos precisos complementarios,M1-D05;M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.custodias,apertura_id,bigint,ASIGNACIONES + intervalos precisos complementarios,M1-D05;M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.custodias,cierre_id,bigint,ASIGNACIONES + intervalos precisos complementarios,M1-D05;M1-D07;M1-D08;M1-D09,PRESERVAR_NO_MIGRADO
+inventario.anotaciones,id,bigint,Soporte de anotaciones inmutables,M1-D08;M1-D09;M1-D12;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.anotaciones,movimiento_id,bigint,Soporte de anotaciones inmutables,M1-D08;M1-D09;M1-D12;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.anotaciones,actor_id,uuid,Soporte de anotaciones inmutables,M1-D08;M1-D09;M1-D12;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.anotaciones,comando_id,uuid,Soporte de anotaciones inmutables,M1-D08;M1-D09;M1-D12;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.anotaciones,texto,text,Soporte de anotaciones inmutables,M1-D08;M1-D09;M1-D12;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.anotaciones,motivo,text,Soporte de anotaciones inmutables,M1-D08;M1-D09;M1-D12;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.anotaciones,registrada_en,timestamptz,Soporte de anotaciones inmutables,M1-D08;M1-D09;M1-D12;M1-D15,PRESERVAR_NO_MIGRADO
+inventario.auditoria,id,bigint,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,actor_id,uuid,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,comando_id,uuid,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,entidad,text,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,entidad_ref,text,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,accion,text,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,anterior,jsonb,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,nuevo,jsonb,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,motivo,text,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.auditoria,registrada_en,timestamptz,AUDITORIA + evidencia complementaria minimizada,M1-D07;M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.configuracion_avisos,id,boolean,Soporte de configuración de avisos,M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.configuracion_avisos,destinatario,text,Soporte de configuración de avisos,M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.configuracion_avisos,version,bigint,Soporte de configuración de avisos,M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,id,uuid,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,auditoria_id,bigint,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,destinatario,text,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,proposito,text,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,estado,text,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,siguiente_en,timestamptz,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,arrendamiento_hasta,timestamptz,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,proveedor_ref,text,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,ultimo_error_codigo,text,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,creado_en,timestamptz,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.intentos_aviso,id,bigint,Soporte append-only de intentos,M1-D07;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.intentos_aviso,outbox_id,uuid,Soporte append-only de intentos,M1-D07;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.intentos_aviso,numero,integer,Soporte append-only de intentos,M1-D07;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.intentos_aviso,resultado,text,Soporte append-only de intentos,M1-D07;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.intentos_aviso,codigo,text,Soporte append-only de intentos,M1-D07;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.intentos_aviso,registrado_en,timestamptz,Soporte append-only de intentos,M1-D07;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.sesiones,huella,text,Store de acceso a decidir,M1-D02;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+acceso.sesiones,cuenta_id,uuid,Store de acceso a decidir,M1-D02;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+acceso.sesiones,datos,jsonb,Store de acceso a decidir,M1-D02;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+acceso.intenciones,huella,text,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.intenciones,cuenta_id,uuid,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.intenciones,datos,jsonb,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.entregas,id,uuid,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.entregas,cuenta_id,uuid,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.entregas,sobre,text,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.entregas,estado,text,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.entregas,creado_en,timestamptz,Store de acceso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.limites,huella,text,Store de control de abuso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.limites,ventana,bigint,Store de control de abuso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+acceso.limites,intentos,integer,Store de control de abuso a decidir,M1-D02;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.cuentas,credencial_lista,boolean,USUARIOS/AUTORIZACIONES + store de identidad por decidir,M1-D02;M1-D03;M1-D09;M1-D11,PRESERVAR_NO_MIGRADO
+seguridad.eventos,id,bigint,Soporte append-only de decisiones de acceso,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+seguridad.eventos,actor_id,uuid,Soporte append-only de decisiones de acceso,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+seguridad.eventos,permiso,text,Soporte append-only de decisiones de acceso,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+seguridad.eventos,permitido,boolean,Soporte append-only de decisiones de acceso,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+seguridad.eventos,registrado_en,timestamptz,Soporte append-only de decisiones de acceso,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,id,uuid,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,solicitante,uuid,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,clave,uuid,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,huella,text,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,tipo,text,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,formato,text,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,filtros,jsonb,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,total,integer,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,estado,text,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,instantanea,jsonb,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,archivo,bytea,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,error,text,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,intento,uuid,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,arrendamiento_hasta,timestamptz,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,generado_en,timestamptz,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,creado_en,timestamptz,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.exportaciones,vence_en,timestamptz,Soporte privado de exportaciones,M1-D07;M1-D09;M1-D11;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,version,bigint,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,intentos,integer,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,ciclo_intentos,integer,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO
+inventario.outbox,reclamacion,uuid,Soporte transaccional de avisos,M1-D08;M1-D09;M1-D12,PRESERVAR_NO_MIGRADO

@@ -115,3 +115,7 @@ Fase 2 aceptada. [Impacto frontend/API](../docs/migracion/03_IMPACTO_FRONTEND_AP
 ## Migración Fase 4 — M4-A01
 
 Fase 3 aceptada. [Plan ETL](../docs/migracion/04_PLAN_ETL.md), [excepciones](../docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](../docs/migracion/04_RECONCILIACION_ROLLBACK.md) EN_REVISION. Solo documentación, sin SQL o extracción/carga real. Condiciones de datos/opciones y F1-SEG siguen pendientes; Fase 5 no autorizada. Spec Kit no instalado ni simulado.
+
+## Migración Fase 5 — candidato de revisión
+
+M5-A01 acepta Fase 4 y autoriza Fase 5. [Informe](../docs/migracion/05_ESQUEMA_SQLSERVER.md), [DDL](../migrations/sqlserver/README.md), CHECK/índices/soporte/casos y evidencia estática. Estado EN_REVISION; ejecución BLOQUEADA por diseño/entorno. Fase 6 NO AUTORIZADA. No se instaló Spec Kit ni se modificó su configuración.

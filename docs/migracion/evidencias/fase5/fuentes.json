@@ -1,0 +1,28 @@
+{
+  "base_git": "9f84fcd836550654770bd7ed4191f9edaffe2528",
+  "diccionario_sha256": "a07ec95b68c35eae358def30ae3723485c202b562d04db465b566801307cef5e",
+  "origenes_documentales": [
+    "ER/DER originales y transcripciones verificadas de Fase 1",
+    "DICCIONARIO_DATOS/TABLAS/MAPEO_EXCEL/CALIDAD_DATOS",
+    "Matrices de Fases 1–3 y plan/puertas de Fase 4",
+    "Esquema actual y requisitos/runbook/decisiones"
+  ],
+  "estado_entorno": {
+    "sqlcmd_disponible": false,
+    "docker_local_disponible": true,
+    "sqlserver_entorno_autorizado": null,
+    "sqlserver_ensayo_ejecutado": false,
+    "fuente_operacional_disponible": false
+  },
+  "datos_reales_leidos": false,
+  "sql_ejecutado": false,
+  "etl_ejecutado": false,
+  "restauracion_ejecutada": false,
+  "revision_secretos": {
+    "alcance": "archivos nuevos/modificados de la entrega, no historial",
+    "metodo": "heurística de cinco patrones de tests/qa/secrets.py; sin imprimir valores",
+    "hallazgos": [],
+    "limite": "No es garantía universal de ausencia de secretos"
+  },
+  "instalacion_herramienta": "SQLFluff 3.5.0 solo en /workspace/work/fase5/venv, sin dependencias de proyecto nuevas"
+}

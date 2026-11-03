@@ -2,11 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–3: COMPLETADAS por aprobación del usuario. FASE 4: EN_REVISION. FASE 5: NO AUTORIZADA.**
+**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos de motor BLOQUEADOS). FASE 6: NO AUTORIZADA.**
 
-Autorización: «apruebo fase 3 inicia fase 4», posterior a entrega `59b58d9`. Se prepara [plan ETL](docs/migracion/04_PLAN_ETL.md), [excepciones](docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](docs/migracion/04_RECONCILIACION_ROLLBACK.md). Solo planificación y verificación documental; no SQL, extracción/carga de datos reales, cambios de aplicación, merge ni despliegue.
+Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
 
-El Excel operacional no está disponible en el repositorio; los hallazgos del diccionario no son perfilado nuevo. Condiciones M1-D y F1-SEG-01/02/03 se conservan. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). Aceptar un plan no concede permiso de acceso/carga/productivo ni resuelve datos irreconstruibles.
+Pendientes: decisiones M1-D aplicables, versión/edición/collation/entorno autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 

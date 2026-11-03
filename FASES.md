@@ -6,7 +6,7 @@
 
 Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
 
-M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. Este proyecto no es visible en la conexión actual. Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
+M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. M5-A03 autoriza crearlo en sovicl/São Paulo; Supabase rechazó el intento por límite de dos proyectos Free activos. Proyecto NO CREADO; [provisión y evidencia](docs/migracion/PROVISION_SUPABASE.md). Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
@@ -584,3 +584,7 @@ El usuario cambió la fuente Pages a GitHub Actions (`build_type=workflow` confi
 ## Migración M5-A02 — continuidad de Fase 5 y entornos
 
 Usuario confirma Supabase/PostgreSQL aislado con datos sintéticos, proyecto inventarioTI2, y destino SQL Server 2016/compatibility level 130. Se actualiza candidato 0.5.0-review.2 con guards de motor 13.x/nivel/base, parser TSql130Parser y 19 negativas. Sin SQL ejecutado; inventarioTI2 no visible ni como rama, pruebas remotas bloqueadas. Edición/SP/CU/collation/instancia y decisiones pendientes. Fase 5 EN_REVISION, sin cierre aprobado; Fase 6 NO AUTORIZADA.
+
+## M5-A03 — creación Supabase autorizada, bloqueada por cuota
+
+Usuario autoriza crear proyecto y elige sovicl/São Paulo. Un intento de inventarioTI2 rechazado por Supabase: dos proyectos Free activos (límite 2). Cotización Free amount 0/monthly no concede cupo ni aprueba cambio de plan. Relectura confirma cero proyectos inventarioTI2; NO CREADO, sin SQL/cargas. [Provisión](docs/migracion/PROVISION_SUPABASE.md). Falta acción específica para liberar cupo o revisar plan/costo; creación sigue autorizada. Fase 5 EN_REVISION, Fase 6 NO AUTORIZADA.

@@ -446,3 +446,7 @@ NO EJECUTADAS: SQL, migraciones, build, suites funcionales/API/UI, carga, integr
 La evidencia vigente incluye 19 negativas y parser Microsoft ScriptDom 161.9142.1/TSql130Parser de cuatro SQL, con tres autopruebas. [Guía](migracion/herramientas/scriptdom130/README.md). Todo estático, sin compilación semántica ni motor SQL Server. El verificador mantiene bloqueo de aplicación (salida 3); no abre DB.
 
 SQLFluff genérico se conserva como comprobación adicional; no fija versión del motor. Supabase/PostgreSQL inventarioTI2 será entorno funcional sintético: no está visible, no hay pruebas remotas/cargas. Los 30 casos SQL Server siguen NO_EJECUTADOS. Evidencia de revisión 1 archivada; no se reescribe como resultado de la revisión 2.
+
+## M5-A03 — comprobación de provisión Supabase
+
+Consulta de proyectos/organización antes y después; un create_project rechazado por BadRequestException/INVALID_ARGUMENT por cuota Free, no fallo de sintaxis SQL. Get_cost del plan actual: amount 0/monthly. Estado final: plan free, dos activos, cero inventarioTI2. [Evidencia saneada](migracion/evidencias/fase5/provision_supabase.json). No se ejecutó SQL ni pruebas funcionales remotas; no hay proyecto nuevo que probar. Verificación estática de Fase 5 se conserva en su alcance; no se repiten suites de aplicación sin cambios.

@@ -235,3 +235,7 @@ Usuario: «apruebo fase 4 inicia fase 5». Acepta `9f84fcd`; permite preparar y 
 Usuario: «Fase de Pruebas Actual (Supabase): Se utilizará un proyecto aislado en Supabase (PostgreSQL) cargado con datos sintéticos para validar la funcionalidad inicial. Entorno de Destino (SQL Server): SQL Server 2016, compatibility level 130». Proyecto aclarado: «inventarioTI2».
 
 Se ratifica versión/nivel del objetivo M1-D01, no la totalidad de decisiones ni la aceptación de Fase 5. Proyecto no visible en la conexión; inventarioTI no es reemplazo. Edición/SP/CU/collation/instancia SQL Server pendientes; UTF-8 no está disponible en 2016. [Informe](migracion/05_ENTORNOS_COMPATIBILIDAD.md). Fase 6 no autorizada.
+
+## M5-A03 — crear proyecto aislado Supabase
+
+Usuario: «te autorizo crear el proyecto en supabase»; organización/región: «sovicl, región São Paulo». Permite crear inventarioTI2 en sa-east-1. No incluye pausar/eliminar otros proyectos ni cambiar facturación. Supabase rechaza un intento por cuota Free máxima (2 activos); comprobación posterior: target no creado. Cotización actual amount 0/monthly no aprueba plan de pago. [Registro](migracion/PROVISION_SUPABASE.md). La creación puede reintentarse cuando haya cupo con autorización vigente; Fase 6 no autorizada.

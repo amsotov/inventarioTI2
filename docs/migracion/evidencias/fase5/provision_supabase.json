@@ -1,0 +1,45 @@
+{
+  "decision": "M5-A03",
+  "fecha": "2026-11-03",
+  "base_git": "ab986823e26c67dfa299dcd5d40163bc87859386",
+  "autorizaciones": [
+    "te autorizo crear el proyecto en supabase",
+    "sovicl, región São Paulo"
+  ],
+  "solicitud": {
+    "name": "inventarioTI2",
+    "organization_name": "sovicl",
+    "region": "sa-east-1",
+    "proposito": "Pruebas aisladas PostgreSQL con datos sintéticos"
+  },
+  "estado": "BLOQUEADO_CUOTA_FREE",
+  "proyecto_creado": false,
+  "project_ref": null,
+  "intentos_creacion": 1,
+  "respuesta_proveedor": {
+    "clase": "BadRequestException",
+    "codigo_conector": "INVALID_ARGUMENT",
+    "motivo_normalizado": "MAX_ACTIVE_FREE_PROJECTS_REACHED",
+    "limite_proyectos_free_activos": 2
+  },
+  "cotizacion_plan_actual": {
+    "type": "project",
+    "recurrence": "monthly",
+    "amount": 0,
+    "limite": "No habilita cupo ni constituye cotización de un plan de pago"
+  },
+  "comprobacion_posterior": {
+    "plan": "free",
+    "proyectos_activos_organizacion": 2,
+    "proyectos_con_nombre_inventarioTI2": 0
+  },
+  "acciones_no_realizadas": [
+    "Pausar/eliminar/modificar otros proyectos",
+    "Actualizar plan/facturación",
+    "Crear organizaciones/ramas alternativas",
+    "Ejecutar SQL, migraciones o cargas sintéticas",
+    "Cambiar frontend/backend, merge o despliegue",
+    "Iniciar Fase 6"
+  ],
+  "siguiente_paso": "Liberar cupo mediante acción específica del usuario o revisar cambio de plan con costo aprobado; luego reintentar creación ya autorizada sin duplicar."
+}

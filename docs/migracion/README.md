@@ -47,3 +47,7 @@ M5-A01 «apruebo fase 4 inicia fase 5» acepta `9f84fcd`; Fases 0–4 COMPLETADA
 ## Continuidad vigente M5-A02 — revisión 2
 
 [Entornos/compatibilidad](05_ENTORNOS_COMPATIBILIDAD.md): pruebas iniciales Supabase/PostgreSQL inventarioTI2 (no visible), destino SQL Server 2016/13.x/nivel 130, edición/collation/instancia pendientes. Candidato 0.5.0-review.2 con [parser 130](herramientas/scriptdom130/README.md), 19 negativas y evidencia actual; [revisión inicial](evidencias/fase5/revision1/verificacion.json) histórica. Fase 5 EN_REVISION, Fase 6 NO AUTORIZADA. Sin SQL ejecutado/carga remota.
+
+## Continuidad M5-A03 — creación autorizada y cuota
+
+[Provisión Supabase](PROVISION_SUPABASE.md): usuario autorizó inventarioTI2 en sovicl/sa-east-1. Un intento rechazado por límite Free de dos activos; NO CREADO. [Evidencia](evidencias/fase5/provision_supabase.json). Esperar instrucción específica para liberar cupo o revisar plan/coste; no repetir permiso de creación ni sustituir otro proyecto. No cambia el esquema candidato ni inicia Fase 6.

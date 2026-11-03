@@ -199,3 +199,9 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - M5-A02 registra Supabase/PostgreSQL inventarioTI2 para pruebas sintéticas y SQL Server 2016/130 como destino.
 - Guards de motor/nivel/bases de sistema, parser estático TSql130Parser con paquete fijado, 19 negativas y evidencia histórica revision1 conservada.
 - Se descarta UTF-8 para SQL Server 2016; Unicode requiere decisión explícita. Proyecto inventarioTI2 no visible; no SQL/carga/cambios remotos ni inicio de Fase 6.
+
+## 2026-11-03 — Provisión Supabase M5-A03
+
+- Registra autorización de creación y elección sovicl/São Paulo.
+- Un intento rechazado por cuota de dos proyectos Free activos; proyecto inventarioTI2 NO CREADO. Coste cotizado del plan actual 0/mes, sin autorización de plan de pago.
+- Evidencia saneada y continuidad en GitHub; sin SQL, cambios en otros proyectos, facturación, aplicación, merge, deploy ni Fase 6.

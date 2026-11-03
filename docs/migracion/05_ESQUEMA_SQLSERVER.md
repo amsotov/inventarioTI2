@@ -1,13 +1,13 @@
 # FASE 5 — Esquema y migraciones SQL Server
 
-Continuación M5-A04: [entornos y compatibilidad](05_ENTORNOS_COMPATIBILIDAD.md) y [provisión](PROVISION_SUPABASE.md). SQL Server 2016/13.x/nivel 130 sigue como destino. Supabase inventarioTI2 creado y ACTIVE_HEALTHY tras pausa autorizada de inventarioTI; verificación SELECT de metadatos, sin esquema/carga de aplicación. Revisión 0.5.0-review.3, sin iniciar Fase 6.
+Continuación M5-A05: [entornos y compatibilidad](05_ENTORNOS_COMPATIBILIDAD.md) y [provisión](PROVISION_SUPABASE.md). SQL Server 2016/13.x/nivel 130 sigue como destino. Supabase inventarioTI2 contiene la baseline existente de 19 tablas/155 columnas y semilla sintética; [20 casos SQL aprobados](VALIDACION_SUPABASE.md), sin HTTP/Auth real/UI. Revisión 0.5.0-review.4, sin iniciar Fase 6.
 
-Fecha: 2026-11-03. Estado: **EN_REVISION; aplicación/ensayos de motor BLOQUEADOS**.
-Base aceptada: `9f84fcd836550654770bd7ed4191f9edaffe2528`. M5-A01: «apruebo fase 4 inicia fase 5». Fases 0–4 COMPLETADAS; Fase 6 NO AUTORIZADA. Esta aceptación permite preparar el candidato SQL; no elige alternativas M1-D pendientes ni autoriza una base real, producción o despliegue.
+Fecha: 2026-11-03. Estado: **EN_REVISION; aplicación/ensayos de SQL Server BLOQUEADOS**.
+Base aceptada: `9f84fcd836550654770bd7ed4191f9edaffe2528`. M5-A01: «apruebo fase 4 inicia fase 5». Fases 0–4 COMPLETADAS; Fase 6 NO AUTORIZADA. M5-A01 permite preparar el candidato SQL Server; no elige alternativas M1-D ni autoriza su instancia de destino/producción/despliegue. M5-A03–05 sí habilitan el entorno PostgreSQL aislado y su ensayo sintético, registrado aparte.
 
 ## Fuentes revisadas y resultado concreto
 
-AGENTS, prompts, FASES/ESTADO/README/INICIAR, requisitos/decisiones y runbook; originales ER/DER/diccionario; matrices 1–3, diseño/API aceptados y plan/excepciones/puertas de Fase 4. Se conserva la aplicación existente y sus ocho migraciones PostgreSQL. La fuente operacional sigue ausente; no hay perfilado, extracción ni carga nueva.
+AGENTS, prompts, FASES/ESTADO/README/INICIAR, requisitos/decisiones y runbook; originales ER/DER/diccionario; matrices 1–3, diseño/API aceptados y plan/excepciones/puertas de Fase 4. Se conserva la aplicación existente y sus ocho migraciones PostgreSQL. La fuente operacional sigue ausente; no hay perfilado, extracción ni carga operacional real; la semilla sintética PostgreSQL se registra aparte.
 
 Se entrega un **candidato físico de revisión** en [migrations/sqlserver](../../migrations/sqlserver/README.md): 30 tablas/117 campos, 30 PK (31 componentes), 30 FK, 18 UQ, 25 IDENTITY y cinco defaults según diccionario. AUTORIZACIONES conserva PK compuesta; cuatro subtipos mantienen PK/FK sin IDENTITY. FK con NO ACTION es propuesta conservadora explícita: no hay cascadas destructivas.
 
@@ -20,7 +20,7 @@ Cuatro archivos SQL separados, cada uno con `THROW 51050` incondicional al inici
 | 0003_indices_fk.candidate.sql | 24 índices FK no cubiertos por primera clave PK/UQ | Sin benchmark ni promesa de rendimiento |
 | 900_catalogo_esperado.candidate.sql | Consulta de metadatos bidireccional de columnas/PK/UQ/FK | No comprueba por sí sola defaults/CHECK/índices/collation ni negocio |
 
-No se crean bases, logins, usuarios, permisos, semillas, hashes, datos de ejemplo ni tablas adicionales a las 30 del núcleo. No se ejecuta DML sobre datos de negocio. Los INSERT de 900 solo pueblan variables de tabla de metadatos en un eventual ensayo autorizado.
+No se crean bases, logins, usuarios, permisos, semillas, hashes, datos de ejemplo ni tablas adicionales a las 30 del núcleo. Los candidatos SQL Server no ejecutan DML de negocio. El DML sintético del ensayo PostgreSQL es separado y no migra datos operacionales reales. Los INSERT de 900 solo pueblan variables de tabla de metadatos en un eventual ensayo autorizado.
 
 ## Diferencias y decisiones que impiden aplicar
 
@@ -40,7 +40,7 @@ No se crean bases, logins, usuarios, permisos, semillas, hashes, datos de ejempl
 
 Cada futura versión es atómica dentro de sí; las tres versiones no se presentan como una transacción única. Un fallo posterior deja candidato parcial no promovible y requiere reconciliación/retorno aprobado. No existe down destructivo. Antes de COMMIT rollback de la transacción; después restauración/candidato nuevo, preservando delta si hubo nuevas escrituras, según [Fase 4](04_RECONCILIACION_ROLLBACK.md). No borrar la fuente ni reutilizar outbox/sesiones al retornar.
 
-La revisión 0.5.0-review.2 añade comprobaciones de motor real 13.x/nivel 130/base no de sistema. [ScriptDom130](herramientas/scriptdom130/README.md) analiza los cuatro SQL con TSql130Parser y tres autopruebas; no compila ni ejecuta el motor. El proyecto Supabase inventarioTI2 ya está disponible y vacío; solo se verificaron metadatos, no sus pruebas funcionales.
+La revisión 0.5.0-review.2 añade comprobaciones de motor real 13.x/nivel 130/base no de sistema. [ScriptDom130](herramientas/scriptdom130/README.md) analiza los cuatro SQL con TSql130Parser y tres autopruebas; no compila ni ejecuta el motor. En inventarioTI2 se instaló la baseline existente y se verificaron 20 casos SQL, no HTTP/Auth real/UI ni modelo SQL Server.
 
 ## Verificación y criterio de aceptación
 
@@ -48,7 +48,7 @@ La revisión 0.5.0-review.2 añade comprobaciones de motor real 13.x/nivel 130/b
 
 Comando estándar: `python3 docs/migracion/verificar_fase5.py`. Parser: usar Python de un venv externo con SQLFluff 3.5.0 y añadir `--analizar-sintaxis`. `--evaluar-aplicacion` debe terminar con código 3 y listar bloqueos; no intenta conectarse. [Evidencia](evidencias/fase5/verificacion.json) separa controles estáticos aprobados, fallos corregidos y no ejecutados.
 
-[30 casos SQL Server](05_CASOS_SQLSERVER.csv) quedan NO_EJECUTADOS: motor sin entorno autorizado/configurado. Tener Docker local disponible no es aprobación de base, licencia/versión, collation, datos o conectividad. No se inventó endpoint ni se aprovisionó servidor. SQLFluff se usa como herramienta aislada, sin servicios. No se repitieron suites de aplicación que ejecutan PostgreSQL; fuentes no cambiaron. SQL Server no se simuló mediante SQLite/PostgreSQL.
+[30 casos SQL Server](05_CASOS_SQLSERVER.csv) quedan NO_EJECUTADOS: motor sin entorno autorizado/configurado. Tener Docker local disponible no es aprobación de base, licencia/versión, collation, datos o conectividad. No se inventó endpoint ni se aprovisionó servidor. SQLFluff se usa como herramienta aislada, sin servicios. No se apuntaron las suites locales de aplicación a Supabase: se ejecutó un ensayo SQL gestionado propio, con ROLLBACK; fuentes originales sin cambios. SQL Server no se simuló mediante SQLite/PostgreSQL.
 
 | Criterio | Estado real |
 |---|---|

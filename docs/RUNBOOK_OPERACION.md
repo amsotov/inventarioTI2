@@ -72,3 +72,7 @@ Pruebas iniciales Supabase/PostgreSQL inventarioTI2 con datos sintéticos; falta
 ## M5-A04 — proyecto Supabase creado
 
 inventarioTI pausado por autorización y confirmado INACTIVE; no reactivar automáticamente porque inventarioTI2 ocupa el cupo Free. Nuevo inventarioTI2 ref yhsfotxhaptinjtmrinn, ACTIVE_HEALTHY, sovicl/sa-east-1, PostgreSQL 17.11/UTC según SELECT de metadatos. Cero tablas de aplicación. [Registro](migracion/PROVISION_SUPABASE.md). No se almacenaron claves/cadenas de conexión ni se cambiaron workers/correo/roles. Preparación de esquema/cargas/funcionalidad y SQL Server conserva sus puertas; Fase 6 no autorizada.
+
+## M5-A05 — baseline y datos de laboratorio
+
+[Paquete](../migrations/supabase-pruebas/README.md) exclusivo de inventarioTI2/yhsfotxhaptinjtmrinn, 10 entradas remotas y semilla aplicada. No ejecutar carpeta en bloque ni reaplicar seed: aborta sobre datos preexistentes. InventarioTI sigue pausado. Roles NOLOGIN; sin usuarios Auth, passwords o workers activados. [Ensayo](migracion/VALIDACION_SUPABASE.md) con rollback no es restauración de copia ni prueba de operación real. No redirigir fixtures locales con resets al gestionado. Fase 6/producción sin autorización.

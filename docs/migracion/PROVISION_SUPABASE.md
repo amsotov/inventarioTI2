@@ -1,6 +1,10 @@
 # Provisión Supabase — inventarioTI2
 
-## Estado vigente M5-A04 — 2026-11-03
+## Estado vigente M5-A05 — 2026-11-03
+
+[Baseline PostgreSQL instalada y validada](VALIDACION_SUPABASE.md): 19 tablas/155 columnas, semilla 2 unidades/3 funcionarios/6 bienes, 20 casos SQL aprobados y rollback comprobado. Sin cuentas/sesiones/outbox de ensayo persistentes. No HTTP/Auth real/UI ni SQL Server, Fase 5 EN_REVISION y Fase 6 no autorizada. El siguiente apartado conserva el estado vacío en el momento de creación.
+
+## Estado de creación M5-A04 — 2026-11-03
 
 **inventarioTI pausado (INACTIVE); inventarioTI2 creado y ACTIVE_HEALTHY.** Usuario: «pausa inventarioTI», tras autorizar creación en sovicl/São Paulo. Se resolvió el bloqueo de cuota con esa pausa concreta, sin cambiar plan ni pausar los proyectos del hotel.
 

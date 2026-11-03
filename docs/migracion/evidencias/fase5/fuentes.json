@@ -25,7 +25,7 @@
     "limite": "No es garantía universal de ausencia de secretos"
   },
   "instalacion_herramienta": "SQLFluff 3.5.0 solo en /workspace/work/fase5/venv, sin dependencias de proyecto nuevas",
-  "continuacion_git_base": "e94e9fce6eb35c95284dd5f93dd187bb197d25d3",
+  "continuacion_git_base": "cdd0f0398026384a2ff4aca20353017e0c6c5f91",
   "destino_confirmado": {
     "version": "SQL Server 2016",
     "product_major_version": 13,
@@ -41,13 +41,16 @@
     "region": "sa-east-1",
     "postgres_version": "17.11.0.011",
     "timezone": "UTC",
-    "tablas_aplicacion": 0,
+    "tablas_aplicacion": 19,
     "consulta_filas_negocio": false,
-    "carga_sintetica_ejecutada": false,
-    "cambio_remoto": "Pausa inventarioTI y creación de inventarioTI2 autorizadas; sin DDL/DML de aplicación"
+    "carga_sintetica_ejecutada": true,
+    "cambio_remoto": "Baseline existente instalada en proyecto aislado, ACL privadas y datos sintéticos; sin modificación de fuentes originales",
+    "columnas_aplicacion": 155,
+    "pruebas_sql_aprobadas": 20,
+    "cuentas_persistentes": 0
   },
   "herramienta_versionada": "Microsoft ScriptDom 161.9142.1 / TSql130Parser, SDK 8.0.427 en work/; sin runtime nuevo en aplicación",
-  "sql_alcance": "Solo SELECT de metadatos PostgreSQL en proyecto nuevo; no SQL Server, DDL ni DML de aplicación",
+  "sql_alcance": "DDL baseline PostgreSQL y DML sintético/ensayo reversible en inventarioTI2. No SQL Server ni datos operacionales reales.",
   "sql_server_ejecutado": false,
   "pausa_autorizada": {
     "proyecto": "inventarioTI",

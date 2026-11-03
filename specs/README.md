@@ -127,3 +127,7 @@ SQL Server 2016/13.x/compatibilidad 130 y Supabase/PostgreSQL inventarioTI2 conf
 ## M5-A04 — infraestructura de pruebas creada
 
 [Provisión](../docs/migracion/PROVISION_SUPABASE.md): pausa autorizada de inventarioTI, nuevo inventarioTI2 en Supabase, vacío de tablas/datos de aplicación. Entorno verificado por metadatos, sin implementación nueva de app o fases posteriores. SQL Server revisión3 conserva DDL y decisiones pendientes.
+
+## M5-A05 — baseline PostgreSQL reutilizada
+
+[Informe](../docs/migracion/VALIDACION_SUPABASE.md) de instalación/ensayo inicial: fuente existente preservada, 19/155, datos sintéticos y 20 casos SQL. Paquete de pruebas aislado, sin reconstrucción del sistema o implementación de fase posterior. SQL Server revisión4 y decisiones pendientes.

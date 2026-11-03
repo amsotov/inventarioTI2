@@ -55,3 +55,7 @@ M5-A01 «apruebo fase 4 inicia fase 5» acepta `9f84fcd`; Fases 0–4 COMPLETADA
 ## Continuidad M5-A04 — Supabase provisionado
 
 [Estado actual](PROVISION_SUPABASE.md): inventarioTI pausado INACTIVE; inventarioTI2 creado ACTIVE_HEALTHY en sovicl/sa-east-1, ref yhsfotxhaptinjtmrinn, plan Free. [Evidencia](evidencias/fase5/provision_supabase_creado.json): PostgreSQL 17.11/UTC, cero tablas de aplicación. Revisión3 vincula proyecto/manifiesto y 20 negativas, sin modificar cuatro SQL. [Revisión2 histórica](evidencias/fase5/revision2/verificacion.json). Fase 5 EN_REVISION; sin instalación/carga/pruebas funcionales ni Fase 6.
+
+## Continuidad M5-A05 — baseline existente validada
+
+[Validación Supabase](VALIDACION_SUPABASE.md): baseline PostgreSQL 19/155, 10 migraciones (8 fuentes/2 ACL), semilla 2 unidades/3 funcionarios/6 bienes y 20 casos SQL aprobados con rollback. [Paquete trazable](../../migrations/supabase-pruebas/README.md). No es modelo SQL Server ni validación de HTTP/Auth real/UI. Fase 5 EN_REVISION; decisiones/destino/fases siguientes pendientes.

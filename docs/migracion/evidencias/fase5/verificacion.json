@@ -2,7 +2,7 @@
   "fase": "MIGRACION_5",
   "estado": "EN_REVISION_APLICACION_BLOQUEADA",
   "base_git": "9f84fcd836550654770bd7ed4191f9edaffe2528",
-  "continuacion_git_base": "e94e9fce6eb35c95284dd5f93dd187bb197d25d3",
+  "continuacion_git_base": "cdd0f0398026384a2ff4aca20353017e0c6c5f91",
   "verificacion_estatica": "APROBADA_EN_ALCANCE_ESTATICO",
   "conteos": {
     "tablas": 30,
@@ -15,9 +15,11 @@
     "defaults": 5,
     "checks_propuestos": 9,
     "indices_fk_propuestos": 24,
-    "tablas_soporte_sin_ddl": 19,
+    "tablas_soporte_sqlserver_sin_ddl": 19,
     "campos_actuales_preservar": 155,
-    "casos_motor_no_ejecutados": 30
+    "casos_sqlserver_no_ejecutados": 30,
+    "casos_sql_postgresql_ejecutados": 20,
+    "migraciones_baseline_postgresql": 10
   },
   "incidencias_corregidas": [
     "Verificador aceptaba solo letras en tipos; se amplió para DATETIME2 y se repitió con éxito"
@@ -41,17 +43,17 @@
     "migrations/sqlserver/0002_checks_propuestos.candidate.sql": "637dd610d20d4943d28dd40180d74f4aa890cd04086b54d5259372e39a387eaf",
     "migrations/sqlserver/0003_indices_fk.candidate.sql": "1aa37907d0a35f51ba5c5db28751f75c8a0b6f9e72f6fc663b73872b27d336f3",
     "migrations/sqlserver/900_catalogo_esperado.candidate.sql": "2c6ecf0a4ef438cdcaf14e27500d94114d524a663a7f586ab81c284537b8c2e7",
-    "migrations/sqlserver/manifest.json": "fc755044982ac0f6e178ddfe0aa4eaa7d0ca8545b00c8cbf64206bda4ace94a2",
-    "migrations/sqlserver/README.md": "dfbed5ad5bb45edcc35f2b6998efe0881fff585badbd8fda24e5fb7b48504ca1",
-    "docs/migracion/verificar_fase5.py": "c98178ace2c7c204429bda90217398f6e39ed5039b480698d61b3c37c09b7473",
+    "migrations/sqlserver/manifest.json": "eaa0555d4142a4e70510fd647ff5c96039a28386f3dcb301f36411d91b12d882",
+    "migrations/sqlserver/README.md": "b69b3c8d69e2a4581833576b38ba60d176b64911590ef9be9602588ffc01cffb",
+    "docs/migracion/verificar_fase5.py": "8794707802917c1f6c76267d3e2d8c0d775aaceab4aa890f787054cd33046626",
     "docs/migracion/05_CASOS_SQLSERVER.csv": "ea249d00904af09fc730695627bfb4084d0b41a670e22c02ade0b9e7b9fe0497",
     "docs/migracion/05_CHECKS_PROPUESTOS.csv": "42382205be634e7deaea3c937b63e4241445b13da72bf828ac37caecff9db4e2",
-    "docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md": "444a9a9dec703df2187aa1c3f990f58704ba0cd5b772565663125529c30a8c78",
-    "docs/migracion/05_ESQUEMA_SQLSERVER.md": "1b130bf3a5ef83d4b9722e4714fd77b45efa8ea59f7a1804e133c22d8caa2910",
+    "docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md": "98afc013fe79072454b7987ccf97428d9e3ce86a760f0ea2a1ba518ce75d3170",
+    "docs/migracion/05_ESQUEMA_SQLSERVER.md": "ef7d202c4dbce252aebf7c68127cb42b0aa6f90e344f91133ff0d5a7d4ef090d",
     "docs/migracion/05_INDICES_PROPUESTOS.csv": "d272c681cae497b9db8301d47b3fa4cb757d1e7c9968cdd8803899a2be56e97e",
     "docs/migracion/05_PRESERVACION_CAMPOS.csv": "bba6b82fcbd4f64a4561d52dd01bab0a34b32b41dd2efc6161535f6402e3b687",
     "docs/migracion/05_SOPORTE_ACTUAL.csv": "ce924ecbe5e4a43da7215b9116e563e89e71d135907406f29ff2bd6b52624a22",
-    "docs/migracion/evidencias/fase5/fuentes.json": "a10701103dfefd3197a3b06ef3e8114ffd584588b24a4eabda3e931e55222954",
+    "docs/migracion/evidencias/fase5/fuentes.json": "34c6ceb6fa21ef2b87a888ca4575cea6ea7d5ee529ac428480f6571b585b5eff",
     "docs/migracion/herramientas/scriptdom130/Program.cs": "1ac09989e6dcda8723da7e9fabd7eb9b0512ffa9b2107b11c30d4df97c0b4956",
     "docs/migracion/herramientas/scriptdom130/README.md": "b24b48a7eb6ba010e6328ee9200101836f0dc1d1f2a638894d789e95a1abefa4",
     "docs/migracion/herramientas/scriptdom130/ScriptDom130.csproj": "ee8c0714d63750da6f564145db5b7b7474fa5ad68fea9db2a0e45e57828ba51a",
@@ -62,7 +64,26 @@
     "docs/migracion/evidencias/fase5/revision2/manifest.json": "eb36559ff2392d9d82a2ccd04ce5e4e29b3497708deec8050b4a6e64234ac106",
     "docs/migracion/evidencias/fase5/revision2/verificacion.json": "3e39a8946e23676c6f9ce3cd00c0b46085c946e14762f331ecaaa80365bc71da",
     "docs/migracion/evidencias/fase5/provision_supabase_creado.json": "e5dc7731a2d0689b8910eebe15be27cdcc0cc03dea68f8f1cc37d8243ae8c323",
-    "docs/migracion/PROVISION_SUPABASE.md": "a9fbf212462c081b933b96063f1c1083d424338656c099db53e844028fefb08c"
+    "docs/migracion/PROVISION_SUPABASE.md": "50104c39ec7b67dc0e460d3fecf61a96758b23206ae5c46e7a361d72c598a4cb",
+    "docs/migracion/evidencias/fase5/revision3/fuentes.json": "a10701103dfefd3197a3b06ef3e8114ffd584588b24a4eabda3e931e55222954",
+    "docs/migracion/evidencias/fase5/revision3/manifest.json": "fc755044982ac0f6e178ddfe0aa4eaa7d0ca8545b00c8cbf64206bda4ace94a2",
+    "docs/migracion/evidencias/fase5/revision3/verificacion.json": "edf8c39992b6000ee7de31c675a8bfe745d9d6051f851a9320c6e23c13a1e641",
+    "docs/migracion/evidencias/fase5/ensayo_supabase/resultados.json": "ef6d97316591ae6fd1a16f15d9cb9210cda2db7db1d8cae7244297d8dd2e8bc9",
+    "docs/migracion/VALIDACION_SUPABASE.md": "ad2e77d1f8005a67cd0005b53f3f6692e2f027684944ea535d29a76a5cbf9d9c",
+    "migrations/supabase-pruebas/20261031053433_modelo_inicial.sql": "e44666a0b22b1c8e411ebc6ea99ca07406d090d15fcb5f2902b6dc464f54214a",
+    "migrations/supabase-pruebas/20261031055416_autenticacion.sql": "279cf1b12773a7a37c28423079384d5b761d21ace69f5bebc26cc50986454bf0",
+    "migrations/supabase-pruebas/20261031182220_autorizacion_seguridad.sql": "5b5d1ce241833a220eaabb586021f81b6fa8b6750305681c4d080573ed810740",
+    "migrations/supabase-pruebas/20261031202938_backend_api.sql": "61d2e5f9be5706165e72a28a0d32c6865dc81e6bf97387c89d75d3f626f96cad",
+    "migrations/supabase-pruebas/20261101020230_panel_administracion.sql": "5180d03ed67257f3ab39cb7c8092e2792e775342bdb0a8cffa797f4714caac88",
+    "migrations/supabase-pruebas/20261101152945_procesos_empresariales.sql": "06af8247bb803439ea49b7e40fa2114257c3e3cede810b7c164a99f637ca93f8",
+    "migrations/supabase-pruebas/20261102120248_indicadores_reportes_exportaciones.sql": "9d6dfb0225da1e67ada222fc8a12f3088f5929160ed9bb8e55d9c87014ca0949",
+    "migrations/supabase-pruebas/20261102135006_notificaciones_automatizacion.sql": "17b98cb0ab41ab05cdf6e0e6f4932aa9c192d4cd05a326e0d04eb292c8c3e732",
+    "migrations/supabase-pruebas/20261103180439_m5_endurecer_helpers_privados.sql": "5895b6eb3c2cf7917269417c364990f4023b19ec210c866e4c8e0d21b9c85df5",
+    "migrations/supabase-pruebas/20261103180606_m5_cerrar_execute_propietarios.sql": "acc9f5bb2194dd04633e76304382eaadea899d454ec420baa2adfebde691bc1d",
+    "migrations/supabase-pruebas/README.md": "c3f58e7d94909737f50902643fe316c80cfd604cc3d99cb278a6c868c322b0eb",
+    "migrations/supabase-pruebas/ensayo_transaccional.sql": "36738f403851b6903a4aa8c8c46e3f3dfb9f0ba8f45360bd3a818d378cb7b48a",
+    "migrations/supabase-pruebas/manifest.json": "130d3d3bfd820f24ae53b9078446d01f8bb4ef6cebf888f7b3ad8f705a875fa5",
+    "migrations/supabase-pruebas/seed_sintetico.sql": "141a305d57154218f72288c8445a14ab987fab4e2a028268203af7c6dbf61901"
   },
   "negativas": [
     {
@@ -197,7 +218,7 @@
     "compatibility_level": 130
   },
   "supabase_provision": "PROYECTO_CREADO_VERIFICACION_METADATA_PREVIA_NO_REPETIDA_POR_ESTE_SCRIPT",
-  "supabase_funcionalidad": "NO_EJECUTADA_ESQUEMA_APLICACION_NO_INSTALADO",
+  "supabase_funcionalidad": "EVIDENCIA_20_CASOS_SQL_VALIDADA_NO_REPETIDA; HTTP_AUTH_UI_NO_EJECUTADOS",
   "sintaxis_sql2016": {
     "herramienta": "Microsoft.SqlServer.TransactSql.ScriptDom",
     "version_paquete": "161.9142.1",
@@ -246,8 +267,9 @@
     ]
   },
   "motor_sqlserver": "NO_EJECUTADO_SIN_ENTORNO_AUTORIZADO",
-  "etl_reconciliacion_rollback_restore": "NO_EJECUTADOS",
-  "aplicacion": "SIN_CAMBIOS",
+  "etl_reconciliacion_restore_operacional": "NO_EJECUTADOS",
+  "rollback_postgresql": "ENSAYO_TRANSACCIONAL_VERIFICADO_NO_RESTAURACION",
+  "aplicacion_fuentes": "SIN_CAMBIOS",
   "fase6": "NO_AUTORIZADA",
   "bloqueos": [
     "No hay entorno SQL Server autorizado ni conexión configurada",

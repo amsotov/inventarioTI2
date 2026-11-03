@@ -1,0 +1,167 @@
+{
+  "decision": "M5-A05",
+  "base_git": "cdd0f0398026384a2ff4aca20353017e0c6c5f91",
+  "project_ref": "yhsfotxhaptinjtmrinn",
+  "project_name": "inventarioTI2",
+  "organization": "sovicl",
+  "region": "sa-east-1",
+  "scope": "BASELINE_EXISTENTE_POSTGRESQL_NO_MODELO_SQLSERVER",
+  "ddl": [
+    {
+      "source": "supabase/migrations/20261031053433_modelo_inicial.sql",
+      "source_sha256": "a90b69afe095d708ad4c4611f6ad7f9ec7f7e582f3218ecca369f6ec1247f66f",
+      "adapted": "migrations/supabase-pruebas/20261031053433_modelo_inicial.sql",
+      "sha256": "e44666a0b22b1c8e411ebc6ea99ca07406d090d15fcb5f2902b6dc464f54214a",
+      "name": "m5_base_20261031053433_modelo_inicial",
+      "owner_adaptations": [],
+      "remote_version": "20261103175700"
+    },
+    {
+      "source": "supabase/migrations/20261031055416_autenticacion.sql",
+      "source_sha256": "3b382642dbf2dd013df66853ddf483bf9302cbab4f69aac0f0f35bb8e806d36a",
+      "adapted": "migrations/supabase-pruebas/20261031055416_autenticacion.sql",
+      "sha256": "279cf1b12773a7a37c28423079384d5b761d21ace69f5bebc26cc50986454bf0",
+      "name": "m5_base_20261031055416_autenticacion",
+      "owner_adaptations": [],
+      "remote_version": "20261103175707"
+    },
+    {
+      "source": "supabase/migrations/20261031182220_autorizacion_seguridad.sql",
+      "source_sha256": "bb13986675bdc3534a31c334e7dc8164c6258440fa8b8c8ef887b222c5394f3e",
+      "adapted": "migrations/supabase-pruebas/20261031182220_autorizacion_seguridad.sql",
+      "sha256": "5b5d1ce241833a220eaabb586021f81b6fa8b6750305681c4d080573ed810740",
+      "name": "m5_base_20261031182220_autorizacion_seguridad",
+      "owner_adaptations": [
+        {
+          "schema": "seguridad",
+          "role": "inventario_contexto",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        }
+      ],
+      "remote_version": "20261103175709"
+    },
+    {
+      "source": "supabase/migrations/20261031202938_backend_api.sql",
+      "source_sha256": "06540ab1d605d15a01d55944a310c9531967e538dacd17d239351d8ef0af82d6",
+      "adapted": "migrations/supabase-pruebas/20261031202938_backend_api.sql",
+      "sha256": "61d2e5f9be5706165e72a28a0d32c6865dc81e6bf97387c89d75d3f626f96cad",
+      "name": "m5_base_20261031202938_backend_api",
+      "owner_adaptations": [
+        {
+          "schema": "inventario",
+          "role": "inventario_servicio",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        }
+      ],
+      "remote_version": "20261103175716"
+    },
+    {
+      "source": "supabase/migrations/20261101020230_panel_administracion.sql",
+      "source_sha256": "7e8a26262e067d1b3bf1a3f37dc745adcd651e17157b84f28a0c752c24a28063",
+      "adapted": "migrations/supabase-pruebas/20261101020230_panel_administracion.sql",
+      "sha256": "5180d03ed67257f3ab39cb7c8092e2792e775342bdb0a8cffa797f4714caac88",
+      "name": "m5_base_20261101020230_panel_administracion",
+      "owner_adaptations": [
+        {
+          "schema": "inventario",
+          "role": "inventario_admin",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        }
+      ],
+      "remote_version": "20261103175720"
+    },
+    {
+      "source": "supabase/migrations/20261101152945_procesos_empresariales.sql",
+      "source_sha256": "d9d0ce7d56edd7f4a6c2cca65cf77b02a53ab3750ff3230b3ee3de2e580ae212",
+      "adapted": "migrations/supabase-pruebas/20261101152945_procesos_empresariales.sql",
+      "sha256": "06af8247bb803439ea49b7e40fa2114257c3e3cede810b7c164a99f637ca93f8",
+      "name": "m5_base_20261101152945_procesos_empresariales",
+      "owner_adaptations": [
+        {
+          "schema": "inventario",
+          "role": "inventario_servicio",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        }
+      ],
+      "remote_version": "20261103175723"
+    },
+    {
+      "source": "supabase/migrations/20261102120248_indicadores_reportes_exportaciones.sql",
+      "source_sha256": "9f5ab5cd31a39b6b3e046fd7cc69712ebda6e71aa366e2a9bb3e1ac5edb05a18",
+      "adapted": "migrations/supabase-pruebas/20261102120248_indicadores_reportes_exportaciones.sql",
+      "sha256": "9d6dfb0225da1e67ada222fc8a12f3088f5929160ed9bb8e55d9c87014ca0949",
+      "name": "m5_base_20261102120248_indicadores_reportes_exportaciones",
+      "owner_adaptations": [
+        {
+          "schema": "seguridad",
+          "role": "inventario_contexto",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        }
+      ],
+      "remote_version": "20261103175725"
+    },
+    {
+      "source": "supabase/migrations/20261102135006_notificaciones_automatizacion.sql",
+      "source_sha256": "ca50b74c0682ace092b53c4cde8c2b540ae80ed6fc94e754c3cfc70092a35920",
+      "adapted": "migrations/supabase-pruebas/20261102135006_notificaciones_automatizacion.sql",
+      "sha256": "17b98cb0ab41ab05cdf6e0e6f4932aa9c192d4cd05a326e0d04eb292c8c3e732",
+      "name": "m5_base_20261102135006_notificaciones_automatizacion",
+      "owner_adaptations": [
+        {
+          "schema": "inventario",
+          "role": "inventario_avisos",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        },
+        {
+          "schema": "inventario",
+          "role": "inventario_avisos",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        },
+        {
+          "schema": "inventario",
+          "role": "inventario_avisos",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        },
+        {
+          "schema": "inventario",
+          "role": "inventario_avisos",
+          "motivo": "CREATE temporal para transferencia de propietario; se revoca inmediatamente"
+        }
+      ],
+      "remote_version": "20261103175728"
+    },
+    {
+      "adapted": "migrations/supabase-pruebas/20261103180439_m5_endurecer_helpers_privados.sql",
+      "sha256": "5895b6eb3c2cf7917269417c364990f4023b19ec210c866e4c8e0d21b9c85df5",
+      "name": "m5_endurecer_helpers_privados",
+      "remote_version": "20261103180457",
+      "source": null,
+      "purpose": "Corrección ACL privada aditiva; creada con CLI 3.0.0"
+    },
+    {
+      "adapted": "migrations/supabase-pruebas/20261103180606_m5_cerrar_execute_propietarios.sql",
+      "sha256": "acc9f5bb2194dd04633e76304382eaadea899d454ec420baa2adfebde691bc1d",
+      "name": "m5_cerrar_execute_propietarios",
+      "remote_version": "20261103180657",
+      "source": null,
+      "purpose": "Corrección ACL privada aditiva; creada con CLI 3.0.0"
+    }
+  ],
+  "operador": "postgres: CREATEROLE, sin SUPERUSER; SET en pertenencias de roles nuevos, no LOGIN",
+  "restricciones": [
+    "No usar otro proyecto ni ejecutar archivos automáticamente",
+    "Ocho fuentes originales inmutables; adaptaciones aisladas",
+    "Sin usuarios Auth, passwords, worker activo o envíos",
+    "El seed aborta si hay datos preexistentes; no omite drift",
+    "El ensayo revierte cuentas/sesiones/operaciones; secuencias pueden avanzar",
+    "No acredita SQL Server, HTTP/UI, Auth externo o concurrencia de dos conexiones"
+  ],
+  "seed": {
+    "path": "migrations/supabase-pruebas/seed_sintetico.sql",
+    "sha256": "141a305d57154218f72288c8445a14ab987fab4e2a028268203af7c6dbf61901"
+  },
+  "test": {
+    "path": "migrations/supabase-pruebas/ensayo_transaccional.sql",
+    "sha256": "36738f403851b6903a4aa8c8c46e3f3dfb9f0ba8f45360bd3a818d378cb7b48a"
+  }
+}

@@ -195,7 +195,26 @@ def verify_model(columns, overrides=None):
             'Destino 2016/130 confirmado; edición/collation siguen pendientes')
     require(manifest['pruebas_iniciales'] == {'proveedor': 'Supabase', 'motor': 'PostgreSQL',
                 'proyecto_nombre': 'inventarioTI2', 'project_ref': project['project_ref'], 'solo_datos_sinteticos': True,
-                'estado': 'PROVISIONADO_VACIO_PENDIENTE_PRUEBAS'}, 'Proyecto de pruebas incorrecto/ref no corresponde a evidencia')
+                'estado': 'BASELINE_EXISTENTE_SQL_VALIDADA'}, 'Proyecto de pruebas incorrecto/ref no corresponde a evidencia')
+    baseline = json.loads(read(DOC + 'evidencias/fase5/ensayo_supabase/resultados.json'))
+    pg_manifest = json.loads(read('migrations/supabase-pruebas/manifest.json'))
+    require(baseline['project_ref'] == project['project_ref'] == pg_manifest['project_ref'] and
+            baseline['alcance'].startswith('Baseline del sistema existente PostgreSQL') and baseline['sql_server'] == 'NO_EJECUTADO', 'No confundir baseline PG con destino SQL Server')
+    catalog = baseline['catalogo']
+    require(catalog['tablas'] == 19 and catalog['columnas'] == 155 and len(catalog['roles']) == 7 and
+            all(catalog[k] == 0 for k in ('tablas_sin_rls', 'roles_inseguros', 'accesos_esquema_navegador', 'funciones_execute_public')) and
+            all(not any(r[k] for k in ('login', 'bypassrls', 'createrole', 'createdb', 'superuser', 'conserva_create')) for r in catalog['roles']), 'Catálogo/ACL PostgreSQL no conforme')
+    require(baseline['ensayo'] == {'resultado': 'APROBADO', 'casos_sql': 20, 'unidades': 2, 'funcionarios': 3,
+            'bienes': 6, 'cuentas': 0, 'sesiones': 0, 'comandos': 0, 'auditoria': 0, 'outbox': 0}, 'Resultado/rollback de ensayo PG')
+    require(len(pg_manifest['ddl']) == len(baseline['migraciones_aplicadas']) == 10 and
+            sum(bool(x.get('source')) for x in pg_manifest['ddl']) == 8, 'Diez migraciones PG, ocho fuentes existentes')
+    native = {x['name']: x['version'] for x in baseline['migraciones_aplicadas']}
+    for entry in pg_manifest['ddl']:
+        require(entry['remote_version'] == native[entry['name']] and entry['sha256'] == digest(read(entry['adapted']).encode()), 'Hash/versión DDL PG')
+        if entry.get('source'):
+            require(entry['source_sha256'] == digest(read(entry['source']).encode()), 'Fuente original PG alterada')
+    for entry in [pg_manifest['seed'], pg_manifest['test']]:
+        require(entry['sha256'] == digest(read(entry['path']).encode()), 'Hash seed/ensayo PG')
     expected_columns = [{k: v for k, v in r.items() if k in ('tabla', 'campo', 'tipo', 'permite_null', 'identity', 'default', 'fila_excel')} for r in columns]
     key = lambda r: (r['tabla'], r['campo'])
     require(sorted(manifest['columnas'], key=key) == sorted(expected_columns, key=key), 'Manifiesto de columnas difiere del Excel')
@@ -217,8 +236,9 @@ def verify_model(columns, overrides=None):
     return {'tablas': 30, 'columnas': len(actual), 'pk': len(pk), 'componentes_pk': 31,
             'fk': len(fks), 'uq': len(actual_uq), 'identity': sum(r['identity'] for r in columns),
             'defaults': sum(bool(r['default']) for r in columns), 'checks_propuestos': len(checkrows),
-            'indices_fk_propuestos': len(indexrows), 'tablas_soporte_sin_ddl': len(support),
-            'campos_actuales_preservar': len(coverage), 'casos_motor_no_ejecutados': len(cases)}
+            'indices_fk_propuestos': len(indexrows), 'tablas_soporte_sqlserver_sin_ddl': len(support),
+            'campos_actuales_preservar': len(coverage), 'casos_sqlserver_no_ejecutados': len(cases),
+            'casos_sql_postgresql_ejecutados': 20, 'migraciones_baseline_postgresql': 10}
 
 
 def negative_checks(columns):
@@ -336,23 +356,28 @@ def main():
     artifacts += sorted((ROOT / DOC / 'evidencias/fase5/revision1').glob('*.json'))
     artifacts += sorted((ROOT / DOC / 'evidencias/fase5/revision2').glob('*.json'))
     artifacts += [ROOT / DOC / 'evidencias/fase5/provision_supabase_creado.json', ROOT / DOC / 'PROVISION_SUPABASE.md']
+    artifacts += sorted((ROOT / DOC / 'evidencias/fase5/revision3').glob('*.json'))
+    artifacts += [ROOT / DOC / 'evidencias/fase5/ensayo_supabase/resultados.json', ROOT / DOC / 'VALIDACION_SUPABASE.md']
+    artifacts += sorted((ROOT / 'migrations/supabase-pruebas').glob('*'))
     hashes = {str(p.relative_to(ROOT)): digest(p.read_bytes()) for p in artifacts}
     previous = ROOT / DOC / 'evidencias/fase5/verificacion.json'
     if previous.exists():
         saved = json.loads(previous.read_text())
         require(saved['sha256_artefactos'] == hashes and saved['conteos'] == counts, 'Evidencia Fase 5 no corresponde a archivos actuales')
     report = {'fase': 'MIGRACION_5', 'estado': 'EN_REVISION_APLICACION_BLOQUEADA', 'base_git': BASE,
-              'continuacion_git_base': 'e94e9fce6eb35c95284dd5f93dd187bb197d25d3',
+              'continuacion_git_base': 'cdd0f0398026384a2ff4aca20353017e0c6c5f91',
               'verificacion_estatica': 'APROBADA_EN_ALCANCE_ESTATICO', 'conteos': counts,
               'incidencias_corregidas': ['Verificador aceptaba solo letras en tipos; se amplió para DATETIME2 y se repitió con éxito'],
               'fuentes_preservadas': preserved, 'sha256_artefactos': hashes,
               'negativas': negatives, 'sintaxis': syntax_check() if args.analizar_sintaxis else 'NO_REPETIDA_EN_ESTA_INVOCACION',
               'destino_confirmado': {'version': 'SQL Server 2016', 'product_major_version': 13, 'compatibility_level': 130},
               'supabase_provision': 'PROYECTO_CREADO_VERIFICACION_METADATA_PREVIA_NO_REPETIDA_POR_ESTE_SCRIPT',
-              'supabase_funcionalidad': 'NO_EJECUTADA_ESQUEMA_APLICACION_NO_INSTALADO',
+              'supabase_funcionalidad': 'EVIDENCIA_20_CASOS_SQL_VALIDADA_NO_REPETIDA; HTTP_AUTH_UI_NO_EJECUTADOS',
               'sintaxis_sql2016': scriptdom_check(args.dotnet_bin, args.scriptdom_dll) if args.dotnet_bin and args.scriptdom_dll else 'NO_REPETIDA_EN_ESTA_INVOCACION',
               'motor_sqlserver': 'NO_EJECUTADO_SIN_ENTORNO_AUTORIZADO',
-              'etl_reconciliacion_rollback_restore': 'NO_EJECUTADOS', 'aplicacion': 'SIN_CAMBIOS',
+              'etl_reconciliacion_restore_operacional': 'NO_EJECUTADOS',
+              'rollback_postgresql': 'ENSAYO_TRANSACCIONAL_VERIFICADO_NO_RESTAURACION',
+              'aplicacion_fuentes': 'SIN_CAMBIOS',
               'fase6': 'NO_AUTORIZADA',
               'bloqueos': json.loads((ROOT / MIG / 'manifest.json').read_text())['bloqueos']}
     print(json.dumps(report, ensure_ascii=False, indent=2))

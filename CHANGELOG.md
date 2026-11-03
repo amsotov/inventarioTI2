@@ -211,3 +211,9 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - Pausa inventarioTI autorizada y confirmada INACTIVE; inventarioTI2 creado en sovicl/sa-east-1 y ACTIVE_HEALTHY, sin cambio de plan Free.
 - Consulta de metadatos PostgreSQL 17.11/UTC y cero tablas de aplicación; sin carga ni pruebas funcionales. Evidencia saneada y estados actualizados.
 - Candidato revisión3 registra ref nueva; cuatro SQL Server sin cambios, 20 negativas y parser 130, revisión2 archivada. Sin app/frontend, merge, despliegue ni Fase 6.
+
+## 2026-11-03 — M5-A05 validación inicial Supabase
+
+- Baseline existente instalada con ocho copias trazadas y adaptación de propietarios a operador no SUPERUSER; fuentes originales intactas. Dos migraciones aditivas cierran ACL privadas como propietario efectivo.
+- Semilla sintética 2/3/6 (unidades/funcionarios/bienes), 20 casos SQL aprobados, rollback y catálogo/RLS/roles verificados; sin cuentas/sesiones/outbox persistentes ni correos.
+- Paquete/manifest/evidencia y revisión4; no frontend/backend fuente, HTTP/Auth real/UI, SQL Server ejecutado, merge, despliegue o Fase 6.

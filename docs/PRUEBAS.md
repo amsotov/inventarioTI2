@@ -456,3 +456,9 @@ Consulta de proyectos/organización antes y después; un create_project rechazad
 get_project: inventarioTI pasó ACTIVE_HEALTHY → PAUSING → INACTIVE tras pausa autorizada. Nuevo inventarioTI2 ref yhsfotxhaptinjtmrinn creado y releído ACTIVE_HEALTHY, sovicl/sa-east-1, plan Free. list_tables de public/inventario/acceso/seguridad vacío. SELECT de server_version_num/TimeZone/recuento BASE TABLE: 170011/UTC/0. [Evidencia](migracion/evidencias/fase5/provision_supabase_creado.json). Esto prueba disponibilidad/metadatos, no funcionalidad Auth/API/UI ni SQL Server.
 
 Revisión3 del verificador vincula manifiesto al proyecto observado, añade negativa de ref incorrecta (20 negativas) y conserva comprobaciones de parser 130. SQL Server de revisión2 es idéntico; evidencia anterior archivada. No hubo DDL/DML de aplicación, semillas ni pruebas funcionales.
+
+## M5-A05 — 20 casos SQL gestionados y ACL
+
+[Informe](migracion/VALIDACION_SUPABASE.md) y [evidencia](migracion/evidencias/fase5/ensayo_supabase/resultados.json): 20 casos en Supabase inventarioTI2 con SET ROLE, funciones privadas, RLS, idempotencia secuencial, versiones, asignación/traspaso/baja, lector/anon y auditoría inmutable. Se repitieron tras correcciones ACL. Final ROLLBACK: semilla 2/3/6 intacta, cero cuentas/sesiones/comandos/auditoría/outbox; secuencias pueden avanzar. Catálogo 19/155, todas RLS, 7 roles NOLOGIN sin atributos elevados/CREATE; PUBLIC EXECUTE=0 y USAGE navegador=0. Advisors seguridad sin lints devueltos.
+
+Hallazgo ACL: la revocación general dejó 9 funciones de otros propietarios; se cerró como propietario efectivo y restauró GRANT explícito. No se reescribieron migraciones aplicadas. Son pruebas SQL con contexto sintético, no login/MFA real, HTTP/UI, dos escritores, rendimiento, backup/restore, reconciliación o SQL Server. Veinte negativas documentales del candidato se cuentan aparte. Verificador local no repite ensayos remotos.

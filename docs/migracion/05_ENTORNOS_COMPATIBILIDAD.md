@@ -1,6 +1,6 @@
 # FASE 5 — Entornos confirmados y compatibilidad 130
 
-Fecha: 2026-11-03. M5-A02 continúa la Fase 5; no acepta su cierre ni inicia Fase 6. Base de continuación: `38603e223d9b5795f4c2179b35e0403b7a2e5d45`. Actualización M5-A04: candidato `0.5.0-review.3`, EN_REVISION. Supabase inventarioTI2 ya está creado y verificado por metadatos; faltan esquema/datos/pruebas funcionales. Aplicación SQL Server sigue BLOQUEADA. [Provisión actual](PROVISION_SUPABASE.md).
+Fecha: 2026-11-03. M5-A02 continúa la Fase 5; no acepta su cierre ni inicia Fase 6. Base de continuación: `38603e223d9b5795f4c2179b35e0403b7a2e5d45`. Actualización M5-A05: candidato `0.5.0-review.4`, EN_REVISION. Supabase inventarioTI2 contiene baseline existente (19 tablas/155 columnas), semilla sintética y [20 casos SQL aprobados](VALIDACION_SUPABASE.md); no se ejecutó HTTP/Auth real/UI. Aplicación SQL Server sigue BLOQUEADA. [Provisión actual](PROVISION_SUPABASE.md).
 
 ## Confirmación del usuario
 
@@ -8,7 +8,7 @@ Fecha: 2026-11-03. M5-A02 continúa la Fase 5; no acepta su cierre ni inicia Fas
 
 | Aspecto | Decisión confirmada | Pendiente |
 |---|---|---|
-| Pruebas iniciales | Supabase/PostgreSQL, proyecto inventarioTI2 aislado, datos sintéticos | Proyecto y ref verificados; esquema/cargas/funcionalidad aún no ejecutados |
+| Pruebas iniciales | Supabase/PostgreSQL, proyecto inventarioTI2 aislado, datos sintéticos | Baseline y semilla sintética aplicadas; 20 casos SQL, no HTTP/Auth real/UI |
 | Destino | SQL Server 2016, motor 13.x, compatibility_level 130 | Edición, SP/CU, collation, instancia y base autorizada, conectividad y permisos |
 | Modelo/reglas | Se mantiene propuesta de 30 tablas y garantías previas | M1-D02–16 aplicables: esta respuesta no resuelve alternativas de auth, CHECK, historia o privacidad |
 | Fases | Fase 5 continúa autorizada | Fase 6 y producción no autorizadas |
@@ -17,7 +17,7 @@ M1-D01 queda ratificada respecto del objetivo SQL Server y su versión/nivel. No
 
 ## Acceso real a Supabase y alcance
 
-**Estado actual M5-A04:** inventarioTI pausado por autorización expresa; inventarioTI2 ref `yhsfotxhaptinjtmrinn` creado en sovicl/sa-east-1, ACTIVE_HEALTHY, PostgreSQL 17.11.0.011 y UTC según consulta. Cero tablas de aplicación; sin claves en Git/chat. El bloqueo de acceso/cuota quedó resuelto. Lo siguiente conserva el descubrimiento previo M5-A02 como historia.
+**Estado de creación M5-A04 (histórico):** inventarioTI pausado por autorización expresa; inventarioTI2 ref `yhsfotxhaptinjtmrinn` creado en sovicl/sa-east-1, ACTIVE_HEALTHY, PostgreSQL 17.11.0.011 y UTC según consulta. Cero tablas de aplicación; sin claves en Git/chat. El bloqueo de acceso/cuota quedó resuelto. Lo siguiente conserva el descubrimiento previo M5-A02 como historia.
 
 Se consultaron únicamente metadatos de proyectos y ramas mediante el conector. La conexión mostró tres proyectos, ninguno con nombre inventarioTI2. El proyecto de nombre similar inventarioTI no tiene ramas de desarrollo visibles. **No se deduce que ambos nombres representen el mismo proyecto**. No se consultaron filas, catálogos SQL, logs con contenido de negocio, claves API ni credenciales; no se crearon proyectos/ramas ni se incurrió en aprovisionamiento.
 
@@ -45,6 +45,8 @@ Un SQL Server posterior con compatibility_level 130 no equivale a ejecutar SQL S
 
 ## Separación de evidencias y pendientes
 
+M5-A05 supera el estado vacío de creación: baseline existente instalada con 10 migraciones trazadas (8 fuentes y 2 correcciones ACL), 2 unidades/3 funcionarios/6 bienes sintéticos y 20 casos SQL reversibles aprobados. Ver [informe](VALIDACION_SUPABASE.md). Las limitaciones de SQL Server y fases siguientes permanecen.
+
 | Evidencia | Estado real | Lo que demuestra |
 |---|---|---|
 | OOXML ↔ DDL/CSV/manifiesto | APROBADA_ESTATICA | Correspondencia del candidato con 117 campos y restricciones documentadas |
@@ -52,7 +54,7 @@ Un SQL Server posterior con compatibility_level 130 no equivale a ejecutar SQL S
 | ScriptDom TSql130Parser, cuatro archivos | APROBADA_ESTATICA | Gramática 130 de los candidatos, sin compilación semántica |
 | 20 negativas del verificador + tres autopruebas ScriptDom | APROBADAS_EN_SU_ALCANCE | Alteraciones rechazadas, incluido motor/nivel/collation/proyecto incorrectos |
 | Proyecto Supabase inventarioTI2 y metadatos | VERIFICADO_M5_A04 | ACTIVE_HEALTHY, consulta PostgreSQL 17.11/UTC, cero tablas de aplicación |
-| Pruebas de funcionalidad en Supabase inventarioTI2 | NO_EJECUTADAS | Proyecto disponible pero sin esquema/carga de aplicación; no acredita Auth/API/UI ni SQL Server |
+| Baseline SQL en Supabase inventarioTI2 | 20 CASOS SQL APROBADOS | 19 tablas/155 columnas; semilla sintética, funciones/RLS/roles/rollback. No acredita Auth/API/UI ni SQL Server |
 | Integridad/concurrencia/replay/rendimiento/rollback/restore SQL Server | NO_EJECUTADAS | Faltan instancia autorizada y decisiones; se conservan los 30 casos futuros |
 
 Revisión 2 archivada en [revision2](evidencias/fase5/revision2/verificacion.json); sus hashes describen el estado previo a la provisión. Evidencia actual en [verificacion.json](evidencias/fase5/verificacion.json). Revisión inicial archivada en [revision1](evidencias/fase5/revision1/verificacion.json); sus hashes describen el commit anterior, no los archivos actuales modificados. Fuentes/diseño/Fase 4 se conservan sin alteración.

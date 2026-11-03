@@ -4,7 +4,7 @@ Creado el 2026-11-03 durante Fase 1. No existía en la base `511b99d`.
 
 ## Punto actual
 
-Migración Fases 0–4 COMPLETADAS por aprobación del usuario. Fase 5 EN_REVISION como candidato SQL Server bloqueado; ensayos de motor pendientes de diseño/entorno autorizado. Fase 6 NO AUTORIZADA. No hay fuente operacional ni perfilado real.
+Migración Fases 0–4 COMPLETADAS por aprobación del usuario. Fase 5 EN_REVISION como candidato SQL Server bloqueado; ensayos de motor pendientes de diseño/entorno autorizado. Fase 6 NO AUTORIZADA. M5-A02 confirma SQL Server 2016/13.x/nivel 130 y Supabase/PostgreSQL inventarioTI2 para pruebas sintéticas; ese proyecto no aparece en la conexión y no se usará inventarioTI como sustituto. No hay fuente operacional ni perfilado real.
 
 ## Lectura obligatoria
 
@@ -16,6 +16,8 @@ Migración Fases 0–4 COMPLETADAS por aprobación del usuario. Fase 5 EN_REVISI
 ## Trabajo permitido al retomar
 
 Consultar el mensaje vigente y las decisiones aprobadas posteriores; no pedir autorizaciones ya otorgadas. Fase 5 ya fue autorizada: revisar [candidato](docs/migracion/05_ESQUEMA_SQLSERVER.md), [manifest](migrations/sqlserver/manifest.json), CHECK y soporte. Verificar sin DB: `python3 docs/migracion/verificar_fase5.py`; parser opcional `--analizar-sintaxis` en venv externo con SQLFluff 3.5.0. `--evaluar-aplicacion` debe bloquear (salida 3). No retirar THROW ni elegir alternativas pendientes por inferencia; emitir versión habilitada solo después de resolver diseño y autorizar entorno/operación. Fase 6 requiere aprobación nueva. La ausencia de datos reales bloquea perfilado/carga, no revisión estática.
+
+Lectura de continuación: [entornos y compatibilidad 130](docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md). No volver a preguntar versión/nivel o nombre del proyecto ya confirmados. Falta hacer visible inventarioTI2 en la conexión; no crear recursos o cambiar permisos por inferencia. Edición/collation/instancia SQL Server y decisiones siguen pendientes. Parser opcional con `--dotnet-bin /ruta/dotnet --scriptdom-dll /ruta/ScriptDom130.dll` junto a la verificación estándar.
 
 Lectura adicional: [matriz de Fase 2](docs/migracion/02_MATRIZ_TRAZABILIDAD.md), [mapeo](docs/migracion/02_MAPEO_ESQUEMAS.md) y [línea base](docs/migracion/02_LINEA_BASE_FUNCIONAL.md).
 

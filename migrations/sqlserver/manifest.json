@@ -2,9 +2,9 @@
   "fase": "MIGRACION_5",
   "estado": "CANDIDATO_EN_REVISION_APLICACION_BLOQUEADA",
   "base_git": "9f84fcd836550654770bd7ed4191f9edaffe2528",
-  "version_candidata": "0.5.0-review.1",
+  "version_candidata": "0.5.0-review.2",
   "motor_objetivo": "SQL Server",
-  "version_edicion_collation": "PENDIENTE_RATIFICACION",
+  "version_edicion_collation": "SQL Server 2016 / compatibilidad 130; edición y collation pendientes",
   "entorno_autorizado": null,
   "decisiones_aprobadas": [],
   "bloqueos": [
@@ -1077,26 +1077,47 @@
   "archivos_sql": [
     {
       "path": "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql",
-      "sha256": "c9e6541ec9b94e7eaa9eb139535c089f26cea18e80aba85052fb81001591c145",
+      "sha256": "988111fc248735507f0ce23605acb443a24b466e793d7c75b372883200dd22da",
       "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
     },
     {
       "path": "migrations/sqlserver/0002_checks_propuestos.candidate.sql",
-      "sha256": "66eb606c1a49da8a20ec5c4ccaae6b782e96d6c87fc9d2d9eb2230331e8988bc",
+      "sha256": "637dd610d20d4943d28dd40180d74f4aa890cd04086b54d5259372e39a387eaf",
       "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
     },
     {
       "path": "migrations/sqlserver/0003_indices_fk.candidate.sql",
-      "sha256": "c9df22f4beb59ff4964bcc05f01ff6c955526ad6746d527b2430d9476fa1d318",
+      "sha256": "1aa37907d0a35f51ba5c5db28751f75c8a0b6f9e72f6fc663b73872b27d336f3",
       "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
     },
     {
       "path": "migrations/sqlserver/900_catalogo_esperado.candidate.sql",
-      "sha256": "fc56b483832f2dbe7ad2cfb664db707e8fb232edce018f7b0c68112771d9c5b3",
+      "sha256": "2c6ecf0a4ef438cdcaf14e27500d94114d524a663a7f586ab81c284537b8c2e7",
       "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
     }
   ],
   "esquema_soporte": "PROPUESTA_NO_IMPLEMENTADA",
   "datos_migrados": 0,
-  "fase6": "NO_AUTORIZADA"
+  "fase6": "NO_AUTORIZADA",
+  "continuacion_git_base": "38603e223d9b5795f4c2179b35e0403b7a2e5d45",
+  "destino": {
+    "producto": "SQL Server",
+    "version": "2016",
+    "product_major_version": 13,
+    "compatibility_level": 130,
+    "edicion": null,
+    "collation": null,
+    "confirmacion": "M5-A02"
+  },
+  "pruebas_iniciales": {
+    "proveedor": "Supabase",
+    "motor": "PostgreSQL",
+    "proyecto_nombre": "inventarioTI2",
+    "project_ref": null,
+    "solo_datos_sinteticos": true,
+    "estado": "BLOQUEADO_PROYECTO_NO_VISIBLE_EN_CONEXION"
+  },
+  "decisiones_entorno_confirmadas": [
+    "M5-A02"
+  ]
 }

@@ -229,3 +229,9 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## M5-A01 — aceptación documental Fase 4 y autorización Fase 5
 
 Usuario: «apruebo fase 4 inicia fase 5». Acepta `9f84fcd`; permite preparar y verificar candidato SQL Server, no resuelve opciones M1-D ni configura entorno. Núcleo fiel separado de propuestas; barreras de aplicación mientras diseño/entorno estén pendientes. Fase 5 EN_REVISION; Fase 6 NO AUTORIZADA. Recomendaciones y bloqueos en [informe](migracion/05_ESQUEMA_SQLSERVER.md). No se ejecutó SQL ni se sustituyó la aplicación.
+
+## M5-A02 — entornos de pruebas y destino confirmados
+
+Usuario: «Fase de Pruebas Actual (Supabase): Se utilizará un proyecto aislado en Supabase (PostgreSQL) cargado con datos sintéticos para validar la funcionalidad inicial. Entorno de Destino (SQL Server): SQL Server 2016, compatibility level 130». Proyecto aclarado: «inventarioTI2».
+
+Se ratifica versión/nivel del objetivo M1-D01, no la totalidad de decisiones ni la aceptación de Fase 5. Proyecto no visible en la conexión; inventarioTI no es reemplazo. Edición/SP/CU/collation/instancia SQL Server pendientes; UTF-8 no está disponible en 2016. [Informe](migracion/05_ENTORNOS_COMPATIBILIDAD.md). Fase 6 no autorizada.

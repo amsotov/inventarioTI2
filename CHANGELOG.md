@@ -193,3 +193,9 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - Fase 4 aceptada por usuario; Fase 5 entregada EN_REVISION, aplicación BLOQUEADA.
 - DDL candidato 30 tablas/117 campos/PK/FK/UQ/IDENTITY/defaults; CHECK e índices propuestos separados, consulta de catálogo y manifiesto de revisión.
 - Soporte actual 19/155 trazado, controles estáticos/sintácticos y negativas; casos de motor no ejecutados. Sin cambios de aplicación/SQL previo, cargas, merge o despliegue.
+
+## 2026-11-03 — Continuación Fase 5, destino 2016/130
+
+- M5-A02 registra Supabase/PostgreSQL inventarioTI2 para pruebas sintéticas y SQL Server 2016/130 como destino.
+- Guards de motor/nivel/bases de sistema, parser estático TSql130Parser con paquete fijado, 19 negativas y evidencia histórica revision1 conservada.
+- Se descarta UTF-8 para SQL Server 2016; Unicode requiere decisión explícita. Proyecto inventarioTI2 no visible; no SQL/carga/cambios remotos ni inicio de Fase 6.

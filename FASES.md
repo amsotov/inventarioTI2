@@ -6,7 +6,7 @@
 
 Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
 
-Pendientes: decisiones M1-D aplicables, versión/edición/collation/entorno autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
+M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. Este proyecto no es visible en la conexión actual. Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
@@ -580,3 +580,7 @@ El usuario cambió la fuente Pages a GitHub Actions (`build_type=workflow` confi
 ## Migración M5-A01 — aprobación de Fase 4 y entrega Fase 5
 
 2026-11-03. Usuario: «apruebo fase 4 inicia fase 5». Acepta `9f84fcd` y cierra Fase 4 documental con límites; no aprueba alternativas de datos/entorno por inferencia. Fase 5 EN_REVISION: 30 tablas/117 campos en cuatro SQL candidatos bloqueados, nueve CHECK y 24 índices propuestos, mapa de soporte 19/155, verificación estática/parser/negativas. CA-M5-01 y preservación estática verificables; CA-M5-02/04/05/06 con pendientes según informe. Aplicación/ensayos de motor BLOQUEADOS por diseño y entorno no autorizado; sin SQL ejecutado ni funcionalidad migrada. Fase 6 NO AUTORIZADA; desarrollo histórico intacto.
+
+## Migración M5-A02 — continuidad de Fase 5 y entornos
+
+Usuario confirma Supabase/PostgreSQL aislado con datos sintéticos, proyecto inventarioTI2, y destino SQL Server 2016/compatibility level 130. Se actualiza candidato 0.5.0-review.2 con guards de motor 13.x/nivel/base, parser TSql130Parser y 19 negativas. Sin SQL ejecutado; inventarioTI2 no visible ni como rama, pruebas remotas bloqueadas. Edición/SP/CU/collation/instancia y decisiones pendientes. Fase 5 EN_REVISION, sin cierre aprobado; Fase 6 NO AUTORIZADA.

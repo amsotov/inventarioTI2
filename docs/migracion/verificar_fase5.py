@@ -69,6 +69,13 @@ def verify_model(columns, overrides=None):
     for name, sql in scripts.items():
         code = re.sub(r'--[^\n]*', '', sql).strip()
         require(re.match(r"^;THROW 51050, N'[^']+', 1;", code), 'Barrera incondicional: ' + name)
+        require("IF ISNULL(TRY_CONVERT(INT, SERVERPROPERTY('ProductMajorVersion')), 0) <> 13" in code,
+                'Guardia motor real 2016/13.x: ' + name)
+        require('IF ISNULL((SELECT compatibility_level FROM sys.databases WHERE database_id = DB_ID()), 0) <> 130' in code,
+                'Guardia compatibility_level 130: ' + name)
+        require('IF DB_ID() <= 4' in code, 'Guardia bases de sistema: ' + name)
+        require(not re.search(r'\b(?:STRING_AGG|TRIM|TRANSLATE|CONCAT_WS|DATETRUNC|GREATEST|LEAST|JSON_OBJECT|JSON_ARRAY)\s*\(|\bIS\s+(?:NOT\s+)?DISTINCT\s+FROM\b|\b\w+_UTF8\b', code, re.I),
+                'Construcción posterior a SQL Server 2016: ' + name)
         require(not re.search(r'^\s*(?:GO|USE)\b', code, re.M | re.I), 'Batch/destino no permitido')
         require(not re.search(r'\b(?:DROP|TRUNCATE|DELETE|UPDATE|MERGE|GRANT|REVOKE|DENY|NOCHECK)\b',
                               re.sub(r'ON DELETE NO ACTION ON UPDATE NO ACTION', '', code), re.I),
@@ -173,6 +180,12 @@ def verify_model(columns, overrides=None):
     require(manifest['base_git'] == BASE and manifest['estado'] == 'CANDIDATO_EN_REVISION_APLICACION_BLOQUEADA' and
             manifest['entorno_autorizado'] is None and manifest['decisiones_aprobadas'] == [] and
             manifest['datos_migrados'] == 0 and manifest['fase6'] == 'NO_AUTORIZADA', 'Manifiesto no es autorización')
+    require(manifest['destino'] == {'producto': 'SQL Server', 'version': '2016', 'product_major_version': 13,
+                                  'compatibility_level': 130, 'edicion': None, 'collation': None, 'confirmacion': 'M5-A02'},
+            'Destino 2016/130 confirmado; edición/collation siguen pendientes')
+    require(manifest['pruebas_iniciales'] == {'proveedor': 'Supabase', 'motor': 'PostgreSQL',
+                'proyecto_nombre': 'inventarioTI2', 'project_ref': None, 'solo_datos_sinteticos': True,
+                'estado': 'BLOQUEADO_PROYECTO_NO_VISIBLE_EN_CONEXION'}, 'Proyecto de pruebas incorrecto/no accesible')
     expected_columns = [{k: v for k, v in r.items() if k in ('tabla', 'campo', 'tipo', 'permite_null', 'identity', 'default', 'fila_excel')} for r in columns]
     key = lambda r: (r['tabla'], r['campo'])
     require(sorted(manifest['columnas'], key=key) == sorted(expected_columns, key=key), 'Manifiesto de columnas difiere del Excel')
@@ -217,6 +230,12 @@ def negative_checks(columns):
         ('cobertura_actual_incompleta', DOC + '05_PRESERVACION_CAMPOS.csv', '\n'.join((ROOT / DOC / '05_PRESERVACION_CAMPOS.csv').read_text().splitlines()[:-1]) + '\n'),
         ('entorno_inventado', MIG + 'manifest.json', json.dumps(dict(manifest, entorno_autorizado='supuesto'))),
         ('catalogo_falso', MIG + SQL_NAMES[3], (ROOT / MIG / SQL_NAMES[3]).read_text().replace("N'EQUI_ID', N'int', 4, 10, 0, 0, 1", "N'EQUI_ID', N'int', 4, 10, 0, 1, 1", 1)),
+        ('sin_guardia_motor_real', MIG + SQL_NAMES[0], core.replace("IF ISNULL(TRY_CONVERT(INT, SERVERPROPERTY('ProductMajorVersion')), 0) <> 13", 'IF 1 = 0', 1)),
+        ('compatibilidad_150', MIG + SQL_NAMES[0], core.replace('0) <> 130', '0) <> 150', 1)),
+        ('funcion_posterior_2016', MIG + SQL_NAMES[0], core + "\nSELECT STRING_AGG([TIPO_NOMBRE], ',') FROM [dbo].[TIPOS_EQUIPO];\n"),
+        ('collation_utf8_no_disponible', MIG + SQL_NAMES[0], core + "\nSELECT 'texto' COLLATE Latin1_General_100_CI_AS_SC_UTF8;\n"),
+        ('motor_posterior_como_sustituto', MIG + 'manifest.json', json.dumps(dict(manifest, destino=dict(manifest['destino'], product_major_version=16)))),
+        ('proyecto_supabase_distinto', MIG + 'manifest.json', json.dumps(dict(manifest, pruebas_iniciales=dict(manifest['pruebas_iniciales'], proyecto_nombre='inventarioTI')))),
     ]
     result = []
     for name, path, value in scenarios:
@@ -257,11 +276,35 @@ def syntax_check():
             'archivos': results, 'negativa_sql_invalido': 'RECHAZADO_CORRECTAMENTE'}
 
 
+def scriptdom_check(dotnet, dll):
+    process = subprocess.run([dotnet, dll, *[str(ROOT / MIG / n) for n in SQL_NAMES]],
+                             capture_output=True, text=True, timeout=60)
+    require(process.returncode == 0, 'ScriptDom130 falló: ' + process.stderr[:500])
+    report = json.loads(process.stdout)
+    require(report['parser'] == 'TSql130Parser' and report['version_paquete'] == '161.9142.1'
+            and report['compatibility_level'] == 130, 'Parser específico 130 requerido')
+    require(len(report['autopruebas']) == 3 and all(x['correcto'] for x in report['autopruebas']), 'Autopruebas ScriptDom130')
+    require(len(report['archivos']) == 4, 'Cobertura ScriptDom130')
+    seen = set()
+    for item in report['archivos']:
+        path = Path(item['archivo'])
+        relative = str(path.relative_to(ROOT))
+        require(relative in {MIG + n for n in SQL_NAMES} and not item['errores'] and
+                item['sha256'] == digest(path.read_bytes()), 'ScriptDom errores/hash/cobertura')
+        item['archivo'] = relative
+        seen.add(relative)
+    require(len(seen) == 4, 'ScriptDom130 archivos repetidos')
+    return report
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--analizar-sintaxis', action='store_true')
     parser.add_argument('--evaluar-aplicacion', action='store_true')
+    parser.add_argument('--dotnet-bin', help='Binario dotnet externo para ScriptDom130, junto con --scriptdom-dll')
+    parser.add_argument('--scriptdom-dll', help='DLL del verificador estático; no abre conexiones SQL')
     args = parser.parse_args()
+    require(bool(args.dotnet_bin) == bool(args.scriptdom_dll), 'Indicar juntos --dotnet-bin y --scriptdom-dll')
     columns = source_columns()
     counts = verify_model(columns)
     negatives = negative_checks(columns)
@@ -278,16 +321,22 @@ def main():
     artifacts = [ROOT / MIG / name for name in SQL_NAMES] + [ROOT / MIG / 'manifest.json', ROOT / MIG / 'README.md', Path(__file__)]
     artifacts += sorted((ROOT / DOC).glob('05_*'))
     artifacts.append(ROOT / DOC / 'evidencias/fase5/fuentes.json')
+    artifacts += sorted((ROOT / DOC / 'herramientas/scriptdom130').glob('*'))
+    artifacts += sorted((ROOT / DOC / 'evidencias/fase5/revision1').glob('*.json'))
     hashes = {str(p.relative_to(ROOT)): digest(p.read_bytes()) for p in artifacts}
     previous = ROOT / DOC / 'evidencias/fase5/verificacion.json'
     if previous.exists():
         saved = json.loads(previous.read_text())
         require(saved['sha256_artefactos'] == hashes and saved['conteos'] == counts, 'Evidencia Fase 5 no corresponde a archivos actuales')
     report = {'fase': 'MIGRACION_5', 'estado': 'EN_REVISION_APLICACION_BLOQUEADA', 'base_git': BASE,
+              'continuacion_git_base': '38603e223d9b5795f4c2179b35e0403b7a2e5d45',
               'verificacion_estatica': 'APROBADA_EN_ALCANCE_ESTATICO', 'conteos': counts,
               'incidencias_corregidas': ['Verificador aceptaba solo letras en tipos; se amplió para DATETIME2 y se repitió con éxito'],
               'fuentes_preservadas': preserved, 'sha256_artefactos': hashes,
               'negativas': negatives, 'sintaxis': syntax_check() if args.analizar_sintaxis else 'NO_REPETIDA_EN_ESTA_INVOCACION',
+              'destino_confirmado': {'version': 'SQL Server 2016', 'product_major_version': 13, 'compatibility_level': 130},
+              'supabase_funcionalidad': 'BLOQUEADA_PROYECTO_INVENTARIOTI2_NO_VISIBLE_EN_CONEXION',
+              'sintaxis_sql2016': scriptdom_check(args.dotnet_bin, args.scriptdom_dll) if args.dotnet_bin and args.scriptdom_dll else 'NO_REPETIDA_EN_ESTA_INVOCACION',
               'motor_sqlserver': 'NO_EJECUTADO_SIN_ENTORNO_AUTORIZADO',
               'etl_reconciliacion_rollback_restore': 'NO_EJECUTADOS', 'aplicacion': 'SIN_CAMBIOS',
               'fase6': 'NO_AUTORIZADA',

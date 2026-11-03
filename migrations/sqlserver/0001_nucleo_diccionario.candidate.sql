@@ -2,6 +2,12 @@
 -- No quitar esta barrera manualmente: requiere nueva versión revisada,
 -- decisiones resueltas y entorno/operación autorizados.
 ;THROW 51050, N'FASE 5: candidato bloqueado; consultar docs/migracion/05_ESQUEMA_SQLSERVER.md', 1;
+IF ISNULL(TRY_CONVERT(INT, SERVERPROPERTY('ProductMajorVersion')), 0) <> 13
+    THROW 51054, N'Se requiere motor SQL Server 2016 (13.x); otro motor con compatibilidad 130 no es equivalente', 1;
+IF ISNULL((SELECT compatibility_level FROM sys.databases WHERE database_id = DB_ID()), 0) <> 130
+    THROW 51055, N'Se requiere compatibility_level 130; no se modifica automáticamente', 1;
+IF DB_ID() <= 4
+    THROW 51056, N'No se permite usar una base de sistema', 1;
 SET NOCOUNT ON;
 SET XACT_ABORT ON;
 IF @@TRANCOUNT <> 0

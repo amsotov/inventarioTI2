@@ -440,3 +440,9 @@ NO EJECUTADAS: SQL, migraciones, build, suites funcionales/API/UI, carga, integr
 `python3 docs/migracion/verificar_fase5.py`: cobertura OOXML ↔ DDL/CSV/manifiesto, integridad de referencias, barreras y preservación. Con venv externo SQLFluff 3.5.0: `--analizar-sintaxis` analiza cuatro scripts en dialecto tsql; no compila ni ejecuta SQL Server. Trece negativas sobre copias detectan cambios de tipo, FK/clave/default, CHECK, índice, guardia y manifiesto. Evidencia en [fase5/verificacion.json](migracion/evidencias/fase5/verificacion.json).
 
 `--evaluar-aplicacion` termina 3 por diseño/entorno pendientes (bloqueo esperado, no error de conectividad). [30 casos](migracion/05_CASOS_SQLSERVER.csv) de motor, aplicación, reconciliación, replay, concurrencia y rollback/restore NO_EJECUTADOS. No se repiten suites PostgreSQL/UI sin cambios de aplicación. Fase 5 EN_REVISION, no COMPLETADA.
+
+## Migración Fase 5 — revisión 2 / SQL Server 2016
+
+La evidencia vigente incluye 19 negativas y parser Microsoft ScriptDom 161.9142.1/TSql130Parser de cuatro SQL, con tres autopruebas. [Guía](migracion/herramientas/scriptdom130/README.md). Todo estático, sin compilación semántica ni motor SQL Server. El verificador mantiene bloqueo de aplicación (salida 3); no abre DB.
+
+SQLFluff genérico se conserva como comprobación adicional; no fija versión del motor. Supabase/PostgreSQL inventarioTI2 será entorno funcional sintético: no está visible, no hay pruebas remotas/cargas. Los 30 casos SQL Server siguen NO_EJECUTADOS. Evidencia de revisión 1 archivada; no se reescribe como resultado de la revisión 2.

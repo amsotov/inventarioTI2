@@ -119,3 +119,7 @@ Fase 3 aceptada. [Plan ETL](../docs/migracion/04_PLAN_ETL.md), [excepciones](../
 ## Migración Fase 5 — candidato de revisión
 
 M5-A01 acepta Fase 4 y autoriza Fase 5. [Informe](../docs/migracion/05_ESQUEMA_SQLSERVER.md), [DDL](../migrations/sqlserver/README.md), CHECK/índices/soporte/casos y evidencia estática. Estado EN_REVISION; ejecución BLOQUEADA por diseño/entorno. Fase 6 NO AUTORIZADA. No se instaló Spec Kit ni se modificó su configuración.
+
+## Continuidad de migración M5-A02
+
+SQL Server 2016/13.x/compatibilidad 130 y Supabase/PostgreSQL inventarioTI2 confirmados; no es aprobación de Fase 5 ni Fase 6. [Entornos](../docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md). Parser de revisión aislado, sin integración de backend ni datos remotos.

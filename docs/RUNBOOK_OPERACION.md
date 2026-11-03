@@ -64,3 +64,7 @@ Node 24 y Docker local, desde raíz: `npm ci`, `npm run build`, `npm run test:op
 ## Candidato SQL Server de modernización — Fase 5
 
 El [DDL candidato](../migrations/sqlserver/README.md) está bloqueado y no integrado al runner actual. No quitar THROW ni ejecutar sobre PostgreSQL/base existente. [Informe](migracion/05_ESQUEMA_SQLSERVER.md) detalla versión/edición/collation, soporte y decisiones pendientes. Sin ensayo de motor, restore o rollback; procedimientos de Fase 4 y runbook histórico conservan sus límites. Fase 6/producción sin autorización.
+
+## M5-A02 — dos entornos de validación
+
+Pruebas iniciales Supabase/PostgreSQL inventarioTI2 con datos sintéticos; falta proyecto visible/identificado. Destino SQL Server 2016/13.x/nivel 130 confirmado, sin instancia/collation/edición autorizadas. No redirigir fixtures locales con resets/roles al proyecto gestionado; no aplicar T-SQL a PostgreSQL. [Compatibilidad y límites](migracion/05_ENTORNOS_COMPATIBILIDAD.md). No activar workers/envíos ni retirar barreras del candidato.

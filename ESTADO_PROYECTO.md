@@ -6,7 +6,7 @@
 
 Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
 
-Pendientes: decisiones M1-D aplicables, versión/edición/collation/entorno autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
+M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. Este proyecto no es visible en la conexión actual. Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha del resumen histórico:** 2026-11-02
@@ -583,3 +583,7 @@ Base 59b58d9. Plan de dos fuentes APP_POSTGRES/EXCEL_LEGADO, staging saneado/cua
 ## Continuidad M5-A01
 
 Fase 4 aceptada (`9f84fcd`); Fase 5 preparada para revisión. Leer docs/migracion/05_ESQUEMA_SQLSERVER.md y migrations/sqlserver/README.md. Siguiente acción: resolver decisiones/entorno y revisar candidato antes de aplicar. No hay conexión SQL Server ni ensayos de motor; scripts con barrera incondicional. No convertir datos reales ausentes o casos futuros en éxitos. Fase 6 sin autorización.
+
+## Continuidad M5-A02
+
+Entornos confirmados en docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md. No repetir pregunta de versión/nivel o nombre de proyecto. Falta conexión al proyecto correcto inventarioTI2; no usar inventarioTI. SQL Server 2016/130 es destino, no proveedor disponible. Se conserva aplicación; Fase 5 revisión 2 EN_REVISION, Fase 6 sin autorización.

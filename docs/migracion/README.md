@@ -43,3 +43,7 @@ Usuario aprueba Fase 3 e inicia Fase 4. [Plan](04_PLAN_ETL.md), [excepciones](04
 ## Estado vigente — Fase 5
 
 M5-A01 «apruebo fase 4 inicia fase 5» acepta `9f84fcd`; Fases 0–4 COMPLETADAS. [Fase 5](05_ESQUEMA_SQLSERVER.md) EN_REVISION; aplicación/ensayos de motor BLOQUEADOS. [SQL candidato](../../migrations/sqlserver/README.md), [CHECK](05_CHECKS_PROPUESTOS.csv), [índices](05_INDICES_PROPUESTOS.csv), [soporte 19 tablas](05_SOPORTE_ACTUAL.csv), [155 campos](05_PRESERVACION_CAMPOS.csv), [30 casos futuros](05_CASOS_SQLSERVER.csv), [verificación](evidencias/fase5/verificacion.json). Fase 6 NO AUTORIZADA. Estados anteriores son antecedentes de sus entregas; no modifican el estado vigente.
+
+## Continuidad vigente M5-A02 — revisión 2
+
+[Entornos/compatibilidad](05_ENTORNOS_COMPATIBILIDAD.md): pruebas iniciales Supabase/PostgreSQL inventarioTI2 (no visible), destino SQL Server 2016/13.x/nivel 130, edición/collation/instancia pendientes. Candidato 0.5.0-review.2 con [parser 130](herramientas/scriptdom130/README.md), 19 negativas y evidencia actual; [revisión inicial](evidencias/fase5/revision1/verificacion.json) histórica. Fase 5 EN_REVISION, Fase 6 NO AUTORIZADA. Sin SQL ejecutado/carga remota.

@@ -24,5 +24,22 @@
     "hallazgos": [],
     "limite": "No es garantía universal de ausencia de secretos"
   },
-  "instalacion_herramienta": "SQLFluff 3.5.0 solo en /workspace/work/fase5/venv, sin dependencias de proyecto nuevas"
+  "instalacion_herramienta": "SQLFluff 3.5.0 solo en /workspace/work/fase5/venv, sin dependencias de proyecto nuevas",
+  "continuacion_git_base": "38603e223d9b5795f4c2179b35e0403b7a2e5d45",
+  "destino_confirmado": {
+    "version": "SQL Server 2016",
+    "product_major_version": 13,
+    "compatibility_level": 130,
+    "edicion": null,
+    "collation": null
+  },
+  "pruebas_supabase": {
+    "proyecto_indicado": "inventarioTI2",
+    "visible_en_conexion": false,
+    "rama_con_ese_nombre_visible": false,
+    "consulta_filas_negocio": false,
+    "carga_sintetica_ejecutada": false,
+    "cambio_remoto": false
+  },
+  "herramienta_versionada": "Microsoft ScriptDom 161.9142.1 / TSql130Parser, SDK 8.0.427 en work/; sin runtime nuevo en aplicación"
 }

@@ -1,5 +1,5 @@
 id,caso,resultado_requerido,decisiones,estado
-SQL5-01,Motor y collation,SQL Server/versión/edición/collation autorizadas; VARCHAR no pierde Unicode y UQ tiene comparación aprobada,M1-D01;M1-D15,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
+SQL5-01,Motor y collation,"Motor SQL Server 2016/13.x y compatibility_level 130; edición/SP/CU/collation autorizados; VARCHAR no pierde texto, sin collations UTF-8.",M1-D01;M1-D15,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
 SQL5-02,Aplicación vacía,Crear solo en base candidata vacía autorizada; 30 tablas/117 campos y sin tocar PostgreSQL,M1-D01;M1-D09,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
 SQL5-03,Metadatos,"900 compara columnas/tipos/bytes/precisión/null/identity, PK/UQ/FK; no sustituye pruebas de negocio",M1-D14;M1-D15,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO
 SQL5-04,IDENTITY,25 columnas con seed/increment 1; INT/BIGINT y cuatro PK/FK sin identity; reseed solo tras carga aprobada,M1-D09;M1-D14,NO_EJECUTADA_ENTORNO_NO_AUTORIZADO

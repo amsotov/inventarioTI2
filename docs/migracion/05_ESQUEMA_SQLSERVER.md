@@ -1,6 +1,6 @@
 # FASE 5 — Esquema y migraciones SQL Server
 
-Continuación M5-A02: [entornos y compatibilidad](05_ENTORNOS_COMPATIBILIDAD.md). Destino confirmado SQL Server 2016/13.x y nivel 130; pruebas iniciales Supabase/PostgreSQL en inventarioTI2, no visible en la conexión actual. No inicia Fase 6.
+Continuación M5-A04: [entornos y compatibilidad](05_ENTORNOS_COMPATIBILIDAD.md) y [provisión](PROVISION_SUPABASE.md). SQL Server 2016/13.x/nivel 130 sigue como destino. Supabase inventarioTI2 creado y ACTIVE_HEALTHY tras pausa autorizada de inventarioTI; verificación SELECT de metadatos, sin esquema/carga de aplicación. Revisión 0.5.0-review.3, sin iniciar Fase 6.
 
 Fecha: 2026-11-03. Estado: **EN_REVISION; aplicación/ensayos de motor BLOQUEADOS**.
 Base aceptada: `9f84fcd836550654770bd7ed4191f9edaffe2528`. M5-A01: «apruebo fase 4 inicia fase 5». Fases 0–4 COMPLETADAS; Fase 6 NO AUTORIZADA. Esta aceptación permite preparar el candidato SQL; no elige alternativas M1-D pendientes ni autoriza una base real, producción o despliegue.
@@ -11,7 +11,7 @@ AGENTS, prompts, FASES/ESTADO/README/INICIAR, requisitos/decisiones y runbook; o
 
 Se entrega un **candidato físico de revisión** en [migrations/sqlserver](../../migrations/sqlserver/README.md): 30 tablas/117 campos, 30 PK (31 componentes), 30 FK, 18 UQ, 25 IDENTITY y cinco defaults según diccionario. AUTORIZACIONES conserva PK compuesta; cuatro subtipos mantienen PK/FK sin IDENTITY. FK con NO ACTION es propuesta conservadora explícita: no hay cascadas destructivas.
 
-Cuatro archivos SQL separados, cada uno con `THROW 51050` incondicional al inicio. **Ningún indicador, variable o aprobación general permite saltarlo.** No retirar la barrera manualmente: tras resolver decisiones y autorizar entorno hay que emitir una versión revisada con fingerprints y revisión de diferencias. Aquí no existe ejecutor de conexiones ni comando de aplicación. No se ha ejecutado ninguno de los SQL.
+Cuatro archivos SQL separados, cada uno con `THROW 51050` incondicional al inicio. **Ningún indicador, variable o aprobación general permite saltarlo.** No retirar la barrera manualmente: tras resolver decisiones y autorizar entorno hay que emitir una versión revisada con fingerprints y revisión de diferencias. Aquí no existe ejecutor de conexiones ni comando de aplicación. No se ha ejecutado ninguno de los SQL Server candidatos. La consulta de metadatos PostgreSQL de M5-A04 se registra aparte.
 
 | Archivo | Alcance | Límite |
 |---|---|---|
@@ -40,11 +40,11 @@ No se crean bases, logins, usuarios, permisos, semillas, hashes, datos de ejempl
 
 Cada futura versión es atómica dentro de sí; las tres versiones no se presentan como una transacción única. Un fallo posterior deja candidato parcial no promovible y requiere reconciliación/retorno aprobado. No existe down destructivo. Antes de COMMIT rollback de la transacción; después restauración/candidato nuevo, preservando delta si hubo nuevas escrituras, según [Fase 4](04_RECONCILIACION_ROLLBACK.md). No borrar la fuente ni reutilizar outbox/sesiones al retornar.
 
-La revisión 0.5.0-review.2 añade comprobaciones de motor real 13.x/nivel 130/base no de sistema. [ScriptDom130](herramientas/scriptdom130/README.md) analiza los cuatro SQL con TSql130Parser y tres autopruebas; no compila ni ejecuta el motor. El proyecto Supabase inventarioTI2 indicado no es visible y sus pruebas no se ejecutaron.
+La revisión 0.5.0-review.2 añade comprobaciones de motor real 13.x/nivel 130/base no de sistema. [ScriptDom130](herramientas/scriptdom130/README.md) analiza los cuatro SQL con TSql130Parser y tres autopruebas; no compila ni ejecuta el motor. El proyecto Supabase inventarioTI2 ya está disponible y vacío; solo se verificaron metadatos, no sus pruebas funcionales.
 
 ## Verificación y criterio de aceptación
 
-[verificar_fase5.py](verificar_fase5.py) usa fuentes OOXML/CSV/SQL y hashes; no abre DB. Valida 117 columnas contra el Excel original, PK/FK/UQ/IDENTITY/defaults, cobertura/expresiones de CHECK propuestos, índices no redundantes, 19/155 de soporte, barreras y preservación de fuentes/capturas. `--analizar-sintaxis` añade parser **SQLFluff 3.5.0, dialecto tsql**, instalado solo en venv de trabajo; no modifica dependencias del proyecto. Es análisis sintáctico estático, **no compilación/ejecución de SQL Server**. Diecinueve pruebas negativas mutan copias aisladas en memoria; la negativa sintáctica usa un archivo temporal externo. No alteran los SQL versionados.
+[verificar_fase5.py](verificar_fase5.py) usa fuentes OOXML/CSV/SQL y hashes; no abre DB. Valida 117 columnas contra el Excel original, PK/FK/UQ/IDENTITY/defaults, cobertura/expresiones de CHECK propuestos, índices no redundantes, 19/155 de soporte, barreras y preservación de fuentes/capturas. `--analizar-sintaxis` añade parser **SQLFluff 3.5.0, dialecto tsql**, instalado solo en venv de trabajo; no modifica dependencias del proyecto. Es análisis sintáctico estático, **no compilación/ejecución de SQL Server**. Veinte pruebas negativas mutan copias aisladas en memoria; la negativa sintáctica usa un archivo temporal externo. No alteran los SQL versionados.
 
 Comando estándar: `python3 docs/migracion/verificar_fase5.py`. Parser: usar Python de un venv externo con SQLFluff 3.5.0 y añadir `--analizar-sintaxis`. `--evaluar-aplicacion` debe terminar con código 3 y listar bloqueos; no intenta conectarse. [Evidencia](evidencias/fase5/verificacion.json) separa controles estáticos aprobados, fallos corregidos y no ejecutados.
 

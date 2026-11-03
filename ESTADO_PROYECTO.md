@@ -2,11 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos de motor BLOQUEADOS). FASE 6: NO AUTORIZADA.**
+**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos SQL Server BLOQUEADOS). FASE 6: NO AUTORIZADA.**
 
-Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
+Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. DDL SQL Server verificado estática/sintácticamente, sin aplicarlo. En Supabase se consultaron solo metadatos; sin DDL/carga ni cambios de aplicación, merge o despliegue.
 
-M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. M5-A03 autoriza crearlo en sovicl/São Paulo; Supabase rechazó el intento por límite de dos proyectos Free activos. Proyecto NO CREADO; [provisión y evidencia](docs/migracion/PROVISION_SUPABASE.md). Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
+M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. M5-A04 autoriza pausar inventarioTI y resuelve el cupo: inventarioTI INACTIVE; inventarioTI2 creado en sovicl/São Paulo, ACTIVE_HEALTHY, ref yhsfotxhaptinjtmrinn, PostgreSQL 17.11/UTC. Solo metadatos verificados, sin tablas/datos de aplicación; [provisión y evidencia](docs/migracion/PROVISION_SUPABASE.md). Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha del resumen histórico:** 2026-11-02
@@ -591,3 +591,7 @@ Entornos confirmados en docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md. No repetir
 ## Continuidad M5-A03 — provisión Supabase
 
 Creación inventarioTI2 en sovicl/sa-east-1 autorizada por usuario. Intento rechazado por cuota Free, no por credenciales ni aprobación automática. Ver docs/migracion/PROVISION_SUPABASE.md. No existe ref nueva, no hubo SQL/cargas ni modificación de proyectos existentes. Siguiente acción: resolver capacidad con instrucción específica; luego reintentar creación ya autorizada sin repetir preguntas de organización/región. SQL Server/Fase 6 conservan bloqueos.
+
+## Continuidad M5-A04 — entorno nuevo disponible
+
+inventarioTI pausado INACTIVE por instrucción; inventarioTI2 creado ACTIVE_HEALTHY en sovicl/sa-east-1 (Free), ref yhsfotxhaptinjtmrinn. Ver docs/migracion/PROVISION_SUPABASE.md. PostgreSQL 17.11/UTC consultado; no tablas/datos ni funcionalidades de aplicación implantadas. Actualizar alcance de pruebas tras decisiones pendientes; no pedir otra vez creación/organización/pausa. No reactivar el anterior ni tocar hoteles por inferencia. Fase 5 EN_REVISION, Fase 6 NO AUTORIZADA.

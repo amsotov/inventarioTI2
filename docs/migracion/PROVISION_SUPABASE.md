@@ -1,5 +1,26 @@
 # Provisión Supabase — inventarioTI2
 
+## Estado vigente M5-A04 — 2026-11-03
+
+**inventarioTI pausado (INACTIVE); inventarioTI2 creado y ACTIVE_HEALTHY.** Usuario: «pausa inventarioTI», tras autorizar creación en sovicl/São Paulo. Se resolvió el bloqueo de cuota con esa pausa concreta, sin cambiar plan ni pausar los proyectos del hotel.
+
+- Proyecto nuevo: **inventarioTI2**, ref `yhsfotxhaptinjtmrinn`, organización **sovicl**, región **sa-east-1**, plan **Free**.
+- [Panel del proyecto](https://supabase.com/dashboard/project/yhsfotxhaptinjtmrinn).
+- PostgreSQL **17.11.0.011**, server_version_num **170011**, zona de sesión consultada **UTC**.
+- get_project confirmó ACTIVE_HEALTHY; list_tables de public/inventario/acceso/seguridad devolvió cero tablas. Una consulta SELECT de metadatos confirmó versión/zona/cero tablas de aplicación.
+- [Evidencia actual saneada](evidencias/fase5/provision_supabase_creado.json). No contiene claves ni cadenas de conexión.
+
+La pausa se solicitó sobre inventarioTI ref `feiszjurkyyadqbkhuob`, tras verificar nombre/organización/estado. Se esperó PAUSING → INACTIVE antes de reintentar creación. No se borró el proyecto anterior ni se ejecutó SQL en él. No reactivarlo automáticamente: al ocupar el cupo con inventarioTI2, requiere revisar capacidad e instrucción del usuario.
+
+La creación previamente autorizada se reintentó una vez tras cupo liberado, sin confirm_cost_id ni cambio de facturación. La organización sigue en Free. El proyecto nuevo está vacío de tablas de aplicación; no se ha implantado el esquema actual ni el modelo nuevo, cargado datos sintéticos, creado usuarios de aplicación o probado flujos Auth/API/UI. No llamar a la consulta de metadatos una prueba funcional ni un ensayo de SQL Server.
+
+La revisión del candidato pasa a **0.5.0-review.3** solo para registrar el entorno disponible. Los cuatro SQL Server candidatos no cambian y conservan THROW y guardias de motor 13.x/nivel 130. Supabase/PostgreSQL no verifica ese DDL. Fase 5 sigue EN_REVISION; diseño/instancia SQL Server y M1-D pendientes, Fase 6 NO AUTORIZADA. El [informe de entornos](05_ENTORNOS_COMPATIBILIDAD.md) distingue disponibilidad de infraestructura y pruebas aún no realizadas.
+
+## Historial M5-A03 — intento anterior bloqueado por cuota
+
+El texto siguiente conserva el diagnóstico anterior a la pausa/creación. Su estado NO CREADO es histórico y queda superado por M5-A04; se mantiene [evidencia del rechazo](evidencias/fase5/provision_supabase.json).
+
+
 Fecha: 2026-11-03. M5-A03. Estado: **BLOQUEADO_CUOTA_FREE / PROYECTO NO CREADO**. Continúa Fase 5; Fase 6 no autorizada.
 
 ## Autorización y solicitud concreta

@@ -2,11 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos de motor BLOQUEADOS). FASE 6: NO AUTORIZADA.**
+**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos SQL Server BLOQUEADOS). FASE 6: NO AUTORIZADA.**
 
-Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. Verificación estática/sintáctica; no SQL ejecutado, extracción/carga, cambios de aplicación, merge ni despliegue.
+Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. DDL SQL Server verificado estática/sintácticamente, sin aplicarlo. En Supabase se consultaron solo metadatos; sin DDL/carga ni cambios de aplicación, merge o despliegue.
 
-M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. M5-A03 autoriza crearlo en sovicl/São Paulo; Supabase rechazó el intento por límite de dos proyectos Free activos. Proyecto NO CREADO; [provisión y evidencia](docs/migracion/PROVISION_SUPABASE.md). Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
+M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. M5-A04 autoriza pausar inventarioTI y resuelve el cupo: inventarioTI INACTIVE; inventarioTI2 creado en sovicl/São Paulo, ACTIVE_HEALTHY, ref yhsfotxhaptinjtmrinn, PostgreSQL 17.11/UTC. Solo metadatos verificados, sin tablas/datos de aplicación; [provisión y evidencia](docs/migracion/PROVISION_SUPABASE.md). Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
@@ -588,3 +588,7 @@ Usuario confirma Supabase/PostgreSQL aislado con datos sintéticos, proyecto inv
 ## M5-A03 — creación Supabase autorizada, bloqueada por cuota
 
 Usuario autoriza crear proyecto y elige sovicl/São Paulo. Un intento de inventarioTI2 rechazado por Supabase: dos proyectos Free activos (límite 2). Cotización Free amount 0/monthly no concede cupo ni aprueba cambio de plan. Relectura confirma cero proyectos inventarioTI2; NO CREADO, sin SQL/cargas. [Provisión](docs/migracion/PROVISION_SUPABASE.md). Falta acción específica para liberar cupo o revisar plan/costo; creación sigue autorizada. Fase 5 EN_REVISION, Fase 6 NO AUTORIZADA.
+
+## M5-A04 — pausa autorizada y proyecto Supabase creado
+
+Usuario: «pausa inventarioTI». Se verificó nombre/ref/organización, solicitó pausa y esperó INACTIVE. Se creó inventarioTI2 en sovicl/sa-east-1 (Free), ref yhsfotxhaptinjtmrinn, ACTIVE_HEALTHY. Listado y SELECT de metadatos confirmaron PostgreSQL 17.11/UTC y cero tablas de aplicación. Solo infraestructura disponible, sin DDL/carga/pruebas funcionales. Candidato 0.5.0-review.3 actualiza entorno, conserva cuatro SQL idénticos; 20 negativas, parser 130, evidencia revisión2 archivada. Fase 5 EN_REVISION; SQL Server, M1-D y Fase 6 mantienen sus límites.

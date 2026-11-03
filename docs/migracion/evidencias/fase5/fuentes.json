@@ -15,7 +15,7 @@
     "fuente_operacional_disponible": false
   },
   "datos_reales_leidos": false,
-  "sql_ejecutado": false,
+  "sql_ejecutado": true,
   "etl_ejecutado": false,
   "restauracion_ejecutada": false,
   "revision_secretos": {
@@ -25,7 +25,7 @@
     "limite": "No es garantía universal de ausencia de secretos"
   },
   "instalacion_herramienta": "SQLFluff 3.5.0 solo en /workspace/work/fase5/venv, sin dependencias de proyecto nuevas",
-  "continuacion_git_base": "38603e223d9b5795f4c2179b35e0403b7a2e5d45",
+  "continuacion_git_base": "e94e9fce6eb35c95284dd5f93dd187bb197d25d3",
   "destino_confirmado": {
     "version": "SQL Server 2016",
     "product_major_version": 13,
@@ -35,11 +35,23 @@
   },
   "pruebas_supabase": {
     "proyecto_indicado": "inventarioTI2",
-    "visible_en_conexion": false,
-    "rama_con_ese_nombre_visible": false,
+    "project_ref": "yhsfotxhaptinjtmrinn",
+    "visible_en_conexion": true,
+    "status": "ACTIVE_HEALTHY",
+    "region": "sa-east-1",
+    "postgres_version": "17.11.0.011",
+    "timezone": "UTC",
+    "tablas_aplicacion": 0,
     "consulta_filas_negocio": false,
     "carga_sintetica_ejecutada": false,
-    "cambio_remoto": false
+    "cambio_remoto": "Pausa inventarioTI y creación de inventarioTI2 autorizadas; sin DDL/DML de aplicación"
   },
-  "herramienta_versionada": "Microsoft ScriptDom 161.9142.1 / TSql130Parser, SDK 8.0.427 en work/; sin runtime nuevo en aplicación"
+  "herramienta_versionada": "Microsoft ScriptDom 161.9142.1 / TSql130Parser, SDK 8.0.427 en work/; sin runtime nuevo en aplicación",
+  "sql_alcance": "Solo SELECT de metadatos PostgreSQL en proyecto nuevo; no SQL Server, DDL ni DML de aplicación",
+  "sql_server_ejecutado": false,
+  "pausa_autorizada": {
+    "proyecto": "inventarioTI",
+    "status": "INACTIVE",
+    "decision": "M5-A04"
+  }
 }

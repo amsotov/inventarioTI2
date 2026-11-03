@@ -68,3 +68,7 @@ El [DDL candidato](../migrations/sqlserver/README.md) está bloqueado y no integ
 ## M5-A02 — dos entornos de validación
 
 Pruebas iniciales Supabase/PostgreSQL inventarioTI2 con datos sintéticos; falta proyecto visible/identificado. Destino SQL Server 2016/13.x/nivel 130 confirmado, sin instancia/collation/edición autorizadas. No redirigir fixtures locales con resets/roles al proyecto gestionado; no aplicar T-SQL a PostgreSQL. [Compatibilidad y límites](migracion/05_ENTORNOS_COMPATIBILIDAD.md). No activar workers/envíos ni retirar barreras del candidato.
+
+## M5-A04 — proyecto Supabase creado
+
+inventarioTI pausado por autorización y confirmado INACTIVE; no reactivar automáticamente porque inventarioTI2 ocupa el cupo Free. Nuevo inventarioTI2 ref yhsfotxhaptinjtmrinn, ACTIVE_HEALTHY, sovicl/sa-east-1, PostgreSQL 17.11/UTC según SELECT de metadatos. Cero tablas de aplicación. [Registro](migracion/PROVISION_SUPABASE.md). No se almacenaron claves/cadenas de conexión ni se cambiaron workers/correo/roles. Preparación de esquema/cargas/funcionalidad y SQL Server conserva sus puertas; Fase 6 no autorizada.

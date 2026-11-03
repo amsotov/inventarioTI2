@@ -450,3 +450,9 @@ SQLFluff genérico se conserva como comprobación adicional; no fija versión de
 ## M5-A03 — comprobación de provisión Supabase
 
 Consulta de proyectos/organización antes y después; un create_project rechazado por BadRequestException/INVALID_ARGUMENT por cuota Free, no fallo de sintaxis SQL. Get_cost del plan actual: amount 0/monthly. Estado final: plan free, dos activos, cero inventarioTI2. [Evidencia saneada](migracion/evidencias/fase5/provision_supabase.json). No se ejecutó SQL ni pruebas funcionales remotas; no hay proyecto nuevo que probar. Verificación estática de Fase 5 se conserva en su alcance; no se repiten suites de aplicación sin cambios.
+
+## M5-A04 — entorno Supabase disponible y revisión3
+
+get_project: inventarioTI pasó ACTIVE_HEALTHY → PAUSING → INACTIVE tras pausa autorizada. Nuevo inventarioTI2 ref yhsfotxhaptinjtmrinn creado y releído ACTIVE_HEALTHY, sovicl/sa-east-1, plan Free. list_tables de public/inventario/acceso/seguridad vacío. SELECT de server_version_num/TimeZone/recuento BASE TABLE: 170011/UTC/0. [Evidencia](migracion/evidencias/fase5/provision_supabase_creado.json). Esto prueba disponibilidad/metadatos, no funcionalidad Auth/API/UI ni SQL Server.
+
+Revisión3 del verificador vincula manifiesto al proyecto observado, añade negativa de ref incorrecta (20 negativas) y conserva comprobaciones de parser 130. SQL Server de revisión2 es idéntico; evidencia anterior archivada. No hubo DDL/DML de aplicación, semillas ni pruebas funcionales.

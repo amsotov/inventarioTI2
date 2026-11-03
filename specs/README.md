@@ -123,3 +123,7 @@ M5-A01 acepta Fase 4 y autoriza Fase 5. [Informe](../docs/migracion/05_ESQUEMA_S
 ## Continuidad de migración M5-A02
 
 SQL Server 2016/13.x/compatibilidad 130 y Supabase/PostgreSQL inventarioTI2 confirmados; no es aprobación de Fase 5 ni Fase 6. [Entornos](../docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md). Parser de revisión aislado, sin integración de backend ni datos remotos.
+
+## M5-A04 — infraestructura de pruebas creada
+
+[Provisión](../docs/migracion/PROVISION_SUPABASE.md): pausa autorizada de inventarioTI, nuevo inventarioTI2 en Supabase, vacío de tablas/datos de aplicación. Entorno verificado por metadatos, sin implementación nueva de app o fases posteriores. SQL Server revisión3 conserva DDL y decisiones pendientes.

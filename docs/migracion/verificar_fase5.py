@@ -177,6 +177,16 @@ def verify_model(columns, overrides=None):
     require(len(metadata_fks) == 30 and set(metadata_fks) == {(r['tabla'], r['campo'], *r['referencia'].split('.')) for r in columns if r['fk']}, 'Catálogo esperado FK difiere')
 
     manifest = json.loads(read(MIG + 'manifest.json'))
+    provision = json.loads(read(DOC + 'evidencias/fase5/provision_supabase_creado.json'))
+    project = provision['nuevo']
+    require(provision['decision'] == 'M5-A04' and provision['estado'] == 'PROVISIONADO_VACIO_VERIFICADO'
+            and provision['anterior']['name'] == 'inventarioTI' and provision['anterior']['status'] == 'INACTIVE'
+            and project['name'] == 'inventarioTI2' and project['status'] == 'ACTIVE_HEALTHY'
+            and project['organization_name'] == 'sovicl' and project['region'] == 'sa-east-1'
+            and isinstance(project['project_ref'], str) and re.fullmatch(r'[a-z]{20}', project['project_ref'])
+            and project['project_ref'] != provision['anterior']['project_ref']
+            and project['tablas_aplicacion'] == 0 and provision['plan_organizacion'] == 'free'
+            and provision['pruebas_funcionales'] == 'NO_EJECUTADAS_ESQUEMA_APLICACION_NO_INSTALADO', 'Provisión metadata/alcance incorrectos')
     require(manifest['base_git'] == BASE and manifest['estado'] == 'CANDIDATO_EN_REVISION_APLICACION_BLOQUEADA' and
             manifest['entorno_autorizado'] is None and manifest['decisiones_aprobadas'] == [] and
             manifest['datos_migrados'] == 0 and manifest['fase6'] == 'NO_AUTORIZADA', 'Manifiesto no es autorización')
@@ -184,8 +194,8 @@ def verify_model(columns, overrides=None):
                                   'compatibility_level': 130, 'edicion': None, 'collation': None, 'confirmacion': 'M5-A02'},
             'Destino 2016/130 confirmado; edición/collation siguen pendientes')
     require(manifest['pruebas_iniciales'] == {'proveedor': 'Supabase', 'motor': 'PostgreSQL',
-                'proyecto_nombre': 'inventarioTI2', 'project_ref': None, 'solo_datos_sinteticos': True,
-                'estado': 'BLOQUEADO_PROYECTO_NO_VISIBLE_EN_CONEXION'}, 'Proyecto de pruebas incorrecto/no accesible')
+                'proyecto_nombre': 'inventarioTI2', 'project_ref': project['project_ref'], 'solo_datos_sinteticos': True,
+                'estado': 'PROVISIONADO_VACIO_PENDIENTE_PRUEBAS'}, 'Proyecto de pruebas incorrecto/ref no corresponde a evidencia')
     expected_columns = [{k: v for k, v in r.items() if k in ('tabla', 'campo', 'tipo', 'permite_null', 'identity', 'default', 'fila_excel')} for r in columns]
     key = lambda r: (r['tabla'], r['campo'])
     require(sorted(manifest['columnas'], key=key) == sorted(expected_columns, key=key), 'Manifiesto de columnas difiere del Excel')
@@ -236,6 +246,7 @@ def negative_checks(columns):
         ('collation_utf8_no_disponible', MIG + SQL_NAMES[0], core + "\nSELECT 'texto' COLLATE Latin1_General_100_CI_AS_SC_UTF8;\n"),
         ('motor_posterior_como_sustituto', MIG + 'manifest.json', json.dumps(dict(manifest, destino=dict(manifest['destino'], product_major_version=16)))),
         ('proyecto_supabase_distinto', MIG + 'manifest.json', json.dumps(dict(manifest, pruebas_iniciales=dict(manifest['pruebas_iniciales'], proyecto_nombre='inventarioTI')))),
+        ('referencia_supabase_distinta', MIG + 'manifest.json', json.dumps(dict(manifest, pruebas_iniciales=dict(manifest['pruebas_iniciales'], project_ref='referencia-incorrecta')))),
     ]
     result = []
     for name, path, value in scenarios:
@@ -323,19 +334,22 @@ def main():
     artifacts.append(ROOT / DOC / 'evidencias/fase5/fuentes.json')
     artifacts += sorted((ROOT / DOC / 'herramientas/scriptdom130').glob('*'))
     artifacts += sorted((ROOT / DOC / 'evidencias/fase5/revision1').glob('*.json'))
+    artifacts += sorted((ROOT / DOC / 'evidencias/fase5/revision2').glob('*.json'))
+    artifacts += [ROOT / DOC / 'evidencias/fase5/provision_supabase_creado.json', ROOT / DOC / 'PROVISION_SUPABASE.md']
     hashes = {str(p.relative_to(ROOT)): digest(p.read_bytes()) for p in artifacts}
     previous = ROOT / DOC / 'evidencias/fase5/verificacion.json'
     if previous.exists():
         saved = json.loads(previous.read_text())
         require(saved['sha256_artefactos'] == hashes and saved['conteos'] == counts, 'Evidencia Fase 5 no corresponde a archivos actuales')
     report = {'fase': 'MIGRACION_5', 'estado': 'EN_REVISION_APLICACION_BLOQUEADA', 'base_git': BASE,
-              'continuacion_git_base': '38603e223d9b5795f4c2179b35e0403b7a2e5d45',
+              'continuacion_git_base': 'e94e9fce6eb35c95284dd5f93dd187bb197d25d3',
               'verificacion_estatica': 'APROBADA_EN_ALCANCE_ESTATICO', 'conteos': counts,
               'incidencias_corregidas': ['Verificador aceptaba solo letras en tipos; se amplió para DATETIME2 y se repitió con éxito'],
               'fuentes_preservadas': preserved, 'sha256_artefactos': hashes,
               'negativas': negatives, 'sintaxis': syntax_check() if args.analizar_sintaxis else 'NO_REPETIDA_EN_ESTA_INVOCACION',
               'destino_confirmado': {'version': 'SQL Server 2016', 'product_major_version': 13, 'compatibility_level': 130},
-              'supabase_funcionalidad': 'BLOQUEADA_PROYECTO_INVENTARIOTI2_NO_VISIBLE_EN_CONEXION',
+              'supabase_provision': 'PROYECTO_CREADO_VERIFICACION_METADATA_PREVIA_NO_REPETIDA_POR_ESTE_SCRIPT',
+              'supabase_funcionalidad': 'NO_EJECUTADA_ESQUEMA_APLICACION_NO_INSTALADO',
               'sintaxis_sql2016': scriptdom_check(args.dotnet_bin, args.scriptdom_dll) if args.dotnet_bin and args.scriptdom_dll else 'NO_REPETIDA_EN_ESTA_INVOCACION',
               'motor_sqlserver': 'NO_EJECUTADO_SIN_ENTORNO_AUTORIZADO',
               'etl_reconciliacion_rollback_restore': 'NO_EJECUTADOS', 'aplicacion': 'SIN_CAMBIOS',

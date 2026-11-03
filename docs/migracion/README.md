@@ -51,3 +51,7 @@ M5-A01 «apruebo fase 4 inicia fase 5» acepta `9f84fcd`; Fases 0–4 COMPLETADA
 ## Continuidad M5-A03 — creación autorizada y cuota
 
 [Provisión Supabase](PROVISION_SUPABASE.md): usuario autorizó inventarioTI2 en sovicl/sa-east-1. Un intento rechazado por límite Free de dos activos; NO CREADO. [Evidencia](evidencias/fase5/provision_supabase.json). Esperar instrucción específica para liberar cupo o revisar plan/coste; no repetir permiso de creación ni sustituir otro proyecto. No cambia el esquema candidato ni inicia Fase 6.
+
+## Continuidad M5-A04 — Supabase provisionado
+
+[Estado actual](PROVISION_SUPABASE.md): inventarioTI pausado INACTIVE; inventarioTI2 creado ACTIVE_HEALTHY en sovicl/sa-east-1, ref yhsfotxhaptinjtmrinn, plan Free. [Evidencia](evidencias/fase5/provision_supabase_creado.json): PostgreSQL 17.11/UTC, cero tablas de aplicación. Revisión3 vincula proyecto/manifiesto y 20 negativas, sin modificar cuatro SQL. [Revisión2 histórica](evidencias/fase5/revision2/verificacion.json). Fase 5 EN_REVISION; sin instalación/carga/pruebas funcionales ni Fase 6.

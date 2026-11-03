@@ -2,7 +2,7 @@
   "fase": "MIGRACION_5",
   "estado": "CANDIDATO_EN_REVISION_APLICACION_BLOQUEADA",
   "base_git": "9f84fcd836550654770bd7ed4191f9edaffe2528",
-  "version_candidata": "0.5.0-review.2",
+  "version_candidata": "0.5.0-review.3",
   "motor_objetivo": "SQL Server",
   "version_edicion_collation": "SQL Server 2016 / compatibilidad 130; edición y collation pendientes",
   "entorno_autorizado": null,
@@ -1099,7 +1099,7 @@
   "esquema_soporte": "PROPUESTA_NO_IMPLEMENTADA",
   "datos_migrados": 0,
   "fase6": "NO_AUTORIZADA",
-  "continuacion_git_base": "38603e223d9b5795f4c2179b35e0403b7a2e5d45",
+  "continuacion_git_base": "e94e9fce6eb35c95284dd5f93dd187bb197d25d3",
   "destino": {
     "producto": "SQL Server",
     "version": "2016",
@@ -1113,11 +1113,13 @@
     "proveedor": "Supabase",
     "motor": "PostgreSQL",
     "proyecto_nombre": "inventarioTI2",
-    "project_ref": null,
+    "project_ref": "yhsfotxhaptinjtmrinn",
     "solo_datos_sinteticos": true,
-    "estado": "BLOQUEADO_PROYECTO_NO_VISIBLE_EN_CONEXION"
+    "estado": "PROVISIONADO_VACIO_PENDIENTE_PRUEBAS"
   },
   "decisiones_entorno_confirmadas": [
-    "M5-A02"
+    "M5-A02",
+    "M5-A03",
+    "M5-A04"
   ]
 }

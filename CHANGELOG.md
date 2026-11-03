@@ -205,3 +205,9 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - Registra autorización de creación y elección sovicl/São Paulo.
 - Un intento rechazado por cuota de dos proyectos Free activos; proyecto inventarioTI2 NO CREADO. Coste cotizado del plan actual 0/mes, sin autorización de plan de pago.
 - Evidencia saneada y continuidad en GitHub; sin SQL, cambios en otros proyectos, facturación, aplicación, merge, deploy ni Fase 6.
+
+## 2026-11-03 — Supabase M5-A04 provisionado
+
+- Pausa inventarioTI autorizada y confirmada INACTIVE; inventarioTI2 creado en sovicl/sa-east-1 y ACTIVE_HEALTHY, sin cambio de plan Free.
+- Consulta de metadatos PostgreSQL 17.11/UTC y cero tablas de aplicación; sin carga ni pruebas funcionales. Evidencia saneada y estados actualizados.
+- Candidato revisión3 registra ref nueva; cuatro SQL Server sin cambios, 20 negativas y parser 130, revisión2 archivada. Sin app/frontend, merge, despliegue ni Fase 6.

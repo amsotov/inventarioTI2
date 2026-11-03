@@ -239,3 +239,7 @@ Se ratifica versión/nivel del objetivo M1-D01, no la totalidad de decisiones ni
 ## M5-A03 — crear proyecto aislado Supabase
 
 Usuario: «te autorizo crear el proyecto en supabase»; organización/región: «sovicl, región São Paulo». Permite crear inventarioTI2 en sa-east-1. No incluye pausar/eliminar otros proyectos ni cambiar facturación. Supabase rechaza un intento por cuota Free máxima (2 activos); comprobación posterior: target no creado. Cotización actual amount 0/monthly no aprueba plan de pago. [Registro](migracion/PROVISION_SUPABASE.md). La creación puede reintentarse cuando haya cupo con autorización vigente; Fase 6 no autorizada.
+
+## M5-A04 — pausa de inventarioTI y creación completada
+
+Usuario: «pausa inventarioTI», tras M5-A03 y selección sovicl/São Paulo. Autoriza esa pausa concreta para liberar cupo. Se confirmó INACTIVE y se creó inventarioTI2 (ref yhsfotxhaptinjtmrinn, ACTIVE_HEALTHY, sa-east-1). Plan Free; sin otros proyectos/roles/facturación modificados. SELECT de metadatos de la nueva base, sin SQL en la anterior. [Provisión](migracion/PROVISION_SUPABASE.md). No autoriza reactivación del anterior, DDL SQL Server, cierre de decisiones o Fase 6.

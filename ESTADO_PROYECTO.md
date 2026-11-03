@@ -551,3 +551,8 @@ El usuario autoriza expresamente integrar el PR #2, preparar y publicar la demo 
 ## Resultado de integración — 2026-11-03
 
 PR #2 integrado en main (`3917d924`) tras CI completo correcto (run 41549745378). Publicación autorizada, compilación estática remota correcta; cambio de fuente Pages denegado por GitHub con HTTP 403 tanto a la credencial externa como al token del workflow. El workflow comprueba la fuente sin intentar modificarla. Pendiente intervención del mantenedor: Settings > Pages > Source: GitHub Actions; después reejecutar el despliegue y verificar la URL pública. Detalles en `docs/DEMO.md`. No se declara publicada la demo ni se cierra Fase 14 por inferencia.
+
+
+## Demo publicada y verificada — 2026-11-03
+
+El usuario cambió la fuente Pages a GitHub Actions (`build_type=workflow` confirmado). PR #2 integrado; reejecución del workflow 41550326656 correcta (build/deploy), commit de aplicación `79913ae`. URL pública https://amsotov.github.io/inventarioTI2/ con HTTP 200 y recorrido completo `npm run test:demo` contra Pages PASS: CRUD, roles, movimientos/historia, correo simulado, XLSX/PDF filtrados, hash/recarga, cero APIs externas y errores de navegador. Incidencias iniciales y enlaces en `docs/DEMO.md`. Alcance demo solicitado completado; documentación final sincronizada en main. Fase 14 sigue EN_REVISION/CA14-06 pendiente; Fase 15 sin iniciar, sistema productivo no desplegado.

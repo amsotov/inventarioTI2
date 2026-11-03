@@ -170,6 +170,8 @@ Plan, runbook y checklist enlazados al inicio. `npm run test:ops` reproduce el e
 
 ## Demo React y GitHub Pages
 
+**Demo publicada:** https://amsotov.github.io/inventarioTI2/ · datos ficticios, sin login. Publicación y recorrido de navegador verificados el 2026-11-03; [evidencia y límites](docs/DEMO.md#publicación-verificada--2026-11-03).
+
 Esta demo es la aplicación React actual (`apps/web`); el prototipo histórico de `prototipo/` se conserva como referencia. No requiere credenciales, servidor, Supabase ni servicios externos.
 
 ```sh

@@ -543,3 +543,8 @@ Solicitud expresa del usuario: modo `VITE_DEMO_MODE=true`, datos efímeros, role
 ## Publicación demo autorizada — 2026-11-02
 
 El usuario autoriza expresamente integrar el PR #2, preparar y publicar la demo en GitHub Pages. Se corrige previamente CI: faltaba `pdftotext` en el runner, por lo que Verify instalará `poppler-utils` sin omitir pruebas. Se verificará CI, se integrará el PR y se cambiará Pages de la fuente legacy `/docs` a GitHub Actions, publicando solo datos sintéticos. Esta autorización no cierra CA14-06, no inicia Fase 15 ni autoriza el sistema productivo. Resultado final y enlaces en `docs/DEMO.md`.
+
+
+## Resultado de integración — 2026-11-03
+
+PR #2 integrado en main (`3917d924`) tras CI completo correcto (run 41549745378). Publicación autorizada, compilación estática remota correcta; cambio de fuente Pages denegado por GitHub con HTTP 403 tanto a la credencial externa como al token del workflow. El workflow comprueba la fuente sin intentar modificarla. Pendiente intervención del mantenedor: Settings > Pages > Source: GitHub Actions; después reejecutar el despliegue y verificar la URL pública. Detalles en `docs/DEMO.md`. No se declara publicada la demo ni se cierra Fase 14 por inferencia.

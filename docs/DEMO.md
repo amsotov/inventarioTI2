@@ -25,9 +25,16 @@ No se repiten carga, axe ni continuidad/copia/restauración: no se modifican eso
 
 ## Límites de entrega
 
-La entrega original dejó el PR #2 preparado; posteriormente el usuario autorizó expresamente su integración y publicación. El primer CI remoto detectó `pdftotext` ausente (seis pruebas PDF fallidas); se incorpora `poppler-utils` a la preparación del runner y se repite CI antes de integrar. Publicación/validación pública en curso. Las pruebas locales no acreditan Supabase/Auth/correo gestionados, hardware/Safari ni continuidad productiva.
+La entrega original dejó el PR #2 preparado; posteriormente el usuario autorizó expresamente su integración y publicación. El primer CI remoto detectó `pdftotext` ausente (seis pruebas PDF fallidas); se incorpora `poppler-utils` a la preparación del runner y se repite CI antes de integrar. PR #2 integrado en main como `3917d9240aae0615a2cbddd8ac30d4e1f8cc3886`. CI [41549745378](https://github.com/amsotov/inventarioTI2/actions/runs/41549745378) completo y correcto. Las pruebas locales no acreditan Supabase/Auth/correo gestionados, hardware/Safari ni continuidad productiva.
 
 
 ## Preparación de publicación — 2026-11-03
 
 La API de configuración de Pages devolvió HTTP 403 con la credencial externa del entorno; Pages conservaba `build_type=legacy`, rama main `/docs`. El workflow selecciona ahora `build_type=workflow` mediante el token propio de Actions y el permiso `pages: write` que ya estaba declarado, antes de configurar y desplegar Pages. No se amplían permisos de la integración externa ni se usan secretos nuevos. Si la política del repositorio también deniega esa operación al workflow, será necesario seleccionar GitHub Actions en Settings > Pages desde una sesión administradora.
+
+
+## Integración y bloqueo de configuración — 2026-11-03
+
+PR #2 integrado tras CI correcto (build, 119 pruebas API/seguridad, operación, 39 pruebas UI, auditoría, escáner y árbol). El [primer despliegue](https://github.com/amsotov/inventarioTI2/actions/runs/41550155339) compila correctamente en Node 20, pero el token de Actions también recibe HTTP 403 al intentar cambiar la configuración de Pages. No se publicó esa compilación.
+
+Se sustituye el cambio automático por una comprobación de solo lectura de `build_type=workflow`, con instrucciones claras si la fuente sigue siendo legacy. El mantenedor debe seleccionar **GitHub Actions** en [Settings > Pages](https://github.com/amsotov/inventarioTI2/settings/pages). Después basta ejecutar o reintentar `Deploy demo to GitHub Pages`; no hacen falta cambios de código ni nuevos secretos. No se ha verificado todavía la demo pública. URL de destino: https://amsotov.github.io/inventarioTI2/.

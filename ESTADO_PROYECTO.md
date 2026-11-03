@@ -2,11 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–2: COMPLETADAS por aprobación del usuario. FASE 3: EN_REVISION. FASE 4: NO AUTORIZADA.**
+**Migración FASES 0–3: COMPLETADAS por aprobación del usuario. FASE 4: EN_REVISION. FASE 5: NO AUTORIZADA.**
 
-Autorización: «apruebo fase 2 inicia fase 3», posterior a entrega `b29d60c`. Se prepara diseño visual y de contratos, sin implementación de aplicación/API/BD. [Impacto frontend/API](docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño y capturas](docs/migracion/03_DISENO_VISUAL.md), [contratos propuestos](docs/migracion/03_CONTRATOS_PROPUESTOS.json) y [continuidad](INICIAR_EN_CODEX.md). Maqueta aislada documental con datos sintéticos; las validaciones son simuladas.
+Autorización: «apruebo fase 3 inicia fase 4», posterior a entrega `59b58d9`. Se prepara [plan ETL](docs/migracion/04_PLAN_ETL.md), [excepciones](docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](docs/migracion/04_RECONCILIACION_ROLLBACK.md). Solo planificación y verificación documental; no SQL, extracción/carga de datos reales, cambios de aplicación, merge ni despliegue.
 
-Las decisiones M1-D condicionadas a datos/opciones conservan sus pendientes. GitHub en rama dedicada, sin merge/despliegue. La numeración de migración 0–9 sigue separada del desarrollo histórico 0–15: última completada 13, Fase 14 EN_REVISION, Fase 15 sin autorización. F1-SEG-01/02/03 y UTC/RPO/RTO se conservan.
+El Excel operacional no está disponible en el repositorio; los hallazgos del diccionario no son perfilado nuevo. Condiciones M1-D y F1-SEG-01/02/03 se conservan. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). Aceptar un plan no concede permiso de acceso/carga/productivo ni resuelve datos irreconstruibles.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha del resumen histórico:** 2026-11-02
@@ -574,3 +574,8 @@ Base 9dbaa2f, fuentes y aplicación conservadas. 23 requisitos, 19 reglas, 16 hi
 ## Entrega vigente de migración Fase 3 — M3-A01
 
 Base b29d60c. Diseño de 11 vistas y contratos: conserva 49 pares método/ruta existentes; propone 18 v2 y cobertura de 117 campos. Maqueta HTML/CSS/JS aislada bajo docs/migracion, sin aplicación/API/BD. Playwright/Chromium 1440/768/390 y datos ficticios; capturas/evidencia del ensayo, límites de emulación. Fase 3 EN_REVISION y Fase 4 no autorizada. Sin SQL, integración gestionada, merge ni despliegue; GitHub y SHA remoto al entregar.
+
+
+## Entrega vigente de migración Fase 4 — M4-A01
+
+Base 59b58d9. Plan de dos fuentes APP_POSTGRES/EXCEL_LEGADO, staging saneado/cuarentena, IDs/replay, DAG de 30 tablas, soporte de capacidades actuales, backup/restauración y retorno antes/después de nuevas escrituras. Reglas cubren 57 filas de MAPEO_EXCEL y 13 de CALIDAD_DATOS, sin copiar valores sensibles. 20 controles, 36 casos futuros y 12 puertas con estado explícito. No perfilado/carga real: falta Excel operacional y siguen decisiones/entorno/seguridad pendientes. Fase 4 EN_REVISION y Fase 5 no autorizada; sin SQL, aplicación o despliegue.

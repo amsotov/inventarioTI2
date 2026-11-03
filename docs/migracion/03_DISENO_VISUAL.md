@@ -1,5 +1,7 @@
 # FASE 3 — Diseño visual para revisión
 
+> Continuidad: usuario acepta Fase 3 por «apruebo fase 3 inicia fase 4». Fase 3 COMPLETADA; el informe/capturas siguientes conservan la entrega original. Las condiciones de datos/opciones siguen vigentes. Estado actual en [FASES](../../FASES.md) y [Fase 4](04_PLAN_ETL.md).
+
 Fecha: 2026-11-03. Estado: **EN_REVISION / SIN APROBACIÓN VISUAL PRESUMIDA**.
 
 ## Qué se está mostrando

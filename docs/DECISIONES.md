@@ -220,3 +220,8 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## M3-A01 — Aceptación de trazabilidad e inicio de diseño
 
 2026-11-03. Usuario: «apruebo fase 2 inicia fase 3». Cierra Fase 2 b29d60c y autoriza diseño frontend/API. [Propuesta](migracion/03_IMPACTO_FRONTEND_API.md) EN_REVISION; prototipo sintético, sin aplicación ni SQL. Versionado v2 y ajustes visuales son propuestas; condiciones M1-D siguen pendientes donde requieren elección/datos. Fase 4 no autorizada.
+
+
+## M4-A01 — Aceptación Fase 3 e inicio de planificación ETL
+
+2026-11-03. Usuario: «apruebo fase 3 inicia fase 4». Cierra diseño 59b58d9 y autoriza plan de staging/transformación/excepciones/reconciliación/rollback. [Plan](migracion/04_PLAN_ETL.md) EN_REVISION; no es ejecución. Las decisiones M1-D condicionadas a datos/opciones siguen sujetas a resolución; no permiso para extraer/cargar/rotar credenciales ni operar producción. Fase 5 no autorizada.

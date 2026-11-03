@@ -2,11 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–2: COMPLETADAS por aprobación del usuario. FASE 3: EN_REVISION. FASE 4: NO AUTORIZADA.**
+**Migración FASES 0–3: COMPLETADAS por aprobación del usuario. FASE 4: EN_REVISION. FASE 5: NO AUTORIZADA.**
 
-Autorización: «apruebo fase 2 inicia fase 3», posterior a entrega `b29d60c`. Se prepara diseño visual y de contratos, sin implementación de aplicación/API/BD. [Impacto frontend/API](docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño y capturas](docs/migracion/03_DISENO_VISUAL.md), [contratos propuestos](docs/migracion/03_CONTRATOS_PROPUESTOS.json) y [continuidad](INICIAR_EN_CODEX.md). Maqueta aislada documental con datos sintéticos; las validaciones son simuladas.
+Autorización: «apruebo fase 3 inicia fase 4», posterior a entrega `59b58d9`. Se prepara [plan ETL](docs/migracion/04_PLAN_ETL.md), [excepciones](docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](docs/migracion/04_RECONCILIACION_ROLLBACK.md). Solo planificación y verificación documental; no SQL, extracción/carga de datos reales, cambios de aplicación, merge ni despliegue.
 
-Las decisiones M1-D condicionadas a datos/opciones conservan sus pendientes. GitHub en rama dedicada, sin merge/despliegue. La numeración de migración 0–9 sigue separada del desarrollo histórico 0–15: última completada 13, Fase 14 EN_REVISION, Fase 15 sin autorización. F1-SEG-01/02/03 y UTC/RPO/RTO se conservan.
+El Excel operacional no está disponible en el repositorio; los hallazgos del diccionario no son perfilado nuevo. Condiciones M1-D y F1-SEG-01/02/03 se conservan. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). Aceptar un plan no concede permiso de acceso/carga/productivo ni resuelve datos irreconstruibles.
 
 Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 

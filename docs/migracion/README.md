@@ -32,3 +32,8 @@ Decisiones con alternativas/datos pendientes no se resuelven automáticamente po
 ## Continuidad vigente — Fase 3
 
 Usuario acepta Fase 2 y autoriza diseño. [03_IMPACTO_FRONTEND_API.md](03_IMPACTO_FRONTEND_API.md), [03_DISENO_VISUAL.md](03_DISENO_VISUAL.md), [pantallas](03_PANTALLAS.csv), [compatibilidad](03_COMPATIBILIDAD_API.csv), [borrador v2](03_CONTRATOS_PROPUESTOS.json), [campos UI/API](03_CAMPOS_UI_API.csv) y [evidencia](evidencias/fase3/verificacion.json). Fase 3 EN_REVISION; Fase 4 NO AUTORIZADA. Apartados anteriores describen entregas previas. Sin SQL, cambios de aplicación, merge ni despliegue.
+
+
+## Continuidad vigente — Fase 4
+
+Usuario aprueba Fase 3 e inicia Fase 4. [Plan](04_PLAN_ETL.md), [excepciones](04_EXCEPCIONES_DATOS.md), [reconciliación/rollback](04_RECONCILIACION_ROLLBACK.md), [57 reglas](04_REGLAS_TRANSFORMACION.csv), [catálogo de excepciones](04_CATALOGO_EXCEPCIONES.csv), [orden](04_ORDEN_CARGA.csv), [pruebas futuras](04_PRUEBAS_RECONCILIACION.csv) y [puertas](04_PUERTAS_CONTROL.csv). [Verificador](verificar_fase4.py) y [evidencia](evidencias/fase4/verificacion.json). Fase 4 EN_REVISION; Fase 5 NO AUTORIZADA. No SQL, ETL ejecutado ni datos reales perfilados. Apartados anteriores son entregas históricas.

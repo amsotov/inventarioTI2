@@ -1,0 +1,13 @@
+id,puerta,condicion,estado_actual
+G04-01,Fuente operacional autorizada,"Excel operacional/versiones, snapshot de aplicación y custodios disponibles en área protegida.",BLOQUEADA_FALTA_FUENTE_OPERACIONAL
+G04-02,Motor y diseño ejecutable,"SQL Server/versión/edición/entorno, extensiones de soporte, precisión, tipos y permisos ratificados.",PENDIENTE_APROBACION_DISENO
+G04-03,Identidades y claves,Mapas de personas/cuentas/equipos y dominios de inventario validados; sin fusionar por similitud.,PENDIENTE_PERFILADO
+G04-04,Seguridad de fuente y staging,"Saneamiento, custodia/rotación de secretos, cifrado/accesos y retención operativa aprobados.",PENDIENTE_SEGURIDAD
+G04-05,Copia/restauración,Copia íntegra cifrada restaurada a entorno aislado; identidad/permisos/secuencias/artefactos cubiertos.,NO_EJECUTADA
+G04-06,Reconciliación y excepciones,"REC-01–36 aplicables aprobadas, conteos/hashes y excepciones bloqueantes cerradas.",NO_EJECUTADA
+G04-07,Aplicación compatible,"Adaptadores, consultas, Auth/Store/RLS, APIs v1 y UI operativos en candidato.",BLOQUEADA_FASES_6_8_NO_EJECUTADAS
+G04-08,Ventana y rollback,"Operador, mantenimiento/corte, reanudación, punto sin retorno y aprobación específica acordados.",PENDIENTE_OPERACION
+G04-09,Efectos externos,Workers parados y no despachables; sesiones/enlaces/exportaciones/avisos conciliados.,NO_EJECUTADA
+G04-10,Legal/costos/continuidad,F1-SEG-01/02/03 y UTC/copia semanal/RPO/RTO/conservación ratificados operacionalmente.,PENDIENTE
+G04-11,Autorización de implementación,Aceptación de Fase 4 y autorización independiente de Fase 5; entorno/alcance de aplicación explícitos.,NO_AUTORIZADA_FASE_5
+G04-12,Autorización de promoción,"Liberación real, acceso a datos, merge/despliegue y efectos requieren autorización concreta, no aprobación documental.",NO_AUTORIZADA_PRODUCCION

@@ -1,5 +1,7 @@
 # FASE 3 — Impacto frontend y API
 
+> Continuidad: usuario acepta Fase 3 por «apruebo fase 3 inicia fase 4». Fase 3 COMPLETADA; el informe/capturas siguientes conservan la entrega original. Las condiciones de datos/opciones siguen vigentes. Estado actual en [FASES](../../FASES.md) y [Fase 4](04_PLAN_ETL.md).
+
 Fecha: 2026-11-03. Estado: **EN_REVISION**. Base: `b29d60cd1fe0acfa02a77e3d69c1a8becedd7052`.
 
 ## Autorización y alcance

@@ -55,3 +55,8 @@ Congelar promoción, parar worker y registrar corte. Verificar paquete exacto an
 ## Ensayo local reproducible
 
 Node 24 y Docker local, desde raíz: `npm ci`, `npm run build`, `npm run test:ops`. Solo contenedores propios UUID, secretos efímeros y migraciones aceptadas en origen; restaura cifrado/roles en destino limpio, compara 19 tablas/catálogos, rota logins sintéticos, aísla sesiones/outbox, reautentica con doble y prueba permisos/fallo DDL. Además comprueba corrupción/clave errónea y fronteras de copia/fallo/reloj. Sin DSN del usuario/correo; retira solo sus contenedores/volúmenes. Resultado: [recuperacion.json](evidencias/fase14/recuperacion.json).
+
+
+## Migración Fase 4 — planificación de corte y reversión
+
+[Plan ETL](migracion/04_PLAN_ETL.md) y [reconciliación/rollback](migracion/04_RECONCILIACION_ROLLBACK.md) proponen origen congelado, snapshot consistente, soporte de identidad/efectos, restauración aislada y retorno condicionado al punto de nuevas escrituras. Los procedimientos previos se conservan como referencia histórica; no se ejecutó operación ni se acredita recuperación SQL Server. Fuente real, operadores/entorno/seguridad y autorización concreta pendientes. Fase 4 EN_REVISION, sin Fase 5 ni producción.

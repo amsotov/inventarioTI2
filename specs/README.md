@@ -110,3 +110,8 @@ Fase 1 aceptada por «apruebo y inicia fase 2». [Matriz](../docs/migracion/02_M
 ## Migración Fase 3 — M3-A01
 
 Fase 2 aceptada. [Impacto frontend/API](../docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño](../docs/migracion/03_DISENO_VISUAL.md) y contratos versionados propuestos EN_REVISION. Maqueta documental aislada; sin implementación de aplicación/SQL ni instalación de Spec Kit. Fase 4 no autorizada.
+
+
+## Migración Fase 4 — M4-A01
+
+Fase 3 aceptada. [Plan ETL](../docs/migracion/04_PLAN_ETL.md), [excepciones](../docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](../docs/migracion/04_RECONCILIACION_ROLLBACK.md) EN_REVISION. Solo documentación, sin SQL o extracción/carga real. Condiciones de datos/opciones y F1-SEG siguen pendientes; Fase 5 no autorizada. Spec Kit no instalado ni simulado.

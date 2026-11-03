@@ -1,5 +1,13 @@
 # Cambios
 
+## 2026-11-03 — Migración Fase 4: plan ETL EN_REVISION
+
+- Registra aprobación de Fase 3 y M4-A01; sin Fase 5.
+- Planifica dos fuentes, saneamiento previo, staging/cuarentena, reglas, identidades, replay y carga por dependencias.
+- Cubre 57 mapeos/13 hallazgos, 20 excepciones, 36 pruebas futuras y 12 puertas de control.
+- Define respaldo/restauración/reconciliación y rollback antes/después de nuevas escrituras; fuente operacional ausente.
+- Verificación documental únicamente: sin SQL, datos reales, implementación, merge ni despliegue.
+
 ## 2026-11-03 — Migración Fase 3: diseño visual/contratos EN_REVISION
 
 - Registra aprobación de Fase 2 y M3-A01; sin Fase 4.

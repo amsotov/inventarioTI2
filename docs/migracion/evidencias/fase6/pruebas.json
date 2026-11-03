@@ -1,0 +1,119 @@
+{
+  "fase": "MIGRACION_6",
+  "estado": "EN_PROGRESO_INTEGRACION_DESTINO_BLOQUEADA",
+  "base_git": "27cae1fde225ce10aebef7b89db65da2fd8c1aed",
+  "fecha_local": "2026-11-03",
+  "zona_documental": "America/Santiago",
+  "node": "24.19.0",
+  "postgres_docker": "postgres:17@sha256:31ba9c94a03ada9988f2bb493a22a75eef3a185884533e5cdbcd498ea835b08f",
+  "ejecutadas": [
+    {
+      "id": "compilacion",
+      "comando": "npm run build",
+      "estado": "APROBADA",
+      "casos": null,
+      "alcance": "TypeScript servidor/web y bundle Vite; no despliegue",
+      "log": "docs/migracion/evidencias/fase6/build-final.log",
+      "sha256": "6ff7f3b8c66598854a6d8bd3b0fc4878bc2e5cbee9b8ae326f3dd4bf7a6619e2"
+    },
+    {
+      "id": "backend",
+      "comando": "npm test",
+      "estado": "APROBADA",
+      "casos": 152,
+      "alcance": "PostgreSQL 17 local en Docker, AuthService/RLS/HTTP reales y proveedor doble; incluye GoTrue local preexistente y frontera v2 con persistencia doble",
+      "log": "docs/migracion/evidencias/fase6/npm-test.log",
+      "sha256": "d0566f548914c7c0a780e23f0dd71a32cdac941d513f122f5876ba26b115e3c9"
+    },
+    {
+      "id": "operacion",
+      "comando": "npm run test:ops",
+      "estado": "APROBADA",
+      "casos": 4,
+      "alcance": "Copia/restore cifrado PostgreSQL sintético local; no SQL Server ni recuperación gestionada",
+      "log": "docs/migracion/evidencias/fase6/ops.log",
+      "sha256": "2d6a94c91fa24e825c7d218733805cb238d99b35958feff81a4fab95c0d77763"
+    },
+    {
+      "id": "navegador",
+      "comando": "npm run test:ui",
+      "estado": "APROBADA",
+      "casos": 39,
+      "alcance": "Chromium local desktop/iPad/iPhone emulados; frontend existente con PG sintético y proveedor doble",
+      "log": "docs/migracion/evidencias/fase6/ui.log",
+      "sha256": "3e73d98d0498df35ca01ac0897f6c724601e9a9fd404a72c475a2c59b77aee5b"
+    },
+    {
+      "id": "unidad_final",
+      "comando": "npx --no-install tsx --test tests/api/modernization-units.test.ts",
+      "estado": "APROBADA",
+      "casos": 7,
+      "alcance": "Repite solo unidad tras ajustar rechazo de NULL para campo no textual; sin cambios posteriores en composición HTTP/PG",
+      "log": "docs/migracion/evidencias/fase6/units-final.log",
+      "sha256": "ffafab10b437d1b2dd8f5dd2fbc316664ab300a2a0e474280c943a640a422267"
+    },
+    {
+      "id": "dependencias",
+      "comando": "npm audit --audit-level=high --json",
+      "estado": "APROBADA",
+      "vulnerabilidades": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "evidencia": "docs/migracion/evidencias/fase6/npm-audit.json",
+      "limite": "Registro consultado en esta ejecución; no garantía contra vulnerabilidades futuras"
+    },
+    {
+      "id": "sintaxis_130",
+      "comando": "dotnet ScriptDom130.dll [cuatro rutas .candidate.sql]",
+      "estado": "APROBADA",
+      "archivos": 4,
+      "autopruebas": 3,
+      "alcance": "Parser estático TSql130Parser Microsoft.ScriptDom 161.9142.1; no motor, ejecución ni compilación semántica",
+      "evidencia": "docs/migracion/evidencias/fase6/scriptdom130.json"
+    }
+  ],
+  "incidencias_resueltas": [
+    {
+      "caso": "Primera operación fuera de checkout Git",
+      "estado": "CORREGIDA_EN_ENTORNO",
+      "detalle": "El ensayo de recuperación necesita rev-parse HEAD. Se aportó GIT_DIR del checkout aceptado y GIT_WORK_TREE del árbol de revisión, sin crear commits locales."
+    },
+    {
+      "caso": "Falta de espacio durante primeras suites concurrentes",
+      "estado": "REENSAYADA_APROBADA",
+      "detalle": "Se retiraron únicamente caches/SDK temporal de esta auditoría tras guardar parser. Suites completas repetidas por separado: backend152, operación4 y navegador39. No se cuentan intentos iniciales como aprobados."
+    }
+  ],
+  "no_ejecutadas": [
+    {
+      "caso": "Integración/semántica/permisos/concurrencia/restore SQL Server 2016",
+      "estado": "BLOQUEADA",
+      "motivo": "Instancia/edición/SP/CU/collation y soporte/repositorio completos pendientes"
+    },
+    {
+      "caso": "Login/MFA real en Supabase inventarioTI2 gestionado",
+      "estado": "NO_EJECUTADA",
+      "motivo": "Esta entrega no configura credenciales, cuentas o aplicación remota; pruebas locales delimitadas"
+    },
+    {
+      "caso": "Escrituras normalizadas v2 e invariantes del nuevo modelo",
+      "estado": "BLOQUEADA",
+      "motivo": "18 fronteras con persistencia doble; cero operaciones de escritura de destino implementadas"
+    },
+    {
+      "caso": "ETL/datos operacionales/cutover/producción",
+      "estado": "NO_EJECUTADA",
+      "motivo": "Fuera de esta entrega; no autorización inferida"
+    }
+  ],
+  "mutaciones_remotas_supabase": false,
+  "sql_server_ejecutado": false,
+  "frontend_modificado": false,
+  "fase7": "NO_AUTORIZADA",
+  "observacion": "Logs usan rutas/evidencia sintética; los 7 casos unitarios finales ya estaban incluidos en los 152 y no se suman nuevamente. Evidencia UI/ops histórica restaurada; nueva recuperación archivada en F6."
+}

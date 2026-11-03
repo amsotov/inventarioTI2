@@ -1,5 +1,13 @@
 # Cambios
 
+## 2026-11-03 — Migración Fase 6: incremento parcial de backend
+
+- M6-A01 acepta F5/inicia F6; M6-A02/A03 aprueban Auth/soporte y Unicode/UTC.
+- Desacopla repositorio de inventario; conserva v1/PostgreSQL y seguridad.
+- Implementa frontera por inyección para 18 contratos v2 y dos lecturas SQL Server parametrizadas por puerto; no escrituras de destino.
+- Enmienda candidato 0.6.0-review.1 en 42 campos sin retirar barreras ni ejecutar SQL.
+- Pruebas nuevas, regresión, linaje y diagnóstico de pendientes; F6 EN_PROGRESO con integración bloqueada, sin F7/merge/despliegue.
+
 ## 2026-11-03 — Migración Fase 4: plan ETL EN_REVISION
 
 - Registra aprobación de Fase 3 y M4-A01; sin Fase 5.

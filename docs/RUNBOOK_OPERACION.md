@@ -76,3 +76,8 @@ inventarioTI pausado por autorización y confirmado INACTIVE; no reactivar autom
 ## M5-A05 — baseline y datos de laboratorio
 
 [Paquete](../migrations/supabase-pruebas/README.md) exclusivo de inventarioTI2/yhsfotxhaptinjtmrinn, 10 entradas remotas y semilla aplicada. No ejecutar carpeta en bloque ni reaplicar seed: aborta sobre datos preexistentes. InventarioTI sigue pausado. Roles NOLOGIN; sin usuarios Auth, passwords o workers activados. [Ensayo](migracion/VALIDACION_SUPABASE.md) con rollback no es restauración de copia ni prueba de operación real. No redirigir fixtures locales con resets al gestionado. Fase 6/producción sin autorización.
+
+
+## Modernización Fase 6 — activación restringida
+
+Seguir [informe F6](migracion/06_ADAPTACION_BACKEND.md). INVENTORY_BACKEND=postgres por defecto; sqlserver2016 falla antes de crear pools. v2 requiere inyección explícita y no está registrada en main. No retirar barreras, elegir backend incompleto ni aplicar SQL Server a Supabase. No se cambió configuración remota ni habilitó envío. Para revertir este incremento de código en entorno autorizado, volver al commit padre 27cae1f con sus dependencias, sin rollback de datos: F6 no ejecuta migraciones remotas. No desplegar por esta instrucción.

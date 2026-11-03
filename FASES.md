@@ -2,11 +2,14 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0–4: COMPLETADAS por aprobación del usuario. FASE 5: EN_REVISION (aplicación/ensayos SQL Server BLOQUEADOS). FASE 6: NO AUTORIZADA.**
+**Migración FASES 0–5: COMPLETADAS por aprobación del usuario. FASE 6: EN_PROGRESO, integración/escrituras SQL Server BLOQUEADAS. FASE 7: NO AUTORIZADA.**
 
-Autorización M5-A01: «apruebo fase 4 inicia fase 5», acepta entrega `9f84fcd`. [Candidato SQL Server](docs/migracion/05_ESQUEMA_SQLSERVER.md): 30 tablas/117 campos, 9 CHECK y 24 índices propuestos, barrera incondicional contra aplicación. DDL SQL Server verificado estática/sintácticamente, sin aplicarlo. M5-A05 instala y ensaya baseline existente en Supabase con datos sintéticos; fuentes de aplicación intactas, sin merge o despliegue.
+M6-A01: «apruebo fase 5 inicia fase 6» acepta `27cae1f` e inicia adaptación del backend. M6-A02 aprueba conservar Supabase Auth sin hashes duplicados y soporte de UUID/sesiones/historia/idempotencia/outbox; M6-A03 aprueba NVARCHAR e instantes DATETIME2(7)/SYSUTCDATETIME sin inventar horas históricas. [Informe de avance F6](docs/migracion/06_ADAPTACION_BACKEND.md) y [pruebas](docs/migracion/evidencias/fase6/pruebas.json).
 
-M5-A02 confirma destino SQL Server 2016/13.x, compatibility_level 130 y pruebas iniciales en Supabase/PostgreSQL inventarioTI2. M5-A04 autoriza pausar inventarioTI y resuelve el cupo: inventarioTI INACTIVE; inventarioTI2 creado en sovicl/São Paulo, ACTIVE_HEALTHY, ref yhsfotxhaptinjtmrinn, PostgreSQL 17.11/UTC. M5-A05 ya instaló baseline 19 tablas/155 columnas, 2 unidades/3 funcionarios/6 bienes sintéticos y verificó 20 casos SQL con rollback; [validación y límites](docs/migracion/VALIDACION_SUPABASE.md). Sin HTTP/Auth real/UI ni validación del modelo SQL Server. Pendientes: decisiones M1-D aplicables, edición/SP/CU/collation/entorno SQL Server autorizado, soporte de 19 tablas/155 campos y ensayos de integridad/restore/rollback. Excel operacional ausente; sin perfilado real. Condiciones F1-SEG-01/02/03 conservadas. GitHub en rama dedicada; numeración de migración separada del desarrollo histórico (última completada 13, Fase 14 EN_REVISION, Fase 15 no autorizada). La aprobación de planificación no resuelve alternativas ni habilita producción.
+Implementados repositorio/gateway de inventario conservando v1/PostgreSQL, frontera de 18 contratos v2 por inyección, controles de autorización/transacción y dos lecturas SQL Server parametrizadas por puerto. No hay backend de escritura normalizado ni soporte físico SQL Server completo: faltan reglas de negocio, instancia/edición/SP/CU/collation y ensayos reales. v2 no se activa en main; seleccionar SQL Server falla cerrado. Candidato enmendado `0.6.0-review.1`, 30 tablas/117 campos y cuatro THROW intactos; no SQL Server ejecutado. Frontend y fuentes ER/DER/Excel intactos. No se solicita cierre ni avance de fase mientras falten sus criterios.
+
+Entorno gestionado previamente ensayado en F5: inventarioTI2/yhsfotxhaptinjtmrinn en sovicl/São Paulo, baseline PostgreSQL 19 tablas/155 columnas y 20 casos SQL sintéticos; no repetir DDL/seed. inventarioTI permanece pausado por autorización del usuario. F6 no modifica Supabase remoto. [Verificador vigente](docs/migracion/verificar_fase6.py); evidencias y verificadores F1–F5 corresponden a sus commits históricos. Sin main/merge/despliegue ni datos reales. F1-SEG-01/02/03 y ciclo histórico 0–15 conservados; textos posteriores con estados anteriores son antecedentes.
+
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
@@ -596,3 +599,18 @@ Usuario: «pausa inventarioTI». Se verificó nombre/ref/organización, solicit�
 ## M5-A05 — baseline y validación SQL Supabase
 
 Usuario retoma («remota donde quedaste») Fase 5 y pruebas aisladas/sintéticas previamente elegidas. Diez migraciones remotas: ocho fuentes existentes adaptadas solo al operador gestionado y dos cierres ACL. 19 tablas/155 columnas, RLS en todas; 2 unidades/3 funcionarios/6 bienes sintéticos. Veinte casos SQL aprobados y rollback sin cuentas/sesiones/comandos/auditoría/outbox persistentes. Funciones privadas PUBLIC EXECUTE=0, navegador USAGE=0, roles NOLOGIN y sin atributos elevados/CREATE residual. [Informe](docs/migracion/VALIDACION_SUPABASE.md). Revisión4 del candidato, cuatro SQL Server intactos; Fase 5 EN_REVISION. No HTTP/Auth real/UI/SQL Server, sin Fase 6.
+
+## Migración Fase 6 — M6-A01/A02/A03, estado vigente
+
+Objetivo: adaptar el backend preservando funcionalidad y seguridad. Responsable de implementación: Codex; decisiones de negocio/cierre: usuario. Fase 5 aceptada por «apruebo fase 5 inicia fase 6», con límites de ensayos SQL Server conservados. [Entrega parcial](docs/migracion/06_ADAPTACION_BACKEND.md).
+
+| Criterio | Estado comprobable |
+|---|---|
+| CA-M6-01 preservar requisitos, Auth, API actual y frontend | Implementado; regresión/evidencia en informe |
+| CA-M6-02 desacoplar repositorio/validaciones y controlar nueva frontera | Implementado para inventario y 18 contratos por inyección |
+| CA-M6-03 repositorios completos del modelo de 30 tablas | Parcial: dos lecturas por puerto; falta persistencia restante |
+| CA-M6-04 custodia/historia/auditoría/comando/outbox atómicos en destino | Pendiente; original PostgreSQL preservado y ensayado |
+| CA-M6-05 integración/permisos/concurrencia SQL Server 2016 real | BLOQUEADA por instancia/soporte/reglas; no sustituida por PG |
+| CA-M6-06 revisión y aceptación de Fase 6 | PENDIENTE; no se presume por M6-A01/A02/A03 |
+
+Continuar F6 al resolver dependencias; no comenzar F7 ni desplegar. Falta Excel operacional para perfilado/carga posteriores, no para esta revisión sintética. Fuentes/modelos y pruebas históricas se preservan, nuevos resultados separados en evidencias/fase6.

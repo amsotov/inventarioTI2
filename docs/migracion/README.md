@@ -1,6 +1,6 @@
 # Entregables de la migración
 
-**Estado vigente:** Fases 0–4 aprobadas; [Fase 5](05_ESQUEMA_SQLSERVER.md) EN_REVISION, aplicación/ensayos de motor BLOQUEADOS; Fase 6 NO AUTORIZADA. Los estados de entregas anteriores se conservan como historia.
+**Estado vigente:** Fases 0–5 aprobadas; [Fase 6](06_ADAPTACION_BACKEND.md) EN_PROGRESO con integración/escrituras SQL Server BLOQUEADAS. Fase 7 NO AUTORIZADA. M6-A02/A03 aprobadas: Auth/soporte, Unicode/UTC. Entrega parcial de código y pruebas, sin cierre de F6. Verificador vigente: `python3 docs/migracion/verificar_fase6.py`. Las entregas y verificadores siguientes conservan sus estados históricos y corresponden a sus commits, no al árbol enmendado actual.
 
 Esta carpeta recibirá los informes y matrices generados por Codex durante las fases autorizadas del prompt en `../../prompts/PROMPT_MAESTRO_MIGRACION_INVENTARIOTI_CODEX.md`.
 
@@ -59,3 +59,7 @@ M5-A01 «apruebo fase 4 inicia fase 5» acepta `9f84fcd`; Fases 0–4 COMPLETADA
 ## Continuidad M5-A05 — baseline existente validada
 
 [Validación Supabase](VALIDACION_SUPABASE.md): baseline PostgreSQL 19/155, 10 migraciones (8 fuentes/2 ACL), semilla 2 unidades/3 funcionarios/6 bienes y 20 casos SQL aprobados con rollback. [Paquete trazable](../../migrations/supabase-pruebas/README.md). No es modelo SQL Server ni validación de HTTP/Auth real/UI. Fase 5 EN_REVISION; decisiones/destino/fases siguientes pendientes.
+
+## M6-A01/A02/A03 — adaptación de backend en progreso
+
+[Informe vigente](06_ADAPTACION_BACKEND.md), [pruebas](evidencias/fase6/pruebas.json), [enmiendas](evidencias/fase6/enmiendas.json) y [linaje](evidencias/fase6/linaje.json). Repositorio actual desacoplado; frontera 18 contratos/27 schemas; dos lecturas de catálogos SQL Server por puerto y sonda 117 columnas. Cero escrituras de destino implementadas y sin instancia real. Candidato 0.6.0-review.1 con Unicode/UTC/hash nullable, cuatro barreras intactas. No frontend, merge, deploy o cambios Supabase remoto. Continuar F6 tras reglas/soporte/instancia; F7 no autorizada.

@@ -226,3 +226,8 @@ Condición/impacto: No se ejecuta Fase 4 ni se accede a datos reales; el registr
 `INICIAR_EN_CODEX.md` faltaba en la base inspeccionada; se crea en esta entrega como guía de continuidad documental, sin inventar instrucciones previas. ER, DER y Excel se conservan originales. Una futura aprobación debe registrar un addendum versionado o fuentes corregidas por su responsable; no se alteran silenciosamente.
 
 La Fase 1 queda EN_REVISION. El siguiente paso es revisar este registro, resolver/ratificar las propuestas y autorizar por separado Fase 2 (línea base y trazabilidad). No hay Fase 2 iniciada ni migración física autorizada.
+
+
+## Addendum de continuidad M6 — 2026-11-03
+
+M6-A01 acepta F5/inicia F6. M6-A02 aprueba Supabase Auth sin hashes duplicados y soporte complementario de UUID, sesiones, historia, idempotencia/outbox: M1-D02 y conservación M1-D08/09. M6-A03 aprueba NVARCHAR para Unicode y DATETIME2(7)/SYSUTCDATETIME operativos, preservando DATE/NULL histórico: M1-D07 y parte Unicode de M1-D15. El texto anterior conserva el estado de la entrega original; estas aprobaciones no se vuelven a solicitar. [42 enmiendas y límites](evidencias/fase6/enmiendas.json), [informe F6](06_ADAPTACION_BACKEND.md). Correspondencia cuenta-persona, reglas concretas, collation, exceso de longitudes y soporte físico siguen pendientes; no son alternativas ratificadas por aprobación de fase.

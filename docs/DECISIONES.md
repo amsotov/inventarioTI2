@@ -247,3 +247,8 @@ Usuario: «pausa inventarioTI», tras M5-A03 y selección sovicl/São Paulo. Aut
 ## M5-A05 — retomar validación inicial PostgreSQL
 
 Se retoma Fase 5 («remota donde quedaste»), dentro del proyecto aislado/sintético elegido por usuario y creado bajo M5-A03/A04. Se reutiliza baseline existente, no el modelo objetivo: 8 fuentes adaptadas al operador y 2 correcciones ACL, sin tocar originales. Se instala semilla y se ensayan 20 casos SQL; no se elige alternativa M1-D ni se inicia backend/frontend de modernización. [Resultados y límites](migracion/VALIDACION_SUPABASE.md). Fase 5 EN_REVISION; SQL Server 2016/130, Auth real y Fase 6 pendientes.
+
+
+## M6-A01/A02/A03 — modernización del backend
+
+Usuario acepta F5 e inicia F6; aprueba Auth externo/soporte y Unicode/UTC. Resoluciones, alcance exacto y condiciones en [informe](migracion/06_ADAPTACION_BACKEND.md) y [enmiendas](migracion/evidencias/fase6/enmiendas.json). M1-D02 y conservación M1-D08/09 ratificadas en ese alcance; M1-D07/15 ratificadas para tipos/UTC, no para todos sus pendientes. F6 parcial: escrituras/soporte SQL Server e integración pendientes; no F7.

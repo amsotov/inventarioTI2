@@ -2,22 +2,31 @@
   "fase": "MIGRACION_5",
   "estado": "CANDIDATO_EN_REVISION_APLICACION_BLOQUEADA",
   "base_git": "9f84fcd836550654770bd7ed4191f9edaffe2528",
-  "version_candidata": "0.5.0-review.4",
+  "version_candidata": "0.6.0-review.1",
   "motor_objetivo": "SQL Server",
   "version_edicion_collation": "SQL Server 2016 / compatibilidad 130; edición y collation pendientes",
   "entorno_autorizado": null,
-  "decisiones_aprobadas": [],
+  "decisiones_aprobadas": [
+    {
+      "id": "M6-A02",
+      "alcance": "Conservar Supabase Auth, sin contraseñas duplicadas; hash externo nullable y soporte complementario existente; no valida correspondencias de personas ni define todos los detalles físicos"
+    },
+    {
+      "id": "M6-A03",
+      "alcance": "NVARCHAR para Unicode y DATETIME2(7)/SYSUTCDATETIME operativos; preservar DATE/NULL histórico; collation y exceso de longitudes siguen pendientes"
+    }
+  ],
   "bloqueos": [
     "No hay entorno SQL Server autorizado ni conexión configurada",
-    "M1-D02/M1-D03 autenticación y vínculo de cuenta pendientes",
-    "M1-D07 precisión/defaults UTC pendientes",
-    "M1-D08/M1-D09 soporte actual y garantías pendientes",
     "M1-D10/M1-D11/M1-D13 reglas efectivas pendientes",
     "M1-D12 tratamiento de códigos de impresión/auditoría pendiente",
     "M1-D14 nueve CHECK propuestos no aprobados",
-    "M1-D15 collation/longitudes/Unicode pendientes",
+    "M1-D15 collation y tratamiento de excesos de longitud pendientes; Unicode aprobado M6-A03",
     "No hay Excel operacional ni perfilado real",
-    "No hay ensayo de aplicación/rollback/restauración SQL Server"
+    "No hay ensayo de aplicación/rollback/restauración SQL Server",
+    "Implementar/verificar soporte físico, vínculo real cuenta-funcionario e instantes históricos sin pérdida",
+    "Instancia/edición/SP/CU/collation SQL Server no disponibles; sin pruebas de integración del motor",
+    "Backend de destino SQL Server no habilitado; puertos/controladores no equivalen a repositorio de destino"
   ],
   "columnas": [
     {
@@ -32,7 +41,7 @@
     {
       "tabla": "ACTIVIDADES_MANTENCION",
       "campo": "ACTI_NOMBRE",
-      "tipo": "VARCHAR(40)",
+      "tipo": "NVARCHAR(40)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -50,7 +59,7 @@
     {
       "tabla": "AREAS",
       "campo": "AREA_NOMBRE",
-      "tipo": "VARCHAR(100)",
+      "tipo": "NVARCHAR(100)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -68,7 +77,7 @@
     {
       "tabla": "CLASES_IMPRESORA",
       "campo": "CLAS_NOMBRE",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -86,7 +95,7 @@
     {
       "tabla": "DEPARTAMENTOS",
       "campo": "DEPA_NOMBRE",
-      "tipo": "VARCHAR(80)",
+      "tipo": "NVARCHAR(80)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -104,7 +113,7 @@
     {
       "tabla": "ESTADOS_EQUIPO",
       "campo": "ESTA_NOMBRE",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -122,7 +131,7 @@
     {
       "tabla": "FAMILIAS_COMPONENTE",
       "campo": "FAMI_NOMBRE",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -140,7 +149,7 @@
     {
       "tabla": "MARCAS",
       "campo": "MARC_NOMBRE",
-      "tipo": "VARCHAR(60)",
+      "tipo": "NVARCHAR(60)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -158,7 +167,7 @@
     {
       "tabla": "MODALIDADES_ASIGNACION",
       "campo": "MODA_NOMBRE",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -176,7 +185,7 @@
     {
       "tabla": "ORIGENES_EQUIPO",
       "campo": "ORIG_NOMBRE",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -194,7 +203,7 @@
     {
       "tabla": "PERFILES",
       "campo": "PERF_NOMBRE",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -212,7 +221,7 @@
     {
       "tabla": "PERFILES",
       "campo": "PERF_DESCRIPCION",
-      "tipo": "VARCHAR(200)",
+      "tipo": "NVARCHAR(200)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -230,7 +239,7 @@
     {
       "tabla": "REGIONES",
       "campo": "REGI_NOMBRE",
-      "tipo": "VARCHAR(60)",
+      "tipo": "NVARCHAR(60)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -248,7 +257,7 @@
     {
       "tabla": "RUBROS_INSUMO",
       "campo": "RUBR_NOMBRE",
-      "tipo": "VARCHAR(40)",
+      "tipo": "NVARCHAR(40)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -266,7 +275,7 @@
     {
       "tabla": "SISTEMAS_OPERATIVOS",
       "campo": "SIST_NOMBRE",
-      "tipo": "VARCHAR(40)",
+      "tipo": "NVARCHAR(40)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -284,7 +293,7 @@
     {
       "tabla": "SITUACIONES",
       "campo": "SITU_NOMBRE",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -302,7 +311,7 @@
     {
       "tabla": "TIPOS_EQUIPO",
       "campo": "TIPO_NOMBRE",
-      "tipo": "VARCHAR(40)",
+      "tipo": "NVARCHAR(40)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -329,7 +338,7 @@
     {
       "tabla": "DELEGACIONES",
       "campo": "DELE_NOMBRE",
-      "tipo": "VARCHAR(60)",
+      "tipo": "NVARCHAR(60)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -338,7 +347,7 @@
     {
       "tabla": "DELEGACIONES",
       "campo": "DELE_DIRECCION",
-      "tipo": "VARCHAR(150)",
+      "tipo": "NVARCHAR(150)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -365,7 +374,7 @@
     {
       "tabla": "MODELOS",
       "campo": "MODE_NOMBRE",
-      "tipo": "VARCHAR(100)",
+      "tipo": "NVARCHAR(100)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -428,7 +437,7 @@
     {
       "tabla": "EQUIPOS",
       "campo": "EQUI_NUMERO_SERIE",
-      "tipo": "VARCHAR(60)",
+      "tipo": "NVARCHAR(60)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -437,7 +446,7 @@
     {
       "tabla": "EQUIPOS",
       "campo": "EQUI_INVENTARIO_SERVIU",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -446,7 +455,7 @@
     {
       "tabla": "EQUIPOS",
       "campo": "EQUI_INVENTARIO_MINVU",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -473,7 +482,7 @@
     {
       "tabla": "EQUIPOS",
       "campo": "EQUI_OBSERVACION",
-      "tipo": "VARCHAR(500)",
+      "tipo": "NVARCHAR(500)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -491,7 +500,7 @@
     {
       "tabla": "FUNCIONARIOS",
       "campo": "FUNC_NOMBRE_COMPLETO",
-      "tipo": "VARCHAR(150)",
+      "tipo": "NVARCHAR(150)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -500,7 +509,7 @@
     {
       "tabla": "FUNCIONARIOS",
       "campo": "FUNC_USUARIO_RED",
-      "tipo": "VARCHAR(50)",
+      "tipo": "NVARCHAR(50)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -509,7 +518,7 @@
     {
       "tabla": "FUNCIONARIOS",
       "campo": "FUNC_CORREO",
-      "tipo": "VARCHAR(150)",
+      "tipo": "NVARCHAR(150)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -635,7 +644,7 @@
     {
       "tabla": "ASIGNACIONES",
       "campo": "ASIG_OBSERVACION",
-      "tipo": "VARCHAR(300)",
+      "tipo": "NVARCHAR(300)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -662,7 +671,7 @@
     {
       "tabla": "COMPUTADORES",
       "campo": "COMP_NOMBRE_RED",
-      "tipo": "VARCHAR(50)",
+      "tipo": "NVARCHAR(50)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -689,7 +698,7 @@
     {
       "tabla": "COMPUTADORES",
       "campo": "COMP_PROCESADOR",
-      "tipo": "VARCHAR(100)",
+      "tipo": "NVARCHAR(100)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -788,7 +797,7 @@
     {
       "tabla": "MANTENCIONES",
       "campo": "MANT_OBSERVACION",
-      "tipo": "VARCHAR(300)",
+      "tipo": "NVARCHAR(300)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -852,7 +861,7 @@
       "tabla": "USUARIOS",
       "campo": "USUA_CLAVE_HASH",
       "tipo": "VARCHAR(255)",
-      "permite_null": false,
+      "permite_null": true,
       "identity": false,
       "default": "",
       "fila_excel": 28
@@ -869,10 +878,10 @@
     {
       "tabla": "USUARIOS",
       "campo": "USUA_FECHA_CREACION",
-      "tipo": "DATETIME2",
+      "tipo": "DATETIME2(7)",
       "permite_null": false,
       "identity": false,
-      "default": "SYSDATETIME()",
+      "default": "SYSUTCDATETIME()",
       "fila_excel": 30
     },
     {
@@ -896,16 +905,16 @@
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_FECHA_HORA",
-      "tipo": "DATETIME2",
+      "tipo": "DATETIME2(7)",
       "permite_null": false,
       "identity": false,
-      "default": "SYSDATETIME()",
+      "default": "SYSUTCDATETIME()",
       "fila_excel": 36
     },
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_ACCION",
-      "tipo": "VARCHAR(20)",
+      "tipo": "NVARCHAR(20)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -914,7 +923,7 @@
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_ENTIDAD",
-      "tipo": "VARCHAR(60)",
+      "tipo": "NVARCHAR(60)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -923,7 +932,7 @@
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_ENTIDAD_ID",
-      "tipo": "VARCHAR(50)",
+      "tipo": "NVARCHAR(50)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -932,7 +941,7 @@
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_VALOR_ANTERIOR",
-      "tipo": "VARCHAR(MAX)",
+      "tipo": "NVARCHAR(MAX)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -941,7 +950,7 @@
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_VALOR_NUEVO",
-      "tipo": "VARCHAR(MAX)",
+      "tipo": "NVARCHAR(MAX)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -950,7 +959,7 @@
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_CONTEXTO",
-      "tipo": "VARCHAR(500)",
+      "tipo": "NVARCHAR(500)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -959,7 +968,7 @@
     {
       "tabla": "AUDITORIA",
       "campo": "AUDI_DIRECCION_IP",
-      "tipo": "VARCHAR(45)",
+      "tipo": "NVARCHAR(45)",
       "permite_null": true,
       "identity": false,
       "default": "",
@@ -986,10 +995,10 @@
     {
       "tabla": "AUTORIZACIONES",
       "campo": "AUTO_FECHA_OTORGADO",
-      "tipo": "DATETIME2",
+      "tipo": "DATETIME2(7)",
       "permite_null": false,
       "identity": false,
-      "default": "SYSDATETIME()",
+      "default": "SYSUTCDATETIME()",
       "fila_excel": 33
     },
     {
@@ -1022,7 +1031,7 @@
     {
       "tabla": "INSUMOS_IMPRESORA",
       "campo": "INSU_CODIGO",
-      "tipo": "VARCHAR(30)",
+      "tipo": "NVARCHAR(30)",
       "permite_null": false,
       "identity": false,
       "default": "",
@@ -1077,7 +1086,7 @@
   "archivos_sql": [
     {
       "path": "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql",
-      "sha256": "988111fc248735507f0ce23605acb443a24b466e793d7c75b372883200dd22da",
+      "sha256": "a6f9b5bd110082618dfaf9565467efce8023c6991ae0e93f2c2e3aea0c7b342f",
       "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
     },
     {
@@ -1092,14 +1101,14 @@
     },
     {
       "path": "migrations/sqlserver/900_catalogo_esperado.candidate.sql",
-      "sha256": "2c6ecf0a4ef438cdcaf14e27500d94114d524a663a7f586ab81c284537b8c2e7",
+      "sha256": "232383f6e075e7d13e985e0b73337157d8b5b02b204116e65fd172e649386f34",
       "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
     }
   ],
   "esquema_soporte": "PROPUESTA_NO_IMPLEMENTADA",
   "datos_migrados": 0,
-  "fase6": "NO_AUTORIZADA",
-  "continuacion_git_base": "cdd0f0398026384a2ff4aca20353017e0c6c5f91",
+  "fase6": "EN_PROGRESO_INTEGRACION_DESTINO_BLOQUEADA",
+  "continuacion_git_base": "27cae1fde225ce10aebef7b89db65da2fd8c1aed",
   "destino": {
     "producto": "SQL Server",
     "version": "2016",
@@ -1122,5 +1131,11 @@
     "M5-A03",
     "M5-A04",
     "M5-A05"
-  ]
+  ],
+  "enmiendas_aprobadas": [
+    "M6-A02: Auth externo/sin hashes duplicados y soporte existente",
+    "M6-A03: Unicode e instantes UTC sin inventar historia"
+  ],
+  "fase7": "NO_AUTORIZADA",
+  "continuacion_fase": "MIGRACION_6"
 }

@@ -462,3 +462,8 @@ Revisión3 del verificador vincula manifiesto al proyecto observado, añade nega
 [Informe](migracion/VALIDACION_SUPABASE.md) y [evidencia](migracion/evidencias/fase5/ensayo_supabase/resultados.json): 20 casos en Supabase inventarioTI2 con SET ROLE, funciones privadas, RLS, idempotencia secuencial, versiones, asignación/traspaso/baja, lector/anon y auditoría inmutable. Se repitieron tras correcciones ACL. Final ROLLBACK: semilla 2/3/6 intacta, cero cuentas/sesiones/comandos/auditoría/outbox; secuencias pueden avanzar. Catálogo 19/155, todas RLS, 7 roles NOLOGIN sin atributos elevados/CREATE; PUBLIC EXECUTE=0 y USAGE navegador=0. Advisors seguridad sin lints devueltos.
 
 Hallazgo ACL: la revocación general dejó 9 funciones de otros propietarios; se cerró como propietario efectivo y restauró GRANT explícito. No se reescribieron migraciones aplicadas. Son pruebas SQL con contexto sintético, no login/MFA real, HTTP/UI, dos escritores, rendimiento, backup/restore, reconciliación o SQL Server. Veinte negativas documentales del candidato se cuentan aparte. Verificador local no repite ensayos remotos.
+
+
+## Migración Fase 6 — frontera y regresión
+
+Evidencia nueva y límites en [pruebas F6](migracion/evidencias/fase6/pruebas.json), [informe](migracion/06_ADAPTACION_BACKEND.md) y [verificador vigente](migracion/verificar_fase6.py). HTTP v2 usa persistencia doble con Auth/RLS/transacción PG reales y proveedor doble. Regresión v1 se conserva; no hay integración SQL Server/gestión Auth real. Ensayos históricos intactos; verificadores anteriores corresponden a sus commits.

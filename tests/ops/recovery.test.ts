@@ -1,3 +1,4 @@
+import { postgresInventory } from '../../apps/server/inventory/postgres.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
@@ -102,7 +103,7 @@ test('isolated encrypted backup restores data, permissions and denial of old ses
     checks.push('SQL identities remain least privileged; role passwords reissued; old identity deliveries blocked; outbox quarantined; worker cannot claim');
     const auth=new AuthService(new Postgres(authPool),new IdentityDouble(),new Vault(randomBytes(32).toString('base64')),'https://inventario.test');
     const security=new Authorization(auth,business);
-    server=app(auth,'https://inventario.test',new Inventory(security),undefined,security);
+    server=app(auth,'https://inventario.test',new Inventory(postgresInventory(security)),undefined,security);
     assert.equal((await server.inject({url:'/api/v1/sesion',headers:x.headers(x.r)})).statusCode,401);
     const login=await auth.login('reader@example.invalid','synthetic');
     assert.equal((await server.inject({url:'/api/v1/bienes',headers:x.headers(login)})).statusCode,200);

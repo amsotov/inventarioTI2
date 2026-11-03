@@ -1,0 +1,2870 @@
+// Generado desde contratos Fase 3 aceptados; original y semántica no modificados.
+export const contract = {
+  "operaciones": [
+    {
+      "id": "C03-01",
+      "method": "GET",
+      "path": "/api/v2/catalogos/:catalogo",
+      "requestSchema": null,
+      "permission": "inventario.consultar",
+      "pantallas": [
+        "V03-02",
+        "V03-04",
+        "V03-07"
+      ],
+      "campos_modelo": [
+        "TIPOS_EQUIPO.TIPO_ID",
+        "MODELOS.MODE_ID",
+        "MARCAS.MARC_ID"
+      ],
+      "decisiones": [
+        "M1-D10",
+        "M1-D16"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "Lista paginada y ref UUID; catálogo cerrado a los 12 catálogos técnicos del modelo. Solo lectura; no crear permisos genéricos de DML.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "CatalogoPage",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "catalogo": {
+          "enum": [
+            "tipos-equipo",
+            "marcas",
+            "modelos",
+            "origenes",
+            "estados",
+            "situaciones",
+            "sistemas-operativos",
+            "clases-impresora",
+            "familias-componente",
+            "rubros-insumo",
+            "modalidades-asignacion",
+            "actividades-mantencion"
+          ]
+        }
+      },
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          },
+          "cursor": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "q": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "marcaRef": {
+            "$ref": "#/schemas/Ref"
+          }
+        },
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "C03-02",
+      "method": "GET",
+      "path": "/api/v2/equipos",
+      "requestSchema": null,
+      "permission": "inventario.consultar",
+      "pantallas": [
+        "V03-02"
+      ],
+      "campos_modelo": [
+        "EQUIPOS.EQUI_ID"
+      ],
+      "decisiones": [
+        "M1-D06",
+        "M1-D09"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "Filtros tipados por ref, adquisición para rango, cursor ligado a filtros/orden, 50/100; proyección pública sin secretos.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "EquipoPage",
+      "errorSchema": "Problem",
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          },
+          "cursor": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "q": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "delegacionRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "departamentoRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "areaRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "desde": {
+            "type": "string",
+            "format": "date"
+          },
+          "hasta": {
+            "type": "string",
+            "format": "date"
+          },
+          "tipoRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "condicionRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "situacionRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "funcionarioRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "custodia": {
+            "enum": [
+              "asignado",
+              "sin-asignar"
+            ]
+          }
+        },
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "C03-03",
+      "method": "POST",
+      "path": "/api/v2/equipos",
+      "requestSchema": "EquipoAlta",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-04"
+      ],
+      "campos_modelo": [
+        "EQUIPOS.EQUI_ID",
+        "EQUIPOS.EQUI_TIPO_EQUIPO_ID",
+        "EQUIPOS.EQUI_MODELO_ID"
+      ],
+      "decisiones": [
+        "M1-D06",
+        "M1-D09",
+        "M1-D10",
+        "M1-D13",
+        "M1-D15"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key"
+      ],
+      "response_success": 201,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Alta de datos comunes, sin custodia; situación inicial del servidor. Codigo/adquisición/motivo sin serie conservados en soporte; técnicos en operación posterior salvo contrato atómico aprobado.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-04",
+      "method": "GET",
+      "path": "/api/v2/equipos/:ref",
+      "requestSchema": null,
+      "permission": "inventario.consultar",
+      "pantallas": [
+        "V03-03"
+      ],
+      "campos_modelo": [
+        "EQUIPOS.EQUI_ID",
+        "EQUIPOS.EQUI_ESTADO_ID",
+        "EQUIPOS.EQUI_SITUACION_ID"
+      ],
+      "decisiones": [
+        "M1-D09",
+        "M1-D10"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "EquipoLectura + detalle técnico por discriminador; ETag. No IDs INT como referencia pública ni marca duplicada.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "EquipoDetalle",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {},
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-05",
+      "method": "PATCH",
+      "path": "/api/v2/equipos/:ref",
+      "requestSchema": "EquipoAtributos",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-03",
+        "V03-04"
+      ],
+      "campos_modelo": [
+        "EQUIPOS.EQUI_MODELO_ID",
+        "EQUIPOS.EQUI_NUMERO_SERIE"
+      ],
+      "decisiones": [
+        "M1-D06",
+        "M1-D09",
+        "M1-D10",
+        "M1-D15"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key",
+        "If-Match"
+      ],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Atributos completos; opcionales omitidos se limpian como en v1. No condición, situación, custodia, actor ni fechas de operación en payload.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-06",
+      "method": "PATCH",
+      "path": "/api/v2/equipos/:ref/tecnica",
+      "requestSchema": "Tecnica",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-03",
+        "V03-04"
+      ],
+      "campos_modelo": [
+        "COMPUTADORES.COMP_EQUIPO_ID",
+        "MONITORES.MONI_EQUIPO_ID",
+        "IMPRESORAS.IMPR_EQUIPO_ID",
+        "SWITCHES.SWIT_EQUIPO_ID",
+        "PIEZAS_COMPUTADOR.PIEZ_CAPACIDAD_GB",
+        "INSUMOS_IMPRESORA.INSU_CODIGO"
+      ],
+      "decisiones": [
+        "M1-D10",
+        "M1-D14",
+        "M1-D16"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key",
+        "If-Match"
+      ],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Subtipo debe concordar con tipo persistido; piezas/insumosAgregar se anexan, nunca borrado implícito. Cambio de familia/subtipo y retiro de piezas requieren flujo específico aún pendiente.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-07",
+      "method": "POST",
+      "path": "/api/v2/equipos/:ref/movimientos",
+      "requestSchema": "Movimiento",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-06"
+      ],
+      "campos_modelo": [
+        "ASIGNACIONES.ASIG_EQUIPO_ID",
+        "ASIGNACIONES.ASIG_TRASPASO_DE_ID"
+      ],
+      "decisiones": [
+        "M1-D05",
+        "M1-D07",
+        "M1-D08",
+        "M1-D13"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key",
+        "If-Match"
+      ],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Servidor valida campos por tipo, origen esperado, versión y vigente único. Estado+historia+auditoría+comando+outbox atómicos; cierre/apertura mismo instante UTC.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-08",
+      "method": "GET",
+      "path": "/api/v2/equipos/:ref/historia",
+      "requestSchema": null,
+      "permission": "historial.consultar",
+      "pantallas": [
+        "V03-03",
+        "V03-06"
+      ],
+      "campos_modelo": [
+        "ASIGNACIONES.ASIG_FECHA_INICIO",
+        "ASIGNACIONES.ASIG_FECHA_TERMINO"
+      ],
+      "decisiones": [
+        "M1-D07",
+        "M1-D08"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "AsignacionLectura y movimientos/anotaciones complementarios; no inventar hora histórica. Cursor por colección; vigente independiente.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "Historia",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "asignacionesCursor": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "movimientosCursor": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "anotacionesCursor": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        },
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "C03-09",
+      "method": "GET",
+      "path": "/api/v2/equipos/:ref/mantenciones",
+      "requestSchema": null,
+      "permission": "historial.consultar",
+      "pantallas": [
+        "V03-07"
+      ],
+      "campos_modelo": [
+        "MANTENCIONES.MANT_EQUIPO_ID",
+        "MANTENCIONES.MANT_FECHA"
+      ],
+      "decisiones": [
+        "M1-D10",
+        "M1-D12"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "Historial de mantenciones paginado; observaciones minimizadas y sin secretos.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "MantencionPage",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          },
+          "cursor": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        },
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "C03-10",
+      "method": "POST",
+      "path": "/api/v2/equipos/:ref/mantenciones",
+      "requestSchema": "MantencionAlta",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-07"
+      ],
+      "campos_modelo": [
+        "MANTENCIONES.MANT_EQUIPO_ID",
+        "MANTENCIONES.MANT_ACTIVIDAD_ID",
+        "MANTENCIONES.MANT_FECHA",
+        "MANTENCIONES.MANT_OBSERVACION"
+      ],
+      "decisiones": [
+        "M1-D10",
+        "M1-D12",
+        "M1-D14",
+        "M1-D16"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key",
+        "If-Match"
+      ],
+      "response_success": 201,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Fecha DATE de actividad declarada no se confunde con instante de registro. Sin credenciales en observación; conservar auditoría y versión del equipo.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-11",
+      "method": "GET",
+      "path": "/api/v2/funcionarios",
+      "requestSchema": null,
+      "permission": "inventario.consultar",
+      "pantallas": [
+        "V03-05"
+      ],
+      "campos_modelo": [
+        "FUNCIONARIOS.FUNC_ID",
+        "FUNCIONARIOS.FUNC_NOMBRE_COMPLETO"
+      ],
+      "decisiones": [
+        "M1-D03",
+        "M1-D04"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "FuncionarioPublico: sin documento/correo/clave de impresión. Búsqueda por campos autorizados no implica incluirlos en la respuesta.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "FuncionarioPage",
+      "errorSchema": "Problem",
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          },
+          "cursor": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "q": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "delegacionRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "departamentoRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "areaRef": {
+            "$ref": "#/schemas/Ref"
+          },
+          "desde": {
+            "type": "string",
+            "format": "date"
+          },
+          "hasta": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "id": "C03-12",
+      "method": "POST",
+      "path": "/api/v2/funcionarios",
+      "requestSchema": "FuncionarioAlta",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-05"
+      ],
+      "campos_modelo": [
+        "FUNCIONARIOS.FUNC_DELEGACION_ID",
+        "FUNCIONARIOS.FUNC_DEPARTAMENTO_ID",
+        "FUNCIONARIOS.FUNC_AREA_ID"
+      ],
+      "decisiones": [
+        "M1-D03",
+        "M1-D04",
+        "M1-D08",
+        "M1-D15"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key"
+      ],
+      "response_success": 201,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Identidad RUT/ID y cargo conservados; organización referenciada validada; no crea ni fusiona cuenta. FK no obliga a todos a tener usuario.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-13",
+      "method": "GET",
+      "path": "/api/v2/funcionarios/:ref",
+      "requestSchema": null,
+      "permission": "inventario.consultar",
+      "pantallas": [
+        "V03-05"
+      ],
+      "campos_modelo": [
+        "FUNCIONARIOS.FUNC_ID",
+        "FUNCIONARIOS.FUNC_ACTIVO"
+      ],
+      "decisiones": [
+        "M1-D03",
+        "M1-D04"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "Ficha pública y bienes actuales/historia mediante selección autorizada; separar datos personales administrativos.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "FuncionarioPublico",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {},
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-14",
+      "method": "GET",
+      "path": "/api/v2/funcionarios/:ref/edicion",
+      "requestSchema": null,
+      "permission": "auditoria.consultar",
+      "pantallas": [
+        "V03-05"
+      ],
+      "campos_modelo": [
+        "FUNCIONARIOS.FUNC_CORREO"
+      ],
+      "decisiones": [
+        "M1-D03",
+        "M1-D12"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "Solo administrador/MFA; proyección de edición incluye documento/correo, excluye hashes, PIN y código de impresión.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "FuncionarioEdicion",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {},
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-15",
+      "method": "PATCH",
+      "path": "/api/v2/funcionarios/:ref",
+      "requestSchema": "FuncionarioAtributos",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-05"
+      ],
+      "campos_modelo": [
+        "FUNCIONARIOS.FUNC_NOMBRE_COMPLETO",
+        "FUNCIONARIOS.FUNC_CORREO"
+      ],
+      "decisiones": [
+        "M1-D03",
+        "M1-D15"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key",
+        "If-Match"
+      ],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Representación completa de atributos; estado/organización no arbitrarios. Cambiar pertenencia tiene comando separado e historia.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-16",
+      "method": "POST",
+      "path": "/api/v2/funcionarios/:ref/pertenencias",
+      "requestSchema": "Pertenencia",
+      "permission": "inventario.modificar",
+      "pantallas": [
+        "V03-05"
+      ],
+      "campos_modelo": [
+        "FUNCIONARIOS.FUNC_DELEGACION_ID",
+        "FUNCIONARIOS.FUNC_DEPARTAMENTO_ID",
+        "FUNCIONARIOS.FUNC_AREA_ID"
+      ],
+      "decisiones": [
+        "M1-D04",
+        "M1-D08"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key",
+        "If-Match"
+      ],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Revalida organización, preserva equipo/custodia y pertenencia histórica. No inventa traslado de equipo al cambiar funcionario de unidad.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-17",
+      "method": "PUT",
+      "path": "/api/v2/usuarios/:ref/perfiles",
+      "requestSchema": "Perfiles",
+      "permission": "cuentas.administrar",
+      "pantallas": [
+        "V03-08",
+        "V03-09"
+      ],
+      "campos_modelo": [
+        "AUTORIZACIONES.AUTO_USUARIO_ID",
+        "AUTORIZACIONES.AUTO_PERFIL_ID",
+        "PERFILES.PERF_NIVEL_ACCESO"
+      ],
+      "decisiones": [
+        "M1-D02",
+        "M1-D03",
+        "M1-D11"
+      ],
+      "headers_obligatorios": [
+        "Origin",
+        "X-CSRF-Token",
+        "Idempotency-Key",
+        "If-Match"
+      ],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        412,
+        422,
+        428,
+        503
+      ],
+      "semantica": "Sustitución explícita y atómica del conjunto autorizado, no tabla genérica. Protección de propio rol/último administrador y revocación en próxima petición; combinación pendiente de aprobación.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "ComandoResultado",
+      "errorSchema": "Problem",
+      "pathParameters": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        }
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json",
+        "ETag": "\"vN\""
+      }
+    },
+    {
+      "id": "C03-18",
+      "method": "GET",
+      "path": "/api/v2/organizacion",
+      "requestSchema": null,
+      "permission": "inventario.consultar",
+      "pantallas": [
+        "V03-04",
+        "V03-05"
+      ],
+      "campos_modelo": [
+        "REGIONES.REGI_ID",
+        "DELEGACIONES.DELE_ID",
+        "DEPARTAMENTOS.DEPA_ID",
+        "AREAS.AREA_ID"
+      ],
+      "decisiones": [
+        "M1-D04",
+        "M1-D16"
+      ],
+      "headers_obligatorios": [],
+      "response_success": 200,
+      "errors": [
+        400,
+        401,
+        403,
+        404,
+        503
+      ],
+      "semantica": "Consulta de catálogos organizativos por filtros/paginación; no presupone jerarquías que las FK del modelo no expresan ni ubicación física del equipo.",
+      "estado": "PROPUESTO_NO_IMPLEMENTADO",
+      "responseSchema": "CatalogoPage",
+      "errorSchema": "Problem",
+      "querySchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          },
+          "cursor": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "grupo": {
+            "enum": [
+              "regiones",
+              "delegaciones",
+              "departamentos",
+              "areas"
+            ]
+          }
+        },
+        "required": []
+      },
+      "responseHeaders": {
+        "Content-Type": "application/json"
+      }
+    }
+  ],
+  "schemas": {
+    "Ref": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "Problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "code": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "status",
+        "code",
+        "requestId"
+      ]
+    },
+    "EquipoAlta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "codigoOperativo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "tipoRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "modeloRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "origenRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "numeroSerie": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "motivoSinSerie": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inventarioServiu": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inventarioMinvu": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "adquisicion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "observacion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "condicionRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        }
+      },
+      "required": [
+        "codigoOperativo",
+        "tipoRef",
+        "modeloRef",
+        "condicionRef",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "EquipoAtributos": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "codigoOperativo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "tipoRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "modeloRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "origenRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "numeroSerie": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "motivoSinSerie": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inventarioServiu": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inventarioMinvu": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "adquisicion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "observacion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        }
+      },
+      "required": [
+        "codigoOperativo",
+        "tipoRef",
+        "modeloRef",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "EquipoLectura": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "codigoOperativo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "tipoRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "modeloRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "condicionRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "situacionRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "custodioRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      },
+      "required": [
+        "ref",
+        "codigoOperativo",
+        "tipoRef",
+        "modeloRef",
+        "condicionRef",
+        "situacionRef",
+        "custodioRef",
+        "version"
+      ]
+    },
+    "Movimiento": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        },
+        "tipo": {
+          "enum": [
+            "asignacion",
+            "devolucion",
+            "traslado",
+            "condicion",
+            "baja",
+            "reactivacion"
+          ]
+        },
+        "destinoRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "origenEsperadoRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "condicionRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "corrigeRef": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      },
+      "required": [
+        "tipo",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "MantencionAlta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        },
+        "actividadRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "fecha": {
+          "type": "string",
+          "format": "date"
+        },
+        "observacion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 300
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "actividadRef",
+        "fecha",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "FuncionarioAlta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "documentoTipo": {
+          "enum": [
+            "RUT",
+            "ID"
+          ]
+        },
+        "documento": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "nombre": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "cargo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "correo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "email",
+              "maxLength": 320
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "organizacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "delegacionRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "departamentoRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "areaRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "delegacionRef",
+            "departamentoRef",
+            "areaRef"
+          ]
+        },
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        }
+      },
+      "required": [
+        "documentoTipo",
+        "documento",
+        "nombre",
+        "cargo",
+        "organizacion",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "FuncionarioAtributos": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "documentoTipo": {
+          "enum": [
+            "RUT",
+            "ID"
+          ]
+        },
+        "documento": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "nombre": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "cargo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "correo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "email",
+              "maxLength": 320
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        }
+      },
+      "required": [
+        "documentoTipo",
+        "documento",
+        "nombre",
+        "cargo",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "FuncionarioPublico": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nombre": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "cargo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "organizacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "delegacionRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "departamentoRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "areaRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "delegacionRef",
+            "departamentoRef",
+            "areaRef"
+          ]
+        },
+        "activo": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref",
+        "nombre",
+        "cargo",
+        "organizacion",
+        "activo",
+        "version"
+      ]
+    },
+    "Pertenencia": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "organizacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "delegacionRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "departamentoRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "areaRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "delegacionRef",
+            "departamentoRef",
+            "areaRef"
+          ]
+        },
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        }
+      },
+      "required": [
+        "organizacion",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "Perfiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "perfilRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confirmado": {
+          "const": true
+        }
+      },
+      "required": [
+        "perfilRefs",
+        "motivo",
+        "confirmado"
+      ]
+    },
+    "Tecnica": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "computador"
+            },
+            "nombreRed": {
+              "type": "string",
+              "maxLength": 50,
+              "minLength": 1
+            },
+            "esNotebook": {
+              "type": "boolean"
+            },
+            "sistemaOperativoRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "procesador": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "velocidadGhz": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 99.99
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "piezasAgregar": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "familiaRef": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "capacidadGb": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2147483647
+                  }
+                },
+                "required": [
+                  "familiaRef",
+                  "capacidadGb"
+                ]
+              }
+            },
+            "motivo": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "confirmado": {
+              "const": true
+            },
+            "direccionMac": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 17
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "guid": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 36
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "subtipo",
+            "nombreRed",
+            "esNotebook",
+            "motivo",
+            "confirmado"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "monitor"
+            },
+            "pulgadas": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 999.9
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "confirmado": {
+              "const": true
+            }
+          },
+          "required": [
+            "subtipo",
+            "pulgadas",
+            "motivo",
+            "confirmado"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "impresora"
+            },
+            "claseRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "duplex": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "insumosAgregar": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "rubroRef": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "codigo": {
+                    "type": "string",
+                    "maxLength": 30
+                  }
+                },
+                "required": [
+                  "rubroRef",
+                  "codigo"
+                ]
+              }
+            },
+            "motivo": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "confirmado": {
+              "const": true
+            },
+            "anchoCarro": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 999.9
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "subtipo",
+            "claseRef",
+            "duplex",
+            "motivo",
+            "confirmado"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "switch"
+            },
+            "cantidadPuertos": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32767
+            },
+            "motivo": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "confirmado": {
+              "const": true
+            }
+          },
+          "required": [
+            "subtipo",
+            "cantidadPuertos",
+            "motivo",
+            "confirmado"
+          ]
+        }
+      ]
+    },
+    "AsignacionLectura": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "equipoRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "funcionarioRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "inicio": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fin": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fechaOrigen": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "precisionTemporal": {
+          "enum": [
+            "instante",
+            "dia",
+            "desconocida"
+          ]
+        },
+        "traspasoDeRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vigente": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ref",
+        "equipoRef",
+        "funcionarioRef",
+        "inicio",
+        "fin",
+        "fechaOrigen",
+        "precisionTemporal",
+        "traspasoDeRef",
+        "vigente"
+      ]
+    },
+    "ComandoResultado": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "aviso": {
+          "const": "pendiente"
+        }
+      },
+      "required": [
+        "ref",
+        "version",
+        "aviso"
+      ]
+    },
+    "CatalogoItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "marcaRef": {
+          "anyOf": [
+            {
+              "$ref": "#/schemas/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ref",
+        "nombre"
+      ]
+    },
+    "MantencionLectura": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "$ref": "#/schemas/Ref"
+        },
+        "equipoRef": {
+          "$ref": "#/schemas/Ref"
+        },
+        "actividadRef": {
+          "$ref": "#/schemas/Ref"
+        },
+        "fecha": {
+          "type": "string",
+          "format": "date"
+        },
+        "observacion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 300
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "registradoEn": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ref",
+        "equipoRef",
+        "actividadRef",
+        "fecha",
+        "observacion",
+        "registradoEn"
+      ]
+    },
+    "CatalogoPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/schemas/CatalogoItem"
+          }
+        },
+        "nextCursor": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "const": "UTC"
+        }
+      },
+      "required": [
+        "items",
+        "nextCursor",
+        "generatedAt",
+        "timezone"
+      ]
+    },
+    "EquipoPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/schemas/EquipoLectura"
+          }
+        },
+        "nextCursor": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "const": "UTC"
+        }
+      },
+      "required": [
+        "items",
+        "nextCursor",
+        "generatedAt",
+        "timezone"
+      ]
+    },
+    "FuncionarioPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/schemas/FuncionarioPublico"
+          }
+        },
+        "nextCursor": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "const": "UTC"
+        }
+      },
+      "required": [
+        "items",
+        "nextCursor",
+        "generatedAt",
+        "timezone"
+      ]
+    },
+    "MantencionPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/schemas/MantencionLectura"
+          }
+        },
+        "nextCursor": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "const": "UTC"
+        }
+      },
+      "required": [
+        "items",
+        "nextCursor",
+        "generatedAt",
+        "timezone"
+      ]
+    },
+    "FuncionarioEdicion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "nombre": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "cargo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "organizacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "delegacionRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "departamentoRef": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "areaRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "delegacionRef",
+            "departamentoRef",
+            "areaRef"
+          ]
+        },
+        "activo": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string"
+        },
+        "documentoTipo": {
+          "enum": [
+            "RUT",
+            "ID"
+          ]
+        },
+        "documento": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "correo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "email",
+              "maxLength": 320
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ref",
+        "documentoTipo",
+        "documento",
+        "nombre",
+        "cargo",
+        "correo",
+        "organizacion",
+        "activo",
+        "version"
+      ]
+    },
+    "TecnicaLectura": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "computador"
+            },
+            "nombreRed": {
+              "type": "string",
+              "maxLength": 50,
+              "minLength": 1
+            },
+            "esNotebook": {
+              "type": "boolean"
+            },
+            "sistemaOperativoRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "procesador": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "velocidadGhz": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 99.99
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "direccionMac": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 17
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "guid": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 36
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "piezas": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "familiaRef": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "capacidadGb": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2147483647
+                  }
+                },
+                "required": [
+                  "familiaRef",
+                  "capacidadGb"
+                ]
+              }
+            }
+          },
+          "required": [
+            "subtipo",
+            "nombreRed",
+            "esNotebook"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "monitor"
+            },
+            "pulgadas": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 999.9
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "subtipo",
+            "pulgadas"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "impresora"
+            },
+            "claseRef": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "duplex": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "anchoCarro": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "maximum": 999.9
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "insumos": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "rubroRef": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "codigo": {
+                    "type": "string",
+                    "maxLength": 30
+                  }
+                },
+                "required": [
+                  "rubroRef",
+                  "codigo"
+                ]
+              }
+            }
+          },
+          "required": [
+            "subtipo",
+            "claseRef",
+            "duplex"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "subtipo": {
+              "const": "switch"
+            },
+            "cantidadPuertos": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32767
+            }
+          },
+          "required": [
+            "subtipo",
+            "cantidadPuertos"
+          ]
+        }
+      ]
+    },
+    "EquipoDetalle": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "codigoOperativo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "tipoRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "modeloRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "condicionRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "situacionRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "custodioRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "tecnica": {
+          "anyOf": [
+            {
+              "$ref": "#/schemas/TecnicaLectura"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ref",
+        "codigoOperativo",
+        "tipoRef",
+        "modeloRef",
+        "condicionRef",
+        "situacionRef",
+        "custodioRef",
+        "version",
+        "tecnica"
+      ]
+    },
+    "MovimientoLectura": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string"
+        },
+        "equipoRef": {
+          "$ref": "#/schemas/Ref"
+        },
+        "tipo": {
+          "type": "string"
+        },
+        "origenRef": {
+          "anyOf": [
+            {
+              "$ref": "#/schemas/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "destinoRef": {
+          "anyOf": [
+            {
+              "$ref": "#/schemas/Ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "efectivaEn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "registradaEn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "motivo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref",
+        "equipoRef",
+        "tipo",
+        "origenRef",
+        "destinoRef",
+        "efectivaEn",
+        "registradaEn",
+        "motivo"
+      ]
+    },
+    "AnotacionLectura": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string"
+        },
+        "movimientoRef": {
+          "type": "string"
+        },
+        "texto": {
+          "type": "string"
+        },
+        "registradaEn": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ref",
+        "movimientoRef",
+        "texto",
+        "registradaEn"
+      ]
+    },
+    "Historia": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asignaciones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/schemas/AsignacionLectura"
+          }
+        },
+        "movimientos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/schemas/MovimientoLectura"
+          }
+        },
+        "anotaciones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/schemas/AnotacionLectura"
+          }
+        },
+        "vigente": {
+          "anyOf": [
+            {
+              "$ref": "#/schemas/AsignacionLectura"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "next": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "asignaciones": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "movimientos": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "anotaciones": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "asignaciones",
+            "movimientos",
+            "anotaciones"
+          ]
+        },
+        "timezone": {
+          "const": "UTC"
+        }
+      },
+      "required": [
+        "asignaciones",
+        "movimientos",
+        "anotaciones",
+        "vigente",
+        "next",
+        "timezone"
+      ]
+    }
+  }
+} as const;

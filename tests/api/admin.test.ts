@@ -1,3 +1,4 @@
+import { postgresInventory } from '../../apps/server/inventory/postgres.js';
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
@@ -137,7 +138,7 @@ test("Fase 9: administración HTTP/Auth/RLS/PostgreSQL (identidad doble)", async
     const server = app(
       auth,
       "https://inventario.test",
-      new Inventory(security),
+      new Inventory(postgresInventory(security)),
       undefined,
       security,
     );

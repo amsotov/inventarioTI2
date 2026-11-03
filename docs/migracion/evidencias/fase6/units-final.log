@@ -1,0 +1,15 @@
+✔ M6: servicio de inventario por puerto preserva alcance, versión y errores (3.293252ms)
+✔ M6: selección de motor sin fallback ni activación SQL Server por accidente (0.404855ms)
+✔ M6: nunca envía éxito ni ETag antes de finalizar la transacción (658.463862ms)
+✔ M6: cursores ligados a filtros/recurso y claves públicas/bigint válidas (2.057735ms)
+✔ M6: sonda de 117 columnas enmendadas; núcleo compatible no habilita escrituras (9.585274ms)
+✔ M6: Unicode se mide en unidades UTF-16 sin truncado y campos técnicos ASCII (0.315224ms)
+✔ M6: lectura de catálogos SQL Server parametrizada y sin inventar UUID (2.175659ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1519.272359

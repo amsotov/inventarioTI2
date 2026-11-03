@@ -131,3 +131,8 @@ SQL Server 2016/13.x/compatibilidad 130 y Supabase/PostgreSQL inventarioTI2 conf
 ## M5-A05 — baseline PostgreSQL reutilizada
 
 [Informe](../docs/migracion/VALIDACION_SUPABASE.md) de instalación/ensayo inicial: fuente existente preservada, 19/155, datos sintéticos y 20 casos SQL. Paquete de pruebas aislado, sin reconstrucción del sistema o implementación de fase posterior. SQL Server revisión4 y decisiones pendientes.
+
+
+## Migración Fase 6 — incremento parcial
+
+M6-A01/A02/A03. [Especificación y cobertura](../docs/migracion/06_ADAPTACION_BACKEND.md), [contratos ejecutables](../apps/server/modernization/contract.ts) cotejados con F3 y [pruebas](../docs/migracion/evidencias/fase6/pruebas.json). Repositorio legacy adaptado y frontera nueva; dos lecturas por puerto, cero escrituras de destino. Soporte físico/instancia/reglas pendientes. F6 EN_PROGRESO; F7 no autorizada. Spec Kit no instalado ni simulado.

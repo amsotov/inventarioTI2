@@ -2,10 +2,11 @@ import { Pool, type PoolClient } from 'pg';
 import { AuthService, AuthError } from '../auth/service.js';
 import { hash } from '../auth/crypto.js';
 import { allowed, type Permission } from './policy.js';
+import type { Account } from '../auth/ports.js';
 // Puerto interno: ningún SQL, permiso, contexto o callback proviene del cliente HTTP.
 export class Authorization {
   constructor(private auth: AuthService, private pool: Pool) {}
-  async run<T>(sid: string, permission: Permission, fn: (db: PoolClient) => Promise<T>, csrf?: string, snapshot = false): Promise<T> {
+  async run<T>(sid: string, permission: Permission, fn: (db: PoolClient, account: Readonly<Pick<Account,'id'|'rol'|'version_autorizacion'>>) => Promise<T>, csrf?: string, snapshot = false): Promise<T> {
     await assertDatabaseRole(this.pool,'inventario_runtime');
     return this.auth.withPrincipal(sid,csrf,async account=>{
       const c=await this.pool.connect();
@@ -20,7 +21,7 @@ export class Authorization {
         await c.query('insert into seguridad.eventos(actor_id,permiso,permitido) values($1,$2,$3)',[current.actor_id,permission,permitted]);
         if(!permitted) {await c.query('commit');throw new AuthError(403,'FORBIDDEN');}
         if(['inventario.modificar','cuentas.administrar','configuracion.administrar'].includes(permission) && csrf===undefined) throw new AuthError(403,'FORBIDDEN');
-        const result=await fn(c);
+        const result=await fn(c,Object.freeze({id:account.id,rol:account.rol,version_autorizacion:account.version_autorizacion}));
         await c.query('commit');return result;
       } catch(e) {await c.query('rollback');throw e;} finally {c.release();}
     });

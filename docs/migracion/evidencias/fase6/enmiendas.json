@@ -1,0 +1,984 @@
+{
+  "fase": "MIGRACION_6",
+  "base_git": "27cae1fde225ce10aebef7b89db65da2fd8c1aed",
+  "respuestas_usuario": {
+    "M6-A02": "Sí, conservar Auth y soporte existentes",
+    "M6-A03": "Sí, preservar Unicode e instantes UTC"
+  },
+  "columnas_modificadas": [
+    {
+      "tabla": "ACTIVIDADES_MANTENCION",
+      "campo": "ACTI_NOMBRE",
+      "anterior": {
+        "tabla": "ACTIVIDADES_MANTENCION",
+        "campo": "ACTI_NOMBRE",
+        "tipo": "VARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 113
+      },
+      "nuevo": {
+        "tabla": "ACTIVIDADES_MANTENCION",
+        "campo": "ACTI_NOMBRE",
+        "tipo": "NVARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 113
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AREAS",
+      "campo": "AREA_NOMBRE",
+      "anterior": {
+        "tabla": "AREAS",
+        "campo": "AREA_NOMBRE",
+        "tipo": "VARCHAR(100)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 11
+      },
+      "nuevo": {
+        "tabla": "AREAS",
+        "campo": "AREA_NOMBRE",
+        "tipo": "NVARCHAR(100)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 11
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "CLASES_IMPRESORA",
+      "campo": "CLAS_NOMBRE",
+      "anterior": {
+        "tabla": "CLASES_IMPRESORA",
+        "campo": "CLAS_NOMBRE",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 82
+      },
+      "nuevo": {
+        "tabla": "CLASES_IMPRESORA",
+        "campo": "CLAS_NOMBRE",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 82
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "DEPARTAMENTOS",
+      "campo": "DEPA_NOMBRE",
+      "anterior": {
+        "tabla": "DEPARTAMENTOS",
+        "campo": "DEPA_NOMBRE",
+        "tipo": "VARCHAR(80)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 9
+      },
+      "nuevo": {
+        "tabla": "DEPARTAMENTOS",
+        "campo": "DEPA_NOMBRE",
+        "tipo": "NVARCHAR(80)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 9
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "ESTADOS_EQUIPO",
+      "campo": "ESTA_NOMBRE",
+      "anterior": {
+        "tabla": "ESTADOS_EQUIPO",
+        "campo": "ESTA_NOMBRE",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 54
+      },
+      "nuevo": {
+        "tabla": "ESTADOS_EQUIPO",
+        "campo": "ESTA_NOMBRE",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 54
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "FAMILIAS_COMPONENTE",
+      "campo": "FAMI_NOMBRE",
+      "anterior": {
+        "tabla": "FAMILIAS_COMPONENTE",
+        "campo": "FAMI_NOMBRE",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 90
+      },
+      "nuevo": {
+        "tabla": "FAMILIAS_COMPONENTE",
+        "campo": "FAMI_NOMBRE",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 90
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "MARCAS",
+      "campo": "MARC_NOMBRE",
+      "anterior": {
+        "tabla": "MARCAS",
+        "campo": "MARC_NOMBRE",
+        "tipo": "VARCHAR(60)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 47
+      },
+      "nuevo": {
+        "tabla": "MARCAS",
+        "campo": "MARC_NOMBRE",
+        "tipo": "NVARCHAR(60)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 47
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "MODALIDADES_ASIGNACION",
+      "campo": "MODA_NOMBRE",
+      "anterior": {
+        "tabla": "MODALIDADES_ASIGNACION",
+        "campo": "MODA_NOMBRE",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 103
+      },
+      "nuevo": {
+        "tabla": "MODALIDADES_ASIGNACION",
+        "campo": "MODA_NOMBRE",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 103
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "ORIGENES_EQUIPO",
+      "campo": "ORIG_NOMBRE",
+      "anterior": {
+        "tabla": "ORIGENES_EQUIPO",
+        "campo": "ORIG_NOMBRE",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 52
+      },
+      "nuevo": {
+        "tabla": "ORIGENES_EQUIPO",
+        "campo": "ORIG_NOMBRE",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 52
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "PERFILES",
+      "campo": "PERF_NOMBRE",
+      "anterior": {
+        "tabla": "PERFILES",
+        "campo": "PERF_NOMBRE",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 23
+      },
+      "nuevo": {
+        "tabla": "PERFILES",
+        "campo": "PERF_NOMBRE",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 23
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "PERFILES",
+      "campo": "PERF_DESCRIPCION",
+      "anterior": {
+        "tabla": "PERFILES",
+        "campo": "PERF_DESCRIPCION",
+        "tipo": "VARCHAR(200)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 25
+      },
+      "nuevo": {
+        "tabla": "PERFILES",
+        "campo": "PERF_DESCRIPCION",
+        "tipo": "NVARCHAR(200)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 25
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "REGIONES",
+      "campo": "REGI_NOMBRE",
+      "anterior": {
+        "tabla": "REGIONES",
+        "campo": "REGI_NOMBRE",
+        "tipo": "VARCHAR(60)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 3
+      },
+      "nuevo": {
+        "tabla": "REGIONES",
+        "campo": "REGI_NOMBRE",
+        "tipo": "NVARCHAR(60)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 3
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "RUBROS_INSUMO",
+      "campo": "RUBR_NOMBRE",
+      "anterior": {
+        "tabla": "RUBROS_INSUMO",
+        "campo": "RUBR_NOMBRE",
+        "tipo": "VARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 97
+      },
+      "nuevo": {
+        "tabla": "RUBROS_INSUMO",
+        "campo": "RUBR_NOMBRE",
+        "tipo": "NVARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 97
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "SISTEMAS_OPERATIVOS",
+      "campo": "SIST_NOMBRE",
+      "anterior": {
+        "tabla": "SISTEMAS_OPERATIVOS",
+        "campo": "SIST_NOMBRE",
+        "tipo": "VARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 70
+      },
+      "nuevo": {
+        "tabla": "SISTEMAS_OPERATIVOS",
+        "campo": "SIST_NOMBRE",
+        "tipo": "NVARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 70
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "SITUACIONES",
+      "campo": "SITU_NOMBRE",
+      "anterior": {
+        "tabla": "SITUACIONES",
+        "campo": "SITU_NOMBRE",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 56
+      },
+      "nuevo": {
+        "tabla": "SITUACIONES",
+        "campo": "SITU_NOMBRE",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 56
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "TIPOS_EQUIPO",
+      "campo": "TIPO_NOMBRE",
+      "anterior": {
+        "tabla": "TIPOS_EQUIPO",
+        "campo": "TIPO_NOMBRE",
+        "tipo": "VARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 45
+      },
+      "nuevo": {
+        "tabla": "TIPOS_EQUIPO",
+        "campo": "TIPO_NOMBRE",
+        "tipo": "NVARCHAR(40)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 45
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "DELEGACIONES",
+      "campo": "DELE_NOMBRE",
+      "anterior": {
+        "tabla": "DELEGACIONES",
+        "campo": "DELE_NOMBRE",
+        "tipo": "VARCHAR(60)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 6
+      },
+      "nuevo": {
+        "tabla": "DELEGACIONES",
+        "campo": "DELE_NOMBRE",
+        "tipo": "NVARCHAR(60)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 6
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "DELEGACIONES",
+      "campo": "DELE_DIRECCION",
+      "anterior": {
+        "tabla": "DELEGACIONES",
+        "campo": "DELE_DIRECCION",
+        "tipo": "VARCHAR(150)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 7
+      },
+      "nuevo": {
+        "tabla": "DELEGACIONES",
+        "campo": "DELE_DIRECCION",
+        "tipo": "NVARCHAR(150)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 7
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "MODELOS",
+      "campo": "MODE_NOMBRE",
+      "anterior": {
+        "tabla": "MODELOS",
+        "campo": "MODE_NOMBRE",
+        "tipo": "VARCHAR(100)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 50
+      },
+      "nuevo": {
+        "tabla": "MODELOS",
+        "campo": "MODE_NOMBRE",
+        "tipo": "NVARCHAR(100)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 50
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "EQUIPOS",
+      "campo": "EQUI_NUMERO_SERIE",
+      "anterior": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_NUMERO_SERIE",
+        "tipo": "VARCHAR(60)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 63
+      },
+      "nuevo": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_NUMERO_SERIE",
+        "tipo": "NVARCHAR(60)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 63
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "EQUIPOS",
+      "campo": "EQUI_INVENTARIO_SERVIU",
+      "anterior": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_INVENTARIO_SERVIU",
+        "tipo": "VARCHAR(30)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 64
+      },
+      "nuevo": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_INVENTARIO_SERVIU",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 64
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "EQUIPOS",
+      "campo": "EQUI_INVENTARIO_MINVU",
+      "anterior": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_INVENTARIO_MINVU",
+        "tipo": "VARCHAR(30)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 65
+      },
+      "nuevo": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_INVENTARIO_MINVU",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 65
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "EQUIPOS",
+      "campo": "EQUI_OBSERVACION",
+      "anterior": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_OBSERVACION",
+        "tipo": "VARCHAR(500)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 68
+      },
+      "nuevo": {
+        "tabla": "EQUIPOS",
+        "campo": "EQUI_OBSERVACION",
+        "tipo": "NVARCHAR(500)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 68
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "FUNCIONARIOS",
+      "campo": "FUNC_NOMBRE_COMPLETO",
+      "anterior": {
+        "tabla": "FUNCIONARIOS",
+        "campo": "FUNC_NOMBRE_COMPLETO",
+        "tipo": "VARCHAR(150)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 13
+      },
+      "nuevo": {
+        "tabla": "FUNCIONARIOS",
+        "campo": "FUNC_NOMBRE_COMPLETO",
+        "tipo": "NVARCHAR(150)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 13
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "FUNCIONARIOS",
+      "campo": "FUNC_USUARIO_RED",
+      "anterior": {
+        "tabla": "FUNCIONARIOS",
+        "campo": "FUNC_USUARIO_RED",
+        "tipo": "VARCHAR(50)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 14
+      },
+      "nuevo": {
+        "tabla": "FUNCIONARIOS",
+        "campo": "FUNC_USUARIO_RED",
+        "tipo": "NVARCHAR(50)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 14
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "FUNCIONARIOS",
+      "campo": "FUNC_CORREO",
+      "anterior": {
+        "tabla": "FUNCIONARIOS",
+        "campo": "FUNC_CORREO",
+        "tipo": "VARCHAR(150)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 15
+      },
+      "nuevo": {
+        "tabla": "FUNCIONARIOS",
+        "campo": "FUNC_CORREO",
+        "tipo": "NVARCHAR(150)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 15
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "ASIGNACIONES",
+      "campo": "ASIG_OBSERVACION",
+      "anterior": {
+        "tabla": "ASIGNACIONES",
+        "campo": "ASIG_OBSERVACION",
+        "tipo": "VARCHAR(300)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 111
+      },
+      "nuevo": {
+        "tabla": "ASIGNACIONES",
+        "campo": "ASIG_OBSERVACION",
+        "tipo": "NVARCHAR(300)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 111
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "COMPUTADORES",
+      "campo": "COMP_NOMBRE_RED",
+      "anterior": {
+        "tabla": "COMPUTADORES",
+        "campo": "COMP_NOMBRE_RED",
+        "tipo": "VARCHAR(50)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 73
+      },
+      "nuevo": {
+        "tabla": "COMPUTADORES",
+        "campo": "COMP_NOMBRE_RED",
+        "tipo": "NVARCHAR(50)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 73
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "COMPUTADORES",
+      "campo": "COMP_PROCESADOR",
+      "anterior": {
+        "tabla": "COMPUTADORES",
+        "campo": "COMP_PROCESADOR",
+        "tipo": "VARCHAR(100)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 76
+      },
+      "nuevo": {
+        "tabla": "COMPUTADORES",
+        "campo": "COMP_PROCESADOR",
+        "tipo": "NVARCHAR(100)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 76
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "MANTENCIONES",
+      "campo": "MANT_OBSERVACION",
+      "anterior": {
+        "tabla": "MANTENCIONES",
+        "campo": "MANT_OBSERVACION",
+        "tipo": "VARCHAR(300)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 118
+      },
+      "nuevo": {
+        "tabla": "MANTENCIONES",
+        "campo": "MANT_OBSERVACION",
+        "tipo": "NVARCHAR(300)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 118
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "USUARIOS",
+      "campo": "USUA_CLAVE_HASH",
+      "anterior": {
+        "tabla": "USUARIOS",
+        "campo": "USUA_CLAVE_HASH",
+        "tipo": "VARCHAR(255)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 28
+      },
+      "nuevo": {
+        "tabla": "USUARIOS",
+        "campo": "USUA_CLAVE_HASH",
+        "tipo": "VARCHAR(255)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 28
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "USUARIOS",
+      "campo": "USUA_FECHA_CREACION",
+      "anterior": {
+        "tabla": "USUARIOS",
+        "campo": "USUA_FECHA_CREACION",
+        "tipo": "DATETIME2",
+        "permite_null": false,
+        "identity": false,
+        "default": "SYSDATETIME()",
+        "fila_excel": 30
+      },
+      "nuevo": {
+        "tabla": "USUARIOS",
+        "campo": "USUA_FECHA_CREACION",
+        "tipo": "DATETIME2(7)",
+        "permite_null": false,
+        "identity": false,
+        "default": "SYSUTCDATETIME()",
+        "fila_excel": 30
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_FECHA_HORA",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_FECHA_HORA",
+        "tipo": "DATETIME2",
+        "permite_null": false,
+        "identity": false,
+        "default": "SYSDATETIME()",
+        "fila_excel": 36
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_FECHA_HORA",
+        "tipo": "DATETIME2(7)",
+        "permite_null": false,
+        "identity": false,
+        "default": "SYSUTCDATETIME()",
+        "fila_excel": 36
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_ACCION",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_ACCION",
+        "tipo": "VARCHAR(20)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 37
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_ACCION",
+        "tipo": "NVARCHAR(20)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 37
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_ENTIDAD",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_ENTIDAD",
+        "tipo": "VARCHAR(60)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 38
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_ENTIDAD",
+        "tipo": "NVARCHAR(60)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 38
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_ENTIDAD_ID",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_ENTIDAD_ID",
+        "tipo": "VARCHAR(50)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 39
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_ENTIDAD_ID",
+        "tipo": "NVARCHAR(50)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 39
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_VALOR_ANTERIOR",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_VALOR_ANTERIOR",
+        "tipo": "VARCHAR(MAX)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 40
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_VALOR_ANTERIOR",
+        "tipo": "NVARCHAR(MAX)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 40
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_VALOR_NUEVO",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_VALOR_NUEVO",
+        "tipo": "VARCHAR(MAX)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 41
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_VALOR_NUEVO",
+        "tipo": "NVARCHAR(MAX)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 41
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_CONTEXTO",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_CONTEXTO",
+        "tipo": "VARCHAR(500)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 42
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_CONTEXTO",
+        "tipo": "NVARCHAR(500)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 42
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUDITORIA",
+      "campo": "AUDI_DIRECCION_IP",
+      "anterior": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_DIRECCION_IP",
+        "tipo": "VARCHAR(45)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 43
+      },
+      "nuevo": {
+        "tabla": "AUDITORIA",
+        "campo": "AUDI_DIRECCION_IP",
+        "tipo": "NVARCHAR(45)",
+        "permite_null": true,
+        "identity": false,
+        "default": "",
+        "fila_excel": 43
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "AUTORIZACIONES",
+      "campo": "AUTO_FECHA_OTORGADO",
+      "anterior": {
+        "tabla": "AUTORIZACIONES",
+        "campo": "AUTO_FECHA_OTORGADO",
+        "tipo": "DATETIME2",
+        "permite_null": false,
+        "identity": false,
+        "default": "SYSDATETIME()",
+        "fila_excel": 33
+      },
+      "nuevo": {
+        "tabla": "AUTORIZACIONES",
+        "campo": "AUTO_FECHA_OTORGADO",
+        "tipo": "DATETIME2(7)",
+        "permite_null": false,
+        "identity": false,
+        "default": "SYSUTCDATETIME()",
+        "fila_excel": 33
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    },
+    {
+      "tabla": "INSUMOS_IMPRESORA",
+      "campo": "INSU_CODIGO",
+      "anterior": {
+        "tabla": "INSUMOS_IMPRESORA",
+        "campo": "INSU_CODIGO",
+        "tipo": "VARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 101
+      },
+      "nuevo": {
+        "tabla": "INSUMOS_IMPRESORA",
+        "campo": "INSU_CODIGO",
+        "tipo": "NVARCHAR(30)",
+        "permite_null": false,
+        "identity": false,
+        "default": "",
+        "fila_excel": 101
+      },
+      "autorizacion": "M6-A02/M6-A03"
+    }
+  ],
+  "campos_ascii_conservados": [
+    "COMP_DIRECCION_MAC",
+    "COMP_GUID",
+    "EQUI_DIRECCION_IP",
+    "FUNC_CLAVE_IMPRESION",
+    "USUA_CLAVE_HASH"
+  ],
+  "limites": "Campos/PK/FK/UQ/IDENTITY y DATE histórico conservados; longitudes del diccionario no se amplían por inferencia; no SQL Server ejecutado"
+}

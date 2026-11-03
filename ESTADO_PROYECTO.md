@@ -2,13 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0 y 1: COMPLETADAS por aprobación del usuario. FASE 2: EN_REVISION. FASE 3: NO AUTORIZADA.**
+**Migración FASES 0–2: COMPLETADAS por aprobación del usuario. FASE 3: EN_REVISION. FASE 4: NO AUTORIZADA.**
 
-Autorización vigente: «apruebo y inicia fase 2», posterior a la entrega `9dbaa2f`. Se acepta la validación documental y se prepara únicamente línea base/trazabilidad/mapeo. Los diseños alternativos y decisiones condicionadas a datos de M1-D01–M1-D16 conservan sus condiciones; ninguna recomendación se ejecuta por inferencia.
+Autorización: «apruebo fase 2 inicia fase 3», posterior a entrega `b29d60c`. Se prepara diseño visual y de contratos, sin implementación de aplicación/API/BD. [Impacto frontend/API](docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño y capturas](docs/migracion/03_DISENO_VISUAL.md), [contratos propuestos](docs/migracion/03_CONTRATOS_PROPUESTOS.json) y [continuidad](INICIAR_EN_CODEX.md). Maqueta aislada documental con datos sintéticos; las validaciones son simuladas.
 
-Entregables: [matriz de trazabilidad](docs/migracion/02_MATRIZ_TRAZABILIDAD.md), [mapeo de esquemas](docs/migracion/02_MAPEO_ESQUEMAS.md), [línea base](docs/migracion/02_LINEA_BASE_FUNCIONAL.md) y [continuidad](INICIAR_EN_CODEX.md). Sin SQL, cambios de datos/esquema/aplicación, merge ni despliegues. Todos los cambios autorizados se guardan en GitHub en rama dedicada.
-
-La numeración de migración 0–9 es independiente del desarrollo histórico 0–15. Su última fase completada es 13, Fase 14 sigue EN_REVISION y Fase 15 sin autorización; F1-SEG-01/02/03 permanecen. La Fase 2 de migración no es diseño visual.
+Las decisiones M1-D condicionadas a datos/opciones conservan sus pendientes. GitHub en rama dedicada, sin merge/despliegue. La numeración de migración 0–9 sigue separada del desarrollo histórico 0–15: última completada 13, Fase 14 EN_REVISION, Fase 15 sin autorización. F1-SEG-01/02/03 y UTC/RPO/RTO se conservan.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Fecha del resumen histórico:** 2026-11-02
@@ -571,3 +569,8 @@ El usuario cambió la fuente Pages a GitHub Actions (`build_type=workflow` confi
 ## Entrega vigente de migración Fase 2 — M2-A01
 
 Base 9dbaa2f, fuentes y aplicación conservadas. 23 requisitos, 19 reglas, 16 historias y 20 CR trazados; 19 tablas/155 columnas actuales y 30 tablas/117 campos de destino documentados. Inventarios API/UI y títulos de pruebas existentes, sin reejecución funcional. Verificación estática de cobertura/referencias/hashes; informes en docs/migracion/02_*. Fase 2 EN_REVISION, Fase 3 no autorizada. GitHub por rama dedicada y SHA remoto verificado al entregar, sin main ni despliegue.
+
+
+## Entrega vigente de migración Fase 3 — M3-A01
+
+Base b29d60c. Diseño de 11 vistas y contratos: conserva 49 pares método/ruta existentes; propone 18 v2 y cobertura de 117 campos. Maqueta HTML/CSS/JS aislada bajo docs/migracion, sin aplicación/API/BD. Playwright/Chromium 1440/768/390 y datos ficticios; capturas/evidencia del ensayo, límites de emulación. Fase 3 EN_REVISION y Fase 4 no autorizada. Sin SQL, integración gestionada, merge ni despliegue; GitHub y SHA remoto al entregar.

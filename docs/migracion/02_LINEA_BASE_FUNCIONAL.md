@@ -1,5 +1,7 @@
 # FASE 2 — Inventario funcional de referencia
 
+> Continuidad: usuario acepta Fase 2 mediante «apruebo fase 2 inicia fase 3». Fase 2 COMPLETADA; contenido/evidencia siguiente describe entrega original. Estado actual en [FASES](../../FASES.md) y [Fase 3](03_IMPACTO_FRONTEND_API.md).
+
 Fecha: 2026-11-03. Base `9dbaa2fe3955e75f237caf873ef2ca44346241c2`. Inspección estática, sin recorrido ejecutado en navegador ni base desplegada consultada.
 
 ## API y contratos

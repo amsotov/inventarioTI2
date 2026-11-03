@@ -1,0 +1,1821 @@
+{
+  "estado": "APROBADA_EN_ALCANCE_MAQUETA",
+  "motor": "Chromium /usr/bin/chromium",
+  "viewports": [
+    1440,
+    768,
+    390
+  ],
+  "zona_navegador": "America/Santiago",
+  "locale": "es-CL",
+  "rutas": [
+    "resumen",
+    "equipos",
+    "equipo/demo-01",
+    "equipo/nuevo",
+    "funcionarios",
+    "asignaciones",
+    "mantenciones",
+    "administracion",
+    "seguridad",
+    "auditoria",
+    "reportes"
+  ],
+  "roles": [
+    "administrador",
+    "lectura"
+  ],
+  "comprobaciones": 430,
+  "fallidas": 0,
+  "capturas": [
+    {
+      "archivo": "1440-administrador-equipos.png",
+      "ancho": 1440,
+      "alto_viewport": 1000,
+      "rol": "administrador",
+      "ruta": "equipos"
+    },
+    {
+      "archivo": "1440-administrador-equipo-nuevo.png",
+      "ancho": 1440,
+      "alto_viewport": 1000,
+      "rol": "administrador",
+      "ruta": "equipo/nuevo"
+    },
+    {
+      "archivo": "1440-administrador-auditoria.png",
+      "ancho": 1440,
+      "alto_viewport": 1000,
+      "rol": "administrador",
+      "ruta": "auditoria"
+    },
+    {
+      "archivo": "768-administrador-mantenciones.png",
+      "ancho": 768,
+      "alto_viewport": 1024,
+      "rol": "administrador",
+      "ruta": "mantenciones"
+    },
+    {
+      "archivo": "768-lectura-reportes.png",
+      "ancho": 768,
+      "alto_viewport": 1024,
+      "rol": "lectura",
+      "ruta": "reportes"
+    },
+    {
+      "archivo": "390-administrador-asignaciones.png",
+      "ancho": 390,
+      "alto_viewport": 844,
+      "rol": "administrador",
+      "ruta": "asignaciones"
+    },
+    {
+      "archivo": "390-lectura-equipo-demo-01.png",
+      "ancho": 390,
+      "alto_viewport": 844,
+      "rol": "lectura",
+      "ruta": "equipo/demo-01"
+    },
+    {
+      "archivo": "390-lectura-administracion.png",
+      "ancho": 390,
+      "alto_viewport": 844,
+      "rol": "lectura",
+      "ruta": "administracion"
+    }
+  ],
+  "errores_js": [],
+  "errores_consola": [],
+  "solicitudes_externas": [],
+  "llamadas_api": [],
+  "checks": [
+    {
+      "nombre": "1440/administrador/resumen: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/resumen: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/resumen: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/resumen: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/resumen: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipos: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipos: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipos: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipos: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipos: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/demo-01: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/demo-01: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/demo-01: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/demo-01: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/demo-01: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/nuevo: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/nuevo: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/nuevo: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/nuevo: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/equipo/nuevo: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/funcionarios: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/funcionarios: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/funcionarios: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/funcionarios: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/funcionarios: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/asignaciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/asignaciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/asignaciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/asignaciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/asignaciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/mantenciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/mantenciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/mantenciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/mantenciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/mantenciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/administracion: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/administracion: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/administracion: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/administracion: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/administracion: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/seguridad: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/seguridad: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/seguridad: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/seguridad: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/seguridad: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/auditoria: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/auditoria: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/auditoria: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/auditoria: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/auditoria: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/reportes: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/reportes: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/reportes: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/reportes: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador/reportes: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador: alta según rol",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador: filtro vacío",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador: estado carga",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador: estado vacio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador: estado error",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador: estado permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/administrador: auditoría en selector",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/resumen: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/resumen: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/resumen: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/resumen: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/resumen: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipos: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipos: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipos: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipos: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipos: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/demo-01: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/demo-01: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/demo-01: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/demo-01: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/demo-01: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/nuevo: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/nuevo: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/nuevo: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/nuevo: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/equipo/nuevo: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/funcionarios: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/funcionarios: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/funcionarios: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/funcionarios: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/funcionarios: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/asignaciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/asignaciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/asignaciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/asignaciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/asignaciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/mantenciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/mantenciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/mantenciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/mantenciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/mantenciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/administracion: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/administracion: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/administracion: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/administracion: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/administracion: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/seguridad: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/seguridad: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/seguridad: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/seguridad: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/seguridad: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/auditoria: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/auditoria: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/auditoria: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/auditoria: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/auditoria: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/reportes: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/reportes: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/reportes: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/reportes: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura/reportes: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura: alta según rol",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura: filtro vacío",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura: estado carga",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura: estado vacio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura: estado error",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura: estado permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440/lectura: auditoría en selector",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: motivo sin serie obligatorio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: datos conservados tras validación",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: validación simulada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: piezas como filas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: subtipo Monitor",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: subtipo Impresora",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: subtipo Switch",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: periférico sin subtipo ficticio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: modelo filtrado por marca",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: traspaso a sí mismo rechazado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: baja con custodia bloqueada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: revisión de traslado sin escritura",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: rango inválido",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: búsqueda muestra ambos conjuntos",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: exportación marcada simulada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: salto conserva ruta y enfoca contenido",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: sin almacenamiento persistente",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "1440: cabecera de revisión no tapa sidebar",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/resumen: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/resumen: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/resumen: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/resumen: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/resumen: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipos: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipos: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipos: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipos: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipos: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/demo-01: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/demo-01: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/demo-01: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/demo-01: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/demo-01: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/nuevo: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/nuevo: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/nuevo: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/nuevo: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/equipo/nuevo: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/funcionarios: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/funcionarios: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/funcionarios: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/funcionarios: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/funcionarios: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/asignaciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/asignaciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/asignaciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/asignaciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/asignaciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/mantenciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/mantenciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/mantenciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/mantenciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/mantenciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/administracion: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/administracion: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/administracion: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/administracion: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/administracion: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/seguridad: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/seguridad: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/seguridad: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/seguridad: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/seguridad: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/auditoria: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/auditoria: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/auditoria: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/auditoria: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/auditoria: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/reportes: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/reportes: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/reportes: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/reportes: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador/reportes: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador: alta según rol",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador: filtro vacío",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador: estado carga",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador: estado vacio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador: estado error",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador: estado permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/administrador: auditoría en selector",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/resumen: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/resumen: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/resumen: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/resumen: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/resumen: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipos: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipos: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipos: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipos: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipos: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/demo-01: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/demo-01: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/demo-01: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/demo-01: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/demo-01: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/nuevo: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/nuevo: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/nuevo: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/nuevo: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/equipo/nuevo: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/funcionarios: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/funcionarios: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/funcionarios: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/funcionarios: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/funcionarios: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/asignaciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/asignaciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/asignaciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/asignaciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/asignaciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/mantenciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/mantenciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/mantenciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/mantenciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/mantenciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/administracion: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/administracion: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/administracion: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/administracion: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/administracion: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/seguridad: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/seguridad: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/seguridad: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/seguridad: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/seguridad: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/auditoria: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/auditoria: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/auditoria: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/auditoria: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/auditoria: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/reportes: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/reportes: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/reportes: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/reportes: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura/reportes: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura: alta según rol",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura: filtro vacío",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura: estado carga",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura: estado vacio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura: estado error",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura: estado permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768/lectura: auditoría en selector",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: motivo sin serie obligatorio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: datos conservados tras validación",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: validación simulada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: piezas como filas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: subtipo Monitor",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: subtipo Impresora",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: subtipo Switch",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: periférico sin subtipo ficticio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: modelo filtrado por marca",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: traspaso a sí mismo rechazado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: baja con custodia bloqueada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: revisión de traslado sin escritura",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: rango inválido",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: búsqueda muestra ambos conjuntos",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: exportación marcada simulada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: salto conserva ruta y enfoca contenido",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: sin almacenamiento persistente",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "768: cabecera de revisión no tapa sidebar",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/resumen: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/resumen: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/resumen: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/resumen: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/resumen: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipos: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipos: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipos: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipos: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipos: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/demo-01: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/demo-01: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/demo-01: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/demo-01: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/demo-01: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/nuevo: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/nuevo: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/nuevo: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/nuevo: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/equipo/nuevo: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/funcionarios: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/funcionarios: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/funcionarios: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/funcionarios: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/funcionarios: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/asignaciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/asignaciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/asignaciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/asignaciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/asignaciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/mantenciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/mantenciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/mantenciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/mantenciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/mantenciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/administracion: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/administracion: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/administracion: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/administracion: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/administracion: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/seguridad: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/seguridad: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/seguridad: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/seguridad: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/seguridad: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/auditoria: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/auditoria: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/auditoria: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/auditoria: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/auditoria: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/reportes: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/reportes: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/reportes: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/reportes: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador/reportes: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador: alta según rol",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador: filtro vacío",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador: estado carga",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador: estado vacio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador: estado error",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador: estado permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/administrador: auditoría en selector",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/resumen: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/resumen: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/resumen: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/resumen: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/resumen: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipos: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipos: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipos: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipos: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipos: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/demo-01: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/demo-01: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/demo-01: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/demo-01: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/demo-01: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/nuevo: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/nuevo: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/nuevo: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/nuevo: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/equipo/nuevo: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/funcionarios: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/funcionarios: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/funcionarios: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/funcionarios: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/funcionarios: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/asignaciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/asignaciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/asignaciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/asignaciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/asignaciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/mantenciones: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/mantenciones: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/mantenciones: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/mantenciones: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/mantenciones: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/administracion: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/administracion: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/administracion: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/administracion: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/administracion: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/seguridad: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/seguridad: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/seguridad: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/seguridad: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/seguridad: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/auditoria: permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/auditoria: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/auditoria: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/auditoria: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/auditoria: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/reportes: vista",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/reportes: sin desborde global",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/reportes: encabezado único",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/reportes: etiquetas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura/reportes: tablas con encabezado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura: alta según rol",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura: filtro vacío",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura: estado carga",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura: estado vacio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura: estado error",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura: estado permiso",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390/lectura: auditoría en selector",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: motivo sin serie obligatorio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: datos conservados tras validación",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: validación simulada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: piezas como filas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: subtipo Monitor",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: subtipo Impresora",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: subtipo Switch",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: periférico sin subtipo ficticio",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: modelo filtrado por marca",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: traspaso a sí mismo rechazado",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: baja con custodia bloqueada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: revisión de traslado sin escritura",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: rango inválido",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: búsqueda muestra ambos conjuntos",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: exportación marcada simulada",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: salto conserva ruta y enfoca contenido",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: sin almacenamiento persistente",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "390: cabecera de revisión no tapa sidebar",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "Sin errores JavaScript",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "Sin errores de consola",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "Sin solicitudes externas",
+      "resultado": "APROBADA"
+    },
+    {
+      "nombre": "Sin llamadas API",
+      "resultado": "APROBADA"
+    }
+  ],
+  "limites": [
+    "Maqueta documental; no aplicación React integrada",
+    "Roles, validaciones y acciones solo simulados",
+    "Sin SQL, API, identidad real, correo, exportación ni persistencia",
+    "Sin Safari, hardware, lector de pantalla o certificación WCAG",
+    "Sin aprobación visual del usuario ni Fase 4"
+  ]
+}

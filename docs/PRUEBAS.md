@@ -424,3 +424,8 @@ NO EJECUTADAS: SQL, migraciones, build, suites funcionales/API/UI, carga, integr
 ## Migración Fase 2 — verificación documental
 
 `python3 docs/migracion/verificar_fase2.py`: cobertura RF/RNF/RN/HU/CR, 19 tablas/155 campos actuales, 30 tablas/117 campos destino, referencias de API/UI/pruebas y hashes de fuentes. [Evidencia](migracion/evidencias/fase2/verificacion.json). Fuentes de modelo, aplicación, migraciones, tests y evidencias históricas preservadas. Revisión de enlaces y diff --check. Las pruebas existentes se referencian por archivo/título/línea; NO REEJECUTADAS. Sin SQL, build, pruebas funcionales, datos reales, despliegue ni integración gestionada. Fase 2 EN_REVISION, no Fase 3.
+
+
+## Migración Fase 3 — maqueta y documentación
+
+`python3 docs/migracion/evidencias/fase3/verificar_prototipo.py`: Playwright/Chromium local, 11 vistas/ambos perfiles/1440–768–390, estados, filtros, validaciones ilustrativas, teclado/scroll y ausencia de API/solicitudes externas; [evidencia](migracion/evidencias/fase3/navegador.json). Capturas reales de propuesta sintética. `python3 docs/migracion/verificar_fase3.py`: compatibilidad 49 rutas, 18 contratos, 117 campos, referencias y fuentes preservadas; [evidencia](migracion/evidencias/fase3/verificacion.json). No SQL, aplicación React, identidad, correo, exportación real ni WCAG integral acreditados. Fase 3 EN_REVISION, Fase 4 no autorizada.

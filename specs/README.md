@@ -105,3 +105,8 @@ Fase 0 aprobada; Fase 1 EN_REVISION. [Validación campo por campo](../docs/migra
 ## Migración Fase 2 — M2-A01
 
 Fase 1 aceptada por «apruebo y inicia fase 2». [Matriz](../docs/migracion/02_MATRIZ_TRAZABILIDAD.md) y [mapeo](../docs/migracion/02_MAPEO_ESQUEMAS.md) entregados EN_REVISION. Fase 3 no autorizada. La aprobación documental no ejecuta decisiones físicas ni resuelve datos condicionados. Spec Kit no instalado ni simulado; sin cambios de aplicación o SQL.
+
+
+## Migración Fase 3 — M3-A01
+
+Fase 2 aceptada. [Impacto frontend/API](../docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño](../docs/migracion/03_DISENO_VISUAL.md) y contratos versionados propuestos EN_REVISION. Maqueta documental aislada; sin implementación de aplicación/SQL ni instalación de Spec Kit. Fase 4 no autorizada.

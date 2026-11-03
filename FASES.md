@@ -2,13 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0 y 1: COMPLETADAS por aprobación del usuario. FASE 2: EN_REVISION. FASE 3: NO AUTORIZADA.**
+**Migración FASES 0–2: COMPLETADAS por aprobación del usuario. FASE 3: EN_REVISION. FASE 4: NO AUTORIZADA.**
 
-Autorización vigente: «apruebo y inicia fase 2», posterior a la entrega `9dbaa2f`. Se acepta la validación documental y se prepara únicamente línea base/trazabilidad/mapeo. Los diseños alternativos y decisiones condicionadas a datos de M1-D01–M1-D16 conservan sus condiciones; ninguna recomendación se ejecuta por inferencia.
+Autorización: «apruebo fase 2 inicia fase 3», posterior a entrega `b29d60c`. Se prepara diseño visual y de contratos, sin implementación de aplicación/API/BD. [Impacto frontend/API](docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño y capturas](docs/migracion/03_DISENO_VISUAL.md), [contratos propuestos](docs/migracion/03_CONTRATOS_PROPUESTOS.json) y [continuidad](INICIAR_EN_CODEX.md). Maqueta aislada documental con datos sintéticos; las validaciones son simuladas.
 
-Entregables: [matriz de trazabilidad](docs/migracion/02_MATRIZ_TRAZABILIDAD.md), [mapeo de esquemas](docs/migracion/02_MAPEO_ESQUEMAS.md), [línea base](docs/migracion/02_LINEA_BASE_FUNCIONAL.md) y [continuidad](INICIAR_EN_CODEX.md). Sin SQL, cambios de datos/esquema/aplicación, merge ni despliegues. Todos los cambios autorizados se guardan en GitHub en rama dedicada.
-
-La numeración de migración 0–9 es independiente del desarrollo histórico 0–15. Su última fase completada es 13, Fase 14 sigue EN_REVISION y Fase 15 sin autorización; F1-SEG-01/02/03 permanecen. La Fase 2 de migración no es diseño visual.
+Las decisiones M1-D condicionadas a datos/opciones conservan sus pendientes. GitHub en rama dedicada, sin merge/despliegue. La numeración de migración 0–9 sigue separada del desarrollo histórico 0–15: última completada 13, Fase 14 EN_REVISION, Fase 15 sin autorización. F1-SEG-01/02/03 y UTC/RPO/RTO se conservan.
 
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
@@ -568,3 +566,8 @@ El usuario cambió la fuente Pages a GitHub Actions (`build_type=workflow` confi
 ## M2-A01 — Aceptación de Fase 1 e inicio de Fase 2 de migración
 
 2026-11-03. Usuario: «apruebo y inicia fase 2». Acepta entrega `9dbaa2f` y cierra Fase 1 de migración; autoriza únicamente línea base/trazabilidad/mapeo. Fase 2 entregada EN_REVISION, CA-M2-01–05 documentales verificados, CA-M2-06 pendiente de aceptación. Fase 3 no autorizada. Las alternativas/datos condicionados del registro M1-D conservan sus condiciones. No modifica estados históricos D-14/D-38 ni autoriza merge/despliegue/SQL.
+
+
+## M3-A01 — Cierre Fase 2 e inicio exclusivo de diseño
+
+2026-11-03. Usuario: «apruebo fase 2 inicia fase 3». Acepta b29d60c y cierra Fase 2; autoriza solo diseño visual/contratos. Fase 3 EN_REVISION, aceptación visual/contractual CA-M3-06 pendiente; Fase 4 no autorizada. Maqueta documental aislada, fuentes/aplicación sin cambios; sin SQL, merge ni despliegue. Las decisiones de datos/opciones pendientes no se resuelven por dibujarlas.

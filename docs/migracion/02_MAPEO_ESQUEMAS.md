@@ -1,5 +1,7 @@
 # FASE 2 — Mapeo de esquemas y matriz de impacto
 
+> Continuidad: usuario acepta Fase 2 mediante «apruebo fase 2 inicia fase 3». Fase 2 COMPLETADA; contenido/evidencia siguiente describe entrega original. Estado actual en [FASES](../../FASES.md) y [Fase 3](03_IMPACTO_FRONTEND_API.md).
+
 Fecha: 2026-11-03. Estado: **EN_REVISION / PROPUESTA DOCUMENTAL**. Base `9dbaa2fe3955e75f237caf873ef2ca44346241c2`.
 
 ## Alcance y significado de las correspondencias

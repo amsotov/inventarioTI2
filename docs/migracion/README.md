@@ -27,3 +27,8 @@ Usuario: «apruebo y inicia fase 2». Fase 1 aceptada; Fase 2 EN_REVISION; Fase 
 - [Esquema actual declarado](02_ESQUEMA_ACTUAL.csv), [verificador](verificar_fase2.py) y [evidencia](evidencias/fase2/verificacion.json).
 
 Decisiones con alternativas/datos pendientes no se resuelven automáticamente por aceptar la fase. Sin implementación, SQL ni despliegues.
+
+
+## Continuidad vigente — Fase 3
+
+Usuario acepta Fase 2 y autoriza diseño. [03_IMPACTO_FRONTEND_API.md](03_IMPACTO_FRONTEND_API.md), [03_DISENO_VISUAL.md](03_DISENO_VISUAL.md), [pantallas](03_PANTALLAS.csv), [compatibilidad](03_COMPATIBILIDAD_API.csv), [borrador v2](03_CONTRATOS_PROPUESTOS.json), [campos UI/API](03_CAMPOS_UI_API.csv) y [evidencia](evidencias/fase3/verificacion.json). Fase 3 EN_REVISION; Fase 4 NO AUTORIZADA. Apartados anteriores describen entregas previas. Sin SQL, cambios de aplicación, merge ni despliegue.

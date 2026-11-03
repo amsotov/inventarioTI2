@@ -1,5 +1,12 @@
 # Cambios
 
+## 2026-11-03 — Migración Fase 3: diseño visual/contratos EN_REVISION
+
+- Registra aprobación de Fase 2 y M3-A01; sin Fase 4.
+- Propone 11 vistas conservando identidad visual y compatibilidad de las 49 rutas; 18 contratos v2 y 117 campos con exposición explícita.
+- Maqueta documental navegable, datos sintéticos, prueba Chromium responsive y capturas reales; no modifica aplicación/API/BD.
+- Documenta garantías, pendientes y límites; sin SQL, merge ni despliegue.
+
 ## 2026-11-03 — Migración Fase 2: trazabilidad y mapeo EN_REVISION
 
 - Registra aceptación documental de Fase 1 e inicio exclusivo de Fase 2 por M2-A01.

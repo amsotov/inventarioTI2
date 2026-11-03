@@ -2,13 +2,11 @@
 
 ## Ciclo vigente de modernización — 2026-11-03
 
-**Migración FASES 0 y 1: COMPLETADAS por aprobación del usuario. FASE 2: EN_REVISION. FASE 3: NO AUTORIZADA.**
+**Migración FASES 0–2: COMPLETADAS por aprobación del usuario. FASE 3: EN_REVISION. FASE 4: NO AUTORIZADA.**
 
-Autorización vigente: «apruebo y inicia fase 2», posterior a la entrega `9dbaa2f`. Se acepta la validación documental y se prepara únicamente línea base/trazabilidad/mapeo. Los diseños alternativos y decisiones condicionadas a datos de M1-D01–M1-D16 conservan sus condiciones; ninguna recomendación se ejecuta por inferencia.
+Autorización: «apruebo fase 2 inicia fase 3», posterior a entrega `b29d60c`. Se prepara diseño visual y de contratos, sin implementación de aplicación/API/BD. [Impacto frontend/API](docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño y capturas](docs/migracion/03_DISENO_VISUAL.md), [contratos propuestos](docs/migracion/03_CONTRATOS_PROPUESTOS.json) y [continuidad](INICIAR_EN_CODEX.md). Maqueta aislada documental con datos sintéticos; las validaciones son simuladas.
 
-Entregables: [matriz de trazabilidad](docs/migracion/02_MATRIZ_TRAZABILIDAD.md), [mapeo de esquemas](docs/migracion/02_MAPEO_ESQUEMAS.md), [línea base](docs/migracion/02_LINEA_BASE_FUNCIONAL.md) y [continuidad](INICIAR_EN_CODEX.md). Sin SQL, cambios de datos/esquema/aplicación, merge ni despliegues. Todos los cambios autorizados se guardan en GitHub en rama dedicada.
-
-La numeración de migración 0–9 es independiente del desarrollo histórico 0–15. Su última fase completada es 13, Fase 14 sigue EN_REVISION y Fase 15 sin autorización; F1-SEG-01/02/03 permanecen. La Fase 2 de migración no es diseño visual.
+Las decisiones M1-D condicionadas a datos/opciones conservan sus pendientes. GitHub en rama dedicada, sin merge/despliegue. La numeración de migración 0–9 sigue separada del desarrollo histórico 0–15: última completada 13, Fase 14 EN_REVISION, Fase 15 sin autorización. F1-SEG-01/02/03 y UTC/RPO/RTO se conservan.
 
 Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 

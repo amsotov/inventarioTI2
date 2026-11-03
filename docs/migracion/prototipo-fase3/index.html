@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Inventario TI · Propuesta de modernización</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="propuesta.css">
+</head>
+<body>
+  <section class="review-bar" aria-label="Controles de revisión del prototipo">
+    <div><strong>Propuesta de diseño · FASE 3</strong><span>Datos ficticios. Sin conexión a la aplicación. Recargar reinicia las simulaciones.</span></div>
+    <label>Rol de revisión<select id="rol"><option value="administrador">Administrador</option><option value="lectura">Lectura</option></select></label>
+    <label>Escenario de revisión<select id="escenario"><option value="normal">Normal</option><option value="carga">Cargando</option><option value="vacio">Vacío</option><option value="error">Error</option><option value="permiso">Sin permiso</option></select></label>
+  </section>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <aside>
+    <div class="brand">IT<span>Inventario TI</span></div>
+    <p>Control de bienes computacionales</p>
+    <nav id="nav" aria-label="Principal"></nav>
+    <small>Identidad visual conservada · UTC</small>
+  </aside>
+  <main id="contenido" tabindex="-1">
+    <header><span id="breadcrumb">Inventario / Resumen</span><span id="role-label">Administrador de revisión</span></header>
+    <div id="notice" role="status" aria-live="polite"></div>
+    <div id="content"></div>
+    <footer>Propuesta para revisión. Las pantallas nuevas y reglas condicionadas requieren aprobación. No representa seguridad, persistencia ni API implementadas.</footer>
+  </main>
+  <script src="propuesta.js"></script>
+</body>
+</html>

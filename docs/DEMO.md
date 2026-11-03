@@ -26,3 +26,8 @@ No se repiten carga, axe ni continuidad/copia/restauración: no se modifican eso
 ## Límites de entrega
 
 La entrega original dejó el PR #2 preparado; posteriormente el usuario autorizó expresamente su integración y publicación. El primer CI remoto detectó `pdftotext` ausente (seis pruebas PDF fallidas); se incorpora `poppler-utils` a la preparación del runner y se repite CI antes de integrar. Publicación/validación pública en curso. Las pruebas locales no acreditan Supabase/Auth/correo gestionados, hardware/Safari ni continuidad productiva.
+
+
+## Preparación de publicación — 2026-11-03
+
+La API de configuración de Pages devolvió HTTP 403 con la credencial externa del entorno; Pages conservaba `build_type=legacy`, rama main `/docs`. El workflow selecciona ahora `build_type=workflow` mediante el token propio de Actions y el permiso `pages: write` que ya estaba declarado, antes de configurar y desplegar Pages. No se amplían permisos de la integración externa ni se usan secretos nuevos. Si la política del repositorio también deniega esa operación al workflow, será necesario seleccionar GitHub Actions en Settings > Pages desde una sesión administradora.

@@ -15,9 +15,6 @@ services:
       PORT: '3000'
       NODE_USE_ENV_PROXY: '1'
       NODE_EXTRA_CA_CERTS: /run/secrets/runtime-ca.crt
-      HTTP_PROXY: ${HTTP_PROXY:-}
-      HTTPS_PROXY: ${HTTPS_PROXY:-}
-      NO_PROXY: 127.0.0.1,localhost,${NO_PROXY:-}
       DB_SSL_CA_FILE: /run/secrets/database-ca.crt
     volumes:
       - type: bind
@@ -25,7 +22,7 @@ services:
         target: /run/secrets/database-ca.crt
         read_only: true
       - type: bind
-        source: ${STAGING_RUNTIME_CA_FILE:-/etc/ssl/certs/ca-certificates.crt}
+        source: ${STAGING_RUNTIME_CA_FILE:?ruta absoluta del certificado CA de runtime}
         target: /run/secrets/runtime-ca.crt
         read_only: true
     ports:
@@ -37,4 +34,9 @@ services:
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
     init: true
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: '2'
     stop_grace_period: 20s

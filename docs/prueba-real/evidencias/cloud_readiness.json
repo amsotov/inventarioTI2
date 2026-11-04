@@ -1,0 +1,15 @@
+{
+  "observations_current": true,
+  "connectivity": "connected",
+  "http_policy": {
+    "mode": "unrestricted",
+    "state": "enforced"
+  },
+  "secret_bindings": 0,
+  "runtime_variables": 0,
+  "outbound_identities": 0,
+  "tcp_domains": [],
+  "tcp_ip_ranges": [],
+  "vpn_configured": false,
+  "next_action": "environment configuration workflow; SQL/Auth secrets, PostgreSQL network and HTTPS ingress"
+}

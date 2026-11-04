@@ -6,7 +6,7 @@ Fecha: 2026-11-04, UTC. Alcance MTEST-A01, posterior al cierre documental de las
 
 El usuario solicita «una prueba real en sitio temporal conectado con la base de datos real», precisa **Supabase inventarioTI2 con datos de prueba**, autoriza **crear un entorno virtual** y elige **la interfaz modernizada completa**. Se preparan persistencia PostgreSQL, interfaz existente, autenticación y empaquetado del servidor. No se crea una fase 10.
 
-**Estado: preparación local verificada; activación remota pendiente de secretos, cuentas Auth y ruta HTTPS.** No hay URL de prueba conectada publicada. GitHub Pages conserva su demo independiente. El estado remoto y los ensayos de esta entrega se registran en [el comprobante](prueba-real/RESULTADO.md).
+**Estado: esquema y muestra instalados en Supabase, contenedor construido y CI aprobado; acceso web pendiente de secretos, cuentas Auth, red TCP y ruta HTTPS.** No hay URL de prueba conectada publicada. GitHub Pages conserva su demo independiente. El estado remoto y los ensayos de esta entrega se registran en [el comprobante](prueba-real/RESULTADO.md).
 
 El proyecto previsto es `yhsfotxhaptinjtmrinn`, organización sovicl, São Paulo. `inventarioTI` anterior permanece pausado. La instancia SQL Server 2016/130 sigue pendiente; este laboratorio PostgreSQL no certifica su compatibilidad ni cierra decisiones productivas.
 
@@ -38,9 +38,11 @@ Para textos opcionales que superan el largo del diccionario, el complemento cons
 
 ## Preparación de Supabase
 
+**Los pasos 1 y 2 ya se ejecutaron en inventarioTI2:** migración remota `20261104121044` y semilla sintética verificadas. No repetirlos ni reparar el historial para hacer coincidir su versión con el nombre local del archivo CLI. La correspondencia/hashes quedan en el comprobante. Continuar por Auth, secretos y bootstrap.
+
 1. Aplicar únicamente la [migración incremental](../staging/supabase/migrations/20261104111238_modernizacion_laboratorio.sql) sobre la baseline F5 ya instalada en **inventarioTI2**, después de verificar sus tablas, roles y ausencia de `laboratorio_ti`. Usar `apply_migration` para DDL. La creación del archivo se hizo con Supabase CLI 3.0.0. No repetir si aparece instalada.
 2. Cargar una vez [seed.sql](../staging/supabase/seed.sql), que aborta si el esquema ya contiene referencias. Sus FK se resuelven desde las identidades generadas; no presupone IDs. No ejecutar la semilla original F5 otra vez.
-3. En [Auth / Providers](https://supabase.com/dashboard/project/yhsfotxhaptinjtmrinn/auth/providers), desactivar **Allow new users to sign up**. M8-R01 continúa pendiente hasta observar `disable_signup: true`. El conector disponible no modifica esta configuración; no se intenta eludirlo escribiendo tablas internas de Auth.
+3. En [Auth / Providers](https://supabase.com/dashboard/project/yhsfotxhaptinjtmrinn/auth/providers), desactivar **Allow new users to sign up**. La consulta autenticada con clave publicable de esta entrega confirma `disable_signup: false`; M8-R01 continúa pendiente hasta observar `true`. El conector disponible no modifica esta configuración; no se intenta eludirlo escribiendo tablas internas de Auth.
 4. Crear dos identidades sintéticas de prueba mediante la Admin API o el panel Auth (**Create user**, sin invitaciones ni correos): una para administrador y otra para lectura. Contraseñas diferentes, sin publicarlas. El administrador configura su propio autenticador TOTP al entrar; no existe MFA precompartido.
 5. Registrar las dos referencias Auth y los dos UUID de funcionarios sintéticos expresamente elegidos. No vincular por coincidencia de nombre/correo. Los UUID se consultan en `laboratorio_ti.referencias` para los funcionarios sintéticos.
 6. Ejecutar el bootstrap una vez desde el operador con secretos: `node scripts/staging/bootstrap.mjs`, después de `npm run build`. Valida las identidades confirmadas por Admin API y vincula las dos cuentas en una transacción SQL. Habilita LOGIN exclusivamente en `inventario_auth` e `inventario_runtime`, con verificadores SCRAM, sin cambiar membresías/propiedad/privilegios y sin tocar `inventario_worker`. Repetir sobre cuentas existentes aborta; no resetea claves.
@@ -48,6 +50,8 @@ Para textos opcionales que superan el largo del diccionario, el complemento cons
 `staging/supabase/migrations` contiene **el incremento**, no una copia del historial remoto: no ejecutar `supabase db reset`, `db push` ni reparar historiales apuntando solamente a esa carpeta. La baseline gestionada está en `migrations/supabase-pruebas`; la baseline original está preservada en `supabase/migrations`.
 
 ## Secretos y configuración
+
+En esta máquina quedaron preparados `/workspace/work/prueba-real/private/staging.env` y `operator.env`, fuera del repositorio: directorio 700/archivos 600, clave de cifrado y dos passwords SQL aleatorios generados una vez, más la clave publicable obtenida del conector. No se aplicaron passwords remotos y faltan las credenciales externas. Preservar esos valores; no regenerar la clave de cifrado al reiniciar. El operador puede cargar ambos archivos con `node --env-file=/workspace/work/prueba-real/private/staging.env --env-file=/workspace/work/prueba-real/private/operator.env scripts/staging/bootstrap.mjs` cuando complete los campos privados/UUID/CA y la red. Compose recibe solo `staging.env`; no montar `operator.env` en el sitio.
 
 Configurar estos valores en el almacén privado del entorno/servidor. No pegarlos en el chat, GitHub, comandos con valores literales ni capturas. El entorno cloud disponible no tenía credenciales de ejecución vinculadas al preparar esta entrega. Su política permite HTTP por proxy, pero no declara dominios/rangos TCP autorizados; la conexión PostgreSQL requiere habilitar el destino/puerto en la configuración del entorno o usar una VM que disponga de ese acceso. No se elude esta política mediante PostgREST público ni una conexión postgres del BFF.
 
@@ -74,19 +78,19 @@ Requisitos: Node 24.19.0, npm/lock del repositorio, Docker/Compose y un ingreso 
 ```bash
 npm ci
 npm run staging:package
-docker build --secret id=build_ca,src=/etc/ssl/certs/ca-certificates.crt -f staging/Dockerfile -t inventarioti2-prueba:ENTREGA .
+docker build --secret "id=build_ca,src=${CODEX_PROXY_CERT:-${NODE_EXTRA_CA_CERTS:-/etc/ssl/certs/ca-certificates.crt}}" -f staging/Dockerfile -t inventarioti2-prueba:ENTREGA .
 ```
 
-El empaquetador recompila en modo conectado y copia únicamente servidor compilado, web, dependencias/lock y preflight. `release.json` registra hashes. No copia SQL, pruebas, documentación, `.env`, claves o node_modules del host. El certificado del proxy de construcción se monta como secreto BuildKit y no queda en capas. En un entorno con proxy, pasar sus variables heredadas con `--build-arg HTTP_PROXY --build-arg HTTPS_PROXY --build-arg NO_PROXY`, sin escribir sus valores en el comando.
+El empaquetador recompila en modo conectado y copia únicamente servidor compilado, web, dependencias/lock y preflight. `release.json` registra hashes. No copia SQL, pruebas, documentación, `.env`, claves o node_modules del host. El certificado del proxy de construcción se monta como secreto BuildKit y no queda en capas. En el entorno cloud, conservar los proxies predeterminados del cliente Docker. No sobrescribirlos con el hostname `proxy` del contenedor exterior: ese alias no existe en los contenedores interiores. Usar el certificado proporcionado por `CODEX_PROXY_CERT`/`NODE_EXTRA_CA_CERTS`; no copiarlo en capas ni desactivar TLS.
 
-Preparar fuera del repositorio un archivo basado en [env.example](../staging/env.example), directorio 700 y archivo 600. Definir `STAGING_ENV_FILE`, `STAGING_DB_CA_FILE` y un `STAGING_IMAGE_TAG` inmutable. No ejecutar `docker compose config` sin `--quiet`: puede imprimir el contenido del archivo privado.
+Preparar fuera del repositorio un archivo basado en [env.example](../staging/env.example), directorio 700 y archivo 600. Definir `STAGING_ENV_FILE`, `STAGING_DB_CA_FILE`, `STAGING_RUNTIME_CA_FILE` y un `STAGING_IMAGE_TAG` inmutable (imagen local de esta entrega: `4c7b21547c02`). No ejecutar `docker compose config` sin `--quiet`: puede imprimir el contenido del archivo privado.
 
 ```bash
 docker compose -f staging/compose.yaml config --quiet
 docker compose -f staging/compose.yaml up -d
 ```
 
-Compose admite el proxy HTTP heredado y monta el certificado de runtime mediante `STAGING_RUNTIME_CA_FILE` (por defecto el bundle CA del host Linux); Node verifica TLS también al consultar Supabase Auth. Esto no concede acceso TCP a PostgreSQL. El contenedor usa usuario node, raíz de solo lectura, sin capacidades adicionales y puerto publicado en loopback. Primero ejecuta `preflight.mjs`: comprueba TLS/roles, esquema, vínculos de las dos cuentas, Admin API y registro cerrado; ante un fallo no inicia el sitio. Después sirve web y API en el mismo origen. `/health/live` y `/health/ready` no devuelven credenciales.
+Compose conserva los proxies predeterminados de Docker y monta el certificado de runtime mediante `STAGING_RUNTIME_CA_FILE` (seleccionar el CA proporcionado por la plataforma o el bundle confiable del servidor); Node verifica TLS también al consultar Supabase Auth. Esto no concede acceso TCP a PostgreSQL. Los logs del contenedor rotan en dos archivos de hasta 5 MB. El contenedor usa usuario node, raíz de solo lectura, sin capacidades adicionales y puerto publicado en loopback. Primero ejecuta `preflight.mjs`: comprueba TLS/roles, esquema, vínculos de las dos cuentas, Admin API y registro cerrado; ante un fallo no inicia el sitio. Después sirve web y API en el mismo origen. `/health/live` y `/health/ready` no devuelven credenciales.
 
 Conectar el ingreso HTTPS de la VM a `127.0.0.1:3000`. Si se usa un túnel efímero, obtener primero su dominio, configurar ese origen exacto en `APP_ORIGIN` y limitar Site URL/redirects Auth al dominio y `/acceso`. Con Cloudflare Quick Tunnel, si el binario ya está instalado, el comando es `cloudflared tunnel --url http://127.0.0.1:3000 --no-autoupdate`; no se ha iniciado un túnel en esta entrega. No cambiar DNS de sitios existentes. Al cambiar el dominio del túnel hay que actualizar el origen y los redirects y reiniciar; las cookies anteriores no se trasladan.
 

@@ -1,0 +1,12 @@
+{
+  "directory_mode": "700",
+  "file_modes": "600",
+  "repository_storage": false,
+  "server_encryption_key_generated": true,
+  "sql_passwords_generated": true,
+  "remote_passwords_applied": false,
+  "publishable_key_prepared": true,
+  "supabase_server_key_present": false,
+  "operator_connection_present": false,
+  "credential_values_in_evidence": false
+}

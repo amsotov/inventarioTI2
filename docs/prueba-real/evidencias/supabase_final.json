@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-11-04T12:23:36.809Z",
+  "project": "yhsfotxhaptinjtmrinn",
+  "migration": {
+    "version": "20261104121044",
+    "name": "modernizacion_laboratorio",
+    "local_file": "staging/supabase/migrations/20261104111238_modernizacion_laboratorio.sql"
+  },
+  "validation": {
+    "roles": [
+      {
+        "role": "inventario_auth",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      },
+      {
+        "role": "inventario_runtime",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      },
+      {
+        "role": "inventario_worker",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      },
+      {
+        "role": "inventario_modelo_lector",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      },
+      {
+        "role": "inventario_modelo_servicio",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      }
+    ],
+    "outbox": 0,
+    "sessions": 0,
+    "auth_users": 0,
+    "lab_tables": 40,
+    "rls_unforced": 0,
+    "kernel_tables": 30,
+    "legacy_assets": 6,
+    "modern_assets": 6,
+    "kernel_columns": 117,
+    "modern_employees": 3,
+    "application_accounts": 0,
+    "public_function_access": 0
+  },
+  "gate": {
+    "mapping": {
+      "adminBound": false,
+      "readerBound": false
+    },
+    "version": "postgres-lab-v1"
+  },
+  "security_advisors": [],
+  "previous_project_status": "INACTIVE",
+  "remote_runtime_login": false,
+  "remote_auth_bootstrap": "NOT_EXECUTED",
+  "public_site": "NOT_STARTED"
+}

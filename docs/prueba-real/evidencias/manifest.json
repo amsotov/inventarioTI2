@@ -20,7 +20,7 @@
     "staging/supabase/migrations/20261104111238_modernizacion_laboratorio.sql": "231d3e2e87382410557abd630f45b3e73df226fd72d8904086a23ea60fa71786",
     "staging/supabase/seed.sql": "8aae04209d1b8476fb23e21c7759a3b26896886f70518d3593eed40b17cbd994",
     "staging/Dockerfile": "ad998761e5e5627a03e9cfc181afe0ab7b975d6f4dac9388d3d312984981917a",
-    "staging/compose.yaml": "6632577e4ce0973a450b60c2b0ad5740a19efd3b6ff7df9aa4af33f7f4e1e24b",
+    "staging/compose.yaml": "39e41d221f0ea9b7ec6bbd39382c46e4edbdffa2821781660e267fd6bd916b60",
     "scripts/staging/package.mjs": "5298ac292e13698e48332cc14fadf30b1c6d7d5781017ecd5d803db527906687",
     "scripts/staging/preflight.mjs": "a71fa34a82b1f252fa486dcd70a212e4031457bf52d2cc2f8423571b3e5fdbc3",
     "scripts/staging/bootstrap.mjs": "c3e161f40680bb0366a4c86da6f80500133a26c3fbede488b6dc92603694f78b",
@@ -65,6 +65,31 @@
       "high": 0,
       "critical": 0,
       "total": 0
+    },
+    "ci_source": {
+      "head_sha": "4c7b21547c02edd65968a20f9257b84462970156",
+      "run_id": 41826937886,
+      "passed": 300,
+      "failed": 0
     }
+  },
+  "remote_schema": "INSTALLED",
+  "remote_migration_version": "20261104121044",
+  "remote_seed": "LOADED_ONCE",
+  "container": {
+    "image": "inventarioti2-prueba:4c7b21547c02",
+    "id": "sha256:89e05d8502728dbe3f8486a90a85ef7581aba2929547d41d3d48f5ee59be53c5",
+    "size_bytes": 271927478,
+    "source_revision": "4c7b21547c02edd65968a20f9257b84462970156",
+    "user": "node",
+    "build": "PASS",
+    "compose_config": "PASS",
+    "startup_without_configuration": {
+      "exit_code": 1,
+      "code": "STAGING_REQUIRED"
+    },
+    "public_runtime": "NOT_STARTED",
+    "registry_push": "NOT_EXECUTED",
+    "secret_build_ca_persisted": false
   }
 }

@@ -1,5 +1,7 @@
 # Despliegue, operación y continuidad — Fase 14
 
+> Continuidad vigente: M9-A01 acepta la auditoría F8 con pendientes y autoriza [F9 documental](migracion/09_PREPARACION_DESPLIEGUE.md), EN_REVISION. [Preparación vigente](#migración-fase-9--preparación-vigente), [compatibilidades](migracion/09_COMPATIBILIDADES.csv) y [puertas](migracion/09_PUERTAS_LIBERACION.csv). Liberación NO_GO; sin operación gestionada. Los apartados históricos conservan su fecha y alcance.
+
 2026-11-02 · **EN_REVISION**, autorizada por D-37 y ratificada por la solicitud actual (D-38). Base `8d66e72`. Ejecución/verificación: Codex; aceptación: usuario. Última fase completada: 13. Fase 15 **PENDIENTE / NO OTORGADA**. **Ningún despliegue a producción realizado ni autorizado.**
 
 ## Plan presentado y alcance
@@ -109,3 +111,35 @@ Para completar el carril gestionado, elegir/autorizar recursos/destino de prueba
 ## Fuentes consultadas
 
 2026-11-02: [changelog Supabase](https://supabase.com/changelog), [backup/restore CLI](https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore), [restauración desde plataforma](https://supabase.com/docs/guides/self-hosting/restore-from-platform), [TLS APIs](https://supabase.com/changelog/cbc-tls-ciphers-deprecated), [PG 15.19/17.11](https://supabase.com/changelog/postgres-15-19-17-11-breaking-changes). Roles no incluyen passwords; identidad/settings/objetos requieren cobertura propia. pg_dump genérico puede incluir internos incompatibles con Supabase: no usar el fixture sobre servicio gestionado. CLI no instalada/ejecutada. Cambio TLS previsto 2026-11-10 y actualización PG/extensiones deben contrastarse con destino real; no se presupone versión gestionada ni cambia imagen aceptada de prueba. Sin consulta/modificación de proyectos remotos.
+
+## Migración Fase 9 — preparación vigente
+
+M9-A01, base e224d6f3a15d09899eba2c6a908548eef73014e8. Esta es la guía vigente de preparación; los procedimientos previos no son una orden de aplicarlos. [Informe](migracion/09_PREPARACION_DESPLIEGUE.md), [manifiesto](migracion/09_MANIFIESTO_PREPARACION.json), [pendientes](migracion/09_PENDIENTES.csv), [rollback](RUNBOOK_OPERACION.md#migración-fase-9--corte-y-retorno). F9 documenta; toda ejecución futura necesita su alcance/destino/permiso concreto. Resultado actual: NO_GO para liberar el modelo de destino.
+
+### Escenarios y orden de habilitación
+
+| Escenario | Lo existente | Acción futura condicionada |
+| --- | --- | --- |
+| Verificación documental local | Python 3, árbol de fuentes y evidencia F8 | Ejecutar verificar_fase9.py; --evaluar-liberacion devuelve 3 mientras existan bloqueos. No requiere DB, Docker o secretos. |
+| Ensayo funcional local | Tests con PG17/GoTrue efímeros; v2 persistencia doble | En alcance autorizado, npm ci/build/test/test:ops/test:ui secuenciales; guardar salidas nuevas y restaurar evidencia histórica. No aceptan DSN remota. |
+| Laboratorio inventarioTI2 | sovicl/sa-east-1; baseline PG instalada en F5; auditoría de lectura F8 | Identificar ref y ledger/hash antes de cambios; no reaplicar las ocho originales ni diez entradas adaptadas. No existe BFF desplegado/autenticación positiva gestionada acreditada. |
+| SQL Server 2016/130 | Cuatro SQL candidatos bloqueados; soporte/repositorios incompletos | Resolver entorno/reglas/implementación y 30 casos de motor/36 reconciliaciones antes de emitir candidato ejecutable. No quitar THROW ni ejecutar T-SQL en Supabase. |
+| Promoción/producción | Sin hosting/origen/ventana/operador/paquete autorizados | Exigir todas las puertas aplicables y permiso para SHA/entorno concretos; sigue bloqueada. |
+
+No hay un flag que complete la migración: INVENTORY_BACKEND=postgres conserva v1; sqlserver2016 lanza SQLSERVER_MODEL_NOT_READY antes de crear pools. Main no inyecta v2. No registrar el doble de tests, sustituir respuestas por v1 o habilitar un segundo escritor para simular disponibilidad.
+
+### Preparación de fuente y paquete futuro
+
+1. Revisar SHA remoto y árbol limpio, runtime Node >=24 <25, lock y manifest de migraciones. Resolver **M9-R01** antes de usar main/workflow demo: su Node20 discrepa del runtime declarado. Verify usa Node24 y solo se dispara en PR/main; publicar una rama no acredita un run remoto. F9 no crea PR ni modifica workflows.
+2. En una copia de trabajo del commit aprobado, instalar exactamente con `npm ci`, compilar con `npm run build` y realizar las verificaciones pertinentes. Para aplicación normal VITE_DEMO_MODE no debe ser true; la demo es otro artefacto y no acredita seguridad de operación. Registrar configuración de build, Node/npm y SHA/lock. Los comandos de build no despliegan y no son resultados nuevos de esta fase.
+3. Empaquetar dist/apps/server y dist/web del mismo build, package/lock, dependencias runtime y fuentes PDF; incluir manifiesto con hashes, versiones y referencias no secretas de configuración/migraciones. Excluir .env, secretos, datos reales, dobles y fixtures. Mantener paquete anterior y demostrar compatibilidad con esquema/configuración. El [manifiesto F9](migracion/09_MANIFIESTO_PREPARACION.json) es una especificación: todavía no existe release ni hash de binario construido.
+4. Identificar qué ledger corresponde al destino. Ocho fuentes originales en supabase/migrations son distintas de las diez entradas adaptadas y ACL del laboratorio (migrations/supabase-pruebas/manifest.json); comparar sus mapas/hashes, sin aplicarlas ambas. Las cuatro candidatas SQL Server son otra familia de motor y no entran en runner PG. Una divergencia o versión desconocida detiene la operación.
+5. Antes de modificar cualquier base, exigir copia realmente restaurada, ventanas/timeouts/espacio y migración nueva revisada. Mantener originales inmutables. En SQL Server faltan diseño de soporte y candidato ejecutable: no hay comandos de aplicación listos. En Supabase no ejecutar preparación de roles/reset del fixture ni manipular auth interno. No deshabilitar integridad para que una carga pase.
+
+### Configuración, smoke y decisión
+
+Usar [.env.example](../.env.example) como catálogo sin valores y el manifiesto F9 por consumidor. Web: APP_ORIGIN HTTPS exacto, HOST/PORT según ingress privado, DATABASE_URL inventario_auth y BUSINESS_DATABASE_URL inventario_runtime sin propiedad/membresías, claves Supabase y AUTH_ENCRYPTION_KEY solo servidor. Worker separado y detenido; NOTIFICATION_DELIVERY_ENABLED=false. Migrador/backup usan credenciales y custodia independientes. No colocar secretos en VITE_*, paquetes, logs o ejemplos; no pedirlos por chat.
+
+El proxy debe probarse con trustProxy:false vigente, CA/TLS verificados y mismos origen/cookies. Verificar live/ready y después login/MFA, roles, revocación, Origin/CSRF, límites, escritura sintética auditada/replay, reporte/descarga privada, reinicio y recursos. Salud 200 no prueba Auth ni modelo SQL Server. Confirmar disable_signup:true tras corrección autorizada de M8-R01; su estado F8 FALLIDA sigue sin evidencia de cierre. No crear cuentas remotas o enviar mensajes para marcar pruebas como realizadas por inferencia.
+
+Antes de corte: firmar [puertas](migracion/09_PUERTAS_LIBERACION.csv), registrar operador/suplente y permiso concreto, fuente/mapas/snapshot, reconciliación y plan de retorno; demostrar una sola fuente escritora y efectos externos aislados. Después de nuevas escrituras, volver al origen congelado puede perder datos: seguir la ventana correspondiente del runbook. Conmutación/tráfico/merge a main/correo no están autorizados por F9. InventarioTI permanece pausado, el laboratorio no es producción y no se contratan recursos por una estimación histórica.

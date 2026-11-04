@@ -107,3 +107,13 @@ El usuario aprobó la revisión visual de la entrega sin solicitar cambios concr
 | iPhone 390×844 | [Resumen](evidencias/fase2/iphone.png), [bienes](evidencias/fase2/iphone-bienes.png), [formulario](evidencias/fase2/iphone-formulario.png) |
 
 Aceptación visual: **APROBADA** el 2026-10-31. Evidencia: «apruebo la revisión visual" para que cierre la fase y pase a la Fase 3 en nuevo chat». D-15 acepta la entrega visual y cierra Fase 2; autoriza Fase 3 para un nuevo chat. Se conservan capturas, resultados y limitaciones. No se solicitaron ajustes visuales específicos.
+
+
+## Migración Fase 3 — propuesta visual y de contratos
+
+[Muestra revisable con capturas](migracion/03_DISENO_VISUAL.md) y [mapa de pantallas](migracion/03_PANTALLAS.csv). Se aplica SKILL visual-system-designer al diseño de migración autorizado, conservando identidad del frontend. Solo maqueta aislada, sin cambiar React ni acreditar funcionalidad por mocks. Fase 2 de migración aceptada por M3-A01; Fase 3 EN_REVISION, sin aprobación visual presumida ni Fase 4.
+
+
+## Migración Fase 7 — interfaz para revisión visual
+
+La nueva área se integra al shell/CSS React existente; [recorridos, cobertura, capturas y límites](migracion/07_ADAPTACION_VISUAL.md). Se aplica SKILL.md por su alcance visual ya autorizado. 1440/768/390 y ambos roles, teclado/foco y axe automático delimitado. Fuentes F3/identidad conservadas; no se vuelve a un prototipo aislado para aparentar integración. Revisión visual del usuario PENDIENTE; ninguna aceptación de pantalla acredita persistencia SQL Server.

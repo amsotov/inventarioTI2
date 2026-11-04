@@ -1,0 +1,32 @@
+{
+  "autorizacion": "M9-A02",
+  "literal": "Apruebo fase 9 quiero ver la publicación GitHub Pages",
+  "fase9": "COMPLETADA_DOCUMENTAL",
+  "entrega_aceptada": "2376a580926dadb1af363f94d3ff74f05f377d34",
+  "deployment_ready_sqlserver": false,
+  "deployment_nuevo": false,
+  "main_modificado": false,
+  "pages": {
+    "url": "https://amsotov.github.io/inventarioTI2/",
+    "http_status": 200,
+    "title": "Inventario TI",
+    "modo_demo": true,
+    "headings": [
+      "Bienes"
+    ],
+    "errores_javascript": [],
+    "instante_utc": "2026-11-04T02:10:35.105Z",
+    "scope": "Lectura de portada publicada; sin operaciones de inventario ni despliegue nuevo"
+  },
+  "ultimo_run_observado": {
+    "id": 41648235275,
+    "head_sha": "511b99d64c97ff1917f279e78490f377a3f5239a",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/amsotov/inventarioTI2/actions/runs/41648235275",
+    "updated_at": "2026-11-03T13:52:57Z"
+  },
+  "verificacion_f9_base": "APROBADA sobre exportación del commit aceptado antes de anotaciones",
+  "pruebas_node_nuevas": 0,
+  "alcance": "Consultar demo existente; no integrar/publicar ramas de modernización"
+}

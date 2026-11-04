@@ -1,0 +1,148 @@
+{
+  "tipo": "MANIFIESTO_DE_PREPARACION_NO_ARTEFACTO_DESPLEGABLE",
+  "fase": "MIGRACION_9",
+  "autorizacion": {
+    "id": "M9-A01",
+    "literal": "Apruebo fase 8 inicia fase 9"
+  },
+  "base_git": "e224d6f3a15d09899eba2c6a908548eef73014e8",
+  "fecha_local": "2026-11-03",
+  "zona_documental": "America/Santiago",
+  "estado_documental": "EN_REVISION",
+  "decision_liberacion": "NO_GO",
+  "deployment_ready": false,
+  "artefacto_construido": false,
+  "ci_remoto_f9": "NO_EJECUTADA",
+  "consultas_proyecto_supabase_f9": false,
+  "mutaciones_remotas": false,
+  "sql_ejecutado": false,
+  "merge_main": false,
+  "despliegue_ejecutado": false,
+  "fase_posterior_definida": false,
+  "runtime": {
+    "node": ">=24 <25",
+    "ci_verificacion": "24.19.0",
+    "typescript": "5.9.3",
+    "demo_workflow": "20",
+    "hallazgo": "M9-R01"
+  },
+  "composicion_actual": {
+    "motor": "PostgreSQL",
+    "inventory_backend": "postgres",
+    "v2_en_main": false,
+    "sqlserver2016": "SQLSERVER_MODEL_NOT_READY",
+    "worker": "NO_INICIADO_NOTIFICACIONES_FALSE"
+  },
+  "laboratorio_supabase": {
+    "nombre": "inventarioTI2",
+    "ref": "yhsfotxhaptinjtmrinn",
+    "organizacion": "sovicl",
+    "region": "sa-east-1",
+    "observacion": "Evidencia F8 histórica, no consulta actual de F9",
+    "modelo": "baseline existente PG 19tablas155columnas",
+    "datos": "sintéticos",
+    "auth_signup": "M8-R01 sin evidencia de corrección",
+    "proyecto_anterior": "inventarioTI permanece pausado por instrucción; no reactivar"
+  },
+  "destino": {
+    "motor": "SQL Server",
+    "major_version": 13,
+    "compatibility_level": 130,
+    "instancia": null,
+    "base_autorizada": null,
+    "edicion_sp_cu_collation": null,
+    "archivos_sql": [
+      {
+        "path": "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql",
+        "sha256": "a6f9b5bd110082618dfaf9565467efce8023c6991ae0e93f2c2e3aea0c7b342f",
+        "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
+      },
+      {
+        "path": "migrations/sqlserver/0002_checks_propuestos.candidate.sql",
+        "sha256": "637dd610d20d4943d28dd40180d74f4aa890cd04086b54d5259372e39a387eaf",
+        "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
+      },
+      {
+        "path": "migrations/sqlserver/0003_indices_fk.candidate.sql",
+        "sha256": "1aa37907d0a35f51ba5c5db28751f75c8a0b6f9e72f6fc663b73872b27d336f3",
+        "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
+      },
+      {
+        "path": "migrations/sqlserver/900_catalogo_esperado.candidate.sql",
+        "sha256": "232383f6e075e7d13e985e0b73337157d8b5b02b204116e65fd172e649386f34",
+        "estado": "CANDIDATO_BLOQUEADO_NO_EJECUTADO"
+      }
+    ],
+    "entorno_autorizado": null,
+    "aplicacion_bloqueada": true,
+    "columna_sha256_base": "a70c408f1fc601fdad116dbf1bcfe458a63615465174f964cce5a06a0b67f8a1"
+  },
+  "paquete_futuro": {
+    "estado": "NO_CONSTRUIDO",
+    "contenido": [
+      "dist/apps/server y sus módulos compilados",
+      "dist/web y assets del mismo build/origen",
+      "package.json y package-lock.json exactos",
+      "dependencias runtime fijadas, fuentes PDF incluidas",
+      "manifiesto de SHA/artefacto/migraciones/hash/config no secreta",
+      "procedimiento de operación/rollback y paquete anterior compatible"
+    ],
+    "excluir": [
+      ".env y secretos",
+      "node_modules de desarrollo",
+      "fixtures y dobles de pruebas",
+      "datos operacionales o credenciales",
+      "baselines SQL reaplicadas a ciegas"
+    ],
+    "regla": "Build de commit exacto con runtime aprobado; probar antes de promover. No existe paquete release ni hash de binario F9."
+  },
+  "configuracion_sin_valores": {
+    "web": [
+      "APP_ORIGIN",
+      "HOST",
+      "PORT",
+      "DATABASE_URL",
+      "BUSINESS_DATABASE_URL",
+      "SUPABASE_URL",
+      "SUPABASE_PUBLISHABLE_KEY",
+      "SUPABASE_SECRET_KEY",
+      "AUTH_ENCRYPTION_KEY",
+      "INVENTORY_BACKEND"
+    ],
+    "worker_solo_si_autorizado": [
+      "APP_ORIGIN",
+      "NOTIFICATION_DATABASE_URL",
+      "NOTIFICATION_DELIVERY_ENABLED",
+      "RESEND_API_KEY",
+      "NOTIFICATION_FROM"
+    ],
+    "operacion": "Gestor de secretos, clave de backup y credencial de migración separadas; sin valores en Git, logs, manifiesto o VITE_*"
+  },
+  "objetivos_continuidad": {
+    "RPO_horas_max": 168,
+    "RTO_horas_max": 8,
+    "conservacion_dias_min": 30,
+    "cadencia": "Semanal, máximo168h entre éxitos; horario concreto pendiente",
+    "acreditacion_gestionada": false
+  },
+  "matrices": {
+    "compatibilidades": "docs/migracion/09_COMPATIBILIDADES.csv",
+    "pendientes": "docs/migracion/09_PENDIENTES.csv",
+    "puertas": "docs/migracion/09_PUERTAS_LIBERACION.csv"
+  },
+  "evidencia_funcional_heredada": {
+    "fase": 8,
+    "pruebas": "docs/migracion/evidencias/fase8/pruebas.json",
+    "casos_node": 280,
+    "repetida_en_f9": false
+  },
+  "permisos_no_otorgados": [
+    "merge_main",
+    "despliegue",
+    "configuracion_auth_remota",
+    "ejecucion_sql",
+    "datos_reales",
+    "activacion_correo",
+    "gastos_nuevos"
+  ]
+}

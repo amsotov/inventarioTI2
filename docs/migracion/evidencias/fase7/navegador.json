@@ -1,0 +1,90 @@
+{
+  "resultado": "APROBADA",
+  "alcance": "React real + BFF/Auth/RLS/HTTP PostgreSQL local; persistencia v2 DOBLE, no SQL Server ni Supabase Auth gestionado",
+  "viewport": "emulación Chromium; no dispositivos físicos/Safari/lector de pantalla",
+  "screenshots": [
+    {
+      "role": "administrador",
+      "width": 1440,
+      "height": 900,
+      "hash": "modelo/equipos",
+      "path": "docs/migracion/evidencias/fase7/1440-administrador.png",
+      "sha256": "05452010ab804360acc0fbb7e9450489bb2cf353422e8a1faf336994074da826"
+    },
+    {
+      "role": "administrador",
+      "width": 768,
+      "height": 900,
+      "hash": "modelo/equipos/20000000-0000-4000-8000-000000002002/tecnica",
+      "path": "docs/migracion/evidencias/fase7/768-administrador.png",
+      "sha256": "d6cc2e060d4fc71c02f19039d864fe6e751b8636e9d4d1c3242f98f3836bc016"
+    },
+    {
+      "role": "administrador",
+      "width": 390,
+      "height": 900,
+      "hash": "modelo/funcionarios/nuevo",
+      "path": "docs/migracion/evidencias/fase7/390-administrador.png",
+      "sha256": "c606b9c31f06cea617e5859d6a6852768e540450454814e7e27c0ce2261afafd"
+    },
+    {
+      "role": "lectura",
+      "width": 1440,
+      "height": 900,
+      "hash": "modelo/equipos",
+      "path": "docs/migracion/evidencias/fase7/1440-lectura.png",
+      "sha256": "e0b5ad50a49977c1877e827cbd441c02b624366ab6862cf05bb6500958f6e9f2"
+    },
+    {
+      "role": "lectura",
+      "width": 768,
+      "height": 900,
+      "hash": "modelo/equipos/20000000-0000-4000-8000-000000002000/historia",
+      "path": "docs/migracion/evidencias/fase7/768-lectura.png",
+      "sha256": "5d87d6107e574938c98d2ba6c80e692dbeee59fa8760ec83103f676674858728"
+    },
+    {
+      "role": "lectura",
+      "width": 390,
+      "height": 900,
+      "hash": "modelo/equipos/20000000-0000-4000-8000-000000002000/historia",
+      "path": "docs/migracion/evidencias/fase7/390-lectura.png",
+      "sha256": "b78f7040cb69ac8aac1f68454ab10dd0fc99c205bc681141b72bc5d704ee39af"
+    }
+  ],
+  "audits": [
+    {
+      "scope": "panel modelo, lectura móvil; WCAG2A/AA/2.1AA automático",
+      "violations": [],
+      "passes": 17
+    },
+    {
+      "scope": "panel modelo, administrador móvil; WCAG2A/AA/2.1AA automático",
+      "violations": [],
+      "passes": 12
+    }
+  ],
+  "errores_javascript": [],
+  "comandos_del_doble": 12,
+  "operaciones_v2_observadas": [
+    "C03-01",
+    "C03-02",
+    "C03-03",
+    "C03-04",
+    "C03-05",
+    "C03-06",
+    "C03-07",
+    "C03-08",
+    "C03-09",
+    "C03-10",
+    "C03-11",
+    "C03-12",
+    "C03-13",
+    "C03-14",
+    "C03-15",
+    "C03-16",
+    "C03-18"
+  ],
+  "nuevo_equipo": "20000000-0000-4000-8000-000000002131",
+  "nuevo_funcionario": "20000000-0000-4000-8000-000000000153"
+}

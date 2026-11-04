@@ -1,0 +1,58 @@
+{
+  "decision": "M5-A04",
+  "fecha": "2026-11-03",
+  "base_git": "e94e9fce6eb35c95284dd5f93dd187bb197d25d3",
+  "autorizacion_pausa": "pausa inventarioTI",
+  "autorizacion_creacion": "M5-A03: te autorizo crear el proyecto en supabase; sovicl, región São Paulo",
+  "estado": "PROVISIONADO_VACIO_VERIFICADO",
+  "anterior": {
+    "name": "inventarioTI",
+    "project_ref": "feiszjurkyyadqbkhuob",
+    "status": "INACTIVE",
+    "accion": "PAUSA_AUTORIZADA_SIN_BORRADO"
+  },
+  "nuevo": {
+    "name": "inventarioTI2",
+    "project_ref": "yhsfotxhaptinjtmrinn",
+    "organization_name": "sovicl",
+    "region": "sa-east-1",
+    "status": "ACTIVE_HEALTHY",
+    "postgres_version": "17.11.0.011",
+    "server_version_num": 170011,
+    "timezone": "UTC",
+    "tablas_aplicacion": 0,
+    "dashboard_url": "https://supabase.com/dashboard/project/yhsfotxhaptinjtmrinn"
+  },
+  "verificacion": {
+    "get_project": true,
+    "list_tables": {
+      "schemas": [
+        "public",
+        "inventario",
+        "acceso",
+        "seguridad"
+      ],
+      "tables": []
+    },
+    "sql": "SELECT metadatos: server_version_num, TimeZone y número de BASE TABLE en public/inventario/acceso/seguridad",
+    "resultado_sql": {
+      "server_version_num": 170011,
+      "timezone": "UTC",
+      "tablas_aplicacion": 0
+    }
+  },
+  "plan_organizacion": "free",
+  "cambio_plan": false,
+  "pruebas_funcionales": "NO_EJECUTADAS_ESQUEMA_APLICACION_NO_INSTALADO",
+  "sql_server": "NO_EJECUTADO_DESTINO_2016_130_PENDIENTE",
+  "no_realizado": [
+    "DDL/DML de aplicación",
+    "Cargas de datos",
+    "Creación de cuentas de aplicación",
+    "Lectura/publicación de claves API o secretos",
+    "SQL sobre inventarioTI",
+    "Pausa/modificación de otros proyectos",
+    "Cambios de permisos/facturación",
+    "Merge/despliegue/Fase 6"
+  ]
+}

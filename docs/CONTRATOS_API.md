@@ -132,3 +132,8 @@ El contrato de reportes/exportación se concreta en [REPORTES](REPORTES.md#contr
 ## Implementación de Fase 12 — D-34
 
 Rutas reales y esquemas en `apps/server/notifications/routes.ts`, contrato detallado en [NOTIFICACIONES](NOTIFICACIONES.md): GET `/avisos` con estado/cursor y máximo 50; GET `/avisos/{uuid}` con intentos; POST `/avisos/{uuid}/acciones` con motivo/confirmación/Idempotency-Key/If-Match. Solo administrador vigente con MFA; Origin/CSRF en mutaciones. Cancelar pendiente/fallido; reintentar fallido; conciliar incierto/aceptado con evidencia. No redirigir destinos ni repetir incierto sin resolver. Web y worker separados; sin envíos externos. Los contratos de entregas anteriores conservan sus límites históricos.
+
+
+## Migración Fase 3 — compatibilidad y borrador versionado
+
+[Compatibilidad](migracion/03_COMPATIBILIDAD_API.csv) conserva las 49 rutas de la línea base; [borrador v2](migracion/03_CONTRATOS_PROPUESTOS.json) propone capacidades nuevas. [Impacto y semánticas](migracion/03_IMPACTO_FRONTEND_API.md). No se modifica código ni OpenAPI histórico. Es registro de diseño con JSON Schemas, no servidor ni especificación OpenAPI operativa. Payloads/errores/permisos v1 conservados; referencias UUID y actor/fechas del servidor. Fase 3 EN_REVISION, sin Fase 4.

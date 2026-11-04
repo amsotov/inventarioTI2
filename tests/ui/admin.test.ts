@@ -1,3 +1,4 @@
+import { postgresInventory } from '../../apps/server/inventory/postgres.js';
 import { chromium } from "@playwright/test";
 import { resolve } from "node:path";
 import { test } from "node:test";
@@ -134,7 +135,7 @@ test("Fase 9: navegador → BFF → RLS → PostgreSQL sintético (identidad dob
     server = app(
       auth,
       origin,
-      new Inventory(new Authorization(auth, business)),
+      new Inventory(postgresInventory(new Authorization(auth, business))),
       resolve("dist/web"),
       new Authorization(auth, business),
     );

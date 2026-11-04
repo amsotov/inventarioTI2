@@ -1,0 +1,47 @@
+{
+  "herramienta": "Microsoft.SqlServer.TransactSql.ScriptDom",
+  "version_paquete": "161.9142.1",
+  "parser": "TSql130Parser",
+  "destino": "SQL Server 2016",
+  "compatibility_level": 130,
+  "limite": "An\u00E1lisis sint\u00E1ctico est\u00E1tico; no ejecuci\u00F3n, compilaci\u00F3n sem\u00E1ntica ni plan del motor SQL Server",
+  "autopruebas": [
+    {
+      "caso": "select_basico",
+      "esperado": "ACEPTAR",
+      "correcto": true
+    },
+    {
+      "caso": "sql_invalido",
+      "esperado": "RECHAZAR",
+      "correcto": true
+    },
+    {
+      "caso": "sintaxis_posterior_a_130",
+      "esperado": "RECHAZAR",
+      "correcto": true
+    }
+  ],
+  "archivos": [
+    {
+      "archivo": "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql",
+      "sha256": "a6f9b5bd110082618dfaf9565467efce8023c6991ae0e93f2c2e3aea0c7b342f",
+      "errores": []
+    },
+    {
+      "archivo": "migrations/sqlserver/0002_checks_propuestos.candidate.sql",
+      "sha256": "637dd610d20d4943d28dd40180d74f4aa890cd04086b54d5259372e39a387eaf",
+      "errores": []
+    },
+    {
+      "archivo": "migrations/sqlserver/0003_indices_fk.candidate.sql",
+      "sha256": "1aa37907d0a35f51ba5c5db28751f75c8a0b6f9e72f6fc663b73872b27d336f3",
+      "errores": []
+    },
+    {
+      "archivo": "migrations/sqlserver/900_catalogo_esperado.candidate.sql",
+      "sha256": "232383f6e075e7d13e985e0b73337157d8b5b02b204116e65fd172e649386f34",
+      "errores": []
+    }
+  ]
+}

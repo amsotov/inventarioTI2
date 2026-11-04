@@ -1,3 +1,4 @@
+import { postgresInventory } from '../../apps/server/inventory/postgres.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
@@ -43,7 +44,7 @@ test('Fase 7: composición HTTP/Auth/RLS/PostgreSQL (identidad doble)',async t=>
   const provider=new IdentityDouble(),auth=new AuthService(new Postgres(authPool),provider,new Vault(randomBytes(32).toString('base64')),'https://inventario.test');
   const security=new Authorization(auth,business),r=await auth.login('reader@example.invalid','synthetic'),partial=await auth.login('admin@example.invalid','synthetic');
   const a=await auth.verify(partial.sid,partial.csrf,'factor','123456');
-  const server=app(auth,'https://inventario.test',new Inventory(security));
+  const server=app(auth,'https://inventario.test',new Inventory(postgresInventory(security)));
   const headers=(session=a)=>({cookie:'__Host-inventario='+session.sid,origin:'https://inventario.test','x-csrf-token':session.csrf,'idempotency-key':randomUUID()});
   const body={codigo:' DEMO-01 ',serie:null,motivo_sin_serie:'Sin serie verificable',tipo:'Notebook',marca:'Marca',modelo:'Modelo',condicion:'bueno',motivo:'Alta sintética',adquisicion:'2026-10-31'};
   const post=(h=headers(),payload:object=body)=>server.inject({method:'POST',url:'/api/v1/bienes',headers:h,payload});

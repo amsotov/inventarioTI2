@@ -1,0 +1,13 @@
+id,pantalla,archivo,requisitos,conservar_o_impacto,clasificacion
+UI-01,Acceso integrado y /acceso,apps/web/src/main.tsx,RF-08;RF-09;RF-10,Sesión/MFA/recuperación; token no persistente; estados de error y caducidad,CONSERVAR
+UI-02,#resumen,apps/web/src/reports.tsx,RF-06;RF-16,Métricas actuales; campos de estado/custodia requieren misma selección,ADAPTAR
+UI-03,#bienes y #bienes/:ref,apps/web/src/main.tsx,RF-02;RF-06;RF-07,Lista/ficha/formulario; ETag y replay; integrar catálogos/subtipos después de diseño,ADAPTAR
+UI-04,#funcionarios y #funcionarios/:ref,apps/web/src/processes.tsx,RF-01;RF-06,"Conservar RUT/ID/cargo/edición administrativa, activos y pertenencias",ADAPTAR
+UI-05,#movimientos y procesos en ficha,apps/web/src/processes.tsx,RF-03;RF-04;RF-05,Motivo/confirmación; origen esperado; historial y corrección,ADAPTAR
+UI-06,#unidades,apps/web/src/main.tsx,RF-01;RF-07,Consulta actual no se equipara a toda jerarquía nueva,ADAPTAR
+UI-07,#administracion: cuentas/unidades/configuración,apps/web/src/admin.tsx,RF-09;RF-11;RF-14,Permisos/MFA y último administrador; no ampliar privilegios,ADAPTAR
+UI-08,#administracion: seguimiento de avisos,apps/web/src/notifications.tsx,RF-14;RF-15,Listado/intentos/acciones; conflicto y conciliación con evidencia,CONSERVAR
+UI-09,#reportes: cinco reportes y búsqueda,apps/web/src/reports.tsx,RF-06;RF-07;RF-13;RF-16,"Columnas/filtros/privacidad, selección y descargas privadas",ADAPTAR
+UI-10,Modo demo React,apps/web/src/demoData.ts,RF-01;RF-02;RF-03;RF-16,Solo memoria sintética; eliminar demo no equivale a baja real; no prueba seguridad operativa,CONSERVAR
+UI-11,Prototipo histórico,prototipo/app.js,RNF-05,Referencia visual aceptada; no sustituye frontend React integrado,CONSERVAR
+UI-12,Futuras fichas técnicas y mantenciones,apps/web/src/main.tsx,RNF-05,Pendientes de diseño de Fase 3 e implementación Fase 7; sin rutas ni pantallas nuevas hoy,NUEVO_NECESARIO

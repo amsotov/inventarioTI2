@@ -1,0 +1,49 @@
+{
+  "fase": "MIGRACION_4",
+  "estado_verificacion": "APROBADA_EN_ALCANCE_DOCUMENTAL",
+  "estado_fase": "EN_REVISION",
+  "base_git": "59b58d912010e7e6a0bd56d1ceef71264d5ad05e",
+  "conteos": {
+    "reglas_mapeo_excel": 57,
+    "hallazgos_calidad_fuente": 13,
+    "controles_excepcion": 20,
+    "escenarios_reconciliacion_planificados": 36,
+    "puertas_control": 12,
+    "tablas_en_orden_propuesto": 30,
+    "decisiones_condicionadas_trazadas": 16,
+    "campos_actuales_referenciados": 155,
+    "campos_destino_referenciados": 117,
+    "fuentes_codigo_modelo_preservadas": 91,
+    "artefactos_diseno_previos_preservados": 15
+  },
+  "sha256_artefactos": {
+    "04_REGLAS_TRANSFORMACION.csv": "781cd718cf5bdf112c97ac246e40f20c831e75b38e38252228506b80d4130a66",
+    "04_CATALOGO_EXCEPCIONES.csv": "d72360fc94e037dc3c09818c45cd5ea974d21f74242300e1683e34ef7c8033e6",
+    "04_ORDEN_CARGA.csv": "66071843f5c1d95ca1f0e97d9751ac00ea3ffed56cc0d0ca572ce38f670df464",
+    "04_PRUEBAS_RECONCILIACION.csv": "2f12d2033c1b15e319e05631080d700286bd2e6a1141c9f614bcb61fa48060f3",
+    "04_PUERTAS_CONTROL.csv": "be988aba1bae23d4645ceb426a155471f0c759e23096a85db2392d741bc34aa2",
+    "04_PLAN_ETL.md": "c949adfb8771369eb095c04e5b3d566fc38de9178a7fce48f4325ce4c3158d2e",
+    "04_EXCEPCIONES_DATOS.md": "e33e5e4b3613cfaf24a8cff8c92894408104d3e603a8ca9e5cc310fa23c66b1c",
+    "04_RECONCILIACION_ROLLBACK.md": "20f1d5094d42dc6a87bb8c3d7bb7d057e6201fa863afc8d9616f21b32331d357"
+  },
+  "estados_datos": {
+    "origen_operacional": "NO_DISPONIBLE_EN_REPOSITORIO",
+    "excepciones_reales": "NO_PERFILADAS",
+    "pruebas_reconciliacion": "NO_EJECUTADAS_PLANIFICADAS",
+    "sql_etl_backup_restore": "NO_EJECUTADOS"
+  },
+  "comprobaciones": [
+    "Correspondencia de las 57 filas fuente, sin copiar notas sensibles",
+    "Cobertura uno a uno de los 13 hallazgos y su severidad original",
+    "Referencias a campos/excepciones/decisiones y guion completo",
+    "Orden de carga respeta todas las FK entre tablas y explicita auto-FK",
+    "Puertas no se declaran abiertas/aprobadas por documento",
+    "Hashes de fuentes y diseño previo conservados"
+  ],
+  "limites": [
+    "Verificación del plan, no motor ETL ni calidad real",
+    "No SQL, conexiones a DB, extracción/carga, backup/restore o servicios reales",
+    "Guion de 36 casos no ejecutado ni presentado como PASS",
+    "Fase 5 no autorizada; producción y datos requieren permiso propio"
+  ]
+}

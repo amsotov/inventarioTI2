@@ -1,0 +1,21 @@
+{
+  "fase": 6,
+  "base_git": "27cae1fde225ce10aebef7b89db65da2fd8c1aed",
+  "estado": "EN_PROGRESO_INTEGRACION_DESTINO_BLOQUEADA",
+  "conteos": {
+    "tablas": 30,
+    "columnas": 117,
+    "enmiendas": 42,
+    "columnas_unicode": 38,
+    "contratos_http": 18,
+    "schemas": 27,
+    "lecturas_repositorio_destino": 2,
+    "escrituras_repositorio_destino": 0,
+    "sql_server_integracion": "NO_EJECUTADA"
+  },
+  "archivos_preservados": 331,
+  "artefactos_entrega": 56,
+  "negativas": 7,
+  "aplicacion_sqlserver": "BLOQUEADA",
+  "fase7": "NO_AUTORIZADA"
+}

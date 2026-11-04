@@ -1,0 +1,12 @@
+vista_f3,pantalla,tratamiento,rutas,contratos,verificacion,pendiente
+V03-01,Resumen,CONSERVADO_V1,#resumen,v1 indicadores,regresion_ui_pg,Metricas del modelo de destino bloqueadas por backend
+V03-02,Equipos,ADAPTADO,#modelo/equipos,C03-01;C03-02;C03-18,navegador_modelo,Integracion repositorio SQL Server
+V03-03,Ficha e historia,ADAPTADO,#modelo/equipos/:ref;#modelo/equipos/:ref/historia,C03-04;C03-08,navegador_modelo,Integracion SQL Server y soporte de historia
+V03-04,Alta y tecnica,ADAPTADO,#modelo/equipos/nuevo;#modelo/equipos/:ref/editar;#modelo/equipos/:ref/tecnica,C03-03;C03-05;C03-06,navegador_modelo_cuatro_subtipos,Matriz tipo-subtipo y persistencia de destino
+V03-05,Funcionarios y pertenencias,ADAPTADO,#modelo/funcionarios;#modelo/funcionarios/:ref;#modelo/funcionarios/:ref/editar;#modelo/funcionarios/:ref/pertenencia,C03-11;C03-12;C03-13;C03-14;C03-15;C03-16;nuevos filtros C03-18,navegador_modelo,Correspondencia real cuenta-persona y soporte fisico
+V03-06,Asignaciones y traspasos,ADAPTADO,#modelo/equipos/:ref/movimiento,C03-07,navegador_modelo_reintento,Transacciones e invariantes SQL Server no probadas
+V03-07,Mantenciones,IMPLEMENTADO_CLIENTE,#modelo/equipos/:ref/mantenciones;#modelo/equipos/:ref/mantencion-nueva,C03-09;C03-10,navegador_modelo,Persistencia de destino
+V03-08,Administracion y avisos,CONSERVADO_V1,#administracion,v1 administracion y notificaciones,regresion_ui_pg,Adaptacion del almacenamiento de destino
+V03-09,Acceso y perfiles,CONSERVADO_V1,acceso;#administracion,v1 Auth/MFA y cuentas,navegador_y_regresion,C03-17 bloqueado por catalogo/politica de perfiles pendientes
+V03-10,Auditoria,CONSERVADO_V1,#reportes;#administracion,v1 auditoria,regresion_ui_pg,Soporte y consultas SQL Server pendientes
+V03-11,Reportes y buscador,CONSERVADO_V1,#reportes,v1 cinco reportes y exportaciones,regresion_ui_pg_y_demo,Seleccion del modelo de destino bloqueada; no cifras mezcladas

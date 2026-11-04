@@ -1,3 +1,5 @@
+import { inventoryDriver } from './inventory/configuration.js';
+import { postgresInventory } from './inventory/postgres.js';
 import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
 import { assertDatabaseRole } from './security/postgres.js';
@@ -10,6 +12,7 @@ import { Vault } from './auth/crypto.js';
 import { AuthService } from './auth/service.js';
 import { operations } from './operations.js';
 function required(name: string) { const v=process.env[name];if(!v) throw new Error('Missing '+name);return v; }
+inventoryDriver(process.env.INVENTORY_BACKEND);
 const origin=required('APP_ORIGIN');
 if(new URL(origin).origin!==origin || !origin.startsWith('https://')) throw new Error('APP_ORIGIN requires HTTPS origin');
 const pool=new Pool({connectionString:required('DATABASE_URL'),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
@@ -18,7 +21,7 @@ const auth=new AuthService(new Postgres(pool),new SupabaseProvider(required('SUP
 const business=new Pool({connectionString:required('BUSINESS_DATABASE_URL'),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
 await assertDatabaseRole(business,'inventario_runtime');
 const security=new Authorization(auth,business);
-const server=app(auth,origin,new Inventory(security),fileURLToPath(new URL('../../web/',import.meta.url)),security);
+const server=app(auth,origin,new Inventory(postgresInventory(security)),fileURLToPath(new URL('../../web/',import.meta.url)),security);
 operations(server,async()=>{
   await Promise.all([assertDatabaseRole(pool,'inventario_auth'),assertDatabaseRole(business,'inventario_runtime')]);
 },line=>process.stdout.write(line));

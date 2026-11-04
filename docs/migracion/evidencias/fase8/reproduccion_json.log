@@ -1,0 +1,31 @@
+✔ M8-F01: traspaso a la misma identidad UUID con distinto caso se rechaza antes del backend (4380.197135ms)
+✔ M8-F01: el formulario tampoco confunde el caso textual con otra identidad UUID (13.227048ms)
+✖ M8-F02: JSON mal formado se rechaza como petición inválida antes de invocar persistencia (2865.347891ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7602.91189
+
+✖ failing tests:
+
+test at tests/security/migration.test.ts:24:1
+✖ M8-F02: JSON mal formado se rechaza como petición inválida antes de invocar persistencia (2865.347891ms)
+  AssertionError [ERR_ASSERTION]: {"type":"about:blank","title":"No se pudo completar la solicitud","status":503,"code":"DEPENDENCY_UNAVAILABLE","requestId":"req-4"}
+
+  503 !== 400
+
+      at TestContext.<anonymous> (/workspace/work/fase8/review/tests/security/migration.test.ts:29:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 503,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

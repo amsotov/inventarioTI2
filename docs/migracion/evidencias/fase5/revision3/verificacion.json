@@ -1,0 +1,264 @@
+{
+  "fase": "MIGRACION_5",
+  "estado": "EN_REVISION_APLICACION_BLOQUEADA",
+  "base_git": "9f84fcd836550654770bd7ed4191f9edaffe2528",
+  "continuacion_git_base": "e94e9fce6eb35c95284dd5f93dd187bb197d25d3",
+  "verificacion_estatica": "APROBADA_EN_ALCANCE_ESTATICO",
+  "conteos": {
+    "tablas": 30,
+    "columnas": 117,
+    "pk": 30,
+    "componentes_pk": 31,
+    "fk": 30,
+    "uq": 18,
+    "identity": 25,
+    "defaults": 5,
+    "checks_propuestos": 9,
+    "indices_fk_propuestos": 24,
+    "tablas_soporte_sin_ddl": 19,
+    "campos_actuales_preservar": 155,
+    "casos_motor_no_ejecutados": 30
+  },
+  "incidencias_corregidas": [
+    "Verificador aceptaba solo letras en tipos; se amplió para DATETIME2 y se repitió con éxito"
+  ],
+  "fuentes_preservadas": [
+    {
+      "manifiesto": "docs/migracion/evidencias/fase2/fuentes.json",
+      "archivos": 91
+    },
+    {
+      "manifiesto": "docs/migracion/evidencias/fase3/verificacion.json",
+      "archivos": 15
+    },
+    {
+      "manifiesto": "docs/migracion/evidencias/fase4/verificacion.json",
+      "archivos": 8
+    }
+  ],
+  "sha256_artefactos": {
+    "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql": "988111fc248735507f0ce23605acb443a24b466e793d7c75b372883200dd22da",
+    "migrations/sqlserver/0002_checks_propuestos.candidate.sql": "637dd610d20d4943d28dd40180d74f4aa890cd04086b54d5259372e39a387eaf",
+    "migrations/sqlserver/0003_indices_fk.candidate.sql": "1aa37907d0a35f51ba5c5db28751f75c8a0b6f9e72f6fc663b73872b27d336f3",
+    "migrations/sqlserver/900_catalogo_esperado.candidate.sql": "2c6ecf0a4ef438cdcaf14e27500d94114d524a663a7f586ab81c284537b8c2e7",
+    "migrations/sqlserver/manifest.json": "fc755044982ac0f6e178ddfe0aa4eaa7d0ca8545b00c8cbf64206bda4ace94a2",
+    "migrations/sqlserver/README.md": "dfbed5ad5bb45edcc35f2b6998efe0881fff585badbd8fda24e5fb7b48504ca1",
+    "docs/migracion/verificar_fase5.py": "c98178ace2c7c204429bda90217398f6e39ed5039b480698d61b3c37c09b7473",
+    "docs/migracion/05_CASOS_SQLSERVER.csv": "ea249d00904af09fc730695627bfb4084d0b41a670e22c02ade0b9e7b9fe0497",
+    "docs/migracion/05_CHECKS_PROPUESTOS.csv": "42382205be634e7deaea3c937b63e4241445b13da72bf828ac37caecff9db4e2",
+    "docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md": "444a9a9dec703df2187aa1c3f990f58704ba0cd5b772565663125529c30a8c78",
+    "docs/migracion/05_ESQUEMA_SQLSERVER.md": "1b130bf3a5ef83d4b9722e4714fd77b45efa8ea59f7a1804e133c22d8caa2910",
+    "docs/migracion/05_INDICES_PROPUESTOS.csv": "d272c681cae497b9db8301d47b3fa4cb757d1e7c9968cdd8803899a2be56e97e",
+    "docs/migracion/05_PRESERVACION_CAMPOS.csv": "bba6b82fcbd4f64a4561d52dd01bab0a34b32b41dd2efc6161535f6402e3b687",
+    "docs/migracion/05_SOPORTE_ACTUAL.csv": "ce924ecbe5e4a43da7215b9116e563e89e71d135907406f29ff2bd6b52624a22",
+    "docs/migracion/evidencias/fase5/fuentes.json": "a10701103dfefd3197a3b06ef3e8114ffd584588b24a4eabda3e931e55222954",
+    "docs/migracion/herramientas/scriptdom130/Program.cs": "1ac09989e6dcda8723da7e9fabd7eb9b0512ffa9b2107b11c30d4df97c0b4956",
+    "docs/migracion/herramientas/scriptdom130/README.md": "b24b48a7eb6ba010e6328ee9200101836f0dc1d1f2a638894d789e95a1abefa4",
+    "docs/migracion/herramientas/scriptdom130/ScriptDom130.csproj": "ee8c0714d63750da6f564145db5b7b7474fa5ad68fea9db2a0e45e57828ba51a",
+    "docs/migracion/herramientas/scriptdom130/packages.lock.json": "25cba0c1595234f935a797ef7ee3eed9ec06cf9828e77439d5c22d799b18a160",
+    "docs/migracion/evidencias/fase5/revision1/fuentes.json": "77af6d4e1104a2fc7c0f06d1887f6aa9c39049638e857eec4036f2e5fc6809cf",
+    "docs/migracion/evidencias/fase5/revision1/verificacion.json": "9f5dceb92e49fd819adab24113bdfe6faff14db253be82d60071fabc0dbb1bb1",
+    "docs/migracion/evidencias/fase5/revision2/fuentes.json": "1e224e096e000c64199c790d3c860230f55850584878746279f1474546e994bc",
+    "docs/migracion/evidencias/fase5/revision2/manifest.json": "eb36559ff2392d9d82a2ccd04ce5e4e29b3497708deec8050b4a6e64234ac106",
+    "docs/migracion/evidencias/fase5/revision2/verificacion.json": "3e39a8946e23676c6f9ce3cd00c0b46085c946e14762f331ecaaa80365bc71da",
+    "docs/migracion/evidencias/fase5/provision_supabase_creado.json": "e5dc7731a2d0689b8910eebe15be27cdcc0cc03dea68f8f1cc37d8243ae8c323",
+    "docs/migracion/PROVISION_SUPABASE.md": "a9fbf212462c081b933b96063f1c1083d424338656c099db53e844028fefb08c"
+  },
+  "negativas": [
+    {
+      "caso": "tipo_alterado",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Tipo/NULL/identity/default/columnas difieren del Excel"
+    },
+    {
+      "caso": "pk_compuesta_incompleta",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "PK/orden compuesto difiere"
+    },
+    {
+      "caso": "fk_padre_incorrecto",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Referencia FK difiere"
+    },
+    {
+      "caso": "default_cambiado_sin_enmienda",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Tipo/NULL/identity/default/columnas difieren del Excel"
+    },
+    {
+      "caso": "sin_barrera",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Barrera incondicional: 0001_nucleo_diccionario.candidate.sql"
+    },
+    {
+      "caso": "fk_no_confiable",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Operación no permitida: 0001_nucleo_diccionario.candidate.sql"
+    },
+    {
+      "caso": "check_distinto_de_propuesta",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Expresión CHECK SQL/CSV difiere"
+    },
+    {
+      "caso": "indice_de_campo_incorrecto",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "DDL índices difiere"
+    },
+    {
+      "caso": "operacion_destructiva",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Operación no permitida: 0001_nucleo_diccionario.candidate.sql"
+    },
+    {
+      "caso": "check_presentado_aprobado",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "CHECK no aprobado no se convierte en aprobado"
+    },
+    {
+      "caso": "cobertura_actual_incompleta",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Preservación de 155 campos"
+    },
+    {
+      "caso": "entorno_inventado",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Manifiesto no es autorización"
+    },
+    {
+      "caso": "catalogo_falso",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Catálogo esperado difiere del Excel"
+    },
+    {
+      "caso": "sin_guardia_motor_real",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Guardia motor real 2016/13.x: 0001_nucleo_diccionario.candidate.sql"
+    },
+    {
+      "caso": "compatibilidad_150",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Guardia compatibility_level 130: 0001_nucleo_diccionario.candidate.sql"
+    },
+    {
+      "caso": "funcion_posterior_2016",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Construcción posterior a SQL Server 2016: 0001_nucleo_diccionario.candidate.sql"
+    },
+    {
+      "caso": "collation_utf8_no_disponible",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Construcción posterior a SQL Server 2016: 0001_nucleo_diccionario.candidate.sql"
+    },
+    {
+      "caso": "motor_posterior_como_sustituto",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Destino 2016/130 confirmado; edición/collation siguen pendientes"
+    },
+    {
+      "caso": "proyecto_supabase_distinto",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Proyecto de pruebas incorrecto/ref no corresponde a evidencia"
+    },
+    {
+      "caso": "referencia_supabase_distinta",
+      "resultado": "RECHAZADO_CORRECTAMENTE",
+      "control": "Proyecto de pruebas incorrecto/ref no corresponde a evidencia"
+    }
+  ],
+  "sintaxis": {
+    "herramienta": "SQLFluff",
+    "version": "3.5.0",
+    "dialecto": "tsql",
+    "limite": "Parser estático; no compilación/ejecución SQL Server",
+    "archivos": [
+      {
+        "archivo": "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql",
+        "resultado": "PARSEADO_SIN_ERRORES"
+      },
+      {
+        "archivo": "migrations/sqlserver/0002_checks_propuestos.candidate.sql",
+        "resultado": "PARSEADO_SIN_ERRORES"
+      },
+      {
+        "archivo": "migrations/sqlserver/0003_indices_fk.candidate.sql",
+        "resultado": "PARSEADO_SIN_ERRORES"
+      },
+      {
+        "archivo": "migrations/sqlserver/900_catalogo_esperado.candidate.sql",
+        "resultado": "PARSEADO_SIN_ERRORES"
+      }
+    ],
+    "negativa_sql_invalido": "RECHAZADO_CORRECTAMENTE"
+  },
+  "destino_confirmado": {
+    "version": "SQL Server 2016",
+    "product_major_version": 13,
+    "compatibility_level": 130
+  },
+  "supabase_provision": "PROYECTO_CREADO_VERIFICACION_METADATA_PREVIA_NO_REPETIDA_POR_ESTE_SCRIPT",
+  "supabase_funcionalidad": "NO_EJECUTADA_ESQUEMA_APLICACION_NO_INSTALADO",
+  "sintaxis_sql2016": {
+    "herramienta": "Microsoft.SqlServer.TransactSql.ScriptDom",
+    "version_paquete": "161.9142.1",
+    "parser": "TSql130Parser",
+    "destino": "SQL Server 2016",
+    "compatibility_level": 130,
+    "limite": "Análisis sintáctico estático; no ejecución, compilación semántica ni plan del motor SQL Server",
+    "autopruebas": [
+      {
+        "caso": "select_basico",
+        "esperado": "ACEPTAR",
+        "correcto": true
+      },
+      {
+        "caso": "sql_invalido",
+        "esperado": "RECHAZAR",
+        "correcto": true
+      },
+      {
+        "caso": "sintaxis_posterior_a_130",
+        "esperado": "RECHAZAR",
+        "correcto": true
+      }
+    ],
+    "archivos": [
+      {
+        "archivo": "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql",
+        "sha256": "988111fc248735507f0ce23605acb443a24b466e793d7c75b372883200dd22da",
+        "errores": []
+      },
+      {
+        "archivo": "migrations/sqlserver/0002_checks_propuestos.candidate.sql",
+        "sha256": "637dd610d20d4943d28dd40180d74f4aa890cd04086b54d5259372e39a387eaf",
+        "errores": []
+      },
+      {
+        "archivo": "migrations/sqlserver/0003_indices_fk.candidate.sql",
+        "sha256": "1aa37907d0a35f51ba5c5db28751f75c8a0b6f9e72f6fc663b73872b27d336f3",
+        "errores": []
+      },
+      {
+        "archivo": "migrations/sqlserver/900_catalogo_esperado.candidate.sql",
+        "sha256": "2c6ecf0a4ef438cdcaf14e27500d94114d524a663a7f586ab81c284537b8c2e7",
+        "errores": []
+      }
+    ]
+  },
+  "motor_sqlserver": "NO_EJECUTADO_SIN_ENTORNO_AUTORIZADO",
+  "etl_reconciliacion_rollback_restore": "NO_EJECUTADOS",
+  "aplicacion": "SIN_CAMBIOS",
+  "fase6": "NO_AUTORIZADA",
+  "bloqueos": [
+    "No hay entorno SQL Server autorizado ni conexión configurada",
+    "M1-D02/M1-D03 autenticación y vínculo de cuenta pendientes",
+    "M1-D07 precisión/defaults UTC pendientes",
+    "M1-D08/M1-D09 soporte actual y garantías pendientes",
+    "M1-D10/M1-D11/M1-D13 reglas efectivas pendientes",
+    "M1-D12 tratamiento de códigos de impresión/auditoría pendiente",
+    "M1-D14 nueve CHECK propuestos no aprobados",
+    "M1-D15 collation/longitudes/Unicode pendientes",
+    "No hay Excel operacional ni perfilado real",
+    "No hay ensayo de aplicación/rollback/restauración SQL Server"
+  ]
+}

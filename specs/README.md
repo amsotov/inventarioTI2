@@ -1,5 +1,11 @@
 # Especificaciones del proyecto
 
+Estado vigente: [M9 documentación/preparación](migracion-preparacion-despliegue.md), M9-A01. F8 aceptada con pendientes; F9 EN_REVISION_DOCUMENTAL, liberación NO_GO. Spec Kit no instalado. No hay fase posterior definida ni operaciones autorizadas. Los estados siguientes son históricos.
+
+
+Estado vigente de migración: [M8 seguridad/regresión](migracion-seguridad-regresion.md), EN_REVISION_CON_BLOQUEOS. M8-A01 acepta F7; F9 no autorizada. M8-R01 y destino pendientes; no se instaló Spec Kit. Los estados siguientes son históricos.
+
+
 Esta carpeta se reserva para especificaciones funcionales por módulo o historia de usuario. Si se instala GitHub Spec Kit, **respeta la estructura y los comandos que genere la versión instalada**; Spec Kit puede utilizar otros directorios y archivos.
 
 ## Plantilla mínima de una especificación
@@ -95,3 +101,49 @@ Fase 13 COMPLETADA y CA13-06 cumplido. Fase 14 autorizada únicamente para inici
 ## Entrega vigente de Fase 14 — D-37/D-38
 
 [Plan/criterios/cobertura](../docs/DESPLIEGUE.md), [runbook](../docs/RUNBOOK_OPERACION.md), [checklist](../docs/CHECKLIST_LIBERACION.md) y [pruebas](../docs/PRUEBAS.md#fase-14--operación-y-continuidad). Spec Kit no instalado ni simulado. CI sin deploy y ensayos sintéticos locales; operación/identidad/retención gestionadas pendientes. EN_REVISION, CA14-06 PENDIENTE; última completada 13. F1-SEG-01/02/03 abiertos, Fase 15 sin autorización y sin producción/correo real. Antecedentes anteriores conservados.
+
+
+## Ciclo de migración — Fase 1, 2026-11-03
+
+Fase 0 aprobada; Fase 1 EN_REVISION. [Validación campo por campo](../docs/migracion/01_VALIDACION_MODELO.md) y [decisiones pendientes](../docs/migracion/01_DECISIONES_PENDIENTES.md). Fase 2 de migración (trazabilidad) NO AUTORIZADA; no corresponde al diseño visual de la Fase 2 histórica. Spec Kit no instalado ni simulado. Sin cambios de aplicación, datos o SQL.
+
+
+## Migración Fase 2 — M2-A01
+
+Fase 1 aceptada por «apruebo y inicia fase 2». [Matriz](../docs/migracion/02_MATRIZ_TRAZABILIDAD.md) y [mapeo](../docs/migracion/02_MAPEO_ESQUEMAS.md) entregados EN_REVISION. Fase 3 no autorizada. La aprobación documental no ejecuta decisiones físicas ni resuelve datos condicionados. Spec Kit no instalado ni simulado; sin cambios de aplicación o SQL.
+
+
+## Migración Fase 3 — M3-A01
+
+Fase 2 aceptada. [Impacto frontend/API](../docs/migracion/03_IMPACTO_FRONTEND_API.md), [diseño](../docs/migracion/03_DISENO_VISUAL.md) y contratos versionados propuestos EN_REVISION. Maqueta documental aislada; sin implementación de aplicación/SQL ni instalación de Spec Kit. Fase 4 no autorizada.
+
+
+## Migración Fase 4 — M4-A01
+
+Fase 3 aceptada. [Plan ETL](../docs/migracion/04_PLAN_ETL.md), [excepciones](../docs/migracion/04_EXCEPCIONES_DATOS.md) y [reconciliación/rollback](../docs/migracion/04_RECONCILIACION_ROLLBACK.md) EN_REVISION. Solo documentación, sin SQL o extracción/carga real. Condiciones de datos/opciones y F1-SEG siguen pendientes; Fase 5 no autorizada. Spec Kit no instalado ni simulado.
+
+## Migración Fase 5 — candidato de revisión
+
+M5-A01 acepta Fase 4 y autoriza Fase 5. [Informe](../docs/migracion/05_ESQUEMA_SQLSERVER.md), [DDL](../migrations/sqlserver/README.md), CHECK/índices/soporte/casos y evidencia estática. Estado EN_REVISION; ejecución BLOQUEADA por diseño/entorno. Fase 6 NO AUTORIZADA. No se instaló Spec Kit ni se modificó su configuración.
+
+## Continuidad de migración M5-A02
+
+SQL Server 2016/13.x/compatibilidad 130 y Supabase/PostgreSQL inventarioTI2 confirmados; no es aprobación de Fase 5 ni Fase 6. [Entornos](../docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md). Parser de revisión aislado, sin integración de backend ni datos remotos.
+
+## M5-A04 — infraestructura de pruebas creada
+
+[Provisión](../docs/migracion/PROVISION_SUPABASE.md): pausa autorizada de inventarioTI, nuevo inventarioTI2 en Supabase, vacío de tablas/datos de aplicación. Entorno verificado por metadatos, sin implementación nueva de app o fases posteriores. SQL Server revisión3 conserva DDL y decisiones pendientes.
+
+## M5-A05 — baseline PostgreSQL reutilizada
+
+[Informe](../docs/migracion/VALIDACION_SUPABASE.md) de instalación/ensayo inicial: fuente existente preservada, 19/155, datos sintéticos y 20 casos SQL. Paquete de pruebas aislado, sin reconstrucción del sistema o implementación de fase posterior. SQL Server revisión4 y decisiones pendientes.
+
+
+## Migración Fase 6 — incremento parcial
+
+M6-A01/A02/A03. [Especificación y cobertura](../docs/migracion/06_ADAPTACION_BACKEND.md), [contratos ejecutables](../apps/server/modernization/contract.ts) cotejados con F3 y [pruebas](../docs/migracion/evidencias/fase6/pruebas.json). Repositorio legacy adaptado y frontera nueva; dos lecturas por puerto, cero escrituras de destino. Soporte físico/instancia/reglas pendientes. F6 EN_PROGRESO; F7 no autorizada. Spec Kit no instalado ni simulado.
+
+
+## Migración Fase 7 — M7-A01
+
+[Informe/especificación](../docs/migracion/07_ADAPTACION_VISUAL.md), [matriz](../docs/migracion/07_COBERTURA_VISUAL.csv), [pruebas](../docs/migracion/evidencias/fase7/pruebas.json). Cliente v2 real sobre framework/CSS existentes; repositorio de destino doble únicamente en pruebas. M7-C01 lectura aditiva, F3 original preservado. EN_REVISION visual, integración SQL Server bloqueada; F8 no autorizada. Spec Kit no instalado ni simulado.

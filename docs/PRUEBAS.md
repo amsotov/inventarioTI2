@@ -1,5 +1,11 @@
 # Plan y evidencia de verificación
 
+> Continuidad vigente M9-A01: F8 aceptada con pendientes, [F9 documental](migracion/09_PREPARACION_DESPLIEGUE.md) EN_REVISION. [Pendientes](migracion/09_PENDIENTES.csv), [puertas](migracion/09_PUERTAS_LIBERACION.csv) y [verificación nueva](migracion/evidencias/fase9/pruebas.json). M8-R01 autorregistro sin corregir y M9-R01 runtime demo discrepante; liberación NO_GO. Las 280 pruebas F8 son históricas, no repetidas en F9. Los estados anteriores siguientes conservan su contexto de entrega.
+
+
+> Continuidad vigente de migración: M8-A01 acepta F7 e inicia [F8 seguridad/regresión](migracion/08_SEGURIDAD_REGRESION.md). EN_REVISION_CON_BLOQUEOS; [matriz](migracion/08_MATRIZ_PRUEBAS.csv) y [evidencia](migracion/evidencias/fase8/pruebas.json). 280 casos Node aprobados; M8-R01 autorregistro remoto FALLIDA/no corregida, [propuesta sin aplicar](migracion/08_CONFIGURACION_AUTH_PROPUESTA.json). GoTrue/BFF/PG reales localmente; no integración gestionada ni SQL Server. F9 no autorizada, producción bloqueada. El contenido restante conserva su contexto histórico.
+
+
 **Fecha:** 2026-10-31 · **Fase:** 1 — COMPLETADA (aceptación documental; sin pruebas funcionales).
 
 ## Alcance de esta revisión
@@ -410,3 +416,65 @@ Duración del ensayo corregido: **9,125 s**, desde antes de crear fuente hasta s
 Intentos iniciales y correcciones en [ensayos iniciales](evidencias/fase14/ensayos-iniciales.md): filtro de hashes vacío corregido y exigencia de 19 tablas; solapamiento UI/restore agotó espacio, repetición secuencial final PASS. No ocultar esos resultados ni presentar el primer intento como integridad acreditada. Evidencia aceptada de fases 2–13 y migraciones originales preservadas literalmente; capturas/PDF/secretos regenerados durante suites se apartaron antes de restaurar originales.
 
 NO EJECUTADOS: staging/producción, Supabase/Auth/MFA/advisors gestionados, Resend/buzones/envío físico, TLS/DNS/proxy/canales de alerta reales, upload/lectura externa/KMS/custodia, conservación efectiva 30 días, restauración integral gestionada, rollback de artefacto en plataforma, disponibilidad mensual 99,5 %, hardware/Safari. Carga/a11y de Fase 13 no se repiten porque no cambia UI/negocio; mantienen sus límites/evidencia aceptada. F1-SEG-01/02/03 abiertos. Fase 15 sin iniciar, producción no autorizada. CI remoto solo PASS al observar run del SHA entregado; evidencia local y SHA sincronizado no lo sustituyen.
+
+
+## Migración — Fase 1 documental, 2026-11-03
+
+Verificación reproducible: `python3 docs/migracion/verificar_fase1.py`; [evidencia](migracion/evidencias/fase1/verificacion.json). Compara Excel con transcripción manual independiente del DER, claves ER, 30 tablas/117 campos/30 FK, PK/UQ/null, 3 precisiones DATETIME2 pendientes, 9 CHECK incompletos, anexos y hashes de las tres fuentes. No interpreta automáticamente imágenes. Inspección visual de ER/DER y revisión de contradicciones con requisitos aprobados documentadas en [validación](migracion/01_VALIDACION_MODELO.md).
+
+Control de alcance: fuentes, apps/, supabase/, db/, ops/, prototipo/, tests/, dependencias, workflows y evidencia histórica sin cambios frente a 511b99d; solo documentación/anexos y su verificador. Revisión de espacios/diferencias y enlaces internos de archivos cambiados. Resultado final del control documentado en la entrega GitHub.
+
+NO EJECUTADAS: SQL, migraciones, build, suites funcionales/API/UI, carga, integraciones gestionadas y perfilado operacional. Fase 1 EN_REVISION; propuestas pendientes, no modelo implementable. Sin Fase 2 ni despliegue.
+
+
+## Migración Fase 2 — verificación documental
+
+`python3 docs/migracion/verificar_fase2.py`: cobertura RF/RNF/RN/HU/CR, 19 tablas/155 campos actuales, 30 tablas/117 campos destino, referencias de API/UI/pruebas y hashes de fuentes. [Evidencia](migracion/evidencias/fase2/verificacion.json). Fuentes de modelo, aplicación, migraciones, tests y evidencias históricas preservadas. Revisión de enlaces y diff --check. Las pruebas existentes se referencian por archivo/título/línea; NO REEJECUTADAS. Sin SQL, build, pruebas funcionales, datos reales, despliegue ni integración gestionada. Fase 2 EN_REVISION, no Fase 3.
+
+
+## Migración Fase 3 — maqueta y documentación
+
+`python3 docs/migracion/evidencias/fase3/verificar_prototipo.py`: Playwright/Chromium local, 11 vistas/ambos perfiles/1440–768–390, estados, filtros, validaciones ilustrativas, teclado/scroll y ausencia de API/solicitudes externas; [evidencia](migracion/evidencias/fase3/navegador.json). Capturas reales de propuesta sintética. `python3 docs/migracion/verificar_fase3.py`: compatibilidad 49 rutas, 18 contratos, 117 campos, referencias y fuentes preservadas; [evidencia](migracion/evidencias/fase3/verificacion.json). No SQL, aplicación React, identidad, correo, exportación real ni WCAG integral acreditados. Fase 3 EN_REVISION, Fase 4 no autorizada.
+
+
+## Migración Fase 4 — verificación documental de plan
+
+`python3 docs/migracion/verificar_fase4.py`: cobertura de 57 mapeos/13 hallazgos, nombres destino exactos, 20 excepciones, 36 escenarios planificados y 12 puertas; DAG de 30 tablas, referencias e integridad de fuentes/entregas. [Evidencia](migracion/evidencias/fase4/verificacion.json). No ejecuta ETL, SQL, backup/restore, aplicación ni perfilado de datos reales. Los 36 casos siguen NO_EJECUTADA_PLANIFICADA. Enlaces y diff --check revisados; fuentes, app, SQL, tests y maquetas/capturas previas intactos. Fase 4 EN_REVISION; Fase 5 no autorizada.
+
+## Migración Fase 5 — controles estáticos y límites
+
+`python3 docs/migracion/verificar_fase5.py`: cobertura OOXML ↔ DDL/CSV/manifiesto, integridad de referencias, barreras y preservación. Con venv externo SQLFluff 3.5.0: `--analizar-sintaxis` analiza cuatro scripts en dialecto tsql; no compila ni ejecuta SQL Server. Trece negativas sobre copias detectan cambios de tipo, FK/clave/default, CHECK, índice, guardia y manifiesto. Evidencia en [fase5/verificacion.json](migracion/evidencias/fase5/verificacion.json).
+
+`--evaluar-aplicacion` termina 3 por diseño/entorno pendientes (bloqueo esperado, no error de conectividad). [30 casos](migracion/05_CASOS_SQLSERVER.csv) de motor, aplicación, reconciliación, replay, concurrencia y rollback/restore NO_EJECUTADOS. No se repiten suites PostgreSQL/UI sin cambios de aplicación. Fase 5 EN_REVISION, no COMPLETADA.
+
+## Migración Fase 5 — revisión 2 / SQL Server 2016
+
+La evidencia vigente incluye 19 negativas y parser Microsoft ScriptDom 161.9142.1/TSql130Parser de cuatro SQL, con tres autopruebas. [Guía](migracion/herramientas/scriptdom130/README.md). Todo estático, sin compilación semántica ni motor SQL Server. El verificador mantiene bloqueo de aplicación (salida 3); no abre DB.
+
+SQLFluff genérico se conserva como comprobación adicional; no fija versión del motor. Supabase/PostgreSQL inventarioTI2 será entorno funcional sintético: no está visible, no hay pruebas remotas/cargas. Los 30 casos SQL Server siguen NO_EJECUTADOS. Evidencia de revisión 1 archivada; no se reescribe como resultado de la revisión 2.
+
+## M5-A03 — comprobación de provisión Supabase
+
+Consulta de proyectos/organización antes y después; un create_project rechazado por BadRequestException/INVALID_ARGUMENT por cuota Free, no fallo de sintaxis SQL. Get_cost del plan actual: amount 0/monthly. Estado final: plan free, dos activos, cero inventarioTI2. [Evidencia saneada](migracion/evidencias/fase5/provision_supabase.json). No se ejecutó SQL ni pruebas funcionales remotas; no hay proyecto nuevo que probar. Verificación estática de Fase 5 se conserva en su alcance; no se repiten suites de aplicación sin cambios.
+
+## M5-A04 — entorno Supabase disponible y revisión3
+
+get_project: inventarioTI pasó ACTIVE_HEALTHY → PAUSING → INACTIVE tras pausa autorizada. Nuevo inventarioTI2 ref yhsfotxhaptinjtmrinn creado y releído ACTIVE_HEALTHY, sovicl/sa-east-1, plan Free. list_tables de public/inventario/acceso/seguridad vacío. SELECT de server_version_num/TimeZone/recuento BASE TABLE: 170011/UTC/0. [Evidencia](migracion/evidencias/fase5/provision_supabase_creado.json). Esto prueba disponibilidad/metadatos, no funcionalidad Auth/API/UI ni SQL Server.
+
+Revisión3 del verificador vincula manifiesto al proyecto observado, añade negativa de ref incorrecta (20 negativas) y conserva comprobaciones de parser 130. SQL Server de revisión2 es idéntico; evidencia anterior archivada. No hubo DDL/DML de aplicación, semillas ni pruebas funcionales.
+
+## M5-A05 — 20 casos SQL gestionados y ACL
+
+[Informe](migracion/VALIDACION_SUPABASE.md) y [evidencia](migracion/evidencias/fase5/ensayo_supabase/resultados.json): 20 casos en Supabase inventarioTI2 con SET ROLE, funciones privadas, RLS, idempotencia secuencial, versiones, asignación/traspaso/baja, lector/anon y auditoría inmutable. Se repitieron tras correcciones ACL. Final ROLLBACK: semilla 2/3/6 intacta, cero cuentas/sesiones/comandos/auditoría/outbox; secuencias pueden avanzar. Catálogo 19/155, todas RLS, 7 roles NOLOGIN sin atributos elevados/CREATE; PUBLIC EXECUTE=0 y USAGE navegador=0. Advisors seguridad sin lints devueltos.
+
+Hallazgo ACL: la revocación general dejó 9 funciones de otros propietarios; se cerró como propietario efectivo y restauró GRANT explícito. No se reescribieron migraciones aplicadas. Son pruebas SQL con contexto sintético, no login/MFA real, HTTP/UI, dos escritores, rendimiento, backup/restore, reconciliación o SQL Server. Veinte negativas documentales del candidato se cuentan aparte. Verificador local no repite ensayos remotos.
+
+
+## Migración Fase 6 — frontera y regresión
+
+Evidencia nueva y límites en [pruebas F6](migracion/evidencias/fase6/pruebas.json), [informe](migracion/06_ADAPTACION_BACKEND.md) y [verificador vigente](migracion/verificar_fase6.py). HTTP v2 usa persistencia doble con Auth/RLS/transacción PG reales y proveedor doble. Regresión v1 se conserva; no hay integración SQL Server/gestión Auth real. Ensayos históricos intactos; verificadores anteriores corresponden a sus commits.
+
+
+## Migración Fase 7 — React, interacción y regresión
+
+[Resultados F7](migracion/evidencias/fase7/pruebas.json), [navegador](migracion/evidencias/fase7/navegador.json) e [informe](migracion/07_ADAPTACION_VISUAL.md). BFF/Auth/RLS PG reales y persistencia v2 doble; cuatro subtipos, reintento/conflicto, privacidad, mantenciones, pertenencias, fallback, tres tamaños/dos roles. No prueba de motor SQL Server o Auth/MFA gestionado. Evidencias anteriores conservadas, verificador vigente F7.

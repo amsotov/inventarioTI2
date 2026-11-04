@@ -1,6 +1,35 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
-Estado vigente (2026-11-02): **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
+## MPUB-A01 — publicación de modernización autorizada
+
+Usuario: «Publica los cambios de modernización». Autoriza integrar el código aprobado en main y ejecutar la publicación estática de GitHub Pages. Se prepara PR con CI antes de integrar y se comprobará el SHA efectivo en publicacion.json y el workflow de despliegue. No repetir confirmación de esta publicación.
+
+La demo incluye acceso a [Modernización · vista previa](https://amsotov.github.io/inventarioTI2/modernizacion/), prototipo navegable F3 y seis capturas de la interfaz F7. Se identifican como propuesta/capturas; no hay conexión a la base de destino ni dobles v2 incorporados al servidor. Se conservan Auth, datos/esquema y barreras SQL. La autorización de Pages no configura Auth, aplica SQL, habilita workers/envíos, contrata servicios o acredita operación de SQLServer. F9 documental sigue aceptada y las matrices anteriores son snapshots históricos. [Plan y verificación](docs/PUBLICACION_MODERNIZACION.md).
+
+
+## M9-A02 — Fase 9 aprobada y consulta de Pages
+
+Usuario: «Apruebo fase 9 quiero ver la publicación GitHub Pages». Acepta la entrega documental de2376a580926dadb1af363f94d3ff74f05f377d34: **FASE9 COMPLETADA_DOCUMENTAL**, con pendientes técnicos conservados. El modelo de destino sigue NO_GO; esta consulta no crea una fase10 ni pide integrar ramas o sustituir el sitio publicado.
+
+**Publicación existente verificada:** https://amsotov.github.io/inventarioTI2/ . HTTP200 y portada React en Chromium, banner Modo demo visible, sin errores JavaScript. Último workflow de Pages observado:41648235275, success, SHA511b99d64c97ff1917f279e78490f377a3f5239a (main). No se ejecutó otro despliegue ni se modificó main. [Verificación y alcance](docs/migracion/CIERRE_FASE9_PAGES.md).
+
+Las ramas de modernización no están publicadas en Pages. La demo utiliza datos sintéticos en memoria, sin login operativo o backend/SQLServer. Verificador F9 y evidencia se conservan como snapshot del commit aceptado2376a58; sus hashes de documentos describen esa entrega, no esta anotación posterior de aceptación. M8-R01 y prerrequisitos del destino siguen abiertos; M9-R01 conserva seguimiento del runtime para futuros paquetes, sin impedir ver la demo ya publicada. README/DEMO ya documentaban compilación estática Node20 correcta y Node24 como requisito del servidor.
+
+
+## Ciclo vigente de modernización — 2026-11-03
+
+**Migración FASES0–5 aceptadas; entregas parciales F6/F7 y auditoría F8 ACEPTADAS con pendientes. FASE9: EN_REVISION_DOCUMENTAL. Liberación: NO_GO.**
+
+M9-A01: «Apruebo fase 8 inicia fase 9» acepta `e224d6f` e inicia documentación/preparación. [Informe F9](docs/migracion/09_PREPARACION_DESPLIEGUE.md), [compatibilidades](docs/migracion/09_COMPATIBILIDADES.csv), [pendientes](docs/migracion/09_PENDIENTES.csv), [puertas](docs/migracion/09_PUERTAS_LIBERACION.csv) y [manifiesto](docs/migracion/09_MANIFIESTO_PREPARACION.json). Guías vigentes en DESPLIEGUE, RUNBOOK y CHECKLIST. Código, workflows, fuentes ER/DER/Excel, cuatro SQL físicos y evidencia F1–F8 preservados. Solo cambia documentación, verificador y metadata de continuidad SQL review.4.
+
+Las 280 pruebas Node F8 son evidencia histórica aprobada (219 backend/seguridad, 57 UI, 4 operación), no suites repetidas en F9. Verificación nueva documental/linaje/enlaces/matrices y rechazo de liberación; no hay release construido ni CI remoto aprobado de esta rama. M8-R01 sigue abierta: F8 observó autorregistro remoto habilitado, propuesta sin aplicar. M9-R01 registra Node20 en workflow demo frente a Node24 declarado; no se modifica ni ejecuta. Supabase inventarioTI2 mantiene su referencia de laboratorio; F9 no consulta ni cambia proyectos y no reactiva inventarioTI.
+
+SQLServer2016/13.x/130 sigue bloqueado por instancia/edición/SP/CU/collation, soporte/repositorios/escrituras, reglas M1-D, vínculo real cuenta-funcionario/perfiles y fuentes operacionales. M6-A02/A03 Auth/soporte y Unicode/UTC ya aprobadas; no se vuelven a solicitar. Main usa PG y no registra v2; los dobles permanecen en tests. Datos reales, permisos remotos, ejecución SQL, main/merge, despliegue, gastos y correo requieren su alcance/autorización independiente.
+
+Verificador vigente: `python3 docs/migracion/verificar_fase9.py`; `--evaluar-liberacion` devuelve3. Scripts/evidencias F1–F8 son históricos para sus commits. El prompt de migración termina en9; no hay Fase10 definida ni siguiente operación autorizada. El ciclo histórico0–15 conserva sus estados independientes. F9 pendiente de aceptación documental expresa.
+
+
+Estado del ciclo histórico registrado el 2026-11-02: **Fases 0–13 COMPLETADAS y aceptadas**, última D-37. **Fase 14 EN_REVISION** bajo D-37/D-38: [plan de despliegue y continuidad](docs/DESPLIEGUE.md), [runbook](docs/RUNBOOK_OPERACION.md), [checklist](docs/CHECKLIST_LIBERACION.md), CI sin deploy, salud/logs y ensayo de copia cifrada/restauración local. Resultados/límites en [PRUEBAS](docs/PRUEBAS.md). CA14-06 pendiente; F1-SEG-01/02/03 e integraciones gestionadas conservan bloqueos. Fase 15 sin autorización; correo real deshabilitado y **sin despliegue a producción**. Consultar [FASES](FASES.md) y [ESTADO](ESTADO_PROYECTO.md). Estados anteriores son antecedentes históricos.
 
 La [revisión de pendientes de Fase 1](docs/CIERRE_FASE1.md) contiene las resoluciones aprobadas: UTC y respaldo semanal (RPO objetivo 7 días, RTO 8 h; copias 30 días). Validación legal de retención antes de datos reales, en F1-SEG-01. Chile y 250 funcionarios confirmados; bienes estimados 900–1.500, referencia 1.200.
 
@@ -187,15 +216,16 @@ La navegación existente ya usa fragmentos (`#bienes`, `#funcionarios`, `#report
 Para compilar como Pages (variables de entorno; ejemplo de shell POSIX):
 
 ```sh
-VITE_DEMO_MODE=true VITE_BASE_PATH=/inventarioTI2/ npm run build
+VITE_DEMO_MODE=true VITE_PAGES_PREVIEW=true VITE_BASE_PATH=/inventarioTI2/ npm run build
+VITE_DEMO_MODE=true VITE_PAGES_PREVIEW=true node scripts/build-pages.mjs
 npx vite preview apps/web --config vite.config.js --outDir ../../dist/web --base /inventarioTI2/
 ```
 
-Abre `http://localhost:4173/inventarioTI2/`. El resultado público es **`dist/web`**, no todo `dist` (que también contiene el servidor). `vite.config.js` lee `VITE_BASE_PATH`, con `/` por defecto; Vite ajusta los assets y los imports dinámicos a esa base. No hay imágenes, fuentes ni recursos remotos en la UI actual. Para futuros recursos de `public/`, utiliza `import.meta.env.BASE_URL`; para recursos de `src/`, utiliza imports de Vite.
+Abre `http://localhost:4173/inventarioTI2/`. El resultado público es **`dist/web`**, no todo `dist` (que también contiene el servidor). `vite.config.js` lee `VITE_BASE_PATH`, con `/` por defecto; Vite ajusta los assets y los imports dinámicos a esa base. La revisión de modernización copia seis capturas sintéticas y el prototipo ya aprobado; todos los recursos son locales al sitio. Para futuros recursos de `public/`, utiliza `import.meta.env.BASE_URL`; para recursos de `src/`, utiliza imports de Vite.
 
-En GitHub: **Settings > Pages > Build and deployment > Source: GitHub Actions**. El workflow [deploy-demo.yml](.github/workflows/deploy-demo.yml) compila con Node 20 y publica solo `dist/web` al hacer push a `main` o al ejecutarlo manualmente desde Actions. La URL prevista es `https://amsotov.github.io/inventarioTI2/`. Revisa que el nombre del repositorio coincida con `VITE_BASE_PATH`. El entorno `github-pages` puede requerir aprobación según las reglas del repositorio. Crear el PR no activa Pages ni publica el sitio; después de integrarlo en `main`, el workflow hará la publicación si Pages está configurado.
+En GitHub: **Settings > Pages > Build and deployment > Source: GitHub Actions**. El workflow [deploy-demo.yml](.github/workflows/deploy-demo.yml) compila con Node 24.19.0 y publica solo `dist/web` al hacer push a `main` o al ejecutarlo manualmente desde Actions. La URL prevista es `https://amsotov.github.io/inventarioTI2/`. Revisa que el nombre del repositorio coincida con `VITE_BASE_PATH`. El entorno `github-pages` puede requerir aprobación según las reglas del repositorio. Crear el PR no activa Pages ni publica el sitio; después de integrarlo en `main`, el workflow hará la publicación si Pages está configurado.
 
-El servidor normal mantiene su requisito **Node 24**, autenticación y API; `npm run build` sin `VITE_DEMO_MODE=true` conserva ese modo. El build estático de Pages se ha comprobado con Node 20.20.2; `npm ci` en Node 20 emite avisos de engines del servidor y sus dependencias, que no se ejecutan en la demo. No uses Node 20 para operar el servidor normal. Las variables VITE son públicas y se fijan al compilar: nunca incluyas secretos ni uses una compilación demo para operar datos reales.
+El servidor normal mantiene su requisito **Node 24**, autenticación y API; `npm run build` sin `VITE_DEMO_MODE=true` conserva ese modo. El workflow vigente usa Node 24.19.0. Históricamente, el build estático también se comprobó con Node 20.20.2; `npm ci` en Node 20 emite avisos de engines del servidor y sus dependencias, que no se ejecutan en la demo. No uses Node 20 para operar el servidor normal. Las variables VITE son públicas y se fijan al compilar: nunca incluyas secretos ni uses una compilación demo para operar datos reales.
 
 Prueba de navegador de la demo, con `npm run demo` activo en otra terminal:
 
@@ -203,7 +233,7 @@ Prueba de navegador de la demo, con `npm run demo` activo en otra terminal:
 # Chromium instalado; ruta ajustable con CHROMIUM_PATH.
 npm run test:demo
 # Contra el build estático servido bajo la base:
-DEMO_URL=http://localhost:4173/inventarioTI2/ npm run test:demo
+DEMO_PUBLICATION_CHECK=true DEMO_URL=http://localhost:4173/inventarioTI2/ npm run test:demo
 ```
 
 El ensayo comprueba CRUD de bienes/funcionarios, asignación/traslado/historia, roles, descargas XLSX/PDF con contenido y recarga por hash, y falla ante solicitudes a API/servicios externos. No requiere Docker. El modo normal conserva sus suites `npm test` y `npm run test:ui`, con PostgreSQL sintético/Docker.

@@ -2,6 +2,7 @@
 import assert from "node:assert/strict";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { performance } from "node:perf_hooks";
 import os from "node:os";
 import { fixture, IdentityDouble, admin } from "../helpers/reports.js";
@@ -29,6 +30,7 @@ const stats=(items:Sample[])=>{
   return {count:values.length,p50:quant(.5),p95:quant(.95),p99:quant(.99),max:values.at(-1)??null,statuses:items.reduce((a,v)=>(a[v.status]=(a[v.status]??0)+1,a),{} as Record<string,number>)};
 };
 const started=new Date().toISOString();
+const base=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 // Se reserva puerto loopback efímero antes de construir el origen exacto.
 const {createServer}=await import("node:net");
 const reserve=createServer(); await new Promise<void>(r=>reserve.listen(0,"127.0.0.1",r));
@@ -125,7 +127,7 @@ try {
   const stale=await request(0,`bienes/${target.id}/movimientos`,body,target.version);
   const forbidden=await request(5,`bienes/${target.id}/movimientos`,body,target.version);
   const read=samples.filter(v=>v.kind.startsWith("read:")),writes=samples.filter(v=>v.kind==="write");
-  const result={started,finished:new Date().toISOString(),base:"da1236e",environment:{node:process.version,platform:os.platform(),arch:os.arch(),cpu:os.cpus()[0].model,cpuQuota:readFileSync("/sys/fs/cgroup/cpu.max","utf8").trim(),memoryMax:readFileSync("/sys/fs/cgroup/memory.max","utf8").trim(),network:"HTTP TCP loopback, PostgreSQL Docker loopback; sin TLS/WAN; proveedor identidad y correo dobles inmediatos",pools:{auth:3,business:3,worker:3},users:10,roles:{administrador:5,lectura:5},warmup:100,seed:"fixtures sintéticos por SQL propietario; carga medida solo por HTTP con permisos/RLS intactos"},before,after,measurementMs,read:stats(read),write:stats(writes),byRoute:Object.fromEntries([...new Set(read.map(v=>v.kind))].map(k=>[k,stats(read.filter(v=>v.kind===k))])),routes:paths,exports,notices:stats(delays),rejections:{stale:stale.status,readerWrite:forbidden.status},samples};
+  const result={started,finished:new Date().toISOString(),base,environment:{node:process.version,platform:os.platform(),arch:os.arch(),cpu:os.cpus()[0].model,cpuQuota:readFileSync("/sys/fs/cgroup/cpu.max","utf8").trim(),memoryMax:readFileSync("/sys/fs/cgroup/memory.max","utf8").trim(),network:"HTTP TCP loopback, PostgreSQL Docker loopback; sin TLS/WAN; proveedor identidad y correo dobles inmediatos",pools:{auth:3,business:3,worker:3},users:10,roles:{administrador:5,lectura:5},warmup:100,seed:"fixtures sintéticos por SQL propietario; carga medida solo por HTTP con permisos/RLS intactos"},before,after,measurementMs,read:stats(read),write:stats(writes),byRoute:Object.fromEntries([...new Set(read.map(v=>v.kind))].map(k=>[k,stats(read.filter(v=>v.kind===k))])),routes:paths,exports,notices:stats(delays),rejections:{stale:stale.status,readerWrite:forbidden.status},samples};
   writeFileSync(output+"/rendimiento.json",JSON.stringify(result,null,2)+"\n");
   console.log(JSON.stringify({...result,samples:undefined},null,2));
   assert.equal(read.length,1000);assert.equal(writes.length,200);

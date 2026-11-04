@@ -1,10 +1,39 @@
 # FASES.md — Plan y control de avance
 
+## MPUB-A01 — publicación de modernización autorizada
+
+Usuario: «Publica los cambios de modernización». Autoriza integrar el código aprobado en main y ejecutar la publicación estática de GitHub Pages. Se prepara PR con CI antes de integrar y se comprobará el SHA efectivo en publicacion.json y el workflow de despliegue. No repetir confirmación de esta publicación.
+
+La demo incluye acceso a [Modernización · vista previa](https://amsotov.github.io/inventarioTI2/modernizacion/), prototipo navegable F3 y seis capturas de la interfaz F7. Se identifican como propuesta/capturas; no hay conexión a la base de destino ni dobles v2 incorporados al servidor. Se conservan Auth, datos/esquema y barreras SQL. La autorización de Pages no configura Auth, aplica SQL, habilita workers/envíos, contrata servicios o acredita operación de SQLServer. F9 documental sigue aceptada y las matrices anteriores son snapshots históricos. [Plan y verificación](docs/PUBLICACION_MODERNIZACION.md).
+
+
+## M9-A02 — Fase 9 aprobada y consulta de Pages
+
+Usuario: «Apruebo fase 9 quiero ver la publicación GitHub Pages». Acepta la entrega documental de2376a580926dadb1af363f94d3ff74f05f377d34: **FASE9 COMPLETADA_DOCUMENTAL**, con pendientes técnicos conservados. El modelo de destino sigue NO_GO; esta consulta no crea una fase10 ni pide integrar ramas o sustituir el sitio publicado.
+
+**Publicación existente verificada:** https://amsotov.github.io/inventarioTI2/ . HTTP200 y portada React en Chromium, banner Modo demo visible, sin errores JavaScript. Último workflow de Pages observado:41648235275, success, SHA511b99d64c97ff1917f279e78490f377a3f5239a (main). No se ejecutó otro despliegue ni se modificó main. [Verificación y alcance](docs/migracion/CIERRE_FASE9_PAGES.md).
+
+Las ramas de modernización no están publicadas en Pages. La demo utiliza datos sintéticos en memoria, sin login operativo o backend/SQLServer. Verificador F9 y evidencia se conservan como snapshot del commit aceptado2376a58; sus hashes de documentos describen esa entrega, no esta anotación posterior de aceptación. M8-R01 y prerrequisitos del destino siguen abiertos; M9-R01 conserva seguimiento del runtime para futuros paquetes, sin impedir ver la demo ya publicada. README/DEMO ya documentaban compilación estática Node20 correcta y Node24 como requisito del servidor.
+
+
+## Ciclo vigente de modernización — 2026-11-03
+
+**Migración FASES0–5 aceptadas; entregas parciales F6/F7 y auditoría F8 ACEPTADAS con pendientes. FASE9: EN_REVISION_DOCUMENTAL. Liberación: NO_GO.**
+
+M9-A01: «Apruebo fase 8 inicia fase 9» acepta `e224d6f` e inicia documentación/preparación. [Informe F9](docs/migracion/09_PREPARACION_DESPLIEGUE.md), [compatibilidades](docs/migracion/09_COMPATIBILIDADES.csv), [pendientes](docs/migracion/09_PENDIENTES.csv), [puertas](docs/migracion/09_PUERTAS_LIBERACION.csv) y [manifiesto](docs/migracion/09_MANIFIESTO_PREPARACION.json). Guías vigentes en DESPLIEGUE, RUNBOOK y CHECKLIST. Código, workflows, fuentes ER/DER/Excel, cuatro SQL físicos y evidencia F1–F8 preservados. Solo cambia documentación, verificador y metadata de continuidad SQL review.4.
+
+Las 280 pruebas Node F8 son evidencia histórica aprobada (219 backend/seguridad, 57 UI, 4 operación), no suites repetidas en F9. Verificación nueva documental/linaje/enlaces/matrices y rechazo de liberación; no hay release construido ni CI remoto aprobado de esta rama. M8-R01 sigue abierta: F8 observó autorregistro remoto habilitado, propuesta sin aplicar. M9-R01 registra Node20 en workflow demo frente a Node24 declarado; no se modifica ni ejecuta. Supabase inventarioTI2 mantiene su referencia de laboratorio; F9 no consulta ni cambia proyectos y no reactiva inventarioTI.
+
+SQLServer2016/13.x/130 sigue bloqueado por instancia/edición/SP/CU/collation, soporte/repositorios/escrituras, reglas M1-D, vínculo real cuenta-funcionario/perfiles y fuentes operacionales. M6-A02/A03 Auth/soporte y Unicode/UTC ya aprobadas; no se vuelven a solicitar. Main usa PG y no registra v2; los dobles permanecen en tests. Datos reales, permisos remotos, ejecución SQL, main/merge, despliegue, gastos y correo requieren su alcance/autorización independiente.
+
+Verificador vigente: `python3 docs/migracion/verificar_fase9.py`; `--evaluar-liberacion` devuelve3. Scripts/evidencias F1–F8 son históricos para sus commits. El prompt de migración termina en9; no hay Fase10 definida ni siguiente operación autorizada. El ciclo histórico0–15 conserva sus estados independientes. F9 pendiente de aceptación documental expresa.
+
+
 **Proyecto:** Inventario y control de bienes computacionales (inventarioTI2)
 **Modo:** GUIADO (aprobación expresa antes de cada fase)
-**Fase actual:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
+**Fase de desarrollo histórica:** 14 — Despliegue, operación y continuidad; EN_REVISION (D-38).
 **Última fase completada:** 13.
-**Próxima acción:** revisión de Fase 14; CA14-06 PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
+**Próxima acción del ciclo histórico (no iniciada aquí):** revisión de Fase 14; CA14-06 PENDIENTE. **Fase 15:** PENDIENTE / NO OTORGADA. Producción requiere autorización independiente.
 
 > La Fase 0 está completada y aprobada por el usuario. La Fase 1 fue autorizada posteriormente y su análisis documental se ejecutó en esta nueva conversación; está COMPLETADA por aprobación D-14, con seguimientos futuros explícitos y sin implementación. La Fase 2 está completada por aprobación visual expresa D-15. Fase 3 completada por D-17; Fase 4 completada por D-19; Fase 5 completada por D-21; Fase 6 completada por D-23; Fase 7 completada por D-25; Fase 8 completada por D-27; Fase 9 completada por D-29; Fase 10 completada por D-31; Fase 11 completada por D-33; Fase 12 completada por D-35; Fase 13 completada por D-37; Fase 14 ejecutada localmente y EN_REVISION por D-38; CA14-06 PENDIENTE, última completada 13; Fase 15 sin autorización. Todos los cambios autorizados del proyecto deben sincronizarse con GitHub.
 
@@ -553,3 +582,58 @@ PR #2 integrado en main (`3917d924`) tras CI completo correcto (run 41549745378)
 ## Demo publicada y verificada — 2026-11-03
 
 El usuario cambió la fuente Pages a GitHub Actions (`build_type=workflow` confirmado). PR #2 integrado; reejecución del workflow 41550326656 correcta (build/deploy), commit de aplicación `79913ae`. URL pública https://amsotov.github.io/inventarioTI2/ con HTTP 200 y recorrido completo `npm run test:demo` contra Pages PASS: CRUD, roles, movimientos/historia, correo simulado, XLSX/PDF filtrados, hash/recarga, cero APIs externas y errores de navegador. Incidencias iniciales y enlaces en `docs/DEMO.md`. Alcance demo solicitado completado; documentación final sincronizada en main. Fase 14 sigue EN_REVISION/CA14-06 pendiente; Fase 15 sin iniciar, sistema productivo no desplegado.
+
+
+## M2-A01 — Aceptación de Fase 1 e inicio de Fase 2 de migración
+
+2026-11-03. Usuario: «apruebo y inicia fase 2». Acepta entrega `9dbaa2f` y cierra Fase 1 de migración; autoriza únicamente línea base/trazabilidad/mapeo. Fase 2 entregada EN_REVISION, CA-M2-01–05 documentales verificados, CA-M2-06 pendiente de aceptación. Fase 3 no autorizada. Las alternativas/datos condicionados del registro M1-D conservan sus condiciones. No modifica estados históricos D-14/D-38 ni autoriza merge/despliegue/SQL.
+
+
+## M3-A01 — Cierre Fase 2 e inicio exclusivo de diseño
+
+2026-11-03. Usuario: «apruebo fase 2 inicia fase 3». Acepta b29d60c y cierra Fase 2; autoriza solo diseño visual/contratos. Fase 3 EN_REVISION, aceptación visual/contractual CA-M3-06 pendiente; Fase 4 no autorizada. Maqueta documental aislada, fuentes/aplicación sin cambios; sin SQL, merge ni despliegue. Las decisiones de datos/opciones pendientes no se resuelven por dibujarlas.
+
+
+## M4-A01 — Cierre de diseño e inicio exclusivo de plan ETL
+
+2026-11-03. Usuario: «apruebo fase 3 inicia fase 4». Acepta 59b58d9 y cierra Fase 3; autoriza solo planificación ETL/protección. Fase 4 EN_REVISION, CA-M4-01–05 documentales verificados; CA-M4-06 pendiente. Fase 5 no autorizada. Fuente operacional ausente; 57 reglas/13 hallazgos, 20 controles de excepción, 36 pruebas futuras y 12 puertas documentadas. Sin SQL, datos reales, aplicación, merge ni despliegue.
+
+## Migración M5-A01 — aprobación de Fase 4 y entrega Fase 5
+
+2026-11-03. Usuario: «apruebo fase 4 inicia fase 5». Acepta `9f84fcd` y cierra Fase 4 documental con límites; no aprueba alternativas de datos/entorno por inferencia. Fase 5 EN_REVISION: 30 tablas/117 campos en cuatro SQL candidatos bloqueados, nueve CHECK y 24 índices propuestos, mapa de soporte 19/155, verificación estática/parser/negativas. CA-M5-01 y preservación estática verificables; CA-M5-02/04/05/06 con pendientes según informe. Aplicación/ensayos de motor BLOQUEADOS por diseño y entorno no autorizado; sin SQL ejecutado ni funcionalidad migrada. Fase 6 NO AUTORIZADA; desarrollo histórico intacto.
+
+## Migración M5-A02 — continuidad de Fase 5 y entornos
+
+Usuario confirma Supabase/PostgreSQL aislado con datos sintéticos, proyecto inventarioTI2, y destino SQL Server 2016/compatibility level 130. Se actualiza candidato 0.5.0-review.2 con guards de motor 13.x/nivel/base, parser TSql130Parser y 19 negativas. Sin SQL ejecutado; inventarioTI2 no visible ni como rama, pruebas remotas bloqueadas. Edición/SP/CU/collation/instancia y decisiones pendientes. Fase 5 EN_REVISION, sin cierre aprobado; Fase 6 NO AUTORIZADA.
+
+## M5-A03 — creación Supabase autorizada, bloqueada por cuota
+
+Usuario autoriza crear proyecto y elige sovicl/São Paulo. Un intento de inventarioTI2 rechazado por Supabase: dos proyectos Free activos (límite 2). Cotización Free amount 0/monthly no concede cupo ni aprueba cambio de plan. Relectura confirma cero proyectos inventarioTI2; NO CREADO, sin SQL/cargas. [Provisión](docs/migracion/PROVISION_SUPABASE.md). Falta acción específica para liberar cupo o revisar plan/costo; creación sigue autorizada. Fase 5 EN_REVISION, Fase 6 NO AUTORIZADA.
+
+## M5-A04 — pausa autorizada y proyecto Supabase creado
+
+Usuario: «pausa inventarioTI». Se verificó nombre/ref/organización, solicitó pausa y esperó INACTIVE. Se creó inventarioTI2 en sovicl/sa-east-1 (Free), ref yhsfotxhaptinjtmrinn, ACTIVE_HEALTHY. Listado y SELECT de metadatos confirmaron PostgreSQL 17.11/UTC y cero tablas de aplicación. Solo infraestructura disponible, sin DDL/carga/pruebas funcionales. Candidato 0.5.0-review.3 actualiza entorno, conserva cuatro SQL idénticos; 20 negativas, parser 130, evidencia revisión2 archivada. Fase 5 EN_REVISION; SQL Server, M1-D y Fase 6 mantienen sus límites.
+
+## M5-A05 — baseline y validación SQL Supabase
+
+Usuario retoma («remota donde quedaste») Fase 5 y pruebas aisladas/sintéticas previamente elegidas. Diez migraciones remotas: ocho fuentes existentes adaptadas solo al operador gestionado y dos cierres ACL. 19 tablas/155 columnas, RLS en todas; 2 unidades/3 funcionarios/6 bienes sintéticos. Veinte casos SQL aprobados y rollback sin cuentas/sesiones/comandos/auditoría/outbox persistentes. Funciones privadas PUBLIC EXECUTE=0, navegador USAGE=0, roles NOLOGIN y sin atributos elevados/CREATE residual. [Informe](docs/migracion/VALIDACION_SUPABASE.md). Revisión4 del candidato, cuatro SQL Server intactos; Fase 5 EN_REVISION. No HTTP/Auth real/UI/SQL Server, sin Fase 6.
+
+## Migración Fase 6 — M6-A01/A02/A03, estado vigente
+
+Objetivo: adaptar el backend preservando funcionalidad y seguridad. Responsable de implementación: Codex; decisiones de negocio/cierre: usuario. Fase 5 aceptada por «apruebo fase 5 inicia fase 6», con límites de ensayos SQL Server conservados. [Entrega parcial](docs/migracion/06_ADAPTACION_BACKEND.md).
+
+| Criterio | Estado comprobable |
+|---|---|
+| CA-M6-01 preservar requisitos, Auth, API actual y frontend | Implementado; regresión/evidencia en informe |
+| CA-M6-02 desacoplar repositorio/validaciones y controlar nueva frontera | Implementado para inventario y 18 contratos por inyección |
+| CA-M6-03 repositorios completos del modelo de 30 tablas | Parcial: dos lecturas por puerto; falta persistencia restante |
+| CA-M6-04 custodia/historia/auditoría/comando/outbox atómicos en destino | Pendiente; original PostgreSQL preservado y ensayado |
+| CA-M6-05 integración/permisos/concurrencia SQL Server 2016 real | BLOQUEADA por instancia/soporte/reglas; no sustituida por PG |
+| CA-M6-06 revisión y aceptación de Fase 6 | PENDIENTE; no se presume por M6-A01/A02/A03 |
+
+Continuar F6 al resolver dependencias; no comenzar F7 ni desplegar. Falta Excel operacional para perfilado/carga posteriores, no para esta revisión sintética. Fuentes/modelos y pruebas históricas se preservan, nuevos resultados separados en evidencias/fase6.
+
+
+## Migración Fase 7 — M7-A01, entrega visual para revisión
+
+Usuario «apruebo fase 6 inicia fase 7» acepta entrega parcial 1d7fac0, no implementación plena SQL Server. [Plan, criterios CA-M7 y evidencia](docs/migracion/07_ADAPTACION_VISUAL.md). Estado EN_REVISION visual; integración del destino BLOQUEADA, cierre CA-M7-06 pendiente. F8 NO AUTORIZADA. No se marcan cumplidos los criterios técnicos pendientes de F6 por aceptar su incremento.

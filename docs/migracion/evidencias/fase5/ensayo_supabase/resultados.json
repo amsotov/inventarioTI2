@@ -1,0 +1,183 @@
+{
+  "decision": "M5-A05",
+  "fecha_local": "2026-11-03",
+  "zona_usuario": "America/Santiago",
+  "autorizacion_continuidad": "remota donde quedaste",
+  "base_git": "cdd0f0398026384a2ff4aca20353017e0c6c5f91",
+  "project_ref": "yhsfotxhaptinjtmrinn",
+  "name": "inventarioTI2",
+  "organization": "sovicl",
+  "region": "sa-east-1",
+  "alcance": "Baseline del sistema existente PostgreSQL (19 tablas), no modelo objetivo SQL Server (30 tablas)",
+  "migraciones_aplicadas": [
+    {
+      "version": "20261103175700",
+      "name": "m5_base_20261031053433_modelo_inicial"
+    },
+    {
+      "version": "20261103175707",
+      "name": "m5_base_20261031055416_autenticacion"
+    },
+    {
+      "version": "20261103175709",
+      "name": "m5_base_20261031182220_autorizacion_seguridad"
+    },
+    {
+      "version": "20261103175716",
+      "name": "m5_base_20261031202938_backend_api"
+    },
+    {
+      "version": "20261103175720",
+      "name": "m5_base_20261101020230_panel_administracion"
+    },
+    {
+      "version": "20261103175723",
+      "name": "m5_base_20261101152945_procesos_empresariales"
+    },
+    {
+      "version": "20261103175725",
+      "name": "m5_base_20261102120248_indicadores_reportes_exportaciones"
+    },
+    {
+      "version": "20261103175728",
+      "name": "m5_base_20261102135006_notificaciones_automatizacion"
+    },
+    {
+      "version": "20261103180457",
+      "name": "m5_endurecer_helpers_privados"
+    },
+    {
+      "version": "20261103180657",
+      "name": "m5_cerrar_execute_propietarios"
+    }
+  ],
+  "semilla": {
+    "resultado": "SEED_SINTETICO_APLICADO",
+    "unidades": 2,
+    "funcionarios": 3,
+    "bienes": 6,
+    "cuentas": 0
+  },
+  "catalogo": {
+    "roles": [
+      {
+        "login": false,
+        "nombre": "inventario_admin",
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false,
+        "conserva_create": false
+      },
+      {
+        "login": false,
+        "nombre": "inventario_auth",
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false,
+        "conserva_create": false
+      },
+      {
+        "login": false,
+        "nombre": "inventario_avisos",
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false,
+        "conserva_create": false
+      },
+      {
+        "login": false,
+        "nombre": "inventario_contexto",
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false,
+        "conserva_create": false
+      },
+      {
+        "login": false,
+        "nombre": "inventario_runtime",
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false,
+        "conserva_create": false
+      },
+      {
+        "login": false,
+        "nombre": "inventario_servicio",
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false,
+        "conserva_create": false
+      },
+      {
+        "login": false,
+        "nombre": "inventario_worker",
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false,
+        "conserva_create": false
+      }
+    ],
+    "tablas": 19,
+    "columnas": 155,
+    "tablas_sin_rls": 0,
+    "roles_inseguros": 0,
+    "funciones_execute_public": 0,
+    "accesos_esquema_navegador": 0
+  },
+  "ensayo": {
+    "resultado": "APROBADO",
+    "casos_sql": 20,
+    "unidades": 2,
+    "funcionarios": 3,
+    "bienes": 6,
+    "cuentas": 0,
+    "sesiones": 0,
+    "comandos": 0,
+    "auditoria": 0,
+    "outbox": 0
+  },
+  "advisors_seguridad": {
+    "result": {
+      "lints": []
+    }
+  },
+  "incidencias": [
+    {
+      "id": "PG-ACL-01",
+      "estado": "CORREGIDA",
+      "detalle": "PUBLIC conservaba EXECUTE por defaults/propietarios; sin USAGE para navegador. Cierre general parcial (20 a 9); cierre como propietario efectivo y restitución de GRANT explícitos (9 a 0). Se conservaron ambas migraciones y se repitieron 20 casos tras el cambio."
+    },
+    {
+      "id": "PG-ENV-01",
+      "estado": "ADAPTACION_VERIFICADA",
+      "detalle": "Postgres gestionado CREATEROLE no SUPERUSER: createrole_self_grant SET y CREATE temporal para transferir propietarios; CREATE revocado, roles NOLOGIN/NOBYPASSRLS."
+    },
+    {
+      "id": "EVIDENCIA-01",
+      "estado": "CORREGIDA",
+      "detalle": "La extracción JSON se ajustó a la línea real de datos de la envoltura MCP, sin repetir migraciones o semillas."
+    }
+  ],
+  "limites": [
+    "20 casos SQL con SET ROLE del operador, no conexiones reales como runtime",
+    "Contexto de sesión/MFA sintético y transaccional; no login de Supabase Auth",
+    "Sin HTTP/UI, sesiones reales, exportación PDF/Excel o entrega de correo",
+    "Sin prueba de dos escritores concurrentes, carga/rendimiento, backup/restore o reconciliación de origen real",
+    "SQL Server 2016/130 no ejecutado; decisiones M1-D pendientes; Fase 6 no autorizada"
+  ],
+  "sql_server": "NO_EJECUTADO",
+  "fase6": "NO_AUTORIZADA",
+  "operador": {
+    "rolinherit": true,
+    "createrole_self_grant_al_terminar": "",
+    "membresias_solo_set": 7,
+    "aclaracion": "El comentario inicial de la segunda corrección alude a pertenencias sin inherit_option; postgres sí tiene rolinherit=true. Se conserva el SQL aplicado inmutable."
+  }
+}

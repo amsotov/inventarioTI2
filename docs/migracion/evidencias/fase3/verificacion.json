@@ -1,0 +1,59 @@
+{
+  "fase": "MIGRACION_3",
+  "estado_verificacion": "APROBADA_EN_ALCANCE_DISENO",
+  "estado_fase": "EN_REVISION",
+  "base_git": "b29d60cd1fe0acfa02a77e3d69c1a8becedd7052",
+  "conteos": {
+    "vistas": 11,
+    "rutas_existentes_conservadas": 49,
+    "rutas_v1": 45,
+    "contratos_v2_propuestos": 18,
+    "campos_modelo_con_exposicion": 117,
+    "schemas_json": 27,
+    "ejemplos_positivos": 9,
+    "casos_negativos": 10,
+    "comprobaciones_maqueta": 430,
+    "capturas": 8
+  },
+  "dependencias_ensayo": [
+    "Python jsonschema / Draft 2020-12 y formatos",
+    "Python Playwright / Chromium instalado para ensayo separado"
+  ],
+  "casos_negativos_aprobados": [
+    "Actor arbitrario rechazado",
+    "Confirmación obligatoria en nuevo contrato",
+    "Referencia pública no es INT",
+    "Hash fuera de payload de equipo",
+    "Código sensible fuera de proyección pública",
+    "Fecha civil inexistente rechazada",
+    "Capacidad inválida en propuesta",
+    "Conjunto vacío de perfiles rechazado",
+    "Perfil duplicado rechazado",
+    "Límite del contrato actual conservado"
+  ],
+  "sha256_artefactos": {
+    "docs/migracion/prototipo-fase3/index.html": "ca63b76a24742d921417c81852ce5dd8e8e745ec9411f701d8943561140f0c5c",
+    "docs/migracion/prototipo-fase3/base.css": "24293f5e6db6749a85ae7eb6d3b8f9c0ff817a29b624bca4c7ac98ec21c8d64a",
+    "docs/migracion/prototipo-fase3/propuesta.css": "fc40550fe332cb56c5cbce3d6a27f54ef7d5f4a9e07a4cafe33446d6e3755fc4",
+    "docs/migracion/prototipo-fase3/propuesta.js": "594b71a38fd4a735e0434ffa40a9c3faeb48a78e8465f63d1eaf48f33f52f902",
+    "docs/migracion/03_CONTRATOS_PROPUESTOS.json": "88032c04476fbac69cbd12e71a59fb6f396ea6a64a2458aff252927673918357",
+    "docs/migracion/evidencias/fase3/navegador.json": "7d410403a5cb2c6f892f0c2be13811858c359ce1250a58b468e7f1e267225cfc",
+    "docs/migracion/evidencias/fase3/verificar_prototipo.py": "c21741167a13012b60fd2cfc2921254d8804fcabb7c07761191602e965393c67",
+    "docs/migracion/evidencias/fase3/1440-administrador-equipos.png": "4d47da48d6067ef2790f288410a6c1b35340310f44f8744e39ba80d150affadc",
+    "docs/migracion/evidencias/fase3/1440-administrador-equipo-nuevo.png": "29a9b34f6668d627735eb731dc48a91acc8fb65a8910b50f54bd53c8be92e63d",
+    "docs/migracion/evidencias/fase3/1440-administrador-auditoria.png": "027c4b65be0a7146c52c26b8c21ecf113a153c09bb48db3e29244f7ad2e85030",
+    "docs/migracion/evidencias/fase3/768-administrador-mantenciones.png": "e597b23b6213701ebd91177e634630361645d9360e1c379a5d982ed05d0db629",
+    "docs/migracion/evidencias/fase3/768-lectura-reportes.png": "e64a0416d14d076b7d5500089d22efcd9f2825899b358d97e91adf5f2713a3b3",
+    "docs/migracion/evidencias/fase3/390-administrador-asignaciones.png": "017cda9c0cf73001a4b4af1b676c2c2062a4a7b1419b059aad759b684001aa8d",
+    "docs/migracion/evidencias/fase3/390-lectura-equipo-demo-01.png": "9a0983f032fe4a447c202f60533af99032fda62c9aa3e61134e5eacbb7ad5b80",
+    "docs/migracion/evidencias/fase3/390-lectura-administracion.png": "d6885cc3931279a283f55d5f39e6b2943a83a6055f87516199618cbd6d002ac0"
+  },
+  "limites": [
+    "Solo diseño/documentación y maqueta aislada",
+    "No implementa endpoints ni permisos reales",
+    "No SQL, BD, ETL, aplicación React ni servicios gestionados",
+    "Reglas dependientes de datos y decisiones M1-D no resueltas por esquemas JSON",
+    "No certifica WCAG/Safari/hardware",
+    "Aceptación visual/contractual pendiente; Fase 4 no autorizada"
+  ]
+}

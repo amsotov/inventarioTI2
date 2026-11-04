@@ -1,0 +1,22 @@
+{
+  "estado_verificacion_documental": "APROBADA",
+  "fase8": "EN_REVISION_CON_BLOQUEOS",
+  "base_git": "daea7d203e971c0810a8e2dc0bb04f160a5ccd8a",
+  "casos_node": 280,
+  "matriz_http": 56,
+  "archivos_preservados": 402,
+  "archivos_entrega": 45,
+  "estados_matriz": {
+    "APROBADA": 17,
+    "FALLIDA": 1,
+    "BLOQUEADA": 5,
+    "NO EJECUTADA": 4
+  },
+  "hallazgos_abiertos": [
+    "M8-R01"
+  ],
+  "deployment_ready": false,
+  "sql_server": "BLOQUEADA",
+  "fase9": "NO_AUTORIZADA",
+  "nota": "Verificación offline de evidencia; no repite ensayos ni consulta Auth remoto."
+}

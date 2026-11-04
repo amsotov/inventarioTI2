@@ -1,0 +1,76 @@
+{
+  "fase": "MIGRACION_8",
+  "autorizacion": {
+    "id": "M8-A01",
+    "literal": "Apruebo fase 7 inicia fase 8"
+  },
+  "base_git": "daea7d203e971c0810a8e2dc0bb04f160a5ccd8a",
+  "estado": "EN_REVISION_CON_BLOQUEOS",
+  "fecha_local": "2026-11-03",
+  "zona_documental": "America/Santiago",
+  "node": "24.19.0",
+  "dependencias": "package.json/lock sin cambios; instalación npm ci verificada F6 reutilizada",
+  "ejecutadas": [
+    {
+      "comando": "npm test",
+      "estado": "APROBADA",
+      "casos_node": 219,
+      "alcance": "PG local real; GoTrue real local y dobles según caso; v2 persistencia DOBLE",
+      "log": "docs/migracion/evidencias/fase8/backend.log",
+      "sha256": "34c10300759de03d7b594af1eb8cd1f52f1a52e0c0c01aa753490f30ec22a545"
+    },
+    {
+      "comando": "npm run test:ui",
+      "estado": "APROBADA",
+      "casos_node": 57,
+      "alcance": "Chromium/React/BFF/RLS PG locales; identidad/v2 DOBLES",
+      "log": "docs/migracion/evidencias/fase8/ui.log",
+      "sha256": "e3b6ce823e5565aaac4837c7a1bb30a012c6cc803d37519e8fd7997b30a1a726"
+    },
+    {
+      "comando": "npm run test:ops",
+      "estado": "APROBADA",
+      "casos_node": 4,
+      "alcance": "Backup/restore local PG, no gestionado",
+      "log": "docs/migracion/evidencias/fase8/ops.log",
+      "sha256": "571d098c0b01af7cc759b26499e14b58ba0883b8021d700bb71aaf62d44a912d"
+    },
+    {
+      "comando": "npm run build",
+      "estado": "APROBADA",
+      "casos_node": null,
+      "alcance": "TypeScript/Vite con fuentes actuales",
+      "log": "docs/migracion/evidencias/fase8/build.log",
+      "sha256": "2a7c856d51703afe2bc811c1c9146134ae49d338ae55d4d643f60d7427d93768"
+    },
+    {
+      "comando": "npm run test:qa:performance",
+      "estado": "APROBADA",
+      "casos_node": null,
+      "alcance": "1200 solicitudes medidas, PG local, identidad/correo DOBLES",
+      "log": "docs/migracion/evidencias/fase8/performance.log",
+      "sha256": "3ade18bdcdb2b11a21a206540a09fef126af8f1c98aed4efa2ec8c53c4ae4b16"
+    }
+  ],
+  "total_casos_node": 280,
+  "matriz_http_incluida_en_backend": 56,
+  "matriz_estados": {
+    "APROBADA": 17,
+    "FALLIDA": 1,
+    "BLOQUEADA": 5,
+    "NO EJECUTADA": 4
+  },
+  "hallazgos_corregidos": [
+    "M8-F01",
+    "M8-F02"
+  ],
+  "hallazgos_abiertos": [
+    "M8-R01"
+  ],
+  "deployment_ready": false,
+  "sql_server_ejecutado": false,
+  "mutaciones_remotas": false,
+  "backend_doble_en_main": false,
+  "fase9": "NO_AUTORIZADA",
+  "nota": "Las filas son grupos de comprobaciones y no se suman a los casos Node. Ninguna aprobación local valida integración normalizada o política remota."
+}

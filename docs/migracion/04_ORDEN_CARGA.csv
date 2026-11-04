@@ -1,0 +1,31 @@
+orden_propuesto,tabla_destino,padres_previamente_resueltos,tratamiento_auto_fk,condicion,estado
+1,ACTIVIDADES_MANTENCION,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+2,AREAS,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+3,CLASES_IMPRESORA,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+4,DEPARTAMENTOS,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+5,ESTADOS_EQUIPO,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+6,FAMILIAS_COMPONENTE,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+7,MARCAS,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+8,MODALIDADES_ASIGNACION,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+9,ORIGENES_EQUIPO,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+10,PERFILES,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+11,REGIONES,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+12,RUBROS_INSUMO,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+13,SISTEMAS_OPERATIVOS,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+14,SITUACIONES,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+15,TIPOS_EQUIPO,,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+16,DELEGACIONES,REGIONES,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+17,MODELOS,MARCAS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+18,EQUIPOS,ESTADOS_EQUIPO;MODELOS;ORIGENES_EQUIPO;SITUACIONES;TIPOS_EQUIPO,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+19,FUNCIONARIOS,AREAS;DELEGACIONES;DEPARTAMENTOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+20,ASIGNACIONES,EQUIPOS;FUNCIONARIOS;MODALIDADES_ASIGNACION,"Validar cadena lineal/coherencia, ciclos y mismo equipo; cargar predecesor antes de sucesor.","IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+21,COMPUTADORES,EQUIPOS;SISTEMAS_OPERATIVOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+22,IMPRESORAS,CLASES_IMPRESORA;EQUIPOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+23,MANTENCIONES,ACTIVIDADES_MANTENCION;EQUIPOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+24,MONITORES,EQUIPOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+25,SWITCHES,EQUIPOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+26,USUARIOS,FUNCIONARIOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+27,AUDITORIA,USUARIOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+28,AUTORIZACIONES,PERFILES;USUARIOS,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+29,INSUMOS_IMPRESORA,IMPRESORAS;RUBROS_INSUMO,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO
+30,PIEZAS_COMPUTADOR,COMPUTADORES;FAMILIAS_COMPONENTE,NO_APLICA,"IDs/correspondencias y atributos validados; FK activas, sin entidades ficticias ni efectos externos.",ORDEN_DOCUMENTAL_NO_CARGADO

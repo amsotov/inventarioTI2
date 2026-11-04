@@ -1,0 +1,117 @@
+{
+  "REGIONES": [
+    "REGI_ID"
+  ],
+  "DELEGACIONES": [
+    "DELE_ID",
+    "DELE_REGION_ID"
+  ],
+  "DEPARTAMENTOS": [
+    "DEPA_ID"
+  ],
+  "AREAS": [
+    "AREA_ID"
+  ],
+  "FUNCIONARIOS": [
+    "FUNC_ID",
+    "FUNC_DELEGACION_ID",
+    "FUNC_DEPARTAMENTO_ID",
+    "FUNC_AREA_ID"
+  ],
+  "PERFILES": [
+    "PERF_ID"
+  ],
+  "USUARIOS": [
+    "USUA_ID",
+    "USUA_FUNCIONARIO_ID"
+  ],
+  "AUTORIZACIONES": [
+    "AUTO_USUARIO_ID",
+    "AUTO_PERFIL_ID"
+  ],
+  "AUDITORIA": [
+    "AUDI_ID",
+    "AUDI_USUARIO_ID"
+  ],
+  "TIPOS_EQUIPO": [
+    "TIPO_ID"
+  ],
+  "MARCAS": [
+    "MARC_ID"
+  ],
+  "MODELOS": [
+    "MODE_ID",
+    "MODE_MARCA_ID"
+  ],
+  "ORIGENES_EQUIPO": [
+    "ORIG_ID"
+  ],
+  "ESTADOS_EQUIPO": [
+    "ESTA_ID"
+  ],
+  "SITUACIONES": [
+    "SITU_ID"
+  ],
+  "EQUIPOS": [
+    "EQUI_ID",
+    "EQUI_TIPO_EQUIPO_ID",
+    "EQUI_MODELO_ID",
+    "EQUI_ORIGEN_ID",
+    "EQUI_ESTADO_ID",
+    "EQUI_SITUACION_ID"
+  ],
+  "SISTEMAS_OPERATIVOS": [
+    "SIST_ID"
+  ],
+  "COMPUTADORES": [
+    "COMP_EQUIPO_ID",
+    "COMP_SISTEMA_OPERATIVO_ID"
+  ],
+  "MONITORES": [
+    "MONI_EQUIPO_ID"
+  ],
+  "CLASES_IMPRESORA": [
+    "CLAS_ID"
+  ],
+  "IMPRESORAS": [
+    "IMPR_EQUIPO_ID",
+    "IMPR_CLASE_ID"
+  ],
+  "SWITCHES": [
+    "SWIT_EQUIPO_ID"
+  ],
+  "FAMILIAS_COMPONENTE": [
+    "FAMI_ID"
+  ],
+  "PIEZAS_COMPUTADOR": [
+    "PIEZ_ID",
+    "PIEZ_COMPUTADOR_ID",
+    "PIEZ_FAMILIA_ID"
+  ],
+  "RUBROS_INSUMO": [
+    "RUBR_ID"
+  ],
+  "INSUMOS_IMPRESORA": [
+    "INSU_ID",
+    "INSU_IMPRESORA_ID",
+    "INSU_RUBRO_ID"
+  ],
+  "MODALIDADES_ASIGNACION": [
+    "MODA_ID"
+  ],
+  "ASIGNACIONES": [
+    "ASIG_ID",
+    "ASIG_EQUIPO_ID",
+    "ASIG_FUNCIONARIO_ID",
+    "ASIG_MODALIDAD_ID",
+    "ASIG_TRASPASO_DE_ID"
+  ],
+  "ACTIVIDADES_MANTENCION": [
+    "ACTI_ID"
+  ],
+  "MANTENCIONES": [
+    "MANT_ID",
+    "MANT_EQUIPO_ID",
+    "MANT_ACTIVIDAD_ID"
+  ]
+}

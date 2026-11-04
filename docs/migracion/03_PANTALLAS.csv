@@ -1,0 +1,12 @@
+id,fragmento_maqueta,pantalla,clasificacion,requisitos,acceso,propuesta,decisiones
+V03-01,resumen,Resumen,ADAPTAR,RF-06;RF-16,Ambos,"Métricas actuales desde fuente; separar condición, situación y custodia.",M1-D07;M1-D13
+V03-02,equipos,Catálogo de equipos,ADAPTAR,RF-02;RF-06;RF-07,Ambos,"Búsqueda, filtros, tablas desplazables y ficha; administración ofrece alta.",M1-D06;M1-D09;M1-D10;M1-D13
+V03-03,equipo/demo-01,Ficha e historial por tipo,ADAPTAR,RF-02;RF-04;RF-05,Ambos,Datos comunes + técnico aplicable + piezas/insumos + historia inmutable.,M1-D07;M1-D08;M1-D10
+V03-04,equipo/nuevo,Alta de equipo por tipo,ADAPTAR,RF-02,Administrador,"Modelo filtrado por marca; el backend deriva marca del modelo, sin duplicarla en EQUIPOS. Periférico simple sin subtipo.",M1-D06;M1-D10;M1-D14;M1-D15
+V03-05,funcionarios,Funcionarios y pertenencias,ADAPTAR,RF-01;RF-06,Ambos; edición administrativa,Conservar RUT/ID/cargo y unidad histórica; cuenta vinculada solo tras validación.,M1-D03;M1-D04;M1-D08
+V03-06,asignaciones,"Asignación, devolución y traspaso",ADAPTAR,RF-03;RF-04;RF-05,Ambos; escritura administrativa,"Muchos equipos por funcionario, un vigente por equipo; motivo, confirmación y origen esperado; fecha operativa del servidor.",M1-D05;M1-D07;M1-D08;M1-D13
+V03-07,mantenciones,Historial y alta de mantenciones,NUEVO_NECESARIO,RF-02;RF-05,Ambos; escritura administrativa,Equipo/actividad/fecha/observación; ampliación propuesta sin observaciones con secretos.,M1-D10;M1-D12;M1-D16
+V03-08,administracion,Administración y seguimiento de avisos,ADAPTAR,RF-09;RF-11;RF-14;RF-15,Administrador,"Cuentas pendientes, propio rol/último administrador, catálogos y destinatario; incierto requiere evidencia.",M1-D02;M1-D03;M1-D09;M1-D11;M1-D12
+V03-09,seguridad,"Acceso, perfiles y permisos",CONSERVAR,RF-08;RF-09;RF-10;RF-11,Referencia de diseño; gestión administrativa,"Conservar Supabase Auth como alternativa recomendada, sesión opaca/MFA/recuperación; combinación de perfiles pendiente.",M1-D02;M1-D11
+V03-10,auditoria,Auditoría administrativa,ADAPTAR,RF-12;RF-13,Administrador,"Filtros de registro/actor/entidad/acción, evidencia minimizada; sin editar ni borrar.",M1-D07;M1-D08;M1-D12
+V03-11,reportes,Reportes y buscador,ADAPTAR,RF-06;RF-07;RF-13;RF-16,Ambos; auditoría administrativa,"Cinco reportes y búsqueda separada; filtros/columnas A-11, UTC, propietario, TTL y límites XLSX/PDF.",M1-D07;M1-D09;M1-D12;M1-D15

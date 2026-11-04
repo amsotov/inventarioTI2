@@ -1,12 +1,5 @@
-export class ApiError extends Error {
-  constructor(
-    public status: number,
-    public code: string,
-    public requestId?: string,
-  ) {
-    super(code);
-  }
-}
+import { ApiError } from "./errors";
+export { ApiError } from "./errors";
 export async function api(
   path: string,
   options: RequestInit = {},
@@ -30,10 +23,25 @@ export async function api(
     throw new ApiError(response.status, body.code ?? "ERROR", body.requestId);
   return { body, etag: response.headers.get("etag") };
 }
+/** Transporte v2 explícito. La demo v1 nunca fabrica resultados del modelo nuevo. */
+export async function modelApi(path: string, options: RequestInit = {}, csrf?: string) {
+  if (import.meta.env.VITE_DEMO_MODE === 'true') throw new ApiError(503,'MODEL_NOT_AVAILABLE');
+  if (!/^[a-z][a-z0-9/-]*(?:\?.*)?$/i.test(path) || path.split('?')[0].includes('..')) throw new ApiError(400,'INVALID_REQUEST');
+  const response = await fetch('/api/v2/'+path, {
+    ...options, credentials:'same-origin',
+    headers:{...(options.body?{'Content-Type':'application/json'}:{}),...(csrf?{'X-CSRF-Token':csrf}:{}),...options.headers}
+  });
+  const body=response.status===204?null:await response.json();
+  if(!response.ok)throw new ApiError(response.status,body?.code??(response.status===404?'MODEL_NOT_AVAILABLE':'ERROR'),body?.requestId);
+  return {body,etag:response.headers.get('etag')};
+}
 export function message(e: unknown): string {
   if (!(e instanceof ApiError))
     return "Servicio no disponible. Comprueba la conexión y vuelve a consultar.";
   const specific: Record<string, string> = {
+    MODEL_NOT_AVAILABLE: "Este módulo todavía no está habilitado. Puedes continuar usando el inventario actual.",
+    MODEL_OPERATION_NOT_READY: "Esta operación todavía no está habilitada.",
+    MODEL_REFERENCE_NOT_READY: "No se pudieron resolver las referencias del catálogo. Vuelve a consultar.",
     EXPORT_LIMIT: "El conjunto supera el límite del formato. Acota los filtros y solicita una nueva exportación.",
     EXPORT_SIZE: "El contenido supera el tamaño de exportación. Acota los filtros.",
     EXPORT_BUSY: "Hay demasiadas exportaciones recientes. Espera antes de volver a intentar.",

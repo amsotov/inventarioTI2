@@ -1,5 +1,11 @@
 # Registro de decisiones y riesgos
 
+> Continuidad vigente M9-A01: F8 aceptada con pendientes, [F9 documental](migracion/09_PREPARACION_DESPLIEGUE.md) EN_REVISION. [Pendientes](migracion/09_PENDIENTES.csv), [puertas](migracion/09_PUERTAS_LIBERACION.csv) y [verificación nueva](migracion/evidencias/fase9/pruebas.json). M8-R01 autorregistro sin corregir y M9-R01 runtime demo discrepante; liberación NO_GO. Las 280 pruebas F8 son históricas, no repetidas en F9. Los estados anteriores siguientes conservan su contexto de entrega.
+
+
+> Continuidad vigente de migración: M8-A01 acepta F7 e inicia [F8 seguridad/regresión](migracion/08_SEGURIDAD_REGRESION.md). EN_REVISION_CON_BLOQUEOS; [matriz](migracion/08_MATRIZ_PRUEBAS.csv) y [evidencia](migracion/evidencias/fase8/pruebas.json). 280 casos Node aprobados; M8-R01 autorregistro remoto FALLIDA/no corregida, [propuesta sin aplicar](migracion/08_CONFIGURACION_AUTH_PROPUESTA.json). GoTrue/BFF/PG reales localmente; no integración gestionada ni SQL Server. F9 no autorizada, producción bloqueada. El contenido restante conserva su contexto histórico.
+
+
 **Fecha:** 2026-10-31
 **Fase:** 2 — COMPLETADA; revisión visual aprobada. Fase 3 autorizada para un nuevo chat.
 
@@ -205,3 +211,55 @@ El usuario ratifica D-35: «Inicia únicamente la Fase 13 de inventarioTI2, ya a
 ## D-38 — Ejecución de Fase 14 sin producción
 
 2026-11-02. El usuario ratifica D-37: «Inicia únicamente la Fase 14, ya autorizada por D-37. Presenta el plan de despliegue, operación y continuidad y actualiza GitHub. No inicies Fase 15 ni despliegues a producción». Se ejecuta plan/CI de verificación, salud/logs y ensayos locales de copia/recuperación, con [DESPLIEGUE](DESPLIEGUE.md), [RUNBOOK](RUNBOOK_OPERACION.md) y [CHECKLIST](CHECKLIST_LIBERACION.md). Entrega EN_REVISION, CA14-06 PENDIENTE; no se atribuye aceptación del usuario. F1-SEG-01/02/03 y objetivos UTC/semanal/máximo 168 h/RPO 168 h/RTO 8 h/30 días conservados. Recursos/destino gestionados, operador/custodia/horario/alertas aún sin aprobar; no se contratan/configuran por inferencia. Sin Fase 15, producción, correo real, datos/cuentas reales, gasto o permisos remotos.
+
+
+## M1-A01 — Cierre de diagnóstico e inicio de validación de migración
+
+2026-11-03. Usuario: «apruebo fase 0 y inicia fase 1 de aquí en adelante guarda todo github los cambios realizados». Se cierra Fase 0 de migración y autoriza únicamente Fase 1 documental, con sincronización GitHub. No equivale a aprobar recomendaciones: [M1-D01–M1-D16](migracion/01_DECISIONES_PENDIENTES.md) siguen PENDIENTES. Fase 1 EN_REVISION y Fase 2 NO AUTORIZADA. Identificadores M1 separados de D-01–D-38 históricos. Sin SQL, esquema, aplicación, datos ni despliegue; fuentes originales conservadas.
+
+
+## M2-A01 — Cierre documental de migración Fase 1 e inicio de Fase 2
+
+2026-11-03. Usuario: «apruebo y inicia fase 2». Aceptación de la entrega 9dbaa2f y autorización de línea base funcional/trazabilidad/mapeo. Se mantienen condiciones de datos y opciones excluyentes M1-D01–M1-D16; no se inventa aprobación de cambios físicos, asociaciones de identidades ni unicidad sin perfilado. Fase 2 EN_REVISION; Fase 3 NO AUTORIZADA. Sin SQL, implementación, merge ni despliegue.
+
+
+## M3-A01 — Aceptación de trazabilidad e inicio de diseño
+
+2026-11-03. Usuario: «apruebo fase 2 inicia fase 3». Cierra Fase 2 b29d60c y autoriza diseño frontend/API. [Propuesta](migracion/03_IMPACTO_FRONTEND_API.md) EN_REVISION; prototipo sintético, sin aplicación ni SQL. Versionado v2 y ajustes visuales son propuestas; condiciones M1-D siguen pendientes donde requieren elección/datos. Fase 4 no autorizada.
+
+
+## M4-A01 — Aceptación Fase 3 e inicio de planificación ETL
+
+2026-11-03. Usuario: «apruebo fase 3 inicia fase 4». Cierra diseño 59b58d9 y autoriza plan de staging/transformación/excepciones/reconciliación/rollback. [Plan](migracion/04_PLAN_ETL.md) EN_REVISION; no es ejecución. Las decisiones M1-D condicionadas a datos/opciones siguen sujetas a resolución; no permiso para extraer/cargar/rotar credenciales ni operar producción. Fase 5 no autorizada.
+
+## M5-A01 — aceptación documental Fase 4 y autorización Fase 5
+
+Usuario: «apruebo fase 4 inicia fase 5». Acepta `9f84fcd`; permite preparar y verificar candidato SQL Server, no resuelve opciones M1-D ni configura entorno. Núcleo fiel separado de propuestas; barreras de aplicación mientras diseño/entorno estén pendientes. Fase 5 EN_REVISION; Fase 6 NO AUTORIZADA. Recomendaciones y bloqueos en [informe](migracion/05_ESQUEMA_SQLSERVER.md). No se ejecutó SQL ni se sustituyó la aplicación.
+
+## M5-A02 — entornos de pruebas y destino confirmados
+
+Usuario: «Fase de Pruebas Actual (Supabase): Se utilizará un proyecto aislado en Supabase (PostgreSQL) cargado con datos sintéticos para validar la funcionalidad inicial. Entorno de Destino (SQL Server): SQL Server 2016, compatibility level 130». Proyecto aclarado: «inventarioTI2».
+
+Se ratifica versión/nivel del objetivo M1-D01, no la totalidad de decisiones ni la aceptación de Fase 5. Proyecto no visible en la conexión; inventarioTI no es reemplazo. Edición/SP/CU/collation/instancia SQL Server pendientes; UTF-8 no está disponible en 2016. [Informe](migracion/05_ENTORNOS_COMPATIBILIDAD.md). Fase 6 no autorizada.
+
+## M5-A03 — crear proyecto aislado Supabase
+
+Usuario: «te autorizo crear el proyecto en supabase»; organización/región: «sovicl, región São Paulo». Permite crear inventarioTI2 en sa-east-1. No incluye pausar/eliminar otros proyectos ni cambiar facturación. Supabase rechaza un intento por cuota Free máxima (2 activos); comprobación posterior: target no creado. Cotización actual amount 0/monthly no aprueba plan de pago. [Registro](migracion/PROVISION_SUPABASE.md). La creación puede reintentarse cuando haya cupo con autorización vigente; Fase 6 no autorizada.
+
+## M5-A04 — pausa de inventarioTI y creación completada
+
+Usuario: «pausa inventarioTI», tras M5-A03 y selección sovicl/São Paulo. Autoriza esa pausa concreta para liberar cupo. Se confirmó INACTIVE y se creó inventarioTI2 (ref yhsfotxhaptinjtmrinn, ACTIVE_HEALTHY, sa-east-1). Plan Free; sin otros proyectos/roles/facturación modificados. SELECT de metadatos de la nueva base, sin SQL en la anterior. [Provisión](migracion/PROVISION_SUPABASE.md). No autoriza reactivación del anterior, DDL SQL Server, cierre de decisiones o Fase 6.
+
+## M5-A05 — retomar validación inicial PostgreSQL
+
+Se retoma Fase 5 («remota donde quedaste»), dentro del proyecto aislado/sintético elegido por usuario y creado bajo M5-A03/A04. Se reutiliza baseline existente, no el modelo objetivo: 8 fuentes adaptadas al operador y 2 correcciones ACL, sin tocar originales. Se instala semilla y se ensayan 20 casos SQL; no se elige alternativa M1-D ni se inicia backend/frontend de modernización. [Resultados y límites](migracion/VALIDACION_SUPABASE.md). Fase 5 EN_REVISION; SQL Server 2016/130, Auth real y Fase 6 pendientes.
+
+
+## M6-A01/A02/A03 — modernización del backend
+
+Usuario acepta F5 e inicia F6; aprueba Auth externo/soporte y Unicode/UTC. Resoluciones, alcance exacto y condiciones en [informe](migracion/06_ADAPTACION_BACKEND.md) y [enmiendas](migracion/evidencias/fase6/enmiendas.json). M1-D02 y conservación M1-D08/09 ratificadas en ese alcance; M1-D07/15 ratificadas para tipos/UTC, no para todos sus pendientes. F6 parcial: escrituras/soporte SQL Server e integración pendientes; no F7.
+
+
+## M7-A01 / M7-C01 — interfaz e integridad de edición
+
+M7-A01 acepta incremento parcial F6 e inicia F7; no ratifica reglas pendientes ni habilita SQL Server. M7-C01 extiende opcionalmente siete campos de lectura ya definidos en atributos para no borrar información ausente; contrato requerido/peticiones/permisos sin cambios. [Informe y límites](migracion/07_ADAPTACION_VISUAL.md). No formulario arbitrario de perfiles ni mezcla de cifras de modelos; v1 preservada.

@@ -208,6 +208,21 @@ try {
     .click();
   await expect(page.locator("dl").first()).toContainText("ThinkPad E14");
   await expect(page.locator("dl").first()).not.toContainText("Modelo temporal");
+  if (process.env.DEMO_PUBLICATION_CHECK === 'true') {
+    await page.getByRole('link', {name:'Modernización · vista previa', exact:true}).click();
+    await expect(page.getByRole('heading', {name:'Modernización', exact:true})).toBeVisible();
+    await expect(page.locator('figure img')).toHaveCount(6);
+    for (const picture of await page.locator('figure img').all()) {
+      await picture.scrollIntoViewIfNeeded();
+      await expect(picture).toHaveJSProperty('complete', true);
+      assert(await picture.evaluate(img => img.naturalWidth > 0));
+    }
+    await page.getByRole('link', {name:'Abrir prototipo de modernización', exact:true}).click();
+    await expect(page.getByText('Propuesta de diseño · FASE 3', {exact:true})).toBeVisible();
+    await page.getByRole('link', {name:'Equipos', exact:true}).click();
+    await expect(page.getByRole('heading', {name:'Equipos', exact:true})).toBeVisible();
+    console.log('PASS: publication preview, six images and navigable prototype.');
+  }
   assert.deepEqual(unexpected, [], "No external or API requests");
   assert.deepEqual(errors, [], "No browser errors");
   console.log(

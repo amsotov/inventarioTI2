@@ -1,3 +1,5 @@
+import type { ModelBackend } from '../../apps/server/modernization/ports.js';
+import { postgresInventory } from '../../apps/server/inventory/postgres.js';
 import { execFileSync } from "node:child_process";
 import { randomBytes, randomUUID } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
@@ -60,7 +62,7 @@ export class IdentityDouble implements Provider {
 export async function fixture(
   origin = "https://inventario.test",
   webRoot?: string,
-  options: { provider?: Provider; poolMax?: number } = {},
+  options: { provider?: Provider; poolMax?: number; modernization?: ModelBackend } = {},
 ) {
   const name = "inventario-reports-" + randomUUID(),
     password = randomBytes(24).toString("hex");
@@ -138,7 +140,7 @@ export async function fixture(
       o = await auth.login("other@example.invalid", "synthetic"),
       partial = await auth.login("admin@example.invalid", "synthetic"),
       a = await auth.verify(partial.sid, partial.csrf, "factor", "123456");
-    server = app(auth, origin, new Inventory(security), webRoot, security);
+    server = app(auth, origin, new Inventory(postgresInventory(security)), webRoot, security, options.modernization);
     const headers = (s: { sid: string; csrf: string } = r) => ({
       cookie: "__Host-inventario=" + s.sid,
       origin,

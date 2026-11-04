@@ -1,0 +1,10 @@
+{
+  "base_git": "59b58d912010e7e6a0bd56d1ceef71264d5ad05e",
+  "fuente_diccionario_sha256": "a07ec95b68c35eae358def30ae3723485c202b562d04db465b566801307cef5e",
+  "filas_mapeo": 57,
+  "filas_calidad": 13,
+  "fuente_operacional_disponible": false,
+  "perfilado_real_ejecutado": false,
+  "sql_ejecutado": false,
+  "etl_ejecutado": false
+}

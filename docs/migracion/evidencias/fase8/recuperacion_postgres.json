@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "synthetic local PostgreSQL 17; identity double; no managed recovery or production RTO claim",
+  "snapshot": "2026-11-04T01:35:28.102Z",
+  "elapsedMs": 8459,
+  "rtoTargetMs": 28800000,
+  "tableCount": 19,
+  "checks": [
+    "AES-256-GCM roundtrip and manifest hashes; no credential values in manifest",
+    "all private table row hashes, schema RLS/FORCE/ACL/owners and function definitions/ACL match snapshot; later write absent",
+    "SQL identities remain least privileged; role passwords reissued; old identity deliveries blocked; outbox quarantined; worker cannot claim",
+    "old session 401; fresh login can read restored inventory; reader denied administrative accounts",
+    "failed transactional migration rolls back entirely"
+  ],
+  "managedIdentity": "NOT_EXECUTED",
+  "externalUploadRetention": "NOT_EXECUTED",
+  "productionRollback": "NOT_EXECUTED"
+}

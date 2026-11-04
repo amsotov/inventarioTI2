@@ -1,3 +1,6 @@
+import { modernizationRoutes } from './modernization/routes.js';
+import { postgresModelAccess } from './modernization/postgres-access.js';
+import type { ModelBackend } from './modernization/ports.js';
 import { processRoutes } from './processes/routes.js';
 import { notificationRoutes } from './notifications/routes.js';
 import { reportRoutes } from './reports/routes.js';
@@ -11,7 +14,7 @@ import type { Inventory } from './inventory/service.js';
 import { AuthError, AuthService } from './auth/service.js';
 const str = {type:'string',minLength:1,maxLength:320};
 const schema = (props: Record<string,unknown>) => ({body:{type:'object',additionalProperties:false,required:Object.keys(props),properties:props}});
-export function app(auth: AuthService, origin: string, inventory?: Inventory, webRoot?: string, security?: Authorization) {
+export function app(auth: AuthService, origin: string, inventory?: Inventory, webRoot?: string, security?: Authorization, modernization?: ModelBackend) {
   const server=Fastify({logger:false,bodyLimit:8192,trustProxy:false,ajv:{customOptions:{removeAdditional:false,coerceTypes:false}}});
   server.addHook('onRequest',async(req,res)=>{
     res.header('cache-control','no-store').header('referrer-policy','no-referrer').header('x-content-type-options','nosniff').header('x-frame-options','DENY').header('permissions-policy','camera=(), microphone=(), geolocation=()').header('strict-transport-security','max-age=31536000').header('content-security-policy',"default-src 'none'; script-src 'self'; connect-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'");
@@ -20,8 +23,8 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
   server.setErrorHandler((err,req,res)=>{
     const e=err as Error & {validation?:unknown};
     const httpStatus=(err as {statusCode?:number}).statusCode;
-    const status=err instanceof AuthError?err.status:e.validation?400:httpStatus===413||httpStatus===415?httpStatus:503;
-    res.code(status).type('application/problem+json').send({type:'about:blank',title:'No se pudo completar la solicitud',status,code:err instanceof AuthError?err.code:e.validation?'INVALID_REQUEST':status===413?'PAYLOAD_TOO_LARGE':status===415?'UNSUPPORTED_MEDIA_TYPE':'DEPENDENCY_UNAVAILABLE',requestId:req.id});
+    const status=err instanceof AuthError?err.status:e.validation||httpStatus===400?400:httpStatus===413||httpStatus===415?httpStatus:503;
+    res.code(status).type('application/problem+json').send({type:'about:blank',title:'No se pudo completar la solicitud',status,code:err instanceof AuthError?err.code:e.validation||status===400?'INVALID_REQUEST':status===413?'PAYLOAD_TOO_LARGE':status===415?'UNSUPPORTED_MEDIA_TYPE':'DEPENDENCY_UNAVAILABLE',requestId:req.id});
   });
   const sid=(req:{headers:{cookie?:string}})=>req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>x.startsWith('__Host-inventario='))?.slice(18)??'';
   const csrf=(req:{headers:Record<string,unknown>})=>typeof req.headers['x-csrf-token']==='string'?req.headers['x-csrf-token']:'';
@@ -58,6 +61,10 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
     adminRoutes(server,security,auth,sid,csrf);
     processRoutes(server,security,sid,csrf);
     reportRoutes(server,new Reports(security),sid,csrf);
+  }
+  if(modernization){
+    if(!security)throw new Error('MODEL_AUTHORIZATION_REQUIRED');
+    modernizationRoutes(server,postgresModelAccess(security),modernization,sid,csrf);
   }
   if(webRoot)webRoutes(server,webRoot);
   return server;

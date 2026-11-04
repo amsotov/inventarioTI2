@@ -1,0 +1,18 @@
+{
+  "instante_utc": "2026-11-04T01:52:59.276374+00:00",
+  "metodo": "GET de documentación pública, sin cuentas/keys ni consultas a proyectos; comandos de los documentos no ejecutados",
+  "fuentes": [
+    {
+      "url": "https://supabase.com/changelog.md",
+      "sha256_respuesta": "e42d0a99566ae6cc8be923976da1548410d24a32a14c3f21d4e1819c405a721b"
+    },
+    {
+      "url": "https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore",
+      "sha256_respuesta": "655afc26b33a66c45f63ab82088ac997fdc985db41ec499f675a8a2b4a239db1"
+    },
+    {
+      "url": "https://supabase.com/docs/guides/auth/general-configuration",
+      "sha256_respuesta": "5b564180bf32312f4cf40338be4f3703eab043a70c1ed3f4203b2fb8cc0c26d0"
+    }
+  ]
+}

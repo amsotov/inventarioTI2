@@ -1,0 +1,126 @@
+{
+  "fase": "MIGRACION_7",
+  "autorizacion": {
+    "id": "M7-A01",
+    "literal": "apruebo fase 6 inicia fase 7",
+    "acepta": "Incremento parcial F6, conservando pendientes de integración/escrituras"
+  },
+  "base_git": "1d7fac011780651f2b21516265b76ab58d631747",
+  "estado": "EN_REVISION_VISUAL_INTEGRACION_DESTINO_BLOQUEADA",
+  "fecha_local": "2026-11-03",
+  "zona_documental": "America/Santiago",
+  "node": "24.19.0",
+  "dependencias": "Sin cambios en package.json/lock; se reutilizó instalación npm ci de F6 con esos hashes, sin reinstalación nueva",
+  "ejecutadas": [
+    {
+      "comando": "npm test",
+      "estado": "APROBADA",
+      "casos": 158,
+      "alcance": "PG17 local sintético; Auth/RLS/HTTP reales, proveedor doble y GoTrue local preexistente; seis nuevas unidades de UI incluidas",
+      "log": "docs/migracion/evidencias/fase7/backend.log",
+      "sha256": "867d7c8bdb2c583dbbc7722b6e47ecd2a33fb4a0b49739098618729881b90a5c"
+    },
+    {
+      "comando": "npm run test:ops",
+      "estado": "APROBADA",
+      "casos": 4,
+      "alcance": "Copia/restore cifrado PostgreSQL local, no SQL Server ni recuperación gestionada",
+      "log": "docs/migracion/evidencias/fase7/ops.log",
+      "sha256": "1c561d78b92cb76674be1d831b61e009c10d042a9fcd5fdc6202b6cd182c35a1"
+    },
+    {
+      "comando": "npm run test:ui",
+      "estado": "APROBADA",
+      "casos": 57,
+      "alcance": "39 regresiones previas y 18 casos de nuevo recorrido; BFF/Auth/RLS PG reales, repositorio v2 DOBLE",
+      "log": "docs/migracion/evidencias/fase7/ui-final.log",
+      "sha256": "960b399bbed81a404961c1a91b1bfe7396aa7409159ced2c5de16b81c63e0880"
+    },
+    {
+      "comando": "npm run build",
+      "estado": "APROBADA",
+      "casos": null,
+      "alcance": "TypeScript estricto servidor/web y bundle Vite",
+      "log": "docs/migracion/evidencias/fase7/build-final.log",
+      "sha256": "a57adbc226ae9d986a3948a6220abd09fedca402501f65f7e5883eec0207d139"
+    },
+    {
+      "comando": "npm run test:demo con npm run demo local",
+      "estado": "APROBADA",
+      "casos": null,
+      "alcance": "Demo v1 preexistente, exportaciones XLSX/PDF y cero llamadas API/externas",
+      "log": "docs/migracion/evidencias/fase7/demo.log",
+      "sha256": "176ef54d7340f55d95d9cf09c7af3f5fdc6d323b6b74b0c4be697233afd7de35"
+    },
+    {
+      "comando": "npm audit --audit-level=high --json",
+      "estado": "APROBADA",
+      "vulnerabilidades": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "evidencia": "docs/migracion/evidencias/fase7/npm-audit.json",
+      "limite": "Consulta al registro en esta ejecución, no garantía contra hallazgos futuros"
+    }
+  ],
+  "browser": {
+    "capturas": 6,
+    "roles": [
+      "administrador",
+      "lectura"
+    ],
+    "anchos": [
+      1440,
+      768,
+      390
+    ],
+    "nuevos_casos": 18,
+    "incluidos_en_suite_ui": true,
+    "auditorias_axe": 2,
+    "violaciones_axe": 0,
+    "inspeccion_visual": "Se inspeccionaron las seis capturas locales, tras ajustar tabla/paginación móvil y neutralizar scroll/foco de captura",
+    "limites": "Emulación Chromium, no hardware/Safari/lector de pantalla/certificación WCAG integral"
+  },
+  "incidencias_resueltas": [
+    "Selectores de catálogo con nombre accesible explícito y campo de edición incompleto cerrado",
+    "Ruta vacía de edición ya no arroja excepción",
+    "Pruebas esperan respuesta/navegación del comando antes de leer resultado; secuencia fail-fast",
+    "Un intento inicial fue interrumpido; se retiró exclusivamente su contenedor sintético huérfano",
+    "Una ejecución solapada falló EADDRINUSE; se completaron suites finales secuencialmente",
+    "Normalización UTC de instantes con offset preserva todos sus decimales; DATE sin hora no se transforma",
+    "Compilación inicial de pruebas encontró imports browser/NodeNext; se separó ApiError común y transporte de utilidades puras"
+  ],
+  "no_ejecutadas": [
+    {
+      "prueba": "Persistencia, permisos, atomicidad y concurrencia del modelo en SQL Server 2016/130",
+      "estado": "BLOQUEADA",
+      "motivo": "Instancia/edición/SP/CU/collation, soporte/repositorios y reglas pendientes heredados de F6"
+    },
+    {
+      "prueba": "Login/MFA real en Supabase gestionado inventarioTI2",
+      "estado": "NO_EJECUTADA",
+      "motivo": "Se usan proveedor doble y GoTrue local en regresión; no cuentas/credenciales o cambios remotos"
+    },
+    {
+      "prueba": "Reportes del modelo nuevo y C03-17 perfiles múltiples",
+      "estado": "BLOQUEADA",
+      "motivo": "Selección/persistencia y catálogo/política pendientes; funciones actuales v1 conservadas"
+    },
+    {
+      "prueba": "Datos operacionales, ETL, cutover, despliegue y producción",
+      "estado": "NO_EJECUTADA",
+      "motivo": "Fuera del alcance; sin autorización inferida"
+    }
+  ],
+  "mutaciones_remotas": false,
+  "sql_server_ejecutado": false,
+  "frontend_modificado": true,
+  "backend_doble_en_main": false,
+  "fase8": "NO_AUTORIZADA",
+  "evidencia_historica": "Restaurada exacta al commit base después de los ensayos; resultados nuevos bajo evidencias/fase7",
+  "conteos": "158+4+57=219 pruebas Node aprobadas; las 18 UI y las seis unidades nuevas ya están incluidas, no se suman nuevamente."
+}

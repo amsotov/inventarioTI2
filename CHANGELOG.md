@@ -1,5 +1,76 @@
 # Cambios
 
+## 2026-11-03 — Publicación de modernización en Pages, MPUB-A01
+
+- Autoriza integración/publicación estática del código aprobado y mantiene los bloqueos operativos del destino.
+- Agrega acceso a revisión: prototipo navegable y seis capturas de la interfaz implementada, sin alterar las fuentes.
+- Alinea workflow a Node24.19.0, genera manifiesto público con SHA/hashes y amplía el recorrido de publicación en Chromium.
+- Conserva demo existente, Auth, v2 cerrada, backend y SQL sin activación remota.
+
+
+## 2026-11-03 — Migración Fase 9: preparación documental EN_REVISION
+
+- M9-A01 acepta auditoría F8 con pendientes e inicia documentación/preparación; liberación NO_GO.
+- Consolida compatibilidades,18pendientes,12puertas y manifiesto de preparación sin artefacto desplegable.
+- Actualiza despliegue/rollback por motor y antes/después de escrituras, protegiendo identidad/efectos; mantiene las barreras SQL.
+- Registra M9-R01: workflow demo Node20 frente a Node24 declarado. M8-R01 sin corrección acreditada; sin cambios de workflows/configuración remota.
+- Preserva código, fuentes, contratos, SQL físicos y evidencia F1–F8; 280pruebas F8 históricas, controles documentales nuevos. No hay fase10 definida, merge o despliegue autorizado.
+
+
+## 2026-11-03 — Migración Fase 8: seguridad y regresión, con bloqueos
+
+- M8-A01 acepta F7/inicia F8; F9 sin autorización.
+- Corrige comparación UUID en traspasos/referencias de perfil y clasificación HTTP 400 de JSON inválido.
+- Amplía Auth real local GoTrue/BFF/PG (TOTP, rol SQL, revocación) y matriz adversarial v2; 280 casos Node aprobados.
+- Auditoría Supabase solo lectura: RLS/ACL conservados, sin avisos del asesor; detecta M8-R01 autorregistro habilitado. Propuesta de corrección no aplicada.
+- Evidencia e integración de destino claramente separadas; SQL Server/vínculo funcionario/perfiles siguen bloqueados. Sin SQL remoto, main, merge o despliegue.
+
+
+## 2026-11-03 — Migración Fase 7: adaptación visual EN_REVISION
+
+- M7-A01 acepta entrega parcial F6 e inicia interfaz; persisten bloqueos del destino.
+- Reutiliza React/shell/campos y agrega equipos/relaciones con 17 contratos v2, fichas por cuatro subtipos, historia, mantenciones y pertenencias.
+- M7-C01 lectura compatible con siete atributos opcionales; edición cerrada si falta información.
+- Conserva UUID/CSRF/ETag y reintento estable; estados y capturas responsive con ambas funciones de acceso.
+- Reportes, acceso, perfiles y demo actuales conservados; no backend ficticio en aplicación, SQL aplicado, main/merge/despliegue o F8.
+
+## 2026-11-03 — Migración Fase 6: incremento parcial de backend
+
+- M6-A01 acepta F5/inicia F6; M6-A02/A03 aprueban Auth/soporte y Unicode/UTC.
+- Desacopla repositorio de inventario; conserva v1/PostgreSQL y seguridad.
+- Implementa frontera por inyección para 18 contratos v2 y dos lecturas SQL Server parametrizadas por puerto; no escrituras de destino.
+- Enmienda candidato 0.6.0-review.1 en 42 campos sin retirar barreras ni ejecutar SQL.
+- Pruebas nuevas, regresión, linaje y diagnóstico de pendientes; F6 EN_PROGRESO con integración bloqueada, sin F7/merge/despliegue.
+
+## 2026-11-03 — Migración Fase 4: plan ETL EN_REVISION
+
+- Registra aprobación de Fase 3 y M4-A01; sin Fase 5.
+- Planifica dos fuentes, saneamiento previo, staging/cuarentena, reglas, identidades, replay y carga por dependencias.
+- Cubre 57 mapeos/13 hallazgos, 20 excepciones, 36 pruebas futuras y 12 puertas de control.
+- Define respaldo/restauración/reconciliación y rollback antes/después de nuevas escrituras; fuente operacional ausente.
+- Verificación documental únicamente: sin SQL, datos reales, implementación, merge ni despliegue.
+
+## 2026-11-03 — Migración Fase 3: diseño visual/contratos EN_REVISION
+
+- Registra aprobación de Fase 2 y M3-A01; sin Fase 4.
+- Propone 11 vistas conservando identidad visual y compatibilidad de las 49 rutas; 18 contratos v2 y 117 campos con exposición explícita.
+- Maqueta documental navegable, datos sintéticos, prueba Chromium responsive y capturas reales; no modifica aplicación/API/BD.
+- Documenta garantías, pendientes y límites; sin SQL, merge ni despliegue.
+
+## 2026-11-03 — Migración Fase 2: trazabilidad y mapeo EN_REVISION
+
+- Registra aceptación documental de Fase 1 e inicio exclusivo de Fase 2 por M2-A01.
+- Documenta 16 RF/7 RNF, 19 reglas, 16 historias, 20 criterios; referencias API/UI/servicios/pruebas existentes.
+- Mapea 155 campos actuales y 117 destino sin eliminar capacidades ausentes del núcleo objetivo.
+- Verificación documental y manifiesto de fuentes; sin SQL, implementación, merge, despliegue ni Fase 3.
+
+## 2026-11-03 — Modernización: diagnóstico aprobado y Fase 1 EN_REVISION
+
+- Registra aprobación de Fase 0 e incorpora su informe; autoriza únicamente validación documental y sincronización GitHub.
+- Concilia ER/DER/Excel con 117 campos y 30 relaciones; transcripciones independientes, verificador y evidencia documental.
+- Presenta 15 hallazgos y 16 decisiones pendientes; conserva modelo, aplicación, SQL, pruebas y evidencia histórica.
+- Añade guía INICIAR_EN_CODEX y separa fases de migración del desarrollo histórico. Fase 2 no autorizada; sin merge ni despliegue.
+
 ## 2026-11-02 — Fase 14: operación y continuidad (EN_REVISION)
 
 - Plan de ambientes/configuración/CI/migraciones, runbook de incidentes/recuperación/rollback y checklist NO-GO productivo.
@@ -158,3 +229,33 @@ Catálogo A-07 con plantillas positivas; worker independiente con rol SQL limita
 - D-35 acepta la entrega `377be1ac61a077606a4fa06b4986353c4a4fff0f`; Fase 12 COMPLETADA y CA12-06 CUMPLIDO.
 - Fase 13 autorizada únicamente para iniciar en un nuevo chat; ejecución PENDIENTE. Punto de inicio en FASES/ESTADO, sin ejecutar QA en este cierre.
 - Se preservan código, migraciones, dependencias, pruebas/evidencias y límites operativos; correo real deshabilitado, Fases 14–15 sin autorización, sin producción ni despliegue.
+
+## 2026-11-03 — Migración Fase 5, candidato SQL Server
+
+- Fase 4 aceptada por usuario; Fase 5 entregada EN_REVISION, aplicación BLOQUEADA.
+- DDL candidato 30 tablas/117 campos/PK/FK/UQ/IDENTITY/defaults; CHECK e índices propuestos separados, consulta de catálogo y manifiesto de revisión.
+- Soporte actual 19/155 trazado, controles estáticos/sintácticos y negativas; casos de motor no ejecutados. Sin cambios de aplicación/SQL previo, cargas, merge o despliegue.
+
+## 2026-11-03 — Continuación Fase 5, destino 2016/130
+
+- M5-A02 registra Supabase/PostgreSQL inventarioTI2 para pruebas sintéticas y SQL Server 2016/130 como destino.
+- Guards de motor/nivel/bases de sistema, parser estático TSql130Parser con paquete fijado, 19 negativas y evidencia histórica revision1 conservada.
+- Se descarta UTF-8 para SQL Server 2016; Unicode requiere decisión explícita. Proyecto inventarioTI2 no visible; no SQL/carga/cambios remotos ni inicio de Fase 6.
+
+## 2026-11-03 — Provisión Supabase M5-A03
+
+- Registra autorización de creación y elección sovicl/São Paulo.
+- Un intento rechazado por cuota de dos proyectos Free activos; proyecto inventarioTI2 NO CREADO. Coste cotizado del plan actual 0/mes, sin autorización de plan de pago.
+- Evidencia saneada y continuidad en GitHub; sin SQL, cambios en otros proyectos, facturación, aplicación, merge, deploy ni Fase 6.
+
+## 2026-11-03 — Supabase M5-A04 provisionado
+
+- Pausa inventarioTI autorizada y confirmada INACTIVE; inventarioTI2 creado en sovicl/sa-east-1 y ACTIVE_HEALTHY, sin cambio de plan Free.
+- Consulta de metadatos PostgreSQL 17.11/UTC y cero tablas de aplicación; sin carga ni pruebas funcionales. Evidencia saneada y estados actualizados.
+- Candidato revisión3 registra ref nueva; cuatro SQL Server sin cambios, 20 negativas y parser 130, revisión2 archivada. Sin app/frontend, merge, despliegue ni Fase 6.
+
+## 2026-11-03 — M5-A05 validación inicial Supabase
+
+- Baseline existente instalada con ocho copias trazadas y adaptación de propietarios a operador no SUPERUSER; fuentes originales intactas. Dos migraciones aditivas cierran ACL privadas como propietario efectivo.
+- Semilla sintética 2/3/6 (unidades/funcionarios/bienes), 20 casos SQL aprobados, rollback y catálogo/RLS/roles verificados; sin cuentas/sesiones/outbox persistentes ni correos.
+- Paquete/manifest/evidencia y revisión4; no frontend/backend fuente, HTTP/Auth real/UI, SQL Server ejecutado, merge, despliegue o Fase 6.

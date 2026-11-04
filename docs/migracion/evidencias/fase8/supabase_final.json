@@ -1,0 +1,75 @@
+{
+  "query": "SELECT de roles/funciones/agregados; sin SQL de mutación",
+  "audit": {
+    "seed": {
+      "units": 2,
+      "outbox": 0,
+      "people": 3,
+      "accounts": 0,
+      "commands": 0,
+      "sessions": 0,
+      "equipment": 6,
+      "auth_users": 0
+    },
+    "roles": [
+      {
+        "name": "inventario_admin",
+        "login": false,
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false
+      },
+      {
+        "name": "inventario_auth",
+        "login": false,
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false
+      },
+      {
+        "name": "inventario_avisos",
+        "login": false,
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false
+      },
+      {
+        "name": "inventario_contexto",
+        "login": false,
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false
+      },
+      {
+        "name": "inventario_runtime",
+        "login": false,
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false
+      },
+      {
+        "name": "inventario_servicio",
+        "login": false,
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false
+      },
+      {
+        "name": "inventario_worker",
+        "login": false,
+        "createdb": false,
+        "bypassrls": false,
+        "superuser": false,
+        "createrole": false
+      }
+    ],
+    "definer_functions": 6,
+    "definers_without_fixed_path": 0
+  }
+}

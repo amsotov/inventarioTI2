@@ -1,0 +1,20 @@
+# SQL Server — candidato Fase 5
+
+> Continuidad vigente M9-A01: metadata 0.6.0-review.4, F8 aceptada con pendientes y F9 EN_REVISION_DOCUMENTAL, liberación NO_GO. Cuatro payloads idénticos a F6 y THROW intactos. Verificador vigente verificar_fase9.py; --evaluar-liberacion sale3. [Preparación](../../docs/migracion/09_PREPARACION_DESPLIEGUE.md). Las revisiones anteriores siguientes son históricas; no aplicar SQL por esta guía.
+
+
+Estado: CANDIDATO BLOQUEADO, NO APLICADO. Revisión de metadata 0.6.0-review.3 bajo M8-A01, objetivo SQL Server 2016/13.x, compatibility_level 130. Los cuatro SQL físicos siguen idénticos a F6. La aplicación existente sigue usando PostgreSQL/Supabase; F6 desacopla su repositorio y prepara contratos sin activar destino. F7 aceptada como entrega visual; F8 EN_REVISION_CON_BLOQUEOS, F9 no autorizada.
+
+Leer [informe y decisiones](../../docs/migracion/05_ESQUEMA_SQLSERVER.md) antes de revisar SQL. Orden propuesto: 0001 → 0002 → 0003 → 900 (verificación parcial de catálogo). Todos comienzan con THROW incondicional. No quitarlo manualmente; emitir nueva versión solo con diseño y entorno autorizados.
+
+`manifest.json` contiene hashes/versionado de revisión; no autoriza ejecución. No hay runner ni conexión configurada. No pasar estos scripts al runner Supabase ni aplicar a base existente. No contienen down destructivo, GRANT, logins, usuarios o semillas.
+
+Verificación vigente sin DB: `python3 docs/migracion/verificar_fase8.py`; `--evaluar-liberacion` devuelve 3. [Informe F8](../../docs/migracion/08_SEGURIDAD_REGRESION.md). Verificadores F7/F6 históricos para daea7d2/1d7fac0. El verificador F5 se conserva histórico y corresponde al commit `27cae1f`: sus tipos y precondición de código intacto ya no corresponden a las enmiendas autorizadas de F6. [Informe F6](../../docs/migracion/06_ADAPTACION_BACKEND.md) y [42 enmiendas](../../docs/migracion/evidencias/fase6/enmiendas.json). SQLFluff/ScriptDom130 son parsers estáticos, no ejecutan SQL.
+
+Núcleo: 30 tablas/117 campos/30 PK/30 FK/18 UQ/25 IDENTITY/5 DEFAULT. Propuestas separadas: 9 CHECK y 24 índices FK. Soporte actual 19 tablas/155 campos identificado, sin DDL complementario SQL Server. Scripts no garantizan todavía autenticación, roles/RLS, historia precisa, reglas de subtipos/asignación ni idempotencia de negocio; nada sustituye a la aplicación actual por ejecutar DDL.
+
+M5-A02: [entornos](../../docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md). Pruebas funcionales iniciales previstas en Supabase/PostgreSQL inventarioTI2; no equivalen a ensayos SQL Server. M5-A04 ya creó inventarioTI2: [provisión](../../docs/migracion/PROVISION_SUPABASE.md), M5-A05 ya instaló y ensayó la [baseline existente PostgreSQL](../../docs/migracion/VALIDACION_SUPABASE.md), sin validar este DDL SQL Server. Edición/collation SQL Server pendientes; no UTF-8 en 2016. Guards explícitas de motor/nivel y parser [TSql130Parser](../../docs/migracion/herramientas/scriptdom130/README.md), sin retirar THROW.
+
+M6-A02/A03: 38 VARCHAR→NVARCHAR, tres instantes DATETIME2(7)/SYSUTCDATETIME y hash externo nullable; se conservan DATE/NULL históricos. Longitudes originales y campos técnicos ASCII documentados en enmiendas. No cambia PK/FK/UQ/IDENTITY ni aprueba CHECK propuestos. El soporte físico, repositorios de escritura y pruebas SQL Server siguen pendientes. No ejecutar en Supabase/PostgreSQL ni retirar THROW. Estado de la entrega F6 entonces: EN_PROGRESO; M7-A01 acepta ese incremento parcial y autoriza F7, con deuda técnica abierta.
+
+M7-A01 acepta incremento parcial F6 e inicia F7 visual. Revisión .2 solo actualiza metadata de continuidad: cuatro SQL idénticos, ninguna migración aplicada. Verificación vigente: `python3 docs/migracion/verificar_fase7.py`; el verificador F6 corresponde a su commit. [Informe F7](../../docs/migracion/07_ADAPTACION_VISUAL.md), integración de destino pendiente, F8 no autorizada.

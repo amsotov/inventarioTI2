@@ -1,6 +1,7 @@
+import{emailCallbackHtml,emailCallbackJs}from'../../apps/server/auth/email-callback.js';
 import {test} from 'node:test';import assert from 'node:assert/strict';import{readFileSync}from'node:fs';
 const origin='https://inventarioti2-prueba-20261104.alejandrosotovivar.chatgpt.site';
-const source=readFileSync('scripts/staging/site/worker.mjs','utf8').replace("import {ASSETS} from './assets.mjs';",'const ASSETS={};');
+const source=readFileSync('scripts/staging/site/worker.mjs','utf8').replace("import {ASSETS} from './assets.mjs';",'const ASSETS={};').replace("import {emailCallbackHtml,emailCallbackJs} from './email-callback.mjs';",'const emailCallbackHtml='+JSON.stringify(emailCallbackHtml)+';const emailCallbackJs='+JSON.stringify(emailCallbackJs)+';');
 const worker=(await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'))).default;
 const env={INVENTARIO_GATEWAY_TOKEN:'private-gateway',INVENTARIO_RUNTIME_ENVELOPE:'sealed-config',INVENTARIO_ADMIN_EMAIL:'trial@example.invalid',INVENTARIO_ADMIN_PASSWORD:'private-password'};
 test('El ingreso privado mantiene mismo origen y aísla cookies y credenciales de plataforma',async()=>{
@@ -32,4 +33,9 @@ test('El visor de Codex tiene padres autorizados y cookie particionada sin quita
 test('El visor conserva las dos cookies propias del flujo de correo y descarta las de la plataforma',async()=>{
  const original=globalThis.fetch;globalThis.fetch=async(_url:any,init:any)=>{assert.equal(init.headers.get('cookie'),'__Host-inventario='+'a'.repeat(43)+'; __Host-inventario-correo='+'b'.repeat(43));return new Response('{}',{headers:[['set-cookie','__Host-inventario='+'c'.repeat(43)+'; Path=/; HttpOnly; Secure; SameSite=Strict'],['set-cookie','__Host-inventario-correo=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0'],['set-cookie','platform=drop']]});};
  try{const r=await worker.fetch(new Request(origin+'/api/v1/sesion/correo/estado',{method:'POST',headers:{origin,cookie:'platform=secret; __Host-inventario='+'a'.repeat(43)+'; __Host-inventario-correo='+'b'.repeat(43)},body:'{}'}),env);assert.equal(r.headers.getSetCookie().length,2);assert(r.headers.getSetCookie().every((v:string)=>v.includes('SameSite=None')&&v.includes('Partitioned')));}finally{globalThis.fetch=original;}
+});
+
+test('El retorno del correo se sirve localmente con scripts propios, sin heredar sandbox de Supabase',async()=>{
+ const previous=globalThis.fetch;let upstream=false;globalThis.fetch=async()=>{upstream=true;return new Response('blocked',{headers:{'content-security-policy':"default-src 'none'; sandbox"}});};
+ try{const page=await worker.fetch(new Request(origin+'/auth/callback?flow=diagnostic&code=diagnostic'),env);assert.equal(page.status,200);assert.match(page.headers.get('content-type')! ,/text\/html/);assert.match(page.headers.get('content-security-policy')!,/script-src 'self'/);assert(!page.headers.get('content-security-policy')!.includes('sandbox'));assert.match(await page.text(),/auth\/callback.js/);const script=await worker.fetch(new Request(origin+'/auth/callback.js'),env);assert.match(script.headers.get('content-type')!,/application\/javascript/);assert.match(await script.text(),/sesion\/correo\/autorizar/);assert.equal(upstream,false);}finally{globalThis.fetch=previous;}
 });

@@ -1,5 +1,14 @@
 # FASES.md — Plan y control de avance
 
+## MTEST-A06 — retorno del correo corregido para el visor (2026-11-04)
+
+El usuario solicitó correctamente el enlace desde el visor integrado. La reproducción publicada confirmó que Supabase añadía `default-src 'none'; sandbox` a la página de retorno: HTTP200 no bastaba, porque el navegador bloqueaba el script y no enviaba la autorización. El hosting sirve ahora `/auth/callback` y su módulo público directamente, con CSP de scripts propios. El POST de autorización sigue pasando por el BFF y la verificación PKCE; las cookies particionadas y los permisos se conservan.
+
+Site privado **8**, fuente `bd8639b6981255eedf5cec08d1c15efc3bdcdbe4`, despliegue `appgdep_6aeb8aa8c0088191a245083c4d6a0512` succeeded. BFF14, SQL, datos y URLs de Auth sin cambios. **38/38 pruebas dirigidas** y TypeScript aprobados. Chromium contra la publicación confirma carga del script y POST de autorización; un código deliberadamente inválido recibe401, como corresponde. Evidencias antes/después en [ACCESO_CORREO](docs/prueba-real/ACCESO_CORREO.md). Esto no certifica todavía una sesión real del destinatario: debe solicitar el próximo enlace desde su propio visor y usar el correo más reciente. No se envían correos desde el navegador del agente ni se extraen códigos.
+
+CI completo del incremento anterior `2d9c0f5`: ejecución41894059796 **success**, incluida integración GoTrue/SMTP local/PostgreSQL. No se repite Docker completo local por espacio VFS; el nuevo commit tiene su propia CI. Continúan rama dedicada/PR5, sitio solo propietario y SQLServer bloqueado; sin merge/main/Pages ni otra fase.
+
+
 ## MTEST-A05 — enlace de correo habilitado (2026-11-04)
 
 Usuario confirma «listo url y urls configurado». Verificación independiente: callback HTTPS aceptado y flow conservado. Se activa emailRedirectReady=true y BFF14; visor privado7 conserva cookies particionadas y orígenes autorizados. Solicitar el enlace desde el visor del usuario y pulsarlo en el correo activa esa sesión, sin MFA ni copiar códigos. [Estado y evidencia](docs/prueba-real/ACCESO_CORREO.md). El bloqueo de URL documentado en MTEST-A04 es histórico y está resuelto. SMTP conserva sus cuotas; no enviar intentos desde el navegador del agente para que el usuario los apruebe.

@@ -139,3 +139,7 @@ Petición explícita del usuario sustituye MFA por correo en el laboratorio inve
 ## MTEST-A05 — callback verificado y habilitado
 
 Usuario confirma URL Configuration guardada. HTTP303 confirma callback correcto y conserva flow. emailRedirectReady=true/BFF14 activos, sitio privado7. Bloqueo URL de A04 resuelto; no volver a pedir configuración o permiso si no cambia la evidencia. Los enlaces se solicitan desde el visor del usuario; no iniciar desde navegador del agente para pedir luego aprobación por correo (activaría otro intento). CI detectó mezcla de esquemas en fixtures MFA: éstos fijan la migración de compatibilidad, y provider.test aplica después la política correo y prueba PKCE con GoTrue real/SMTP local/PG, sin envío externo. No omitir pruebas ni modificar barreras productivas.
+
+## MTEST-A06 — callback directo en hosting
+
+Site8 corrige CSP sandbox heredada de Supabase: servir HTML/JS públicos de callback directamente en Sites, mantener autorización PKCE en BFF14. No volver a proxyar ese HTML ni tomar HTTP200 como prueba de ejecución. Chromium publicado debe cargar script y enviar POST; código inválido debe fallar401. Usuario pidió enlace desde visor correctamente; no atribuir fallo a su navegador ni iniciar un flujo desde el agente. No extraer authcode real ni fabricar sesiones. Ver docs/prueba-real/ACCESO_CORREO.md; falta validación final del destinatario. Guardar en rama/PR5, sin main/Pages/otra fase.

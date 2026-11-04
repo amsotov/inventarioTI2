@@ -1,0 +1,55 @@
+{
+  "autorizacion": "MPUB-A01",
+  "estado": "PUBLICACION_ESTATICA_COMPLETADA_VERIFICADA",
+  "source_sha": "322aa137b5bb2a88f81898551b1352ccd47b1486",
+  "pr": 3,
+  "urls": {
+    "sitio": "https://amsotov.github.io/inventarioTI2/",
+    "revision": "https://amsotov.github.io/inventarioTI2/modernizacion/",
+    "prototipo": "https://amsotov.github.io/inventarioTI2/modernizacion/prototipo/"
+  },
+  "remote": {
+    "ci_pr": {
+      "id": 41760149771,
+      "head_sha": "91f83a601966d622944290455ae99a80e0bf4564",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "ci_main": {
+      "id": 41760585059,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "322aa137b5bb2a88f81898551b1352ccd47b1486",
+      "url": "https://github.com/amsotov/inventarioTI2/actions/runs/41760585059"
+    },
+    "pages": {
+      "id": 41760585054,
+      "head_sha": "322aa137b5bb2a88f81898551b1352ccd47b1486",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/amsotov/inventarioTI2/actions/runs/41760585054",
+      "updated_at": "2026-11-04T02:25:48Z"
+    }
+  },
+  "integridad_publica": {
+    "url": "https://amsotov.github.io/inventarioTI2/",
+    "preview_url": "https://amsotov.github.io/inventarioTI2/modernizacion/",
+    "source_sha": "322aa137b5bb2a88f81898551b1352ccd47b1486",
+    "http_status": 200,
+    "files_hash_verified": 22,
+    "database_connected": false,
+    "target_model_ready": false,
+    "checked_at": "2026-11-04T02:26:12.805549+00:00"
+  },
+  "browser_publico": {
+    "resultado": "APROBADA",
+    "alcance": "Demo CRUD/movimientos/roles/XLSX/PDF/hash; revisión6capturas/prototipo; cero solicitudes API/externas y errores navegador",
+    "log_sha256": "975db23980c5de020f8470f223d40b08e7e818cca3aaaeedc7b7520a0858587d",
+    "nota_ejecucion": "Primer lanzamiento en checkout sin node_modules no inició ensayo (ERR_MODULE_NOT_FOUND); ejecución final aprobada en exportación con dependencias verificadas."
+  },
+  "db_o_auth_modificados": false,
+  "backend_empresarial_desplegado": false,
+  "target_model_ready": false,
+  "observacion_utc": "2026-11-04T02:28:13.445233+00:00",
+  "nota_ci_main": "Estado puntual registrado; CI PR del mismo árbol y Pages aprobados. Consultar URL del run para estado posterior."
+}

@@ -21,3 +21,13 @@ Preparar PR a main y exigir CI Verify del SHA exacto antes de integrar. CI repit
 Sigue NO_GO para operación empresarial del modelo de destino: soporte/repositorios/escrituras, instancia SQLServer2016/130, reglas/collation, cuenta-funcionario/perfiles, fuentes operacionales y M8-R01 sin evidencia de corrección. Pages no requiere secretos, usuarios Auth, worker o conexión DB. No cambiar esos recursos por la publicación estática.
 
 El sitio anterior procede de main511b99d. Si el artefacto nuevo falla, conservar run/errores, detener promoción y reparar o restaurar una versión estática anterior mediante commit/deploy trazable. No usar force push ni tocar datos. La integración histórica de fuente se conserva; el rollback de archivos estáticos no revierte DB. Esta autorización permite completar/reintentar la publicación solicitada, sin inferir permisos de operaciones ajenas.
+
+## Resultado remoto verificado
+
+Publicación completada bajo MPUB-A01. [PR3](https://github.com/amsotov/inventarioTI2/pull/3) integrado en main como322aa137b5bb2a88f81898551b1352ccd47b1486 después del [CI41760149771 aprobado](https://github.com/amsotov/inventarioTI2/actions/runs/41760149771). [Pages41760585054](https://github.com/amsotov/inventarioTI2/actions/runs/41760585054) completó build/deploy correctamente. El árbol del merge coincide con el árbol verificado del PR.
+
+[Demo actualizada](https://amsotov.github.io/inventarioTI2/), [revisión de modernización](https://amsotov.github.io/inventarioTI2/modernizacion/) y [prototipo](https://amsotov.github.io/inventarioTI2/modernizacion/prototipo/). publicacion.json identifica el SHA integrado; los22archivos coinciden con sus hashes públicos. El recorrido completo Chromium contra la URL pública pasó demo, exportaciones, revisión, seis imágenes y prototipo, sin llamadas API/externas ni errores JS.
+
+[Comprobante](evidencias/publicacion-modernizacion/resultado-remoto.json) y [log de navegador público](evidencias/publicacion-modernizacion/demo-publico.log). Se registran aparte de la evidencia histórica y en rama de comprobante para no disparar otro deploy por guardar el resultado del anterior. El CI postmerge41760585059 conserva su URL/estado al observarlo en el comprobante. No se confundió ese estado con el CI de PR ya aprobado.
+
+Se publicó el código y la revisión visual. SQLServer, Auth gestionado, datos reales y workers/envíos no fueron activados; sus pendientes técnicos continúan. El prototipo y las capturas siguen identificados como revisión, sin presentar una base conectada. No hay doble v2 en main.

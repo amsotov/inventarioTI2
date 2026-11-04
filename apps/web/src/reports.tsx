@@ -1,3 +1,4 @@
+import { apiUrl, apiCredentials } from "./transport";
 import React, { useEffect, useRef, useState } from "react";
 import { api, ApiError, message } from "./api";
 const titles: Record<string, string> = {
@@ -190,8 +191,8 @@ export function Reports({
         return;
       }
       const response = await fetch(
-        "/api/v1/exportaciones/" + job.ref + "/archivo",
-        { credentials: "same-origin" },
+        apiUrl("/api/v1/exportaciones/" + job.ref + "/archivo"),
+        { credentials: apiCredentials },
       );
       if (!response.ok) {
         const p = await response.json();

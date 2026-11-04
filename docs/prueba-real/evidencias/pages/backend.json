@@ -1,0 +1,14 @@
+{
+  "project": "yhsfotxhaptinjtmrinn",
+  "name": "inventarioti2-pages-api",
+  "version": 2,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "authentication": "BFF email proof + opaque HttpOnly session; no anonymous inventory",
+  "hash": "3c9ae29af146268cd095c634ab6124122d80115f3351ff402281f55ff5ea0ca1",
+  "cors_origin": "https://amsotov.github.io",
+  "private_site_changed": false,
+  "private_bff_version": 14,
+  "database_schema_changed": false,
+  "test_data": true
+}

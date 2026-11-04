@@ -1,5 +1,14 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## MTEST-A07 — conexión de GitHub Pages a Supabase (2026-11-04)
+
+Usuario «Puedes conectarlo con sistema real y supabase desde GitHub Pages» autoriza implementar y publicar el frontend conectado a inventarioTI2 con los datos de prueba acordados. Esta solicitud sustituye la restricción anterior de mantener Pages únicamente como demo y autoriza integrar el incremento mediante PR/CI. No abre datos anónimos, altera la audiencia del Site privado ni autoriza producción empresarial o SQLServer.
+
+[Alcance, seguridad y pruebas](docs/prueba-real/GITHUB_PAGES_CONECTADO.md). API separada `inventarioti2-pages-api` versión2 ACTIVE: mismo BFF/Auth/SQL mínimo privilegio, CORS exacto, cookies HttpOnly/Secure/SameSite=None/Partitioned, PKCE, CSRF, ETag e idempotencia conservados. Sobre cifrado únicamente en paquete privado del servidor, sin secretos en GitHub/Pages. Site8 y BFF14 anteriores intactos. Sin DDL/seed/operador/worker ni nuevos gastos.
+
+Preparación aprobada localmente: TypeScript,18 pruebas dirigidas, Chromium entre dos orígenes con doble explícito de proveedor (sesión tras clic y recarga), demo modernizada conservada y navegador frente a API real (401 sin sesión, CORS y cookie CHIPS real; dirección inexistente sin envío). Pendiente observar CI del SHA, integrar PR5 y verificar Pages publicado; no confundir estas pruebas con validación real del correo del destinatario. Portada conectada, demo en `/inventarioTI2/demo/`. SMTP y reglas productivas pendientes se conservan.
+
+
 ## MTEST-A05 — enlace de correo habilitado (2026-11-04)
 
 Usuario confirma «listo url y urls configurado». Verificación independiente: callback HTTPS aceptado y flow conservado. Se activa emailRedirectReady=true y BFF14; visor privado7 conserva cookies particionadas y orígenes autorizados. Solicitar el enlace desde el visor del usuario y pulsarlo en el correo activa esa sesión, sin MFA ni copiar códigos. [Estado y evidencia](docs/prueba-real/ACCESO_CORREO.md). El bloqueo de URL documentado en MTEST-A04 es histórico y está resuelto. SMTP conserva sus cuotas; no enviar intentos desde el navegador del agente para que el usuario los apruebe.

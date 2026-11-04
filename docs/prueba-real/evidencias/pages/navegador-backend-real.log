@@ -1,0 +1,2 @@
+PASS: cookie real HttpOnly/Secure/SameSite=None/Partitioned; dirección sintética inexistente, sin envío de correo.
+{"result":"PASS","published":false,"emailAccess":true,"demo":false,"anonymousInventoryDenied":true,"corsWorks":true,"errors":[]}

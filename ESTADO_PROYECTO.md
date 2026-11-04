@@ -1,5 +1,14 @@
 # Estado del proyecto — Punto de continuidad
 
+## MTEST-A07 — conexión de GitHub Pages a Supabase (2026-11-04)
+
+Usuario «Puedes conectarlo con sistema real y supabase desde GitHub Pages» autoriza implementar y publicar el frontend conectado a inventarioTI2 con los datos de prueba acordados. Esta solicitud sustituye la restricción anterior de mantener Pages únicamente como demo y autoriza integrar el incremento mediante PR/CI. No abre datos anónimos, altera la audiencia del Site privado ni autoriza producción empresarial o SQLServer.
+
+[Alcance, seguridad y pruebas](docs/prueba-real/GITHUB_PAGES_CONECTADO.md). API separada `inventarioti2-pages-api` versión2 ACTIVE: mismo BFF/Auth/SQL mínimo privilegio, CORS exacto, cookies HttpOnly/Secure/SameSite=None/Partitioned, PKCE, CSRF, ETag e idempotencia conservados. Sobre cifrado únicamente en paquete privado del servidor, sin secretos en GitHub/Pages. Site8 y BFF14 anteriores intactos. Sin DDL/seed/operador/worker ni nuevos gastos.
+
+Preparación aprobada localmente: TypeScript,18 pruebas dirigidas, Chromium entre dos orígenes con doble explícito de proveedor (sesión tras clic y recarga), demo modernizada conservada y navegador frente a API real (401 sin sesión, CORS y cookie CHIPS real; dirección inexistente sin envío). Pendiente observar CI del SHA, integrar PR5 y verificar Pages publicado; no confundir estas pruebas con validación real del correo del destinatario. Portada conectada, demo en `/inventarioTI2/demo/`. SMTP y reglas productivas pendientes se conservan.
+
+
 ## MTEST-A06 — retorno del correo corregido para el visor (2026-11-04)
 
 El usuario solicitó correctamente el enlace desde el visor integrado. La reproducción publicada confirmó que Supabase añadía `default-src 'none'; sandbox` a la página de retorno: HTTP200 no bastaba, porque el navegador bloqueaba el script y no enviaba la autorización. El hosting sirve ahora `/auth/callback` y su módulo público directamente, con CSP de scripts propios. El POST de autorización sigue pasando por el BFF y la verificación PKCE; las cookies particionadas y los permisos se conservan.

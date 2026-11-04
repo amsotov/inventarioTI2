@@ -1,5 +1,7 @@
 # Adaptador de prueba privado para Supabase Edge
 
+> MTEST-A07: `runtime.ts` extrae la inicialización compartida sin cambiar permisos ni credenciales. `index.ts` conserva el gateway de Sites; `staging/pages/` ofrece una entrada separada para Pages con autenticación del BFF. Ver [conexión Pages](../../docs/prueba-real/GITHUB_PAGES_CONECTADO.md). No desplegar el paquete público como reemplazo de inventarioti2-prueba-runtime.
+
 > Estado vigente MTEST-A03: [acceso por correo sin MFA](../../docs/prueba-real/ACCESO_CORREO.md). Las referencias de MFA/acceso automático que siguen documentan la publicación anterior.
 
 Reutiliza Fastify.inject, AuthService, SupabaseProvider, Authorization, Inventory y PostgresLabModelBackend del servidor existente. No arranca HTTP Node, usa pools SQL de inventario_auth/runtime con TLS verificado y conserva las comprobaciones de rol, MFA, CSRF, Origin, idempotencia, RLS y transacción.

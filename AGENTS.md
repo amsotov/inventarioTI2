@@ -80,3 +80,9 @@ Usuario «Apruebo fase 8 inicia fase 9» acepta e224d6f como auditoría con pend
 F9 solo cambia documentación, verificador y metadata de continuidad SQL; código/fuentes/SQL físicos/evidencia F1–F8 preservados. Las 280 pruebas Node F8 son históricas; no afirmar nueva ejecución por validar hashes. Verificador vigente verificar_fase9.py; --evaluar-liberacion devuelve3. Scripts anteriores se verifican sobre sus commits, sin alterar hashes para ocultar cambios autorizados. F9 no consulta ni muta proyectos remotos.
 
 Seguir guías vigentes F9 en DESPLIEGUE/RUNBOOK/CHECKLIST. No retirar THROW, registrar dobles en main, repetir seed/DDL, activar LOGIN/worker, reactivar inventarioTI o tocar permisos Auth por aprobación documental. main/merge/PR/despliegue/datos reales/envíos/gastos requieren su autorización aplicable. GitHub en rama dedicada con SHA comprobado. El prompt termina en fase9: no inventar fase10 o producción como siguiente fase. Tras aceptar documentación, acordar alcance posterior concreto; ciclo histórico0–15 separado.
+
+## M9-A02 — continuidad vigente
+
+Usuario «Apruebo fase 9 quiero ver la publicación GitHub Pages» acepta2376a58 y cierra F9 documental con pendientes técnicos. Consulta de publicación existente, no orden de merge/republicación. URL verificada https://amsotov.github.io/inventarioTI2/; Pages/main511b99d y ramas de modernización separadas. [Registro](docs/migracion/CIERRE_FASE9_PAGES.md). Modelo SQLServer/operación siguen NO_GO; no iniciar fase10 ni cambiar Auth/DB por esta consulta.
+
+Verificador F9 y evidencia originales se conservan para el commit aceptado2376a58; anotaciones posteriores de aceptación no reescriben sus hashes históricos. README/DEMO ya distinguen build demo Node20 ensayado del servidor Node24: la diferencia no demuestra fallo de publicación. Conservar seguimiento para futuros paquetes sin bloquear la lectura de Pages. Sincronizar esta aceptación en rama documental y comprobar SHA; main no cambia.

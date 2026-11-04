@@ -51,3 +51,9 @@ Comprobación HTTP de la URL pública: **200**. Primer intento inmediatamente de
 `DEMO_URL=https://amsotov.github.io/inventarioTI2/ npm run test:demo`: **PASS**, Chromium real contra Pages. Verificados banner/entrada sin login; CRUD de equipos/funcionarios; asignación/traslado/cambio de unidad e historia; alternancia administrador/lectura; correo simulado; contenido de XLSX/PDF con edición temporal y filtros; rutas hash y reinicio de datos al recargar; cero solicitudes a APIs/servicios externos y cero errores de navegador. Las escrituras solo afectaron la memoria de esa pestaña; no hay backend de demo.
 
 Configuración, publicación y verificación pública de esta demo completadas. Se mantienen los límites de pruebas/operación reales descritos arriba. No se cierra CA14-06 ni Fase 14 ni se inicia Fase 15 por publicar esta demostración sintética.
+
+## Consulta de publicación tras aceptación Fase 9
+
+M9-A02: usuario aprueba F9 documental y solicita ver Pages. Portada comprobada en https://amsotov.github.io/inventarioTI2/ con HTTP200, Chromium y banner Modo demo visible, sin errores JavaScript. Workflow41648235275 completado/success para main511b99d. No se lanzó otro workflow ni se promovieron ramas de migración. [Registro y evidencia](migracion/CIERRE_FASE9_PAGES.md).
+
+Aclaración de M9-R01: esta documentación y README ya incluían build estático demo Node20.20.2 satisfactorio; Node24 sigue siendo el requisito del servidor normal. La diferencia de runtimes merece revisión en un futuro paquete, pero no demuestra fallo ni impide abrir la demo existente. Las ramas de modernización conservan sus bloqueos y no están desplegadas aquí.

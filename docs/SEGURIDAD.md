@@ -1,5 +1,8 @@
 # Autorización, privacidad y seguridad — Fase 6
 
+> Continuidad vigente de migración: M8-A01 acepta F7 e inicia [F8 seguridad/regresión](migracion/08_SEGURIDAD_REGRESION.md). EN_REVISION_CON_BLOQUEOS; [matriz](migracion/08_MATRIZ_PRUEBAS.csv) y [evidencia](migracion/evidencias/fase8/pruebas.json). 280 casos Node aprobados; M8-R01 autorregistro remoto FALLIDA/no corregida, [propuesta sin aplicar](migracion/08_CONFIGURACION_AUTH_PROPUESTA.json). GoTrue/BFF/PG reales localmente; no integración gestionada ni SQL Server. F9 no autorizada, producción bloqueada. El contenido restante conserva su contexto histórico.
+
+
 **Estado: COMPLETADA — aceptada por D-23** · 2026-10-31 · Autorización D-21 ratificada por la solicitud actual. Entrega y cierre aceptados expresamente por el usuario; los límites operativos se conservan. Base `9845b10`. Solo entorno sintético local, sin despliegue ni cambios remotos de permisos.
 
 ## Alcance y aceptación

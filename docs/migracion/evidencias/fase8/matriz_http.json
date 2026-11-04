@@ -1,0 +1,350 @@
+{
+  "scope": "BFF/Auth/RLS PostgreSQL reales; repositorio v2 DOBLE, no integridad SQL Server",
+  "results": [
+    {
+      "id": "C03-01 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-01 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-02 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-02 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-03 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-03 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-03 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-04 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-04 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-05 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-05 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-05 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-06 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-06 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-06 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-07 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-07 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-07 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-08 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-08 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-09 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-09 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-10 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-10 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-10 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-11 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-11 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-12 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-12 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-12 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-13 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-13 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-14 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-14 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-14 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-15 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-15 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-15 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-16 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-16 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-16 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-17 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-17 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-17 lectura sin permiso",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-18 sin sesión",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "C03-18 administrador sin MFA",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "CSRF incorrecto",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "Origin no autorizado",
+      "expected": 403,
+      "actual": 403,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "actor y secreto sobreasignados",
+      "expected": 400,
+      "actual": 400,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "JSON poisoning __proto__",
+      "expected": 400,
+      "actual": 400,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "JSON poisoning constructor",
+      "expected": 400,
+      "actual": 400,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "payload excedido",
+      "expected": 413,
+      "actual": 413,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "media type no admitido",
+      "expected": 415,
+      "actual": 415,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "UUID lógico repetido en perfiles",
+      "expected": 422,
+      "actual": 422,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "capacidad de perfiles no implementada",
+      "expected": 503,
+      "actual": 503,
+      "estado": "APROBADA"
+    },
+    {
+      "id": "versión de autorización revocada",
+      "expected": 401,
+      "actual": 401,
+      "estado": "APROBADA"
+    }
+  ],
+  "aprobadas": 56,
+  "fallidas": 0,
+  "extra_assertions": [
+    "Evento técnico de denegación",
+    "Sin prototype pollution",
+    "SQL q parametrizado v1 conserva tablas",
+    "Tres proyecciones secretas/privadas rechazadas",
+    "Revocación local vigente"
+  ]
+}

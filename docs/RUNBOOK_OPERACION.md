@@ -1,5 +1,8 @@
 # Runbook de operación y recuperación — Fase 14
 
+> Continuidad vigente de migración: M8-A01 acepta F7 e inicia [F8 seguridad/regresión](migracion/08_SEGURIDAD_REGRESION.md). EN_REVISION_CON_BLOQUEOS; [matriz](migracion/08_MATRIZ_PRUEBAS.csv) y [evidencia](migracion/evidencias/fase8/pruebas.json). 280 casos Node aprobados; M8-R01 autorregistro remoto FALLIDA/no corregida, [propuesta sin aplicar](migracion/08_CONFIGURACION_AUTH_PROPUESTA.json). GoTrue/BFF/PG reales localmente; no integración gestionada ni SQL Server. F9 no autorizada, producción bloqueada. El contenido restante conserva su contexto histórico.
+
+
 2026-11-02 · Propuesta para revisión D-38. Solo ensayos sintéticos ejecutados. [Plan y cobertura](DESPLIEGUE.md) · [Checklist](CHECKLIST_LIBERACION.md). Producción/correo real no autorizados; Fase 15 sin iniciar.
 
 ## Responsables y registro

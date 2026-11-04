@@ -1,0 +1,60 @@
+{
+  "project_ref": "yhsfotxhaptinjtmrinn",
+  "scope": "GET públicos/negativos con clave publishable; no creación de cuentas, contraseña, tokens o cambios de configuración",
+  "results": [
+    {
+      "case": "auth_public_settings",
+      "status": 200,
+      "settings": {
+        "disable_signup": false,
+        "external": {
+          "anonymous_users": false,
+          "apple": false,
+          "azure": false,
+          "bitbucket": false,
+          "discord": false,
+          "facebook": false,
+          "snapchat": false,
+          "figma": false,
+          "fly": false,
+          "github": false,
+          "gitlab": false,
+          "google": false,
+          "keycloak": false,
+          "kakao": false,
+          "linkedin": false,
+          "linkedin_oidc": false,
+          "notion": false,
+          "spotify": false,
+          "slack": false,
+          "slack_oidc": false,
+          "workos": false,
+          "twitch": false,
+          "twitter": false,
+          "email": true,
+          "phone": false,
+          "zoom": false
+        },
+        "mailer_autoconfirm": false,
+        "phone_autoconfirm": false,
+        "sms_provider": "twilio"
+      }
+    },
+    {
+      "case": "auth_user_without_session",
+      "status": 401,
+      "code": 401
+    },
+    {
+      "case": "data_api_private_schema_without_session",
+      "status": 406,
+      "code": "PGRST106"
+    },
+    {
+      "case": "data_api_accounts_private_schema_without_session",
+      "status": 406,
+      "code": "PGRST106"
+    }
+  ],
+  "mutations": false
+}

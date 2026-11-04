@@ -23,8 +23,8 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
   server.setErrorHandler((err,req,res)=>{
     const e=err as Error & {validation?:unknown};
     const httpStatus=(err as {statusCode?:number}).statusCode;
-    const status=err instanceof AuthError?err.status:e.validation?400:httpStatus===413||httpStatus===415?httpStatus:503;
-    res.code(status).type('application/problem+json').send({type:'about:blank',title:'No se pudo completar la solicitud',status,code:err instanceof AuthError?err.code:e.validation?'INVALID_REQUEST':status===413?'PAYLOAD_TOO_LARGE':status===415?'UNSUPPORTED_MEDIA_TYPE':'DEPENDENCY_UNAVAILABLE',requestId:req.id});
+    const status=err instanceof AuthError?err.status:e.validation||httpStatus===400?400:httpStatus===413||httpStatus===415?httpStatus:503;
+    res.code(status).type('application/problem+json').send({type:'about:blank',title:'No se pudo completar la solicitud',status,code:err instanceof AuthError?err.code:e.validation||status===400?'INVALID_REQUEST':status===413?'PAYLOAD_TOO_LARGE':status===415?'UNSUPPORTED_MEDIA_TYPE':'DEPENDENCY_UNAVAILABLE',requestId:req.id});
   });
   const sid=(req:{headers:{cookie?:string}})=>req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>x.startsWith('__Host-inventario='))?.slice(18)??'';
   const csrf=(req:{headers:Record<string,unknown>})=>typeof req.headers['x-csrf-token']==='string'?req.headers['x-csrf-token']:'';

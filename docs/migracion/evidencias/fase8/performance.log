@@ -1,0 +1,221 @@
+
+> inventarioti2@1.0.0 test:qa:performance
+> tsx tests/qa/performance.ts
+
+{
+  "started": "2026-11-04T01:37:07.397Z",
+  "finished": "2026-11-04T01:37:55.630Z",
+  "base": "daea7d203e971c0810a8e2dc0bb04f160a5ccd8a",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "cpuQuota": "200000 100000",
+    "memoryMax": "8589934592",
+    "network": "HTTP TCP loopback, PostgreSQL Docker loopback; sin TLS/WAN; proveedor identidad y correo dobles inmediatos",
+    "pools": {
+      "auth": 3,
+      "business": 3,
+      "worker": 3
+    },
+    "users": 10,
+    "roles": {
+      "administrador": 5,
+      "lectura": 5
+    },
+    "warmup": 100,
+    "seed": "fixtures sintéticos por SQL propietario; carga medida solo por HTTP con permisos/RLS intactos"
+  },
+  "before": {
+    "bienes": 3000,
+    "funcionarios": 500,
+    "cuentas": 25,
+    "movimientos": 100000,
+    "auditorias": 100000,
+    "comandos": 100002,
+    "avisos": 3
+  },
+  "after": {
+    "bienes": 3000,
+    "funcionarios": 500,
+    "cuentas": 25,
+    "movimientos": 100200,
+    "auditorias": 100200,
+    "comandos": 100202,
+    "avisos": 203
+  },
+  "measurementMs": 13595.311148,
+  "read": {
+    "count": 1000,
+    "p50": 105.58534999999392,
+    "p95": 160.7032990000007,
+    "p99": 203.62719300000026,
+    "max": 231.61016799999925,
+    "statuses": {
+      "200": 1000
+    }
+  },
+  "write": {
+    "count": 200,
+    "p50": 96.91465099999914,
+    "p95": 152.44381300000168,
+    "p99": 205.70719499999905,
+    "max": 214.04115699999966,
+    "statuses": {
+      "200": 200
+    }
+  },
+  "byRoute": {
+    "read:0": {
+      "count": 100,
+      "p50": 95.80038699999568,
+      "p95": 150.74592399999892,
+      "p99": 195.3143310000014,
+      "max": 196.52582299999995,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:2": {
+      "count": 100,
+      "p50": 83.92150299999776,
+      "p95": 138.987589999997,
+      "p99": 188.6926009999952,
+      "max": 194.24008200000026,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:4": {
+      "count": 100,
+      "p50": 94.16878500000166,
+      "p95": 143.3931389999998,
+      "p99": 195.8403840000028,
+      "max": 199.53435999999783,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:5": {
+      "count": 100,
+      "p50": 113.364246000001,
+      "p95": 158.29490499999883,
+      "p99": 202.04159499999514,
+      "max": 203.62719300000026,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:6": {
+      "count": 100,
+      "p50": 122.98029400000087,
+      "p95": 163.7320600000021,
+      "p99": 209.0815799999982,
+      "max": 231.61016799999925,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:7": {
+      "count": 100,
+      "p50": 125.73374100000365,
+      "p95": 168.589602,
+      "p99": 219.1730119999993,
+      "max": 230.025238000002,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:8": {
+      "count": 50,
+      "p50": 126.53712299999461,
+      "p95": 166.2702739999986,
+      "p99": 221.83332699999664,
+      "max": 221.83332699999664,
+      "statuses": {
+        "200": 50
+      }
+    },
+    "read:9": {
+      "count": 100,
+      "p50": 108.79848499999935,
+      "p95": 157.64028400000097,
+      "p99": 189.7139019999995,
+      "max": 212.56778100000156,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:3": {
+      "count": 100,
+      "p50": 90.58094800000254,
+      "p95": 134.7050780000027,
+      "p99": 141.57661999999982,
+      "max": 191.70847299999878,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:1": {
+      "count": 100,
+      "p50": 93.99462999999378,
+      "p95": 137.978658,
+      "p99": 183.0868389999996,
+      "max": 206.94653400000243,
+      "statuses": {
+        "200": 100
+      }
+    },
+    "read:auditoria": {
+      "count": 50,
+      "p50": 118.26363100000162,
+      "p95": 188.0570970000008,
+      "p99": 195.74457099999927,
+      "max": 195.74457099999927,
+      "statuses": {
+        "200": 50
+      }
+    }
+  },
+  "routes": [
+    "bienes?limit=50",
+    "bienes?q=QA-00&limit=50",
+    "bienes?condicion=bueno&limit=50",
+    "funcionarios?limit=50",
+    "funcionarios?q=QA&limit=50",
+    "reportes/inventario?limit=50",
+    "buscar?q=Modelo&limit=50",
+    "reportes/movimientos?limit=50&bien_id=cb4f4398-29da-46c6-b8b3-649006828ea1",
+    "reportes/por-condicion?limit=50",
+    "bienes/cb4f4398-29da-46c6-b8b3-649006828ea1"
+  ],
+  "exports": [
+    {
+      "format": "xlsx",
+      "rows": 10000,
+      "ms": 3277.2687060000026,
+      "bytes": 451188
+    },
+    {
+      "format": "pdf",
+      "rows": 2000,
+      "ms": 5008.969106000004,
+      "bytes": 339470
+    }
+  ],
+  "notices": {
+    "count": 203,
+    "p50": 537,
+    "p95": 963,
+    "p99": 21341,
+    "max": 21378,
+    "statuses": {
+      "200": 203
+    }
+  },
+  "rejections": {
+    "stale": 412,
+    "readerWrite": 403
+  }
+}

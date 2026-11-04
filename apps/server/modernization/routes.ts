@@ -28,13 +28,14 @@ function semantic(operation: string, body: Record<string,unknown> | undefined, q
     if(typeof body.codigoOperativo!=='string'||!body.codigoOperativo.trim())throw problem();
     if((body.numeroSerie===null||body.numeroSerie===undefined) && (typeof body.motivoSinSerie!=='string'||!body.motivoSinSerie.trim()))throw new AuthError(422,'BUSINESS_RULE');
   }
+  if(operation==='C03-17'&&Array.isArray(body.perfilRefs)&&new Set(body.perfilRefs.map(ref=>String(ref).toLowerCase())).size!==body.perfilRefs.length)throw new AuthError(422,'BUSINESS_RULE');
   if(operation==='C03-07') {
     const type=body.tipo;
     const destination=['asignacion','traslado'].includes(String(type));
     const origin=['devolucion','traslado'].includes(String(type));
     if(destination!==('destinoRef' in body)||origin!==('origenEsperadoRef' in body)||
        (type==='condicion')!==('condicionRef' in body)||
-       (type==='traslado'&&body.destinoRef===body.origenEsperadoRef))throw new AuthError(422,'BUSINESS_RULE');
+       (type==='traslado'&&String(body.destinoRef).toLowerCase()===String(body.origenEsperadoRef).toLowerCase()))throw new AuthError(422,'BUSINESS_RULE');
   }
 }
 

@@ -1,5 +1,14 @@
 # Cambios
 
+## 2026-11-03 — Migración Fase 8: seguridad y regresión, con bloqueos
+
+- M8-A01 acepta F7/inicia F8; F9 sin autorización.
+- Corrige comparación UUID en traspasos/referencias de perfil y clasificación HTTP 400 de JSON inválido.
+- Amplía Auth real local GoTrue/BFF/PG (TOTP, rol SQL, revocación) y matriz adversarial v2; 280 casos Node aprobados.
+- Auditoría Supabase solo lectura: RLS/ACL conservados, sin avisos del asesor; detecta M8-R01 autorregistro habilitado. Propuesta de corrección no aplicada.
+- Evidencia e integración de destino claramente separadas; SQL Server/vínculo funcionario/perfiles siguen bloqueados. Sin SQL remoto, main, merge o despliegue.
+
+
 ## 2026-11-03 — Migración Fase 7: adaptación visual EN_REVISION
 
 - M7-A01 acepta entrega parcial F6 e inicia interfaz; persisten bloqueos del destino.

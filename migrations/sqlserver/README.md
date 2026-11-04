@@ -1,12 +1,12 @@
 # SQL Server — candidato Fase 5
 
-Estado: CANDIDATO BLOQUEADO, NO APLICADO. Revisión 0.6.0-review.2, objetivo SQL Server 2016/13.x, compatibility_level 130. La aplicación existente sigue usando PostgreSQL/Supabase; F6 desacopla su repositorio y prepara contratos sin activar destino.
+Estado: CANDIDATO BLOQUEADO, NO APLICADO. Revisión de metadata 0.6.0-review.3 bajo M8-A01, objetivo SQL Server 2016/13.x, compatibility_level 130. Los cuatro SQL físicos siguen idénticos a F6. La aplicación existente sigue usando PostgreSQL/Supabase; F6 desacopla su repositorio y prepara contratos sin activar destino. F7 aceptada como entrega visual; F8 EN_REVISION_CON_BLOQUEOS, F9 no autorizada.
 
 Leer [informe y decisiones](../../docs/migracion/05_ESQUEMA_SQLSERVER.md) antes de revisar SQL. Orden propuesto: 0001 → 0002 → 0003 → 900 (verificación parcial de catálogo). Todos comienzan con THROW incondicional. No quitarlo manualmente; emitir nueva versión solo con diseño y entorno autorizados.
 
 `manifest.json` contiene hashes/versionado de revisión; no autoriza ejecución. No hay runner ni conexión configurada. No pasar estos scripts al runner Supabase ni aplicar a base existente. No contienen down destructivo, GRANT, logins, usuarios o semillas.
 
-Verificación vigente sin DB: `python3 docs/migracion/verificar_fase7.py`; `--evaluar-integracion` devuelve 3. La verificación F6 es histórica y corresponde a 1d7fac0. El verificador F5 se conserva histórico y corresponde al commit `27cae1f`: sus tipos y precondición de código intacto ya no corresponden a las enmiendas autorizadas de F6. [Informe F6](../../docs/migracion/06_ADAPTACION_BACKEND.md) y [42 enmiendas](../../docs/migracion/evidencias/fase6/enmiendas.json). SQLFluff/ScriptDom130 son parsers estáticos, no ejecutan SQL.
+Verificación vigente sin DB: `python3 docs/migracion/verificar_fase8.py`; `--evaluar-liberacion` devuelve 3. [Informe F8](../../docs/migracion/08_SEGURIDAD_REGRESION.md). Verificadores F7/F6 históricos para daea7d2/1d7fac0. El verificador F5 se conserva histórico y corresponde al commit `27cae1f`: sus tipos y precondición de código intacto ya no corresponden a las enmiendas autorizadas de F6. [Informe F6](../../docs/migracion/06_ADAPTACION_BACKEND.md) y [42 enmiendas](../../docs/migracion/evidencias/fase6/enmiendas.json). SQLFluff/ScriptDom130 son parsers estáticos, no ejecutan SQL.
 
 Núcleo: 30 tablas/117 campos/30 PK/30 FK/18 UQ/25 IDENTITY/5 DEFAULT. Propuestas separadas: 9 CHECK y 24 índices FK. Soporte actual 19 tablas/155 campos identificado, sin DDL complementario SQL Server. Scripts no garantizan todavía autenticación, roles/RLS, historia precisa, reglas de subtipos/asignación ni idempotencia de negocio; nada sustituye a la aplicación actual por ejecutar DDL.
 

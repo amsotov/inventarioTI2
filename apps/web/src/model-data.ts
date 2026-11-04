@@ -88,7 +88,7 @@ export function prepareCommand(operation:Operation,data:FormData,record?:Equipme
   body.tipo=type;
   if(['asignacion','traslado'].includes(type))body.destinoRef=reference(data,'destinoRef',true);
   if(['devolucion','traslado'].includes(type)) {body.origenEsperadoRef=(record as Equipment).custodioRef;if(!body.origenEsperadoRef)throw Error('El equipo no tiene un custodio de origen.');}
-  if(type==='traslado'&&body.destinoRef===body.origenEsperadoRef)throw Error('Selecciona un custodio diferente al actual.');
+  if(type==='traslado'&&String(body.destinoRef).toLowerCase()===String(body.origenEsperadoRef).toLowerCase())throw Error('Selecciona un custodio diferente al actual.');
   if(type==='condicion')body.condicionRef=reference(data,'condicionRef',true);
   if(value(data,'corrigeRef'))body.corrigeRef=value(data,'corrigeRef');
   path='equipos/'+ref+'/movimientos';

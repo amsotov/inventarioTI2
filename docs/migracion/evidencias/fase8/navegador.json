@@ -1,0 +1,42 @@
+{
+  "resultado": "APROBADA",
+  "alcance": "React real + BFF/Auth/RLS/HTTP PostgreSQL local; persistencia v2 DOBLE, no SQL Server ni Supabase Auth gestionado",
+  "viewport": "emulación Chromium; no dispositivos físicos/Safari/lector de pantalla",
+  "audits": [
+    {
+      "scope": "panel modelo, lectura móvil; WCAG2A/AA/2.1AA automático",
+      "violations": [],
+      "passes": 17
+    },
+    {
+      "scope": "panel modelo, administrador móvil; WCAG2A/AA/2.1AA automático",
+      "violations": [],
+      "passes": 12
+    }
+  ],
+  "errores_javascript": [],
+  "comandos_del_doble": 12,
+  "operaciones_v2_observadas": [
+    "C03-01",
+    "C03-02",
+    "C03-03",
+    "C03-04",
+    "C03-05",
+    "C03-06",
+    "C03-07",
+    "C03-08",
+    "C03-09",
+    "C03-10",
+    "C03-11",
+    "C03-12",
+    "C03-13",
+    "C03-14",
+    "C03-15",
+    "C03-16",
+    "C03-18"
+  ],
+  "nuevo_equipo": "20000000-0000-4000-8000-000000002131",
+  "nuevo_funcionario": "20000000-0000-4000-8000-000000000153",
+  "capturas_no_archivadas": 6,
+  "nota": "Repetición F8; capturas temporales no publicadas por no cambiar diseño. Capturas de aceptación F7 preservadas en su ruta original."
+}

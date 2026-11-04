@@ -1,5 +1,8 @@
 # Especificaciones del proyecto
 
+Estado vigente de migración: [M8 seguridad/regresión](migracion-seguridad-regresion.md), EN_REVISION_CON_BLOQUEOS. M8-A01 acepta F7; F9 no autorizada. M8-R01 y destino pendientes; no se instaló Spec Kit. Los estados siguientes son históricos.
+
+
 Esta carpeta se reserva para especificaciones funcionales por módulo o historia de usuario. Si se instala GitHub Spec Kit, **respeta la estructura y los comandos que genere la versión instalada**; Spec Kit puede utilizar otros directorios y archivos.
 
 ## Plantilla mínima de una especificación

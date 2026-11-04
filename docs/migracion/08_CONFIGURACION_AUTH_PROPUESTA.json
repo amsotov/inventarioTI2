@@ -1,0 +1,20 @@
+{
+  "id": "M8-R01",
+  "project_name": "inventarioTI2",
+  "project_ref": "yhsfotxhaptinjtmrinn",
+  "observed_public_settings": {"disable_signup": false, "email_enabled": true},
+  "expected_public_settings": {"disable_signup": true},
+  "management_patch_proposed": {"disable_signup": true},
+  "applied": false,
+  "state": "PENDIENTE_CAPACIDAD_Y_AUTORIZACION_ESPECIFICA_CONFIGURACION",
+  "reason": "El conector Supabase disponible no expone configuración Auth. Sin credenciales de administración; no eludir por SQL interno.",
+  "dashboard": "https://supabase.com/dashboard/project/yhsfotxhaptinjtmrinn/auth/providers",
+  "manual_action": "Desactivar Allow new users to sign up; guardar exclusivamente esa configuración tras autorización específica.",
+  "revalidation": [
+    "GET /auth/v1/settings con clave publishable: disable_signup debe ser true; no registrar ni enviar email para comprobarlo",
+    "Verificar invitación administrada y login existente en ensayo autorizado, sin cambiar roles empresariales"
+  ],
+  "rollback_proposed": "Restaurar únicamente la configuración previa si el cambio autorizado requiere reversión; no ejecutado.",
+  "secrets": false,
+  "reference": "https://supabase.com/docs/guides/auth/general-configuration"
+}

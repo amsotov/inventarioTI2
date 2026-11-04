@@ -1,0 +1,26 @@
+{
+  "project": "inventarioTI2",
+  "ref": "yhsfotxhaptinjtmrinn",
+  "region": "sa-east-1",
+  "method": "SELECT de agregados y asesores; sin mutaciones",
+  "initial": {
+    "units": 2,
+    "engine": "PostgreSQL 17.11 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 15.2.0, 64-bit",
+    "outbox": 0,
+    "people": 3,
+    "timezone": "UTC",
+    "equipment": 6,
+    "auth_users": 0,
+    "without_rls": 0,
+    "app_accounts": 0,
+    "app_sessions": 0,
+    "business_commands": 0,
+    "application_tables": 19,
+    "application_columns": 155,
+    "browser_schema_usage": 0,
+    "private_public_execute": 0
+  },
+  "security_advisors": {
+    "lints": []
+  }
+}

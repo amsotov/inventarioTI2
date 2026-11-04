@@ -1,0 +1,28 @@
+id,comprobacion,estado,alcance,evidencia
+M8-T01,Compilación TypeScript/Vite,APROBADA,Fuentes de entrega,build.log
+M8-T02,"Backend, API, integración y seguridad: 219 casos Node",APROBADA,PG local; proveedores doble/GoTrue real; v2 doble,backend.log
+M8-T03,"GoTrue SDK + BFF + PG reales, MFA, rol SQL, revocación",APROBADA,Incluido en T02; no Supabase gestionado,backend.log;tests/auth/provider.test.ts
+M8-T04,Matriz HTTP adversarial: 56 casos,APROBADA,Incluida en 61 casos nuevos dentro de T02; v2 doble,matriz_http.json
+M8-T05,UUID lógico: custodio y perfiles,APROBADA,Corrección de frontera/UI; no escritura SQL Server,uuid_corregido.log;backend.log
+M8-T06,JSON inválido 400 y cierre de errores,APROBADA,Corrección parser; sin persistencia previa,json_corregido.log;backend.log
+M8-T07,"Proyecciones sensibles, logs y denegación durable",APROBADA,BFF/PG reales; respuestas v2 contaminadas mediante doble,backend.log;matriz_http.json
+M8-T08,"RLS, transacciones, idempotencia, inyección y exportación",APROBADA,"Solo modelo actual PostgreSQL, incluido en T02",backend.log
+M8-T09,Navegador: 57 casos Node,APROBADA,React/BFF/PG local; identidad y repositorio v2 dobles,ui.log
+M8-T10,Reportes Excel/PDF y controles de descarga,APROBADA,"Contratos v1, incluido T02/T09; exportación ampliada local T13",backend.log;ui.log;rendimiento_postgres.json
+M8-T11,"axe móvil: dos roles, cero violaciones",APROBADA,Automático panel nuevo; no evaluación manual universal,navegador.json
+M8-T12,Operación/recuperación cifrada: 4 casos Node,APROBADA,PG local; sin recuperación gestionada ni RTO productivo,ops.log;recuperacion_postgres.json
+M8-T13,Carga: 1000 lecturas/200 escrituras; avisos y exportaciones,APROBADA,PG/HTTP loopback; identidad/correo dobles; sin SQL Server/WAN/TLS,rendimiento_postgres.json;performance.log
+M8-T14,npm audit: cero vulnerabilidades reportadas,APROBADA,Lock actual; sin garantía universal,npm-audit.json
+M8-T15,Heurística de secretos sin coincidencias,APROBADA,"Cinco patrones, árbol e historial local alcanzable; no universal",secretos.json
+M8-T16,Supabase: RLS/ACL/roles/funciones/semilla y asesores,APROBADA,Solo SELECT metadatos/agregados; sin mutaciones,supabase.json;supabase_final.json
+M8-T17,GET sin sesión: Auth 401 y esquema privado 406,APROBADA,Proyecto aislado; clave publishable no archivada,http_supabase.json
+M8-T18,Política sin autorregistro remoto,FALLIDA,M8-R01 disable_signup false; corrección propuesta NO aplicada,http_supabase.json;08_CONFIGURACION_AUTH_PROPUESTA.json
+M8-T19,30 casos SQL Server 2016/130,BLOQUEADA,Sin instancia/edición/SP/CU/collation; no equivalencia con PostgreSQL,05_CASOS_SQLSERVER.csv
+M8-T20,"Persistencia, transacciones, soporte y concurrencia normalizados v2",BLOQUEADA,Repositorio/escrituras/soporte de destino ausentes; THROW intacto,06_ADAPTACION_BACKEND.md
+M8-T21,Vínculo real USUARIOS-FUNCIONARIOS,BLOQUEADA,Sin correspondencia operacional ni soporte físico completado,01_DECISIONES_PENDIENTES.md
+M8-T22,PERFILES y permisos efectivos de destino,BLOQUEADA,Sin matriz empresarial ratificada; C03-17 no habilitado,01_DECISIONES_PENDIENTES.md
+M8-T23,"Carga, reconciliación y rollback de datos operacionales",BLOQUEADA,"Sin Excel operacional, perfilado real ni instancia SQL Server",05_ENTORNOS_COMPATIBILIDAD.md
+M8-T24,Login/MFA/BFF positivo en Supabase gestionado,NO EJECUTADA,Cero cuentas/Auth users; sin despliegue/configuración de BFF autorizado,supabase_final.json
+M8-T25,Correo externo y recuperación gestionada,NO EJECUTADA,"No habilitados; sin envíos, carga externa o producción",recuperacion_postgres.json
+M8-T26,"Dispositivo físico, Safari, lector de pantalla y revisión manual",NO EJECUTADA,Solo Chromium emulado y axe automático,navegador.json
+M8-T27,Demo aislada específica,NO EJECUTADA,"Sin cambio visual; evidencia F7 histórica conservada, no contada como nueva",evidencias/fase7/demo.log

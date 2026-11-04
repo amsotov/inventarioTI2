@@ -1,11 +1,16 @@
 # Entregables de la migración
 
-## Estado vigente — Fase 8
+## Estado vigente — Fase 9
+
+M9-A01 acepta auditoría F8/inicia [preparación documental](09_PREPARACION_DESPLIEGUE.md). EN_REVISION_DOCUMENTAL; liberación NO_GO. [Compatibilidades](09_COMPATIBILIDADES.csv), [18 pendientes](09_PENDIENTES.csv), [12 puertas](09_PUERTAS_LIBERACION.csv), [manifiesto](09_MANIFIESTO_PREPARACION.json), [pruebas documentales](evidencias/fase9/pruebas.json). Guías vigentes en DESPLIEGUE/RUNBOOK/CHECKLIST; M8-R01, M9-R01 y destino pendientes. verificar_fase9.py vigente; --evaluar-liberacion sale3. Prompt termina en9: no fase posterior definida/operación autorizada. Los apartados siguientes son historia.
+
+
+## Estado de entrega Fase 8 — histórico
 
 M8-A01 acepta F7/inicia F8. [Informe](08_SEGURIDAD_REGRESION.md), [matriz](08_MATRIZ_PRUEBAS.csv), [pruebas](evidencias/fase8/pruebas.json), [propuesta Auth](08_CONFIGURACION_AUTH_PROPUESTA.json). EN_REVISION_CON_BLOQUEOS; 280 casos Node aprobados y desviación M8-R01 de autorregistro remoto FALLIDA/no corregida. Integración SQL Server/identidad empresarial/perfiles bloqueadas. F9 no autorizada. Verificador vigente verificar_fase8.py; --evaluar-liberacion sale 3. Las continuidades siguientes son registros históricos conservados.
 
 
-**Estado vigente:** M7-A01 acepta la entrega parcial F6 y autoriza [Fase 7 visual](07_ADAPTACION_VISUAL.md), EN_REVISION. [Cobertura](07_COBERTURA_VISUAL.csv), [pruebas](evidencias/fase7/pruebas.json), [capturas](evidencias/fase7/navegador.json). Persistencia/SQL Server continúan bloqueados; no F8. Verificador actual: `python3 docs/migracion/verificar_fase7.py`. Entregas y estados anteriores se conservan como historia.
+**Estado histórico de F7:** M7-A01 acepta la entrega parcial F6 y autoriza [Fase 7 visual](07_ADAPTACION_VISUAL.md), EN_REVISION. [Cobertura](07_COBERTURA_VISUAL.csv), [pruebas](evidencias/fase7/pruebas.json), [capturas](evidencias/fase7/navegador.json). Persistencia/SQL Server continúan bloqueados; no F8. Verificador actual: `python3 docs/migracion/verificar_fase7.py`. Entregas y estados anteriores se conservan como historia.
 
 Esta carpeta recibirá los informes y matrices generados por Codex durante las fases autorizadas del prompt en `../../prompts/PROMPT_MAESTRO_MIGRACION_INVENTARIOTI_CODEX.md`.
 

@@ -1,0 +1,13 @@
+id,puerta,estado,condicion,pendientes,evidencia
+G09-01,Continuidad y paquete documental,APROBADA_DOCUMENTAL,Revisar informe/matrices/manifiesto/guías y aceptar F9,P09-18,docs/migracion/09_PREPARACION_DESPLIEGUE.md
+G09-02,Entorno SQLServer exacto,BLOQUEADA,"13.x/130, instancia/base/edición/SP/CU/collation autorizadas",P09-02;P09-09,docs/migracion/05_ENTORNOS_COMPATIBILIDAD.md
+G09-03,Persistencia e identidad destino,BLOQUEADA,Soporte/repositorios/transacciones/vínculo/perfiles/reglas implementados y probados,P09-03;P09-04;P09-05;P09-06;P09-07,docs/migracion/06_ADAPTACION_BACKEND.md
+G09-04,Seguridad y privacidad,BLOQUEADA,M8-R01 corregida/revalidada y política datos/impresión cerrada,P09-01;P09-08;P09-11,docs/migracion/08_SEGURIDAD_REGRESION.md
+G09-05,Fuente/carga/reconciliación,BLOQUEADA,"Fuente versionada autorizada, balances/invariantes y30SQL/36REC aplicables aprobados",P09-09;P09-10,docs/migracion/04_RECONCILIACION_ROLLBACK.md
+G09-06,Pruebas gestionadas y TLS,BLOQUEADA,Auth/MFA/revocación/roles/API/UI/reportes/proxy/carga sobre destino real de pruebas,P09-14,docs/migracion/08_MATRIZ_PRUEBAS.csv
+G09-07,Backups y recuperación integral,BLOQUEADA,Restore externo de datos/identidad/config/soporte/efectos; 168h/8h/30d acreditados,P09-10;P09-13;P09-14,docs/RUNBOOK_OPERACION.md
+G09-08,Operación y recursos,BLOQUEADA,Responsables/ventana/costos/retención/alertas aprobados y verificados,P09-11;P09-12;P09-13,docs/DESPLIEGUE.md
+G09-09,Paquete/CI/runtime/rollback,NO EJECUTADA,"Artefacto/hash/binario anterior compatibles, CI SHA exacto, M9-R01 resuelta antes de main",P09-15;P09-16,docs/CHECKLIST_LIBERACION.md
+G09-10,Autorización de promoción,NO_AUTORIZADA,Sí específico para SHA/entorno/ventana/alcance/corte y retorno; main separado,P09-15,docs/CHECKLIST_LIBERACION.md
+G09-11,Activación de correo,NO_AUTORIZADA,Sí específico y conciliación de efectos antes de despachar; mantener false hasta entonces,P09-17,apps/server/notifications/main.ts
+G09-12,Aceptación documental F9,PENDIENTE,Usuario acepta entregables sin cerrar automáticamente pendientes operativos,P09-18,FASES.md

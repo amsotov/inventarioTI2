@@ -1,5 +1,8 @@
 # Especificaciones del proyecto
 
+Estado vigente: [M9 documentación/preparación](migracion-preparacion-despliegue.md), M9-A01. F8 aceptada con pendientes; F9 EN_REVISION_DOCUMENTAL, liberación NO_GO. Spec Kit no instalado. No hay fase posterior definida ni operaciones autorizadas. Los estados siguientes son históricos.
+
+
 Estado vigente de migración: [M8 seguridad/regresión](migracion-seguridad-regresion.md), EN_REVISION_CON_BLOQUEOS. M8-A01 acepta F7; F9 no autorizada. M8-R01 y destino pendientes; no se instaló Spec Kit. Los estados siguientes son históricos.
 
 

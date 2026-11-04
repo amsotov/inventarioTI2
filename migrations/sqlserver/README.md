@@ -1,5 +1,8 @@
 # SQL Server — candidato Fase 5
 
+> Continuidad vigente M9-A01: metadata 0.6.0-review.4, F8 aceptada con pendientes y F9 EN_REVISION_DOCUMENTAL, liberación NO_GO. Cuatro payloads idénticos a F6 y THROW intactos. Verificador vigente verificar_fase9.py; --evaluar-liberacion sale3. [Preparación](../../docs/migracion/09_PREPARACION_DESPLIEGUE.md). Las revisiones anteriores siguientes son históricas; no aplicar SQL por esta guía.
+
+
 Estado: CANDIDATO BLOQUEADO, NO APLICADO. Revisión de metadata 0.6.0-review.3 bajo M8-A01, objetivo SQL Server 2016/13.x, compatibility_level 130. Los cuatro SQL físicos siguen idénticos a F6. La aplicación existente sigue usando PostgreSQL/Supabase; F6 desacopla su repositorio y prepara contratos sin activar destino. F7 aceptada como entrega visual; F8 EN_REVISION_CON_BLOQUEOS, F9 no autorizada.
 
 Leer [informe y decisiones](../../docs/migracion/05_ESQUEMA_SQLSERVER.md) antes de revisar SQL. Orden propuesto: 0001 → 0002 → 0003 → 900 (verificación parcial de catálogo). Todos comienzan con THROW incondicional. No quitarlo manualmente; emitir nueva versión solo con diseño y entorno autorizados.

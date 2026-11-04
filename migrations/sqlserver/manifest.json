@@ -2,7 +2,7 @@
   "fase": "MIGRACION_5",
   "estado": "CANDIDATO_EN_REVISION_APLICACION_BLOQUEADA",
   "base_git": "9f84fcd836550654770bd7ed4191f9edaffe2528",
-  "version_candidata": "0.6.0-review.3",
+  "version_candidata": "0.6.0-review.4",
   "motor_objetivo": "SQL Server",
   "version_edicion_collation": "SQL Server 2016 / compatibilidad 130; edición y collation pendientes",
   "entorno_autorizado": null,
@@ -1138,14 +1138,14 @@
   ],
   "fase7": "ACEPTADA_ENTREGA_VISUAL_INTEGRACION_PENDIENTE",
   "continuacion_fase": "MIGRACION_6",
-  "fase8": "EN_REVISION_CON_BLOQUEOS",
+  "fase8": "ACEPTADA_AUDITORIA_CON_PENDIENTES",
   "continuacion_fase7_git_base": "1d7fac011780651f2b21516265b76ab58d631747",
   "autorizacion_fase7": {
     "id": "M7-A01",
     "evidencia": "apruebo fase 6 inicia fase 7",
     "limite": "Acepta entrega parcial; no completa ni habilita SQL Server. Payload de cuatro SQL idéntico a F6."
   },
-  "fase9": "NO_AUTORIZADA",
+  "fase9": "EN_REVISION_DOCUMENTAL_LIBERACION_BLOQUEADA",
   "continuacion_fase8_git_base": "daea7d203e971c0810a8e2dc0bb04f160a5ccd8a",
   "autorizacion_fase8": {
     "id": "M8-A01",
@@ -1156,5 +1156,11 @@
     "M8-F01 corregido: UUID equivalente no es otro custodio/perfil",
     "M8-F02 corregido: JSON inválido es HTTP 400",
     "M8-R01 pendiente: disable_signup remoto false; propuesta sin aplicar"
-  ]
+  ],
+  "continuacion_fase9_git_base": "e224d6f3a15d09899eba2c6a908548eef73014e8",
+  "autorizacion_fase9": {
+    "id": "M9-A01",
+    "evidencia": "Apruebo fase 8 inicia fase 9",
+    "limite": "Documentación/preparación; no ejecución SQL ni despliegue, main o permisos remotos"
+  }
 }

@@ -1,0 +1,21 @@
+{
+  "estado_verificacion_documental": "APROBADA",
+  "base_git": "e224d6f3a15d09899eba2c6a908548eef73014e8",
+  "fase9": "EN_REVISION_DOCUMENTAL",
+  "decision_liberacion": "NO_GO",
+  "deployment_ready": false,
+  "archivos_preservados": 432,
+  "archivos_entrega": 29,
+  "compatibilidades": 16,
+  "pendientes": 18,
+  "puertas": 12,
+  "hallazgos_abiertos": [
+    "M8-R01",
+    "M9-R01"
+  ],
+  "casos_node_nuevos": 0,
+  "casos_node_historicos_f8": 280,
+  "operaciones_remotas_ejecutadas": false,
+  "fase_posterior_definida": false,
+  "nota": "Control offline de preparación; no repite integración ni habilita promoción."
+}

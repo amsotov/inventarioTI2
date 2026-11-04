@@ -1,5 +1,7 @@
 # Runbook de operación y recuperación — Fase 14
 
+> Guía vigente de modernización: [F9 corte y retorno](#migración-fase-9--corte-y-retorno), autorizada por M9-A01 solo como documentación. Liberación NO_GO. La continuidad F8 y los procedimientos anteriores se conservan como historia; no se ejecutan por aceptación de F9.
+
 > Continuidad vigente de migración: M8-A01 acepta F7 e inicia [F8 seguridad/regresión](migracion/08_SEGURIDAD_REGRESION.md). EN_REVISION_CON_BLOQUEOS; [matriz](migracion/08_MATRIZ_PRUEBAS.csv) y [evidencia](migracion/evidencias/fase8/pruebas.json). 280 casos Node aprobados; M8-R01 autorregistro remoto FALLIDA/no corregida, [propuesta sin aplicar](migracion/08_CONFIGURACION_AUTH_PROPUESTA.json). GoTrue/BFF/PG reales localmente; no integración gestionada ni SQL Server. F9 no autorizada, producción bloqueada. El contenido restante conserva su contexto histórico.
 
 
@@ -89,3 +91,31 @@ Seguir [informe F6](migracion/06_ADAPTACION_BACKEND.md). INVENTORY_BACKEND=postg
 ## Migración Fase 7 — interfaz sin activación de destino
 
 [Informe F7](migracion/07_ADAPTACION_VISUAL.md). Main conserva PostgreSQL/v1, SQL Server falla cerrado; nuevo módulo informa no habilitado si no hay backend v2. No registrar ModelContractDouble fuera de tests ni poner datos v1 como respuesta v2. No hubo migración remota: rollback de este incremento en entorno autorizado es volver a 1d7fac0 con sus dependencias, sin deshacer datos. No desplegar por esta guía.
+
+## Migración Fase 9 — corte y retorno
+
+M9-A01 autoriza preparar este procedimiento, sin ejecutarlo. [Despliegue](DESPLIEGUE.md#migración-fase-9--preparación-vigente), [puertas](migracion/09_PUERTAS_LIBERACION.csv) y [pendientes](migracion/09_PENDIENTES.csv). No hay punto de corte real, paquete nuevo/anterior desplegado ni rollback SQL Server verificado. F8 probó restore PostgreSQL local cifrado; no es una copia actual ni restauración de identidad/infraestructura gestionada.
+
+### Registro y decisión antes de operar
+
+Registrar por canal protegido: permiso con SHA/entorno/operación, operador/suplente y aprobador, ventana UTC, versiones/configuración no secreta, paquete nuevo/anterior y hashes, origen/base destino, snapshot consistente y copia restaurada, mapas y excepciones, última escritura aceptada y estado de efectos. Las claves/cadenas quedan en gestor, fuera del registro. Sin una puerta aplicable resuelta: detener preparación operativa, conservar el sistema vigente y pedir alcance concreto cuando exista un resultado revisable.
+
+| Situación | Retorno propuesto, sujeto a autorización concreta | Evidencia para decidir |
+| --- | --- | --- |
+| Solo documentos de F9, nada desplegado | Revertir mediante commit los documentos de esta entrega si se solicita; conservar evidencia y aceptación anteriores. No tocar DB. | SHA/árbol Git y diff; F9 no cambia código ni datos. |
+| Candidato de aplicación PG, esquema compatible y sin pérdida de datos | Congelar promoción/worker, comprobar paquete anterior contra esquema actual, dirigir tráfico solo al anterior y ejecutar smoke con nueva autenticación. | Hash del binario anterior, migraciones/config compatibles, pruebas de roles/MFA/replay/exportación y ausencia de despacho duplicado. |
+| DDL/carga aislados fallan antes de abrir destino | Detener lote y conservar errores/checkpoints; rollback transaccional si procede; mantener origen intacto como único escritor cuando la reapertura sea autorizada. | Transacción/ledger sin éxito falso, balances de filas/fragmentos, hashes, mapa y marca UTC del congelamiento. No purgar destino ni lotes ajenos. |
+| Corte a SQLServer preparado, todavía sin escrituras nuevas | No abrir candidato con divergencias; volver al origen compatible únicamente tras comprobar que no recibió cambios ocultos y conciliar efectos. | Restauración real del motor/identidad, reconciliación y constatación de cero escrituras nuevas; no basta contar tablas. |
+| Ya se aceptaron escrituras en el destino | Congelar ambos y todo despacho, conservar delta/artefactos/efectos; decidir corrección hacia adelante o reconciliación inversa diseñada y autorizada. | Historial, actor/comando/idempotencia/UTC y referencias de efectos desde corte. No apuntar al snapshot viejo ni improvisar doble escritura. |
+| Corrupción o pérdida de datos | Recuperar a base aislada autorizada desde copia buena verificada, preservando origen; reconciliar cambios posteriores y decidir reapertura. | Cobertura/cifrado/claves, restauración de esquema/roles/RLS/Auth/MFA/settings/UUID y soporte, secuencias/relaciones/reportes y efectos. |
+
+### Restauración y reapertura futuras
+
+1. Parar escrituras y worker/consumidores; conservar origen y evidencia. Validar hash/autenticidad/cobertura de la copia y disponibilidad independiente de claves. Un fallo de integridad bloquea restore; no omitir errores o usar --clean sobre origen. El dump PG del fixture no es un backup SQLServer ni del proveedor Auth completo.
+2. Restaurar con procedimiento del motor/proveedor correspondiente en destino limpio aislado. PostgreSQL/Supabase: respetar roles/esquemas gestionados y ledger, no copiar preparación del fixture. SQLServer: falta instancia y procedimiento probado; el núcleo candidato no incluye soporte completo. No aplicar ops/recovery-isolation.sql de PostgreSQL a SQLServer. Preparar equivalencia solo tras diseño/permiso y ensayo.
+3. Verificar mapas/UUID/INT, datos y relaciones, historia/auditoría/comandos/outbox/secuencias y permisos negativos. Invalidez de sesiones/enlaces locales y del proveedor, nuevo login/MFA, proyecciones/exportaciones privadas y versiones de autorización. Los settings Auth requieren recuperación/verificación separada; no considerar M8-R01 resuelta por restaurar tablas.
+4. Conciliar el intervalo snapshot→corte/incidente y todos los efectos externos inciertos. No resetear avisos a pendiente, cambiar destinatarios/claves ni reenviar por ausencia en la copia. Una respuesta perdida conserva su clave/carga/versión hasta verificar resultado. Mantener historia append-only y una sola autoridad de escritura.
+5. Medir RPO desde snapshot recuperable hasta incidente (objetivo ≤168h), RTO desde interrupción hasta servicio útil aceptado (≤8h), conservar copias ≥30d y registrar brechas reales. Para migración planificada no descartar transacciones conocidas amparándose en RPO. El horario exacto/custodia/almacén/alertas siguen en F1-SEG-03, sin scheduler operativo acreditado.
+6. Reabrir solo con permiso y evidencia del SHA/entorno exactos: health, Auth/MFA/revocación, roles, datos/historia/reportes, replay y ausencia de jobs reclamables indebidos. Confirmar configuración sin autorregistro tras remediación autorizada. Registrar versión efectiva, pérdida/diferencias, responsable y resultado. Reactivar correo requiere su autorización independiente después de conciliación.
+
+La restauración no se ha ejecutado en SQLServer ni en Supabase gestionado. No usar retiro de THROW, reset de Auth, desactivación de RLS/MFA/TLS o force push como técnica de recuperación. Aceptar este runbook no acredita disponibilidad, pérdida cero, RTO real ni permiso para intervenir recursos.

@@ -1,0 +1,50 @@
+{
+  "fase": "MIGRACION_9",
+  "autorizacion": "M9-A01",
+  "base_git": "e224d6f3a15d09899eba2c6a908548eef73014e8",
+  "instante_utc": "2026-11-04T01:57:18.575405+00:00",
+  "estado": "EN_REVISION_DOCUMENTAL",
+  "deployment_ready": false,
+  "base_f8_liberacion_exit": 3,
+  "casos_node_nuevos": 0,
+  "casos_node_historicos_f8": 280,
+  "pruebas_funcionales_f8": "docs/migracion/evidencias/fase8/pruebas.json",
+  "verificaciones_nuevas": [
+    {
+      "comando": "python3 docs/migracion/verificar_fase8.py sobre exportación de e224d6f",
+      "estado": "APROBADA",
+      "evidencia": "docs/migracion/evidencias/fase9/base_f8_verificacion.json"
+    },
+    {
+      "comando": "python3 docs/migracion/verificar_fase9.py",
+      "estado": "APROBADA",
+      "evidencia": "docs/migracion/evidencias/fase9/verificacion.json"
+    },
+    {
+      "comando": "python3 docs/migracion/verificar_fase9.py --evaluar-liberacion",
+      "estado": "APROBADA",
+      "salida_esperada": 3,
+      "alcance": "Debe rechazar liberación con NO_GO; no es aceptación operativa"
+    },
+    {
+      "comando": "Heurística histórica sobre árbol F9",
+      "estado": "APROBADA",
+      "evidencia": "docs/migracion/evidencias/fase9/secretos.json"
+    }
+  ],
+  "bloqueadas": [
+    "SQLServer2016/130 e integración normalizada",
+    "Carga/reconciliación/restore de destino y operación gestionada sin prerrequisitos"
+  ],
+  "no_ejecutadas": [
+    "Nuevas suites Node/build/carga/audit: código/dependencias/workflows inmutables; resultados F8 históricos",
+    "Consultas o configuración a proyectos Supabase, incluido cierre M8-R01",
+    "CI remoto, paquete release o corrección/ejecución de workflow demo Node20",
+    "Despliegue, SQL, envío, producción o recuperación gestionada"
+  ],
+  "observaciones": [
+    "M8-R01 continúa sin evidencia de corrección; política FALLIDA observada en F8",
+    "M9-R01 discrepancia estática de runtime; no ejecución fallida demostrada",
+    "F9 EN_REVISION, aceptación documental pendiente; fase posterior no definida"
+  ]
+}

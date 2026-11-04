@@ -1,5 +1,14 @@
 # Cambios
 
+## 2026-11-03 — Migración Fase 9: preparación documental EN_REVISION
+
+- M9-A01 acepta auditoría F8 con pendientes e inicia documentación/preparación; liberación NO_GO.
+- Consolida compatibilidades,18pendientes,12puertas y manifiesto de preparación sin artefacto desplegable.
+- Actualiza despliegue/rollback por motor y antes/después de escrituras, protegiendo identidad/efectos; mantiene las barreras SQL.
+- Registra M9-R01: workflow demo Node20 frente a Node24 declarado. M8-R01 sin corrección acreditada; sin cambios de workflows/configuración remota.
+- Preserva código, fuentes, contratos, SQL físicos y evidencia F1–F8; 280pruebas F8 históricas, controles documentales nuevos. No hay fase10 definida, merge o despliegue autorizado.
+
+
 ## 2026-11-03 — Migración Fase 8: seguridad y regresión, con bloqueos
 
 - M8-A01 acepta F7/inicia F8; F9 sin autorización.

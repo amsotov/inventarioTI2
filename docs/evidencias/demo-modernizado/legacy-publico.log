@@ -1,0 +1,8 @@
+
+> inventarioti2@1.0.0 test:demo
+> node tests/demo/browser.mjs
+
+Downloading Excel
+Downloading PDF
+PASS: publication preview, six images and navigable prototype.
+PASS: demo entry, equipment/person CRUD, assignment/transfer/history, roles, mail simulation, XLSX/PDF contents, hash reload, zero API/external requests. https://amsotov.github.io/inventarioTI2/

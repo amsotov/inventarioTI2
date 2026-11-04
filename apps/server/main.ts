@@ -1,3 +1,4 @@
+import { stagingModel, databaseConnection } from './modernization/staging.js';
 import { inventoryDriver } from './inventory/configuration.js';
 import { postgresInventory } from './inventory/postgres.js';
 import { fileURLToPath } from 'node:url';
@@ -13,17 +14,20 @@ import { AuthService } from './auth/service.js';
 import { operations } from './operations.js';
 function required(name: string) { const v=process.env[name];if(!v) throw new Error('Missing '+name);return v; }
 inventoryDriver(process.env.INVENTORY_BACKEND);
+const modernization=stagingModel(process.env);
 const origin=required('APP_ORIGIN');
 if(new URL(origin).origin!==origin || !origin.startsWith('https://')) throw new Error('APP_ORIGIN requires HTTPS origin');
-const pool=new Pool({connectionString:required('DATABASE_URL'),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
+const pool=new Pool({...databaseConnection(required('DATABASE_URL'),process.env),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
 await assertDatabaseRole(pool,'inventario_auth');
 const auth=new AuthService(new Postgres(pool),new SupabaseProvider(required('SUPABASE_URL'),required('SUPABASE_PUBLISHABLE_KEY'),required('SUPABASE_SECRET_KEY')),new Vault(required('AUTH_ENCRYPTION_KEY')),origin);
-const business=new Pool({connectionString:required('BUSINESS_DATABASE_URL'),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
+const business=new Pool({...databaseConnection(required('BUSINESS_DATABASE_URL'),process.env),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
 await assertDatabaseRole(business,'inventario_runtime');
+if(modernization)await business.query("select laboratorio_ti.version()");
 const security=new Authorization(auth,business);
-const server=app(auth,origin,new Inventory(postgresInventory(security)),fileURLToPath(new URL('../../web/',import.meta.url)),security);
+const server=app(auth,origin,new Inventory(postgresInventory(security)),fileURLToPath(new URL('../../web/',import.meta.url)),security,modernization);
 operations(server,async()=>{
   await Promise.all([assertDatabaseRole(pool,'inventario_auth'),assertDatabaseRole(business,'inventario_runtime')]);
+  if(modernization)await business.query("select laboratorio_ti.version()");
 },line=>process.stdout.write(line));
 // Loopback remains the default. A managed private ingress can explicitly bind all interfaces.
 const host=process.env.HOST??'127.0.0.1';

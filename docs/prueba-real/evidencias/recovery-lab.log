@@ -1,0 +1,9 @@
+✔ respaldo del laboratorio: restaura 59 tablas y ACL en otra base del mismo clúster sintético; revoca sesiones (6699.386471ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7073.871488

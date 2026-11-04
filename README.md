@@ -1,5 +1,11 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## MTEST-A01 — prueba temporal conectada (2026-11-04)
+
+Usuario: «vamos hacer una prueba real en sitio temporal conectado con la base de datos real prepara todo»; precisa Supabase **inventarioTI2 con datos de prueba**, autoriza **crear un entorno virtual** y elige **la interfaz modernizada completa**. Se implementa un repositorio PostgreSQL de laboratorio separado del destino SQLServer, reutilizando las vistas y el BFF existentes, con configuración explícita, migración/semilla privadas y paquete de contenedor conectado. [Guía y alcance](docs/PRUEBA_REAL_SUPABASE.md), [resultado y pendientes](docs/prueba-real/RESULTADO.md).
+
+Preparación local verificada; acceso público conectado pendiente de credenciales de servidor, cuentas Auth vinculadas, registro público cerrado e ingreso HTTPS. No presentar Pages como sitio conectado, no registrar dobles en main, no sustituir reportes v1 por datos ficticios ni certificar SQLServer. Las reglas productivas pendientes conservan sus barreras. Sin worker/envíos, producción, facturación ni reactivación de inventarioTI. Sincronizar en rama dedicada; no merge/republicación de Pages por esta preparación.
+
 ## MPUB-FIX01 — corrección de la demo principal
 
 Usuario «No está actualizado el demo» corrige la publicación solicitada en MPUB-A01. Se comprobó que la portada pública seguía en Bienes: la entrega anterior añadió revisión/prototipo, pero no activó la interfaz moderna en la demo. Se corrige dentro de la autorización de publicación existente, sin otra fase ni nueva confirmación.

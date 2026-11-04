@@ -32,7 +32,7 @@ export class Authorization {
 export async function assertDatabaseRole(pool: Pool, expected: 'inventario_auth' | 'inventario_runtime' | 'inventario_worker') {
   const r=(await pool.query(`select current_user as name, r.rolsuper,r.rolbypassrls,r.rolcreaterole,r.rolcreatedb,
     exists(select 1 from pg_auth_members m where m.member=r.oid) as memberships,
-    exists(select 1 from pg_class c join pg_namespace n on n.oid=c.relnamespace where c.relowner=r.oid and n.nspname in ('inventario','acceso','seguridad')) as owner
+    exists(select 1 from pg_class c join pg_namespace n on n.oid=c.relnamespace where c.relowner=r.oid and n.nspname in ('inventario','acceso','seguridad','laboratorio_ti')) as owner
     from pg_roles r where r.rolname=current_user`)).rows[0];
   if(!r || r.name!==expected || r.rolsuper || r.rolbypassrls || r.rolcreaterole || r.rolcreatedb || r.memberships || r.owner) throw new Error('Unsafe database role');
 }

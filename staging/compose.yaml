@@ -1,0 +1,40 @@
+name: inventarioti2-prueba
+services:
+  web:
+    image: inventarioti2-prueba:${STAGING_IMAGE_TAG:?define un tag inmutable de esta entrega}
+    env_file:
+      - path: ${STAGING_ENV_FILE:?ruta absoluta de secretos fuera del repositorio}
+        required: true
+    environment:
+      APP_ENV: staging
+      MODERNIZATION_BACKEND: postgres-lab
+      SUPABASE_PROJECT_REF: yhsfotxhaptinjtmrinn
+      SUPABASE_URL: https://yhsfotxhaptinjtmrinn.supabase.co
+      NOTIFICATION_DELIVERY_ENABLED: 'false'
+      HOST: 0.0.0.0
+      PORT: '3000'
+      NODE_USE_ENV_PROXY: '1'
+      NODE_EXTRA_CA_CERTS: /run/secrets/runtime-ca.crt
+      HTTP_PROXY: ${HTTP_PROXY:-}
+      HTTPS_PROXY: ${HTTPS_PROXY:-}
+      NO_PROXY: 127.0.0.1,localhost,${NO_PROXY:-}
+      DB_SSL_CA_FILE: /run/secrets/database-ca.crt
+    volumes:
+      - type: bind
+        source: ${STAGING_DB_CA_FILE:?ruta absoluta de la CA de Supabase}
+        target: /run/secrets/database-ca.crt
+        read_only: true
+      - type: bind
+        source: ${STAGING_RUNTIME_CA_FILE:-/etc/ssl/certs/ca-certificates.crt}
+        target: /run/secrets/runtime-ca.crt
+        read_only: true
+    ports:
+      - 127.0.0.1:${STAGING_BIND_PORT:-3000}:3000
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    stop_grace_period: 20s

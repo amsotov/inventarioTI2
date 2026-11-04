@@ -1,3 +1,5 @@
+import {bindTrialAccounts} from '../../ops/staging-bootstrap.js';
+import {PostgresLabModelBackend} from '../../apps/server/modernization/postgres-lab.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -61,18 +63,21 @@ test('adaptador real: GoTrue local, sin proyecto gestionado ni correo externo',a
   await provider.complete(privileged.hash,'invite',adminPassword,privileged.userId);
   await pool.query('create role anon;create role authenticated');
   for(const file of readdirSync('supabase/migrations').sort())await pool.query(readFileSync('supabase/migrations/'+file,'utf8'));
-  await pool.query(`alter role inventario_auth login password '${password}';alter role inventario_runtime login password '${password}'`);
-  await pool.query(`insert into inventario.cuentas(id,proveedor_ref,nombre,correo,rol,estado,credencial_lista) values($1,$1,'Lector local','invited@example.invalid','lectura','activa',true),($2,$2,'Admin local','admin-local@example.invalid','administrador','activa',true)`,[link.userId,privileged.userId]);
-  await pool.query("insert into inventario.configuracion_avisos(destinatario) values('encargado@example.invalid')");
+  for(const file of readdirSync('staging/supabase/migrations').filter(x=>x.endsWith('.sql')).sort())await pool.query(readFileSync('staging/supabase/migrations/'+file,'utf8'));
+  await pool.query(readFileSync('staging/supabase/seed.sql','utf8'));
+  const employeeRefs=(await pool.query("select id,ref from laboratorio_ti.referencias where tabla='FUNCIONARIOS' and id in (1,2)")).rows;
+  const bootstrapClient=await pool.connect();
+  try {await bindTrialAccounts(bootstrapClient,[{authId:privileged.userId,employeeRef:employeeRefs.find(r=>r.id==='1').ref,email:'admin-local@example.invalid',role:'administrador'},{authId:link.userId,employeeRef:employeeRefs.find(r=>r.id==='2').ref,email:'invited@example.invalid',role:'lectura'}],{auth:password+'a',runtime:password+'b'});}finally{bootstrapClient.release();}
+
   // Un usuario puede editar user_metadata; no puede editar los permisos SQL de la aplicación.
   const forged=await provider.login('invited@example.invalid','synthetic-password-new-1234');
   const editable=createClient(url,jwt('anon',secret),{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
   assert.equal((await editable.auth.setSession(forged)).error,null);
   assert.equal((await editable.auth.updateUser({data:{rol:'administrador',role:'service_role'}})).error,null);
-  authPool=new Pool({host:'127.0.0.1',port:pgPort,user:'inventario_auth',password,database:'postgres',max:2});
-  businessPool=new Pool({host:'127.0.0.1',port:pgPort,user:'inventario_runtime',password,database:'postgres',max:2});
+  authPool=new Pool({host:'127.0.0.1',port:pgPort,user:'inventario_auth',password:password+'a',database:'postgres',max:2});
+  businessPool=new Pool({host:'127.0.0.1',port:pgPort,user:'inventario_runtime',password:password+'b',database:'postgres',max:2});
   const vault=new Vault(randomBytes(32).toString('base64')),authService=new AuthService(new Postgres(authPool),provider,vault,'https://inventario.test');
-  const security=new Authorization(authService,businessPool);application=app(authService,'https://inventario.test',new Inventory(postgresInventory(security)),undefined,security);
+  const security=new Authorization(authService,businessPool);application=app(authService,'https://inventario.test',new Inventory(postgresInventory(security)),undefined,security,new PostgresLabModelBackend());
   const origin={'origin':'https://inventario.test'};
   const credentials=async(email:string,pass:string)=>{
    const response=await application!.inject({method:'POST',url:'/api/v1/sesion',headers:origin,payload:{email,password:pass}});
@@ -99,6 +104,15 @@ test('adaptador real: GoTrue local, sin proyecto gestionado ni correo externo',a
   const created=await save(cookie,csrf);assert.equal(created.statusCode,201,created.body);
   const proof=(await pool.query('select (select count(*) from inventario.comandos)::int commands,(select count(*) from inventario.auditoria)::int audit,(select count(*) from inventario.outbox)::int outbox')).rows[0];assert.deepEqual(proof,{commands:1,audit:1,outbox:1});
   const readerRows=await application.inject({url:'/api/v1/bienes',headers:{cookie:readerSession.cookie}});assert.equal(readerRows.statusCode,200);assert.equal(readerRows.json().items.length,1);
+  // GoTrue/SDK + MFA + BFF + repositorio modernizado REAL en el mismo PostgreSQL local.
+  const modernRefs=(await pool.query("select tabla,ref from laboratorio_ti.referencias where id=1 and tabla in ('TIPOS_EQUIPO','ESTADOS_EQUIPO')")).rows;
+  const modernBody={codigoOperativo:'GOTRUE-MODERNO',tipoRef:modernRefs.find(r=>r.tabla==='TIPOS_EQUIPO').ref,modeloRef:null,condicionRef:modernRefs.find(r=>r.tabla==='ESTADOS_EQUIPO').ref,numeroSerie:null,motivoSinSerie:'Sintético GoTrue',motivo:'Ensayo modernizado con Auth real',confirmado:true};
+  const modernSave=(sessionCookie:string,token:string)=>application!.inject({method:'POST',url:'/api/v2/equipos',headers:{...origin,cookie:sessionCookie,'x-csrf-token':token,'idempotency-key':randomUUID()},payload:modernBody});
+  assert.equal((await modernSave(readerSession.cookie,readerSession.csrf)).statusCode,403);
+  const modernCreated=await modernSave(cookie,csrf);assert.equal(modernCreated.statusCode,201,modernCreated.body);
+  const modernDetail=await application.inject({url:'/api/v2/equipos/'+modernCreated.json().ref,headers:{cookie:readerSession.cookie}});
+  assert.equal(modernDetail.statusCode,200,modernDetail.body);assert.equal(modernDetail.json().codigoOperativo,'GOTRUE-MODERNO');
+  assert.equal((await pool.query("select count(*)::int n from laboratorio_ti.equipo_soporte where codigo_operativo='GOTRUE-MODERNO'")).rows[0].n,1);
   const sid=cookie.slice('__Host-inventario='.length),sessionRow=(await pool.query('select datos from acceso.sesiones where huella=$1',[hash(sid)])).rows[0].datos;
   await provider.logout(vault.open<Tokens>(sessionRow.vault));
   const revoked=await application.inject({url:'/api/v1/bienes',headers:{cookie}});assert.equal(revoked.statusCode,503);assert(!revoked.body.includes('GOTRUE-01'));

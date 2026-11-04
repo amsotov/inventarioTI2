@@ -43,7 +43,7 @@ const columns: Record<Resource, string[]> = {
   ],
 };
 function route() {
-  return location.hash.slice(1) || (DEMO_MODE ? "modelo/equipos" : "bienes");
+  return location.hash.slice(1) || (DEMO_MODE || import.meta.env.VITE_MODERNIZATION_ENTRY === "true" ? "modelo/equipos" : "bienes");
 }
 function App() {
   const [session, setSession] = useState<Session | null>(null),

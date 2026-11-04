@@ -2,7 +2,7 @@
 .env
 .env.*
 !.env.example
-node_modules/
+node_modules
 supabase/.temp/
 __pycache__/
 *.pyc
@@ -10,3 +10,9 @@ __pycache__/
 
 dist/
 work/
+
+# Paquete/credenciales locales del ensayo conectado.
+staging/release/
+staging/.secrets/
+staging/supabase/.temp/
+staging/supabase/.branches/

@@ -1,0 +1,70 @@
+{
+  "id": "MTEST-A01",
+  "base_commit": "5758d58e68a599b4b36655d07e96708094fc9620",
+  "project_ref": "yhsfotxhaptinjtmrinn",
+  "kind": "isolated-postgresql-laboratory",
+  "sqlserver_certified": false,
+  "kernel_tables": 30,
+  "kernel_columns": 117,
+  "support_tables": 10,
+  "operations": 17,
+  "public_trial": "BLOCKED_CONFIGURATION",
+  "source_sha256": {
+    "apps/server/main.ts": "9063bf2429abb03d8631880d0800c24c5f6b0783861cb42585952f545db22c37",
+    "apps/server/security/postgres.ts": "a841110e106491b60f53f7cd9bbfa0dcf130f1d1c5cd974b78924dfb68ab02b0",
+    "apps/server/modernization/postgres-access.ts": "2b8cef0c02f0ec32c03dcecbc47696839c167f033e8e8719ad2a321aa425003f",
+    "apps/server/modernization/postgres-lab.ts": "f65c9c9d2d9166f29710966c604afbbeadfc7e3af6575cf9c401ea1182bebcf3",
+    "apps/server/modernization/staging.ts": "d73e6bd15995f584587070036bae0ec1144392a10811d9929aa2b75f54db99fe",
+    "apps/web/src/main.tsx": "c37cd0b42fed528dd26ecaf33f95872c8f3c92fc272f233d2c695cf40796bdba",
+    "ops/staging-bootstrap.ts": "abcdb3c9be5fa239321d520c009ba2fbbf7a3765c815c123572c5c430cc8e49f",
+    "staging/supabase/migrations/20261104111238_modernizacion_laboratorio.sql": "231d3e2e87382410557abd630f45b3e73df226fd72d8904086a23ea60fa71786",
+    "staging/supabase/seed.sql": "8aae04209d1b8476fb23e21c7759a3b26896886f70518d3593eed40b17cbd994",
+    "staging/Dockerfile": "ad998761e5e5627a03e9cfc181afe0ab7b975d6f4dac9388d3d312984981917a",
+    "staging/compose.yaml": "6632577e4ce0973a450b60c2b0ad5740a19efd3b6ff7df9aa4af33f7f4e1e24b",
+    "scripts/staging/package.mjs": "5298ac292e13698e48332cc14fadf30b1c6d7d5781017ecd5d803db527906687",
+    "scripts/staging/preflight.mjs": "a71fa34a82b1f252fa486dcd70a212e4031457bf52d2cc2f8423571b3e5fdbc3",
+    "scripts/staging/bootstrap.mjs": "c3e161f40680bb0366a4c86da6f80500133a26c3fbede488b6dc92603694f78b",
+    "tests/api/postgres-lab.test.ts": "27dbbf83ab089825da23bdfe7cc2b54cab02cd236beb8d6edf6b9e13707e838d",
+    "tests/api/lab-recovery.test.ts": "f5541017357ce9c5a0abace119682ffe6cf2b20783a6ba1ac5297976168f8675",
+    "tests/auth/provider.test.ts": "3962241b34b63b5f0277b33663e1a05c89504d420fe93fc86623f32240e17156",
+    "tests/ui/postgres-lab.test.ts": "c25d0b7e52239ae763a87847d7e38d3fcdbde92e9fbd6c578329298e497bf4e5",
+    "tests/helpers/lab.ts": "6d2a3f873440227ce9515038db02a2ca1fd78345f50bf70e96c182f1e2074a56"
+  },
+  "preserved_sqlserver_sha256": {
+    "migrations/sqlserver/900_catalogo_esperado.candidate.sql": "232383f6e075e7d13e985e0b73337157d8b5b02b204116e65fd172e649386f34",
+    "migrations/sqlserver/0001_nucleo_diccionario.candidate.sql": "a6f9b5bd110082618dfaf9565467efce8023c6991ae0e93f2c2e3aea0c7b342f",
+    "migrations/sqlserver/0003_indices_fk.candidate.sql": "1aa37907d0a35f51ba5c5db28751f75c8a0b6f9e72f6fc663b73872b27d336f3",
+    "migrations/sqlserver/0002_checks_propuestos.candidate.sql": "637dd610d20d4943d28dd40180d74f4aa890cd04086b54d5259372e39a387eaf"
+  },
+  "validation": {
+    "node_regression": {
+      "passed": 232
+    },
+    "ui_regression": {
+      "passed": 63
+    },
+    "atomic_auth_recheck": {
+      "passed": 14
+    },
+    "modern_backup_same_cluster": {
+      "passed": 1
+    },
+    "connected_bundle_ui": {
+      "passed": 6
+    },
+    "legacy_ops_local": {
+      "passed": 3,
+      "blocked": 1,
+      "reason": "two PostgreSQL VFS containers exhaust local disk; target cannot start"
+    },
+    "secret_scan_findings": 0,
+    "npm_audit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  }
+}

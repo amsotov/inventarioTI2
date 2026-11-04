@@ -1,0 +1,6 @@
+{
+  "http": 303,
+  "callbackAccepted": false,
+  "targetOrigin": "http://localhost:3000",
+  "targetPath": "/"
+}

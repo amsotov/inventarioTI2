@@ -12,13 +12,24 @@ test('El portal rechaza orígenes ajenos y nunca incluye las contraseñas en HTM
  const denied=await worker.fetch(new Request(origin+'/prueba/entrar',{method:'POST',headers:{origin:'https://otro.invalid'},body:'{"role":"admin"}'}),env);assert.equal(denied.status,403);
  const page=await worker.fetch(new Request(origin+'/prueba'),env);const html=await page.text();assert.equal(page.status,200);assert(!html.includes(env.INVENTARIO_ADMIN_PASSWORD));assert(!html.includes(env.INVENTARIO_GATEWAY_TOKEN));assert.match(page.headers.get('content-security-policy'),/script-src 'self'/);
 });
-test('El acceso de ensayo utiliza el login existente y solo devuelve la cookie de aplicación',async()=>{
- const original=globalThis.fetch;
- globalThis.fetch=async(input:any,init:any)=>{assert.equal(new URL(input).pathname,'/functions/v1/inventarioti2-prueba-runtime/api/v1/sesion');assert.deepEqual(JSON.parse(init.body),{email:env.INVENTARIO_ADMIN_EMAIL,password:env.INVENTARIO_ADMIN_PASSWORD});return new Response('{"mfaRequired":true}',{headers:[['content-type','application/json'],['set-cookie','other=drop'],['set-cookie','__Host-inventario='+'c'.repeat(43)+'; Secure; HttpOnly; Path=/; SameSite=Strict']]});};
- try{const r=await worker.fetch(new Request(origin+'/prueba/entrar',{method:'POST',headers:{origin,'content-type':'application/json'},body:'{"role":"admin"}'}),env);assert.equal(r.status,200);assert.deepEqual(await r.json(),{mfaRequired:true});assert.equal(r.headers.getSetCookie().length,1);assert(!r.headers.get('set-cookie')?.includes('other='));}finally{globalThis.fetch=original;}
+test('El portal exige verificación de correo y cierra el atajo de contraseña del ensayo anterior',async()=>{
+ const r=await worker.fetch(new Request(origin+'/prueba/entrar',{method:'POST',headers:{origin,'content-type':'application/json'},body:'{"role":"admin"}'}),env);assert.equal(r.status,410);assert.equal((await r.json()).code,'EMAIL_VERIFICATION_REQUIRED');
+ const p=await worker.fetch(new Request(origin+'/prueba'),env);const html=await p.text();assert.match(html,/Verifica tu correo/);assert(!html.includes('data-role='));
 });
 
 test('La versión fuerte del BFF sobrevive al gateway sin inventar ni debilitar el If-Match',async()=>{
  const original=globalThis.fetch;globalThis.fetch=async()=>new Response('{"version":"7"}',{headers:{'content-type':'application/json',etag:'W/"v7"','x-inventario-resource-etag':'"v7"'}});
  try{const r=await worker.fetch(new Request(origin+'/api/v2/equipos/20000000-0000-4000-8000-000000000001'),env);assert.equal(r.headers.get('etag'),'"v7"');assert.match(r.headers.get('cache-control'),/no-transform/);assert.equal(r.headers.get('x-inventario-resource-etag'),null);assert.deepEqual(await r.json(),{version:'7'});}finally{globalThis.fetch=original;}
+});
+
+test('El visor de Codex tiene padres autorizados y cookie particionada sin quitar Origin/CSRF',async()=>{
+ const html=await worker.fetch(new Request(origin+'/'),env);const portal=await worker.fetch(new Request(origin+'/prueba'),env);assert.equal(portal.headers.get('x-frame-options'),null);const policy=portal.headers.get('content-security-policy')!;assert.match(policy,/frame-ancestors 'self' https:\/\/chatgpt.com/);assert.match(policy,/https:\/\/codex.openai.com/);assert(!policy.includes('frame-ancestors *'));
+ const original=globalThis.fetch;globalThis.fetch=async()=>new Response('{}',{headers:[['set-cookie','__Host-inventario='+'d'.repeat(43)+'; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=28800'],['content-security-policy',"default-src 'none'; frame-ancestors 'none'"],['x-frame-options','DENY']]});
+ try{const response=await worker.fetch(new Request(origin+'/api/v1/sesion'),env);const cookie=response.headers.get('set-cookie')!;assert.match(cookie,/HttpOnly; Secure; SameSite=None/);assert.match(cookie,/Partitioned/);assert.equal(response.headers.get('x-frame-options'),null);assert.match(response.headers.get('content-security-policy')!,/https:\/\/chatgpt.com/);}finally{globalThis.fetch=original;}
+ const denied=await worker.fetch(new Request(origin+'/api/v1/sesion/correo/verificar',{method:'POST',headers:{origin:'https://evil.invalid'},body:'{}'}),env);assert.equal(denied.status,403);
+});
+
+test('El visor conserva las dos cookies propias del flujo de correo y descarta las de la plataforma',async()=>{
+ const original=globalThis.fetch;globalThis.fetch=async(_url:any,init:any)=>{assert.equal(init.headers.get('cookie'),'__Host-inventario='+'a'.repeat(43)+'; __Host-inventario-correo='+'b'.repeat(43));return new Response('{}',{headers:[['set-cookie','__Host-inventario='+'c'.repeat(43)+'; Path=/; HttpOnly; Secure; SameSite=Strict'],['set-cookie','__Host-inventario-correo=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0'],['set-cookie','platform=drop']]});};
+ try{const r=await worker.fetch(new Request(origin+'/api/v1/sesion/correo/estado',{method:'POST',headers:{origin,cookie:'platform=secret; __Host-inventario='+'a'.repeat(43)+'; __Host-inventario-correo='+'b'.repeat(43)},body:'{}'}),env);assert.equal(r.headers.getSetCookie().length,2);assert(r.headers.getSetCookie().every((v:string)=>v.includes('SameSite=None')&&v.includes('Partitioned')));}finally{globalThis.fetch=original;}
 });

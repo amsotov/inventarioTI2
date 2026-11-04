@@ -1,3 +1,4 @@
+import {authenticationMethod} from './auth/configuration.js';
 import { stagingModel, databaseConnection } from './modernization/staging.js';
 import { inventoryDriver } from './inventory/configuration.js';
 import { postgresInventory } from './inventory/postgres.js';
@@ -19,7 +20,7 @@ const origin=required('APP_ORIGIN');
 if(new URL(origin).origin!==origin || !origin.startsWith('https://')) throw new Error('APP_ORIGIN requires HTTPS origin');
 const pool=new Pool({...databaseConnection(required('DATABASE_URL'),process.env),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
 await assertDatabaseRole(pool,'inventario_auth');
-const auth=new AuthService(new Postgres(pool),new SupabaseProvider(required('SUPABASE_URL'),required('SUPABASE_PUBLISHABLE_KEY'),required('SUPABASE_SECRET_KEY')),new Vault(required('AUTH_ENCRYPTION_KEY')),origin);
+const auth=new AuthService(new Postgres(pool),new SupabaseProvider(required('SUPABASE_URL'),required('SUPABASE_PUBLISHABLE_KEY'),required('SUPABASE_SECRET_KEY')),new Vault(required('AUTH_ENCRYPTION_KEY')),origin,undefined,authenticationMethod(process.env));
 const business=new Pool({...databaseConnection(required('BUSINESS_DATABASE_URL'),process.env),max:5,connectionTimeoutMillis:5000,statement_timeout:15000});
 await assertDatabaseRole(business,'inventario_runtime');
 if(modernization)await business.query("select laboratorio_ti.version()");

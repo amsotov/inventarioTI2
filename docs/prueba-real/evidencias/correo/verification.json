@@ -1,0 +1,48 @@
+{
+  "scope": "private-trial-email-auth",
+  "localTests": 37,
+  "passed": 37,
+  "typescriptBuild": "passed",
+  "postgresAuthorizationCases": {
+    "count": 4,
+    "passed": true,
+    "rolledBack": true
+  },
+  "counts": {
+    "equipment": 7,
+    "staff": 3,
+    "legacyAssets": 6,
+    "applicationAccounts": 2,
+    "authUsers": 2,
+    "mfaFactors": 0
+  },
+  "oldSessionsInvalidated": true,
+  "ownerAndAclPreserved": true,
+  "recipient": "explicitly supplied by user; omitted from repository",
+  "realEmailRequestAccepted": true,
+  "recipientVerificationCompleted": "user action; not observed",
+  "backendVersion": 13,
+  "siteVersion": 7,
+  "siteDeployment": "appgdep_6aeb7e26e274819187dbef7c914f3549",
+  "envRevision": 2,
+  "sourceHostingCommit": "1751200f25cfa4ed0d9906342a63e8ba13beb907",
+  "migrationLocal": "20261104181614",
+  "migrationRemote": "20261104181907",
+  "mfaBusinessRequirement": false,
+  "businessNotificationWorker": false,
+  "publicRelease": "NO_GO",
+  "browserAuthTest": {
+    "count": 1,
+    "passed": true,
+    "identity": "explicit local double",
+    "crossBrowserClick": true,
+    "viewerAutomaticallyAuthenticated": true
+  },
+  "emailRedirectReady": false,
+  "blocker": "Supabase Auth falls back to http://localhost:3000; connector cannot update URL Configuration",
+  "realMailAfterFinalFlow": "not requested while redirect is unconfigured",
+  "observedProviderErrors": [
+    "otp_expired",
+    "over_email_send_rate_limit"
+  ]
+}

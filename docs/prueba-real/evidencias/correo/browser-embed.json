@@ -1,0 +1,9 @@
+{
+  "trustedHttpsParent": "https://chatgpt.com",
+  "frameVisible": true,
+  "emailAccessVisible": true,
+  "mailRequested": false,
+  "codeFields": 0,
+  "oneClickLinkButton": 1,
+  "untrustedParentBlocked": true
+}

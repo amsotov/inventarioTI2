@@ -1,3 +1,4 @@
+import {authenticationMethod} from './dist/apps/server/auth/configuration.js';
 import {readFileSync} from 'node:fs';
 import {Pool} from 'pg';
 import {createClient} from '@supabase/supabase-js';
@@ -8,6 +9,7 @@ const required=name=>{if(!process.env[name])throw Error('MISSING_'+name);return 
 const pools=[];
 try {
  if(!stagingModel(process.env))throw Error('STAGING_REQUIRED');
+ if(authenticationMethod(process.env)!=='email-otp')throw Error('EMAIL_AUTH_REQUIRED');
  const origin=required('APP_ORIGIN');if(new URL(origin).origin!==origin||!origin.startsWith('https://'))throw Error('HTTPS_ORIGIN_REQUIRED');
  if(Buffer.from(required('AUTH_ENCRYPTION_KEY'),'base64').length!==32)throw Error('INVALID_ENCRYPTION_KEY');
  readFileSync(required('DB_SSL_CA_FILE'));

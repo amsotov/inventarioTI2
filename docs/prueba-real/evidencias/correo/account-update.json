@@ -1,0 +1,6 @@
+{
+  "http": 200,
+  "updated": true,
+  "priorSessionsRevoked": true,
+  "mfaRemoved": 1
+}

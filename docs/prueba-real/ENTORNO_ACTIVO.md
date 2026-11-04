@@ -1,5 +1,7 @@
 # Ensayo conectado privado — 2026-11-04
 
+> Estado vigente MTEST-A03: [acceso por correo sin MFA](ACCESO_CORREO.md). Las referencias de MFA/acceso automático que siguen documentan la publicación anterior.
+
 Autorización vigente: «te autorizo a realizar los cambios para ver el entorno virtual funcionado»; continuación «retoma». Se publica únicamente el laboratorio sintético, sin iniciar otra fase ni liberar SQL Server.
 
 Acceso: https://inventarioti2-prueba-20261104.alejandrosotovivar.chatgpt.site/prueba

@@ -1,5 +1,15 @@
+import{createHash}from'node:crypto';
 import { createClient, type Session as SupaSession } from '@supabase/supabase-js';
 import type { Identity, Provider, Tokens } from './ports.js';
+/** Acepta el código o enlace nativo del proyecto; no sigue redirecciones del correo. */
+export function emailVerification(url:string,email:string,value:string) {
+ if(/^[0-9]{6,10}$/.test(value))return {email,token:value,type:'email' as const};
+ const link=new URL(value),project=new URL(url);
+ if(link.origin!==project.origin||link.protocol!=='https:'||link.pathname!=='/auth/v1/verify'||!['email','magiclink','signup'].includes(link.searchParams.get('type')??''))throw Error('EMAIL_CODE_INVALID');
+ const token=link.searchParams.get('token_hash')??link.searchParams.get('token');
+ if(!token||!/^[A-Za-z0-9_-]{32,256}$/.test(token))throw Error('EMAIL_CODE_INVALID');
+ return {token_hash:token,type:'email' as const};
+}
 export class SupabaseProvider implements Provider {
   constructor(private url: string, private key: string, private adminKey: string) {}
   private client(admin = false) {
@@ -9,7 +19,7 @@ export class SupabaseProvider implements Provider {
     if (!s) throw new Error('No provider session');
     // Token recibido directamente del proveedor por TLS; no se acepta JWT del navegador.
     const claims = JSON.parse(Buffer.from(s.access_token.split('.')[1], 'base64url').toString());
-    return {access_token:s.access_token,refresh_token:s.refresh_token,userId:s.user.id,aal:claims.aal === 'aal2' ? 'aal2' : 'aal1'};
+    return {access_token:s.access_token,refresh_token:s.refresh_token,userId:s.user.id,aal:claims.aal === 'aal2' ? 'aal2' : 'aal1',email:s.user.email,emailConfirmed:!!s.user.email_confirmed_at};
   }
   private async scoped(t: Tokens) {
     const c = this.client();
@@ -26,7 +36,27 @@ export class SupabaseProvider implements Provider {
     const {c,session} = await this.scoped(t);
     const {data,error} = await c.auth.getUser();
     if (error || data.user?.id !== session.user.id) throw new Error('Identity rejected');
-    return this.identity(session);
+    return this.identity({...session,user:data.user});
+  }
+  async sendEmailLink(email:string,verifier:string,redirectTo:string){
+    const response=await fetch(this.url+'/auth/v1/otp?redirect_to='+encodeURIComponent(redirectTo),{method:'POST',headers:{apikey:this.key,'content-type':'application/json'},body:JSON.stringify({email,create_user:false,code_challenge:createHash('sha256').update(verifier).digest('base64url'),code_challenge_method:'s256'}),signal:AbortSignal.timeout(10000)});
+    if(!response.ok)throw Error(response.status===429?'EMAIL_DELIVERY_RATE_LIMITED':'EMAIL_DELIVERY_UNAVAILABLE');
+  }
+  async exchangeEmailLink(code:string,verifier:string){
+    const response=await fetch(this.url+'/auth/v1/token?grant_type=pkce',{method:'POST',headers:{apikey:this.key,'content-type':'application/json'},body:JSON.stringify({auth_code:code,code_verifier:verifier}),signal:AbortSignal.timeout(10000)});
+    if(!response.ok)throw Error('EMAIL_LINK_EXPIRED');const session=await response.json() as SupaSession;
+    const checked=await this.client().auth.getUser(session.access_token);if(checked.error||!checked.data.user?.email_confirmed_at)throw Error('EMAIL_LINK_EXPIRED');return this.identity({...session,user:checked.data.user});
+  }
+  async sendEmailOtp(email: string) {
+    const {error}=await this.client().auth.signInWithOtp({email,options:{shouldCreateUser:false}});
+    if(error)throw new Error(error.status===429?'EMAIL_DELIVERY_RATE_LIMITED':'EMAIL_DELIVERY_UNAVAILABLE');
+  }
+  async verifyEmailOtp(email: string, code: string) {
+    const {data,error}=await this.client().auth.verifyOtp(emailVerification(this.url,email,code));
+    if(error||!data.session)throw new Error('EMAIL_CODE_INVALID');
+    const checked=await this.client().auth.getUser(data.session.access_token);
+    if(checked.error||!checked.data.user?.email_confirmed_at||checked.data.user.email?.toLowerCase()!==email.toLowerCase())throw new Error('EMAIL_CODE_INVALID');
+    return this.identity({...data.session,user:checked.data.user});
   }
   async factors(t: Tokens) {
     const {c}=await this.scoped(t);

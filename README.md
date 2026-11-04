@@ -1,5 +1,15 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## MTEST-A04 — visor integrado y acceso por clic de correo (2026-11-04)
+
+El usuario autoriza el visor de Codex y pide sesión automática al pulsar el enlace del correo. Publicados callback PKCE, activación del intento original por cookie particionada y marcos limitados a orígenes de OpenAI. Sin formulario de códigos/MFA. [Estado y bloqueo técnico](docs/prueba-real/ACCESO_CORREO.md): Supabase aún redirige a localhost; se debe guardar URL Configuration. La autorización está dada, pero el conector carece de esa operación. Envío nuevo bloqueado hasta verificar el destino, además del límite SMTP observado. No afirmar correo real validado, acceso completamente listo ni liberación productiva.
+
+
+## MTEST-A03 — acceso por correo autorizado (2026-11-04)
+
+Usuario pide desactivar MFA y conservar solo verificación por correo de Supabase, e identifica expresamente el correo administrador. El sitio privado existente ya usa el nuevo flujo: código o enlace nativo, sin contraseña ni TOTP. [Acceso, cambios y verificación](docs/prueba-real/ACCESO_CORREO.md). UUID/rol/vínculos conservados, sesiones anteriores revocadas, política SQL y BFF alineadas. Sin nueva fase, merge/main/Pages ni liberación productiva. Las referencias MFA de MTEST-A02 son históricas para su publicación y quedan sustituidas en este laboratorio.
+
+
 ## MTEST-A01 — prueba temporal conectada (2026-11-04)
 
 Usuario: «vamos hacer una prueba real en sitio temporal conectado con la base de datos real prepara todo»; precisa Supabase **inventarioTI2 con datos de prueba**, autoriza **crear un entorno virtual** y elige **la interfaz modernizada completa**. Se implementa un repositorio PostgreSQL de laboratorio separado del destino SQLServer, reutilizando las vistas y el BFF existentes, con configuración explícita, migración/semilla privadas y paquete de contenedor conectado. [Guía y alcance](docs/PRUEBA_REAL_SUPABASE.md), [resultado y pendientes](docs/prueba-real/RESULTADO.md).

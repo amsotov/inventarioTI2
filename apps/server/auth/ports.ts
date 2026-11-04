@@ -1,6 +1,10 @@
 export type Tokens = { access_token: string; refresh_token: string };
-export type Identity = Tokens & { userId: string; aal: 'aal1' | 'aal2' };
+export type Identity = Tokens & { userId: string; aal: 'aal1' | 'aal2'; email?: string; emailConfirmed?: boolean };
 export interface Provider {
+  sendEmailLink?(email:string,verifier:string,redirectTo:string):Promise<void>;
+  exchangeEmailLink?(code:string,verifier:string):Promise<Identity>;
+  sendEmailOtp?(email: string): Promise<void>;
+  verifyEmailOtp?(email: string, code: string): Promise<Identity>;
   login(email: string, password: string): Promise<Identity>;
   validate(tokens: Tokens): Promise<Identity>;
   factors(tokens: Tokens): Promise<{id: string; factorType: string}[]>;
@@ -11,8 +15,8 @@ export interface Provider {
   logout(tokens: Tokens): Promise<void>;
 }
 export type Account = { id: string; correo: string; proveedor_ref: string | null; rol: 'administrador' | 'lectura'; estado: string; version_autorizacion: string; credencial_lista: boolean };
-export type Session = { accountId: string; version: string; created: number; activity: number; mfa: boolean; csrf: string; vault: string; revoked: boolean };
-export type Intent = { accountId: string; kind: 'invite' | 'recovery'; expires: number; state: 'pending' | 'processing' | 'completed' | 'uncertain' | 'superseded'; vault: string };
+export type Session = { accountId: string; version: string; created: number; activity: number; mfa: boolean; method?: 'email-otp'; emailVerified?: boolean; csrf: string; vault: string; revoked: boolean };
+export type Intent = { accountId: string; kind: 'invite' | 'recovery' | 'email-login'; expires: number; state: 'pending' | 'processing' | 'completed' | 'uncertain' | 'superseded' | 'consumed'; vault: string };
 export interface Store {
   account(emailOrId: string): Promise<Account | undefined>;
   saveAccount(account: Account): Promise<void>;

@@ -41,7 +41,10 @@ async function initialize(envelope:string){
  await assertDatabaseRole(authPool,'inventario_auth');await assertDatabaseRole(business,'inventario_runtime');
  if((await business.query('select laboratorio_ti.version() v')).rows[0].v!=='postgres-lab-v1')throw Error('WRONG_DATABASE');
  const publicKey=Deno.env.get('SUPABASE_ANON_KEY')||JSON.parse(Deno.env.get('SUPABASE_PUBLISHABLE_KEYS')||'{}').default;
- const auth=new AuthService(new Postgres(authPool),new SupabaseProvider(`https://${PROJECT}.supabase.co`,publicKey,serverKey),new Vault(c.encryptionKey),c.origin);
+ const provider=new SupabaseProvider(`https://${PROJECT}.supabase.co`,publicKey,serverKey);
+ const sendEmailLink=provider.sendEmailLink.bind(provider);
+ provider.sendEmailLink=async(...args)=>{if(!deployment.emailRedirectReady)throw Error('EMAIL_REDIRECT_REQUIRED');return sendEmailLink(...args);};
+ const auth=new AuthService(new Postgres(authPool),provider,new Vault(c.encryptionKey),c.origin,undefined,'email-otp');
  const security=new Authorization(auth,business);
  // Mismo renderer y selección v1; sin Worker threads (no disponibles en Edge).
  const reports=new Reports(security,async(report,format)=>Buffer.from(await render({report,format,font:format==='pdf'?gunzipSync(Buffer.from(fontGzip,'base64')):undefined})));
@@ -54,7 +57,7 @@ Deno.serve(async req=>{
  if(!timingSafeEqual(createHash('sha256').update(token).digest(),Buffer.from(deployment.gatewayHash,'hex')))return denied();
  const envelope=req.headers.get('x-inventario-runtime');if(!envelope||envelope.length>12000)return denied();
  const u=new URL(req.url);u.searchParams.delete('forceFunctionRegion');const path=u.pathname.replace(/^\/inventarioti2-prueba-runtime(?=\/|$)/,'');
- if(!/^\/(api\/v[12]\/|acceso(?:\.js)?$)/.test(path))return new Response(null,{status:404});
+ if(!/^\/(api\/v[12]\/|acceso(?:\.js)?$|auth\/callback(?:\.js)?$)/.test(path))return new Response(null,{status:404});
  try{
   initialized??=initialize(envelope).catch(e=>{initialized=undefined;throw e});const {server,reports}=await initialized;
   const headers:Record<string,string>={};for(const name of ['accept','content-type','origin','cookie','x-csrf-token','idempotency-key','if-match']){const v=req.headers.get(name);if(v)headers[name]=v;}

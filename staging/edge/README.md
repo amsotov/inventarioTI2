@@ -1,5 +1,7 @@
 # Adaptador de prueba privado para Supabase Edge
 
+> Estado vigente MTEST-A03: [acceso por correo sin MFA](../../docs/prueba-real/ACCESO_CORREO.md). Las referencias de MFA/acceso automático que siguen documentan la publicación anterior.
+
 Reutiliza Fastify.inject, AuthService, SupabaseProvider, Authorization, Inventory y PostgresLabModelBackend del servidor existente. No arranca HTTP Node, usa pools SQL de inventario_auth/runtime con TLS verificado y conserva las comprobaciones de rol, MFA, CSRF, Origin, idempotencia, RLS y transacción.
 
 `index.ts` es fuente para Deno; no se incorpora al arranque Node ni al demo. Compilar primero con `npm run build`; `node scripts/staging/edge-package.mjs <metadata-publica.json> <salida.json>` empaqueta los JS y las versiones exactas del lock. Los metadatos contienen deploymentId, origin y gatewayHash SHA256, nunca el token. La fuente DejaVu se comprime/integra como módulo con su licencia para PDF; el renderer normal conserva Worker threads y ruta local de fuente. Reports.whenIdle permite EdgeRuntime.waitUntil sin activar el worker de notificaciones.

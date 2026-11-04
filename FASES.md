@@ -1,5 +1,15 @@
 # FASES.md — Plan y control de avance
 
+## MTEST-A04 — visor integrado y acceso por clic de correo (2026-11-04)
+
+El usuario autoriza el visor de Codex y pide sesión automática al pulsar el enlace del correo. Publicados callback PKCE, activación del intento original por cookie particionada y marcos limitados a orígenes de OpenAI. Sin formulario de códigos/MFA. [Estado y bloqueo técnico](docs/prueba-real/ACCESO_CORREO.md): Supabase aún redirige a localhost; se debe guardar URL Configuration. La autorización está dada, pero el conector carece de esa operación. Envío nuevo bloqueado hasta verificar el destino, además del límite SMTP observado. No afirmar correo real validado, acceso completamente listo ni liberación productiva.
+
+
+## MTEST-A03 — acceso por correo autorizado (2026-11-04)
+
+Usuario pide desactivar MFA y conservar solo verificación por correo de Supabase, e identifica expresamente el correo administrador. El sitio privado existente ya usa el nuevo flujo: código o enlace nativo, sin contraseña ni TOTP. [Acceso, cambios y verificación](docs/prueba-real/ACCESO_CORREO.md). UUID/rol/vínculos conservados, sesiones anteriores revocadas, política SQL y BFF alineadas. Sin nueva fase, merge/main/Pages ni liberación productiva. Las referencias MFA de MTEST-A02 son históricas para su publicación y quedan sustituidas en este laboratorio.
+
+
 ## MTEST-A02 — entorno conectado privado activo (2026-11-04)
 
 Usuario autoriza «realizar los cambios para ver el entorno virtual funcionado» y retoma la ejecución. Se habilitan dos identidades sintéticas, el backend existente sobre Supabase Edge y hosting Sites **solo propietario**, con interfaz modernizada real. [Acceso y comprobaciones](docs/prueba-real/ENTORNO_ACTIVO.md). El portal `/prueba` inicia el login existente con secretos solo de servidor; MFA del administrador sigue obligatorio. No cambiar audiencia ni presentar este laboratorio como liberación productiva. M8-R01/SQLServer y reglas pendientes permanecen abiertos; sin worker/envíos ni nueva fase. El estado MTEST-A01 de preparación que sigue es histórico.

@@ -3,7 +3,7 @@ import {cpSync,mkdirSync,readFileSync,rmSync,writeFileSync,readdirSync} from 'no
 import {createHash} from 'node:crypto';
 import {join} from 'node:path';
 // Recompilar explícitamente sin transporte demo ni base de Pages.
-execFileSync('npm',['run','build'],{stdio:'inherit',env:{...process.env,VITE_DEMO_MODE:'false',VITE_PAGES_PREVIEW:'false',VITE_BASE_PATH:'/',VITE_MODERNIZATION_ENTRY:'true'}});
+execFileSync('npm',['run','build'],{stdio:'inherit',env:{...process.env,VITE_DEMO_MODE:'false',VITE_PAGES_PREVIEW:'false',VITE_BASE_PATH:'/',VITE_MODERNIZATION_ENTRY:'true',VITE_EMAIL_AUTH:process.env.AUTHENTICATION_METHOD==='email-otp'?'true':'false'}});
 const target='staging/release';rmSync(target,{recursive:true,force:true});mkdirSync(target+'/dist/apps',{recursive:true});
 for(const file of ['package.json','package-lock.json'])cpSync(file,target+'/'+file);
 cpSync('dist/apps/server',target+'/dist/apps/server',{recursive:true});cpSync('dist/web',target+'/dist/web',{recursive:true});

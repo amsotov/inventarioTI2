@@ -57,3 +57,7 @@ Configuración, publicación y verificación pública de esta demo completadas. 
 M9-A02: usuario aprueba F9 documental y solicita ver Pages. Portada comprobada en https://amsotov.github.io/inventarioTI2/ con HTTP200, Chromium y banner Modo demo visible, sin errores JavaScript. Workflow41648235275 completado/success para main511b99d. No se lanzó otro workflow ni se promovieron ramas de migración. [Registro y evidencia](migracion/CIERRE_FASE9_PAGES.md).
 
 Aclaración de M9-R01: esta documentación y README ya incluían build estático demo Node20.20.2 satisfactorio; Node24 sigue siendo el requisito del servidor normal. La diferencia de runtimes merece revisión en un futuro paquete, pero no demuestra fallo ni impide abrir la demo existente. Las ramas de modernización conservan sus bloqueos y no están desplegadas aquí.
+
+## Publicación de modernización — MPUB-A01
+
+Usuario «Publica los cambios de modernización» autoriza integrar y publicar Pages. [Plan y validación](PUBLICACION_MODERNIZACION.md). El build vigente usa Node24.19.0 y agrega acceso a modernizacion/, con prototipo F3 y capturas F7. Son revisión visual con datos ficticios; el modo demo no activa la API v2 ni conecta SQLServer. VITE_PAGES_PREVIEW=true selecciona el acceso de publicación y scripts/build-pages.mjs copia únicamente las fuentes visuales aprobadas a dist/web. El estado real del deploy se verifica en Actions/publicacion.json, sin inferirlo del build local.

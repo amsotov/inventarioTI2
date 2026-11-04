@@ -1,5 +1,13 @@
 # Cambios
 
+## 2026-11-03 — Publicación de modernización en Pages, MPUB-A01
+
+- Autoriza integración/publicación estática del código aprobado y mantiene los bloqueos operativos del destino.
+- Agrega acceso a revisión: prototipo navegable y seis capturas de la interfaz implementada, sin alterar las fuentes.
+- Alinea workflow a Node24.19.0, genera manifiesto público con SHA/hashes y amplía el recorrido de publicación en Chromium.
+- Conserva demo existente, Auth, v2 cerrada, backend y SQL sin activación remota.
+
+
 ## 2026-11-03 — Migración Fase 9: preparación documental EN_REVISION
 
 - M9-A01 acepta auditoría F8 con pendientes e inicia documentación/preparación; liberación NO_GO.

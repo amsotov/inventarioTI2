@@ -1,5 +1,12 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## MPUB-A01 — publicación de modernización autorizada
+
+Usuario: «Publica los cambios de modernización». Autoriza integrar el código aprobado en main y ejecutar la publicación estática de GitHub Pages. Se prepara PR con CI antes de integrar y se comprobará el SHA efectivo en publicacion.json y el workflow de despliegue. No repetir confirmación de esta publicación.
+
+La demo incluye acceso a [Modernización · vista previa](https://amsotov.github.io/inventarioTI2/modernizacion/), prototipo navegable F3 y seis capturas de la interfaz F7. Se identifican como propuesta/capturas; no hay conexión a la base de destino ni dobles v2 incorporados al servidor. Se conservan Auth, datos/esquema y barreras SQL. La autorización de Pages no configura Auth, aplica SQL, habilita workers/envíos, contrata servicios o acredita operación de SQLServer. F9 documental sigue aceptada y las matrices anteriores son snapshots históricos. [Plan y verificación](docs/PUBLICACION_MODERNIZACION.md).
+
+
 ## M9-A02 — Fase 9 aprobada y consulta de Pages
 
 Usuario: «Apruebo fase 9 quiero ver la publicación GitHub Pages». Acepta la entrega documental de2376a580926dadb1af363f94d3ff74f05f377d34: **FASE9 COMPLETADA_DOCUMENTAL**, con pendientes técnicos conservados. El modelo de destino sigue NO_GO; esta consulta no crea una fase10 ni pide integrar ramas o sustituir el sitio publicado.
@@ -209,15 +216,16 @@ La navegación existente ya usa fragmentos (`#bienes`, `#funcionarios`, `#report
 Para compilar como Pages (variables de entorno; ejemplo de shell POSIX):
 
 ```sh
-VITE_DEMO_MODE=true VITE_BASE_PATH=/inventarioTI2/ npm run build
+VITE_DEMO_MODE=true VITE_PAGES_PREVIEW=true VITE_BASE_PATH=/inventarioTI2/ npm run build
+VITE_DEMO_MODE=true VITE_PAGES_PREVIEW=true node scripts/build-pages.mjs
 npx vite preview apps/web --config vite.config.js --outDir ../../dist/web --base /inventarioTI2/
 ```
 
-Abre `http://localhost:4173/inventarioTI2/`. El resultado público es **`dist/web`**, no todo `dist` (que también contiene el servidor). `vite.config.js` lee `VITE_BASE_PATH`, con `/` por defecto; Vite ajusta los assets y los imports dinámicos a esa base. No hay imágenes, fuentes ni recursos remotos en la UI actual. Para futuros recursos de `public/`, utiliza `import.meta.env.BASE_URL`; para recursos de `src/`, utiliza imports de Vite.
+Abre `http://localhost:4173/inventarioTI2/`. El resultado público es **`dist/web`**, no todo `dist` (que también contiene el servidor). `vite.config.js` lee `VITE_BASE_PATH`, con `/` por defecto; Vite ajusta los assets y los imports dinámicos a esa base. La revisión de modernización copia seis capturas sintéticas y el prototipo ya aprobado; todos los recursos son locales al sitio. Para futuros recursos de `public/`, utiliza `import.meta.env.BASE_URL`; para recursos de `src/`, utiliza imports de Vite.
 
-En GitHub: **Settings > Pages > Build and deployment > Source: GitHub Actions**. El workflow [deploy-demo.yml](.github/workflows/deploy-demo.yml) compila con Node 20 y publica solo `dist/web` al hacer push a `main` o al ejecutarlo manualmente desde Actions. La URL prevista es `https://amsotov.github.io/inventarioTI2/`. Revisa que el nombre del repositorio coincida con `VITE_BASE_PATH`. El entorno `github-pages` puede requerir aprobación según las reglas del repositorio. Crear el PR no activa Pages ni publica el sitio; después de integrarlo en `main`, el workflow hará la publicación si Pages está configurado.
+En GitHub: **Settings > Pages > Build and deployment > Source: GitHub Actions**. El workflow [deploy-demo.yml](.github/workflows/deploy-demo.yml) compila con Node 24.19.0 y publica solo `dist/web` al hacer push a `main` o al ejecutarlo manualmente desde Actions. La URL prevista es `https://amsotov.github.io/inventarioTI2/`. Revisa que el nombre del repositorio coincida con `VITE_BASE_PATH`. El entorno `github-pages` puede requerir aprobación según las reglas del repositorio. Crear el PR no activa Pages ni publica el sitio; después de integrarlo en `main`, el workflow hará la publicación si Pages está configurado.
 
-El servidor normal mantiene su requisito **Node 24**, autenticación y API; `npm run build` sin `VITE_DEMO_MODE=true` conserva ese modo. El build estático de Pages se ha comprobado con Node 20.20.2; `npm ci` en Node 20 emite avisos de engines del servidor y sus dependencias, que no se ejecutan en la demo. No uses Node 20 para operar el servidor normal. Las variables VITE son públicas y se fijan al compilar: nunca incluyas secretos ni uses una compilación demo para operar datos reales.
+El servidor normal mantiene su requisito **Node 24**, autenticación y API; `npm run build` sin `VITE_DEMO_MODE=true` conserva ese modo. El workflow vigente usa Node 24.19.0. Históricamente, el build estático también se comprobó con Node 20.20.2; `npm ci` en Node 20 emite avisos de engines del servidor y sus dependencias, que no se ejecutan en la demo. No uses Node 20 para operar el servidor normal. Las variables VITE son públicas y se fijan al compilar: nunca incluyas secretos ni uses una compilación demo para operar datos reales.
 
 Prueba de navegador de la demo, con `npm run demo` activo en otra terminal:
 
@@ -225,7 +233,7 @@ Prueba de navegador de la demo, con `npm run demo` activo en otra terminal:
 # Chromium instalado; ruta ajustable con CHROMIUM_PATH.
 npm run test:demo
 # Contra el build estático servido bajo la base:
-DEMO_URL=http://localhost:4173/inventarioTI2/ npm run test:demo
+DEMO_PUBLICATION_CHECK=true DEMO_URL=http://localhost:4173/inventarioTI2/ npm run test:demo
 ```
 
 El ensayo comprueba CRUD de bienes/funcionarios, asignación/traslado/historia, roles, descargas XLSX/PDF con contenido y recarga por hash, y falla ante solicitudes a API/servicios externos. No requiere Docker. El modo normal conserva sus suites `npm test` y `npm run test:ui`, con PostgreSQL sintético/Docker.

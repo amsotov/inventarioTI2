@@ -313,6 +313,7 @@ function App() {
             </a>
           ))}
           {!DEMO_MODE && <a href="#modelo/equipos" aria-current={modelView?"page":undefined}>Equipos y relaciones</a>}
+          {DEMO_MODE && import.meta.env.VITE_PAGES_PREVIEW === 'true' && <a href={import.meta.env.BASE_URL + 'modernizacion/'}>Modernización · vista previa</a>}
         {canWrite && <a href="#administracion" aria-current={view==="administracion"?"page":undefined}>Administración</a>}
           <a href="#reportes" aria-current={view==='reportes'?'page':undefined}>Reportes y buscador</a>
         </nav>

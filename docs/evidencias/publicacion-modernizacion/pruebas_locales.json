@@ -1,0 +1,18 @@
+{
+  "autorizacion": "MPUB-A01",
+  "literal": "Publica los cambios de modernización",
+  "base_git": "261088799b2a342d76dbb37fe47b8978739d61e6",
+  "build_normal": "APROBADA",
+  "build_pages": "APROBADA",
+  "empaquetado": "APROBADA_22_ARCHIVOS_MAS_MANIFIESTO",
+  "chromium_demo_y_revision": "APROBADA",
+  "api_externa": "CERO_SOLICITUDES",
+  "backend_o_db_desplegados": false,
+  "ci_remoto_y_pages": "PENDIENTES_OBSERVACION_TRAS_PR_MERGE",
+  "logs": {
+    "build-pages.log": "be730f0f4c0c61ddf8447d80c25ab6676bdc7d47c13f028a6b245bf76cc998ab",
+    "build-normal.log": "402e31ba79201b1f45a7c248d6ca4131243b6b383c8b86809b573d5d7212b452",
+    "demo-local.log": "5b13e75ec5dac585e9a1f720714cd5f3462ceebf49863b060143bead0cea9bfb",
+    "package-pages.log": "ac3bde0296dd717fd2a98d83099af8aec7ad926992b8f3a6907939b494609e29"
+  }
+}

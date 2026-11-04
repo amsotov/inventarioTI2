@@ -1,0 +1,15 @@
+{
+  "reader": {
+    "list": true,
+    "equipment": 7,
+    "reload": true,
+    "session": true,
+    "pageErrors": 0
+  },
+  "admin": {
+    "mfa": true,
+    "edit": true,
+    "reload": true,
+    "pageErrors": 0
+  }
+}

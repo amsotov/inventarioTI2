@@ -1,0 +1,14 @@
+[
+  {
+    "format": "pdf",
+    "status": 200,
+    "bytes": 13165,
+    "signatureValid": true
+  },
+  {
+    "format": "xlsx",
+    "status": 200,
+    "bytes": 3895,
+    "signatureValid": true
+  }
+]

@@ -1,6 +1,6 @@
 # Entregables de la migración
 
-**Estado vigente:** Fases 0–5 aprobadas; [Fase 6](06_ADAPTACION_BACKEND.md) EN_PROGRESO con integración/escrituras SQL Server BLOQUEADAS. Fase 7 NO AUTORIZADA. M6-A02/A03 aprobadas: Auth/soporte, Unicode/UTC. Entrega parcial de código y pruebas, sin cierre de F6. Verificador vigente: `python3 docs/migracion/verificar_fase6.py`. Las entregas y verificadores siguientes conservan sus estados históricos y corresponden a sus commits, no al árbol enmendado actual.
+**Estado vigente:** M7-A01 acepta la entrega parcial F6 y autoriza [Fase 7 visual](07_ADAPTACION_VISUAL.md), EN_REVISION. [Cobertura](07_COBERTURA_VISUAL.csv), [pruebas](evidencias/fase7/pruebas.json), [capturas](evidencias/fase7/navegador.json). Persistencia/SQL Server continúan bloqueados; no F8. Verificador actual: `python3 docs/migracion/verificar_fase7.py`. Entregas y estados anteriores se conservan como historia.
 
 Esta carpeta recibirá los informes y matrices generados por Codex durante las fases autorizadas del prompt en `../../prompts/PROMPT_MAESTRO_MIGRACION_INVENTARIOTI_CODEX.md`.
 
@@ -63,3 +63,7 @@ M5-A01 «apruebo fase 4 inicia fase 5» acepta `9f84fcd`; Fases 0–4 COMPLETADA
 ## M6-A01/A02/A03 — adaptación de backend en progreso
 
 [Informe vigente](06_ADAPTACION_BACKEND.md), [pruebas](evidencias/fase6/pruebas.json), [enmiendas](evidencias/fase6/enmiendas.json) y [linaje](evidencias/fase6/linaje.json). Repositorio actual desacoplado; frontera 18 contratos/27 schemas; dos lecturas de catálogos SQL Server por puerto y sonda 117 columnas. Cero escrituras de destino implementadas y sin instancia real. Candidato 0.6.0-review.1 con Unicode/UTC/hash nullable, cuatro barreras intactas. No frontend, merge, deploy o cambios Supabase remoto. Continuar F6 tras reglas/soporte/instancia; F7 no autorizada.
+
+## M7-A01 — adaptación visual para revisión
+
+[Informe F7](07_ADAPTACION_VISUAL.md): React existente con nueva área de equipos/relaciones, cuatro fichas técnicas, historia, mantenciones y pertenencias; 17 contratos v2 usados, reportes/perfiles v1 conservados. M7-C01 extensión de lectura compatible para editar sin perder datos. Main no activa v2, prueba positiva usa persistencia doble y la ausencia de capacidad se muestra expresamente. F7 EN_REVISION; SQL Server/soporte/escrituras y reglas siguen pendientes. Sin main, merge, deploy o cambios remotos.

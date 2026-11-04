@@ -1,5 +1,13 @@
 # Cambios
 
+## 2026-11-03 — Migración Fase 7: adaptación visual EN_REVISION
+
+- M7-A01 acepta entrega parcial F6 e inicia interfaz; persisten bloqueos del destino.
+- Reutiliza React/shell/campos y agrega equipos/relaciones con 17 contratos v2, fichas por cuatro subtipos, historia, mantenciones y pertenencias.
+- M7-C01 lectura compatible con siete atributos opcionales; edición cerrada si falta información.
+- Conserva UUID/CSRF/ETag y reintento estable; estados y capturas responsive con ambas funciones de acceso.
+- Reportes, acceso, perfiles y demo actuales conservados; no backend ficticio en aplicación, SQL aplicado, main/merge/despliegue o F8.
+
 ## 2026-11-03 — Migración Fase 6: incremento parcial de backend
 
 - M6-A01 acepta F5/inicia F6; M6-A02/A03 aprueban Auth/soporte y Unicode/UTC.

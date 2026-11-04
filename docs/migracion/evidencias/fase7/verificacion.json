@@ -1,0 +1,14 @@
+{
+  "fase": 7,
+  "base_git": "1d7fac011780651f2b21516265b76ab58d631747",
+  "estado": "EN_REVISION_VISUAL",
+  "vistas_trazadas": 11,
+  "contratos_ui_observados": 17,
+  "casos_node": 219,
+  "capturas": 6,
+  "auditorias_axe": 2,
+  "archivos_preservados": 372,
+  "artefactos_entrega": 47,
+  "integracion_sqlserver": "BLOQUEADA",
+  "fase8": "NO_AUTORIZADA"
+}

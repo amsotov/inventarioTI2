@@ -136,3 +136,8 @@ SQL Server 2016/13.x/compatibilidad 130 y Supabase/PostgreSQL inventarioTI2 conf
 ## Migración Fase 6 — incremento parcial
 
 M6-A01/A02/A03. [Especificación y cobertura](../docs/migracion/06_ADAPTACION_BACKEND.md), [contratos ejecutables](../apps/server/modernization/contract.ts) cotejados con F3 y [pruebas](../docs/migracion/evidencias/fase6/pruebas.json). Repositorio legacy adaptado y frontera nueva; dos lecturas por puerto, cero escrituras de destino. Soporte físico/instancia/reglas pendientes. F6 EN_PROGRESO; F7 no autorizada. Spec Kit no instalado ni simulado.
+
+
+## Migración Fase 7 — M7-A01
+
+[Informe/especificación](../docs/migracion/07_ADAPTACION_VISUAL.md), [matriz](../docs/migracion/07_COBERTURA_VISUAL.csv), [pruebas](../docs/migracion/evidencias/fase7/pruebas.json). Cliente v2 real sobre framework/CSS existentes; repositorio de destino doble únicamente en pruebas. M7-C01 lectura aditiva, F3 original preservado. EN_REVISION visual, integración SQL Server bloqueada; F8 no autorizada. Spec Kit no instalado ni simulado.

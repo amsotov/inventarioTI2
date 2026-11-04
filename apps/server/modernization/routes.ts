@@ -4,6 +4,7 @@ import addFormatsModule from 'ajv-formats';
 import { AuthError } from '../auth/service.js';
 import { requirePermission, type Permission } from '../security/policy.js';
 import { contract } from './contract.js';
+import { modelReadSchemas } from './read-contract.js';
 import type { ModelBackend, ModelAccess, ModelContext, ModelRequest } from './ports.js';
 
 type Schema = Record<string, any>;
@@ -43,7 +44,7 @@ export function modernizationRoutes(server: FastifyInstance, access: ModelAccess
   if(access.engine!==backend.engine)throw new Error('MIXED_MODEL_TRANSACTION_NOT_ALLOWED');
   const ajv=new Ajv({strict:false,allErrors:true,coerceTypes:false,removeAdditional:false,useDefaults:false});
   addFormats(ajv);
-  const definitions=refs(contract.schemas);
+  const definitions=refs(modelReadSchemas(contract.schemas));
   const schema={$id:root,definitions};ajv.addSchema(schema);server.addSchema(schema);
   const known=new Set(contract.operaciones.map(x=>x.id));
   for(const id of backend.operations)if(!known.has(id as any))throw new Error('Unknown model operation capability');

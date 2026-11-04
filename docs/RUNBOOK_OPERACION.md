@@ -81,3 +81,8 @@ inventarioTI pausado por autorización y confirmado INACTIVE; no reactivar autom
 ## Modernización Fase 6 — activación restringida
 
 Seguir [informe F6](migracion/06_ADAPTACION_BACKEND.md). INVENTORY_BACKEND=postgres por defecto; sqlserver2016 falla antes de crear pools. v2 requiere inyección explícita y no está registrada en main. No retirar barreras, elegir backend incompleto ni aplicar SQL Server a Supabase. No se cambió configuración remota ni habilitó envío. Para revertir este incremento de código en entorno autorizado, volver al commit padre 27cae1f con sus dependencias, sin rollback de datos: F6 no ejecuta migraciones remotas. No desplegar por esta instrucción.
+
+
+## Migración Fase 7 — interfaz sin activación de destino
+
+[Informe F7](migracion/07_ADAPTACION_VISUAL.md). Main conserva PostgreSQL/v1, SQL Server falla cerrado; nuevo módulo informa no habilitado si no hay backend v2. No registrar ModelContractDouble fuera de tests ni poner datos v1 como respuesta v2. No hubo migración remota: rollback de este incremento en entorno autorizado es volver a 1d7fac0 con sus dependencias, sin deshacer datos. No desplegar por esta guía.

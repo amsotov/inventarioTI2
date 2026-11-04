@@ -252,3 +252,8 @@ Se retoma Fase 5 («remota donde quedaste»), dentro del proyecto aislado/sinté
 ## M6-A01/A02/A03 — modernización del backend
 
 Usuario acepta F5 e inicia F6; aprueba Auth externo/soporte y Unicode/UTC. Resoluciones, alcance exacto y condiciones en [informe](migracion/06_ADAPTACION_BACKEND.md) y [enmiendas](migracion/evidencias/fase6/enmiendas.json). M1-D02 y conservación M1-D08/09 ratificadas en ese alcance; M1-D07/15 ratificadas para tipos/UTC, no para todos sus pendientes. F6 parcial: escrituras/soporte SQL Server e integración pendientes; no F7.
+
+
+## M7-A01 / M7-C01 — interfaz e integridad de edición
+
+M7-A01 acepta incremento parcial F6 e inicia F7; no ratifica reglas pendientes ni habilita SQL Server. M7-C01 extiende opcionalmente siete campos de lectura ya definidos en atributos para no borrar información ausente; contrato requerido/peticiones/permisos sin cambios. [Informe y límites](migracion/07_ADAPTACION_VISUAL.md). No formulario arbitrario de perfiles ni mezcla de cifras de modelos; v1 preservada.

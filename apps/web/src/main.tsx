@@ -1,3 +1,5 @@
+import { Field } from "./fields";
+import { ModelWorkspace, protectModelNavigation } from "./model";
 import { DEMO_MODE } from "./demoMode";
 import { Processes, protectProcessNavigation } from "./processes";
 import { Reports, protectReportNavigation } from "./reports";
@@ -43,33 +45,6 @@ const columns: Record<Resource, string[]> = {
 function route() {
   return location.hash.slice(1) || "bienes";
 }
-function Field({
-  name,
-  label,
-  value = "",
-  type = "text",
-  required = false,
-}: {
-  name: string;
-  label: string;
-  value?: string;
-  type?: string;
-  required?: boolean;
-}) {
-  return (
-    <label>
-      {label}
-      {required ? " *" : ""}
-      <input
-        name={name}
-        type={type}
-        defaultValue={value}
-        required={required}
-        maxLength={2000}
-      />
-    </label>
-  );
-}
 function App() {
   const [session, setSession] = useState<Session | null>(null),
     [checking, setChecking] = useState(true),
@@ -81,7 +56,7 @@ function App() {
   const generation = useRef(0);
   useEffect(() => {
     const change = () => {
-      if (protectProcessNavigation() || protectReportNavigation()) return;
+      if (protectProcessNavigation() || protectReportNavigation() || protectModelNavigation()) return;
       generation.current++;
       setView(route());
       setError("");
@@ -298,6 +273,7 @@ function App() {
   useEffect(() => {
     if (error) focus.current?.focus();
   }, [error]);
+  const modelView = view === "modelo" || view.startsWith("modelo/");
   const canWrite = session?.rol === "administrador" && !session.mfaRequired;
   return (
     <>
@@ -336,6 +312,7 @@ function App() {
               {titles[r]}
             </a>
           ))}
+          {!DEMO_MODE && <a href="#modelo/equipos" aria-current={modelView?"page":undefined}>Equipos y relaciones</a>}
         {canWrite && <a href="#administracion" aria-current={view==="administracion"?"page":undefined}>Administración</a>}
           <a href="#reportes" aria-current={view==='reportes'?'page':undefined}>Reportes y buscador</a>
         </nav>
@@ -343,7 +320,7 @@ function App() {
       </aside>
       <main id="contenido" tabIndex={-1}>
         <header>
-          <span>Inventario / {view === 'resumen' ? 'Resumen' : view === 'reportes' ? 'Reportes' : view === "administracion" ? "Administración" : valid ? titles[resource] : "Acceso"}</span>
+          <span>Inventario / {modelView ? 'Equipos y relaciones' : view === 'resumen' ? 'Resumen' : view === 'reportes' ? 'Reportes' : view === "administracion" ? "Administración" : valid ? titles[resource] : "Acceso"}</span>
           {session && (
             <div>
               <span>
@@ -521,6 +498,8 @@ function App() {
           <Reports key={DEMO_MODE ? session.rol : undefined} summary={view==='resumen'} admin={canWrite} csrf={session.csrf} onExpired={()=>setSession(null)}/>
         ) : view === "administracion" ? (
           canWrite ? <Admin csrf={session.csrf} onExpired={()=>{setSession(null);}}/> : <section className="card"><h1>Acceso restringido</h1><p>No tienes permiso para administrar.</p></section>
+        ) : modelView ? (
+          <ModelWorkspace key={session.rol} view={view} csrf={session.csrf} canWrite={canWrite} onExpired={()=>setSession(null)}/>
         ) : !valid ? (
           <section className="card">
             <h1>Vista no disponible</h1>

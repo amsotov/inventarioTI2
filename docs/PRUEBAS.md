@@ -467,3 +467,8 @@ Hallazgo ACL: la revocación general dejó 9 funciones de otros propietarios; se
 ## Migración Fase 6 — frontera y regresión
 
 Evidencia nueva y límites en [pruebas F6](migracion/evidencias/fase6/pruebas.json), [informe](migracion/06_ADAPTACION_BACKEND.md) y [verificador vigente](migracion/verificar_fase6.py). HTTP v2 usa persistencia doble con Auth/RLS/transacción PG reales y proveedor doble. Regresión v1 se conserva; no hay integración SQL Server/gestión Auth real. Ensayos históricos intactos; verificadores anteriores corresponden a sus commits.
+
+
+## Migración Fase 7 — React, interacción y regresión
+
+[Resultados F7](migracion/evidencias/fase7/pruebas.json), [navegador](migracion/evidencias/fase7/navegador.json) e [informe](migracion/07_ADAPTACION_VISUAL.md). BFF/Auth/RLS PG reales y persistencia v2 doble; cuatro subtipos, reintento/conflicto, privacidad, mantenciones, pertenencias, fallback, tres tamaños/dos roles. No prueba de motor SQL Server o Auth/MFA gestionado. Evidencias anteriores conservadas, verificador vigente F7.

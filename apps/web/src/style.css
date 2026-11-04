@@ -340,3 +340,25 @@ code {
 .demo-banner label { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 body:has(.demo-banner) aside { top: 68px; }
 @media (max-width: 700px) { body:has(.demo-banner) aside { top: auto; } }
+
+.model-panel { min-width: 0; overflow-wrap: anywhere; }
+.model-panel nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.model-panel nav a { color: var(--teal); border: 1px solid #cbd9dd; }
+.model-panel nav a[aria-current] { color: white; }
+.model-panel textarea { width: 100%; max-width: 100%; min-height: 90px; padding: 10px; font: inherit; border: 1px solid #9caeb6; border-radius: 6px; }
+.model-panel fieldset { display: grid; gap: 16px; margin: 16px 0; }
+.model-panel legend { font-weight: 600; padding: 8px 0; }
+.model-panel .confirmation { display: flex; flex-direction: row; align-items: center; gap: 8px; }
+.model-panel input[type="checkbox"] { width: auto; min-height: 20px; }
+.model-panel .model-reference { display: grid; gap: 12px; min-width: 0; flex: 1 1 150px; }
+.model-panel .model-part { padding: 12px; border: 1px solid #dce4e7; border-radius: 8px; }
+.model-panel .table { max-width: 100%; }
+@media (max-width: 700px) { .model-panel .filters > * { flex-basis: 100%; } .model-panel .title { flex-wrap: wrap; } }
+
+.model-panel th { white-space: nowrap; }
+.model-panel td { min-width: 140px; }
+.model-panel .pagination span { white-space: nowrap; }
+@media (max-width: 700px) {
+  .model-panel .pagination { flex-wrap: wrap; justify-content: center; }
+  .model-panel .pagination span { order: -1; width: 100%; text-align: center; }
+}

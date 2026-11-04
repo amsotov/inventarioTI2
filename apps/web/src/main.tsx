@@ -43,7 +43,7 @@ const columns: Record<Resource, string[]> = {
   ],
 };
 function route() {
-  return location.hash.slice(1) || "bienes";
+  return location.hash.slice(1) || (DEMO_MODE ? "modelo/equipos" : "bienes");
 }
 function App() {
   const [session, setSession] = useState<Session | null>(null),
@@ -279,6 +279,7 @@ function App() {
     <>
       {DEMO_MODE && <div className="demo-banner" role="region" aria-label="Modo demo">
         <strong>Modo demo</strong> · Datos ficticios en memoria. Recargar reinicia los cambios.
+        <span>Modernización interactiva · sin conexión a bases de datos.</span>
         {session && <label>Rol demo <select aria-label="Rol demo" value={session.rol}
           disabled={busy || !!pending}
           onChange={(e) => void action(async () => {
@@ -302,6 +303,7 @@ function App() {
         </div>
         <p>Control de bienes computacionales</p>
         <nav aria-label="Principal">
+          {DEMO_MODE && <><a href="#modelo/equipos" aria-current={modelView?"page":undefined}>Equipos y relaciones</a><small>Inventario anterior · muestra independiente</small></>}
           <a href="#resumen" aria-current={view==='resumen'?'page':undefined}>Resumen</a>
           {resources.map((r) => (
             <a

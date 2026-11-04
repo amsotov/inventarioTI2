@@ -23,10 +23,13 @@ export async function api(
     throw new ApiError(response.status, body.code ?? "ERROR", body.requestId);
   return { body, etag: response.headers.get("etag") };
 }
-/** Transporte v2 explícito. La demo v1 nunca fabrica resultados del modelo nuevo. */
+/** Transporte real v2; en demo solo se carga la simulación local del navegador. */
 export async function modelApi(path: string, options: RequestInit = {}, csrf?: string) {
-  if (import.meta.env.VITE_DEMO_MODE === 'true') throw new ApiError(503,'MODEL_NOT_AVAILABLE');
   if (!/^[a-z][a-z0-9/-]*(?:\?.*)?$/i.test(path) || path.split('?')[0].includes('..')) throw new ApiError(400,'INVALID_REQUEST');
+  if (import.meta.env.VITE_DEMO_MODE === 'true') {
+    const {demoModelApi} = await import('./demoModel');
+    return demoModelApi(path, options);
+  }
   const response = await fetch('/api/v2/'+path, {
     ...options, credentials:'same-origin',
     headers:{...(options.body?{'Content-Type':'application/json'}:{}),...(csrf?{'X-CSRF-Token':csrf}:{}),...options.headers}

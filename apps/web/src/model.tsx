@@ -1,4 +1,5 @@
 import React,{useEffect,useRef,useState} from 'react';
+import {DEMO_MODE} from './demoMode';
 import {ApiError,message,modelApi} from './api';
 import {ModelForm,ReferenceSelect} from './model-form';
 import {ModelHistory,ModelTable,TechnicalDetail,type HistoryKind} from './model-history';
@@ -33,7 +34,7 @@ export function ModelWorkspace(props:Props) {
   </nav>
   {error&&<p role="alert" className="error">{error}</p>}
   {notice&&<p role="status" className="success">{notice}</p>}
-  <ModelView key={props.view} {...props} onStart={()=>setNotice('')} onSaved={(family,ref)=>{setNotice('Operación registrada. El aviso quedó pendiente de envío.');location.hash='#modelo/'+family+'/'+ref;}}/>
+  <ModelView key={props.view} {...props} onStart={()=>setNotice('')} onSaved={(family,ref)=>{setNotice(DEMO_MODE?'Cambio simulado en esta pestaña. No se envió ningún correo.':'Operación registrada. El aviso quedó pendiente de envío.');location.hash='#modelo/'+family+'/'+ref;}}/>
  </section>;
 }
 

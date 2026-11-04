@@ -1,5 +1,14 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## MPUB-FIX01 — corrección de la demo principal
+
+Usuario «No está actualizado el demo» corrige la publicación solicitada en MPUB-A01. Se comprobó que la portada pública seguía en Bienes: la entrega anterior añadió revisión/prototipo, pero no activó la interfaz moderna en la demo. Se corrige dentro de la autorización de publicación existente, sin otra fase ni nueva confirmación.
+
+La entrada demo abre ahora **Equipos y relaciones** (React implementado en F7), con catálogos, fichas, funcionarios/pertenencias, técnica por tipo, componentes, asignaciones/traspasos/historial y mantenciones sobre datos ficticios en memoria. El inventario anterior se conserva como muestra independiente. No hay HTTP/SDK/storage/DB en la simulación, no se importa el doble del backend de tests y la composición real del servidor sigue intacta. La integración empresarial SQLServer sigue pendiente.
+
+La publicación ejecuta un ensayo Chromium de la demo moderna antes de subir el artefacto, además del CI de la rama. [Corrección y alcance](docs/DEMO_MODERNIZADA.md). Los comprobantes/estados anteriores son snapshots de sus publicaciones y se preservan.
+
+
 ## MPUB-A01 — publicación de modernización autorizada
 
 Usuario: «Publica los cambios de modernización». Autoriza integrar el código aprobado en main y ejecutar la publicación estática de GitHub Pages. Se prepara PR con CI antes de integrar y se comprobará el SHA efectivo en publicacion.json y el workflow de despliegue. No repetir confirmación de esta publicación.

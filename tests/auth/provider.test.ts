@@ -1,3 +1,4 @@
+import{smtpCapture,mailActionLink}from'../helpers/smtp.js';
 import {bindTrialAccounts} from '../../ops/staging-bootstrap.js';
 import {PostgresLabModelBackend} from '../../apps/server/modernization/postgres-lab.js';
 import { test } from 'node:test';
@@ -26,14 +27,16 @@ test('adaptador real: GoTrue local, sin proyecto gestionado ni correo externo',a
  const suffix=randomUUID(),network='auth-net-'+suffix,pg='auth-db-'+suffix,auth='auth-provider-'+suffix;
  const password=randomBytes(24).toString('hex'),secret=randomBytes(48).toString('hex');
  let authPool:Pool|undefined,businessPool:Pool|undefined,application:ReturnType<typeof app>|undefined;
+ let smtp:Awaited<ReturnType<typeof smtpCapture>>|undefined;
  let pool:Pool|undefined;let gateway:ReturnType<typeof createServer>|undefined;
  docker('network','create',network);
  try{
   docker('run','-d','--name',pg,'--network',network,'-e','POSTGRES_PASSWORD='+password,'-p','127.0.0.1::5432',pgImage);
   const pgPort=Number(docker('port',pg,'5432/tcp').split(':').at(-1));pool=new Pool({host:'127.0.0.1',port:pgPort,user:'postgres',password,database:'postgres'});
   let ready=false;for(let n=0;n<100;n++){try{await pool.query('select 1');ready=true;break;}catch{await new Promise(r=>setTimeout(r,200));}}assert(ready);await pool.query('create schema auth');await pool.query('alter role postgres set search_path=auth,public');
-  const env:Record<string,string>={GOTRUE_API_HOST:'0.0.0.0',PORT:'9999',GOTRUE_API_PORT:'9999',API_EXTERNAL_URL:'http://localhost:9999',GOTRUE_DB_DRIVER:'postgres',GOTRUE_DB_DATABASE_URL:`postgres://postgres:${password}@${pg}:5432/postgres?sslmode=disable`,GOTRUE_SITE_URL:'https://inventario.test',GOTRUE_DISABLE_SIGNUP:'true',GOTRUE_JWT_SECRET:secret,GOTRUE_JWT_EXP:'3600',GOTRUE_JWT_ADMIN_ROLES:'service_role',GOTRUE_JWT_AUD:'authenticated',GOTRUE_EXTERNAL_EMAIL_ENABLED:'true',GOTRUE_MAILER_AUTOCONFIRM:'true',GOTRUE_MAILER_OTP_EXP:'86400',GOTRUE_MFA_ENABLED:'true',GOTRUE_MFA_TOTP_ENROLL_ENABLED:'true',GOTRUE_MFA_TOTP_VERIFY_ENABLED:'true'};
-  docker('run','-d','--name',auth,'--network',network,...Object.entries(env).flatMap(([k,v])=>['-e',k+'='+v]),'-p','127.0.0.1::9999',authImage);
+  smtp=await smtpCapture();
+  const env:Record<string,string>={GOTRUE_API_HOST:'0.0.0.0',PORT:'9999',GOTRUE_API_PORT:'9999',API_EXTERNAL_URL:'http://localhost:9999',GOTRUE_DB_DRIVER:'postgres',GOTRUE_DB_DATABASE_URL:`postgres://postgres:${password}@${pg}:5432/postgres?sslmode=disable`,GOTRUE_SITE_URL:'https://inventario.test',GOTRUE_URI_ALLOW_LIST:'https://inventario.test/auth/callback**',GOTRUE_SMTP_HOST:'host.docker.internal',GOTRUE_SMTP_PORT:String(smtp.port),GOTRUE_SMTP_ADMIN_EMAIL:'auth@example.invalid',GOTRUE_SMTP_SENDER_NAME:'Ensayo local',GOTRUE_SMTP_MAX_FREQUENCY:'0',GOTRUE_RATE_LIMIT_EMAIL_SENT:'1000',GOTRUE_DISABLE_SIGNUP:'true',GOTRUE_JWT_SECRET:secret,GOTRUE_JWT_EXP:'3600',GOTRUE_JWT_ADMIN_ROLES:'service_role',GOTRUE_JWT_AUD:'authenticated',GOTRUE_EXTERNAL_EMAIL_ENABLED:'true',GOTRUE_MAILER_AUTOCONFIRM:'true',GOTRUE_MAILER_OTP_EXP:'86400',GOTRUE_MFA_ENABLED:'true',GOTRUE_MFA_TOTP_ENROLL_ENABLED:'true',GOTRUE_MFA_TOTP_VERIFY_ENABLED:'true'};
+  docker('run','-d','--name',auth,'--network',network,'--add-host','host.docker.internal:host-gateway',...Object.entries(env).flatMap(([k,v])=>['-e',k+'='+v]),'-p','127.0.0.1::9999',authImage);
   const port=docker('port',auth,'9999/tcp').split(':').at(-1),upstream='http://127.0.0.1:'+port;
   ready=false;for(let n=0;n<100;n++){try{const r=await fetch(upstream+'/health');if(r.ok){ready=true;break;}}catch{}await new Promise(r=>setTimeout(r,200));}
   if(!ready) {const logResult=spawnSync('docker',['logs',auth],{encoding:'utf8'});const logs=logResult.stdout+logResult.stderr;throw new Error('GoTrue not ready: '+logs.slice(-2000).replaceAll(password,'[redacted]').replaceAll(secret,'[redacted]'));}
@@ -63,7 +66,8 @@ test('adaptador real: GoTrue local, sin proyecto gestionado ni correo externo',a
   await provider.complete(privileged.hash,'invite',adminPassword,privileged.userId);
   await pool.query('create role anon;create role authenticated');
   for(const file of readdirSync('supabase/migrations').sort())await pool.query(readFileSync('supabase/migrations/'+file,'utf8'));
-  for(const file of readdirSync('staging/supabase/migrations').filter(x=>x.endsWith('.sql')).sort())await pool.query(readFileSync('staging/supabase/migrations/'+file,'utf8'));
+  // Configuración histórica MFA para verificar compatibilidad; correo se instala después.
+  await pool.query(readFileSync('staging/supabase/migrations/20261104111238_modernizacion_laboratorio.sql','utf8'));
   await pool.query(readFileSync('staging/supabase/seed.sql','utf8'));
   const employeeRefs=(await pool.query("select id,ref from laboratorio_ti.referencias where tabla='FUNCIONARIOS' and id in (1,2)")).rows;
   const bootstrapClient=await pool.connect();
@@ -120,9 +124,31 @@ test('adaptador real: GoTrue local, sin proyecto gestionado ni correo externo',a
   assert.equal((await application.inject({url:'/api/v1/bienes',headers:{cookie}})).statusCode,401);
   await provider.logout(forged);
 
+  // Política vigente: Supabase/GoTrue + SMTP de captura + PKCE + BFF + PG, sin doble de identidad.
+  await pool.query(readFileSync('staging/supabase/migrations/20261104181614_autenticacion_correo.sql','utf8'));
+  await application.close();
+  const emailAuth=new AuthService(new Postgres(authPool),provider,vault,'https://inventario.test',undefined,'email-otp'),emailSecurity=new Authorization(emailAuth,businessPool);
+  application=app(emailAuth,'https://inventario.test',new Inventory(postgresInventory(emailSecurity)),undefined,emailSecurity,new PostgresLabModelBackend());
+  const beforeMail=smtp.messages.length;
+  const requested=await application.inject({method:'POST',url:'/api/v1/sesion/correo/solicitar',headers:origin,payload:{email:'admin-local@example.invalid'}});assert.equal(requested.statusCode,202,requested.body);
+  const flowCookie=String(requested.headers['set-cookie']).split(';')[0],flow=flowCookie.split('=')[1];
+  assert.equal((await application.inject({url:'/api/v2/equipos',headers:{cookie}})).statusCode,401);
+  const waiting=await application.inject({method:'POST',url:'/api/v1/sesion/correo/estado',headers:{...origin,cookie:flowCookie},payload:{}});assert.equal(waiting.statusCode,202,waiting.body);
+  const actionLink=mailActionLink(await smtp.next(beforeMail));
+  // Emula únicamente el clic sobre el correo local, sin red externa ni tokens impresos.
+  const clicked=await fetch(upstream+actionLink.pathname+actionLink.search,{redirect:'manual'});assert.equal(clicked.status,303);
+  const callback=new URL(clicked.headers.get('location')!);assert.equal(callback.origin,'https://inventario.test');assert.equal(callback.pathname,'/auth/callback');assert.equal(callback.searchParams.get('flow'),flow);const code=callback.searchParams.get('code');assert(code,'GoTrue debe devolver código PKCE');
+  const approved=await application.inject({method:'POST',url:'/api/v1/sesion/correo/autorizar',headers:origin,payload:{flow,code}});assert.equal(approved.statusCode,204,approved.body);
+  const claimed=await application.inject({method:'POST',url:'/api/v1/sesion/correo/estado',headers:{...origin,cookie:flowCookie},payload:{}});assert.equal(claimed.statusCode,200,claimed.body);assert.equal(claimed.json().status,'authenticated');
+  const emailCookie=(claimed.headers['set-cookie'] as string[]).find(c=>c.startsWith('__Host-inventario='))!.split(';')[0],emailCsrf=claimed.json().csrf;
+  const emailSession=(await pool.query('select datos from acceso.sesiones where huella=$1',[hash(emailCookie.slice('__Host-inventario='.length))])).rows[0].datos;assert.equal(emailSession.mfa,false);assert.equal(emailSession.method,'email-otp');assert.equal(emailSession.emailVerified,true);
+  const emailStatus=await application.inject({url:'/api/v1/sesion',headers:{cookie:emailCookie}});assert.equal(emailStatus.statusCode,200,emailStatus.body);assert.equal(emailStatus.json().mfaRequired,false);
+  const emailCreated=await application.inject({method:'POST',url:'/api/v2/equipos',headers:{...origin,cookie:emailCookie,'x-csrf-token':emailCsrf,'idempotency-key':randomUUID()},payload:{...modernBody,codigoOperativo:'GOTRUE-CORREO'}});assert.equal(emailCreated.statusCode,201,emailCreated.body);
+  const consumed=await application.inject({method:'POST',url:'/api/v1/sesion/correo/estado',headers:{...origin,cookie:flowCookie},payload:{}});assert.equal(consumed.statusCode,401);
+
  }catch(e){
    const logs=spawnSync('docker',['logs',auth],{encoding:'utf8'});
    for(const line of (logs.stdout+logs.stderr).split('\n')){try{const row=JSON.parse(line);if(row.level==='error'||row.level==='fatal')console.error(String(row.error??row.msg).replaceAll(password,'[redacted]').replaceAll(secret,'[redacted]').slice(0,500));}catch{}}
    throw e;
- }finally{await application?.close();await Promise.all([authPool?.end(),businessPool?.end()]);await new Promise<void>(r=>gateway?gateway.close(()=>r()):r());await pool?.end();try{docker('rm','-f','-v',auth);}catch{}try{docker('rm','-f','-v',pg);}catch{}docker('network','rm',network);}
+ }finally{await application?.close();await Promise.all([authPool?.end(),businessPool?.end()]);await new Promise<void>(r=>gateway?gateway.close(()=>r()):r());await pool?.end();await smtp?.close();try{docker('rm','-f','-v',auth);}catch{}try{docker('rm','-f','-v',pg);}catch{}docker('network','rm',network);}
 });

@@ -1,5 +1,10 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## MTEST-A05 — enlace de correo habilitado (2026-11-04)
+
+Usuario confirma «listo url y urls configurado». Verificación independiente: callback HTTPS aceptado y flow conservado. Se activa emailRedirectReady=true y BFF14; visor privado7 conserva cookies particionadas y orígenes autorizados. Solicitar el enlace desde el visor del usuario y pulsarlo en el correo activa esa sesión, sin MFA ni copiar códigos. [Estado y evidencia](docs/prueba-real/ACCESO_CORREO.md). El bloqueo de URL documentado en MTEST-A04 es histórico y está resuelto. SMTP conserva sus cuotas; no enviar intentos desde el navegador del agente para que el usuario los apruebe.
+
+
 ## MTEST-A04 — visor integrado y acceso por clic de correo (2026-11-04)
 
 El usuario autoriza el visor de Codex y pide sesión automática al pulsar el enlace del correo. Publicados callback PKCE, activación del intento original por cookie particionada y marcos limitados a orígenes de OpenAI. Sin formulario de códigos/MFA. [Estado y bloqueo técnico](docs/prueba-real/ACCESO_CORREO.md): Supabase aún redirige a localhost; se debe guardar URL Configuration. La autorización está dada, pero el conector carece de esa operación. Envío nuevo bloqueado hasta verificar el destino, además del límite SMTP observado. No afirmar correo real validado, acceso completamente listo ni liberación productiva.

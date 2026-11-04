@@ -21,7 +21,7 @@
   "recipient": "explicitly supplied by user; omitted from repository",
   "realEmailRequestAccepted": true,
   "recipientVerificationCompleted": "user action; not observed",
-  "backendVersion": 13,
+  "backendVersion": 14,
   "siteVersion": 7,
   "siteDeployment": "appgdep_6aeb7e26e274819187dbef7c914f3549",
   "envRevision": 2,
@@ -38,11 +38,20 @@
     "crossBrowserClick": true,
     "viewerAutomaticallyAuthenticated": true
   },
-  "emailRedirectReady": false,
-  "blocker": "Supabase Auth falls back to http://localhost:3000; connector cannot update URL Configuration",
-  "realMailAfterFinalFlow": "not requested while redirect is unconfigured",
+  "emailRedirectReady": true,
+  "blocker": null,
+  "realMailAfterFinalFlow": "must be requested from the recipient viewer, not an agent browser",
   "observedProviderErrors": [
     "otp_expired",
     "over_email_send_rate_limit"
-  ]
+  ],
+  "backendHash": "0981952e9d1f90508723b383292aa7637dc24ad2ecc626a399bb19d05be100a7",
+  "redirectVerified": true,
+  "flowQueryPreserved": true,
+  "ciPriorRun": {
+    "id": 41892395122,
+    "conclusion": "failure",
+    "cause": "MFA fixtures applied email-only authorization policy; fixtures and native email integration corrected"
+  },
+  "currentCi": "pending new run"
 }

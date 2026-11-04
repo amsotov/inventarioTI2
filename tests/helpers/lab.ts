@@ -1,6 +1,6 @@
 import {Pool} from 'pg';
 import {randomBytes} from 'node:crypto';
-import {readFileSync,readdirSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
 import {fixture,admin,reader} from './reports.js';
 import {PostgresLabModelBackend} from '../../apps/server/modernization/postgres-lab.js';
 export async function labFixture(origin?:string,webRoot?:string,options:{managedOperator?:boolean}={}) {
@@ -15,8 +15,9 @@ export async function labFixture(origin?:string,webRoot?:string,options:{managed
    await f.root.query('grant postgres to lab_operador with inherit true,set false;grant inventario_contexto to lab_operador with inherit false,set true');
    managed=new Pool({...f.root.options,user:'lab_operador',password});root=managed;
   }
-  for(const name of readdirSync('staging/supabase/migrations').filter(x=>x.endsWith('.sql')).sort())
-   await root.query(readFileSync('staging/supabase/migrations/'+name,'utf8'));
+  // Estos ensayos preservan la configuración MFA anterior. La política nueva de correo
+  // se aplica y verifica aparte en provider.test.ts con GoTrue, SMTP local y PG reales.
+  await root.query(readFileSync('staging/supabase/migrations/20261104111238_modernizacion_laboratorio.sql','utf8'));
   await root.query(readFileSync('staging/supabase/seed.sql','utf8'));
   await root.query('insert into laboratorio_ti."USUARIOS"("USUA_FUNCIONARIO_ID") values(1),(2)');
   await root.query('insert into laboratorio_ti.usuario_auth values($1,1),($2,2)',[admin,reader]);

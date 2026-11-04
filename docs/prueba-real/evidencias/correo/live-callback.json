@@ -1,0 +1,14 @@
+[
+  {
+    "path": "/auth/callback",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "hasExpectedContent": true
+  },
+  {
+    "path": "/auth/callback.js",
+    "status": 200,
+    "type": "application/javascript",
+    "hasExpectedContent": true
+  }
+]

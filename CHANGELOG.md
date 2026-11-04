@@ -1,5 +1,13 @@
 # Cambios
 
+## 2026-11-03 — Corrección de demo modernizada interactiva
+
+- MPUB-FIX01 responde a «No está actualizado el demo»: portada y menú muestran la interfaz F7 real con datos ficticios en memoria.
+- Agrega simulación exclusiva de navegador para equipos/técnica/catálogos/funcionarios/pertenencias/movimientos/historia/mantenciones; mantiene la demo anterior independiente.
+- Aísla el módulo al build demo; confirma acciones simuladas sin correo y conserva backend/SQL/Auth originales.
+- Añade recorrido de portada y operaciones modernas como puerta de Pages, además de regresión anterior, CI e integridad pública.
+
+
 ## 2026-11-03 — Publicación de modernización en Pages, MPUB-A01
 
 - Autoriza integración/publicación estática del código aprobado y mantiene los bloqueos operativos del destino.

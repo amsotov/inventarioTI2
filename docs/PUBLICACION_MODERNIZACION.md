@@ -1,5 +1,8 @@
 # Publicación estática de los cambios de modernización
 
+> Corrección vigente MPUB-FIX01: la demo principal ahora debe abrir la interfaz React moderna e interactiva, no solo el inventario antiguo con un enlace. [Alcance y pruebas](DEMO_MODERNIZADA.md). La publicación anterior descrita abajo conserva su valor histórico; su éxito de deploy no acreditaba esa actualización funcional.
+
+
 **MPUB-A01:** usuario «Publica los cambios de modernización». Base de trabajo261088799b2a342d76dbb37fe47b8978739d61e6, descendiente de main511b99d64c97ff1917f279e78490f377a3f5239a. Autoriza PR/integración a main y publicación de Pages. Es una operación de publicación solicitada, no una fase10. F9 ya aceptada como documentación; sus pendientes de integración se conservan.
 
 ## Resultado preparado y alcance visible

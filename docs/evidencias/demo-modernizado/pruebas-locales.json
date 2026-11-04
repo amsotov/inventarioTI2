@@ -1,0 +1,21 @@
+{
+  "autorizacion": "MPUB-FIX01 dentro de MPUB-A01",
+  "base_git": "522c10db9b13d08d58c0d02f86be2b33672dd1b9",
+  "problema_confirmado": "La portada publicada seguía en Bienes; revisión separada no actualizaba demo principal",
+  "build_normal": "APROBADA",
+  "build_pages": "APROBADA",
+  "demo_moderna_local": "APROBADA",
+  "regresion_demo_legacy_y_revision": "APROBADA",
+  "publicacion_remota": "PENDIENTE_OBSERVACION_TRAS_CI_MERGE",
+  "db_auth_worker_modificados": false,
+  "backend_doble_en_main": false,
+  "demo_navegador_memoria": true,
+  "fecha_utc": "2026-11-04T02:43:59.151953+00:00",
+  "logs": {
+    "build-pages.log": "4c54894858b6dfd7ae02245ca1e8b97ca7cda2f620c651f4bb3120cf21ac8cfd",
+    "build-normal.log": "4b7b7489df958e8e824db8f55127390bd35d9c74842d01cf7588cc077543a1eb",
+    "package-pages.log": "c0dc49cf5c890373593838040a1316b583470e894c468c8865a9734be9b6e959",
+    "modern-local.log": "2d3eee4269678401c45dde8ba8d0162807ae8a69ad335c0fefde5b225f966136",
+    "legacy-local.log": "847fa81865c7a3aeab4faa17b04455ea6fe70fbe2d45a15196887e85a014477c"
+  }
+}

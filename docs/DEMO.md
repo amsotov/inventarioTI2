@@ -1,5 +1,8 @@
 # Demo React — verificación y límites
 
+> Corrección vigente MPUB-FIX01: la demo principal ahora debe abrir la interfaz React moderna e interactiva, no solo el inventario antiguo con un enlace. [Alcance y pruebas](DEMO_MODERNIZADA.md). La publicación anterior descrita abajo conserva su valor histórico; su éxito de deploy no acreditaba esa actualización funcional.
+
+
 2026-11-02. Incremento autorizado a Fase 14; EN_REVISION, sin modificar aceptación de fases ni publicar producción. Instrucciones de ejecución/publicación: [README](../README.md#demo-react-y-github-pages).
 
 La frontera demo está en `api.ts` y la descarga de `reports.tsx`; el flag exacto `true` selecciona `demoData`. El resto de la UI utiliza los mismos contratos. Ninguna llamada demo cae al cliente HTTP por falta de una ruta: devuelve error local. No se importa el SDK de Supabase ni código del servidor en el navegador. Los datos se aíslan por pestaña y se descartan al recargar. Eliminación física solo aparece en demo; el modo normal mantiene bajas y controles reales. Los roles son demostrativos, no un mecanismo de seguridad productiva.

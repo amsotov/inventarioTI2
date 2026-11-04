@@ -27,6 +27,10 @@ jobs:
           VITE_DEMO_MODE: "true"
           VITE_PAGES_PREVIEW: "true"
           VITE_BASE_PATH: /inventarioTI2/
+      - name: Install Chromium for modern demo check
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Check interactive modern demo before publishing
+        run: node tests/demo/modernization.mjs
       - name: Verify GitHub Actions is the Pages source
         env:
           GH_TOKEN: ${{ github.token }}

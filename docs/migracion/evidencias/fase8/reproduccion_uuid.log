@@ -14,9 +14,9 @@
 test at tests/security/migration.test.ts:8:1
 ✖ M8-F01: traspaso a la misma identidad UUID con distinto caso se rechaza antes del backend (5309.285285ms)
   AssertionError [ERR_ASSERTION]: {"ref":"20000000-0000-4000-8000-000000002000","version":"2","aviso":"pendiente"}
-  
+
   200 !== 422
-  
+
       at TestContext.<anonymous> (/workspace/work/fase8/review/tests/security/migration.test.ts:14:10)
       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
       at async Test.run (node:internal/test_runner/test:1389:7)

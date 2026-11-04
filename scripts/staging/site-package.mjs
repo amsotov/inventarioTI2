@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';
+import {build} from 'esbuild';
+const [web,site]=process.argv.slice(2);if(!web||!site)throw Error('web site required');
+const manifest=JSON.parse(fs.readFileSync(path.join(site,'.openai/hosting.json'),'utf8'));if(manifest.project_id!=='appgprj_6aeb3ddf26808191bcaf65a58f2dd261')throw Error('Site mismatch');
+const types={'.html':'text/html; charset=utf-8','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2'};
+const assets={};function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const f=path.join(dir,e.name);if(e.isDirectory())walk(f);else{const key='/'+path.relative(web,f).split(path.sep).join('/');assets[key]={type:types[path.extname(f)]||'application/octet-stream',data:fs.readFileSync(f).toString('base64')};}}}walk(web);
+if(!assets['/index.html']||Object.keys(assets).some(k=>k.endsWith('.map')))throw Error('Invalid connected web');
+const scratch=path.resolve(site,'build-input');fs.mkdirSync(scratch,{recursive:true});fs.writeFileSync(path.join(scratch,'assets.mjs'),'export const ASSETS='+JSON.stringify(assets)+';\n');fs.copyFileSync('scripts/staging/site/worker.mjs',path.join(scratch,'worker.mjs'));
+fs.mkdirSync(path.join(site,'worker'),{recursive:true});await build({entryPoints:[path.join(scratch,'worker.mjs')],outfile:path.join(site,'worker/index.js'),bundle:true,platform:'browser',format:'esm',target:'es2022',minify:true});
+fs.rmSync(scratch,{recursive:true});console.log(JSON.stringify({assets:Object.keys(assets).length,workerBytes:fs.statSync(path.join(site,'worker/index.js')).size}));

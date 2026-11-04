@@ -24,7 +24,12 @@ export function lookup(directory:Directory,family:string,ref:string|null|undefin
 export const catalogPath=(family:string)=>['regiones','delegaciones','departamentos','areas'].includes(family)?'organizacion?grupo='+family:family==='funcionarios'?'funcionarios':'catalogos/'+family;
 /** Un selector no omite páginas. Falla si el proveedor repite cursores o excede el límite defensivo. */
 export async function loadDirectory(families:readonly string[],signal:AbortSignal|undefined,read:ModelRead):Promise<Directory> {
- const entries=await Promise.all([...new Set(families)].map(async family=>{
+ const entries:(readonly [string,Item[]])[]=[];
+ const unique=[...new Set(families)];
+ // Las sesiones se validan bajo lock. Evitar una ráfaga que agote el pool remoto.
+ for(let offset=0;offset<unique.length;offset+=2) {
+ const batch=await Promise.all(unique.slice(offset,offset+2).map(async family=>{
+  signal?.throwIfAborted();
   if(!Object.hasOwn(catalogTitles,family))throw new ApiError(400,'INVALID_REQUEST');
   const items:Item[]=[],seen=new Set<string>(),refs=new Set<string>();let cursor:string|null=null;
   for(let page=0;page<50;page++) {
@@ -39,6 +44,8 @@ export async function loadDirectory(families:readonly string[],signal:AbortSigna
   }
   throw new ApiError(503,'MODEL_REFERENCE_NOT_READY');
  }));
+ entries.push(...batch);
+ }
  return Object.fromEntries(entries);
 }
 export function instant(value:string|null|undefined) {

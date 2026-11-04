@@ -1,5 +1,10 @@
 # Estado del proyecto — Punto de continuidad
 
+## MTEST-A02 — entorno conectado privado activo (2026-11-04)
+
+Usuario autoriza «realizar los cambios para ver el entorno virtual funcionado» y retoma la ejecución. Se habilitan dos identidades sintéticas, el backend existente sobre Supabase Edge y hosting Sites **solo propietario**, con interfaz modernizada real. [Acceso y comprobaciones](docs/prueba-real/ENTORNO_ACTIVO.md). El portal `/prueba` inicia el login existente con secretos solo de servidor; MFA del administrador sigue obligatorio. No cambiar audiencia ni presentar este laboratorio como liberación productiva. M8-R01/SQLServer y reglas pendientes permanecen abiertos; sin worker/envíos ni nueva fase. El estado MTEST-A01 de preparación que sigue es histórico.
+
+
 ## MTEST-A01 — prueba temporal conectada (2026-11-04)
 
 Usuario: «vamos hacer una prueba real en sitio temporal conectado con la base de datos real prepara todo»; precisa Supabase **inventarioTI2 con datos de prueba**, autoriza **crear un entorno virtual** y elige **la interfaz modernizada completa**. Se implementa un repositorio PostgreSQL de laboratorio separado del destino SQLServer, reutilizando las vistas y el BFF existentes, con configuración explícita, migración/semilla privadas y paquete de contenedor conectado. [Guía y alcance](docs/PRUEBA_REAL_SUPABASE.md), [resultado y pendientes](docs/prueba-real/RESULTADO.md).

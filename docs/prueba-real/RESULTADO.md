@@ -1,5 +1,7 @@
 # Resultado MTEST-A01
 
+> Actualización posterior: [entorno conectado privado activo](ENTORNO_ACTIVO.md). Este comprobante conserva el estado histórico de preparación dd9bfa2.
+
 Fecha: 2026-11-04 UTC. **Preparación implementada y verificada; acceso público conectado pendiente de configuración privada.** No hay una URL temporal activa.
 
 ## Entrega y pruebas

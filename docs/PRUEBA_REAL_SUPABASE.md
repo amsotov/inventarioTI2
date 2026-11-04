@@ -2,6 +2,8 @@
 
 Fecha: 2026-11-04, UTC. Alcance MTEST-A01, posterior al cierre documental de las fases 0–9.
 
+> **Actualización MTEST-A02:** el ensayo privado ya está publicado. Usar [acceso y estado vigente](prueba-real/ENTORNO_ACTIVO.md); los pasos de preparación que siguen conservan el contexto inicial y no deben reejecutarse sobre el proyecto.
+
 ## Solicitud y estado
 
 El usuario solicita «una prueba real en sitio temporal conectado con la base de datos real», precisa **Supabase inventarioTI2 con datos de prueba**, autoriza **crear un entorno virtual** y elige **la interfaz modernizada completa**. Se preparan persistencia PostgreSQL, interfaz existente, autenticación y empaquetado del servidor. No se crea una fase 10.

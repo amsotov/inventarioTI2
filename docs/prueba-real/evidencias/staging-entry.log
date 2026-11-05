@@ -1,0 +1,15 @@
+▶ Prueba conectada local: interfaz modernizada → BFF → PostgreSQL real, sin transporte demo
+  ✔ catálogos, alta, recarga de página y edición conservan datos SQL (1570.623548ms)
+  ✔ técnica y componentes permanecen tras recarga (947.446069ms)
+  ✔ movimiento y mantención producen historia SQL visible (1796.071508ms)
+  ✔ alta, edición privada y cambio de pertenencia de funcionario (1271.509909ms)
+  ✔ lector ve cambios persistentes y no accede a formularios privados (736.255685ms)
+✔ Prueba conectada local: interfaz modernizada → BFF → PostgreSQL real, sin transporte demo (14616.983954ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15540.487155

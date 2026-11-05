@@ -5,7 +5,10 @@ import {fileURLToPath} from 'node:url';
 import {join,relative} from 'node:path';
 
 if(process.env.VITE_DEMO_MODE!=='true'||process.env.VITE_PAGES_PREVIEW!=='true')throw Error('PAGES_REQUIRES_DEMO_PREVIEW_BUILD');
-const root=fileURLToPath(new URL('../',import.meta.url)),output=join(root,'dist/web');
+const root=fileURLToPath(new URL('../',import.meta.url));
+const outputDir=process.env.PAGES_OUTPUT_DIR||'dist/web';
+if(!['dist/web','dist/web/demo'].includes(outputDir))throw Error('INVALID_PAGES_OUTPUT');
+const output=join(root,outputDir);
 if(!existsSync(join(output,'index.html')))throw Error('PAGES_BUILD_MISSING');
 const sourceSha=process.env.GITHUB_SHA??process.env.PUBLICATION_SOURCE_SHA??null;
 if(sourceSha!==null&&!/^[0-9a-f]{40}$/.test(sourceSha))throw Error('INVALID_SOURCE_SHA');

@@ -8,7 +8,9 @@ import {resolve,extname,sep} from 'node:path';
 let server;
 let url=process.env.DEMO_URL;
 if(!url){
- const root=resolve('dist/web'),prefix='/inventarioTI2/';
+ const subdir=process.env.DEMO_TEST_SUBDIR||'';
+ if(!['','demo'].includes(subdir))throw Error('INVALID_DEMO_SUBDIR');
+ const root=resolve('dist/web',subdir),prefix='/inventarioTI2/'+(subdir?subdir+'/':'');
  server=createServer(async(req,res)=>{
   try{
    const path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);

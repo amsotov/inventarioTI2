@@ -1,3 +1,4 @@
+import { apiUrl, apiCredentials } from "./transport";
 import { ApiError } from "./errors";
 export { ApiError } from "./errors";
 export async function api(
@@ -9,9 +10,9 @@ export async function api(
     const { demoApi } = await import("./demoData");
     return demoApi(path, options);
   }
-  const response = await fetch("/api/v1/" + path, {
+  const response = await fetch(apiUrl("/api/v1/" + path), {
     ...options,
-    credentials: "same-origin",
+    credentials: apiCredentials,
     headers: {
       ...(options.body ? { "Content-Type": "application/json" } : {}),
       ...(csrf ? { "X-CSRF-Token": csrf } : {}),
@@ -21,7 +22,7 @@ export async function api(
   const body = response.status === 204 ? null : await response.json();
   if (!response.ok)
     throw new ApiError(response.status, body.code ?? "ERROR", body.requestId);
-  return { body, etag: response.headers.get("etag") };
+  return { body, etag: response.headers.get("x-inventario-resource-etag") ?? response.headers.get("etag") };
 }
 /** Transporte real v2; en demo solo se carga la simulación local del navegador. */
 export async function modelApi(path: string, options: RequestInit = {}, csrf?: string) {
@@ -30,13 +31,13 @@ export async function modelApi(path: string, options: RequestInit = {}, csrf?: s
     const {demoModelApi} = await import('./demoModel');
     return demoModelApi(path, options);
   }
-  const response = await fetch('/api/v2/'+path, {
-    ...options, credentials:'same-origin',
+  const response = await fetch(apiUrl('/api/v2/'+path), {
+    ...options, credentials:apiCredentials,
     headers:{...(options.body?{'Content-Type':'application/json'}:{}),...(csrf?{'X-CSRF-Token':csrf}:{}),...options.headers}
   });
   const body=response.status===204?null:await response.json();
   if(!response.ok)throw new ApiError(response.status,body?.code??(response.status===404?'MODEL_NOT_AVAILABLE':'ERROR'),body?.requestId);
-  return {body,etag:response.headers.get('etag')};
+  return {body,etag:response.headers.get('x-inventario-resource-etag')??response.headers.get('etag')};
 }
 export function message(e: unknown): string {
   if (!(e instanceof ApiError))

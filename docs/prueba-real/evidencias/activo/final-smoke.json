@@ -1,0 +1,51 @@
+[
+  {
+    "path": "/prueba/entrar",
+    "method": "POST",
+    "status": 200
+  },
+  {
+    "path": "/api/v1/sesion",
+    "method": "GET",
+    "status": 200
+  },
+  {
+    "ownerMfaEnrollmentReady": true
+  },
+  {
+    "path": "/api/v1/sesion/salir",
+    "method": "POST",
+    "status": 204
+  },
+  {
+    "path": "/prueba/entrar",
+    "method": "POST",
+    "status": 200
+  },
+  {
+    "path": "/api/v2/equipos?limit=25",
+    "method": "GET",
+    "status": 200
+  },
+  {
+    "path": "/api/v2/equipos/bca059bd-8dce-4ce6-88fc-963493948d1f",
+    "method": "GET",
+    "status": 200
+  },
+  {
+    "persistedEquipment": 7,
+    "editedCodeVisible": true,
+    "strongETag": "\"v1\""
+  },
+  {
+    "path": "/api/v1/sesion/salir",
+    "method": "POST",
+    "status": 204
+  },
+  {
+    "untrustedBackendStatus": 403
+  },
+  {
+    "privateSiteAnonymousStatus": 401
+  }
+]

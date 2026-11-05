@@ -1,0 +1,26 @@
+✔ Pages: CORS exacto, preflight cerrado y rechazo antes de abrir la base (25.683161ms)
+✔ Pages: conserva CSRF/versión, aísla cookies y configura cookies seguras particionadas (2.103511ms)
+✔ Pages: limita carga y entrega errores de dependencia con CORS, sin secretos (1.260713ms)
+✔ El ingreso privado mantiene mismo origen y aísla cookies y credenciales de plataforma (25.374216ms)
+✔ El portal rechaza orígenes ajenos y nunca incluye las contraseñas en HTML (2.179393ms)
+✔ El portal exige verificación de correo y cierra el atajo de contraseña del ensayo anterior (1.090182ms)
+✔ La versión fuerte del BFF sobrevive al gateway sin inventar ni debilitar el If-Match (1.717714ms)
+✔ El visor de Codex tiene padres autorizados y cookie particionada sin quitar Origin/CSRF (3.388089ms)
+✔ El visor conserva las dos cookies propias del flujo de correo y descarta las de la plataforma (0.817752ms)
+✔ El retorno del correo se sirve localmente con scripts propios, sin heredar sandbox de Supabase (0.779055ms)
+✔ Enlace: el clic autoriza y solo el intento del visor original reclama una sesión sin MFA (6.031963ms)
+✔ Enlace: otro intento, PKCE/código inválido, caducidad y MFA antiguo no abren sesión (1.310185ms)
+✔ Enlace: desactivar cuenta o cambiar versión antes de la autorización o reclamación revoca el acceso (0.986129ms)
+✔ Enlace: no hay alta automática ni sesión para correo no habilitado, identidad distinta o no confirmada (1.705076ms)
+✔ Enlace: un fallo de commit no entrega sesión y el intento autorizado se puede reclamar después (1.180855ms)
+✔ Enlace: solo una reclamación concurrente consume la autorización (0.970106ms)
+✔ Enlace: la recuperación de contraseña no consume un intento email-login (0.628023ms)
+✔ Enlace: API liga cookie al visor, callback sin efectos GET, Origin y sesión tras commit (118.748285ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 732.022242

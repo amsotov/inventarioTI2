@@ -1,0 +1,33 @@
+
+> inventarioti2@1.0.0 test:ops
+> tsx --test --test-concurrency=1 tests/ops/*.test.ts
+
+✔ health and technical logs exclude private request and dependency data (127.380238ms)
+✔ encrypted rehearsal backup rejects tampering, truncation and wrong key (1.842998ms)
+✔ backup failure and clock errors cannot hide RPO ageing (0.418475ms)
+✖ isolated encrypted backup restores data, permissions and denial of old sessions without dispatch (19304.232288ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 20073.27773
+
+✖ failing tests:
+
+test at tests/ops/recovery.test.ts:36:1
+✖ isolated encrypted backup restores data, permissions and denial of old sessions without dispatch (19304.232288ms)
+  Error: connect ECONNREFUSED 127.0.0.1:32819
+      at /workspace/work/fase6/review/node_modules/pg-pool/index.js:45:11
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (/workspace/work/prueba-real/review/tests/ops/recovery.test.ts:81:28)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 32819
+  }

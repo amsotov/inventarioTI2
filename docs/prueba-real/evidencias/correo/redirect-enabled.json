@@ -1,0 +1,7 @@
+{
+  "http": 303,
+  "callbackAccepted": true,
+  "targetOrigin": "https://inventarioti2-prueba-20261104.alejandrosotovivar.chatgpt.site",
+  "targetPath": "/auth/callback",
+  "flowPreserved": true
+}

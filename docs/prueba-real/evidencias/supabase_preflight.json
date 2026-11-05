@@ -1,0 +1,35 @@
+{
+  "project": "yhsfotxhaptinjtmrinn",
+  "observed_at": "2026-11-04T12:06:23.747Z",
+  "preflight": {
+    "outbox": 0,
+    "sessions": 0,
+    "auth_users": 0,
+    "lab_exists": false,
+    "legacy_assets": 6,
+    "legacy_tables": 19,
+    "legacy_columns": 155,
+    "application_roles": [
+      {
+        "role": "inventario_auth",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      },
+      {
+        "role": "inventario_runtime",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      },
+      {
+        "role": "inventario_worker",
+        "login": false,
+        "bypassrls": false,
+        "superuser": false
+      }
+    ],
+    "application_accounts": 0
+  },
+  "security_advisors": []
+}

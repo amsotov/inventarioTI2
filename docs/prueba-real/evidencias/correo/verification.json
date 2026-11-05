@@ -1,0 +1,57 @@
+{
+  "scope": "private-trial-email-auth",
+  "localTests": 37,
+  "passed": 37,
+  "typescriptBuild": "passed",
+  "postgresAuthorizationCases": {
+    "count": 4,
+    "passed": true,
+    "rolledBack": true
+  },
+  "counts": {
+    "equipment": 7,
+    "staff": 3,
+    "legacyAssets": 6,
+    "applicationAccounts": 2,
+    "authUsers": 2,
+    "mfaFactors": 0
+  },
+  "oldSessionsInvalidated": true,
+  "ownerAndAclPreserved": true,
+  "recipient": "explicitly supplied by user; omitted from repository",
+  "realEmailRequestAccepted": true,
+  "recipientVerificationCompleted": "user action; not observed",
+  "backendVersion": 14,
+  "siteVersion": 7,
+  "siteDeployment": "appgdep_6aeb7e26e274819187dbef7c914f3549",
+  "envRevision": 2,
+  "sourceHostingCommit": "1751200f25cfa4ed0d9906342a63e8ba13beb907",
+  "migrationLocal": "20261104181614",
+  "migrationRemote": "20261104181907",
+  "mfaBusinessRequirement": false,
+  "businessNotificationWorker": false,
+  "publicRelease": "NO_GO",
+  "browserAuthTest": {
+    "count": 1,
+    "passed": true,
+    "identity": "explicit local double",
+    "crossBrowserClick": true,
+    "viewerAutomaticallyAuthenticated": true
+  },
+  "emailRedirectReady": true,
+  "blocker": null,
+  "realMailAfterFinalFlow": "must be requested from the recipient viewer, not an agent browser",
+  "observedProviderErrors": [
+    "otp_expired",
+    "over_email_send_rate_limit"
+  ],
+  "backendHash": "0981952e9d1f90508723b383292aa7637dc24ad2ecc626a399bb19d05be100a7",
+  "redirectVerified": true,
+  "flowQueryPreserved": true,
+  "ciPriorRun": {
+    "id": 41892395122,
+    "conclusion": "failure",
+    "cause": "MFA fixtures applied email-only authorization policy; fixtures and native email integration corrected"
+  },
+  "currentCi": "pending new run"
+}

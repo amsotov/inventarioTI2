@@ -1,0 +1,6 @@
+{
+  "status": 200,
+  "callbackAccepted": false,
+  "configuredFallbackOrigin": "http://localhost:3000",
+  "configuredFallbackPath": "/"
+}

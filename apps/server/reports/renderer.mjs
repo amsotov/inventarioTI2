@@ -13,7 +13,7 @@ const display = (value) =>
         : "No"
       : String(value);
 
-export async function render({ report, format }) {
+export async function render({ report, format, font = undefined }) {
   // La consulta puede contener documento/correo; conservar selección, pero no
   // copiar ese texto personal a los metadatos del archivo compartible.
   const filters = report.type === "busqueda" && report.filters.q
@@ -61,6 +61,7 @@ export async function render({ report, format }) {
   }
   return new Promise((resolve, reject) => {
     const doc = new PDFDocument({
+      ...(font ? {font} : {}),
       size: "A3",
       layout: "landscape",
       margin: 30,
@@ -70,7 +71,7 @@ export async function render({ report, format }) {
         CreationDate: new Date(report.generatedAt),
       },
     });
-    doc.font(require.resolve("dejavu-fonts-ttf/ttf/DejaVuSans.ttf"));
+    doc.font(font ?? require.resolve("dejavu-fonts-ttf/ttf/DejaVuSans.ttf"));
     const chunks = [];
     let size = 0;
     doc.on("data", (chunk) => {

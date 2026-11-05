@@ -1,9 +1,12 @@
+import{EmailLink}from'./email-link.js';
+import{AuthError}from'./error.js';
+export{AuthError}from'./error.js';
 import { hash, token, Vault } from './crypto.js';
-import type { Account, Database, Provider, Store, Session, Tokens } from './ports.js';
-export class AuthError extends Error { constructor(readonly status: number, readonly code: string) { super(code); } }
+import type { Account, Database, Provider, Store, Session, Tokens, Identity } from './ports.js';
 const reject = () => { throw new AuthError(401,'SESSION_REQUIRED'); };
 export class AuthService {
-  constructor(readonly db: Database, private provider: Provider, private vault: Vault, private origin: string, private now = () => Date.now()) {}
+  readonly email:EmailLink;
+  constructor(readonly db: Database, private provider: Provider, private vault: Vault, private origin: string, private now = () => Date.now(), readonly method:'mfa'|'email-otp'='mfa') {this.email=new EmailLink(db,provider,vault,origin,now,method==='email-otp');}
   async rate(ip: string, email = '') {
     const ok = await this.db.transaction(async s => {
       const window=Math.floor(this.now()/60000);
@@ -13,7 +16,30 @@ export class AuthService {
     });
     if(!ok) throw new AuthError(429,'RATE_LIMITED');
   }
+  async requestEmailOtp(email: string) {
+    if(this.method!=='email-otp'||!this.provider.sendEmailOtp)throw new AuthError(404,'EMAIL_AUTH_DISABLED');
+    const account=await this.db.transaction(s=>s.account(email));
+    if(!account||!account.proveedor_ref||!((account.estado==='activa'&&account.credencial_lista)||account.estado==='pendiente'))return;
+    try{await this.provider.sendEmailOtp(email);}catch(e){if(e instanceof Error&&e.message==='EMAIL_DELIVERY_RATE_LIMITED')throw new AuthError(429,'EMAIL_RATE_LIMITED');throw new AuthError(503,'EMAIL_DELIVERY_UNAVAILABLE');}
+  }
+  async loginEmailOtp(email: string, code: string) {
+    if(this.method!=='email-otp'||!this.provider.verifyEmailOtp)throw new AuthError(404,'EMAIL_AUTH_DISABLED');
+    const a=await this.db.transaction(s=>s.account(email));
+    if(!a||!a.proveedor_ref||!((a.estado==='activa'&&a.credencial_lista)||a.estado==='pendiente'))return reject();
+    let identity:Identity;
+    try{identity=await this.provider.verifyEmailOtp(email,code);}catch{throw new AuthError(401,'EMAIL_CODE_INVALID');}
+    if(!identity.emailConfirmed||identity.email?.toLowerCase()!==email.toLowerCase()||identity.userId!==a.proveedor_ref)throw new AuthError(401,'EMAIL_CODE_INVALID');
+    return this.db.transaction(async s=>{
+      const current=await s.account(a.id);
+      if(!current||!((current.estado==='activa'&&current.credencial_lista)||current.estado==='pendiente')||current.correo.toLowerCase()!==email.toLowerCase()||current.proveedor_ref!==identity.userId||current.version_autorizacion!==a.version_autorizacion)return reject();
+      if(current.estado==='pendiente'){current.estado='activa';current.credencial_lista=true;await s.saveAccount(current);}
+      const sid=token(),csrf=token(),now=this.now();
+      await s.saveSession(hash(sid),{accountId:current.id,version:current.version_autorizacion,created:now,activity:now,mfa:false,method:'email-otp',emailVerified:true,csrf,vault:this.vault.seal(identity),revoked:false});
+      return {sid,csrf,mfaRequired:false};
+    });
+  }
   async login(email: string, password: string) {
+    if(this.method==='email-otp')throw new AuthError(403,'EMAIL_VERIFICATION_REQUIRED');
     let identity;
     try { identity=await this.provider.login(email,password); } catch { return reject(); }
     return this.db.transaction(async s => {
@@ -32,11 +58,12 @@ export class AuthService {
     if(csrf!==undefined && csrf!==session.csrf) throw new AuthError(403,'FORBIDDEN');
     const a=await s.account(session.accountId);
     if(!a || !a.credencial_lista || a.estado==='inactiva' || a.version_autorizacion!==session.version || (full && a.estado!=='activa')) return reject();
-    if(a.rol==='administrador' && !session.mfa && now-session.created>=600000) return reject();
-    if(full && a.rol==='administrador' && !session.mfa) throw new AuthError(403,'MFA_REQUIRED');
+    if(this.method==='email-otp'&&(session.method!=='email-otp'||!session.emailVerified))return reject();
+    if(this.method==='mfa'&&a.rol==='administrador' && !session.mfa && now-session.created>=600000) return reject();
+    if(this.method==='mfa'&&full && a.rol==='administrador' && !session.mfa) throw new AuthError(403,'MFA_REQUIRED');
     let identity;
     try {identity=await this.provider.validate(this.vault.open<Tokens>(session.vault));} catch {throw new AuthError(503,'DEPENDENCY_UNAVAILABLE');}
-    if(identity.userId!==a.proveedor_ref || (session.mfa && identity.aal!=='aal2')) return reject();
+    if(identity.userId!==a.proveedor_ref || (this.method==='mfa'&&session.mfa && identity.aal!=='aal2') || (this.method==='email-otp'&&(!identity.emailConfirmed||identity.email?.toLowerCase()!==a.correo.toLowerCase()))) return reject();
     session.vault=this.vault.seal(identity);
     await s.saveSession(hash(sid),session);
     return {session,a};
@@ -52,16 +79,18 @@ export class AuthService {
   async status(sid: string) {
     return this.db.transaction(async s => {
       const {session,a}=await this.current(s,sid,undefined,false);
-      return {factors:await this.provider.factors(this.vault.open(session.vault)),rol:a.rol,estado:a.estado,mfaRequired:a.rol==='administrador'&&!session.mfa,csrf:session.csrf,expiresAt:new Date(session.created+8*3600000).toISOString(),idleExpiresAt:new Date(session.activity+1800000).toISOString()};
+      return {factors:this.method==='email-otp'?[]:await this.provider.factors(this.vault.open(session.vault)),rol:a.rol,estado:a.estado,mfaRequired:this.method==='mfa'&&a.rol==='administrador'&&!session.mfa,authenticationMethod:this.method,csrf:session.csrf,expiresAt:new Date(session.created+8*3600000).toISOString(),idleExpiresAt:new Date(session.activity+1800000).toISOString()};
     });
   }
   async activity(sid: string, csrf: string) {
     return this.db.transaction(async s => {const {session}=await this.current(s,sid,csrf);session.activity=this.now();await s.saveSession(hash(sid),session);});
   }
   async enroll(sid: string, csrf: string) {
+    if(this.method==='email-otp')throw new AuthError(404,'MFA_DISABLED');
     return this.db.transaction(async s => {const {session}=await this.current(s,sid,csrf,false);return this.provider.enroll(this.vault.open(session.vault));});
   }
   async verify(sid: string, csrf: string, factor: string, code: string) {
+    if(this.method==='email-otp')throw new AuthError(404,'MFA_DISABLED');
     return this.db.transaction(async s => {
       const {session,a}=await this.current(s,sid,csrf,false);
       const identity=await this.provider.verify(this.vault.open(session.vault),factor,code);
@@ -111,7 +140,7 @@ export class AuthService {
     // Reclamar y bloquear acceso ANTES de un efecto externo no transaccional.
     const job=await this.db.transaction(async s => {
       const i=await s.intent(hash(raw));
-      if(!i || i.state!=='pending' || this.now()>=i.expires) return reject();
+      if(!i || i.kind==='email-login' || i.state!=='pending' || this.now()>=i.expires) return reject();
       const a=await s.account(i.accountId);
       if(!a || a.estado==='inactiva') return reject();
       i.state='processing';await s.saveIntent(hash(raw),i);
@@ -119,7 +148,7 @@ export class AuthService {
       return {i,a};
     });
     let success=false;
-    try {const link=this.vault.open<{hash:string}>(job.i.vault);const id=await this.provider.complete(link.hash,job.i.kind,password,job.a.proveedor_ref!);success=id===job.a.proveedor_ref;} catch { /* no reintento ciego */ }
+    try {const kind=job.i.kind;if(kind==='email-login')return reject();const link=this.vault.open<{hash:string}>(job.i.vault);const id=await this.provider.complete(link.hash,kind,password,job.a.proveedor_ref!);success=id===job.a.proveedor_ref;} catch { /* no reintento ciego */ }
     await this.db.transaction(async s => {
       const i=await s.intent(hash(raw)), a=await s.account(job.a.id);
       if(!i || !a) throw new Error('Missing identity operation');

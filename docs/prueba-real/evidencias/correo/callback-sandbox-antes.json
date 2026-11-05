@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "csp": "default-src 'none'; sandbox",
+  "type": "text/html; charset=utf-8",
+  "scriptRequested": false,
+  "authorizeRequested": false,
+  "statusText": "Comprobando autorización…",
+  "consoleErrors": [
+    "Blocked script execution in '[url] because the document's frame is sandboxed and the 'allow-scripts' permission is not set."
+  ]
+}

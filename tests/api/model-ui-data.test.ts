@@ -50,3 +50,13 @@ test('M7: DATE histórico no se transforma en medianoche y el instante conserva 
  assert.equal(instant('2026-11-03T05:15:20.1234567-03:00'),'2026-11-03 08:15:20.1234567 UTC');
  assert.equal(instant('2020-02-29'),'Fecha no disponible');
 });
+
+test('Los selectores remotos limitan solicitudes simultáneas y conservan todos los catálogos',async()=>{
+ let active=0,maximum=0;const calls:string[]=[];
+ const result=await loadDirectory(['tipos-equipo','marcas','modelos','estados'],undefined,async(path)=>{
+  calls.push(path);active++;maximum=Math.max(maximum,active);
+  await new Promise(resolve=>setTimeout(resolve,5));active--;
+  return {body:{items:[],nextCursor:null,generatedAt:'2026-11-04T00:00:00Z',timezone:'UTC'},etag:null};
+ });
+ assert.equal(maximum,2);assert.equal(calls.length,4);assert.deepEqual(Object.keys(result),['tipos-equipo','marcas','modelos','estados']);
+});

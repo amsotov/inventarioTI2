@@ -1,0 +1,23 @@
+▶ Laboratorio modernizado: BFF y persistencia PostgreSQL real; proveedor de identidad doble local
+  ✔ lecturas reales, filtros/cursor ligado y proyección pública (118.584077ms)
+  ✔ alta persistente de funcionario y equipo Unicode sin truncar (97.50845ms)
+  ✔ lectura, MFA y origen/CSRF no autorizan escrituras (10.855591ms)
+  ✔ versión obligatoria, conflicto y repetición estable después de cambios (47.323753ms)
+  ✔ técnica, componentes, duplicados y rollback del comando (195.294065ms)
+  ✔ asignación y traslado concurrente mantienen custodia única e historia UTC (111.827359ms)
+  ✔ mantención y pertenencia persisten con versiones (72.829366ms)
+  ✔ sin destinatario todo revierte, no se anuncia aviso ficticio (124.096648ms)
+  ✔ reglas productivas pendientes permanecen bloqueadas sin efectos (122.293409ms)
+  ✔ mínimo privilegio, RLS, actor desactivado y auditoría sin datos privados (35.933371ms)
+✔ Laboratorio modernizado: BFF y persistencia PostgreSQL real; proveedor de identidad doble local (5629.686891ms)
+✔ activación de laboratorio exige proyecto/entorno/delivery correctos; modo normal permanece cerrado (0.354491ms)
+✔ migración con operador gestionado sin SUPERUSER: ACL, propietarios y RPC privado (3951.452941ms)
+✔ adaptador real: GoTrue local, sin proyecto gestionado ni correo externo (8952.874247ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19188.721005

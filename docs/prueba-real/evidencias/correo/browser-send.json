@@ -1,0 +1,10 @@
+{
+  "http": 202,
+  "code": null,
+  "requestAccepted": true,
+  "emailAccessShown": true,
+  "verificationInputVisible": true,
+  "passwordInputs": 0,
+  "mfaSetupButtons": 0,
+  "pageErrors": 0
+}

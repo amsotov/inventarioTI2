@@ -1,0 +1,36 @@
+{
+  "scope": "private-synthetic-trial",
+  "siteId": "appgprj_6aeb3ddf26808191bcaf65a58f2dd261",
+  "siteSourceCommit": "8a0a7b4ff850b4db21489cb7520dd5c92749c4d1",
+  "siteDeployment": "appgdep_6aeb5b5ed3c08191aa835db0ed73748d",
+  "siteVersion": 4,
+  "siteStatus": "succeeded",
+  "envRevision": 1,
+  "url": "https://inventarioti2-prueba-20261104.alejandrosotovivar.chatgpt.site/prueba",
+  "audience": "owner-only",
+  "backend": "inventarioti2-prueba-runtime",
+  "backendVersion": 8,
+  "backendHash": "44c50f639d3533e0f3eb1e206b607c851c68e2307bc83015707695cae954d956",
+  "backendAuthentication": "256-bit private gateway bearer + original application session/MFA/CSRF",
+  "project": "yhsfotxhaptinjtmrinn",
+  "sourceCommit": "fd106f51d91d4ed920e02e2c4913184454a2e223",
+  "bootstrapEndpointRemoved": true,
+  "temporaryCleanupEndpointRemoved": true,
+  "counts": {
+    "equipment": 7,
+    "staff": 3,
+    "appAccounts": 2,
+    "authUsers": 2,
+    "mfaFactorsAfterOwnTestCleanup": 0,
+    "legacyAssets": 6,
+    "tablesWithoutForcedRls": 0
+  },
+  "nodeTargetedTests": 18,
+  "fullLocalSuite": "not-successful: Docker disk exhausted",
+  "ciRun": 41866531321,
+  "ciObservedStatus": "queued",
+  "securityAdvisory": [
+    "auth_leaked_password_protection disabled"
+  ],
+  "publicRelease": "NO_GO"
+}

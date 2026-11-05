@@ -1,5 +1,35 @@
 # inventarioTI2 — Inventario y control de bienes computacionales
 
+## MTEST-A07 — conexión de GitHub Pages a Supabase (2026-11-04)
+
+Usuario «Puedes conectarlo con sistema real y supabase desde GitHub Pages» autoriza implementar y publicar el frontend conectado a inventarioTI2 con los datos de prueba acordados. Esta solicitud sustituye la restricción anterior de mantener Pages únicamente como demo y autoriza integrar el incremento mediante PR/CI. No abre datos anónimos, altera la audiencia del Site privado ni autoriza producción empresarial o SQLServer.
+
+[Alcance, seguridad y pruebas](docs/prueba-real/GITHUB_PAGES_CONECTADO.md). API separada `inventarioti2-pages-api` versión2 ACTIVE: mismo BFF/Auth/SQL mínimo privilegio, CORS exacto, cookies HttpOnly/Secure/SameSite=None/Partitioned, PKCE, CSRF, ETag e idempotencia conservados. Sobre cifrado únicamente en paquete privado del servidor, sin secretos en GitHub/Pages. Site8 y BFF14 anteriores intactos. Sin DDL/seed/operador/worker ni nuevos gastos.
+
+Preparación aprobada localmente: TypeScript,18 pruebas dirigidas, Chromium entre dos orígenes con doble explícito de proveedor (sesión tras clic y recarga), demo modernizada conservada y navegador frente a API real (401 sin sesión, CORS y cookie CHIPS real; dirección inexistente sin envío). Pendiente observar CI del SHA, integrar PR5 y verificar Pages publicado; no confundir estas pruebas con validación real del correo del destinatario. Portada conectada, demo en `/inventarioTI2/demo/`. SMTP y reglas productivas pendientes se conservan.
+
+
+## MTEST-A05 — enlace de correo habilitado (2026-11-04)
+
+Usuario confirma «listo url y urls configurado». Verificación independiente: callback HTTPS aceptado y flow conservado. Se activa emailRedirectReady=true y BFF14; visor privado7 conserva cookies particionadas y orígenes autorizados. Solicitar el enlace desde el visor del usuario y pulsarlo en el correo activa esa sesión, sin MFA ni copiar códigos. [Estado y evidencia](docs/prueba-real/ACCESO_CORREO.md). El bloqueo de URL documentado en MTEST-A04 es histórico y está resuelto. SMTP conserva sus cuotas; no enviar intentos desde el navegador del agente para que el usuario los apruebe.
+
+
+## MTEST-A04 — visor integrado y acceso por clic de correo (2026-11-04)
+
+El usuario autoriza el visor de Codex y pide sesión automática al pulsar el enlace del correo. Publicados callback PKCE, activación del intento original por cookie particionada y marcos limitados a orígenes de OpenAI. Sin formulario de códigos/MFA. [Estado y bloqueo técnico](docs/prueba-real/ACCESO_CORREO.md): Supabase aún redirige a localhost; se debe guardar URL Configuration. La autorización está dada, pero el conector carece de esa operación. Envío nuevo bloqueado hasta verificar el destino, además del límite SMTP observado. No afirmar correo real validado, acceso completamente listo ni liberación productiva.
+
+
+## MTEST-A03 — acceso por correo autorizado (2026-11-04)
+
+Usuario pide desactivar MFA y conservar solo verificación por correo de Supabase, e identifica expresamente el correo administrador. El sitio privado existente ya usa el nuevo flujo: código o enlace nativo, sin contraseña ni TOTP. [Acceso, cambios y verificación](docs/prueba-real/ACCESO_CORREO.md). UUID/rol/vínculos conservados, sesiones anteriores revocadas, política SQL y BFF alineadas. Sin nueva fase, merge/main/Pages ni liberación productiva. Las referencias MFA de MTEST-A02 son históricas para su publicación y quedan sustituidas en este laboratorio.
+
+
+## MTEST-A01 — prueba temporal conectada (2026-11-04)
+
+Usuario: «vamos hacer una prueba real en sitio temporal conectado con la base de datos real prepara todo»; precisa Supabase **inventarioTI2 con datos de prueba**, autoriza **crear un entorno virtual** y elige **la interfaz modernizada completa**. Se implementa un repositorio PostgreSQL de laboratorio separado del destino SQLServer, reutilizando las vistas y el BFF existentes, con configuración explícita, migración/semilla privadas y paquete de contenedor conectado. [Guía y alcance](docs/PRUEBA_REAL_SUPABASE.md), [resultado y pendientes](docs/prueba-real/RESULTADO.md).
+
+Esquema y semilla instalados en Supabase (40 tablas nuevas, 6 equipos/3 funcionarios sintéticos), imagen construida y CI de 300 pruebas aprobado. Acceso público conectado pendiente de secretos de servidor, cuentas Auth vinculadas, registro público cerrado, red TCP e ingreso HTTPS. No presentar Pages como sitio conectado, no registrar dobles en main, no sustituir reportes v1 por datos ficticios ni certificar SQLServer. Las reglas productivas pendientes conservan sus barreras. Sin worker/envíos, producción, facturación ni reactivación de inventarioTI. Sincronizar en rama dedicada; no merge/republicación de Pages por esta preparación.
+
 ## MPUB-FIX01 — corrección de la demo principal
 
 Usuario «No está actualizado el demo» corrige la publicación solicitada en MPUB-A01. Se comprobó que la portada pública seguía en Bienes: la entrega anterior añadió revisión/prototipo, pero no activó la interfaz moderna en la demo. Se corrige dentro de la autorización de publicación existente, sin otra fase ni nueva confirmación.

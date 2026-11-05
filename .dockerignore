@@ -1,0 +1,9 @@
+**
+!staging/
+!staging/Dockerfile
+!staging/release/
+!staging/release/**
+**/.env*
+**/*.pem
+**/*.key
+**/node_modules

@@ -1,0 +1,22 @@
+{
+  "image": "inventarioti2-prueba:4c7b21547c02",
+  "id": "sha256:89e05d8502728dbe3f8486a90a85ef7581aba2929547d41d3d48f5ee59be53c5",
+  "size_bytes": 271927478,
+  "source_revision": "4c7b21547c02edd65968a20f9257b84462970156",
+  "user": "node",
+  "build": "PASS",
+  "compose_config": "PASS",
+  "startup_without_configuration": {
+    "exit_code": 1,
+    "code": "STAGING_REQUIRED"
+  },
+  "public_runtime": "NOT_STARTED",
+  "registry_push": "NOT_EXECUTED",
+  "secret_build_ca_persisted": false,
+  "https_runtime": {
+    "status": "PASS",
+    "tls_verified": true,
+    "http_status_without_key": 401,
+    "credential_sent": false
+  }
+}

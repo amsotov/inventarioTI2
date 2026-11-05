@@ -1,3 +1,4 @@
+import{emailCallbackHtml,emailCallbackJs}from'./auth/email-callback.js';
 import { modernizationRoutes } from './modernization/routes.js';
 import { postgresModelAccess } from './modernization/postgres-access.js';
 import type { ModelBackend } from './modernization/ports.js';
@@ -14,7 +15,7 @@ import type { Inventory } from './inventory/service.js';
 import { AuthError, AuthService } from './auth/service.js';
 const str = {type:'string',minLength:1,maxLength:320};
 const schema = (props: Record<string,unknown>) => ({body:{type:'object',additionalProperties:false,required:Object.keys(props),properties:props}});
-export function app(auth: AuthService, origin: string, inventory?: Inventory, webRoot?: string, security?: Authorization, modernization?: ModelBackend) {
+export function app(auth: AuthService, origin: string, inventory?: Inventory, webRoot?: string, security?: Authorization, modernization?: ModelBackend, reports?: Reports) {
   const server=Fastify({logger:false,bodyLimit:8192,trustProxy:false,ajv:{customOptions:{removeAdditional:false,coerceTypes:false}}});
   server.addHook('onRequest',async(req,res)=>{
     res.header('cache-control','no-store').header('referrer-policy','no-referrer').header('x-content-type-options','nosniff').header('x-frame-options','DENY').header('permissions-policy','camera=(), microphone=(), geolocation=()').header('strict-transport-security','max-age=31536000').header('content-security-policy',"default-src 'none'; script-src 'self'; connect-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'");
@@ -32,6 +33,25 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
   server.post<{Body:{email:string;password:string}}>('/api/v1/sesion',{schema:schema({email:{...str,pattern:'^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$'},password:{...str,maxLength:1024}})},async(req,res)=>{
     await auth.rate(req.ip,req.body.email);const result=await auth.login(req.body.email,req.body.password);
     res.header('set-cookie',cookie(result.sid));return {csrf:result.csrf,mfaRequired:result.mfaRequired};
+  });
+  const flowSid=(req:{headers:{cookie?:string}})=>req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>x.startsWith('__Host-inventario-correo='))?.slice(25)??'';
+  const flowCookie=(id:string,age=3600)=>`__Host-inventario-correo=${id}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${age}`;
+  server.post<{Body:{email:string}}>('/api/v1/sesion/correo/solicitar',{schema:schema({email:{...str,pattern:'^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$'}})},async(req,res)=>{
+    await auth.rate(req.ip,req.body.email);const result=await auth.email.request(req.body.email.toLowerCase());
+    return res.header('set-cookie',flowCookie(result.flow)).code(202).send({message:'Revisa tu correo y pulsa el enlace de autorización. Esta ventana activará tu sesión automáticamente.'});
+  });
+  server.post<{Body:{flow:string;code:string}}>('/api/v1/sesion/correo/autorizar',{schema:schema({flow:{type:'string',pattern:'^[A-Za-z0-9_-]{43}$'},code:{type:'string',pattern:'^[A-Za-z0-9_-]{20,512}$'}})},async(req,res)=>{
+    await auth.rate(req.ip);await auth.email.authorize(req.body.flow,req.body.code);return res.code(204).send();
+  });
+  server.post('/api/v1/sesion/correo/estado',{schema:schema({})},async(req,res)=>{
+    await auth.rate(req.ip);const result=await auth.email.claim(flowSid(req));if(result.status==='pending')return res.code(202).send({status:'pending'});
+    return res.header('set-cookie',[cookie(result.sid),flowCookie('',0)]).send({status:'authenticated',csrf:result.csrf});
+  });
+  server.get('/auth/callback',async(_req,res)=>res.type('text/html').send(emailCallbackHtml));
+  server.get('/auth/callback.js',async(_req,res)=>res.type('application/javascript').send(emailCallbackJs));
+  server.post<{Body:{email:string;code:string}}>('/api/v1/sesion/correo/verificar',{schema:schema({email:{...str,pattern:'^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$'},code:{type:'string',minLength:6,maxLength:4096}})},async(req,res)=>{
+    await auth.rate(req.ip,req.body.email);const result=await auth.loginEmailOtp(req.body.email.toLowerCase(),req.body.code);
+    res.header('set-cookie',cookie(result.sid));return {csrf:result.csrf,mfaRequired:false};
   });
   server.get('/api/v1/sesion',async req=>auth.status(sid(req)));
   server.post('/api/v1/sesion/actividad',{schema:schema({})},async(req,res)=>{await auth.activity(sid(req),csrf(req));return res.code(204).send();});
@@ -60,7 +80,7 @@ export function app(auth: AuthService, origin: string, inventory?: Inventory, we
     notificationRoutes(server,security,sid,csrf);
     adminRoutes(server,security,auth,sid,csrf);
     processRoutes(server,security,sid,csrf);
-    reportRoutes(server,new Reports(security),sid,csrf);
+    reportRoutes(server,reports??new Reports(security),sid,csrf);
   }
   if(modernization){
     if(!security)throw new Error('MODEL_AUTHORIZATION_REQUIRED');

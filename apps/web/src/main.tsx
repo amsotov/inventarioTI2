@@ -1,3 +1,4 @@
+import { EmailAccess } from './email-access';
 import { Field } from "./fields";
 import { ModelWorkspace, protectModelNavigation } from "./model";
 import { DEMO_MODE } from "./demoMode";
@@ -8,6 +9,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { api, ApiError, message } from "./api";
 import "./style.css";
+const EMAIL_AUTH=!DEMO_MODE&&import.meta.env.VITE_EMAIL_AUTH==='true';
 type Row = Record<string, any>;
 type Session = {
   rol: string;
@@ -43,7 +45,7 @@ const columns: Record<Resource, string[]> = {
   ],
 };
 function route() {
-  return location.hash.slice(1) || (DEMO_MODE ? "modelo/equipos" : "bienes");
+  return location.hash.slice(1) || (DEMO_MODE || import.meta.env.VITE_MODERNIZATION_ENTRY === "true" ? "modelo/equipos" : "bienes");
 }
 function App() {
   const [session, setSession] = useState<Session | null>(null),
@@ -363,6 +365,8 @@ function App() {
         )}
         {checking ? (
           <p role="status">Comprobando sesión…</p>
+        ) : !session && EMAIL_AUTH ? (
+          <EmailAccess onAuthenticated={async()=>{await refresh();}}/>
         ) : !session ? (
           <section className="card access">
             <h1>Acceso al inventario</h1>

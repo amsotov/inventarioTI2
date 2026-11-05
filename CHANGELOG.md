@@ -1,5 +1,11 @@
 # Cambios
 
+## 2026-11-04 — preparación de ensayo conectado
+
+- Repositorio PostgreSQL modernizado, núcleo de laboratorio y soporte privado; transacciones/UUID/versiones/idempotencia/auditoría/outbox.
+- Pruebas SQL reales, GoTrue/MFA y navegador con recarga; empaquetado conectado y bootstrap de identidades expresas.
+- Activación remota condicionada a secretos, Auth cerrado e ingreso HTTPS; destino SQLServer y políticas pendientes conservados.
+
 ## 2026-11-03 — Corrección de demo modernizada interactiva
 
 - MPUB-FIX01 responde a «No está actualizado el demo»: portada y menú muestran la interfaz F7 real con datos ficticios en memoria.

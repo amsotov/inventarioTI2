@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "csp": "default-src 'none'; script-src 'self'; connect-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'self' https://chatgpt.com https://*.chatgpt.com https://chat.openai.com https://codex.openai.com",
+  "type": "text/html; charset=utf-8",
+  "scriptRequested": true,
+  "authorizeRequested": true,
+  "statusText": "El enlace no se pudo verificar o ya caducó. Solicita un correo nuevo desde el inventario.",
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 ()"
+  ]
+}

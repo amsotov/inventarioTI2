@@ -305,6 +305,10 @@ export class Reports {
       );
     });
   }
+  /** Mantiene trabajos autorizados vivos en runtimes de peticiones efímeras. */
+  async whenIdle() {
+    await this.running;
+  }
   async close() {
     this.closing = true;
     await this.running;

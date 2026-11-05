@@ -1,0 +1,14 @@
+{
+  "scope": "local-browser-real-postgres",
+  "identity": "local-test-double; GoTrue covered separately",
+  "demo": false,
+  "checks": [
+    "create-reload-edit",
+    "technical-components",
+    "movement-maintenance-history",
+    "employee-private-organization",
+    "reader-permissions"
+  ],
+  "apiRequests": 202,
+  "pageErrors": 0
+}

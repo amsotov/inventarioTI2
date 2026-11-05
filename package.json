@@ -12,7 +12,8 @@
     "test:qa:a11y": "tsx tests/qa/accessibility.ts",
     "test:ops": "tsx --test --test-concurrency=1 tests/ops/*.test.ts",
     "demo": "node scripts/demo.mjs",
-    "test:demo": "node tests/demo/browser.mjs"
+    "test:demo": "node tests/demo/browser.mjs",
+    "staging:package": "node scripts/staging/package.mjs"
   },
   "repository": {
     "type": "git",

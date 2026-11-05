@@ -1,0 +1,6 @@
+{
+  "test": "cross-browser mail-click activates original viewer",
+  "passed": true,
+  "identity": "test double; no real email sent",
+  "tests": 1
+}

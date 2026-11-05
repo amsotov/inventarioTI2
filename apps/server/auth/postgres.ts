@@ -13,8 +13,8 @@ class PgStore implements Store {
   async revoke(id: string) { await this.c.query(`update acceso.sesiones set datos=jsonb_set(datos,'{revoked}','true') where cuenta_id=$1`,[id]); }
   async intent(key: string): Promise<Intent | undefined> { return (await this.c.query('select datos from acceso.intenciones where huella=$1 for update',[key])).rows[0]?.datos; }
   async saveIntent(key: string, i: Intent) { await this.c.query('insert into acceso.intenciones(huella,cuenta_id,datos) values($1,$2,$3) on conflict(huella) do update set datos=excluded.datos',[key,i.accountId,i]); }
-  async busy(id: string) { return (await this.c.query("select 1 from acceso.intenciones where cuenta_id=$1 and datos->>'state' in ('processing','uncertain') limit 1",[id])).rowCount !== 0; }
-  async supersede(id: string) { await this.c.query(`update acceso.intenciones set datos=jsonb_set(datos,'{state}','"superseded"') where cuenta_id=$1 and datos->>'state'='pending'`,[id]); }
+  async busy(id: string) { return (await this.c.query("select 1 from acceso.intenciones where cuenta_id=$1 and datos->>'state' in ('processing','uncertain') and coalesce(datos->>'kind','')<>'email-login' limit 1",[id])).rowCount !== 0; }
+  async supersede(id: string) { await this.c.query(`update acceso.intenciones set datos=jsonb_set(datos,'{state}','"superseded"') where cuenta_id=$1 and datos->>'state'='pending' and coalesce(datos->>'kind','')<>'email-login'`,[id]); }
   async delivery(id: string, envelope: string) { await this.c.query('insert into acceso.entregas(cuenta_id,sobre) values($1,$2)',[id,envelope]); }
   async rate(key: string, window: number, limit: number) {
     const r = await this.c.query(`insert into acceso.limites(huella,ventana,intentos) values($1,$2,1) on conflict(huella) do update set ventana=$2,intentos=case when acceso.limites.ventana=$2 then acceso.limites.intentos+1 else 1 end returning intentos`,[key,window]);

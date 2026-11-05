@@ -7,7 +7,7 @@ Solicitud: «Puedes conectarlo con sistema real y supabase desde GitHub Pages».
 - Entrada conectada: https://amsotov.github.io/inventarioTI2/
 - Demo anterior conservada: https://amsotov.github.io/inventarioTI2/demo/
 - API: `https://yhsfotxhaptinjtmrinn.supabase.co/functions/v1/inventarioti2-pages-api`.
-- Estado de preparación: backend versión2 ACTIVE; frontend construido/verificado localmente, pendiente CI/integración/publicación. El manifiesto público debe identificar `INTERFAZ_CONECTADA_SUPABASE_PRUEBAS` y el SHA finalmente integrado antes de anunciar entrega.
+- **Publicado y verificado el 2026-11-05 UTC:** backend versión2 ACTIVE; PR5 integrado en main como `fc82ca3cd04717bdc11d8a1da12b583ea2c7ef47`. Pages41938254064 success. Manifiesto público `INTERFAZ_CONECTADA_SUPABASE_PRUEBAS`, SHA correcto y39 archivos verificados por hash.
 
 Pages aloja React y los archivos estáticos. La API de Supabase ejecuta los mismos servicios Fastify/AuthService/Authorization/Inventory/PostgresLabModelBackend/Reports contra la base PostgreSQL existente; no se reemplaza el BFF por acceso directo a tablas. La demo conserva sus simulaciones exclusivamente bajo `/demo/`. Los bienes legacy y equipos modernizados siguen separados; esta publicación no realiza su migración.
 
@@ -39,3 +39,13 @@ La activación real de la cuenta del destinatario y las escrituras desde su Page
 ## Retorno
 
 Si falla la publicación, conservar diagnóstico/artefactos y restaurar el workflow estático anterior mediante commit revisable. Se puede volver a usar el sitio privado existente sin cambiar datos. No revertir SQL, credenciales, usuarios o sesiones por un rollback del frontend. No desactivar autenticación/CORS/CSRF para resolver un problema del navegador.
+
+## Resultado remoto verificado
+
+[PR5](https://github.com/amsotov/inventarioTI2/pull/5) integrado tras [CI41937672563](https://github.com/amsotov/inventarioTI2/actions/runs/41937672563) success:261 pruebas Node,4 ops,65 UI,330 total; cero vulnerabilidades y heurística de secretos aprobada. Árbol del merge coincide con `d5cd5d9` revisado. [Pages41938254064](https://github.com/amsotov/inventarioTI2/actions/runs/41938254064) y [CI postmerge41938253784](https://github.com/amsotov/inventarioTI2/actions/runs/41938253784) success.
+
+La comprobación pública revisó el SHA de manifest y39 archivos por hash, además de Chromium sin intercepción contra Pages real: portada de acceso por correo, sin selector demo/contraseña; CORS funcional y consulta de equipos sin sesión rechazada401, sin errores JS. API rechaza origen ajeno403. La sesión real del destinatario desde Pages no se simuló y queda pendiente.
+
+[Comprobante público](evidencias/pages/publicacion-verificada.json), [navegador publicado](evidencias/pages/navegador-publicado.log), [CI](evidencias/pages/ci.json) y [seguridad remota](evidencias/pages/seguridad-remota.json). Lectura agregada confirma7 equipos/3 funcionarios/6 bienes legacy/2 cuentas,40 tablas con RLS FORCE y ningún factor MFA; no se cargaron datos ni se crearon cuentas/sesiones reales en esta tarea. Advisor conserva únicamente la advertencia previa de protección de contraseñas filtradas deshabilitada. El conteo de una sesión no revocada no prueba vigencia ni sesión en Pages.
+
+Estos comprobantes posteriores al despliegue se archivan en la rama de pruebas; no se modifica la publicación solo para registrar el resultado de su propia ejecución.

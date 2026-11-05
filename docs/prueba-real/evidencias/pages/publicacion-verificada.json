@@ -1,0 +1,10 @@
+{
+  "source_sha": "fc82ca3cd04717bdc11d8a1da12b583ea2c7ef47",
+  "kind": "INTERFAZ_CONECTADA_SUPABASE_PRUEBAS",
+  "url": "https://amsotov.github.io/inventarioTI2/",
+  "demo": "https://amsotov.github.io/inventarioTI2/demo/",
+  "verified_files": 39,
+  "anonymous_inventory_denied": true,
+  "foreign_origin_denied": true,
+  "real_recipient_login_tested": false
+}

@@ -1,0 +1,21 @@
+{
+  "pr": 5,
+  "reviewed_sha": "d5cd5d938e7e804e503425cd1fcc7d558ecc8bd9",
+  "ci_run": 41937672563,
+  "ci_result": "success",
+  "tests": {
+    "node": 261,
+    "ops": 4,
+    "ui": 65,
+    "total": 330
+  },
+  "audit_high": "success; zero vulnerabilities",
+  "secret_heuristic": "success",
+  "merge_sha": "fc82ca3cd04717bdc11d8a1da12b583ea2c7ef47",
+  "merge_tree": "0aa543192a8157cb1ab4a4ce8cc3d5c26e749792",
+  "pages_run": 41938254064,
+  "pages_result": "success",
+  "postmerge_ci_run": 41938253784,
+  "postmerge_ci_result": "success",
+  "real_recipient_login_from_pages": "pending"
+}

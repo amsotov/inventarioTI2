@@ -1,0 +1,20 @@
+{
+  "equipos": 7,
+  "funcionarios": 3,
+  "bienes_legacy": 6,
+  "cuentas": 2,
+  "auth_users": 2,
+  "mfa_factors": 0,
+  "tablas_laboratorio": 40,
+  "tablas_laboratorio_sin_rls_force": 0,
+  "sesiones_correo_no_revocadas": 1,
+  "session_count_note": "No certifica vigencia/expiracion ni acceso del destinatario desde Pages. Ninguna sesion real creada por el agente.",
+  "security_advisor": [
+    {
+      "name": "auth_leaked_password_protection",
+      "level": "WARN",
+      "known_before_this_change": true,
+      "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+    }
+  ]
+}
